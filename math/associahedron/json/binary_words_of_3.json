@@ -1,0 +1,20 @@
+{
+    "nodes": [
+        {
+            "id": "x(xx)",
+            "name": "x(xx)",
+            "img": "x(xx).jpg"
+        },
+        {
+            "id": "(xx)x",
+            "name": "(xx)x",
+            "img": "(xx)x.jpg"
+        }
+    ],
+    "links": [
+        {
+            "source": "x(xx)",
+            "target": "(xx)x"
+        }
+    ]
+}

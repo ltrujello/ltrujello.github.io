@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luke Trujillo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_path }}/css/index.css">
+    <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    {{ css }}
+    {{ src }}
+</head>
+<body class="main">
+    <img class="img_header" src="{{ base_path }}/imgs/IMG_1975.jpg" alt="Some mountain">
+    <div>
+    <h2 class="left-banner"> <a style="color:black" href="/"> Hello, world! </a> </h2>
+    <ul class="nav-bar">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/cs/tikzpy/"> TikzPy </a></li>
+        <li><a href="/math/associahedron/"> Associahedron </a></li>
+        <li><a href="/cs/programming_idioms/"> Programming Idioms </a></li>
+        <li><a href="/about/"> About </a></li>
+    </ul>
+    </div>
+<div class="main-content">
+{{ content }}
+</div>
+
+</body>
+</html>

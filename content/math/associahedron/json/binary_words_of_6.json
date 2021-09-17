@@ -1,0 +1,552 @@
+{
+    "nodes": [
+        {
+            "id": "x(x(x(x(xx))))",
+            "name": "x(x(x(x(xx))))",
+            "img": "x(x(x(x(xx)))).jpg"
+        },
+        {
+            "id": "x(x(x((xx)x)))",
+            "name": "x(x(x((xx)x)))",
+            "img": "x(x(x((xx)x))).jpg"
+        },
+        {
+            "id": "x(x((xx)(xx)))",
+            "name": "x(x((xx)(xx)))",
+            "img": "x(x((xx)(xx))).jpg"
+        },
+        {
+            "id": "x(x((x(xx))x))",
+            "name": "x(x((x(xx))x))",
+            "img": "x(x((x(xx))x)).jpg"
+        },
+        {
+            "id": "x(x(((xx)x)x))",
+            "name": "x(x(((xx)x)x))",
+            "img": "x(x(((xx)x)x)).jpg"
+        },
+        {
+            "id": "x((xx)(x(xx)))",
+            "name": "x((xx)(x(xx)))",
+            "img": "x((xx)(x(xx))).jpg"
+        },
+        {
+            "id": "x((xx)((xx)x))",
+            "name": "x((xx)((xx)x))",
+            "img": "x((xx)((xx)x)).jpg"
+        },
+        {
+            "id": "x((x(xx))(xx))",
+            "name": "x((x(xx))(xx))",
+            "img": "x((x(xx))(xx)).jpg"
+        },
+        {
+            "id": "x(((xx)x)(xx))",
+            "name": "x(((xx)x)(xx))",
+            "img": "x(((xx)x)(xx)).jpg"
+        },
+        {
+            "id": "x((x(x(xx)))x)",
+            "name": "x((x(x(xx)))x)",
+            "img": "x((x(x(xx)))x).jpg"
+        },
+        {
+            "id": "x((x((xx)x))x)",
+            "name": "x((x((xx)x))x)",
+            "img": "x((x((xx)x))x).jpg"
+        },
+        {
+            "id": "x(((xx)(xx))x)",
+            "name": "x(((xx)(xx))x)",
+            "img": "x(((xx)(xx))x).jpg"
+        },
+        {
+            "id": "x(((x(xx))x)x)",
+            "name": "x(((x(xx))x)x)",
+            "img": "x(((x(xx))x)x).jpg"
+        },
+        {
+            "id": "x((((xx)x)x)x)",
+            "name": "x((((xx)x)x)x)",
+            "img": "x((((xx)x)x)x).jpg"
+        },
+        {
+            "id": "(xx)(x(x(xx)))",
+            "name": "(xx)(x(x(xx)))",
+            "img": "(xx)(x(x(xx))).jpg"
+        },
+        {
+            "id": "(xx)(x((xx)x))",
+            "name": "(xx)(x((xx)x))",
+            "img": "(xx)(x((xx)x)).jpg"
+        },
+        {
+            "id": "(xx)((xx)(xx))",
+            "name": "(xx)((xx)(xx))",
+            "img": "(xx)((xx)(xx)).jpg"
+        },
+        {
+            "id": "(xx)((x(xx))x)",
+            "name": "(xx)((x(xx))x)",
+            "img": "(xx)((x(xx))x).jpg"
+        },
+        {
+            "id": "(xx)(((xx)x)x)",
+            "name": "(xx)(((xx)x)x)",
+            "img": "(xx)(((xx)x)x).jpg"
+        },
+        {
+            "id": "(x(xx))(x(xx))",
+            "name": "(x(xx))(x(xx))",
+            "img": "(x(xx))(x(xx)).jpg"
+        },
+        {
+            "id": "(x(xx))((xx)x)",
+            "name": "(x(xx))((xx)x)",
+            "img": "(x(xx))((xx)x).jpg"
+        },
+        {
+            "id": "((xx)x)(x(xx))",
+            "name": "((xx)x)(x(xx))",
+            "img": "((xx)x)(x(xx)).jpg"
+        },
+        {
+            "id": "((xx)x)((xx)x)",
+            "name": "((xx)x)((xx)x)",
+            "img": "((xx)x)((xx)x).jpg"
+        },
+        {
+            "id": "(x(x(xx)))(xx)",
+            "name": "(x(x(xx)))(xx)",
+            "img": "(x(x(xx)))(xx).jpg"
+        },
+        {
+            "id": "(x((xx)x))(xx)",
+            "name": "(x((xx)x))(xx)",
+            "img": "(x((xx)x))(xx).jpg"
+        },
+        {
+            "id": "((xx)(xx))(xx)",
+            "name": "((xx)(xx))(xx)",
+            "img": "((xx)(xx))(xx).jpg"
+        },
+        {
+            "id": "((x(xx))x)(xx)",
+            "name": "((x(xx))x)(xx)",
+            "img": "((x(xx))x)(xx).jpg"
+        },
+        {
+            "id": "(((xx)x)x)(xx)",
+            "name": "(((xx)x)x)(xx)",
+            "img": "(((xx)x)x)(xx).jpg"
+        },
+        {
+            "id": "(x(x(x(xx))))x",
+            "name": "(x(x(x(xx))))x",
+            "img": "(x(x(x(xx))))x.jpg"
+        },
+        {
+            "id": "(x(x((xx)x)))x",
+            "name": "(x(x((xx)x)))x",
+            "img": "(x(x((xx)x)))x.jpg"
+        },
+        {
+            "id": "(x((xx)(xx)))x",
+            "name": "(x((xx)(xx)))x",
+            "img": "(x((xx)(xx)))x.jpg"
+        },
+        {
+            "id": "(x((x(xx))x))x",
+            "name": "(x((x(xx))x))x",
+            "img": "(x((x(xx))x))x.jpg"
+        },
+        {
+            "id": "(x(((xx)x)x))x",
+            "name": "(x(((xx)x)x))x",
+            "img": "(x(((xx)x)x))x.jpg"
+        },
+        {
+            "id": "((xx)(x(xx)))x",
+            "name": "((xx)(x(xx)))x",
+            "img": "((xx)(x(xx)))x.jpg"
+        },
+        {
+            "id": "((xx)((xx)x))x",
+            "name": "((xx)((xx)x))x",
+            "img": "((xx)((xx)x))x.jpg"
+        },
+        {
+            "id": "((x(xx))(xx))x",
+            "name": "((x(xx))(xx))x",
+            "img": "((x(xx))(xx))x.jpg"
+        },
+        {
+            "id": "(((xx)x)(xx))x",
+            "name": "(((xx)x)(xx))x",
+            "img": "(((xx)x)(xx))x.jpg"
+        },
+        {
+            "id": "((x(x(xx)))x)x",
+            "name": "((x(x(xx)))x)x",
+            "img": "((x(x(xx)))x)x.jpg"
+        },
+        {
+            "id": "((x((xx)x))x)x",
+            "name": "((x((xx)x))x)x",
+            "img": "((x((xx)x))x)x.jpg"
+        },
+        {
+            "id": "(((xx)(xx))x)x",
+            "name": "(((xx)(xx))x)x",
+            "img": "(((xx)(xx))x)x.jpg"
+        },
+        {
+            "id": "(((x(xx))x)x)x",
+            "name": "(((x(xx))x)x)x",
+            "img": "(((x(xx))x)x)x.jpg"
+        },
+        {
+            "id": "((((xx)x)x)x)x",
+            "name": "((((xx)x)x)x)x",
+            "img": "((((xx)x)x)x)x.jpg"
+        }
+    ],
+    "links": [
+        {
+            "source": "x(x(x(x(xx))))",
+            "target": "(xx)(x(x(xx)))"
+        },
+        {
+            "source": "x(x(x(x(xx))))",
+            "target": "x((xx)(x(xx)))"
+        },
+        {
+            "source": "x(x(x(x(xx))))",
+            "target": "x(x((xx)(xx)))"
+        },
+        {
+            "source": "x(x(x(x(xx))))",
+            "target": "x(x(x((xx)x)))"
+        },
+        {
+            "source": "x(x(x((xx)x)))",
+            "target": "(xx)(x((xx)x))"
+        },
+        {
+            "source": "x(x(x((xx)x)))",
+            "target": "x((xx)((xx)x))"
+        },
+        {
+            "source": "x(x(x((xx)x)))",
+            "target": "x(x((x(xx))x))"
+        },
+        {
+            "source": "x(x((xx)(xx)))",
+            "target": "(xx)((xx)(xx))"
+        },
+        {
+            "source": "x(x((xx)(xx)))",
+            "target": "x((x(xx))(xx))"
+        },
+        {
+            "source": "x(x((xx)(xx)))",
+            "target": "x(x(((xx)x)x))"
+        },
+        {
+            "source": "x(x((x(xx))x))",
+            "target": "(xx)((x(xx))x)"
+        },
+        {
+            "source": "x(x((x(xx))x))",
+            "target": "x((x(x(xx)))x)"
+        },
+        {
+            "source": "x(x((x(xx))x))",
+            "target": "x(x(((xx)x)x))"
+        },
+        {
+            "source": "x(x(((xx)x)x))",
+            "target": "(xx)(((xx)x)x)"
+        },
+        {
+            "source": "x(x(((xx)x)x))",
+            "target": "x((x((xx)x))x)"
+        },
+        {
+            "source": "x((xx)(x(xx)))",
+            "target": "(x(xx))(x(xx))"
+        },
+        {
+            "source": "x((xx)(x(xx)))",
+            "target": "x(((xx)x)(xx))"
+        },
+        {
+            "source": "x((xx)(x(xx)))",
+            "target": "x((xx)((xx)x))"
+        },
+        {
+            "source": "x((xx)((xx)x))",
+            "target": "(x(xx))((xx)x)"
+        },
+        {
+            "source": "x((xx)((xx)x))",
+            "target": "x(((xx)(xx))x)"
+        },
+        {
+            "source": "x((x(xx))(xx))",
+            "target": "(x(x(xx)))(xx)"
+        },
+        {
+            "source": "x((x(xx))(xx))",
+            "target": "x(((x(xx))x)x)"
+        },
+        {
+            "source": "x((x(xx))(xx))",
+            "target": "x(((xx)x)(xx))"
+        },
+        {
+            "source": "x(((xx)x)(xx))",
+            "target": "(x((xx)x))(xx)"
+        },
+        {
+            "source": "x(((xx)x)(xx))",
+            "target": "x((((xx)x)x)x)"
+        },
+        {
+            "source": "x((x(x(xx)))x)",
+            "target": "(x(x(x(xx))))x"
+        },
+        {
+            "source": "x((x(x(xx)))x)",
+            "target": "x(((xx)(xx))x)"
+        },
+        {
+            "source": "x((x(x(xx)))x)",
+            "target": "x((x((xx)x))x)"
+        },
+        {
+            "source": "x((x((xx)x))x)",
+            "target": "(x(x((xx)x)))x"
+        },
+        {
+            "source": "x((x((xx)x))x)",
+            "target": "x(((x(xx))x)x)"
+        },
+        {
+            "source": "x(((xx)(xx))x)",
+            "target": "(x((xx)(xx)))x"
+        },
+        {
+            "source": "x(((xx)(xx))x)",
+            "target": "x((((xx)x)x)x)"
+        },
+        {
+            "source": "x(((x(xx))x)x)",
+            "target": "(x((x(xx))x))x"
+        },
+        {
+            "source": "x(((x(xx))x)x)",
+            "target": "x((((xx)x)x)x)"
+        },
+        {
+            "source": "x((((xx)x)x)x)",
+            "target": "(x(((xx)x)x))x"
+        },
+        {
+            "source": "(xx)(x(x(xx)))",
+            "target": "((xx)x)(x(xx))"
+        },
+        {
+            "source": "(xx)(x(x(xx)))",
+            "target": "(xx)((xx)(xx))"
+        },
+        {
+            "source": "(xx)(x(x(xx)))",
+            "target": "(xx)(x((xx)x))"
+        },
+        {
+            "source": "(xx)(x((xx)x))",
+            "target": "((xx)x)((xx)x)"
+        },
+        {
+            "source": "(xx)(x((xx)x))",
+            "target": "(xx)((x(xx))x)"
+        },
+        {
+            "source": "(xx)((xx)(xx))",
+            "target": "((xx)(xx))(xx)"
+        },
+        {
+            "source": "(xx)((xx)(xx))",
+            "target": "(xx)(((xx)x)x)"
+        },
+        {
+            "source": "(xx)((x(xx))x)",
+            "target": "((xx)(x(xx)))x"
+        },
+        {
+            "source": "(xx)((x(xx))x)",
+            "target": "(xx)(((xx)x)x)"
+        },
+        {
+            "source": "(xx)(((xx)x)x)",
+            "target": "((xx)((xx)x))x"
+        },
+        {
+            "source": "(x(xx))(x(xx))",
+            "target": "((x(xx))x)(xx)"
+        },
+        {
+            "source": "(x(xx))(x(xx))",
+            "target": "(x(xx))((xx)x)"
+        },
+        {
+            "source": "(x(xx))(x(xx))",
+            "target": "((xx)x)(x(xx))"
+        },
+        {
+            "source": "(x(xx))((xx)x)",
+            "target": "((x(xx))(xx))x"
+        },
+        {
+            "source": "(x(xx))((xx)x)",
+            "target": "((xx)x)((xx)x)"
+        },
+        {
+            "source": "((xx)x)(x(xx))",
+            "target": "(((xx)x)x)(xx)"
+        },
+        {
+            "source": "((xx)x)(x(xx))",
+            "target": "((xx)x)((xx)x)"
+        },
+        {
+            "source": "((xx)x)((xx)x)",
+            "target": "(((xx)x)(xx))x"
+        },
+        {
+            "source": "(x(x(xx)))(xx)",
+            "target": "((x(x(xx)))x)x"
+        },
+        {
+            "source": "(x(x(xx)))(xx)",
+            "target": "((xx)(xx))(xx)"
+        },
+        {
+            "source": "(x(x(xx)))(xx)",
+            "target": "(x((xx)x))(xx)"
+        },
+        {
+            "source": "(x((xx)x))(xx)",
+            "target": "((x((xx)x))x)x"
+        },
+        {
+            "source": "(x((xx)x))(xx)",
+            "target": "((x(xx))x)(xx)"
+        },
+        {
+            "source": "((xx)(xx))(xx)",
+            "target": "(((xx)(xx))x)x"
+        },
+        {
+            "source": "((xx)(xx))(xx)",
+            "target": "(((xx)x)x)(xx)"
+        },
+        {
+            "source": "((x(xx))x)(xx)",
+            "target": "(((x(xx))x)x)x"
+        },
+        {
+            "source": "((x(xx))x)(xx)",
+            "target": "(((xx)x)x)(xx)"
+        },
+        {
+            "source": "(((xx)x)x)(xx)",
+            "target": "((((xx)x)x)x)x"
+        },
+        {
+            "source": "(x(x(x(xx))))x",
+            "target": "((xx)(x(xx)))x"
+        },
+        {
+            "source": "(x(x(x(xx))))x",
+            "target": "(x((xx)(xx)))x"
+        },
+        {
+            "source": "(x(x(x(xx))))x",
+            "target": "(x(x((xx)x)))x"
+        },
+        {
+            "source": "(x(x((xx)x)))x",
+            "target": "((xx)((xx)x))x"
+        },
+        {
+            "source": "(x(x((xx)x)))x",
+            "target": "(x((x(xx))x))x"
+        },
+        {
+            "source": "(x((xx)(xx)))x",
+            "target": "((x(xx))(xx))x"
+        },
+        {
+            "source": "(x((xx)(xx)))x",
+            "target": "(x(((xx)x)x))x"
+        },
+        {
+            "source": "(x((x(xx))x))x",
+            "target": "((x(x(xx)))x)x"
+        },
+        {
+            "source": "(x((x(xx))x))x",
+            "target": "(x(((xx)x)x))x"
+        },
+        {
+            "source": "(x(((xx)x)x))x",
+            "target": "((x((xx)x))x)x"
+        },
+        {
+            "source": "((xx)(x(xx)))x",
+            "target": "(((xx)x)(xx))x"
+        },
+        {
+            "source": "((xx)(x(xx)))x",
+            "target": "((xx)((xx)x))x"
+        },
+        {
+            "source": "((xx)((xx)x))x",
+            "target": "(((xx)(xx))x)x"
+        },
+        {
+            "source": "((x(xx))(xx))x",
+            "target": "(((x(xx))x)x)x"
+        },
+        {
+            "source": "((x(xx))(xx))x",
+            "target": "(((xx)x)(xx))x"
+        },
+        {
+            "source": "(((xx)x)(xx))x",
+            "target": "((((xx)x)x)x)x"
+        },
+        {
+            "source": "((x(x(xx)))x)x",
+            "target": "(((xx)(xx))x)x"
+        },
+        {
+            "source": "((x(x(xx)))x)x",
+            "target": "((x((xx)x))x)x"
+        },
+        {
+            "source": "((x((xx)x))x)x",
+            "target": "(((x(xx))x)x)x"
+        },
+        {
+            "source": "(((xx)(xx))x)x",
+            "target": "((((xx)x)x)x)x"
+        },
+        {
+            "source": "(((x(xx))x)x)x",
+            "target": "((((xx)x)x)x)x"
+        }
+    ]
+}

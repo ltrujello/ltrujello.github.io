@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luke Trujillo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/css/code.css"/>
+	
+    
+</head>
+<body class="main">
+    <img class="img_header" src="/imgs/IMG_1975.jpg" alt="Some mountain">
+    <div>
+    <h2 class="left-banner"> <a style="color:black" href="/"> Hello, world! </a> </h2>
+    <ul class="nav-bar">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/cs/tikzpy/"> TikzPy </a></li>
+        <li><a href="/math/associahedron/"> Associahedron </a></li>
+        <li><a href="/cs/programming_idioms/"> Programming Idioms </a></li>
+        <li><a href="/about/"> About </a></li>
+    </ul>
+    </div>
+<div class="main-content">
+<article>
+<h1><a href="/cs/programming_idioms/">Programming Idioms</a></h1>
+<p>Programming, in a modern sense, is the transfer of mathematically well-defined structure and logic between a highly advanced biological computer with bounded computing rates, unreliable precision, but much common sense, and a fast mechanical computer with growing processing rates, highly reliable precision, but with absolute zero common sense. In other words, it's a smart, slow computer trying to dumb down simple instructions for a fast, dumb computer, because there's value in making that communication happen.</p>
+<p>For there to even be a communication channel, the human has to make the compromise, and the compromise is that they enter an environment in which the expression of concepts and algorithms is extremely limiting, error prone, and slow.</p>
+<p>Because of this compromise, great care needs to be taken towards managing the workflow and one needs to minimize the amount of time spent debugging. Therefore, programing is not actually about algorithms or theory; those are details that can be solved by looking up how others before you solved your problem, consulting a resource, or just thinking anyways. It's really about predicting, acknowledging, paying attention to, and finding your limitations and weaknesses so that you can prevent yourself from making mistakes, and so you can make smart tradeoffs that make your code humanistic. All of this is just within the best interest of efficiency.</p>
+<p>Here are some rules that I've learned from others or have found on my own that help me make less mistakes.</p>
+<h4>Try not to be lazy or impatient.</h4>
+<p>If you are lazy or impatient, then you increase the probability of causing bugs, and debugging will reduce your productivity. You can also be courteous and do what you can to simply minimize the next programmer's misery in the case that you make a bug.</p>
+<ul>
+<li>
+<p><strong>Avoid misleading or vague variable names.</strong> Examples: Don't use "val" for value or "res" for "result" because these do not really mean anything specific.</p>
+</li>
+<li>
+<p><strong>Keep variable names short</strong>. More specifically, most variable names are a concatenation of one to three descriptive words that describe what the variable is supposed to reference. Using more than three words in name makes the code clunky, and usually there's a way to keep it short. If you do find your variable name needs to be long, either your work project is massive and that's your tradeoff, or there's something off with the implementation.</p>
+</li>
+<li>
+<p><strong>Try not to write long comments</strong>. This usually happens because what someone is doing is a little more complicated than the average block of code. However, clean code always has really short comments. </p>
+</li>
+<li>
+<p><strong>Avoid the opposite: short, vague or meaningless comments.</strong> I have found that this is worse than no comments. Spending 5 - 20 seconds thinking of an informative, brief, truthful comment is better than causing a butterfly effect of a bug that then causes minutes to hours of debugging later. </p>
+</li>
+<li>
+<p><strong>Keep functions short</strong>. If you do this and split up your procedures nicely, you can detect bugs easily since you can test smaller procedures first. The exception to this is when there are a lot of different cases for a function's behavior and breaking it down would actually introduce too much black-boxing and disorganization. I've noticed parsers tend to be very, very long functions, and I imagine it's for this reason. </p>
+</li>
+<li>
+<p><strong>Avoid using a single letter variable name</strong>. For example, if you're doing a for loop and the loop is over indices, try "ind" instead of "i" or "j". An exception is something like </p>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="c1"># In Python, f is a commonly used variable name for a file opened via a context manager. </span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># Not the best variable name...</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p><strong>Don't include the type of a variable in its name</strong> (e.g "angle_int" for an angle between 0 and 360). It will cause confusion in a duck typing language and it's usually unnecessary.</p>
+</li>
+<li>
+<p><strong>Use one-liners conservatively</strong>. I have seen what happens whent they're abused; they can become the source of a silly bug, especially if for instance a one liner makes two calls to the same function; a vertical traceback will not help you much then. Exceptions are simple ternary operators, since these are pretty handy.</p>
+</li>
+<li>
+<p><strong>If the implementation of an idea feels wrong, do everything you can to resist saying "I'll come back to it."</strong> This is because when this happens, you're already in the moment and have the focus, so it's best to get it done with then. Additionally, if you do it once, you likely do it multiple times, and then you'll build up a stack of "I'll come back to it"'s that you won't come back to, and then even if you do come to these things, you'll have to spend time remembering what it was that you were doing. Of course, some ideas do need to sit around in the subconscious, but that's a process that is supposed to happen before an implementation.</p>
+</li>
+<li>
+<p>When you finish writing a block of code, you should read over it a once or twice and <em>then</em> test it, no matter how simple the function is, even if it is literally adding two numbers. This is so you can be lazy later, so that when a bug happens (and a bug will happen) you minimize the probability that you will have to check for many places to find and fix the bug. That is, it decreases the likelihood that your bug is in a quantum superposition of two or more functions, and so you may save yourself a lot of time and effort by doing this.</p>
+</li>
+</ul>
+<p>This is actually the most important rule.</p>
+<h4>Be as lazy as you can be.</h4>
+<p>In other words: Don't make yourself work harder than you have to because it deters your focus from the actual code.</p>
+<ul>
+<li>
+<p><strong>Resist the temptation to manually format your code</strong> (e.g., inserting a few spaces, putting a comment on a different line, resorting your import statements). This is a waste a time, a distraction from your main focus, and the code conventions will become visbily out of sync. If you're like me and you've caught yourself doing it anyway, the way you solve this forever is by using a code formatter.</p>
+</li>
+<li>
+<p><strong>Don't force yourself to remember different keybindings for different GUIs and editors</strong>. I've found that this will lead to silly errors and brief moments of "How do I do it in this one again?". The way you solve this problem is by learning a <em>sensible and widely</em> used editor like Vim (which I recommend, but ocassionally I regret this because its clipboard functionality drives me nuts), and configure your applications to use it so that you only ever have to remember one set of keybindings for everything. </p>
+</li>
+<li>
+<p><strong>Do not use your default terminal settings</strong>. Default terminal settings are a gigantic time waster (and that's because they're supposed to be upgraded). With default terminal settings, you'll find yourself slowly pressing your backspace 20 times to the left to get to the beginning of a command, because you forgot "sudo", and 20 times again to the right to get back to the end, because you forgot an extra command flag. You will truly change your life by putting good keybindings (like Vim) on your terminal.</p>
+</li>
+<li>
+<p><strong>Write down code snippets</strong>. Pick a dead simple code snippet application, create folders for different programming languages/applications, and put your frequently used commands in there. This will prevent you from wasting time on tracking down that-one-really-helpful-SO-post-that-I-now-cant-find, and you will thank your past self for saving your future self time.</p>
+</li>
+<li>
+<p><strong>Don't ever worry about possible performance improvements, unless you have a reason to</strong>. You should only go so far as to focus on not writing obviously silly code that's doing more work than it needs to.</p>
+</li>
+<li>
+<p><strong>Avoid resorting to shared memory, multiprocessing/threading, and low-level programming</strong> whenever you can. Especially don't do it for speed, because it can sometimes be overkill and a nightmare. I learned this the hard way!</p>
+</li>
+</ul>
+<p>Another rule is: </p>
+<h4>Try to make sure you aren't fooling yourself.</h4>
+<p>To really be safe, you must assume that, even if you are currently bug free, <em>your code will fail someday</em>. </p>
+<ul>
+<li>
+<p><strong>You should always assume your code and your logic is wrong in some way.</strong> There is never bug free code. Your code is a program waiting to crash and fail because some fruit company decided to use a different processing chip.</p>
+</li>
+<li>
+<p><strong>Never fool yourself into thinking you are done improving your skills</strong>. There is always more to learn and there always will be.</p>
+</li>
+<li>
+<p><strong>Always assume that someone can show you things you've never seen before</strong>. The main thing you can learn from others is how they think about and solve a problem.</p>
+</li>
+<li>
+<p><strong>Find code written by other people and study it</strong>. I have learned a lot by doing this when I was just actually trying to figure out how something was working. And this is really easy these days, just find the repository for a high quality library you frequently use. </p>
+</li>
+</ul>
+</article>
+
+</div>
+
+</body>
+</html>
