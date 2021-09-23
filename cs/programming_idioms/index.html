@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/material-darker.css">
     <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    <script src="/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <link rel="stylesheet" type="text/css" href="/css/code.css"/>
 	
     
@@ -52,11 +55,10 @@
 <p><strong>Avoid using a single letter variable name</strong>. For example, if you're doing a for loop and the loop is over indices, try "ind" instead of "i" or "j". An exception is something like </p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="c1"># In Python, f is a commonly used variable name for a file opened via a context manager. </span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># Not the best variable name...</span>
-</code></pre></div>
-
+<pre><code class="language-python"># In Python, f is a commonly used variable name for a file opened via a context manager. 
+with open(file) as f:
+    res = f.read()  # Not the best variable name...
+</code></pre>
 <ul>
 <li>
 <p><strong>Don't include the type of a variable in its name</strong> (e.g "angle_int" for an angle between 0 and 360). It will cause confusion in a duck typing language and it's usually unnecessary.</p>

@@ -13,7 +13,7 @@ To run the tests, you need the python packages `numpy`, [`pytest`](https://githu
 
 ## Installation 
 You can install Tikzpy as follows.
-```bash
+```bash 
 $ git clone https://github.com/ltrujello/Tikz-Python
 $ cd Tikz-Python
 $ pip install --use-feature=in-tree-build .

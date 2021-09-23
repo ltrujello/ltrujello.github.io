@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/material-darker.css">
     <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    <script src="/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <link rel="stylesheet" type="text/css" href="/css/code.css"/>
 	
     
@@ -58,31 +61,26 @@ A host is added after the first time you make a brand new connection with that t
 <h2>SSH Key Generation and Management</h2>
 <p><strong>Generating keys</strong>
 To generate a set of ssh_keys, you run the command</p>
-<div class="codehilite"><pre><span></span><code>ssh-keygen -t <span class="o">[</span>key_algorithm<span class="o">]</span> -b <span class="o">[</span>bit_size<span class="o">]</span>
-</code></pre></div>
-
+<pre><code class="language-sh">ssh-keygen -t [key_algorithm] -b [bit_size]
+</code></pre>
 <p>Here <code>-t</code> specifies the algorithm you can use and -b specifies the key bit size. After you run this you'll be asked to give a file name; if none, it enters a default. It will then ask you for a pass phrase.</p>
 <p><strong>Add SSH Keys to the agent</strong>
 To add your SSH keys to your SSH-agent, run</p>
-<div class="codehilite"><pre><span></span><code>ssh-add
-</code></pre></div>
-
+<pre><code class="language-bash">ssh-add
+</code></pre>
 <p>This adds your private and public keys to the ssh-agent, which manages your computer's ssh keys across users. </p>
 <h2>Basic SSH Commands</h2>
 <p><strong>Simple SSH protocol</strong></p>
-<div class="codehilite"><pre><span></span><code>ssh -i <span class="o">[</span>private_key<span class="o">]</span> -p <span class="o">[</span>port<span class="o">]</span> <span class="o">[</span>user<span class="o">]</span>@<span class="o">[</span>ip_address<span class="o">]</span>
-</code></pre></div>
-
+<pre><code class="language-bash">ssh -i [private_key] -p [port] [user]@[ip_address]
+</code></pre>
 <p>You don't need the <code>-i</code> flag if you know the host and have configured the host with an <code>IdentityFile</code> parameter. Otherwise, ssh might try every single key in your .ssh directory, but this then leaks information to the server about what kind of keys you've got (you may not care). With that said, it's good practice to supply the correct key or configure the host.</p>
 <p><strong>Transfer a file from current machine to the host</strong></p>
-<div class="codehilite"><pre><span></span><code>scp -i <span class="o">[</span>private_key<span class="o">]</span> -P <span class="o">[</span>port<span class="o">]</span> <span class="o">[</span>file_paths<span class="o">]</span> <span class="o">[</span>user<span class="o">]</span>@<span class="o">[</span>host_ip_address<span class="o">]</span>:<span class="o">[</span>destination_on_host<span class="o">]</span>
-</code></pre></div>
-
+<pre><code class="language-bash">scp -i [private_key] -P [port] [file_paths] [user]@[host_ip_address]:[destination_on_host]
+</code></pre>
 <p>Here, <code>scp</code> stands for secure copy protocol, but it just uses the SSH protocol. Note something one can easily forget is that <code>scp</code> takes in the port with a capital <code>-P</code> flag, while <code>ssh</code> uses a lower case <code>-p</code>. </p>
 <p><strong>Transfer a file from the server to the current machine</strong></p>
-<div class="codehilite"><pre><span></span><code>ssh-copy-id <span class="o">[</span>public_key<span class="o">]</span> <span class="o">[</span>user<span class="o">]</span>@<span class="o">[</span>host_ip_address<span class="o">]</span>
-</code></pre></div>
-
+<pre><code class="language-bash">ssh-copy-id [public_key] [user]@[host_ip_address]
+</code></pre>
 <p>This command is nothing more than SSH-ing into the host via password and copying the contents of the public key to the host's <code>authorized_keys</code> file. Hence, do not accidentally supply your private key.</p>
 <p>The only reason you would run this is if you've never given the host your public key before. Since the host doesn't have your public key, your only option of authentication is password authentication (if it already has your keys, it will simply do nothing and inform you of that). Therefore, if the host doesn't allow passwords, you'll need to find another way to get your public key on there.  </p>
 </article>

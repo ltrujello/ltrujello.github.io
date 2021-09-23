@@ -10,6 +10,14 @@ margin-bottom: 100px;
 -moz-osx-font-smoothing: grayscale;
 }
 
+/* ::selection{
+  background: #b4d5fe8f;
+}
+
+::-moz-selection{
+  background: #b4d5fe8f;
+} */
+
 .left-banner{
     float:left;
     padding: 0;

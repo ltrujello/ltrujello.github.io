@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/material-darker.css">
     <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    <script src="/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <link rel="stylesheet" type="text/css" href="/css/code.css"/>
 	
     
@@ -33,34 +36,31 @@
 <p>To run the tests, you need the python packages <code>numpy</code>, <a href="https://github.com/pytest-dev/pytest"><code>pytest</code></a> and <a href="https://github.com/pytest-dev/pytest-orderhttps://github.com/pytest-dev/pytest-order"><code>pytest-order</code></a>. These will be installed for you if they are missing.</p>
 <h2>Installation</h2>
 <p>You can install Tikzpy as follows.</p>
-<div class="codehilite"><pre><span></span><code>$ git clone https://github.com/ltrujello/Tikz-Python
-$ <span class="nb">cd</span> Tikz-Python
-$ pip install --use-feature<span class="o">=</span>in-tree-build .
-</code></pre></div>
-
+<pre><code class="language-bash">$ git clone https://github.com/ltrujello/Tikz-Python
+$ cd Tikz-Python
+$ pip install --use-feature=in-tree-build .
+</code></pre>
 <p>Check that everything is working normally by running</p>
-<div class="codehilite"><pre><span></span><code>$ <span class="nb">cd</span> tests
+<pre><code class="language-bash">$ cd tests
 $ pytest
-</code></pre></div>
-
+</code></pre>
 <p>All test cases should pass. Let me know if that is not the case.</p>
 <h2>Troubleshooting</h2>
 <p>If pip tries to tell you <code>no such option: --use-feature</code>, then that means you need to upgrade your pip which you can do via <code>pip install --upgrade pip</code>. If you don't want to upgrade your pip, then simply remove the <code>--use-feature</code> flag, at which point pip may scream a warning to you about in tree builds. </p>
 <p>If pip gives you a truly nonsense error with some keywords like <code>exit status 1</code> or <code>check the logs</code>, running <code>pip install -U setuptools</code> should do the trick.</p>
 <h2>How to Use: Basics</h2>
 <p>An example of this package in action is below. </p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>  <span class="c1"># Import the class TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture  # Import the class TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;thin, fill=orange!15&quot;</span><span class="p">)</span>
+tikz = TikzPicture()
+tikz.circle((0, 0), 3, options=&quot;thin, fill=orange!15&quot;)
 
-<span class="n">arc_one</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">arc</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">x_radius</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y_radius</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
-<span class="n">arc_two</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">arc</span><span class="p">((</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="n">x_radius</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">y_radius</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+arc_one = tikz.arc((3, 0), 0, 180, x_radius=3, y_radius=1.5, options=&quot;dashed&quot;)
+arc_two = tikz.arc((-3, 0), 180, 360, x_radius=3, y_radius=1.5)
 
-<span class="n">tikz</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>  <span class="c1"># Writes the Tikz code into a file</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Displays a pdf of the drawing to the user</span>
-</code></pre></div>
-
+tikz.write()  # Writes the Tikz code into a file
+tikz.show()  # Displays a pdf of the drawing to the user
+</code></pre>
 <p>which produces
 <img src="/cs/tikzpy/imgs/basic.png"/> </p>
 <p>We explain line-by-line the above code.</p>
@@ -82,75 +82,72 @@ $ pytest
 <p>We introduce more examples of <code>tikzpy</code>, starting from very basic to more complicated usages.</p>
 <h3>Example: Line and two nodes</h3>
 <p>Suppose I want to create a line and two labels at the ends. The code below achieves this</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;thick, blue, o-o&quot;</span><span class="p">)</span>
-<span class="n">start_node</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Start!&quot;</span><span class="p">)</span>
-<span class="n">end_node</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;above&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;End!&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+line = tikz.line((0, 0), (1, 1), options=&quot;thick, blue, o-o&quot;)
+start_node = tikz.node(line.start, options=&quot;below&quot;, text=&quot;Start!&quot;)
+end_node = tikz.node(line.end, options=&quot;above&quot;, text=&quot;End!&quot;)
+</code></pre>
 <p>and produces</p>
 <p><img src="/cs/tikzpy/imgs/line_and_two_nodes.png"/> </p>
 <p>Saving the line as a variable <code>line</code> allows us to pass in <code>line.start</code> and <code>line.end</code> into the node positions, so we don't have to type out the exact coordinates. 
 This is because lines, nodes, etc. are class instances with useful attributes: </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">line</span><span class="o">.</span><span class="n">start</span>
-<span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">line</span><span class="o">.</span><span class="n">end</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">start_node</span><span class="o">.</span><span class="n">text</span>
-<span class="s2">&quot;Start!&quot;</span>
-</code></pre></div>
-
+<pre><code class="language-python">&gt;&gt;&gt; line.start
+(0,0)
+&gt;&gt;&gt; line.end
+(1,1)
+&gt;&gt;&gt; start_node.text
+&quot;Start!&quot;
+</code></pre>
 <h3>Example: Circles</h3>
 <p>In this example, we use a for loop to draw a pattern of circles. </p>
 <p>This example 
 demonstates how Pythons <code>for</code> loop is a lot less messier than the <code>\foreach</code> loop provided in Tikz via TeX. (It is also more powerful; for example, Tikz with TeX alone guesses your step size, and hence it cannot effectively <a href="https://tex.stackexchange.com/questions/171426/increments-in-foreach-loop-with-two-variables-tikz">loop over two different sequences at the same time</a>).</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">import numpy as np
+from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+tikz = TikzPicture(center=True)
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">30</span><span class="p">):</span> <span class="c1"># Grab 30 equidistant points in [0, 1]</span>
-    <span class="n">point</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">i</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span>
+for i in np.linspace(0, 1, 30): # Grab 30 equidistant points in [0, 1]
+    point = (np.sin(2 * np.pi * i), np.cos(2 * np.pi * i))
 
-    <span class="c1"># Create four circles of different radii with center located at point</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;ProcessBlue&quot;</span><span class="p">)</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="s2">&quot;ForestGreen&quot;</span><span class="p">)</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>  <span class="c1"># xcolor Red is very ugly</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">point</span><span class="p">,</span> <span class="mf">2.6</span><span class="p">,</span> <span class="s2">&quot;Purple&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+    # Create four circles of different radii with center located at point
+    tikz.circle(point, 2, &quot;ProcessBlue&quot;)
+    tikz.circle(point, 2.2, &quot;ForestGreen&quot;)
+    tikz.circle(point, 2.4, &quot;red&quot;)  # xcolor Red is very ugly
+    tikz.circle(point, 2.6, &quot;Purple&quot;)
+</code></pre>
 <p>The above code then produces</p>
 <p><img src="/cs/tikzpy/imgs/circles.png"/></p>
 <h3>Example: Roots of Unity</h3>
 <p>In this example, we draw the 13 <a href="https://en.wikipedia.org/wiki/Root_of_unity">roots of unity</a>. </p>
 <p>If we wanted to normally do this in TeX, we'd
 probably have to spend 30 minutes reading some manual about how TeX handles basic math. With Python, we can just use the <code>math</code> library and make intuitive computations to quickly build a function that displays the nth roots of unity.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span>
-<span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from math import pi, sin, cos
+from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">13</span> <span class="c1"># Let&#39;s see the 13 roots of unity</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="mi">5</span>
+tikz = TikzPicture()
+n = 13 # Let's see the 13 roots of unity
+scale = 5
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
-    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">scale</span> <span class="o">*</span> <span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
-    <span class="n">content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$e^</span><span class="se">{{</span><span class="s2"> (2 \cdot \pi \cdot </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">)/ </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> </span><span class="se">}}</span><span class="s2">$&quot;</span>
+for i in range(n):
+    theta = (2 * pi * i) / n
+    x, y = scale * cos(theta), scale * sin(theta)
+    content = f&quot;$e^{{ (2 \cdot \pi \cdot {i})/ {n} }}$&quot;
 
-    <span class="c1"># Draw line to nth root of unity</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-o&quot;</span><span class="p">)</span>
+    # Draw line to nth root of unity
+    tikz.line((0, 0), (x, y), options=&quot;-o&quot;)
 
-    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">theta</span> <span class="o">&lt;=</span> <span class="n">pi</span><span class="p">:</span>
-        <span class="n">node_option</span> <span class="o">=</span> <span class="s2">&quot;above&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">node_option</span> <span class="o">=</span> <span class="s2">&quot;below&quot;</span>
+    if 0 &lt;= theta &lt;= pi:
+        node_option = &quot;above&quot;
+    else:
+        node_option = &quot;below&quot;
 
-    <span class="c1"># Label the nth root of unity</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="n">node_option</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
-</code></pre></div>
+    # Label the nth root of unity
+    tikz.node((x, y), options=node_option, text=content)
 
+</code></pre>
 <p>Which generates: </p>
 <p><img src="/cs/tikzpy/imgs/roots_of_unity.png"/></p>
 <p>We will see in the examples that follow how imported Python libraries can alllow us to quickly (and efficiently, this is really important) make more sophisticated Tikz pictures. </p>
@@ -202,11 +199,10 @@ As one might guess, this function is useful for creating topological figures, as
 <p><img src="/cs/tikzpy/imgs/blowup_ex.png"/></p>
 <h1>Class: <code>TikzPicture</code></h1>
 <p>Initialize an object of this class as below</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture(center, options)
+</code></pre>
 <table>
 <thead>
 <tr>
@@ -233,52 +229,48 @@ As one might guess, this function is useful for creating topological figures, as
 <p>Writes the currently recorded Tikz code into the .tex file located in the relative directory <code>tikz_code/tikz_code.tex</code>. If it does not exist, it is automatically created. </p>
 <p><strong>Question:</strong> If I call <code>tikz.write()</code> twice on accident, won't that accidentally add duplicate code? No! That would be annoying. You can continue editing even after you call <code>write</code> so that you may periodically view your Tikz picture while you build it.</p>
 <p>For example, suppose I want to draw a blue circle.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">circle_1</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;fill=Blue, opacity=0.5&quot;</span><span class="p">)</span> <span class="c1"># Draws a blue circle </span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span><span class="o">.</span><span class="n">write</span><span class="p">()</span> <span class="c1"># Write it </span>
-</code></pre></div>
-
+<pre><code class="language-python">&gt;&gt;&gt; tikz = TikzPicture()
+&gt;&gt;&gt; circle_1 = tikz.circle((0,0), 2, options = &quot;fill=Blue, opacity=0.5&quot;) # Draws a blue circle 
+&gt;&gt;&gt; tikz.write() # Write it 
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/tikz_write_ex_1.png"/></p>
 <p>I called <code>.write()</code> which writes the code for a blue circle. In the same instance, I can add <code>circle_2</code>, a red circle, to the picture. I can also update the center of <code>circle_1</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">circle_2</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="mi">2</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;fill=red, opacity=0.5&quot;</span><span class="p">)</span> <span class="c1"># I want another circle...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">circle_1</span><span class="o">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># I want to change my other circle&#39;s center...</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span><span class="o">.</span><span class="n">write</span><span class="p">()</span> <span class="c1"># Write it </span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> <span class="c1"># The resulting tikzcode. We get what we&#39;d expect  </span>
-<span class="o">...</span> \<span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}[]</span><span class="o">%</span> <span class="n">TikzPython</span> <span class="nb">id</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
-    \<span class="n">draw</span><span class="p">[</span><span class="n">fill</span><span class="o">=</span><span class="n">Blue</span><span class="p">]</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="n">circle</span> <span class="p">(</span><span class="mi">2</span><span class="n">cm</span><span class="p">);</span>
-    \<span class="n">draw</span><span class="p">[</span><span class="n">fill</span><span class="o">=</span><span class="n">Red</span><span class="p">]</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">circle</span> <span class="p">(</span><span class="mi">2</span><span class="n">cm</span><span class="p">);</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span>
-</code></pre></div>
-
+<pre><code class="language-python">&gt;&gt;&gt; circle_2 = tikz.circle((1,1), 2, options = &quot;fill=red, opacity=0.5&quot;) # I want another circle...
+&gt;&gt;&gt; circle_1.center = (2,2) # I want to change my other circle's center...
+&gt;&gt;&gt; tikz.write() # Write it 
+&gt;&gt;&gt; tikz # The resulting tikzcode. We get what we'd expect  
+... \begin{tikzpicture}[]% TikzPython id = (1) 
+    \draw[fill=Blue] (2, 2) circle (2cm);
+    \draw[fill=Red] (1, 1) circle (2cm);
+\end{tikzpicture}
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/tikz_write_ex_2.png"/></p>
 <p>This feature, in combination with <code>.remove()</code> and <code>.show()</code> (see below), allows you to gradually build and view a TikzPicture quite painlessly.</p>
 <h3><code>TikzPicture.remove(draw_obj)</code></h3>
 <p>Removes a drawing object, such as a line, from a TikzPicture. Here, we draw an arc and a line. Then, we remove the line.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">line</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;Blue&quot;</span><span class="p">)</span> <span class="c1"># Draws a line </span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">arc</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">arc</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># Draws an arc</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> 
-<span class="o">...</span> \<span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}[]</span><span class="o">%</span> <span class="n">TikzPython</span> <span class="nb">id</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    \<span class="n">draw</span><span class="p">[</span><span class="n">Blue</span><span class="p">]</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">--</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1"># The line</span>
-    \<span class="n">draw</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">arc</span> <span class="p">(</span><span class="mi">45</span><span class="p">:</span><span class="mi">90</span><span class="p">:</span><span class="mi">3</span><span class="n">cm</span><span class="p">);</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="c1"># The line is removed</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> 
-<span class="o">...</span> \<span class="n">begin</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}[]</span><span class="o">%</span> <span class="n">TikzPython</span> <span class="nb">id</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
-    \<span class="n">draw</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">arc</span> <span class="p">(</span><span class="mi">45</span><span class="p">:</span><span class="mi">90</span><span class="p">:</span><span class="mi">3</span><span class="n">cm</span><span class="p">);</span>
-\<span class="n">end</span><span class="p">{</span><span class="n">tikzpicture</span><span class="p">}</span>
-</code></pre></div>
-
+<pre><code class="language-python">&gt;&gt;&gt; tikz = TikzPicture()
+&gt;&gt;&gt; line = tikz.line((0,0), (1,1), options = &quot;Blue&quot;) # Draws a line 
+&gt;&gt;&gt; arc = tikz.arc((0,0), 45, 90, 3) # Draws an arc
+&gt;&gt;&gt; tikz 
+... \begin{tikzpicture}[]% TikzPython id = (1)
+    \draw[Blue] (0, 0) -- (1,1); # The line
+    \draw (0, 0) arc (45:90:3cm);
+\end{tikzpicture}
+&gt;&gt;&gt; tikz.remove(line) # The line is removed
+&gt;&gt;&gt; tikz 
+... \begin{tikzpicture}[]% TikzPython id = (1) 
+    \draw (0, 0) arc (45:90:3cm);
+\end{tikzpicture}
+</code></pre>
 <h3><code>TikzPicture.draw(draw_obj)</code></h3>
 <p>Draws a drawing object, such as a line, onto the TikzPicture. Sometimes, we want to construct a drawing object before we want to draw it onto the tikzpicture. </p>
-<div class="codehilite"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span><span class="p">,</span> <span class="n">Line</span><span class="p">,</span> <span class="n">Circle</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">to_options</span> <span class="o">=</span> <span class="s2">&quot;to[bend right = 30]&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">end_c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">start</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">start_c</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">end</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end_c</span><span class="p">,</span> <span class="n">start_c</span><span class="p">)</span> <span class="c1"># The line and circles are now drawn</span>
-</code></pre></div>
-
+<pre><code class="language-python">&gt;&gt;&gt; from tikzpy import TikzPicture, Line, Circle
+&gt;&gt;&gt; line = Line((0,0) (1,0), to_options = &quot;to[bend right = 30]&quot;)
+&gt;&gt;&gt; end_c = Circle(line.start, radius = 0.2)
+&gt;&gt;&gt; start_c = Circle(line.end, radius = 0.2)
+&gt;&gt;&gt; tikz = TikzPicture()
+&gt;&gt;&gt; tikz.draw(line, end_c, start_c) # The line and circles are now drawn
+</code></pre>
 <p>Here we use <code>Line</code> and <code>Circle</code> classes to construct a line and circle. These objects have no relation to our image until we draw them with <code>tikz.draw</code>.</p>
 <h3><code>TikzPicture.show()</code></h3>
 <p>Compiles the tikz code and pulls up a PDF of the current drawing to the user in your browser (may default to your PDF viewer). Of course, execute <code>TikzPicture.write()</code> prior in order to view your latest changes. </p>
@@ -296,41 +288,37 @@ As one might guess, this function is useful for creating topological figures, as
 <p>There is also a global function <code>tikzpy.rgb(r, g, b)</code> which can be called to color a Tikz object by RGB values. For example, </p>
 </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
-<span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">rgb</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
+from tikzpy import rgb
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">line</span> <span class="o">=</span>  <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;color=&quot;</span> <span class="o">+</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">253</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">rectangle</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">)),</span> <span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;fill=&quot;</span> <span class="o">+</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">120</span><span class="p">))</span>
-</code></pre></div>
-
+&gt;&gt;&gt; tikz = TikzPicture()
+&gt;&gt;&gt; line =  tikz.line((1,2), (4,3), options = &quot;color=&quot; + rgb(253, 0, 0))
+&gt;&gt;&gt; rectangle = tikz.rectangle( (0,0), (5,5)), options = &quot;fill=&quot; + rgb(120, 0, 120))
+</code></pre>
 <ul>
 <li>A wrapper function <code>rainbow_colors</code> uses the <code>rgb</code> to provide rainbow colors. The function takes in any integer, and grabs a rainbow color, computing a modulo operation if necessary  (hence, any integer is valid). </li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
-<span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">rainbow_colors</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
+from tikzpy import rainbow_colors
 
-<span class="o">&gt;&gt;&gt;</span> <span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
-        <span class="n">circle</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="n">i</span><span class="o">/</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">20</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
-        <span class="n">circle</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;opacity = 0.7, fill = &quot;</span> <span class="o">+</span> <span class="n">rainbow_colors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div>
-
+&gt;&gt;&gt; tikz = TikzPicture()
+&gt;&gt;&gt; for i in range(0, 20):
+        circle = tikz.circle((i/20, 3 - i**2/20), 3)
+        circle.options = &quot;opacity = 0.7, fill = &quot; + rainbow_colors(i)
+</code></pre>
 <h1>Class: <code>Line</code></h1>
 <p>There are two ways to initalize a line object. We've already seen this way:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">to_options</span><span class="p">,</span> <span class="n">control_pts</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="c1"># A line is created and drawn</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+line = tikz.line(start, end, options, to_options, control_pts, action) # A line is created and drawn
+</code></pre>
 <p>This is a "quick draw": we simultaneously create a line instance <em>and</em> draw it. 
 But we can also initailize a line in its own right:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Line</span>
+<pre><code class="language-python">from tikzpy import Line
 
-<span class="n">line</span> <span class="o">=</span> <span class="n">Line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">to_options</span><span class="p">,</span> <span class="n">control_pts</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span> <span class="c1"># We create a line</span>
-</code></pre></div>
-
+line = Line(start, end, options, to_options, control_pts, action) # We create a line
+</code></pre>
 <p>We can add this line in later to see it whenever we like via <code>tikz.draw(line)</code>. </p>
 <p>Note: A natural question is: Why the two ways? This is because sometimes we want to obtain information from a drawing object to perform some calculations <em>before</em> we decide to actually draw it. One familiar with Tikz will realize that this is analagous to the <code>\path</code> command in Tikz, which is often very useful. </p>
 <table>
@@ -376,29 +364,27 @@ But we can also initailize a line in its own right:</p>
 </table>
 <h2>Examples</h2>
 <p>We've already seen an example of this class. Here's another.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">control_pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+tikz.line((0, 0), (4, 0), options=&quot;-&gt;&quot;, control_pts=[(1, 1), (3, -1)])
+</code></pre>
 <p>produces the line </p>
 <p><img src="/cs/tikzpy/imgs/line_ex_1.png"/> </p>
 <h2>Methods</h2>
 <h3><code>Line.shift(xshift, yshift)</code></h3>
 <p>Shifts the current line by amount <code>xshift</code> in the x-direction and <code>yshift</code> in the y-direction. For example, we can shift in a for loop as below</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span><span class="p">,</span> <span class="n">Line</span>
+<pre><code class="language-python">from tikzpy import TikzPicture, Line
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">(</span><span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+tikz = TikzPicture(center=True)
 
-<span class="n">line_template</span> <span class="o">=</span> <span class="n">Line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">control_pts</span><span class="o">=</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">line_template</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># Make a copy </span>
-    <span class="n">line</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="c1"># Shift the copy</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;color=</span><span class="si">{</span><span class="n">rainbow_colors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">, o-&gt;&quot;</span> <span class="c1">#Specify options</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</code></pre></div>
-
+line_template = Line((0, 0), (4, 0), control_pts=[(1, 1), (3, -1)])
+for i in range(0, 10):
+    line = line_template.copy() # Make a copy 
+    line.shift(0, (5 - i) / 4) # Shift the copy
+    line.options = f&quot;color={rainbow_colors(i)}, o-&gt;&quot; #Specify options
+    tikz.draw(line)
+</code></pre>
 <p>which produces the set of lines </p>
 <p><img src="/cs/tikzpy/imgs/line_ex_2.png"/></p>
 <h3><code>Line.scale(scale)</code></h3>
@@ -408,18 +394,16 @@ But we can also initailize a line in its own right:</p>
 <p>Here's an example of both <code>.scale</code> and <code>rotate</code> being used.</p>
 <h1>Class: <code>PlotCoordinates</code></h1>
 <p>Initialize an object of the class as below:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">plot</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">plot_coordinates</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">plot_options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+plot = tikz.plot_coordinates(points, options, plot_options, action)
+</code></pre>
 <p>which simultaneously creates and draws a <code>PlotCoordinates</code> object. Or more simply, we can create an instance as:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">PlotCoordinates</span>
+<pre><code class="language-python">from tikzpy import PlotCoordinates
 
-<span class="n">plot</span> <span class="o">=</span> <span class="n">PlotCoordinates</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">plot_options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+plot = PlotCoordinates(points, options, plot_options, action)
+</code></pre>
 <p>which we can add to our picture later via <code>tikz.draw(plot)</code>.</p>
 <table>
 <thead>
@@ -455,72 +439,66 @@ But we can also initailize a line in its own right:</p>
 <p>This class is analagous to the Tikz command <code>\draw plot coordinates{...};</code>.</p>
 <h2>Examples</h2>
 <p>Introducing examples of <code>PlotCoordinates</code> gives us an opportunity to illustrate the optional parameter <code>action</code>. By default, <code>action</code> is <code>"draw"</code> (analogous to <code>\draw</code> in Tikz) so the code below</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="n">plot</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">plot_coordinates</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="c1"># action=&quot;draw&quot; by default</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">plot_options</span> <span class="o">=</span> <span class="s2">&quot;smooth cycle, tension = 0.5&quot;</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+points = [(2, 2), (4, 0), (1, -3), (-2, -1), (-1, 3)]
+plot = tikz.plot_coordinates(points) # action=&quot;draw&quot; by default
+plot.plot_options = &quot;smooth cycle, tension = 0.5&quot;
+</code></pre>
 <p>produces the image </p>
 <p><img src="/cs/tikzpy/imgs/plotcoordinates_ex_1.png"/></p>
 <p>Alternatively we can set <code>action = "fill"</code> (analogous to <code>\fill</code> in Tikz) as in the code below</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="n">plot</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">plot_coordinates</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;fill&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">plot_options</span> <span class="o">=</span> <span class="s2">&quot;smooth cycle, tension = 0.5&quot;</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+points = [(2, 2), (4, 0), (1, -3), (-2, -1), (-1, 3)]
+plot = tikz.plot_coordinates(points, options=&quot;Blue&quot;, action=&quot;fill&quot;)
+plot.plot_options = &quot;smooth cycle, tension = 0.5&quot;
+</code></pre>
 <p>to produce the image</p>
 <p><img src="/cs/tikzpy/imgs/plotcoordinates_ex_2.png"/></p>
 <p>If we want both, we can set <code>action = "filldraw"</code> (analogous to <code>\filldraw</code> in Tikz)</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
-<span class="n">plot</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">plot_coordinates</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;filldraw&quot;</span><span class="p">)</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="s2">&quot;fill=ProcessBlue!50&quot;</span>
-<span class="n">plot</span><span class="o">.</span><span class="n">plot_options</span> <span class="o">=</span> <span class="s2">&quot;smooth cycle, tension = 0.5&quot;</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+points = [(2, 2), (4, 0), (1, -3), (-2, -1), (-1, 3)]
+plot = tikz.plot_coordinates(points, options=&quot;Blue&quot;, action=&quot;filldraw&quot;)
+plot.options = &quot;fill=ProcessBlue!50&quot;
+plot.plot_options = &quot;smooth cycle, tension = 0.5&quot;
+</code></pre>
 <p>which produces. 
 <img src="/cs/tikzpy/imgs/plotcoordinates_ex_3.png"/></p>
 <p>Finally, we can set <code>action = "path"</code> (analogous to <code>\path</code> in Tikz), but as one would expect this doesn't draw anything. </p>
 <h2>Methods</h2>
 <p><code>PlotCoordinates</code> has methods <code>.shift()</code>, <code>.scale</code>, and <code>.rotate</code>, similar to the class <code>Line</code>, and the parameters behave similarly. These methods are more interestingly used on <code>PlotCoordinates</code> than on <code>Line</code>. For example, the code</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">points</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">14.4</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">),</span> <span class="p">(</span><span class="mf">16.0</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">),</span> <span class="p">(</span><span class="mf">16.8</span><span class="p">,</span> <span class="mf">4.8</span><span class="p">),</span> <span class="p">(</span><span class="mf">16.0</span><span class="p">,</span> <span class="mf">6.8</span><span class="p">),</span> <span class="p">(</span><span class="mf">16.4</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">),</span> <span class="p">(</span><span class="mf">13.6</span><span class="p">,</span> <span class="mf">8.8</span><span class="p">),</span> <span class="p">(</span><span class="mf">12.4</span><span class="p">,</span> <span class="mf">7.6</span><span class="p">),</span> <span class="p">(</span><span class="mf">12.8</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">),</span> <span class="p">(</span><span class="mf">12.4</span><span class="p">,</span> <span class="mf">3.6</span><span class="p">)]</span>
+tikz = TikzPicture()
+points = [(14.4, 3.2), (16.0, 3.6), (16.8, 4.8), (16.0, 6.8), (16.4, 8.8), (13.6, 8.8), (12.4, 7.6), (12.8, 5.6), (12.4, 3.6)]
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
-    <span class="n">options</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;fill = </span><span class="si">{</span><span class="n">rainbow_colors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">, opacity = 0.7&quot;</span>
-    <span class="c1"># Requires \usetikzlibrary{hobby} here</span>
-    <span class="n">plot_options</span> <span class="o">=</span> <span class="s2">&quot;smooth, tension=.5, closed hobby&quot;</span>
-    <span class="n">plot</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">plot_coordinates</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">plot_options</span><span class="p">)</span>
-    <span class="n">plot</span><span class="o">.</span><span class="n">scale</span><span class="p">((</span><span class="mi">20</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># Shrink it </span>
-    <span class="n">plot</span><span class="o">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">15</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="c1"># Rotate it</span>
-</code></pre></div>
-
+for i in range(0, 20):
+    options = f&quot;fill = {rainbow_colors(i)}, opacity = 0.7&quot;
+    # Requires \usetikzlibrary{hobby} here
+    plot_options = &quot;smooth, tension=.5, closed hobby&quot;
+    plot = tikz.plot_coordinates(points, options, plot_options)
+    plot.scale((20 - i) / 20) # Shrink it 
+    plot.rotate(15 * i) # Rotate it
+</code></pre>
 <p>generates the image</p>
 <p><img src="/cs/tikzpy/imgs/PlotCoords_rotate_Example.png"/></p>
 <h1>Class: <code>Circle</code></h1>
 <p>Initialize an object of the class as below:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">circle</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+circle = tikz.circle(center, radius, options, action)
+</code></pre>
 <p>which creates a <code>Circle</code> object and draws it. Alternatively, we can initalize more simply as </p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Circle</span>
+<pre><code class="language-python">from tikzpy import Circle
 
-<span class="n">circle</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+circle = Circle(center, radius, options, action)
+</code></pre>
 <p>and later draw this via <code>tikz.draw(circle)</code>.</p>
 <table>
 <thead>
@@ -555,45 +533,41 @@ But we can also initailize a line in its own right:</p>
 </table>
 <h2>Examples</h2>
 <p>Here we create several circles, making use of the <code>action</code> parameter. </p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">1.25</span><span class="p">)</span> <span class="c1">#action=&quot;draw&quot; by default</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;thick, fill=red!60&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;filldraw&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">1.25</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Green!50&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;fill&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+tikz.circle((0, 0), 1.25) #action=&quot;draw&quot; by default
+tikz.line((0, 0), (0, 1.25), options=&quot;dashed&quot;)
+tikz.circle((3, 0), 1, options=&quot;thick, fill=red!60&quot;, action=&quot;filldraw&quot;)
+tikz.circle((6, 0), 1.25, options=&quot;Green!50&quot;, action=&quot;fill&quot;)
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/circle_ex_1.png"/></p>
 <p>We can also use circles to create the <a href="https://en.wikipedia.org/wiki/Hawaiian_earring">Hawaiian Earing</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
+tikz = TikzPicture()
 
-<span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">/</span> <span class="n">i</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">circle</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span>
-</code></pre></div>
-
+radius = 5
+for i in range(1, 60):
+    n = radius / i
+    tikz.circle((n, 0), n)
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/circle_ex_2.png"/></p>
 <h2>Methods</h2>
 <p><code>Circle</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, which behave as one would expect and takes in parameters as described before.</p>
 <h1>Class: <code>Node</code></h1>
 <p>Initialize an object of the class as below:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">node</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+node = tikz.node(position, options, text)
+</code></pre>
 <p>which creates a <code>Node</code> object and draws it. We can also intiailize a 
 node object directly with</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Node</span>
+<pre><code class="language-python">from tikzpy import Node
 
-<span class="n">node</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-</code></pre></div>
-
+node = Node(position, options, text)
+</code></pre>
 <p>We can then add the node later via <code>tikz.draw(node)</code>.</p>
 <table>
 <thead>
@@ -623,62 +597,58 @@ node object directly with</p>
 </table>
 <h2>Examples</h2>
 <p>Here we use some nodes to label a figure explaining the logarithm branch cut</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="c1"># x,y axes</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Gray!40, -&gt;&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Gray!40, -&gt;&quot;</span><span class="p">)</span>
-<span class="c1"># Cut</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;thick&quot;</span><span class="p">)</span>
-<span class="c1"># Line out</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.414</span><span class="p">,</span> <span class="mf">1.414</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-o&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">arc</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
+tikz = TikzPicture()
+# x,y axes
+tikz.line((-4, 0), (4, 0), options=&quot;Gray!40, -&gt;&quot;)
+tikz.line((0, -4), (0, 4), options=&quot;Gray!40, -&gt;&quot;)
+# Cut
+tikz.line((-4, 0), (0, 0), options=&quot;thick&quot;)
+# Line out
+tikz.line((0, 0), (1.414, 1.414), options=&quot;-o&quot;)
+tikz.arc((1, 0), 0, 45, radius=1, options=&quot;dashed&quot;)
 
-<span class="c1"># Labels</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mf">3.6</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$x$&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="o">-</span><span class="mf">0.24</span><span class="p">,</span> <span class="mf">3.53</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$iy$&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$</span><span class="se">\\</span><span class="s2">theta$&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mf">2.1</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$z = re^{i</span><span class="se">\\</span><span class="s2">theta}$&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Cut&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+# Labels
+tikz.node((3.6, -0.2), text=&quot;$x$&quot;)
+tikz.node((-0.24, 3.53), text=&quot;$iy$&quot;)
+tikz.node((1.3, 0.4), text=&quot;$\\theta$&quot;)
+tikz.node((2.1, 1.7), text=&quot;$z = re^{i\\theta}$&quot;)
+tikz.node((-2, 0.3), text=&quot;Cut&quot;)
+</code></pre>
 <p>which produces
 <img src="/cs/tikzpy/imgs/node_ex_1.png"/></p>
 <p>Here's another example of usings nodes to illustrate the concept of a multivariable function.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">row_1</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
+row_1 = TikzPicture()
 
-<span class="c1"># Lines and rectangles</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">)</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-&gt;&quot;</span><span class="p">)</span>
-<span class="c1"># Labels</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="o">-</span><span class="mf">1.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$(x_1, \dots, x_n)$&quot;</span><span class="p">)</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;input&quot;</span><span class="p">)</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$f$&quot;</span><span class="p">)</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;output&quot;</span><span class="p">)</span>
-<span class="n">row_1</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="mf">7.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;$f(x_1, \dots, x_n)$&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+# Lines and rectangles
+row_1.line((0, 0), (2, 0), options=&quot;-&gt;&quot;)
+row_1.rectangle((2, -0.5), (4, 0.5))
+row_1.line((4, 0), (6, 0), options=&quot;-&gt;&quot;)
+# Labels
+row_1.node((-1.2, 0), text=&quot;$(x_1, \dots, x_n)$&quot;)
+row_1.node((1, 0.3), text=&quot;input&quot;)
+row_1.node((3, 0), text=&quot;$f$&quot;)
+row_1.node((5, 0.3), text=&quot;output&quot;)
+row_1.node((7.3, 0), text=&quot;$f(x_1, \dots, x_n)$&quot;)
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/node_ex_2.png"/></p>
 <h2>Methods</h2>
 <p><code>Node</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, which behave as one would expect and takes in parameters as described before.</p>
 <h1>Class: <code>Rectangle</code></h1>
 <p>Initialize an object of the class as below:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">rectangle</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">left_corner</span><span class="p">,</span> <span class="n">right_corner</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+rectangle = tikz.rectangle(left_corner, right_corner, options, action)
+</code></pre>
 <p>which creates a <code>Rectangle</code> object and draws it. We can also write</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+<pre><code class="language-python">from tikzpy import Rectangle
 
-<span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">left_corner</span><span class="p">,</span> <span class="n">right_corner</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+rectangle = Rectangle(left_corner, right_corner, options, action)
+</code></pre>
 <p>to create an instance, and later draw via <code>tikz.draw(Rectangle)</code>.</p>
 <table>
 <thead>
@@ -714,47 +684,44 @@ node object directly with</p>
 <h2>Example</h2>
 <p>Rectangles are often used as a background to many figures; in this case, 
 we create a fancy colored background.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
+tikz = TikzPicture()
 
-<span class="n">tikz</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="o">-</span><span class="mf">3.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;rounded corners, Yellow!30&quot;</span><span class="p">,</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;filldraw&quot;</span><span class="p">)</span>
-<span class="c1"># Params</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">n_nodes</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># Draw the nodes</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_nodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">angle</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">n_nodes</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
-    <span class="n">node</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;$A_</span><span class="se">{{</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="se">}}</span><span class="s2">$&quot;</span><span class="p">)</span>
-    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+tikz.rectangle((-3.5, -2.5), (4.5, 2.5), options=&quot;rounded corners, Yellow!30&quot;,action=&quot;filldraw&quot;)
+# Params
+r = 2
+n_nodes = 7
+nodes = []
+# Draw the nodes
+for i in range(1, n_nodes + 1):
+    angle = 2 * math.pi * i / n_nodes 
+    x = r * math.cos(angle)
+    y = r * math.sin(angle)
+    node = tikz.node((x, y), text=f&quot;$A_{{{i}}}$&quot;)
+    nodes.append(node)
 
-<span class="c1"># Draw the lines between the nodes</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)):</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span>
-    <span class="n">end</span> <span class="o">=</span> <span class="n">nodes</span><span class="p">[(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">nodes</span><span class="p">)]</span><span class="o">.</span><span class="n">position</span>
-    <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;-&gt;, shorten &gt;= 10pt, shorten &lt;=10pt&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+# Draw the lines between the nodes
+for i in range(len(nodes)):
+    start = nodes[i].position
+    end = nodes[(i + 1) % len(nodes)].position
+    tikz.line(start, end, options=&quot;-&gt;, shorten &gt;= 10pt, shorten &lt;=10pt&quot;)
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/rectangle_ex_1.png"/></p>
 <h2>Methods</h2>
 <p><code>Rectangle</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, which behave as one would expect and takes in parameters as described before.</p>
 <h1>Class: <code>Ellipse</code></h1>
 <p>Initialize an object of the class as below:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">ellipse</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+ellipse = tikz.ellipse(center, x_axis, y_axis, options, action)
+</code></pre>
 <p>which creates an <code>Ellipse</code> object and draws it. We can also write</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Ellipse</span>
+<pre><code class="language-python">from tikzpy import Ellipse
 
-<span class="n">ellipse</span> <span class="o">=</span> <span class="n">Ellipse</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">x_axis</span><span class="p">,</span> <span class="n">y_axis</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+ellipse = Ellipse(center, x_axis, y_axis, options, action)
+</code></pre>
 <p>and draw this later to the Tikz picture via <code>tikz.draw(ellipse)</code>.</p>
 <table>
 <thead>
@@ -789,42 +756,39 @@ we create a fancy colored background.</p>
 </table>
 <h2>Example</h2>
 <p>Here we draw and ellipse and define the major and minors axes.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
+tikz = TikzPicture()
 
-<span class="c1"># x,y axes</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Gray!40, -&gt;&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;Gray!40, -&gt;&quot;</span><span class="p">)</span>
-<span class="c1"># Ellipse</span>
-<span class="n">ellipse</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span>
-    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;fill=ProcessBlue!70, opacity=0.4&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;filldraw&quot;</span>
-<span class="p">)</span>
-<span class="c1"># Labels</span>
-<span class="n">h_line</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="n">ellipse</span><span class="o">.</span><span class="n">x_axis</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;thick, dashed, -&gt;&quot;</span><span class="p">)</span>
-<span class="n">v_line</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">line</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ellipse</span><span class="o">.</span><span class="n">y_axis</span><span class="p">),</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;thick, dashed, -&gt;&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">h_line</span><span class="o">.</span><span class="n">midpoint</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;below&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Major&quot;</span><span class="p">)</span>
-<span class="n">tikz</span><span class="o">.</span><span class="n">node</span><span class="p">(</span><span class="n">v_line</span><span class="o">.</span><span class="n">midpoint</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Minor&quot;</span><span class="p">)</span>
-</code></pre></div>
-
+# x,y axes
+tikz.line((-5, 0), (5, 0), options=&quot;Gray!40, -&gt;&quot;)
+tikz.line((0, -5), (0, 5), options=&quot;Gray!40, -&gt;&quot;)
+# Ellipse
+ellipse = tikz.ellipse(
+    (0, 0), 4, 3, options=&quot;fill=ProcessBlue!70, opacity=0.4&quot;, action=&quot;filldraw&quot;
+)
+# Labels
+h_line = tikz.line((0, 0), (ellipse.x_axis, 0), options=&quot;thick, dashed, -&gt;&quot;)
+v_line = tikz.line((0, 0), (0, ellipse.y_axis), options=&quot;thick, dashed, -&gt;&quot;)
+tikz.node(h_line.midpoint, options=&quot;below&quot;, text=&quot;Major&quot;)
+tikz.node(v_line.midpoint, options=&quot;left&quot;, text=&quot;Minor&quot;)
+</code></pre>
 <p><img src="/cs/tikzpy/imgs/ellipse_ex_1.png" height = 250/></p>
 <h2>Methods</h2>
 <p><code>Ellipse</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, which behave as one would expect and takes in parameters as described before.</p>
 <h1>Class: <code>Arc</code></h1>
 <p>Initialize an object of the class as below:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">arc</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">,</span> <span class="n">end_angle</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">radians</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+arc = tikz.arc(center, start_angle, end_angle, radius, options, radians, action)
+</code></pre>
 <p>which creates an <code>Arc</code> object and draws it. Again, we can 
 also initalize an instance with</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Arc</span>
+<pre><code class="language-python">from tikzpy import Arc
 
-<span class="n">arc</span> <span class="o">=</span> <span class="n">Arc</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">start_angle</span><span class="p">,</span> <span class="n">end_angle</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">radians</span><span class="p">,</span> <span class="n">action</span><span class="p">)</span>
-</code></pre></div>
-
+arc = Arc(center, start_angle, end_angle, radius, options, radians, action)
+</code></pre>
 <p>which we can draw later via <code>tikz.draw(arc)</code>.</p>
 <table>
 <thead>
@@ -900,16 +864,16 @@ also initalize an instance with</p>
 <p>With Tikz-Python, <code>start_angle</code> and <code>end_angle</code> will always coincide with the starting and end angles, so the user will not get weird unexpected behavior. Additionally, the user can specify the arc position via its center by setting <code>draw_from_start=False</code>, but they can also fall back on the default behavior.</p>
 <h2>Example</h2>
 <p>Here we draw and fill a sequence of arcs. We also demonstrate <code>draw_from_start</code> set to <code>True</code> and <code>False</code>. In the code below, it is by default set to <code>True</code>.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
-<span class="kn">from</span> <span class="nn">tikzpy.utils</span> <span class="kn">import</span> <span class="n">rainbow_colors</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
+from tikzpy.utils import rainbow_colors
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
+tikz = TikzPicture()
 
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">/</span> <span class="n">i</span>
-    <span class="n">arc</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">arc</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="n">t</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;fill=</span><span class="si">{</span><span class="n">rainbow_colors</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
+for i in range(1, 10):
+    t = 4 / i
+    arc = tikz.arc((0, 0), 0, 180, radius=t, options=f&quot;fill={rainbow_colors(i)}&quot;)
 
+</code></pre>
 <p>This generates the image</p>
 <p><img src="/cs/tikzpy/imgs/arc_ex_1.png"/></p>
 <p>If instead we would like these arcs sharing the same center, we can use the same code, but pass in <code>draw_from_start=False</code> to achieve </p>
@@ -919,18 +883,16 @@ also initalize an instance with</p>
 <p><code>Arc</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, which behave as one would expect and takes in parameters as described before.</p>
 <h1><code>Class: Scope</code></h1>
 <p>Initialize a Tikz scope environment as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">scope</span> <span class="o">=</span> <span class="n">Scope</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+scope = Scope(options)
+</code></pre>
 <p>Or more directly as </p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Scope</span>
+<pre><code class="language-python">from tikzpy import Scope
 
-<span class="n">scope</span> <span class="o">=</span> <span class="n">Scope</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</code></pre></div>
-
+scope = Scope(options)
+</code></pre>
 <p>As one may guess, <code>options</code> is any string of valid Tikz scoping options (i.e., options which become applied to the elements within the scoping evnironment). </p>
 <h3><code>Scope.append(draw_obj)</code></h3>
 <p>Appends any drawing object <code>draw_obj</code> to the scope environment. If one updates an attribute of a drawing object even after it has been appended, the updates are reflected in scope. </p>
@@ -942,19 +904,17 @@ also initalize an instance with</p>
 <h1><code>Class: Clip</code></h1>
 <p>A class to clip a single drawing object <code>draw_obj</code>.
 One can initialize an instance of this class via an instance of <code>Scope</code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">TikzPicture</span>
+<pre><code class="language-python">from tikzpy import TikzPicture
 
-<span class="n">tikz</span> <span class="o">=</span> <span class="n">TikzPicture</span><span class="p">()</span>
-<span class="n">scope</span> <span class="o">=</span> <span class="n">tikz</span><span class="o">.</span><span class="n">scope</span><span class="p">()</span>
-<span class="n">clip</span> <span class="o">=</span> <span class="n">scope</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">draw_obj</span><span class="p">,</span> <span class="n">draw</span><span class="p">)</span>
-</code></pre></div>
-
+tikz = TikzPicture()
+scope = tikz.scope()
+clip = scope.clip(draw_obj, draw)
+</code></pre>
 <p>or more directly as </p>
-<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">tikzpy</span> <span class="kn">import</span> <span class="n">Clip</span>
+<pre><code class="language-python">from tikzpy import Clip
 
-<span class="n">clip</span> <span class="o">=</span> <span class="n">Clip</span><span class="p">(</span><span class="n">draw_obj</span><span class="p">,</span> <span class="n">draw</span><span class="p">)</span><span class="o">.</span>
-</code></pre></div>
-
+clip = Clip(draw_obj, draw).
+</code></pre>
 <p>As before, <code>draw</code> is a boolean set to <code>False</code> by default. It specifies whether or not to show the drawing object which is being clipped.</p>
 <p>The class <code>Clip</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, 
 although this is more for consistency (e.g., in case a <code>Scope</code> environment changes) and less for direct use of the user. </p>

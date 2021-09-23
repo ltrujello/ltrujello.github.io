@@ -10,10 +10,11 @@ import sys
 import json
 import datetime
 import markdown
+print(markdown.__file__)
 from pathlib import Path
 
 def html_to_md(content):
-    return markdown.markdown(content, extensions=["fenced_code", "tables", "codehilite"])
+    return markdown.markdown(content, extensions=["fenced_code", "tables"])
 
 def fread(filename):
     """Read file and close the file."""
@@ -131,7 +132,6 @@ def make_pages(src_pattern, dst_parent, layout, **params):
     dst_parent = Path(f"{dst_parent}")
 
     for src_path in Path(".").glob(src_pattern):
-        print(src_path)
         if src_path.is_file():
             content = read_content(str(src_path))
         elif src_path.is_dir():
@@ -195,10 +195,8 @@ def make_list(posts, dst, list_layout, item_layout, **params):
     items = []
     for post in posts:
         item_params = dict(params, **post)
-        print(post.keys())
         item_params['summary'] = truncate(post['content'])
         item_params['image'] = preview_img_tag(post.get('preview_img'))
-        print(post['post_type'])
         item = render(item_layout, **item_params)
         items.append(item)
 

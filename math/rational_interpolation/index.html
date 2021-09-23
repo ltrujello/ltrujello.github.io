@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/material-darker.css">
     <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    <script src="/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
     <link rel="stylesheet" type="text/css" href="/css/code.css"/>
 	
     
@@ -74,177 +77,171 @@ Note that we can't plug in $x_i$, but that's okay because we already know the va
 <h2>Code</h2>
 <p>To begin, we first need some imports. Unlike a lot of code tutorials that randomly import modules in the middle of program bodies (which is bad), we're going to import things once and for all right here.
 Note that we don't really need much for this.</p>
-<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">numpy.linalg</span> <span class="kn">import</span> <span class="n">matrix_rank</span>
-<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">null_space</span>
-</code></pre></div>
-
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from numpy.linalg import matrix_rank
+from scipy.linalg import null_space
+</code></pre>
 <p>We first need a simple function to partition our data. Cosmin-Ionita recommends alternate paritioning for best numerical results, so we do that here.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">alternating_partition</span><span class="p">(</span><span class="n">xy_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">],</span> <span class="n">left_arr_size</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Creates a disjoint partition of the xy_data, one parition being of size left_arr_size.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">lambda_data</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Left array x_data</span>
-    <span class="n">w_data</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># Left array y_data</span>
-    <span class="n">mu_data</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">v_data</span> <span class="o">=</span> <span class="p">[]</span>
+<pre><code class="language-python">def alternating_partition(xy_data: list[tuple], left_arr_size: int=None) -&gt; tuple:
+    &quot;&quot;&quot;Creates a disjoint partition of the xy_data, one parition being of size left_arr_size.
+    &quot;&quot;&quot;
+    lambda_data = [] # Left array x_data
+    w_data = [] # Left array y_data
+    mu_data = []
+    v_data = []
 
-    <span class="k">if</span> <span class="n">left_arr_size</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">left_arr_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xy_data</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-    <span class="k">elif</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">left_arr_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">xy_data</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cannot alternately select </span><span class="si">{</span><span class="n">left_arr_size</span><span class="si">}</span><span class="s2"> many points from xy_data&quot;</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xy_data</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pt</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">left_arr_size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">lambda_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-            <span class="n">w_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-            <span class="n">left_arr_size</span> <span class="o">-=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">mu_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-            <span class="n">v_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">lambda_data</span><span class="p">,</span> <span class="n">w_data</span><span class="p">,</span> <span class="n">mu_data</span><span class="p">,</span> <span class="n">v_data</span>
-</code></pre></div>
-
+    if left_arr_size is None:
+        left_arr_size = len(xy_data) // 2
+    elif (2*left_arr_size - 1) &gt; len(xy_data):
+        raise ValueError(f&quot;Cannot alternately select {left_arr_size} many points from xy_data&quot;)
+    for i, pt in enumerate(xy_data):
+        x, y = pt
+        if (i % 2) == 0 and left_arr_size &gt; 0:
+            lambda_data.append(x)
+            w_data.append(y)
+            left_arr_size -= 1
+        else:
+            mu_data.append(x)
+            v_data.append(y)
+    return lambda_data, w_data, mu_data, v_data
+</code></pre>
 <p>Next we need to actually code the Loewner matrix. This requires the partitioning function, which is why we introduced it first. Here it is.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">loewner_matrix</span><span class="p">(</span><span class="n">x_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">y_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Consider  x_data = [x_1, x_2, ..., x_n] with y_data = [y_1, ..., y_n]</span>
-<span class="sd">    The function </span>
-<span class="sd">        1. Creates two disjoint partitions of x_data</span>
-<span class="sd">            [mu_1, ..., mu_{n_1}], [lambda_1, ..., lambda_{n_2}]</span>
-<span class="sd">        and corresponding disjoint partitions of y_data </span>
-<span class="sd">            [v_1, ..., v_{n_1}], [w_1, ..., w_{n_2}]</span>
-<span class="sd">        2. Calculates the Loewner matrix defined as </span>
-<span class="sd">                        v_i - w_j</span>
-<span class="sd">            L_{ij} = ---------------</span>
-<span class="sd">                    mu_i - lambda_j</span>
-<span class="sd">        3. Calculates the smaller Loewner matrix, based on rank(L_ij)</span>
-<span class="sd">    and returns the nullspace of this smaller matrix. </span>
-<span class="sd">    For more details, see Algorithm 1.1, P. 33 of [Cosmin-Ionita].</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_data</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_data</span><span class="p">),</span> <span class="s2">&quot;input x and y data are mismatched&quot;</span>
-    <span class="c1"># Patition the data</span>
-    <span class="n">xy_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">))</span>
-    <span class="n">lambda_data</span><span class="p">,</span> <span class="n">w_data</span><span class="p">,</span> <span class="n">mu_data</span><span class="p">,</span> <span class="n">v_data</span> <span class="o">=</span> <span class="n">alternating_partition</span><span class="p">(</span><span class="n">xy_data</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mu_data</span><span class="p">)</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambda_data</span><span class="p">)</span>
+<pre><code class="language-python">def loewner_matrix(x_data: list, y_data: list) -&gt; tuple:
+    &quot;&quot;&quot;Consider  x_data = [x_1, x_2, ..., x_n] with y_data = [y_1, ..., y_n]
+    The function 
+        1. Creates two disjoint partitions of x_data
+            [mu_1, ..., mu_{n_1}], [lambda_1, ..., lambda_{n_2}]
+        and corresponding disjoint partitions of y_data 
+            [v_1, ..., v_{n_1}], [w_1, ..., w_{n_2}]
+        2. Calculates the Loewner matrix defined as 
+                        v_i - w_j
+            L_{ij} = ---------------
+                    mu_i - lambda_j
+        3. Calculates the smaller Loewner matrix, based on rank(L_ij)
+    and returns the nullspace of this smaller matrix. 
+    For more details, see Algorithm 1.1, P. 33 of [Cosmin-Ionita].
+    &quot;&quot;&quot;
+    assert len(x_data) == len(y_data), &quot;input x and y data are mismatched&quot;
+    # Patition the data
+    xy_data = list(zip(x_data, y_data))
+    lambda_data, w_data, mu_data, v_data = alternating_partition(xy_data)
+    n = len(mu_data)
+    m = len(lambda_data)
 
-    <span class="c1"># Calculate the loewner matrix</span>
-    <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v_i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v_data</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">w_j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">w_data</span><span class="p">):</span>
-            <span class="n">L</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v_i</span> <span class="o">-</span> <span class="n">w_j</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">mu_data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">lambda_data</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+    # Calculate the loewner matrix
+    L = np.zeros(n * m).reshape(n, m)
+    for i, v_i in enumerate(v_data):
+        for j, w_j in enumerate(w_data):
+            L[i][j] = (v_i - w_j) / (mu_data[i] - lambda_data[j])
 
-    <span class="c1"># Calculate the smaller Loewner matrix, based on rank of L</span>
-    <span class="n">rank</span> <span class="o">=</span> <span class="n">matrix_rank</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-    <span class="n">L_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span> <span class="o">+</span> <span class="n">m</span> <span class="o">-</span> <span class="p">(</span><span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">m</span> <span class="o">-</span> <span class="p">(</span><span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">rank</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">lambda_hat</span><span class="p">,</span> <span class="n">w_hat</span><span class="p">,</span> <span class="n">mu_hat</span><span class="p">,</span> <span class="n">v_hat</span> <span class="o">=</span> <span class="n">alternating_partition</span><span class="p">(</span><span class="n">xy_data</span><span class="p">,</span> <span class="n">left_arr_size</span><span class="o">=</span><span class="n">rank</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    # Calculate the smaller Loewner matrix, based on rank of L
+    rank = matrix_rank(L)
+    L_hat = np.zeros((n + m - (rank + 1)) * (rank + 1)).reshape(n + m - (rank + 1), rank + 1)
+    lambda_hat, w_hat, mu_hat, v_hat = alternating_partition(xy_data, left_arr_size=rank+1)
 
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v_i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">v_hat</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">w_j</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">w_hat</span><span class="p">):</span>
-            <span class="n">L_hat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">v_i</span> <span class="o">-</span> <span class="n">w_j</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">mu_hat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">lambda_hat</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+    for i, v_i in enumerate(v_hat):
+        for j, w_j in enumerate(w_hat):
+            L_hat[i][j] = (v_i - w_j) / (mu_hat[i] - lambda_hat[j])
 
-    <span class="k">return</span> <span class="n">null_space</span><span class="p">(</span><span class="n">L_hat</span><span class="p">),</span> <span class="n">lambda_hat</span><span class="p">,</span> <span class="n">w_hat</span>
-</code></pre></div>
-
+    return null_space(L_hat), lambda_hat, w_hat
+</code></pre>
 <p>We now write the code for the rational interpolater. This is a function that returns a function, because Python is amazing and lets you do that. The function it returns is the rational interpolator.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">rational_interpolant</span><span class="p">(</span><span class="n">x_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">y_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Returns a rational function that interpolates the xy data.&quot;&quot;&quot;</span>
-    <span class="c1"># Compute the loewner matrix, nullspace</span>
-    <span class="n">nullspace</span><span class="p">,</span> <span class="n">lambda_hat</span><span class="p">,</span> <span class="n">w_hat</span> <span class="o">=</span> <span class="n">loewner_matrix</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-    <span class="n">nullspace_vec</span> <span class="o">=</span> <span class="n">nullspace</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambda_hat</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">w_hat</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">nullspace_vec</span><span class="p">)</span>
+<pre><code class="language-python">def rational_interpolant(x_data: list, y_data: list) -&gt; Callable:
+    &quot;&quot;&quot;Returns a rational function that interpolates the xy data.&quot;&quot;&quot;
+    # Compute the loewner matrix, nullspace
+    nullspace, lambda_hat, w_hat = loewner_matrix(x_data, y_data)
+    nullspace_vec = nullspace[:,0].flatten()
+    assert len(lambda_hat) == len(w_hat) == len(nullspace_vec)
 
-    <span class="k">def</span> <span class="nf">interpolant</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">y_data</span><span class="p">[</span><span class="n">x_data</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+    def interpolant(x):
+        if x in x_data:
+            return y_data[x_data.index(x)]
 
-        <span class="n">rank</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lambda_hat</span><span class="p">)</span>
-        <span class="n">numer</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">denom</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rank</span><span class="p">):</span>
-            <span class="n">a_i</span> <span class="o">=</span> <span class="n">nullspace_vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">w_i</span> <span class="o">=</span> <span class="n">w_hat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-            <span class="n">lambda_i</span> <span class="o">=</span> <span class="n">lambda_hat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        rank = len(lambda_hat)
+        numer = 0
+        denom = 0
+        for i in range(rank):
+            a_i = nullspace_vec[i]
+            w_i = w_hat[i]
+            lambda_i = lambda_hat[i]
 
-            <span class="n">numer</span> <span class="o">+=</span> <span class="p">(</span><span class="n">a_i</span> <span class="o">*</span> <span class="n">w_i</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">lambda_i</span><span class="p">)</span>
-            <span class="n">denom</span> <span class="o">+=</span> <span class="n">a_i</span><span class="o">/</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">lambda_i</span><span class="p">)</span>
+            numer += (a_i * w_i)/(x - lambda_i)
+            denom += a_i/(x - lambda_i)
 
-        <span class="k">return</span> <span class="n">numer</span><span class="o">/</span><span class="n">denom</span>
+        return numer/denom
 
-    <span class="k">return</span> <span class="n">interpolant</span>
-</code></pre></div>
-
+    return interpolant
+</code></pre>
 <p>Finally, we need some code to usefully view our rational interpolation and the original function. We do this by coloring our points, which requires its own function. One thing we have to be careful with is that rational functions naturally have poles, so we need to tip toe around those coordinates. We do so with a <code>try</code> statement.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_colors</span><span class="p">(</span><span class="n">y_1</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">y_2</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Given values y_1 which approximate values y_2, we return a list of RGB values </span>
-<span class="sd">    ranging from blue to orange to communicate approximation error</span>
-<span class="sd">    Blue indicates no error, orange indicates bad error.&quot;&quot;&quot;</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">thresh</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Maximum y_1 - y_2 difference to use a fully orange color</span>
+<pre><code class="language-python">def generate_colors(y_1: list, y_2: list) -&gt; list:
+    &quot;&quot;&quot;Given values y_1 which approximate values y_2, we return a list of RGB values 
+    ranging from blue to orange to communicate approximation error
+    Blue indicates no error, orange indicates bad error.&quot;&quot;&quot;
+    colors = []
+    thresh = 1  # Maximum y_1 - y_2 difference to use a fully orange color
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_1</span><span class="p">)):</span>
-        <span class="n">diff</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y_1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="k">if</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">thresh</span><span class="p">:</span>
-            <span class="n">scale</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">scale</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">thresh</span> <span class="o">-</span> <span class="n">diff</span><span class="p">)</span><span class="o">/</span><span class="n">thresh</span>
+    for i in range(len(y_1)):
+        diff = abs(y_1[i] - y_2[i])
+        if diff &gt; thresh:
+            scale = 0
+        else:
+            scale = abs(thresh - diff)/thresh
 
-        <span class="n">R</span> <span class="o">=</span> <span class="mi">255</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">scale</span><span class="p">)</span>
-        <span class="n">G</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">B</span> <span class="o">=</span> <span class="mi">255</span><span class="o">*</span><span class="n">scale</span>
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">R</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span><span class="n">G</span><span class="o">/</span><span class="mi">255</span><span class="p">,</span><span class="n">B</span><span class="o">/</span><span class="mi">255</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">colors</span>
+        R = 255*(1 - scale)
+        G = 0
+        B = 255*scale
+        colors.append([R/255,G/255,B/255])
+    return colors
 
-<span class="k">def</span> <span class="nf">plot_interpolater</span><span class="p">(</span><span class="n">x_test</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">interpolater</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Test and plot the behavior of the interpolater and the function on x_test.&quot;&quot;&quot;</span>
-    <span class="n">y_test</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">x_test_defined</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># We collect and leave out values that the function is not defined at</span>
-    <span class="k">for</span> <span class="n">x_val</span> <span class="ow">in</span> <span class="n">x_test</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">y_val</span> <span class="o">=</span> <span class="n">interpolater</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span>
-        <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-            <span class="k">pass</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">x_test_defined</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span>
-            <span class="n">y_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_val</span><span class="p">)</span>
+def plot_interpolater(x_test: list, interpolater: Callable, func: Callable, title: str=&quot;&quot;) -&gt; tuple:
+    &quot;&quot;&quot;Test and plot the behavior of the interpolater and the function on x_test.&quot;&quot;&quot;
+    y_test = []
+    x_test_defined = []  # We collect and leave out values that the function is not defined at
+    for x_val in x_test:
+        try:
+            y_val = interpolater(x_val)
+        except ZeroDivisionError:
+            pass
+        else:
+            x_test_defined.append(x_val)
+            y_test.append(y_val)
 
-    <span class="c1"># Collect the function data for this test set of x values</span>
-    <span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">func</span><span class="p">(</span><span class="n">x_val</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_val</span> <span class="ow">in</span> <span class="n">x_test_defined</span><span class="p">]</span>
+    # Collect the function data for this test set of x values
+    y_data = [func(x_val) for x_val in x_test_defined]
 
-    <span class="c1"># Now we plot the defined x_vals and the y_vals</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
-    <span class="n">colors</span> <span class="o">=</span> <span class="n">generate_colors</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_test_defined</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test_defined</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
-</code></pre></div>
+    # Now we plot the defined x_vals and the y_vals
+    fig, ax = plt.subplots(figsize=(15,7))
+    colors = generate_colors(y_test, y_data)
+    plt.title(title)
+    plt.plot(ax=ax)
+    ax.plot(x_test_defined, y_data)
+    ax.scatter(x_test_defined, y_test, c=colors)
+    return fig, ax
 
+</code></pre>
 <p>This leads to our final wrapper function which conviently processes all of our previous functions.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">interpolate_and_plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
-    <span class="c1"># Calculate true data</span>
-    <span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">]</span>
+<pre><code class="language-python">def interpolate_and_plot(x_data, func):
+    # Calculate true data
+    y_data = [f(val) for val in x_data]
 
-    <span class="c1"># Compute the rational interpolant</span>
-    <span class="n">rat</span> <span class="o">=</span> <span class="n">rational_interpolant</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-    <span class="n">plot_interpolater</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">rat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+    # Compute the rational interpolant
+    rat = rational_interpolant(x_data, y_data)
+    plot_interpolater(x_data, rat, f)
+</code></pre>
 <h2>Some runs</h2>
 <p>The first test that Cosmin-Ionita performs is an attempt to model points selected from the curve 
 $$
 f(x) = \frac{1}{1 + 100(x + 1/2)^2} + \frac{1}{1 + 100(x-1/2)^2}.
 $$
 We can test rationally interpolating 100 points in the interval $[-1, 1]$:</p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<pre><code class="language-python">x_data = list(np.linspace(-1, 1, 100))
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">100</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+def f(x):
+    return 1/(1 + 100*(x + 0.5)**2) + 1/(1 + 100(x - 0.5)**2)
 
-<span class="n">interpolate_and_plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+interpolate_and_plot(x_data, f)
+</code></pre>
 <p>which gives
 <img alt="alt text" src="/math/rational_interpolation/imgs/double_peak.png" /></p>
 <p>It looks pretty good. Let's try another rational function:
@@ -252,96 +249,90 @@ $$
     f(x) = \frac{4}{8x + 1} - \frac{2}{8x + 4} - \frac{1}{8x + 5} - \frac{1}{8x + 6}
 $$
 The code to interpolate 100 points within $[-1, 1]$ is </p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span>
+<pre><code class="language-python">x_data = [val for val in np.linspace(-1, 1, 100)]
+def f(x):
+    return 4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)
 
-<span class="n">interpolate_and_plot</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+interpolate_and_plot(x_data, f)
+</code></pre>
 <p>We can view the results here.
 <img alt="alt text" src="/math/rational_interpolation/imgs/4_poles.png" /></p>
 <p>This also does pretty well, and it handles the numerous singularities nicely, as it captures the overall behavior near the poles.</p>
 <h2>Tests</h2>
 <p>Let's now see how the interpolation performs outside of the range of interpolation.</p>
 <p>In our first example when we discussed interpolation via polynomials, we showed how it performed on $f(x) = \sin(x)$ with 50 points sampled on $[0, 2\pi]$. Let's do the same thing with rational interpolation and see how it performs on $[-(2\pi + 5), 2\pi + 5]$. The code to do this is </p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-<span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">]</span>
+<pre><code class="language-python">x_data = list(np.linspace(0, 2*np.pi, 50))
+y_data = [f(val) for val in x_data]
 
-<span class="n">rat</span> <span class="o">=</span> <span class="n">rational_interpolant</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+rat = rational_interpolant(x_data, y_data)
+def f(x):
+    return np.sin(x)
 
-<span class="n">x_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">5</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+x_test = list(np.linspace(-(2*np.pi + 5), 2*np.pi + 5, 100))
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_interpolater</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">rat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+fig, ax = plot_interpolater(x_test, rat, f)
+</code></pre>
 <p>which gives the result
 <img alt="alt text" src="/math/rational_interpolation/imgs/sin.png" /></p>
 <p>This is a huge improvement compared to polynomial interpolation. This captures a few periods outside of the original range.</p>
 <p>Let's try the rational function $f(x) = \frac{1}{1 + 100(x + 1/2)^2} + \frac{1}{1 + 100(x-1/2)^2}.$
 again and look at the performance on $[-3, 3]$. The code to do this is as follows.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<pre><code class="language-python">x_data = list(np.linspace(-1, 1, 100))
 
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+def f(x):
+    return 1/(1 + 100*(x + 0.5)**2) + 1/(1 + 100*(x - 0.5)**2)
 
-<span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">]</span>
-<span class="n">rat</span> <span class="o">=</span> <span class="n">rational_interpolant</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
+y_data = [f(val) for val in x_data]
+rat = rational_interpolant(x_data, y_data)
 
-<span class="c1"># Test data</span>
-<span class="n">x_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+# Test data
+x_test = list(np.linspace(-3, 3, 200))
 
-<span class="n">plot_interpolater</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">rat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+plot_interpolater(x_test, rat, f)
+</code></pre>
 <p>In this case it looks like it found the actual rational function it was assigned to interpolate. 
 <img alt="alt text" src="/math/rational_interpolation/imgs/double_peak_test.png" /></p>
 <p>We can try this on the second example from before, similarly on [-3, 3]</p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">val</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)]</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span>
+<pre><code class="language-python">x_data = [val for val in np.linspace(-1, 1, 100)]
+def f(x):
+    return 4/(8*x + 1) - 2/(8*x + 4) - 1/(8*x + 5) - 1/(8*x + 6)
 
-<span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">]</span>
+y_data = [f(val) for val in x_data]
 
-<span class="c1"># Test data</span>
-<span class="n">x_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">200</span><span class="p">))</span>
+# Test data
+x_test = list(np.linspace(-3, 3, 200))
 
-<span class="n">plot_interpolater</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">rat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+plot_interpolater(x_test, rat, f)
+</code></pre>
 <p>This also looks like it converged to the actual function.
 <img alt="alt text" src="/math/rational_interpolation/imgs/4_poles_test.png" /></p>
 <p>Now let's take a function which is not rational, $f(x) = e^x$. Let's interpolate 20 points in $[0, 1]$.
 The code to do that is </p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
-<span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">]</span>
+<pre><code class="language-python">x_data = list(np.linspace(0, 1, 20))
+y_data = [f(val) for val in x_data]
 
-<span class="n">rat</span> <span class="o">=</span> <span class="n">rational_interpolant</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="n">x</span>
+rat = rational_interpolant(x_data, y_data)
+def f(x):
+    return np.e**x
 
-<span class="n">x_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+x_test = list(np.linspace(0, 5, 100))
 
-<span class="n">plot_interpolater</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">rat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+plot_interpolater(x_test, rat, f)
+</code></pre>
 <p>Note that we're seeing how the interpolation performs on $[0, 5]$.
 <img alt="alt text" src="/math/rational_interpolation/imgs/exponential_20_pts.png" /></p>
 <p>Now what is interesting is if we interpolate more points in in $[0, 1]$, say 50 instead of 20, then we actually get worse performance on $[0, 5]$! The code</p>
-<div class="codehilite"><pre><span></span><code><span class="n">x_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
-<span class="n">y_data</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">x_data</span><span class="p">]</span>
+<pre><code class="language-python">x_data = list(np.linspace(0, 1, 50))
+y_data = [f(val) for val in x_data]
 
-<span class="n">rat</span> <span class="o">=</span> <span class="n">rational_interpolant</span><span class="p">(</span><span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="n">x</span>
+rat = rational_interpolant(x_data, y_data)
+def f(x):
+    return np.e**x
 
-<span class="n">x_test</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+x_test = list(np.linspace(0, 5, 100))
 
-<span class="n">plot_interpolater</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">rat</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-
+plot_interpolater(x_test, rat, f)
+</code></pre>
 <p>gives
 <img alt="alt text" src="/math/rational_interpolation/imgs/exponential_50_pts.png" />
 Thus rational interpolation is subject to overfitting fallacies just like any approximation model. </p>
