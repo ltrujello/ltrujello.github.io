@@ -6,6 +6,9 @@ htmlcov
 *.sw?
 .DS_Store
 venv
+highlight
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
