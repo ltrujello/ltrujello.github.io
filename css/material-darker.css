@@ -47,9 +47,20 @@ code.hljs {
   background: #212121;
 }
 
-/* .hljs ::selection {
-  color: #353535;
-} */
+/* Coloring for election via text and drag */
+.hljs ::selection{
+  background-color: #353535; 
+  color: inherit;
+}
+.hljs::selection{
+  background-color: #353535; 
+  color: inherit;
+}
+
+/* Inline syntax highlighting */
+p > .hljs {
+  display: inline;
+}
 
 
 /* purposely do not highlight these things */

@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Make static website/blog with Python."""
-
-
 import os
 import shutil
 import re
@@ -10,8 +8,28 @@ import sys
 import json
 import datetime
 import markdown
-print(markdown.__file__)
 from pathlib import Path
+
+# Special tags
+def css_tag(css_file):
+    """Create CSS tag given path relative to CSS folder."""
+    return f'<link rel="stylesheet" type="text/css" href="/css/{css_file}">'
+
+def src_tag(link):
+    """Create script tag based on supplied https link"""
+    return f'<script src="{link}"></script>'
+
+def syntax_highlighting_tag():
+    """Returns the CSS tag to perform syntax highlighting"""
+    code_theme = '<link rel="stylesheet" type="text/css" href="/css/material-darker.css">' 
+    syntax_highlighting = '<script src="/highlight/highlight.min.js"></script>\n<script>hljs.highlightAll();</script>'
+    return code_theme + '\n\t' + syntax_highlighting
+
+def preview_img_tag(img_path):
+    """Returns an image tag images on the home page"""
+    if img_path is None:
+        return ''
+    return f'<img class="preview-img" src="{img_path}"/>'
 
 def html_to_md(content):
     return markdown.markdown(content, extensions=["fenced_code", "tables"])
@@ -48,25 +66,6 @@ def read_headers(text):
         if not match.group(1):
             break
         yield match.group(1), match.group(2), match.end()
-
-# Special tags
-def css_tag(css_file):
-    """Create CSS tag given path relative to CSS folder."""
-    return f'<link rel="stylesheet" type="text/css" href="/css/{css_file}">'
-
-def src_tag(link):
-    """Create script tag based on supplied https link"""
-    return f'<script src="{link}"></script>'
-
-def syntax_highlighting_tag():
-    """Returns the CSS tag to perform syntax highlighting"""
-    return '<link rel="stylesheet" type="text/css" href="/css/code.css"/>'
-
-def preview_img_tag(img_path):
-    """Returns an image tag images on the home page"""
-    if img_path is None:
-        return ''
-    return f'<img class="preview-img" src="{img_path}"/>'
 
 def rfc_2822_format(date_str):
     """Convert yyyy-mm-dd date string to RFC 2822 format date string."""
@@ -233,8 +232,6 @@ def main():
     # Default parameters.
     params = {
         'base_path': '',
-        'subtitle': 'Lorem Ipsum',
-        'author': 'Admin',
         'site_url': 'http://localhost:8000',
         'current_year': datetime.datetime.now().year,
         'css': [],
