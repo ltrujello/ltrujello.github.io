@@ -56,7 +56,7 @@ h6 { font-size: 19px; }
 body,
 textarea {
    color: #24292e;
-   font-size: 15px;
+   font-size: 100%;
    line-height: 1.5;
    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple color emoji, Segoe UI Emoji;
    font-weight: 300;
@@ -64,7 +64,7 @@ textarea {
 p {
    color: #24292e;
    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple color emoji, Segoe UI Emoji;
-   font-size: 15px;
+   font-size: 100%;
    line-height: 1.5;
    margin-bottom: 7px;
 }
@@ -98,8 +98,6 @@ th, td {
 --------------------------------------------------------------*/
 ul, ol {
    /* display: flex; */
-   padding-top: 10px;
-   padding-bottom: 10px;
    padding-left:20px;
    padding-right:20px;
 

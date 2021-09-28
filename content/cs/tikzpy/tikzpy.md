@@ -5,7 +5,7 @@
 An object-oriented Python approach towards providing a giant wrapper for Tikz code, with the goal of streamlining the process of creating complex figures for TeX documents.
 
 ## Requirements
-This requires Python 3.7+ Additionally, you need an up-to-date version of a LaTeX that has both the `tikz` library and `latexmk`. 
+This requires Python 3.7+. Additionally, you need an up-to-date version of a LaTeX that has both the `tikz` library and `latexmk`. 
 
 If you already have LaTeX or a related TeX engine, you most definitely have `tikz`. You also probably have `latexmk`. If you're not sure, run `latexmk --version` from the command line and observe the output.
 
