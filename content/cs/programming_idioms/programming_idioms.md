@@ -1,4 +1,5 @@
 <!-- title: Programming Idioms -->
+<!-- date: 2021-08-21-->
 <!-- syntax_highlighting: on -->
 
 Programming, in a modern sense, is the transfer of mathematically well-defined structure and logic between a highly advanced biological computer with bounded computing rates, unreliable precision, but much common sense, and a fast mechanical computer with growing processing rates, highly reliable precision, but with absolute zero common sense. In other words, it's a smart, slow computer trying to dumb down simple instructions for a fast, dumb computer, because there's value in making that communication happen.

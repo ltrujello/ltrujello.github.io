@@ -33,6 +33,8 @@ base0F  #FF5370  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php 
 */
 
 pre code.hljs {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: block;
   overflow-x: auto;
   padding: 1em;

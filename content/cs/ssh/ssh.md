@@ -1,4 +1,5 @@
 <!-- title: SSH -->
+<!-- date: 2021-08-10 -->
 <!-- syntax_highlighting: on -->
 
 Some things I've learned about SSH that I'm writing down if I ever forget.

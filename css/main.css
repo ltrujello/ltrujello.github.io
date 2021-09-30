@@ -67,6 +67,14 @@ li a:hover {
   background-color: #111;
 }
 
+/* Preview of posts */
+
+div.line {
+  border-bottom: 0.5px solid rgb(0, 0, 0, 0.6);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .preview-box{
   display: flex;
   align-items: top;

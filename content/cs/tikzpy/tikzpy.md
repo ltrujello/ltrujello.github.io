@@ -1,6 +1,7 @@
 <!-- title: Tikz-Python -->
 <!-- syntax_highlighting: on -->
-
+<!-- preview_img: /cs/tikzpy/imgs/tikzpy_preview.png -->
+<!-- date: 2021-09-10 -->
 
 An object-oriented Python approach towards providing a giant wrapper for Tikz code, with the goal of streamlining the process of creating complex figures for TeX documents.
 

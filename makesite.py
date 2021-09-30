@@ -186,7 +186,7 @@ def make_pages(src_pattern, dst_parent, layout, **params):
         log('Rendering {} => {} ...', src_path, dst_path)
         fwrite(dst_path, output)
 
-    return sorted(items, key=lambda x: x['date'], reverse=True)
+    return items
 
 
 def make_list(posts, dst, list_layout, item_layout, **params):
@@ -276,7 +276,10 @@ def main():
                             post_layout, 
                             blog='cs',
                             associahedra_app=associahedra_app,
-                            **params)    
+                            **params)
+    # Sort the blog posts
+    blog_posts = sorted(blog_posts, key=lambda x: x['date'], reverse=True) 
+
     # Create page intro.
     intro = html_to_md(fread('content/index.md'))
 

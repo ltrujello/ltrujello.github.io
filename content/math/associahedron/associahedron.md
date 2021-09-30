@@ -1,4 +1,5 @@
 <!-- title: Associahedra -->
+<!-- date: 2021-08-25 -->
 <!-- css: associahedron.css -->
 <!-- render: yes -->
 <!-- src: https://unpkg.com/three -->
