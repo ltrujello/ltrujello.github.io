@@ -292,7 +292,7 @@ from tikzpy import rgb
 
 &gt;&gt;&gt; tikz = TikzPicture()
 &gt;&gt;&gt; line =  tikz.line((1,2), (4,3), options = &quot;color=&quot; + rgb(253, 0, 0))
-&gt;&gt;&gt; rectangle = tikz.rectangle( (0,0), (5,5)), options = &quot;fill=&quot; + rgb(120, 0, 120))
+&gt;&gt;&gt; rectangle = tikz.rectangle( (0,0), (5,5), options = &quot;fill=&quot; + rgb(120, 0, 120))
 </code></pre>
 <ul>
 <li>A wrapper function <code>rainbow_colors</code> uses the <code>rgb</code> to provide rainbow colors. The function takes in any integer, and grabs a rainbow color, computing a modulo operation if necessary  (hence, any integer is valid). </li>
@@ -305,6 +305,57 @@ from tikzpy import rainbow_colors
         circle = tikz.circle((i/20, 3 - i**2/20), 3)
         circle.options = &quot;opacity = 0.7, fill = &quot; + rainbow_colors(i)
 </code></pre>
+<h1>Class <code>Point</code></h1>
+<p>The <code>Point</code> class is how TikzPy handles coordinates. All drawing objects, like Lines and Circles, use the Point class. 
+You normally don't need to construct Point objects because it is usually done behind the scenes. It basically works as follows. </p>
+<pre><code class="language-python">&gt;&gt;&gt; from tikzpy import Point
+&gt;&gt;&gt; my_point = Point(-1, 2)  # Any numeric type works too
+&gt;&gt;&gt; my_point.x
+-1
+&gt;&gt;&gt; my_point.y
+2
+</code></pre>
+<p>As stated, everything uses a <code>Point</code> object. For example, if you create a circle, the <code>center</code> attribute becomes a <code>Point</code> object.</p>
+<pre><code class="language-python">&gt;&gt;&gt; circle = tikz.circle((2, 3), radius=3)
+&gt;&gt;&gt; print(circle.center.x, circle.center.y)
+2 3
+</code></pre>
+<p>You can also perform arithmetic with <code>Point</code> objects, either with other <code>Point</code> objects or with Python tuples. For example, the following are all valid.</p>
+<pre><code class="language-python">&gt;&gt;&gt; my_point = Point(-1, 2)
+&gt;&gt;&gt; my_point + (1, 1)  # Add it to another tuple
+Point(0, 3)
+&gt;&gt;&gt; my_point + Point(2, 2)  # Add it with another point object
+Point(1, 4)
+&gt;&gt;&gt; 2 * my_point  # Can also do my_point * 2 
+Point(-2, 4)
+&gt;&gt;&gt; my_point / 3 
+Point(-0.33333333, 0.666666666)
+</code></pre>
+<p>This allows you to write things like</p>
+<pre><code class="language-python">&gt;&gt;&gt; circle = tikz.circle((0,0), radius=3)
+&gt;&gt;&gt; circle.center += (1, 1)  # This is valid
+&gt;&gt;&gt; circle.center /= 3  # Also valid
+</code></pre>
+<p>Point objects make drawing things much easier. For example, if we wanted to draw the following figure in Tikz, we would have to mentally calculate the required coordinates to draw the following (alternatively, we can spend 3 hours a day for a whole year reading the 1000 page manual.)</p>
+<p><img src="/cs/tikzpy/imgs/node_ex_2.png"/></p>
+<p>With TikzPy, we can use tuple arithmetic and other useful properties to draw the figure very naturally.</p>
+<pre><code class="language-python">from tikzpy import TikzPicture
+
+tikz = TikzPicture()
+
+# Rectangle and lines
+function = row_1.rectangle((0, -0.5,), (2, 0.5))
+input = row_1.line(function.west - (2, 0), function.west)
+output = row_1.line(function.east, function.east + (2, 0)
+
+# Labels
+tikz.node(input.start - (1.2, 0), text=&quot;$(x_1, \dots, x_n)$&quot;)
+tikz.node(intput.midpoint + (0, 0.3), text=&quot;input&quot;)
+tikz.node(function.center, text=&quot;$f$&quot;)
+tikz.node(output.midpoint + (0, 0.3), text=&quot;output&quot;)
+tikz.node(output.end + (1.3, 0), text=&quot;$f(x_1, \dots, x_n)$&quot;)
+</code></pre>
+<p>As we can see, tuple arithmetic is useful and natural in drawings that are more complex.</p>
 <h1>Class: <code>Line</code></h1>
 <p>There are two ways to initalize a line object. We've already seen this way:</p>
 <pre><code class="language-python">from tikzpy import TikzPicture
@@ -617,23 +668,6 @@ tikz.node((-2, 0.3), text=&quot;Cut&quot;)
 </code></pre>
 <p>which produces
 <img src="/cs/tikzpy/imgs/node_ex_1.png"/></p>
-<p>Here's another example of usings nodes to illustrate the concept of a multivariable function.</p>
-<pre><code class="language-python">from tikzpy import TikzPicture
-
-row_1 = TikzPicture()
-
-# Lines and rectangles
-row_1.line((0, 0), (2, 0), options=&quot;-&gt;&quot;)
-row_1.rectangle((2, -0.5), (4, 0.5))
-row_1.line((4, 0), (6, 0), options=&quot;-&gt;&quot;)
-# Labels
-row_1.node((-1.2, 0), text=&quot;$(x_1, \dots, x_n)$&quot;)
-row_1.node((1, 0.3), text=&quot;input&quot;)
-row_1.node((3, 0), text=&quot;$f$&quot;)
-row_1.node((5, 0.3), text=&quot;output&quot;)
-row_1.node((7.3, 0), text=&quot;$f(x_1, \dots, x_n)$&quot;)
-</code></pre>
-<p><img src="/cs/tikzpy/imgs/node_ex_2.png"/></p>
 <h2>Methods</h2>
 <p><code>Node</code> has access to methods <code>.shift()</code>, <code>.scale()</code>, <code>.rotate()</code>, which behave as one would expect and takes in parameters as described before.</p>
 <h1>Class: <code>Rectangle</code></h1>

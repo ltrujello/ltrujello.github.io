@@ -325,7 +325,7 @@ from tikzpy import rgb
 
 >>> tikz = TikzPicture()
 >>> line =  tikz.line((1,2), (4,3), options = "color=" + rgb(253, 0, 0))
->>> rectangle = tikz.rectangle( (0,0), (5,5)), options = "fill=" + rgb(120, 0, 120))
+>>> rectangle = tikz.rectangle( (0,0), (5,5), options = "fill=" + rgb(120, 0, 120))
 ```
 
 - A wrapper function `rainbow_colors` uses the `rgb` to provide rainbow colors. The function takes in any integer, and grabs a rainbow color, computing a modulo operation if necessary  (hence, any integer is valid). 
@@ -339,6 +339,68 @@ from tikzpy import rainbow_colors
         circle.options = "opacity = 0.7, fill = " + rainbow_colors(i)
 ```
 
+#Class `Point`
+The `Point` class is how TikzPy handles coordinates. All drawing objects, like Lines and Circles, use the Point class. 
+You normally don't need to construct Point objects because it is usually done behind the scenes. It basically works as follows. 
+```python
+>>> from tikzpy import Point
+>>> my_point = Point(-1, 2)  # Any numeric type works too
+>>> my_point.x
+-1
+>>> my_point.y
+2
+```
+As stated, everything uses a `Point` object. For example, if you create a circle, the `center` attribute becomes a `Point` object.
+```python
+>>> circle = tikz.circle((2, 3), radius=3)
+>>> print(circle.center.x, circle.center.y)
+2 3
+```
+
+You can also perform arithmetic with `Point` objects, either with other `Point` objects or with Python tuples. For example, the following are all valid.
+```python
+>>> my_point = Point(-1, 2)
+>>> my_point + (1, 1)  # Add it to another tuple
+Point(0, 3)
+>>> my_point + Point(2, 2)  # Add it with another point object
+Point(1, 4)
+>>> 2 * my_point  # Can also do my_point * 2 
+Point(-2, 4)
+>>> my_point / 3 
+Point(-0.33333333, 0.666666666)
+```
+
+This allows you to write things like
+```python
+>>> circle = tikz.circle((0,0), radius=3)
+>>> circle.center += (1, 1)  # This is valid
+>>> circle.center /= 3  # Also valid
+```
+Point objects make drawing things much easier. For example, if we wanted to draw the following figure in Tikz, we would have to mentally calculate the required coordinates to draw the following (alternatively, we can spend 3 hours a day for a whole year reading the 1000 page manual.)
+
+<img src="/cs/tikzpy/imgs/node_ex_2.png"/>
+
+With TikzPy, we can use tuple arithmetic and other useful properties to draw the figure very naturally.
+
+```python
+from tikzpy import TikzPicture
+
+tikz = TikzPicture()
+
+# Rectangle and lines
+function = row_1.rectangle((0, -0.5,), (2, 0.5))
+input = row_1.line(function.west - (2, 0), function.west)
+output = row_1.line(function.east, function.east + (2, 0)
+
+# Labels
+tikz.node(input.start - (1.2, 0), text="$(x_1, \dots, x_n)$")
+tikz.node(intput.midpoint + (0, 0.3), text="input")
+tikz.node(function.center, text="$f$")
+tikz.node(output.midpoint + (0, 0.3), text="output")
+tikz.node(output.end + (1.3, 0), text="$f(x_1, \dots, x_n)$")
+```
+As we can see, tuple arithmetic is useful and natural in drawings that are more complex.
+  
 
 # Class: `Line`
 There are two ways to initalize a line object. We've already seen this way:
@@ -603,25 +665,6 @@ tikz.node((-2, 0.3), text="Cut")
 which produces
 <img src="/cs/tikzpy/imgs/node_ex_1.png"/>
 
-Here's another example of usings nodes to illustrate the concept of a multivariable function.
-```python
-from tikzpy import TikzPicture
-
-row_1 = TikzPicture()
-
-# Lines and rectangles
-row_1.line((0, 0), (2, 0), options="->")
-row_1.rectangle((2, -0.5), (4, 0.5))
-row_1.line((4, 0), (6, 0), options="->")
-# Labels
-row_1.node((-1.2, 0), text="$(x_1, \dots, x_n)$")
-row_1.node((1, 0.3), text="input")
-row_1.node((3, 0), text="$f$")
-row_1.node((5, 0.3), text="output")
-row_1.node((7.3, 0), text="$f(x_1, \dots, x_n)$")
-```
-
-<img src="/cs/tikzpy/imgs/node_ex_2.png"/>
 
 ## Methods
 

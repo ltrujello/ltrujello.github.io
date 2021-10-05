@@ -183,6 +183,7 @@ final_perm = [
 <p>What is nice about DES is that the same algorithm can be used for decryption, except you use the keys $K_i$ in reverse order. This means that decryption is dead simple only if you have the private key, which is a good feature of a block cipher. </p>
 <h2>Python Code</h2>
 <p>Now that the algorithm details are explained, here comes the Python code. In this implementation we treat the binary values as a list of ones and zeros. The overall DES function can be described by this simple function.</p>
+<p>Note the main function below is for both encryption and decryption. It accepts input and the fake key (i.e. the 64 bit secret key, which I called fake since some of its digits get ignored), and encrypts by default.</p>
 <pre><code class="language-python">def DES(input: list[int], fake_key: list[int], decrypt: bool=False) -&gt; list[int]:
     &quot;&quot;&quot;The DES encryption algorithm.&quot;&quot;&quot;
     # Apply the initial permutation to the 64-bit input
@@ -278,6 +279,50 @@ def XOR(A: list[int], B: list[int]) -&gt; list[int]:
 </code></pre>
 <p>And that is it!</p>
 <h2>An Example</h2>
+<p>Testing that this works is actually tricky, since most online DES "encoder/decoders" are simply incorrect garbage. Fortunately, I found an example of a DES computation on this <a href="https://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm">website</a>. In the example provided, the message to decode is
+$M = 0123456789\text{ABCDEF}$, or 
+$$
+M =  00000001 \ 00100011 \ 01000101 \ 01100111 \ 10001001 \ 10101011 \ 11001101 \ 11101111
+$$
+in binary. They then used the hexidecimal key $133457799\text{BBCDFF}1$, which in binary is
+$$
+K = 00010011 \ 00110100 \ 01010111 \ 01111001 \ 10011011 \ 10111100 \ 11011111 \ 11110001
+$$
+The encrypted message becomes
+$$
+C = 10000101 \ 11101000 \ 00010011 \ 01010100 \ 00001111 \ 00001010 \ 10110100 \ 00000101
+$$
+We can put the message, key in a list of integers </p>
+<pre><code class="language-python">input = [0, 0, 0, 0, 0, 0, 0, 1, 
+         0, 0, 1, 0, 0, 0, 1, 1, 
+         0, 1, 0, 0, 0, 1, 0, 1, 
+         0, 1, 1, 0, 0, 1, 1, 1, 
+         1, 0, 0, 0, 1, 0, 0, 1,
+         1, 0, 1, 0, 1, 0, 1, 1, 
+         1, 1, 0, 0, 1, 1, 0, 1,
+         1, 1, 1, 0, 1, 1, 1, 1]
+
+key   = [0, 0, 0, 1, 0, 0, 1, 1, 
+         0, 0, 1, 1, 0, 1, 0, 0, 
+         0, 1, 0, 1, 0, 1, 1, 1,
+         0, 1, 1, 1, 1, 0, 0, 1, 
+         1, 0, 0, 1, 1, 0, 1, 1,
+         1, 0, 1, 1, 1, 1, 0, 0, 
+         1, 1, 0, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 0, 0, 0, 1]
+
+</code></pre>
+<p>and running <code>DES(input, key)</code> returns the value</p>
+<pre><code class="language-python">[1, 0, 0, 0, 0, 1, 0, 1,
+ 1, 1, 1, 0, 1, 0, 0, 0,
+ 0, 0, 0, 1, 0, 0, 1, 1,
+ 0, 1, 0, 1, 0, 1, 0, 0,
+ 0, 0, 0, 0, 1, 1, 1, 1, 
+ 0, 0, 0, 0, 1, 0, 1, 0, 
+ 1, 0, 1, 1, 0, 1, 0, 0, 
+ 0, 0, 0, 0, 0, 1, 0, 1]
+</code></pre>
+<p>which matches the message.</p>
 </article>
 
 </div>

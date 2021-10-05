@@ -175,6 +175,9 @@ What is nice about DES is that the same algorithm can be used for decryption, ex
 
 ## Python Code
 Now that the algorithm details are explained, here comes the Python code. In this implementation we treat the binary values as a list of ones and zeros. The overall DES function can be described by this simple function.
+
+Note the main function below is for both encryption and decryption. It accepts input and the fake key (i.e. the 64 bit secret key, which I called fake since some of its digits get ignored), and encrypts by default.
+
 ```python
 def DES(input: list[int], fake_key: list[int], decrypt: bool=False) -> list[int]:
     """The DES encryption algorithm."""
@@ -276,3 +279,55 @@ And that is it!
 
 
 ## An Example
+Testing that this works is actually tricky, since most "online DES encoder/decoders" are simply incorrect garbage. Fortunately, I found an example of a DES computation on this [website](https://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm). In the example provided, the message to decode is
+$M = 0123456789\text{ABCDEF}$, or 
+$$
+M =  00000001 \ 00100011 \ 01000101 \ 01100111 \ 10001001 \ 10101011 \ 11001101 \ 11101111
+$$
+in binary. They then used the hexidecimal key $133457799\text{BBCDFF}1$, which in binary is
+$$
+K = 00010011 \ 00110100 \ 01010111 \ 01111001 \ 10011011 \ 10111100 \ 11011111 \ 11110001
+$$
+The encrypted message becomes
+$$
+C = 10000101 \ 11101000 \ 00010011 \ 01010100 \ 00001111 \ 00001010 \ 10110100 \ 00000101
+$$
+We can put the message, key in a list of integers 
+```python
+input = [0, 0, 0, 0, 0, 0, 0, 1, 
+         0, 0, 1, 0, 0, 0, 1, 1, 
+         0, 1, 0, 0, 0, 1, 0, 1, 
+         0, 1, 1, 0, 0, 1, 1, 1, 
+         1, 0, 0, 0, 1, 0, 0, 1,
+         1, 0, 1, 0, 1, 0, 1, 1, 
+         1, 1, 0, 0, 1, 1, 0, 1,
+         1, 1, 1, 0, 1, 1, 1, 1]
+
+key   = [0, 0, 0, 1, 0, 0, 1, 1, 
+         0, 0, 1, 1, 0, 1, 0, 0, 
+         0, 1, 0, 1, 0, 1, 1, 1,
+         0, 1, 1, 1, 1, 0, 0, 1, 
+         1, 0, 0, 1, 1, 0, 1, 1,
+         1, 0, 1, 1, 1, 1, 0, 0, 
+         1, 1, 0, 1, 1, 1, 1, 1,
+         1, 1, 1, 1, 0, 0, 0, 1]
+
+```
+and running `DES(input, key)` returns the value
+```python
+[1, 0, 0, 0, 0, 1, 0, 1,
+ 1, 1, 1, 0, 1, 0, 0, 0,
+ 0, 0, 0, 1, 0, 0, 1, 1,
+ 0, 1, 0, 1, 0, 1, 0, 0,
+ 0, 0, 0, 0, 1, 1, 1, 1, 
+ 0, 0, 0, 0, 1, 0, 1, 0, 
+ 1, 0, 1, 1, 0, 1, 0, 0, 
+ 0, 0, 0, 0, 0, 1, 0, 1]
+```
+which matches the message. Decrypting this produces our original cipher text:
+```python 
+DES()
+```
+
+The author also points out that the message hexidecimal message M = 8787878787878787" encrypted with the DES key "0E329232EA6D0D73" produces the cipher text "0000000000000000", which also checks out with our function.
+
