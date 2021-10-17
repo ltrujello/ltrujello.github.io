@@ -1,6 +1,6 @@
 Hi! My name is Luke Trujillo and you've found my website. 
 
-I like math, Linux things, and programming (Python, C++). Here is some stuff you can look at. 
+I like math, Linux things, and programming (Python, C, C++). Here is some stuff you can look at. 
 
 * [A Python package](/cs/tikzpy/) for generating TikZ code (a LaTeX thing), which I did because TikZ is powerful but very tedious to use.
 
