@@ -279,7 +279,7 @@ def XOR(A: list[int], B: list[int]) -&gt; list[int]:
 </code></pre>
 <p>And that is it!</p>
 <h2>An Example</h2>
-<p>Testing that this works is actually tricky, since most online DES "encoder/decoders" are simply incorrect garbage. Fortunately, I found an example of a DES computation on this <a href="https://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm">website</a>. In the example provided, the message to decode is
+<p>Testing that this works is actually tricky, since most "online DES encoder/decoders" are simply incorrect garbage. Fortunately, I found an example of a DES computation on this <a href="https://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm">website</a>. In the example provided, the message to decode is
 $M = 0123456789\text{ABCDEF}$, or 
 $$
 M =  00000001 \ 00100011 \ 01000101 \ 01100111 \ 10001001 \ 10101011 \ 11001101 \ 11101111
@@ -322,7 +322,10 @@ key   = [0, 0, 0, 1, 0, 0, 1, 1,
  1, 0, 1, 1, 0, 1, 0, 0, 
  0, 0, 0, 0, 0, 1, 0, 1]
 </code></pre>
-<p>which matches the message.</p>
+<p>which matches the message. Decrypting this produces our original cipher text:</p>
+<pre><code class="language-python">DES()
+</code></pre>
+<p>The author also points out that the message hexidecimal message M = 8787878787878787" encrypted with the DES key "0E329232EA6D0D73" produces the cipher text "0000000000000000", which also checks out with our function.</p>
 </article>
 
 </div>

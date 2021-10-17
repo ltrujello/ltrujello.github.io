@@ -8,7 +8,7 @@
 <!-- preview_img: /math/associahedron/imgs/assoc_1.png -->
 
 
-The [Associahedra](https://en.wikipedia.org/wiki/Associahedron) are a very mathematically deep family of polytopes (one in each dimension) that occur frequently in combinatorics, under many different interpretations. A fascinating fact about them is that the coefficients of the multiplicate inverse of a power series encode the polyhedra face data of the Associahedra (see Marcelo Aguiar and Frederico Ardilla's [paper](https://arxiv.org/abs/1709.07504).
+The [Associahedra](https://en.wikipedia.org/wiki/Associahedron) are a very mathematically deep family of polytopes (one in each dimension) that occur frequently in combinatorics, under many different interpretations. A fascinating fact about them is that the coefficients of the multiplicate inverse of a power series encode the polyhedra face data of the Associahedra (see Marcelo Aguiar and Frederico Ardilla's [paper](https://arxiv.org/abs/1709.07504)).
 
 Here's an interactive 3D web app of the first 7. They're all projected to R^3, and K_5 is the family member that naturally lives in R^3. I made this with the help of this [3D-Force-Graph](https://github.com/vasturiano/3d-force-graph) library.
 
@@ -32,7 +32,5 @@ Interestingly, in Mac Lane's proof, he does not mention at all the connection th
 Here are some further things you can look at.
 
 * My thesis [A Coherent Proof of Mac Lane's Coherence Theorem](https://scholarship.claremont.edu/hmc_theses/243/). It is for anyone who ever needs to really understand each exact details of Mac Lane's proof, or anyone who is just curious about the details. Here's a nice picture of K_5 that I produced in my thesis.
-
-* [Presentation slides I made that I used for an end-of-year presentation explaining my thesis work.]()
 
 * [The raw polyhedra face data of the associahedra in JSON format](), as well as [the python code that generated the data here](). It was a quite a pain to generate and verify to be correct, so I hope if someone needs this data they can find it here before going through the trouble of generating it again.
