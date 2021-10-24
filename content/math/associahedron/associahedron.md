@@ -31,6 +31,8 @@ Interestingly, in Mac Lane's proof, he does not mention at all the connection th
 
 Here are some further things you can look at.
 
-* My thesis [A Coherent Proof of Mac Lane's Coherence Theorem](https://scholarship.claremont.edu/hmc_theses/243/). It is for anyone who ever needs to really understand each exact details of Mac Lane's proof, or anyone who is just curious about the details. Here's a nice picture of K_5 that I produced in my thesis.
+* My thesis [A Coherent Proof of Mac Lane's Coherence Theorem](https://scholarship.claremont.edu/hmc_theses/243/). It is for anyone who ever needs to really understand each exact detail of Mac Lane's proof, or anyone who is just curious about the details. Here's a nice picture of K_5 that I produced in my thesis.
 
-* [The raw polyhedra face data of the associahedra in JSON format](), as well as [the python code that generated the data here](). It was a quite a pain to generate and verify to be correct, so I hope if someone needs this data they can find it here before going through the trouble of generating it again.
+<img src="/math/associahedron/imgs/k5-1.png" style="margin: 0 auto; display: block; width: 80%;"/> 
+
+* [The raw polyhedra face data of the associahedra in JSON format](https://github.com/ltrujello/Monoidal_Coherence_and_Binary_Words/tree/master/associahedra_in_3D/json), as well as [the python code that generated the data here](https://github.com/ltrujello/Monoidal_Coherence_and_Binary_Words/blob/master/binary_word_Class/associahedron.py). It was a quite a pain to generate and verify to be correct, so I hope if someone needs this data they can find it here before going through the trouble of generating it again.
