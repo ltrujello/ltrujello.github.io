@@ -1,10 +1,11 @@
 <!-- title: fzf tab completion failure due to Zsh-Vi-Mode-->
 <!-- syntax_highlighting: on -->
+<!-- preview_img: /cs/zsh_vimode_fzf_conflict/imgs/correct_result.png -->
 <!-- date: 2021-10-29 -->
 
 In upgrading my terminal setup, an emotional and cathartic ritual I occassionally perform, I found that [fzf,](https://github.com/junegunn/fzf) a fuzzy finder for the command line, was failing to work. Specifically, fzf has a great feature where you can type something, append `**` to the end, and then hit tab, and it will begin a live search that you can continue typing characters in to speed up the search. You can mispell things and it still shows relevant stuff. And you can append this to pretty much any command, like `vim file**`. This makes it fast to execute commands whos arguments consist of files. Hence you can quickly find nested files and avoid typing, cd-ing and ls-ing. It looks like this normally.
 
-<img src="/cs/zsh_vimode_fzf_conflict/imgs/correct_result.png" style="margin: 0 auto; display: block; width: 80%; height: auto;"/>
+<img src="/cs/zsh_vimode_fzf_conflict/imgs/correct_result.png" style="margin: 0 auto; display: block; width: 50%; height: auto;"/>
 
 There's a cool [YouTube video](https://www.youtube.com/watch?v=qgG5Jhi_Els) showing many features of fzf. 
 
