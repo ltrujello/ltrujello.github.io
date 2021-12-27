@@ -1,3 +1,5 @@
+content/cs/poly
+
 _site
 *.pyc
 __pycache__
@@ -7,6 +9,7 @@ htmlcov
 .DS_Store
 venv
 highlight
+nohup.out
 
 
 # Byte-compiled / optimized / DLL files

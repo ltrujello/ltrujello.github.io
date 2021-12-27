@@ -25,7 +25,7 @@ The GNU Readline library does not provide all of our desired features listed abo
 # A note about MacOS
 If you plan on using the Readline library and you're developing on MacOS, make sure you're actually using GNU Readline and not some other imposter header files. 
 
-In my experience my version of Readline was missing the `append_history` function, which is extremely important. It also would not record history unless I had something specific at the top of my history file. I eventually found I wasn't using GNU Readline. I'm not why this happened or who decided to create a fake readline library in MacOS's include files. Since this not how GNU Readline behaves, if you're having trouble getting Readline to work on a Mac this might be why. Read about the compilation below to see how to get it to work.
+In my experience my version of Readline was missing the `append_history` function, which is extremely important. It also would not record history unless I had something specific at the top of my history file. I eventually found I wasn't using GNU Readline. I'm not sure why this happened or who decided to create a fake readline library in MacOS's include files. Since this not how GNU Readline behaves, if you're having trouble getting Readline to work on a Mac this might be why. Read about the compilation below to see how to get it to work.
 
 # Basic example
 We'll first show how to use Readline to create a very simple REPL shell. This will allow you to see how Readline can very nicely deliver the text-editor like experience at a command prompt.
@@ -76,13 +76,27 @@ gcc -o first_ex firest_ex.c -Lpath/to/some/dir/ -lreadline
 ```
 will compile the program. 
 
+# Manually Installing
+If you're forced to manually install, which might happen if you have MacOs, run these commands (note that you should replace the ftp url with the latest .tar.gz of GNU readline, which you can find [here](https://tiswww.case.edu/php/chet/readline/rltop.html)).
+```bash
+curl -L -o readline-8.1.tar.gz ftp://ftp.gnu.org/gnu/readline/readline-8.1.tar.gz 
+tar -xvzf readline-8.1.tar.gz 
+cd readline-8.1
+./configure
+make
+make install
+```
+The output of `make install` will tell you where it installed the library on your machine. I did this on a MacOS and that was `/usr/local/include/readline` for me. You can now supply this directory to the `-L` command argument in the compilation command.
+
 
 # Creating and using a history file
 Our first program isn't very good, because if we close the program we lose our command history. To remedy this, we need to create a history file that tracks our commands.
 
-GNU Readline provides some functions to assist with this, the two most useful being the following.
+GNU Readline provides some functions to assist with this, the three most useful being the following.
 
 * `int read_history(const char *filename)` will receive a *full path* to the history file and add the contents of the history file to the program's history list.
+
+* `int add_history(const char *input)` will **copy the pointer** `input` and add it to the history list. This is what allows you to get your history via up and down arrow keys.
 
 * `int append_history(int nelements, const char *filename)` will append the most `nelements`-recent commands to the hisory file with full path `filename`.
 
@@ -114,7 +128,7 @@ int main(){
 
         /* Add input to the history, but only if it is not blank content */
         if (*input)
-            append_history(1, "/home/michael_scott/.myhistory");
+            append_history(1, "/home/michael_scott/.my_history");
 
         /* Print the input with an exclamation point. */
         printf("%s!\n", input);
@@ -289,7 +303,7 @@ To avoid recording consecutively duplicate entries in our history file, we need 
         last_command = malloc(strlen(input) + 1);
         if (last_command == NULL)
             printf("Couldn't allocate memory to update the last command.");
-        last_command = strcpy(last_command, input); /* Necessary because input is freed at end of loop */
+        strcpy(last_command, input); /* Necessary because input is freed at end of loop */
     }
 ...
 ```
@@ -390,7 +404,7 @@ void update_history_file(const char *history_filename, char *last_command, char 
         last_command = malloc(strlen(input) + 1);
         if (last_command == NULL)
             printf("Couldn't allocate memory to update the last command.");
-        last_command = strcpy(last_command, input); /* Necessary because input is freed at end of loop */
+        strcpy(last_command, input); /* Necessary because input is freed at end of loop */
     }
 
     /* Check if we need to flush the history file */

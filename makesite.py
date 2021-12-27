@@ -49,6 +49,13 @@ def fwrite(filename, text):
     with open(filename, 'w') as f:
         f.write(text)
 
+def currently_ignoring(path):
+    with open(".gitignore") as f:
+        for line in f.readlines():
+            if path == line.strip():
+                return True
+    return False
+
 
 def log(msg, *args):
     """Log message with specified arguments."""
@@ -131,6 +138,10 @@ def make_pages(src_pattern, dst_parent, layout, **params):
     dst_parent = Path(f"{dst_parent}")
 
     for src_path in Path(".").glob(src_pattern):
+        print(f"{src_pattern=} has {src_path=}")
+        if currently_ignoring(str(src_path)):
+            print(f"Ignoring {src_path}")
+            continue
         if src_path.is_file():
             content = read_content(str(src_path))
         elif src_path.is_dir():
@@ -225,10 +236,6 @@ def make_list(posts, dst, list_layout, item_layout, **params):
 
 def main():
     # Create a new _site directory from scratch.
-    # if os.path.isdir('_site'):
-        # shutil.rmtree('_site')
-    # shutil.copytree('static', '_site')
-
     # Default parameters.
     params = {
         'base_path': '',
@@ -239,10 +246,6 @@ def main():
         'syntax_highlighting': 'off',
         'mathjax': 'off',
     }
-
-    # If params.json exists, load it.
-    if os.path.isfile('params.json'):
-        params.update(json.loads(fread('params.json')))
 
     # Load layouts.
     page_layout = fread('layout/page.html')

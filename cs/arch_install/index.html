@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luke Trujillo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="icon" type="image/png" href="/imgs/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/css/material-darker.css">
+	<script src="/highlight/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+	
+    
+</head>
+<body class="main">
+    <img class="img_header" src="/imgs/IMG_1975.jpg" alt="Some mountain">
+    <div>
+    <ul class="nav-bar">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/cs/tikzpy/"> TikzPy </a></li>
+        <li><a href="/math/associahedron/"> Associahedron </a></li>
+        <li><a href="/cs/programming_idioms/"> Programming Idioms </a></li>
+        <li><a href="/about/"> About </a></li>
+    </ul>
+    </div>
+<div class="main-content">
+<article>
+<h1><a href="/cs/arch_install/">Arch Linux Install Guide and Dell XPS 9710 Experience</a></h1>
+<p>This is an Arch install guide where the machine in question is a new Dell XPS 17 9710, although the guide should apply to other machines as well.</p>
+<p>If you are on a laptop, make sure the machine is charging before you start. You'll be looking at a terminal screen and so you won't be able to see your battery. (Yes I'm speaking from experience...)</p>
+<h2>Change boot settings</h2>
+<p>Restart your computer to change your UEFI settings and to disable secure boot. You should also give highest booting priority to your installation media if you're booting from a USB. </p>
+<p>On my machine, I did this by hitting F12 as soon as the Dell logo appeared. I also had to be extremely quick in hitting F12 since otherwise it would try booting Windows, give me a blue screen, and restart.</p>
+<p>If you don't see your USB device, you have to restart and try again.</p>
+<p><strong>Tip</strong>: I got stuck in a loop where my usb device containing my live arch image would not appear in the menu for booting priority. One thing that worked was powering off the machine, powering it on with USB removed, and <em>then</em> plugging in the USB right before the Dell logo appeared. Doing this got me out of that loop.</p>
+<p>Also, there may be two of the same devices listed for some reason. I just put both at the top.</p>
+<h2>Booting in the live image</h2>
+<p>After you boot to the live image, you'll be met with a tty running a zsh prompt.</p>
+<pre><code>root@archiso~#
+</code></pre>
+<p>The first time I did this, I couldn't type any coherent input into the tty since the stdin was being randomly flooded with error messages like  <code>SQUASHFS error: Unable to read fragment cache entry</code>. </p>
+<p>Online results said that my image must have been corrupted. I knew that wasn't the case (since I verified the image), but I knew my USB in question was a piece of crap in the past, so I flashed a newer one and that worked.</p>
+<p>Following the arch guide, I ran </p>
+<pre><code>ls /sys/firmware/efi/efivars
+</code></pre>
+<p>to verify that I was in UEFI mode. </p>
+<h2>Connect to wifi in the live image</h2>
+<p>Next, you need to connect to the internet. You do this by using <code>iwctl</code>, which will open a command prompt that looks something like </p>
+<pre><code>[iwd]#
+</code></pre>
+<p>Run <code>help</code> to see your options and so you understand what's going on.</p>
+<p>Next, run the command</p>
+<pre><code>[iwd]# device list
+</code></pre>
+<p>to see your network device list. Look for something like <code>wlan0</code>, or something starting with a <code>w</code>, to find your wifi device. For me that was <code>wlan0</code>.</p>
+<p>Now scan networks with your wifi device via the command </p>
+<pre><code>[iwd]# station wlan0 scan
+</code></pre>
+<p>Get the results of the scan via </p>
+<pre><code>[iwd]# station wlan0 get-networks
+</code></pre>
+<p>and you will see your available wifi networks.</p>
+<p>Connect to a wifi network of your choosing via </p>
+<pre><code>[iwd]# station wlan0 connect &lt;network_name&gt;
+</code></pre>
+<p>Note that tab complete is available, in case you have a long network name.</p>
+<p>Verify the connection by running the command </p>
+<pre><code>ping archlinux.org
+</code></pre>
+<p>Keep in mind that this is <em>not</em> the same as performing the network configuration for your actual Arch installation (which you will do painfully later). In fact, your own installation of Arch doesn't even exist on your computer at this point.
+The connection you have now will remain until you reboot. So it's important to download certain packages while you have this internet connection, which we will discuss later.</p>
+<p>Next, I used the command </p>
+<pre><code>timedatectl set-ntp true
+</code></pre>
+<p>to synchronize the system clock with the network.</p>
+<h1>Configure Partitioning Table and Scheme</h1>
+<p>You now need to do three things with your disks.</p>
+<ul>
+<li>
+<p>Identify your computer's disk (singular, assuming you're on a laptop with one physical storage disk of 256GB, 500GB,etc.) and examine the <strong>partitioning table</strong> and <strong>scheme</strong> </p>
+</li>
+<li>
+<p>Create <strong>partitions</strong> of your disk to assign your linux file systems and boot (so your machine boots to your installation automatically, forever, when this is all over)</p>
+</li>
+<li>
+<p><strong>Format</strong> the partitons you created</p>
+</li>
+<li>
+<p><strong>Mount</strong> the partitons you created (so you can access your Arch installation from the live image you're currently running).</p>
+</li>
+</ul>
+<p>If you've never done any of this before, this part will (and should) take around an hour or two because you need to understand exactly what <strong>partitioning</strong> (tables, schemes), <strong>formating</strong>, and <strong>mounting</strong> are. If you are otherwise not careful, you can mess something up with a high likelihood (although you'll probably be fine even if you do). If you don't understand the terms above in bold, read up on them. I certainly did not know these terms when I approached this step and it really helped to learn these terms so I knew what exactly I was doing.</p>
+<ol>
+<li>To find your computer storage disk that you will install Arch on, identify all of your disks and the existing partition of the disks. You can do this by running any of the commands.</li>
+</ol>
+<pre><code class="language-bash">fdisk -l  # Verbose list of storage devices and their partitions
+lsblk  # Lists the partitions in a visual tree format
+parted -l  # Lists the partition tables, size, and filesystems 
+</code></pre>
+<p>To keep things simple, stick to <code>fdisk -l</code>. It will always tell you everything you need to know, and you will use <code>fdisk</code> later in the installation too (the less commands to remember, the better).</p>
+<p>These commands will show you storage devices like </p>
+<ul>
+<li>
+<p><code>/dev/sda</code> which corresponds to a SATA disk </p>
+</li>
+<li>
+<p><code>/dev/nvme0n1</code>which corresponds to an NVMe disk</p>
+</li>
+<li>
+<p><code>/dev/mmcblk0</code> which corresponds to a eMMC disk</p>
+</li>
+</ul>
+<p>For me, on a new laptop, my disk was <code>/dev/nvme0n1</code> and I had 5 partitions like </p>
+<pre><code>/dev/nvme0n1p1 EFI
+/dev/nvme0n1p2 Microsoft Data
+/dev/nvme0n1p3 Windows Recovery 
+/dev/nvme0n1p4 ...
+/dev/nvme0n1p5 ...
+</code></pre>
+<p>You'll probably also see your USB device from which you are booting you live image from, which probably is something like <code>/dev/sda</code>.</p>
+<ol>
+<li>
+<p>Decide on your partitioning scheme.
+There are two choices for what partitioning scheme you want to use: Master Boot Record (MBR) and GUID Partition Table (GPT). To decide between the two, see <a href="https://wiki.archlinux.org/title/partitioning#Choosing_between_GPT_and_MBR">this discussion</a>. Long story short, you probably want GPT.</p>
+</li>
+<li>
+<p>Before you actually partition your disk, back up your current partitioning table and scheme. To do this, use the name of your storage device. For me, that was <code>/dev/nvme0n1</code>. Therefore, I ran the command </p>
+</li>
+</ol>
+<pre><code>sfdisk -d /dev/nvme0n1 &gt; nvme0n1.dump
+</code></pre>
+<p>where of course you should supply your correct disk. Now if you need to restore your partitioning table and scheme you can run</p>
+<pre><code>sfdisk /dev/nvme0n1 &lt; nvme0n1.dump
+</code></pre>
+<ol>
+<li>Now partition the actual disk. There are a number of commands you can use, but <code>fdisk</code> does the job. Since in my case my computers storage device was <code>/dev/nvme0n1</code>, I ran</li>
+</ol>
+<pre><code>fdisk /dev/nvme0n1
+</code></pre>
+<p>Of course, run the command with your storage device that you found. 
+Running this command will load a command prompt that looks like this </p>
+<pre><code>Command (m for help):
+</code></pre>
+<p>and you will use this command prompt to create the partitions. This command makes no changes to the drive's partitioning scheme until you tell it to explictly with the <code>w</code> command.  </p>
+<p>You should press <code>m</code> to see the options and usage. </p>
+<ol>
+<li>See if you have an existing EFI partition. The Arch docs recommend not formatting an existing EFI partition, since you'll just have to make one again anyways, and it could have something useful for you later on. In my case </li>
+</ol>
+<pre><code>/dev/nvme0n1p1
+</code></pre>
+<p>was an already existing EFI partition, and as my partitioning scheme was GPT, I simply left it alone. I then deleted the other partitons since none of them were of importance. </p>
+<ol>
+<li>You will now perform the actual partitioning depending on which scheme you chose. In my case my disk was <code>nvme0n1</code>, I chose GPT, and I decided on the following partition layout:</li>
+</ol>
+<pre><code>/dev/nvme0n1p1 200MI EFI System
+
+/dev/nvme0n1p2 372GB Home filesystem 
+
+/dev/nvme0n1p3 60GB  Root filesystem
+
+/dev/nvme0n1p4 48GB  Swap
+</code></pre>
+<p>That is, I wanted to separate my root and home file systems into different disk partitions. Many people online recomend this, but most GUI-installers for Linux distributions will by default only make you one root partition in which your home directory resides.</p>
+<p>I also decided on a swap partition, which is used for the RAM and suspending the machine. I decided on 48GB for the swap size via the formula <code>swap_size = 1.5 * &lt;your_RAM&gt;</code> which in my case was 32GB.</p>
+<p>Since a common paritioning is to have partitions for <code>/</code>, for operating system files and booting, <code>/home</code>, for my own user files, and a third partition for RAM swap. I did research into seeing if that was worth it. Usually everything is just lumped into <code>/</code>. I ended up deciding on the following partitioning table decided on the partition table:</p>
+<p>For more on how exactly you can partition your disk, here are some references.
+To decide on your own partitioning scheme, here's a <a href="https://www.dell.com/support/kbdoc/en-us/000131456/the-types-and-definitions-of-ubuntu-linux-partitions-and-directories-explained">great reference</a> by Dell about common partitioning schemes and sizes in Linux. <a href="https://bbs.archlinux.org/viewtopic.php?id=260759">Here</a> is also a helpful and funny Arch linux discussion on the topic of partition sizes.</p>
+<p>To achieve this desired partitioning, I needed to perform disk partitioning in a certain order, and you will too. This is because you probably want your home directory (or root directory, if you're doing just one root partition) to take up the largest amount of space possible around your swap file and EFI system. 
+For my specific partitioning, I performed the following steps.</p>
+<ol>
+<li>
+<p>I deleted the pre-existing partitions that I didn't want using the <code>d</code> command. These were some useless partitions created by Microsoft Windows (useless to me because I hate Windows, perhaps useful to you).</p>
+</li>
+<li>
+<p>Since I chose to separate my root and home into different partitions, I first created the partition where my root file system would reside, since it only needs about 30GB. I did this with the <code>n</code> command. </p>
+</li>
+<li>
+<p>For <code>Partition Number</code>, I entered 2, becaue <code>/dev/nvme0n1</code>, my EFI system, was already taken.</p>
+</li>
+<li>For <code>First Sector</code>, I simply hit enter for the default value.</li>
+<li>For <code>Second Sector</code>, I entered <code>+60GB</code> to give my root file system 60GB. 
+This created the partition, but I wanted to the partition type to be <code>Linux root (x86-64)</code> and not <code>Linux filesystem</code>. To do this, I used the <code>t</code> command, and examined the list of partition types.</li>
+<li>Next I created a swap partition again with <code>n</code> command.</li>
+<li>For <code>Partition number</code> I did <code>4</code>.</li>
+<li>For <code>First sector</code> I again hit enter.</li>
+<li>For <code>Second sector</code> I entered <code>+48GB</code>.</li>
+<li>Then I used the <code>t</code> command to change this partition type to <code>swap</code>.</li>
+<li>Lastly, I created the partition for my home file system for last as I wanted it to take up as much space as possible around my other partitions. </li>
+<li>For <code>Partition number</code> I did <code>3</code>.</li>
+<li>For <code>First sector</code> I hit enter.</li>
+<li>For <code>Second sector</code> I also hit enter. The default is to take up the rest of the space.</li>
+<li>I was then happy with the partition being of type <code>Linux filesystem</code>. It really doesn't matter in this case. </li>
+<li>I then hit the <code>w</code> command to write my partitions, and verified this is what I wanted with the <code>fdisk -l</code> command.</li>
+</ol>
+<p>A list of resources:
+- <a href="https://wiki.archlinux.org/title/fdisk">arch linux <code>fdisk</code> docs</a> for understanding what the command can do
+- <a href="https://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/">here's</a> a basic guide on using <code>fdisk</code>. It is outdated, but it's helpful since it has screenshots.
+- <a href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs">A list of common partition types</a> from archlinux.org
+- <a href="https://unix.stackexchange.com/questions/557470/what-are-the-differences-between-linux-filesystem-linux-server-data-linux-root">A good question</a> about difference between partition types</p>
+<h1>Format the Partitions</h1>
+<p>Now you need to format your partitions in order to prepare them for installing linux filesystems onto them. In my case, I did this with the following commands. </p>
+<pre><code class="language-bash">mkfs.ext4 /dev/nvme0n1p2 # Format the root 
+mkfs.ext4 /dev/nvme0n1p3 # Format the home directory 
+mkswap /dev/nvme0n1p4 # Initialize the swap partition
+</code></pre>
+<p>And I did nothing with my existing EFI partition. If I tried to format it, it would just erase everything on it.</p>
+<h1>Mount the partitons</h1>
+<p>Next, mount your partitions onto the directory <code>/mnt</code>. This will allow you to actually perform the Arch linux installation on your disk by giving yourself a point of reference to your disk.</p>
+<p>The Arch linux docs do not state this, but it is actually very important and critical that you mount your partitions into a very specific order.
+In any case, you first need to do <code>root</code>. You can't, for example, mount the <code>home</code>, then mount the <code>root</code>; you will lose access to data in <code>home</code>. You instead need to mount the <code>root</code>, then the <code>home</code>. </p>
+<p>Since the EFI boot system and <code>home</code> do not collide, the order of mounting these two doesn't matter. </p>
+<p>So in my particular case, I performed the following commands in this order to achieve a correct mounting. </p>
+<pre><code class="language-bash">mount /dev/nvme0n1p2 /mnt # Mount the root
+mkdir /mnt/boot # Create the boot directory
+mount /dev/nvme0n1p1 /mnt/boot # Mount the EFI to boot
+mkdir /mnt/home  # Create the home directory
+mount /dev/nvme0n1p3 /mnt/home # Mount the home 
+swapon /dev/nvme0n1p4 # Designate my swap partition 
+</code></pre>
+<p>You can see these commands are successful by runnning <code>ls /mnt</code>. To
+check that the swap is successful, run <code>swapon --show</code> to show the swap devices. </p>
+<p>To see all of the mount points after you're done visually, run <code>findmnt</code>. </p>
+<p>Also note that if you decided to also create a separate partition for your <code>/home</code> directory, you may find a <code>lost+found</code> file sitting there. That's normal, according to <a href="https://unix.stackexchange.com/a/125863">this</a> question and answer. </p>
+<h1>Remainder set up</h1>
+<p>Next install Arch linux onto your disk via the command </p>
+<pre><code>pacstrap /mnt base linux linux-firmware
+</code></pre>
+<p>Create an fstab file via the command</p>
+<pre><code>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre>
+<p>Enter your newly installed Arch linux via the command</p>
+<pre><code>arch-chroot /mnt
+</code></pre>
+<p>At this point, you are in your Arch linux install and <strong>you have internet</strong>. You will lose this connection if you reboot. So it is very wise to download anything you think you may possibly need (<code>vim</code>, <code>curl</code>, <code>git</code>, etc). On top of this you'll download some packages later in this guide.  </p>
+<p>In the new system, update the timezone information via</p>
+<pre><code>ln -sf /usr/share/zoneinfo/&lt;region&gt;/&lt;city&gt; /etc/localtime
+</code></pre>
+<p>You can use tab-complete to easily find your region and city. Then run the</p>
+<pre><code>hwclock --systohc
+</code></pre>
+<p>Next, you need to edit files, so unless you want to torture yourself using <code>nano</code>, download <code>vim</code> or whatever.</p>
+<pre><code>pacman -Syu vim
+</code></pre>
+<p>Next, edit <code>/etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code>. Create the file <code>/etc/locale.conf</code> and write <code>LANG=en_US.UTF-8</code>. Finally, run the command </p>
+<pre><code>locale-gen
+</code></pre>
+<p>Next, create your system hostname by creating and writing in the file <code>/etc/hostname</code> file.</p>
+<h1>Download essential things</h1>
+<p>The next step will require you to configure a boot loader, so that your computer acts like a normal computer and boots to Arch linux automatically when it powers on. This requires installing <code>grub</code>. However, we also need some other packages for later, so we are just going to install a lot of things all at once. </p>
+<p>Run the command </p>
+<pre><code>pacman -Syu grub efibootmgr mandb networkmanager network-manager-applet wireless_tools wpa_supplicant mtools dosfstools base-devel linux-headers
+</code></pre>
+<p>Add anything else you want. Of particular importance:</p>
+<ul>
+<li>
+<p><code>grub</code> and <code>efibootmgr</code> are packages that will help you set up your boot loader.</p>
+</li>
+<li>
+<p><code>mandb</code> allows you to use the <code>man</code> command, which is essential so you can investigate commands that you will use later on.</p>
+</li>
+<li>
+<p><code>network-manager</code> is what you will use to start the <code>NetworkManager.service</code> in order to connect to wifi. </p>
+</li>
+</ul>
+<p>All other tools are extra things that may come in handy. </p>
+<h1>If you forget to download something</h1>
+<p>Soon, you will restart your computer and boot into your installation, at which point you will have no internet. If you forget to download something once you're restarted, you can try connecting with ethernet. Your other option will be to</p>
+<ul>
+<li>
+<p>Power off your computer, go into recovery mode to reassign your live USB the highest boot priority</p>
+</li>
+<li>
+<p>Reboot back into your live image</p>
+</li>
+<li>
+<p>Remount your partitions onto <code>/mnt</code></p>
+</li>
+<li>
+<p><code>arch-chroot</code> back into your arch installation</p>
+</li>
+</ul>
+<p>and then proceed to use your wifi connection to download whatever you need.</p>
+<h1>Boot loader</h1>
+<p>A common boot loader is GRUB, which I settled on for my installation. One thing I needed to configure for my particular machine, and you probably will too, is to configure microcode updates for your system's firmware. To do this, run the command </p>
+<p>Since I had an intel chip, I followed the Arch linux docs by running the command </p>
+<pre><code>pacman -Syu intel-ucode
+</code></pre>
+<p>Once you have your firmware packages installed, you need to install grub onto your Arch linux insatllation. In my case, I needed to put grub in <code>/boot</code>, which is the typical location for the boot loader. This is also the location of where I mounted my pre-existing EFI system. Thus the appropriate command for this is</p>
+<pre><code>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+</code></pre>
+<p>Next you need to set up a <code>grub.cfg</code> file. Again, it's important to have installed the fimware <code>intel-ucode</code> first before configuring the grub file. The command to do that is </p>
+<pre><code>grub-mkconfig -o /boot/grub/grub.cfg
+</code></pre>
+<h1>Create a root password and user</h1>
+<p>Next, you need to create a password for the root account. Do that by running </p>
+<pre><code>passwd
+</code></pre>
+<p>If you forget to do this and restart your computer, then you will have to boot back into your Arch live image, remount your disk partitions, <code>arch-chroot</code> back into your system, and then create a password.</p>
+<h1>Reboot the system</h1>
+<p>You can now restart your computer and hopefully it should automatically boot to your installed Arch system. You can of course do this with </p>
+<pre><code>reboot
+</code></pre>
+<h1>Configure the network</h1>
+<p>Next you need to configure your network which can be anything from seamless to a huge pain in the ass. There are various network packages you can choose. In my case, I eventually settled on Network Manager.</p>
+<p>First identify what wifi card your computer has. To do this, run the command</p>
+<pre><code>lspci -v | grep Network
+</code></pre>
+<p>For me, it returned something like </p>
+<pre><code>Network controller: Intel Corporation Tiger Lake PCH CNVi WiFi
+</code></pre>
+<p>which I then googled to determine what specific actions I needed to do for this specific wifi card. You should do the same with whatever card shows up for you.</p>
+<p>Your goal is to first have your system recognize that you even have a wifi card. That is, you want a wireless device to appear under </p>
+<pre><code>ip link show
+</code></pre>
+<p>and you want to have an IP address under</p>
+<pre><code>ip address show 
+</code></pre>
+<p>For me, my wifi card did not appear when I ran <code>ip link show</code>. To make it appear, I needed to investigate why my firmware was failing to load via the command</p>
+<pre><code>dmesg | grep firmware
+</code></pre>
+<p>and as well as looking at the system journal via <code>journalctl</code>. Eventually, I found out that I needed to run this set of commands to load my firmware</p>
+<pre><code>sudo modprobe -r iwlnvm
+sudo modprobe -r iwlwifi
+sudo modprobe iwlwifi
+</code></pre>
+<p>Once I manually loaded my firmware, my wifi device appeared under the <code>ip link show</code> command as device <code>wlan0</code>. I then ran </p>
+<pre><code>ip link set wlan0 up
+</code></pre>
+<p>Once I set up the device, I needed to <strong>enable</strong> and <strong>start</strong> the service <code>NetworkManager</code> which I did with <code>systemctl</code>. </p>
+<p>Finally, I connected to my wifi network with <code>NetworkManager</code>. (I tried using <code>iwctl</code>, but that didn't happen to find my wifi device even though it showed up in <code>ip link show</code>. I also tried <code>wpa_supplicant</code>, but that also did not work.)
+I ran the commands <a href="https://wiki.archlinux.org/title/NetworkManager">here</a>.</p>
+<p>After this, my internet connection worked. In rebooting my internet connection continued to work out of the box. </p>
+<h2>Frequently disconnecting wifi</h2>
+<p>One error I did have was that my wifi randomly disconnected and had computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found <a href="https://bbs.archlinux.org/viewtopic.php?id=230992">here</a> that it was happening because I had both <code>dhcpcd.service</code> and <code>NetworkManager.service</code>running. I disabled and stopped <code>dhcpcd.service</code> and my wifi continued to behave.</p>
+<h1>Where to go from here</h1>
+<p>At this point, you are probably going to customize your set up further via downloading packages from the internet. For example, you'll probably get yourself a desktop environment or window manager like bspwm. Reading up on the following links should help you with that. </p>
+<ul>
+<li><a href="https://wiki.archlinux.org/title/Arch_User_Repository">Arch User Repository</a></li>
+<li>[Arch package mirrors]</li>
+</ul>
+</article>
+
+</div>
+
+</body>
+</html>

@@ -33,7 +33,7 @@ html {
 ====> 2.1 Headings
 --------------------------------------------------------------*/
 h1, h2, h3, h4, h5, h6 {
-   color: #24292e;
+   color: #ffffff;
    line-height: 1.4;
    padding-bottom: 15px;
 }
@@ -55,14 +55,14 @@ h6 { font-size: 19px; }
 --------------------------------------------------------------*/
 body,
 textarea {
-   color: #24292e;
+   color: #ffffff;
    font-size: 100%;
    line-height: 1.5;
    font-family: apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple color emoji, Segoe UI Emoji;
    font-weight: 300;
 }
 p {
-   color: #24292e;
+   color: #ffffff;
    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple color emoji, Segoe UI Emoji;
    font-size: 100%;
    line-height: 1.5;
@@ -120,7 +120,7 @@ cite, em, i {
 }
 
 a {
-   color: rgb(76, 135, 199);
+   color: #6dabef;
    text-decoration: none;
    -webkit-transition: 0.25s ease-in-out;
    -moz-transition: 0.25s ease-in-out;
