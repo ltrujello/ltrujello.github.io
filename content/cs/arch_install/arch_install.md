@@ -117,7 +117,6 @@ You'll probably also see your USB device from which you are booting you live ima
 
 2. Decide on your partitioning scheme.
 There are two choices for what partitioning scheme you want to use: Master Boot Record (MBR) and GUID Partition Table (GPT). To decide between the two, see [this discussion](https://wiki.archlinux.org/title/partitioning#Choosing_between_GPT_and_MBR). Long story short, you probably want GPT.
-
 3. Before you actually partition your disk, back up your current partitioning table and scheme. To do this, use the name of your storage device. For me, that was `/dev/nvme0n1`. Therefore, I ran the command 
 ```
 sfdisk -d /dev/nvme0n1 > nvme0n1.dump
@@ -170,30 +169,51 @@ To decide on your own partitioning scheme, here's a [great reference](https://ww
 To achieve this desired partitioning, I needed to perform disk partitioning in a certain order, and you will too. This is because you probably want your home directory (or root directory, if you're doing just one root partition) to take up the largest amount of space possible around your swap file and EFI system. 
 For my specific partitioning, I performed the following steps.
 
-1. I deleted the pre-existing partitions that I didn't want using the `d` command. These were some useless partitions created by Microsoft Windows (useless to me because I hate Windows, perhaps useful to you).
+First, I deleted the pre-existing partitions that I didn't want using the `d` command. These were some useless partitions created by Microsoft Windows (useless to me because I hate Windows, probably useful to you if you want to dual boot).
 
-2. Since I chose to separate my root and home into different partitions, I first created the partition where my root file system would reside, since it only needs about 30GB. I did this with the `n` command. 
+## Partition for `/`
+Since I chose to separate my root and home into different partitions, I first created the partition where my root file system would reside, since it only needs about 30GB. I did this with the `n` command. 
 
 * For `Partition Number`, I entered 2, becaue `/dev/nvme0n1`, my EFI system, was already taken.
+
 * For `First Sector`, I simply hit enter for the default value.
+
 * For `Second Sector`, I entered `+60GB` to give my root file system 60GB. 
-This created the partition, but I wanted to the partition type to be `Linux root (x86-64)` and not `Linux filesystem`. To do this, I used the `t` command, and examined the list of partition types.
-3. Next I created a swap partition again with `n` command.
+
+* This created the partition, but I wanted to the partition type to be `Linux root (x86-64)` and not `Linux filesystem`. To do this, I used the `t` command, and examined the list of partition types.
+
+## Parition for the swap
+Next I created a swap partition again with `n` command.
+
 * For `Partition number` I did `4`.
+
 * For `First sector` I again hit enter.
+
 * For `Second sector` I entered `+48GB`.
+
 * Then I used the `t` command to change this partition type to `swap`.
-4. Lastly, I created the partition for my home file system for last as I wanted it to take up as much space as possible around my other partitions. 
+
+## Partition for `/home`
+Lastly, I created the partition for my home file system for last as I wanted it to take up as much space as possible around my other partitions. 
+
 * For `Partition number` I did `3`.
+
 * For `First sector` I hit enter.
+
 * For `Second sector` I also hit enter. The default is to take up the rest of the space.
+
 * I was then happy with the partition being of type `Linux filesystem`. It really doesn't matter in this case. 
-5. I then hit the `w` command to write my partitions, and verified this is what I wanted with the `fdisk -l` command.
+
+Finally, I hit the `w` command to write my partitions, and verified this is what I wanted with the `fdisk -l` command.
 
 A list of resources:
+
 - [arch linux `fdisk` docs](https://wiki.archlinux.org/title/fdisk) for understanding what the command can do
+
 - [here's](https://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/) a basic guide on using `fdisk`. It is outdated, but it's helpful since it has screenshots.
+
 - [A list of common partition types](https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs) from archlinux.org
+
 - [A good question](https://unix.stackexchange.com/questions/557470/what-are-the-differences-between-linux-filesystem-linux-server-data-linux-root) about difference between partition types
 
 # Format the Partitions
@@ -287,15 +307,17 @@ Soon, you will restart your computer and boot into your installation, at which p
 * Power off your computer, go into recovery mode to reassign your live USB the highest boot priority
 
 * Reboot back into your live image
+
+* Reconnect to your wifi using `iwctl`
  
-* Remount your partitions onto `/mnt`
+* Remount your partitions onto `/mnt` (again, in the right order)
 
 * `arch-chroot` back into your arch installation
 
 and then proceed to use your wifi connection to download whatever you need.
 
 # Boot loader
-A common boot loader is GRUB, which I settled on for my installation. One thing I needed to configure for my particular machine, and you probably will too, is to configure microcode updates for your system's firmware. To do this, run the command 
+A common boot loader is GRUB, which I settled on for my installation. One thing I needed to configure for my particular machine, and you probably will too, is to configure microcode updates for your system's firmware. 
 
 Since I had an intel chip, I followed the Arch linux docs by running the command 
 ```
@@ -325,7 +347,9 @@ reboot
 ```
 
 # Configure the network
-Next you need to configure your network which can be anything from seamless to a huge pain in the ass. There are various network packages you can choose. In my case, I eventually settled on Network Manager.
+Congrats! You now have Arch Linux. Now hell begins (not really). 
+
+You next need to configure your network which can be anything from seamless to a huge pain in the ass. There are various network packages you can choose. In my case, I eventually settled on Network Manager.
 
 First identify what wifi card your computer has. To do this, run the command
 ```
@@ -367,13 +391,13 @@ I ran the commands [here](https://wiki.archlinux.org/title/NetworkManager).
 After this, my internet connection worked. In rebooting my internet connection continued to work out of the box. 
 
 ## Frequently disconnecting wifi
-One error I did have was that my wifi randomly disconnected and had computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found [here](https://bbs.archlinux.org/viewtopic.php?id=230992) that it was happening because I had both `dhcpcd.service` and `NetworkManager.service`running. I disabled and stopped `dhcpcd.service` and my wifi continued to behave.
+One error I did have was that my wifi randomly disconnected and my computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found [here](https://bbs.archlinux.org/viewtopic.php?id=230992) that it was happening because I had both `dhcpcd.service` and `NetworkManager.service`running. I disabled and stopped `dhcpcd.service` and my wifi continued to behave.
 
 # Where to go from here
 At this point, you are probably going to customize your set up further via downloading packages from the internet. For example, you'll probably get yourself a desktop environment or window manager like bspwm. Reading up on the following links should help you with that. 
 
 * [Arch User Repository](https://wiki.archlinux.org/title/Arch_User_Repository)
-* [Arch package mirrors]
+* [Arch package mirrors](https://wiki.archlinux.org/title/mirrors)
  
 
 

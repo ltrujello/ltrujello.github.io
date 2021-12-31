@@ -120,13 +120,9 @@ parted -l  # Lists the partition tables, size, and filesystems
 </code></pre>
 <p>You'll probably also see your USB device from which you are booting you live image from, which probably is something like <code>/dev/sda</code>.</p>
 <ol>
-<li>
-<p>Decide on your partitioning scheme.
-There are two choices for what partitioning scheme you want to use: Master Boot Record (MBR) and GUID Partition Table (GPT). To decide between the two, see <a href="https://wiki.archlinux.org/title/partitioning#Choosing_between_GPT_and_MBR">this discussion</a>. Long story short, you probably want GPT.</p>
-</li>
-<li>
-<p>Before you actually partition your disk, back up your current partitioning table and scheme. To do this, use the name of your storage device. For me, that was <code>/dev/nvme0n1</code>. Therefore, I ran the command </p>
-</li>
+<li>Decide on your partitioning scheme.
+There are two choices for what partitioning scheme you want to use: Master Boot Record (MBR) and GUID Partition Table (GPT). To decide between the two, see <a href="https://wiki.archlinux.org/title/partitioning#Choosing_between_GPT_and_MBR">this discussion</a>. Long story short, you probably want GPT.</li>
+<li>Before you actually partition your disk, back up your current partitioning table and scheme. To do this, use the name of your storage device. For me, that was <code>/dev/nvme0n1</code>. Therefore, I ran the command </li>
 </ol>
 <pre><code>sfdisk -d /dev/nvme0n1 &gt; nvme0n1.dump
 </code></pre>
@@ -168,36 +164,71 @@ Running this command will load a command prompt that looks like this </p>
 To decide on your own partitioning scheme, here's a <a href="https://www.dell.com/support/kbdoc/en-us/000131456/the-types-and-definitions-of-ubuntu-linux-partitions-and-directories-explained">great reference</a> by Dell about common partitioning schemes and sizes in Linux. <a href="https://bbs.archlinux.org/viewtopic.php?id=260759">Here</a> is also a helpful and funny Arch linux discussion on the topic of partition sizes.</p>
 <p>To achieve this desired partitioning, I needed to perform disk partitioning in a certain order, and you will too. This is because you probably want your home directory (or root directory, if you're doing just one root partition) to take up the largest amount of space possible around your swap file and EFI system. 
 For my specific partitioning, I performed the following steps.</p>
-<ol>
-<li>
-<p>I deleted the pre-existing partitions that I didn't want using the <code>d</code> command. These were some useless partitions created by Microsoft Windows (useless to me because I hate Windows, perhaps useful to you).</p>
-</li>
-<li>
+<p>First, I deleted the pre-existing partitions that I didn't want using the <code>d</code> command. These were some useless partitions created by Microsoft Windows (useless to me because I hate Windows, probably useful to you if you want to dual boot).</p>
+<h2>Partition for <code>/</code></h2>
 <p>Since I chose to separate my root and home into different partitions, I first created the partition where my root file system would reside, since it only needs about 30GB. I did this with the <code>n</code> command. </p>
-</li>
+<ul>
 <li>
 <p>For <code>Partition Number</code>, I entered 2, becaue <code>/dev/nvme0n1</code>, my EFI system, was already taken.</p>
 </li>
-<li>For <code>First Sector</code>, I simply hit enter for the default value.</li>
-<li>For <code>Second Sector</code>, I entered <code>+60GB</code> to give my root file system 60GB. 
-This created the partition, but I wanted to the partition type to be <code>Linux root (x86-64)</code> and not <code>Linux filesystem</code>. To do this, I used the <code>t</code> command, and examined the list of partition types.</li>
-<li>Next I created a swap partition again with <code>n</code> command.</li>
-<li>For <code>Partition number</code> I did <code>4</code>.</li>
-<li>For <code>First sector</code> I again hit enter.</li>
-<li>For <code>Second sector</code> I entered <code>+48GB</code>.</li>
-<li>Then I used the <code>t</code> command to change this partition type to <code>swap</code>.</li>
-<li>Lastly, I created the partition for my home file system for last as I wanted it to take up as much space as possible around my other partitions. </li>
-<li>For <code>Partition number</code> I did <code>3</code>.</li>
-<li>For <code>First sector</code> I hit enter.</li>
-<li>For <code>Second sector</code> I also hit enter. The default is to take up the rest of the space.</li>
-<li>I was then happy with the partition being of type <code>Linux filesystem</code>. It really doesn't matter in this case. </li>
-<li>I then hit the <code>w</code> command to write my partitions, and verified this is what I wanted with the <code>fdisk -l</code> command.</li>
-</ol>
-<p>A list of resources:
-- <a href="https://wiki.archlinux.org/title/fdisk">arch linux <code>fdisk</code> docs</a> for understanding what the command can do
-- <a href="https://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/">here's</a> a basic guide on using <code>fdisk</code>. It is outdated, but it's helpful since it has screenshots.
-- <a href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs">A list of common partition types</a> from archlinux.org
-- <a href="https://unix.stackexchange.com/questions/557470/what-are-the-differences-between-linux-filesystem-linux-server-data-linux-root">A good question</a> about difference between partition types</p>
+<li>
+<p>For <code>First Sector</code>, I simply hit enter for the default value.</p>
+</li>
+<li>
+<p>For <code>Second Sector</code>, I entered <code>+60GB</code> to give my root file system 60GB. </p>
+</li>
+<li>
+<p>This created the partition, but I wanted to the partition type to be <code>Linux root (x86-64)</code> and not <code>Linux filesystem</code>. To do this, I used the <code>t</code> command, and examined the list of partition types.</p>
+</li>
+</ul>
+<h2>Parition for the swap</h2>
+<p>Next I created a swap partition again with <code>n</code> command.</p>
+<ul>
+<li>
+<p>For <code>Partition number</code> I did <code>4</code>.</p>
+</li>
+<li>
+<p>For <code>First sector</code> I again hit enter.</p>
+</li>
+<li>
+<p>For <code>Second sector</code> I entered <code>+48GB</code>.</p>
+</li>
+<li>
+<p>Then I used the <code>t</code> command to change this partition type to <code>swap</code>.</p>
+</li>
+</ul>
+<h2>Partition for <code>/home</code></h2>
+<p>Lastly, I created the partition for my home file system for last as I wanted it to take up as much space as possible around my other partitions. </p>
+<ul>
+<li>
+<p>For <code>Partition number</code> I did <code>3</code>.</p>
+</li>
+<li>
+<p>For <code>First sector</code> I hit enter.</p>
+</li>
+<li>
+<p>For <code>Second sector</code> I also hit enter. The default is to take up the rest of the space.</p>
+</li>
+<li>
+<p>I was then happy with the partition being of type <code>Linux filesystem</code>. It really doesn't matter in this case. </p>
+</li>
+</ul>
+<p>Finally, I hit the <code>w</code> command to write my partitions, and verified this is what I wanted with the <code>fdisk -l</code> command.</p>
+<p>A list of resources:</p>
+<ul>
+<li>
+<p><a href="https://wiki.archlinux.org/title/fdisk">arch linux <code>fdisk</code> docs</a> for understanding what the command can do</p>
+</li>
+<li>
+<p><a href="https://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/">here's</a> a basic guide on using <code>fdisk</code>. It is outdated, but it's helpful since it has screenshots.</p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/GUID_Partition_Table#Partition_type_GUIDs">A list of common partition types</a> from archlinux.org</p>
+</li>
+<li>
+<p><a href="https://unix.stackexchange.com/questions/557470/what-are-the-differences-between-linux-filesystem-linux-server-data-linux-root">A good question</a> about difference between partition types</p>
+</li>
+</ul>
 <h1>Format the Partitions</h1>
 <p>Now you need to format your partitions in order to prepare them for installing linux filesystems onto them. In my case, I did this with the following commands. </p>
 <pre><code class="language-bash">mkfs.ext4 /dev/nvme0n1p2 # Format the root 
@@ -274,7 +305,10 @@ check that the swap is successful, run <code>swapon --show</code> to show the sw
 <p>Reboot back into your live image</p>
 </li>
 <li>
-<p>Remount your partitions onto <code>/mnt</code></p>
+<p>Reconnect to your wifi using <code>iwctl</code></p>
+</li>
+<li>
+<p>Remount your partitions onto <code>/mnt</code> (again, in the right order)</p>
 </li>
 <li>
 <p><code>arch-chroot</code> back into your arch installation</p>
@@ -282,7 +316,7 @@ check that the swap is successful, run <code>swapon --show</code> to show the sw
 </ul>
 <p>and then proceed to use your wifi connection to download whatever you need.</p>
 <h1>Boot loader</h1>
-<p>A common boot loader is GRUB, which I settled on for my installation. One thing I needed to configure for my particular machine, and you probably will too, is to configure microcode updates for your system's firmware. To do this, run the command </p>
+<p>A common boot loader is GRUB, which I settled on for my installation. One thing I needed to configure for my particular machine, and you probably will too, is to configure microcode updates for your system's firmware. </p>
 <p>Since I had an intel chip, I followed the Arch linux docs by running the command </p>
 <pre><code>pacman -Syu intel-ucode
 </code></pre>
@@ -302,7 +336,8 @@ check that the swap is successful, run <code>swapon --show</code> to show the sw
 <pre><code>reboot
 </code></pre>
 <h1>Configure the network</h1>
-<p>Next you need to configure your network which can be anything from seamless to a huge pain in the ass. There are various network packages you can choose. In my case, I eventually settled on Network Manager.</p>
+<p>Congrats! You now have Arch Linux. Now hell begins (not really). </p>
+<p>You next need to configure your network which can be anything from seamless to a huge pain in the ass. There are various network packages you can choose. In my case, I eventually settled on Network Manager.</p>
 <p>First identify what wifi card your computer has. To do this, run the command</p>
 <pre><code>lspci -v | grep Network
 </code></pre>
@@ -332,12 +367,12 @@ sudo modprobe iwlwifi
 I ran the commands <a href="https://wiki.archlinux.org/title/NetworkManager">here</a>.</p>
 <p>After this, my internet connection worked. In rebooting my internet connection continued to work out of the box. </p>
 <h2>Frequently disconnecting wifi</h2>
-<p>One error I did have was that my wifi randomly disconnected and had computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found <a href="https://bbs.archlinux.org/viewtopic.php?id=230992">here</a> that it was happening because I had both <code>dhcpcd.service</code> and <code>NetworkManager.service</code>running. I disabled and stopped <code>dhcpcd.service</code> and my wifi continued to behave.</p>
+<p>One error I did have was that my wifi randomly disconnected and my computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found <a href="https://bbs.archlinux.org/viewtopic.php?id=230992">here</a> that it was happening because I had both <code>dhcpcd.service</code> and <code>NetworkManager.service</code>running. I disabled and stopped <code>dhcpcd.service</code> and my wifi continued to behave.</p>
 <h1>Where to go from here</h1>
 <p>At this point, you are probably going to customize your set up further via downloading packages from the internet. For example, you'll probably get yourself a desktop environment or window manager like bspwm. Reading up on the following links should help you with that. </p>
 <ul>
 <li><a href="https://wiki.archlinux.org/title/Arch_User_Repository">Arch User Repository</a></li>
-<li>[Arch package mirrors]</li>
+<li><a href="https://wiki.archlinux.org/title/mirrors">Arch package mirrors</a></li>
 </ul>
 </article>
 
