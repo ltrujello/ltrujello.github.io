@@ -394,6 +394,41 @@ After this, my internet connection worked. In rebooting my internet connection c
 One error I did have was that my wifi randomly disconnected and my computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found [here](https://bbs.archlinux.org/viewtopic.php?id=230992) that it was happening because I had both `dhcpcd.service` and `NetworkManager.service`running. I disabled and stopped `dhcpcd.service` and my wifi continued to behave.
 
 # Where to go from here
+
+## Sound 
+To get the sound working, I had to install the package `sof-firmware`, since the Dell XPS 9710 is new, and then reboot my computer. You should do some research to see what sound firmware your computer needs.
+
+To actually change the sound settings, I installed the package `alsa-utils`. This package installed the command `amixer`, the manpages of which are extremely clear on how to use it to adjust your volume. You can read more about `alsa` [here](https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Installation).
+
+## Brightness
+To control the screen brightness, I used `brightnessctl`. The manpages are very clear on how to use this. 
+
+## Mapping volume and brightness control keys
+Since I settled on `bspwm` as a window manager, I used `sxhkd` to manage my keybindings. In order to actually map my keys, I needed to figure out what their names were, which I did via [this post](https://www.reddit.com/r/bspwm/comments/foop05/for_sxhkd_with_bspwm_how_to_view_list_of_keyboard/flga1mw/) which suggested using `xev`.
+
+After finding out the names of my keys I then appended this to my `sxhkdrc` file:
+```
+# brightness control
+XF86MonBrightnessDown
+        brightnessctl set 5%-
+
+XF86MonBrightnessUp
+        brightnessctl set 5%+
+        
+# volume control
+XF86AudioMute
+    amixer sset Master unmute
+
+XF86AudioLowerVolume
+    amixer set Master 5%-
+
+XF86AudioMute
+    amixer set Master 5%+
+```
+
+
+## Package management
+
 At this point, you are probably going to customize your set up further via downloading packages from the internet. For example, you'll probably get yourself a desktop environment or window manager like bspwm. Reading up on the following links should help you with that. 
 
 * [Arch User Repository](https://wiki.archlinux.org/title/Arch_User_Repository)

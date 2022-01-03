@@ -369,6 +369,34 @@ I ran the commands <a href="https://wiki.archlinux.org/title/NetworkManager">her
 <h2>Frequently disconnecting wifi</h2>
 <p>One error I did have was that my wifi randomly disconnected and my computer's local IP address was being reassigned on a matter of minutes. I only noticed this because I noticed my SSH connections were being randomly interrupted. Eventually I found <a href="https://bbs.archlinux.org/viewtopic.php?id=230992">here</a> that it was happening because I had both <code>dhcpcd.service</code> and <code>NetworkManager.service</code>running. I disabled and stopped <code>dhcpcd.service</code> and my wifi continued to behave.</p>
 <h1>Where to go from here</h1>
+<h2>Sound</h2>
+<p>To get the sound working, I had to install the package <code>sof-firmware</code>, since the Dell XPS 9710 is new, and then reboot my computer. You should do some research to see what sound firmware your computer needs.</p>
+<p>To actually change the sound settings, I installed the package <code>alsa-utils</code>. This package installed the command <code>amixer</code>, the manpages of which are extremely clear on how to use it to adjust your volume. You can read more about <code>alsa</code> <a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Installation">here</a></p>
+<h2>Brightness</h2>
+<p>To control the screen brightness, I used <code>brightnessctl</code>. The manpages are very clear on how to use this. </p>
+<h2>Mapping volume and brightness control keys</h2>
+<p>Since I settled on <code>bspwm</code> as a window manager, I used <code>sxhkd</code> to manage my keybindings. In order to actually map my keys, I needed to figure out what their names were, which I did via <a href="https://www.reddit.com/r/bspwm/comments/foop05/for_sxhkd_with_bspwm_how_to_view_list_of_keyboard/flga1mw/">this post</a> which suggested using <code>xev</code>.</p>
+<p>After finding out the names of my keys I then appended this to my <code>sxhkdrc</code> file:</p>
+<pre><code># brightness control
+XF86MonBrightnessDown
+        brightnessctl set 5%-
+
+XF86MonBrightnessUp
+        brightnessctl set 5%+
+
+# volume control
+XF86AudioMute
+    amixer sset Master unmute
+
+XF86AudioLowerVolume
+    amixer sset Master 5%-
+
+XF86AudioMute
+    amixer sset Master 5%+
+
+
+</code></pre>
+<h2>Package management</h2>
 <p>At this point, you are probably going to customize your set up further via downloading packages from the internet. For example, you'll probably get yourself a desktop environment or window manager like bspwm. Reading up on the following links should help you with that. </p>
 <ul>
 <li><a href="https://wiki.archlinux.org/title/Arch_User_Repository">Arch User Repository</a></li>
