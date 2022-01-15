@@ -155,11 +155,9 @@ was an already existing EFI partition, and as my partitioning scheme was GPT, I 
 
 /dev/nvme0n1p4 48GB  Swap
 ```
-That is, I wanted to separate my root and home file systems into different disk partitions. Many people online recomend this, but most GUI-installers for Linux distributions will by default only make you one root partition in which your home directory resides.
+That is, I wanted to have partitions for `/` for operating system files and booting, `/home` for my own user files, and a third partition for RAM swap. I did research into seeing if that was worth it, since typically default installs will simply lump everything into one root partition. 
 
-I also decided on a swap partition, which is used for the RAM and suspending the machine. I decided on 48GB for the swap size via the formula `swap_size = 1.5 * <your_RAM>` which in my case was 32GB.
-
-Since a common paritioning is to have partitions for `/`, for operating system files and booting, `/home`, for my own user files, and a third partition for RAM swap. I did research into seeing if that was worth it. Usually everything is just lumped into `/`. I ended up deciding on the following partitioning table decided on the partition table:
+Since I was making a swap partition, I needed to figure out what the size of that would be. I decided on 48GB for the swap size via the formula `swap_size = 1.5 * <your_RAM>` which in my case was 32GB.
 
 For more on how exactly you can partition your disk, here are some references.
 To decide on your own partitioning scheme, here's a [great reference](https://www.dell.com/support/kbdoc/en-us/000131456/the-types-and-definitions-of-ubuntu-linux-partitions-and-directories-explained) by Dell about common partitioning schemes and sizes in Linux. [Here](https://bbs.archlinux.org/viewtopic.php?id=260759) is also a helpful and funny Arch linux discussion on the topic of partition sizes.

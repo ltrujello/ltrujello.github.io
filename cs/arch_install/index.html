@@ -157,9 +157,8 @@ Running this command will load a command prompt that looks like this </p>
 
 /dev/nvme0n1p4 48GB  Swap
 </code></pre>
-<p>That is, I wanted to separate my root and home file systems into different disk partitions. Many people online recomend this, but most GUI-installers for Linux distributions will by default only make you one root partition in which your home directory resides.</p>
-<p>I also decided on a swap partition, which is used for the RAM and suspending the machine. I decided on 48GB for the swap size via the formula <code>swap_size = 1.5 * &lt;your_RAM&gt;</code> which in my case was 32GB.</p>
-<p>Since a common paritioning is to have partitions for <code>/</code>, for operating system files and booting, <code>/home</code>, for my own user files, and a third partition for RAM swap. I did research into seeing if that was worth it. Usually everything is just lumped into <code>/</code>. I ended up deciding on the following partitioning table decided on the partition table:</p>
+<p>That is, I wanted to have partitions for <code>/</code> for operating system files and booting, <code>/home</code> for my own user files, and a third partition for RAM swap. I did research into seeing if that was worth it, since typically default installs will simply lump everything into one root partition. </p>
+<p>Since I was making a swap partition, I needed to figure out what the size of that would be. I decided on 48GB for the swap size via the formula <code>swap_size = 1.5 * &lt;your_RAM&gt;</code> which in my case was 32GB.</p>
 <p>For more on how exactly you can partition your disk, here are some references.
 To decide on your own partitioning scheme, here's a <a href="https://www.dell.com/support/kbdoc/en-us/000131456/the-types-and-definitions-of-ubuntu-linux-partitions-and-directories-explained">great reference</a> by Dell about common partitioning schemes and sizes in Linux. <a href="https://bbs.archlinux.org/viewtopic.php?id=260759">Here</a> is also a helpful and funny Arch linux discussion on the topic of partition sizes.</p>
 <p>To achieve this desired partitioning, I needed to perform disk partitioning in a certain order, and you will too. This is because you probably want your home directory (or root directory, if you're doing just one root partition) to take up the largest amount of space possible around your swap file and EFI system. 
