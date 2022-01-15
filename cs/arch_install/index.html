@@ -371,7 +371,7 @@ I ran the commands <a href="https://wiki.archlinux.org/title/NetworkManager">her
 <h1>Where to go from here</h1>
 <h2>Sound</h2>
 <p>To get the sound working, I had to install the package <code>sof-firmware</code>, since the Dell XPS 9710 is new, and then reboot my computer. You should do some research to see what sound firmware your computer needs.</p>
-<p>To actually change the sound settings, I installed the package <code>alsa-utils</code>. This package installed the command <code>amixer</code>, the manpages of which are extremely clear on how to use it to adjust your volume. You can read more about <code>alsa</code> <a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Installation">here</a></p>
+<p>To actually change the sound settings, I installed the package <code>alsa-utils</code>. This package installed the command <code>amixer</code>, the manpages of which are extremely clear on how to use it to adjust your volume. You can read more about <code>alsa</code> <a href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#Installation">here</a>.</p>
 <h2>Brightness</h2>
 <p>To control the screen brightness, I used <code>brightnessctl</code>. The manpages are very clear on how to use this. </p>
 <h2>Mapping volume and brightness control keys</h2>
@@ -389,12 +389,10 @@ XF86AudioMute
     amixer sset Master unmute
 
 XF86AudioLowerVolume
-    amixer sset Master 5%-
+    amixer set Master 5%-
 
 XF86AudioMute
-    amixer sset Master 5%+
-
-
+    amixer set Master 5%+
 </code></pre>
 <h2>Package management</h2>
 <p>At this point, you are probably going to customize your set up further via downloading packages from the internet. For example, you'll probably get yourself a desktop environment or window manager like bspwm. Reading up on the following links should help you with that. </p>

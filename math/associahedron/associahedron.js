@@ -28,7 +28,7 @@ const Graph = ForceGraph3D()
             node.fy = node.y;
             node.fz = node.z;
         })
-        .width(864)
+        .width(898)
         .height(500)
         .showNavInfo(false)
 Graph.wordLen = init
