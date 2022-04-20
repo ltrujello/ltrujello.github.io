@@ -1,7 +1,7 @@
 # About
 The image header above is a long exposure on Palomar Mountain, California from a high point above the clouds, sometime after the sun had gone down.
 
-I originally come from a working class background. In high school I worked in manufacturing, which I enjoyed as I met great people and I've always liked working hard, so I thought I'd do that for the rest of my life. At that time, I thought of college and higher education as a far-away land that I'd never go towards because I was too poor. After some teachers were nice enough to inform me about college, I decided to apply and go because I had a strong passion for math and wanted to go deeper into the subject.
+Originally, I was supposed to be a mathematician, probably studying algebraic geometry, as I set myself to attend a pretty good math PhD program after college. But I last-minute chose a career in software engineering instead. (They weren't too happy when I went back on the offer, but that's okay). Ultimately, math is beautiful, but it's just not very useful.
 
 # Music
 I listen primarily to metalcore, hardcore, punk, and classical piano. This may seem like a strange combination, but it is because I enjoy listening to complex/unpredictable songs, and the artists tend to be interested in pushing instruments to the limit and finding new forms of musical expression.  
@@ -13,5 +13,5 @@ This is a simple static website I've generated via my own fork of [makesite.py](
 
 I use Intellj IDEs and Zsh both with Vim keybindings, and Tmux/iTerm for terminals. 
 
-I work on an Apple machine which I do not recommend for purely technical reasons. In a nutshell, Mac OS is very bloated and asserts a suffocating amount of control over its users. I also do not trust the security of Mac OS especially in light of recent events.
+I work on an Apple machine which I do not recommend for purely technical reasons. In a nutshell, Mac OS is very bloated and asserts a suffocating amount of control over its users. To see for yourself, simply run "top" or "ps aux" from the terminal and you'll see all of the stupid processes, like Emoji crap or iTunes, that you never asked for but MacOS has decided to run for you anyways.
 
