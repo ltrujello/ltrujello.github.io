@@ -10,5 +10,3 @@ I like math, Linux things, and programming (Python, C, Rust). Here is some stuff
 
 * [Some algebra notes](/static/algebra.pdf) on Group, Ring, and Module theory from my earlier undergrad time.
 
-* You can access my CV [here](/static/cv.pdf).
-
