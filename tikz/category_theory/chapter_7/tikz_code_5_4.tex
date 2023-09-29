@@ -1,0 +1,32 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 0.25cm, column sep = 0.5cm]
+            &
+            (m \otimes p) \otimes q
+            \arrow[r, mapsto]
+            &
+            r^{(i + j)k}q\otimes(m \otimes p)
+            \arrow[dr, mapsto]
+            &
+            \\
+            m \otimes (p\otimes q)
+            \arrow[ur, mapsto]
+            \arrow[dr, mapsto]
+            &
+            &
+            &
+            \parbox{3.2cm}{
+            \centering
+            $r^{(i+j)k}(p\otimes m)\otimes n$\\
+            $=$\\
+            $r^{jk}(r^{ik}p \otimes m) \otimes n$
+            }
+            \\
+            &
+            r^{jk} m\otimes (q\otimes p)
+            \arrow[r, mapsto]
+            &
+            r^{jk}(m\otimes q)\otimes p
+            \arrow[ur, mapsto]
+            &
+        \end{tikzcd}
+    \end{center}

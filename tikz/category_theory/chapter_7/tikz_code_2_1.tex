@@ -1,0 +1,28 @@
+\begin{center}  
+            \begin{tikzcd}[column sep = 1cm, row sep = 1.4cm]
+                F(A) \odot J
+                \arrow[r, "\rho"]
+                \arrow[d, swap, "1 \odot \epsilon"]
+                &
+                F(A)
+                \\
+                F(A) \odot F(I)
+                \arrow[r, swap, "\phi"]
+                &
+                F(A \otimes I)
+                \arrow[u, swap, "F(\rho)"]
+            \end{tikzcd}
+            \begin{tikzcd}[column sep = 1cm, row sep = 1.4cm]
+                J \odot F(A)
+                \arrow[r, "\lambda"]
+                \arrow[d, swap, "\epsilon \odot 1"]
+                &
+                F(A)
+                \\
+                F(J) \odot F(A)
+                \arrow[r, swap, "\phi"]
+                &
+                F(I \otimes A)
+                \arrow[u, swap, "F(\lambda)"]
+            \end{tikzcd}
+        \end{center}

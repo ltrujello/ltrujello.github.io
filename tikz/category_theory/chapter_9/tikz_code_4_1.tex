@@ -1,0 +1,25 @@
+\begin{center}
+    \begin{tikzcd}[column sep = 1.4cm, row sep = 0.7cm]
+        (\textcolor{Red}{1, 2, \dots, a_1},
+        \textcolor{Green}{1', 2', \dots, a'_2}, 
+        \dots, 
+        \textcolor{RoyalBlue}{1', 2', \dots, a'_n}) 
+        \arrow[d, "\sigma_1", start anchor = {[xshift = -3.5cm]}, end anchor = {[xshift=-3.5cm]}]
+        \arrow[d, "\sigma_2", start anchor = {[xshift = -1.4cm]}, end anchor = {[xshift=-1.4cm]}]
+        \arrow[d, draw = none, start anchor = {[xshift = 1cm]}, end anchor = {[xshift=1cm]}, "\raisebox{+0.2ex}{\dots}" description]
+        \arrow[d, "\sigma_n", start anchor = {[xshift = 2.7cm]}, end anchor = {[xshift=2.7cm]}]
+        \\
+        (\underbrace{\sigma_1(\textcolor{Red}{1}), \sigma_1(\textcolor{Red}{2})), 
+        \dots \sigma_1(\textcolor{Red}{a_1})}_{\text{1st block}}, 
+        \underbrace{\sigma'_1(\textcolor{Green}{1}), \sigma'_1(\textcolor{Green}{2})), 
+        \dots \sigma'_1(\textcolor{Green}{a_1})}_{\text{2nd block}}, \dots, 
+        \underbrace{\sigma'_n(\textcolor{RoyalBlue}{1}), \sigma'_n(\textcolor{RoyalBlue}{2}) \dots, \sigma'_n(\textcolor{RoyalBlue}{a_n})}_{a_n\text{-th block}})
+        \arrow[d, "\tau"]
+        \\
+        (\dots, \underbrace{\sigma_1(\textcolor{Red}{1}), \sigma_1(\textcolor{Red}{2})), 
+        \dots \sigma_1(\textcolor{Red}{a_1})}_{\tau(1)\text{-th block}}, \dots, 
+        \underbrace{\sigma'_1(\textcolor{Green}{1}), \sigma'_1(\textcolor{Green}{2})), 
+        \dots \sigma'_1(\textcolor{Green}{a_1})}_{\tau(2)\text{-th block}}, \dots, 
+        \underbrace{\sigma'_n(\textcolor{RoyalBlue}{1}), \sigma'_n(\textcolor{RoyalBlue}{2}), \dots, \sigma'_n(\textcolor{RoyalBlue}{a_n})}_{\tau(a_n)\text{-th block}}, \dots, )
+    \end{tikzcd}
+\end{center}

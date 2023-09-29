@@ -1,0 +1,21 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            \pp(A)\times\Big(\pp(B)\times \pp(C)\Big)
+            \arrow[r, "\alpha"]
+            \arrow[d, swap, "1\times \phi"]
+            &
+            \Big(\pp(A)\times \pp(B)\Big) \times \pp(C)
+            \arrow[d, "\phi \times 1"]
+            \\
+            \pp(A)\times \pp(B \times C)
+            \arrow[d, swap, "\phi"]
+            &
+            \pp(A \times B)\times \pp(C)
+            \arrow[d, "\phi"]
+            \\
+            \pp\Big(A \times \Big(B \times C\Big)\Big)
+            \arrow[r, swap, "\pp(\alpha)"]
+            &
+            \pp\Big(\Big(A \times B\Big) \times C\Big)
+        \end{tikzcd}
+    \end{center}

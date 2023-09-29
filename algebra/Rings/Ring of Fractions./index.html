@@ -1,0 +1,3769 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Principal%2C%20Maximal%20and%20Prime%20Ideals./">
+      
+      
+        <link rel="next" href="../PIDs%20and%20Euclidean%20Domains./">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>2.6 Ring of Fractions. - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#26-ring-of-fractions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2.6 Ring of Fractions.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="mydarkscheme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../category_theory/" class="md-tabs__link">
+          
+  
+  Category Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Algebra Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../associahedron/" class="md-tabs__link">
+        
+  
+    
+  
+  Associahedron
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-tabs__link">
+        
+  
+    
+  
+  Tikz-Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-tabs__link">
+        
+  
+    
+  
+  Poly-Rust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Category Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Category Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories, Functors and Natural Transformations.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories, Functors and Natural Transformations.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Introduction%3A%20What%20are%20the%20Foundations%20of%20Math%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introduction: What are the Foundations of Math?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Motivation%20for%20Category%20Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Motivation for Category Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Category%20Theory%20Axioms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Category Theory Axioms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Examples of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Paths%20and%20Diagrams%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Paths and Diagrams in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20and%20Nonexamples%20of%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Examples and Nonexamples of Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Forgetful%2C%20Full%20and%20Faithful%20Functors./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Forgetful, Full and Faithful Functors.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Natural%20Transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Natural Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Monic%2C%20Epics%2C%20and%20Isomorphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Monic, Epics, and Isomorphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Initial%2C%20Terminal%2C%20and%20Zero%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Initial, Terminal, and Zero Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Duality and Categorical Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Duality and Categorical Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/%24%5Cmathcal%7BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 $\mathcal{C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Products%20of%20Categories%2C%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Products of Categories, Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Functor%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Functor Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Vertical%2C%20Horizontal%20Composition%3B%20Interchange%20Laws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Vertical, Horizontal Composition; Interchange Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Slice%20and%20Comma%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Slice and Comma Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Graphs%2C%20Quivers%20and%20Free%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Graphs, Quivers and Free Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Quotient%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Quotient Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Duality%20and%20Categorical%20Constructions/Monoids%2C%20Groups%20and%20Groupoids%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Monoids, Groups and Groupoids in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Universal Constructions and Limits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Universal Constructions and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Universal%20Morphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Universal Morphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Representable%20Functors%20and%20Yoneda%27s%20Lemma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Representable Functors and Yoneda's Lemma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Finite Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Coproducts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Finite Coproducts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Arbitrary%20Products%20and%20Coproducts%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Arbitrary Products and Coproducts in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Introduction%20to%20Limits%20and%20Colimits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introduction to Limits and Colimits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Equalizers%20and%20Coequalizers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Equalizers and Coequalizers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Universal%20Constructions%20and%20Limits/Pullbacks%20and%20Pushouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Pullbacks and Pushouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adjunctions.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adjunctions.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Adjunctions./Introduction%20to%20Adjunctions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introduction to Adjunctions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Adjunctions./Reflective%20Subcategories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Reflective Subcategories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Adjunctions./Equivalence%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Equivalence of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Adjunctions./Adjoints%20on%20Preorders./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Adjoints on Preorders.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Adjunctions./Exponential%20Objects%20and%20Cartesian%20Closed%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Exponential Objects and Cartesian Closed Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Limits and Colimits.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Limits and Colimits.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Every%20Limit%20in%20Set%3B%20Creation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Every Limit in Set; Creation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Inverse%20and%20Direct%20Limits./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Inverse and Direct Limits.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Limits%20from%20Products%2C%20Equalizers%2C%20and%20Pullbacks./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Limits from Products, Equalizers, and Pullbacks.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Preservation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Preservation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Adjoints%20on%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 Adjoints on Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Existence%20of%20Universal%20Morphisms%20and%20Adjoint%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 Existence of Universal Morphisms and Adjoint Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Limits%20and%20Colimits./Subobjects%20and%20Quotient%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Subobjects and Quotient Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtered Colimits, Coends, and Kan Extensions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Filtered Colimits, Coends, and Kan Extensions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Filtered%20Colimits%2C%20Coends%2C%20and%20Kan%20Extensions/Filtered%20Categories%20and%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Filtered Categories and Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monoidal Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Monoidal Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Monoidal%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Monoidal Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/What%20are%20those%20Coherence%20Conditions%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 What are those Coherence Conditions?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Mac%20Lane%27s%20Coherence%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Mac Lane's Coherence Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Braided%20and%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Braided and Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Coherence%20for%20Braided%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Coherence for Braided Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Monoids%2C%20Groups%2C%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Monoids, Groups, in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Monoidal%20Categories/Enriched%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.8 Enriched Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Abelian Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Abelian Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Abelian%20Categories/Preadditive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Preadditive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Abelian%20Categories/Additive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Additive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Abelian%20Categories/Preabelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Preabelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Abelian%20Categories/Kernels%20and%20Cokernels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Kernels and Cokernels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Abelian%20Categories/Abelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Abelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_10" >
+        
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operads
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Operads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Operads/Operads%20on%20Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Operads on Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Operads/General%20Operads%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 General Operads in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Operads/Partial%20Composition%3A%20Restructuring%20Operads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Partial Composition: Restructuring Operads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Operads/The%20Braid%20Groups%20Form%20a%20%28nonsymmetric%29%20Operad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 The Braid Groups Form a (nonsymmetric) Operad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_11" >
+        
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sheaves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Sheaves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Sheaves/Topological%20Presheaves%20and%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Topological Presheaves and Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Sheaves/Abstracting%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Abstracting Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Sheaves/Stalks%20and%20Germs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Stalks and Germs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_12" >
+        
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Persistence Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Persistence Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Persistence%20Modules/Persistence%20modules%20on%20%24%5Crr%24./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Persistence modules on $\rr$.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Persistence%20Modules/Generalized%20Persistence%20Modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Generalized Persistence Modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Persistence%20Modules/Interleaving%20Distances%20via%20Sublinear%20Projections%20and%20Superlinear%20Families/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Interleaving Distances via Sublinear Projections and Superlinear Families
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../category_theory/Persistence%20Modules/General%20Persistence%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 General Persistence Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Permutation%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Permutation Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Homomorphism%20and%20Isomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Homomorphism and Isomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Cyclic%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Cyclic Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Left%20and%20Right%20Cosets%2C%20Lagrange%27s%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Left and Right Cosets, Lagrange's Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Normal%20subgroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Normal subgroups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Quotient%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Quotient Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Isomorphism%20Theorems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Isomorphism Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Group%20Actions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Group Actions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Conjugation%2C%20The%20Class%20Equation%2C%20and%20Cauchy%27s%20Theorem./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Conjugation, The Class Equation, and Cauchy's Theorem.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Sylow%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Sylow Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Groups/Fundamental%20Theorem%20of%20Finite%20Abelian%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.12 Fundamental Theorem of Finite Abelian Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ring%20homomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Ring homomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ideals%20and%20Quotient%20Rings./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Ideals and Quotient Rings.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Principal%2C%20Maximal%20and%20Prime%20Ideals./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Principal, Maximal and Prime Ideals.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Ring of Fractions.
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PIDs%20and%20Euclidean%20Domains./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 PIDs and Euclidean Domains.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Polynomial%20Rings%20%28for%20Galois%20Theory%29./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Polynomial Rings (for Galois Theory).
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Submodules%2C%20Quotient%20Modules%20and%20Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Submodules, Quotient Modules and Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Generating%20Modules%2C%20Torsions%2C%20Annihilators./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Generating Modules, Torsions, Annihilators.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Cartesian%20Products%20and%20Direct%20Sums.%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Cartesian Products and Direct Sums. 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Exact%20Sequences%20and%20the%20Hom%20Functor./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Exact Sequences and the Hom Functor.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Modules/Free%20%24R%24-modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Free $R$-modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../associahedron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associahedron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tikz-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poly-Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="26-ring-of-fractions">2.6. Ring of Fractions.</h1>
+<p>As rings were modeled based on the behavior of the integers,
+we can hypothesize that it is possible to generalize the
+construction of <span class="arithmatex">\(\mathbb{Q}\)</span> from 
+<span class="arithmatex">\(\mathbb{Z}\)</span>. Such a construction is possible, and studying it
+will utilize all of the concepts introduced up to this point. 
+However, there is a very subtle issue that
+when we try to do this. The main issue is in defining
+<span class="arithmatex">\(\dfrac{a}{b}\)</span> when $b \ne 0 $ doesn't have an inverse.</p>
+<p><span style="display:block" class="definition">
+Say <span class="arithmatex">\((R, +, \cdot)\)</span> is a commutative ring with <span class="arithmatex">\(1 \ne 0\)</span>.
+We say that <span class="arithmatex">\(D \subset R\)</span> is a <strong>multiplicative set</strong>
+if </p>
+<ul>
+<li>
+<p>[1.] <span class="arithmatex">\(1 \in D\)</span></p>
+</li>
+<li>
+<p>[2.] <span class="arithmatex">\(x \cdot y \in D\)</span> for all <span class="arithmatex">\(x, y \in D\)</span>.  </p>
+</li>
+</ul>
+<p>Condition 1. is not really crucial. We just need to make
+sure that <span class="arithmatex">\(D\)</span> is nonempty. 
+</span>
+An example of a multiplicative set includes <span class="arithmatex">\(D = \{1\}\)</span>. A
+less boring example is <span class="arithmatex">\(D = \{2n+1 \mid n \in \mathbb{Z}\}\)</span>,
+since the product of two odd integers is odd. And the maximal
+example we can come up with for any ring is to set <span class="arithmatex">\(D = R\)</span>. </p>
+<p>Now we introduce a proposition regarding a relation on
+elements. </p>
+<p><span style="display:block" class="proposition">
+Define a relation <span class="arithmatex">\(\sim\)</span> on <span class="arithmatex">\(R \times D\)</span> by saying <span class="arithmatex">\((a, b) \sim
+(c,d)\)</span> whenever we can find <span class="arithmatex">\(x \in D\)</span> such that </p>
+<div class="arithmatex">\[
+x\cdot (a\cdot d - b \cdot c) = 0.
+\]</div>
+<p>Then <span class="arithmatex">\(\sim\)</span> is an equivalence relation on <span class="arithmatex">\(R \times D\)</span>. 
+</span></p>
+<p><span style="display:block" class="proof">
+We must show the three properties of an equivalence
+relation. 
+\begin{description}
+\item[Reflexivity.] <span class="arithmatex">\((a, b)\sim(a, b)\)</span>. Choosing <span class="arithmatex">\(x = 1\)</span>,
+then we see that </p>
+<div class="arithmatex">\[
+x\cdot(a\cdot b - a\cdot b) = 0.  
+\]</div>
+<p>\item[Symmetry.] <span class="arithmatex">\((a, b) \sim (c, d)\)</span> if and only if <span class="arithmatex">\((c,
+d) \sim (a, b)\)</span>. </p>
+<p>Say <span class="arithmatex">\((a, b) \sim (c, d)\)</span>. We can find an <span class="arithmatex">\(x \in D\)</span> such
+that </p>
+<div class="arithmatex">\[
+x\cdot(a\cdot d - b \cdot c) = 0.
+\]</div>
+<p>Now consider </p>
+<div class="arithmatex">\[
+x\cdot (c\cdot b - d \cdot a) = (-1)\cdot[x\cdot (a\cdot d - b \cdot c)] = 0
+\]</div>
+<p>This shows that <span class="arithmatex">\((c, d) \sim (a, b)\)</span> </p>
+<p>\item[Transitivity.] If <span class="arithmatex">\((a, b) \sim (c, d)\)</span> and <span class="arithmatex">\((c, d) \sim
+(e, f)\)</span>, then <span class="arithmatex">\((a, b) \sim (e, f)\)</span>. </p>
+<p>We can find <span class="arithmatex">\(x, y \in D\)</span> such that </p>
+<div class="arithmatex">\[
+x \cdot (a \cdot d - b \cdot c) = y \cdot (c \cdot f - d \cdot e) = 0.
+\]</div>
+<p>Denote <span class="arithmatex">\(z = d \cdot x \cdot y\)</span>. This is an element of
+<span class="arithmatex">\(D\)</span> since it is a multiplicative set. Now </p>
+<div class="arithmatex">\[\begin{align*}
+z \cdot (a \cdot f - b \cdot e) &amp; = yfxad - yfxbc - xbycf - xbyde\\
+&amp; = 
+y \cdot f [x \cdot (a \cdot d  - b \cdot c)] + x\cdot b[y \cdot(c \cdot f - d \cdot e)]\\
+&amp; = 0.
+\end{align*}\]</div>
+<p>\end{description}
+</span>
+\noindent We'll define the collection of all equivalence classes by the
+set </p>
+<div class="arithmatex">\[
+D^{-1}R = \left\{\frac{a}{b} \mid a \in R, b \in D  \right\}
+\]</div>
+<p>where </p>
+<div class="arithmatex">\[ 
+\dfrac{a}{b} = \big\{ (c, d) \in R \times D \mid (a ,
+b) \sim (c, d) \big\}.
+\]</div>
+<p>\textcolor{MidnightBlue}{<strong>Why are we doing this?</strong> Let's say that <span class="arithmatex">\(R = \mathbb{Z}\)</span>, and
+<span class="arithmatex">\(D = \mathbb{Z}\setminus\{0\}\)</span>. Then <span class="arithmatex">\(D\)</span> is a multiplicative
+set and <span class="arithmatex">\((a, b) \sim (c, d) \text{ if and only if } ab - bc = 0\)</span>. As an
+example, <span class="arithmatex">\((1, 2) \sim (2, 4)\)</span> implies that in our set,
+<span class="arithmatex">\(\dfrac{1}{2} = \dfrac{2}{4}\)</span>. In other words, we're basically
+saying we don't care whether or not the fraction is in reduced
+terms.}</p>
+<p><span style="display:block" class="proposition">
+Let <span class="arithmatex">\(R\)</span> be a ring with identity <span class="arithmatex">\(1 \ne 0\)</span>. </p>
+<ul>
+<li>
+<p>[1.] <span class="arithmatex">\(D^{-1}R\)</span> is a commutative ring </p>
+</li>
+<li>
+<p>[2.] <span class="arithmatex">\(D^{-1}R = \left\{\dfrac{0}{1}\right\}\)</span> is
+the trivial ring if and only if <span class="arithmatex">\(0 \in D\)</span>.</p>
+</li>
+<li>
+<p>[3.] The units <span class="arithmatex">\((D^{-1}R)^\times\)</span> contains </p>
+</li>
+</ul>
+<div class="arithmatex">\[
+D^{-1}D = \left\{ \frac{a}{b} \mid a, b \in D \right\}.
+\]</div>
+<p></span></p>
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li>[1.]
+Define addition and multiplication. </li>
+</ul>
+<p><span style="display:block" class="lemma">
+The following is well-defined. </p>
+<div class="arithmatex">\[\begin{align*}
++: D^{-1}R \times D^{-1}R &amp;\longrightarrow D^{-1}R\\
+\frac{a}{b}, \frac{c}{d} &amp;\longmapsto \frac{ad - bc}{bd}
+\end{align*}\]</div>
+<p></span>
+Suppose that <span class="arithmatex">\((a_1, b_1) \sim (a_2, b_2)\)</span> and <span class="arithmatex">\((c_1, d_1)
+\sim (c_2, d_2)\)</span>. We can find <span class="arithmatex">\(x, y \in D\)</span> such that </p>
+<div class="arithmatex">\[
+x \cdot (a_1b_2 - a_2b_1) = y \cdot[c_1d_2 - c_2d_1] = 0.
+\]</div>
+<p>Denote <span class="arithmatex">\(z = xy \in D\)</span>. Then </p>
+<div class="arithmatex">\[\begin{align*}
+z[(a_1d_1 + c_1b_1)(b_2d_2) - (a_2d_2 + c_2b_2)(b_1d_1)]
+\\=
+yd_1d_2[x(a_1b_2 - a_2b_1)]
++ xb_2b_1[y(c_1d_2 - c_2d_1)] = 0.
+\end{align*}\]</div>
+<p>Hence <span class="arithmatex">\((a_1d_1 + c_1b_1, b_1d_1) \sim (a_2d_2 + c_2d_2,
+b_2d_2)\)</span>. </p>
+<p><span style="display:block" class="lemma">
+The following is well-defined:</p>
+<div class="arithmatex">\[\begin{align*}
+\cdot: D^{-1}R \times D^{-1}R &amp;\longrightarrow D^{-1}R\\
+\frac{a}{b}, \frac{c}{d} &amp;\longmapsto \frac{ac}{bd}
+\end{align*}\]</div>
+<p></span>
+Again, say that <span class="arithmatex">\((a_1, b_1) \sim (a_2, b_2)\)</span> and <span class="arithmatex">\((c_1, d_1)
+\sim (c_2, d_2)\)</span>. Denote <span class="arithmatex">\(z = xy \in D\)</span>. Then </p>
+<div class="arithmatex">\[\begin{align*}
+z[(a_1c_1) \cdot(b_2d_2) - (a_2c_2)(b_1d_1)]
+=
+yc_1d_2[x(a_1b_2 - a_2b_1)]
++ 
+xa_2b_1[y(c_1d_2 - c_2d_1)]
+= 0
+\end{align*}\]</div>
+<p>Hence <span class="arithmatex">\((a_1c_1, b_1d_1) \sim (a_2c_2, b_2d_2)\)</span>. Showing
+that <span class="arithmatex">\(D^{-1}R\)</span> is a commutative ring with these properties
+is straightforward. </p>
+<ul>
+<li>[2.] We show that <span class="arithmatex">\(D^{-1}R\)</span> is trivial if and only
+if <span class="arithmatex">\(0 \in D\)</span>. </li>
+</ul>
+<p>Say <span class="arithmatex">\(D^{-1}R = \left\{\dfrac{0}{1}\right\}\)</span>. Since <span class="arithmatex">\(1 \in R\)</span>, we see that
+<span class="arithmatex">\(\dfrac{1}{1} \in D^{-1}R\)</span> so <span class="arithmatex">\(\dfrac{1}{1} = \dfrac{0}{1}\)</span>. By
+definition, we can find an <span class="arithmatex">\(x \in D\)</span> such that </p>
+<div class="arithmatex">\[
+x \cdot (1 \cdot 1 - 0 \cdot 1) = 0
+\]</div>
+<p>so <span class="arithmatex">\(x = 0\)</span>. Hence <span class="arithmatex">\(0 \in D\)</span>. </p>
+<p>Now suppose <span class="arithmatex">\(0 \in D\)</span>. Pick any <span class="arithmatex">\(\dfrac{a}{b} \in D^{-1}R\)</span>.
+For <span class="arithmatex">\(x = 0\)</span>, we have that <span class="arithmatex">\(x \cdot (a \cdot 1 - b \cdot 0) =
+0\)</span>. Hence we see that <span class="arithmatex">\(\dfrac{a}{b} = \dfrac{0}{1}\)</span>, so that
+<span class="arithmatex">\(D^{-1}R = \left\{\dfrac{0}{1}\right\}\)</span>.</p>
+<ul>
+<li>[3.] If <span class="arithmatex">\(a, b \in D\)</span>, then <span class="arithmatex">\(\dfrac{a}{b} \in
+D^{-1}R\)</span> so that <span class="arithmatex">\(\dfrac{a}{b} \cdot \dfrac{b}{a} =
+\dfrac{1}{1}\)</span>. Hence <span class="arithmatex">\(\dfrac{a}{b} \in (D^{-1}R)^{*}\)</span>. That
+is, <span class="arithmatex">\(DD^{-1} \subset (D^{-1}R)^*\)</span>. </li>
+</ul>
+<p></span>
+<span class="arithmatex">\(D^{-1}R\)</span> is the ring of fractions of <span class="arithmatex">\(R\)</span> by <span class="arithmatex">\(D\)</span>. We also
+remark that if <span class="arithmatex">\(D \subset R \setminus \{0\}\)</span>, then <span class="arithmatex">\(D^{-1}R\)</span>
+is a commutative ring with <span class="arithmatex">\(\dfrac{1}{1} \ne \dfrac{0}{1}\)</span>.
+Finally, we also note that the elements of <span class="arithmatex">\(D\)</span> are invertible
+in <span class="arithmatex">\(D^{-1}R\)</span>. We want to construct <span class="arithmatex">\(D^{-1}R\)</span> as the "smallest"
+ring such that <span class="arithmatex">\(D\)</span> is invetible.</p>
+<p>Next we introduce a theorem. </p>
+<p><span style="display:block" class="theorem">
+Let <span class="arithmatex">\((R, +, \cdot)\)</span> be a commutative ring with <span class="arithmatex">\(1 \ne 0\)</span>, and <span class="arithmatex">\(D
+\subset R\)</span> be a multiplicative set. Denote <span class="arithmatex">\(S = D^{-1}R = \{a/b
+\mid a \in R, b \in D\}\)</span> as the \textit{ring of fractions of <span class="arithmatex">\(R\)</span>
+by <span class="arithmatex">\(D\)</span>}. Then 
+\begin{description}
+\item[1.] Let <span class="arithmatex">\(I\)</span> be an ideal of <span class="arithmatex">\(R\)</span>. Then <span class="arithmatex">\(D^{-1}I =\{x/b
+\mid x \in I, b \in D\}\)</span> is an ideal of <span class="arithmatex">\(S\)</span>. (This is called
+the <em>extension</em> of <span class="arithmatex">\(I\)</span> to <span class="arithmatex">\(S\)</span>.)</p>
+<p>\item[2.] Let <span class="arithmatex">\(J\)</span> be an ideal of <span class="arithmatex">\(S\)</span>. Define the ring
+homomorphism <span class="arithmatex">\(\pi: R \to S\)</span> which sends <span class="arithmatex">\(r \mapsto r/1\)</span>. Then
+the preimage <span class="arithmatex">\(\pi^{-1}(J)\)</span> is an ideal of <span class="arithmatex">\(R\)</span>. (This is
+called the <em>contraction</em> of <span class="arithmatex">\(J\)</span> to <span class="arithmatex">\(R\)</span>.)</p>
+<p>\item[3.] For any ideal <span class="arithmatex">\(J\)</span> of <span class="arithmatex">\(S\)</span> we have that <span class="arithmatex">\(D^{-1}[\pi^{-1}(J)] = J\)</span>.
+(That is, "extension is the left inverse of
+contraction.")
+\end{description}
+</span></p>
+<p><span style="display:block" class="proof">
+\begin{description}
+\item[1.] To show this we proceed as follows. \
+\underline{$\bm{D^{-1}I} $ <strong>is nonempty.</strong>}\
+[1.2ex]
+Observe that since <span class="arithmatex">\(D\)</span> is a multiplicative set we have that <span class="arithmatex">\(1
+\in D\)</span>. Hence if <span class="arithmatex">\(I\)</span> is nonempty, then <span class="arithmatex">\(\dfrac{i}{1} \in
+D^{-1}I\)</span> for all <span class="arithmatex">\(i \in I\)</span>. Hence it is nonempty.
+\</p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{a - b \in D^{-1}I}\)</span> <strong>if</strong> <span class="arithmatex">\(\bm{a, b
+\in D^{-1}I}\)</span>.}\[1.2ex]
+Let <span class="arithmatex">\(a, b \in D^{-1}I\)</span>. Then <span class="arithmatex">\(a = \dfrac{i_1}{d_1}\)</span> and <span class="arithmatex">\(b =
+\dfrac{i_2}{d_2}\)</span>. Then observe that 
+[
+a - b = \dfrac{i_1d_2 - i_2d_1}{d_1d_2}.
+]</p>
+<p>Since <span class="arithmatex">\(I\)</span> is an ideal, <span class="arithmatex">\(i_1d_2. i_2d_1 \in I\)</span>. Therefore their
+difference <span class="arithmatex">\(i_1d_2 - i_2d_1 \in I\)</span>. Since <span class="arithmatex">\(D\)</span> is a
+multiplicative set we have that <span class="arithmatex">\(d_1d_2 \in D\)</span>. Hence we see
+that <span class="arithmatex">\(\dfrac{i_1d_2 - i_2d_1}{d_1d_2} \in D^{-1}I\)</span>, so that <span class="arithmatex">\(a
+- b \in D^{-1}I\)</span> whenever <span class="arithmatex">\(a, b \in D^{-1}I\)</span>. </p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{s\cdot a\in D^{-1}I}\)</span> <strong>if</strong> <span class="arithmatex">\(\bm{s
+\in S, a \in D^{-1}I}\)</span>}\
+[1.2ex]
+Let <span class="arithmatex">\(s \in S\)</span> and <span class="arithmatex">\(a \in D^{-1}I\)</span>. Then <span class="arithmatex">\(s = \dfrac{r}{d}\)</span> and
+<span class="arithmatex">\(a = \dfrac{i}{d'}\)</span> for <span class="arithmatex">\(r \in R, i \in I, d,d' \in D\)</span>. 
+Hence observe that </p>
+<div class="arithmatex">\[\begin{align*}
+s\cdot a = \dfrac{r}{d} \cdot \dfrac{i}{d'}
+= \dfrac{ri}{dd'}.
+\end{align*}\]</div>
+<p>Since <span class="arithmatex">\(I\)</span> is an ideal, we see that <span class="arithmatex">\(ri \in I\)</span>. Since <span class="arithmatex">\(D\)</span> is a
+multiplicative set, we also see that <span class="arithmatex">\(dd' \in D\)</span>. Hence, we
+see that <span class="arithmatex">\(\dfrac{ri}{dd'} \in D^{-1}I\)</span>, so that <span class="arithmatex">\(s\cdot a \in
+D^{-1}I\)</span> if <span class="arithmatex">\(s \in S\)</span> and <span class="arithmatex">\(a \in D^{-1}I\)</span>.\
+Thus in total we have that <span class="arithmatex">\(D^{-1}I\)</span> is an ideal of <span class="arithmatex">\(S\)</span>.</p>
+<p>\item[2.]
+To show this is an ideal, we proceed as follows.\
+\underline{$\bm{\pi^{-1}(J)} $ <strong>is nonempty.</strong>}\[1.2ex]
+Observe that if <span class="arithmatex">\(J\)</span> is nonempty, then <span class="arithmatex">\(\dfrac{0}{1} \in J\)</span>. This
+is because if <span class="arithmatex">\(J\)</span> is an ideal, then <span class="arithmatex">\(sj \in J\)</span> for all <span class="arithmatex">\(s \in
+S\)</span> and <span class="arithmatex">\(j \in J\)</span>. Hence let <span class="arithmatex">\(s = \dfrac{0}{1}\)</span>, and <span class="arithmatex">\(j = \dfrac{r}{d} \in
+J\)</span>. Then 
+[
+sj \in J \implies \dfrac{0}{1}\cdot \dfrac{r}{d} \in J \implies \frac{0}{d} \in J.<br />
+]</p>
+<p>Now observe that <span class="arithmatex">\((0, 1) \sim (0, d)\)</span> for any <span class="arithmatex">\(d \in D\)</span>. This is
+because </p>
+<div class="arithmatex">\[
+x \cdot(0 \cdot d - 0 \cdot 1) = x \cdot (0) = 0
+\]</div>
+<p>is automatically satisfied by any <span class="arithmatex">\(x \in D\)</span>.
+Hence, <span class="arithmatex">\((0, 1) \sim (0, d)\)</span>. Now we argue that</p>
+<div class="arithmatex">\[
+\pi^{-1}(J) = \{r \in R \mid \pi(r) \in J\}.
+\]</div>
+<p>is nonempty. Observe that <span class="arithmatex">\(\pi\left(\dfrac{0}{1}\right) =
+\dfrac{0}{1}\)</span>, which we know is true because <span class="arithmatex">\(\pi\)</span>, as a ring
+homomorphism, is also a group homomorphism between the abelian
+groups <span class="arithmatex">\(R\)</span> and <span class="arithmatex">\(S\)</span> (i.e., the abelian groups we get when we remove
+the multiplicative ring stucture on them). We know from group theory
+that group homomorphisms map additive zero elements from one group
+to the additive zero element of the other group, so that <span class="arithmatex">\(\pi\left(\dfrac{0}{1}\right) =
+\dfrac{0}{1}\)</span>.</p>
+<p>As we just showed, <span class="arithmatex">\(\dfrac{0}{1} \in J\)</span>. Since
+<span class="arithmatex">\(\pi\left(\dfrac{0}{1}\right) = \dfrac{0}{1}\)</span>,
+we see that <span class="arithmatex">\(\dfrac{0}{1} \in \pi^{-1}(J)\)</span>, so it is nonempty. </p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{a - b \in \pi^{-1}(J)}\)</span> <strong>if</strong> <span class="arithmatex">\(\bm{a, b
+\in \pi^{-1}(J)}\)</span>.}\
+[1.2ex]
+Suppose <span class="arithmatex">\(a, b \in \pi^{-1}(J)\)</span>. Then <span class="arithmatex">\(\pi(a) = \dfrac{a}{1}\)</span> and
+<span class="arithmatex">\(\pi(b) = \dfrac{b}{1}\)</span> are both members of <span class="arithmatex">\(J\)</span>. Since <span class="arithmatex">\(J\)</span> is an
+ideal, we know that on one hand,</p>
+<div class="arithmatex">\[\begin{align*}
+\frac{a}{1}, \frac{b}{1} \in J \implies \frac{a}{1} - \frac{b}{1} \in J
+\implies \frac{a - b}{1} \in J.
+\end{align*}\]</div>
+<p>On the other hand, observe that <span class="arithmatex">\(\pi(a - b) = \dfrac{a - b}{1}\)</span>,
+which we just showed is inside <span class="arithmatex">\(J\)</span>. Therefore <span class="arithmatex">\(a - b \in
+\pi^{-1}(J)\)</span> when <span class="arithmatex">\(a, b \in \pi^{-1}(J)\)</span>, which is what we set out
+to show.</p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{r\cdot a \in \pi^{-1}(J)}\)</span> <strong>if</strong>
+<span class="arithmatex">\(\bm{r \in R, a \in \pi^{-1}(J)}\)</span>.}\[1.2ex]
+Now suppose that <span class="arithmatex">\(r \in R\)</span> and <span class="arithmatex">\(a \in \pi^{-1}(J)\)</span>. Then <span class="arithmatex">\(\pi(a) =
+\dfrac{a}{1} \in J\)</span> by definition. Hence, observe that 
+[
+\pi(r \cdot a) = \dfrac{ra}{1} = \frac{r}{1} \cdot \frac{a}{1}.
+]</p>
+<p>Observe that since <span class="arithmatex">\(J\)</span> is an ideal of <span class="arithmatex">\(S\)</span>, <span class="arithmatex">\(\frac{r}{1} \cdot \frac{a}{1}
+\in R\)</span>. Hence we see that <span class="arithmatex">\(\pi(r \cdot a) \in J\)</span>, so that <span class="arithmatex">\(r \cdot
+a \in \pi^{-1}(J)\)</span> whenever <span class="arithmatex">\(r \in R\)</span>, <span class="arithmatex">\(a \in \pi^{-1}(J)\)</span>, as
+desired. </p>
+<p>\item[3.] We can prove equality between the sets by demonstrating
+mutual subset properties. \
+\noindent\underline{<span class="arithmatex">\(\bm{D^{-1}[\pi^{-1}(J)] \subset J}\)</span>}\
+[1.2ex]
+Consider any <span class="arithmatex">\(\frac{a}{b} \in D^{-1}[\pi^{-1}(J)]\)</span> where by definition <span class="arithmatex">\(a \in
+\pi^{-1}(J)\)</span> and <span class="arithmatex">\(b \in D\)</span>. </p>
+<p>Since <span class="arithmatex">\(a \in \pi^{-1}(J)\)</span> we know that <span class="arithmatex">\(\pi(a) = \dfrac{a}{1} \in
+J\)</span>. Consider the element <span class="arithmatex">\(\dfrac{1}{b} \in S\)</span>. Since <span class="arithmatex">\(J\)</span> is an
+ideal of <span class="arithmatex">\(S\)</span>, we know that <span class="arithmatex">\(sj \in J\)</span> for all <span class="arithmatex">\(s \in S, j \in J\)</span>.
+Set <span class="arithmatex">\(j = \dfrac{a}{1}\)</span> and <span class="arithmatex">\(s = \dfrac{1}{b}\)</span>, and observe that 
+[
+sj \in J \implies \frac{1}{b} \cdot \frac{a}{1} = \frac{a}{b} \in J.
+]</p>
+<p>Hence we have that <span class="arithmatex">\(D^{-1}[\pi^{-1}(J)] \subset J\)</span>. 
+\
+\noindent\underline{<span class="arithmatex">\(\bm{J \subset D^{-1}[\pi^{-1}(J)]}\)</span>}\
+[1.2ex]
+Now consider any <span class="arithmatex">\(j = \dfrac{a}{b} \in J\)</span>. To prove this direction,
+we just need to show that <span class="arithmatex">\(a \in \pi^{-1}(J)\)</span> since <span class="arithmatex">\(b\)</span> is already
+a member of <span class="arithmatex">\(D\)</span>. And to prove that, we just need to show that
+<span class="arithmatex">\(\dfrac{a}{1} \in J\)</span>. Hence we formalize our claim:</p>
+<p><strong>Claim:</strong> <span class="arithmatex">\(\dfrac{a}{b} \in J \implies \dfrac{a}{1} \in J\)</span>.\
+To show this, observe that <span class="arithmatex">\(\dfrac{b}{1} \in S\)</span> and since <span class="arithmatex">\(J\)</span> is an
+ideal, 
+[
+\frac{b}{1} \cdot \frac{a}{b} \in J \implies \frac{ab}{b} \in J.
+]</p>
+<p>Now observe that <span class="arithmatex">\((ab, b) \sim (a, 1)\)</span>, since </p>
+<div class="arithmatex">\[
+x \cdot (ab\cdot 1 -b\cdot a) = x \cdot (ab - ab) = 0
+\]</div>
+<p>is satisfied by any choice of <span class="arithmatex">\(x \in D\)</span>. Therefore, <span class="arithmatex">\(\dfrac{ab}{b}
+= \dfrac{a}{1}\)</span>, and since <span class="arithmatex">\(\dfrac{ab}{b} \in J\)</span> we have that
+<span class="arithmatex">\(\dfrac{a}{1} \in J\)</span>. </p>
+<p>Finally, since <span class="arithmatex">\(\dfrac{a}{1} \in J\)</span>, we see that <span class="arithmatex">\(a \in
+\pi^{-1}(J)\)</span>. Therefore, <span class="arithmatex">\(\dfrac{a}{b} \in D^{-1}[\pi^{-1}(J)]\)</span>, so
+that <span class="arithmatex">\(J \subset D^{-1}[\pi^{-1}(J)]\)</span> as desired. </p>
+<p>With both directions, we can then conclude that
+<span class="arithmatex">\(D^{-1}[\pi^{-1}(J)] = J\)</span>, which is what we set out to show.
+\end{description}
+</span></p>
+<p><span style="display:block" class="theorem">
+Let <span class="arithmatex">\((R, +, \cdot)\)</span> be a commutative ring with <span class="arithmatex">\(1 \ne 0\)</span>, and <span class="arithmatex">\(D
+\subset R\)</span> be a multiplicative set. Let <span class="arithmatex">\(P\)</span> be an ideal of <span class="arithmatex">\(R\)</span>
+with the property that if <span class="arithmatex">\(d \cdot x \in P\)</span> for <span class="arithmatex">\(d \in D\)</span> then <span class="arithmatex">\(x
+\in P\)</span>. Then the following are equivalent.</p>
+<ul>
+<li>
+<p>[i.] <span class="arithmatex">\(P\)</span> is a prime ideal of <span class="arithmatex">\(R\)</span> with <span class="arithmatex">\(P \cap D = \varnothing\)</span></p>
+</li>
+<li>
+<p>[ii.] <span class="arithmatex">\(D^{-1}P\)</span> is a prime ideal of the ring of fractions
+<span class="arithmatex">\(D^{-1}R\)</span>.  </p>
+</li>
+</ul>
+<p></span></p>
+<p><span style="display:block" class="proof">
+\begin{description}
+\item[<span class="arithmatex">\(\bm{i \implies ii}\)</span>.]
+Suppose <span class="arithmatex">\(P\)</span> is disjoint with <span class="arithmatex">\(D\)</span>. Then we show that <span class="arithmatex">\(D^{-1}P\)</span>
+is a prime ideal of <span class="arithmatex">\(D^{-1}R\)</span>.\
+\noindent\underline{<span class="arithmatex">\(\bm{D^{-1}P}\)</span><strong> is nonempty.</strong>}\
+[1.2ex]
+If <span class="arithmatex">\(P\)</span> is nonempty, then since <span class="arithmatex">\(1 \in D\)</span>, we know that
+<span class="arithmatex">\(\dfrac{p}{1} \in D^{-1}P\)</span> for each <span class="arithmatex">\(p \in P\)</span>. Hence, it is nonempty.</p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{a, b \in D^{-1}P \implies a - b \in D^{-1}P}\)</span>.}\[1.2ex]
+Suppose <span class="arithmatex">\(a, b \in D^{-1}P\)</span>. Write <span class="arithmatex">\(a = \dfrac{p_1}{d_1}\)</span> and
+<span class="arithmatex">\(b = \dfrac{p_2}{d_2}\)</span>. Then we see that 
+[
+a - b = \frac{p_1d_2 - p_2d_1}{d_1d_2}.
+]</p>
+<p>Observe that <span class="arithmatex">\(p_1d_2, p_1d_2 \in P\)</span> since <span class="arithmatex">\(P\)</span> is an ideal of
+<span class="arithmatex">\(R\)</span>. Hence, <span class="arithmatex">\(p_1d_2 - p_2d_1 \in P\)</span>, and since <span class="arithmatex">\(d_1d_2 \in D\)</span>,
+we have that <span class="arithmatex">\(a - b \in D^{-1}P\)</span> whenever <span class="arithmatex">\(a, b \in D^{-1}P\)</span>.</p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{r\cdot a \in D^{-1}P}\)</span> ** for **
+<span class="arithmatex">\(\bm{r \in  D^{-1}R, a \in D^{-1}P}\)</span>.}\
+[1.2ex]
+Consider an element <span class="arithmatex">\(a = \dfrac{p}{d} \in
+D^{-1}{P}\)</span> and <span class="arithmatex">\(r = \dfrac{r'}{d'} \in D^{-1}R\)</span>. Then 
+[
+r \cdot a = \frac{r'}{d'} \cdot \frac{p}{d} = \frac{r'p}{d'd}.
+]</p>
+<p>Since <span class="arithmatex">\(P\)</span> is a prime ideal, we see that <span class="arithmatex">\(r'p \in P\)</span> and <span class="arithmatex">\(d'd
+\in D\)</span> as it is a multiplicative set. Therefore it is an
+ideal. </p>
+<p>\noindent\underline{<span class="arithmatex">\(\bm{a\cdot b \in D^{-1}P \implies a \in D^{-1}P}\)</span>
+<strong>or</strong> <span class="arithmatex">\(\bm{b \in D^{-1}P}\)</span>} \
+[1.2ex]
+Let <span class="arithmatex">\(a = \dfrac{r_1}{d_1}\)</span> and <span class="arithmatex">\(b = \dfrac{r_2}{d_2}\)</span> where
+<span class="arithmatex">\(r_1,r_2 \in R\)</span> and <span class="arithmatex">\(d_1,d_2 \in D\)</span>. Now 
+[
+a \cdot b \in D^{-1}P \implies \frac{r_1r_2}{d_1d_2} \in D^{-1}P.
+]</p>
+<p>Then we see that <span class="arithmatex">\(r_1r_2 \in P.\)</span> Since <span class="arithmatex">\(P\)</span> is a prime ideal
+disjoint with <span class="arithmatex">\(D\)</span>, we see that <span class="arithmatex">\(r_1 \in P\)</span> or <span class="arithmatex">\(r_2 \in P\)</span> and
+<span class="arithmatex">\(r_1,r_2 \not\in D\)</span> by assumption. Therefore, we see that <span class="arithmatex">\(a
+\in D^{-1}P\)</span> or <span class="arithmatex">\(b \in D^{-1}P\)</span>, so that <span class="arithmatex">\(D^{-1}P\)</span> is a prime
+ideal. </p>
+<p>\item[<span class="arithmatex">\(\bm{ii \implies i}\)</span>.] 
+Suppose <span class="arithmatex">\(D^{-1}P\)</span> is a prime ideal of <span class="arithmatex">\(D^{-1}R\)</span>. 
+\
+[1.2ex]
+\underline{<span class="arithmatex">\(\bm{P}\)</span> <strong>is nonempty</strong>.}\[1.2ex]
+If <span class="arithmatex">\(D^{-1}P\)</span> is nonempty, then since <span class="arithmatex">\(D\)</span> at least contains <span class="arithmatex">\(1\)</span>, there exists at least one
+<span class="arithmatex">\(\dfrac{a}{1} \in D^{-1}P\)</span> where <span class="arithmatex">\(a \in P\)</span>.
+Hence we see that <span class="arithmatex">\(P\)</span> is nonempty.
+\[1.2ex]
+\underline{<span class="arithmatex">\(\bm{a,b \in P \implies a - b \in P}\)</span>.}\[1.2ex]
+Suppose <span class="arithmatex">\(a, b \in P\)</span>. Then we see that 
+<span class="arithmatex">\(\dfrac{a}{1}, \dfrac{b}{1} \in D^{-1}P\)</span>. Hence,
+[
+\frac{a}{1} - \frac{b}{1} \in D^{-1}P \implies 
+\frac{a - b}{1} \in P.
+]</p>
+<p>Since <span class="arithmatex">\(\dfrac{a - b}{1} \in D^{-1}P\)</span>, we see that <span class="arithmatex">\(a - b \in
+P\)</span>. Hence <span class="arithmatex">\(a, b \in P \implies a - b \in P\)</span>.
+\
+[1.2ex]
+\underline{<span class="arithmatex">\(\bm{rp \in P}\)</span> <strong>if</strong> <span class="arithmatex">\(\bm{r \in R, p \in P}\)</span>.}\[1.2ex]
+Consider <span class="arithmatex">\(\dfrac{p}{1} \in D^{-1}P\)</span> and <span class="arithmatex">\(\dfrac{r}{1} \in
+D^{-1}R\)</span> for any <span class="arithmatex">\(r \in R\)</span>. Then since <span class="arithmatex">\(D^{-1}P\)</span> is an ideal,
+[
+\frac{r}{1} \cdot \frac{p}{1} \in D^{-1}P \implies \frac{rp}{1} \in D^{-1}P.
+]</p>
+<p>Thus we see that <span class="arithmatex">\(rp \in P\)</span>. Therefore <span class="arithmatex">\(r \in R, p \in P
+\implies rp \in P\)</span>. 
+\
+[1.2ex]
+\underline{<span class="arithmatex">\(\bm{D \cap P = \varnothing}.\)</span>}\[1.2ex]
+Suppose that <span class="arithmatex">\(D \cap P \ne \varnothing\)</span>. Then there exists a
+<span class="arithmatex">\(p \in P\)</span> where <span class="arithmatex">\(p \in D\)</span>. Hence, observe that <span class="arithmatex">\(\dfrac{p}{p} =
+\dfrac{1}{1} \in D^{-1}P\)</span>. Then since <span class="arithmatex">\(D^{-1}P\)</span> is an ideal of
+<span class="arithmatex">\(D^{-1}R\)</span>, we see that
+<span class="arithmatex">\(pr \in D^{-1}P\)</span> for any <span class="arithmatex">\(p \in D^{-1}P\)</span> and <span class="arithmatex">\(r \in D^{-1}R\)</span>. Thus
+see that for any <span class="arithmatex">\(\dfrac{a}{b} \in D^{-1}R\)</span>, 
+[
+\frac{1}{1} \cdot \frac{a}{b} \in D^{-1}P \implies \frac{a}{b} \in D^{-1}P
+]</p>
+<p>which shows that <span class="arithmatex">\(D^{-1}P = D^{-1}R\)</span>. Hence, if we want
+<span class="arithmatex">\(D^{-1}P\)</span> to be a proper ideal, we need that <span class="arithmatex">\(D \cap P = \varnothing.\)</span>
+\
+[1.2ex]
+\underline{<span class="arithmatex">\(\bm{ab \in P \implies a \in P}\)</span> <strong>or</strong> <span class="arithmatex">\(\bm{b\in P}\)</span>}\[1.2ex]
+Suppose that <span class="arithmatex">\(a = \dfrac{p_1}{d_1}\)</span> and <span class="arithmatex">\(b =
+\dfrac{p_2}{d_2}\)</span> such that 
+[
+\frac{p_1}{d_1}\cdot \frac{p_2}{d_2} \in D^{-1}P \implies \frac{p_1}{d_1} \text{ or } \frac{p_2}{d_2} \in D^{-1}P.
+]</p>
+<p>Since <span class="arithmatex">\(\dfrac{p_1}{d_1}\cdot \dfrac{p_2}{d_2} \in D^{-1}P\)</span>, we
+have that <span class="arithmatex">\(\dfrac{p_1p_2}{d_1d_2} \in D^{-1}P\)</span>, which implies
+that <span class="arithmatex">\(p_1p_2 \in P\)</span>. </p>
+<p>The fact that <span class="arithmatex">\(\dfrac{p_1}{d_1} \in D^{-1}P\)</span> or
+<span class="arithmatex">\(\dfrac{p_2}{d_2} \in D^{-1}P\)</span> implies that <span class="arithmatex">\(p_1 \in P\)</span> or
+<span class="arithmatex">\(p_2 \in P\)</span>. Hence we see that <span class="arithmatex">\(p_1p_2 \in P \implies p_1 \in
+P\)</span> or <span class="arithmatex">\(p_2 \in P\)</span>, which proves that <span class="arithmatex">\(P\)</span> is a prime ideal.
+\end{description}
+With both directions proven, we can conclude that the two given
+statments are in fact equivalent.
+</span></p>
+<p><strong>Localization.</strong>
+The construction we have been implementing relates to a concept
+as localization, which we define as follows. </p>
+<p><span style="display:block" class="definition">
+Let <span class="arithmatex">\((R, +, \cdot)\)</span> be a commutative ring with identity <span class="arithmatex">\(1 \ne
+0\)</span>. Let <span class="arithmatex">\(S \subset R\)</span> and define <span class="arithmatex">\(D = R - S\)</span>. We define the
+<strong>localization</strong> of 
+<span class="arithmatex">\(R\)</span> at <span class="arithmatex">\(S\)</span> as the ring of fractions </p>
+<div class="arithmatex">\[
+R_P = D^{-1}R = \left\{ \frac{r}{d} \mid r \in R, d \in D \right\}.
+\]</div>
+<p></span>
+It turns out that if we localize at a prime ideal, nice things
+happen. Specifically, the localization contains a unique maximal
+ideally. </p>
+<p>Generally, rings do not have unique maximal ideals, although the
+definition of a maximal ideal can often confuse people. For
+example, consider the ring <span class="arithmatex">\(\mathbb{Z}\)</span>. Then for any prime <span class="arithmatex">\(p\)</span>,
+we see that <span class="arithmatex">\(p\mathbb{Z}\)</span> is a maximal ideal; given the infinitude
+of the primes, we have infinitely many maximal primes. </p>
+<p>For rings that do have a unique, maximal ideal, we give them a
+special name. </p>
+<p><span style="display:block" class="definition">
+Let <span class="arithmatex">\((R, +, \cdot)\)</span> be a ring. If <span class="arithmatex">\(R\)</span> has a unique, maximal
+ideal <span class="arithmatex">\(M\)</span>, then we say that <span class="arithmatex">\(R\)</span> is a <strong>local ring</strong>.
+</span></p>
+<p><span style="display:block" class="theorem">
+Let <span class="arithmatex">\((R, +, \cdot)\)</span> be an integral domain, and <span class="arithmatex">\(P\)</span> be a prime
+ideal of <span class="arithmatex">\(R\)</span>. 
+\begin{description}
+\item[1.] The set <span class="arithmatex">\(D = R - P\)</span> is a <em>multiplicative set</em>.</p>
+<p>\item[2.] The <em>localization</em> of <span class="arithmatex">\(R\)</span> at <span class="arithmatex">\(P\)</span>, <span class="arithmatex">\(R_P =
+D^{-1}R\)</span>, is an integral domain. </p>
+<p>\item[3.] The ring <span class="arithmatex">\(R_P\)</span> is a <em>local</em> ring i.e., <span class="arithmatex">\(R_P\)</span> has
+a unique maximal ideal <span class="arithmatex">\(M_P\)</span>.
+\end{description}
+</span></p>
+<p><span style="display:block" class="proof">
+\begin{description}
+\item[1.] First we show that <span class="arithmatex">\(1 \in D\)</span>. 
+Suppose <span class="arithmatex">\(P\)</span> is a prime ideal such that <span class="arithmatex">\(R \ne P\)</span>. Then
+observe that <span class="arithmatex">\(1 \not\in P\)</span>. For if <span class="arithmatex">\(1 \in P\)</span>, then for any <span class="arithmatex">\(r
+\in R\)</span>, we'd see that </p>
+<div class="arithmatex">\[
+1 \cdot r = r \in P.
+\]</div>
+<p>Since <span class="arithmatex">\(r\)</span> is arbitrary, we'd have that <span class="arithmatex">\(R = P\)</span>, a
+contradiction. Therefore, we see that <span class="arithmatex">\(1 \in R - P = D\)</span>, which
+proves the first property.</p>
+<p>Now we show <span class="arithmatex">\(x, y \in D \implies xy \in D\)</span>. Since <span class="arithmatex">\(P\)</span> is a prime ideal, we know that
+<span class="arithmatex">\(p_1p_2 \in P \implies p_1 \in P\)</span> or <span class="arithmatex">\(p_2 \in P\)</span>. Hence the reverse
+negative of the statement is true: if <span class="arithmatex">\(p_1 \not\in P\)</span> and <span class="arithmatex">\(p_2
+\not\in P\)</span> then <span class="arithmatex">\(p_1p_2 \not\in P\)</span>. </p>
+<p>Therefore for any <span class="arithmatex">\(x, y
+\in D =R - P\)</span>, we see that <span class="arithmatex">\(xy \not\in P\)</span>. Hence <span class="arithmatex">\(xy \in D\)</span>, which
+proves the second property.</p>
+<p>\item[2.] Since we already know that <span class="arithmatex">\(R_P\)</span> is a commutative ring,
+it suffices to show that there are no zero divisors. Suppose
+on the contrary that <span class="arithmatex">\(\dfrac{a}{b}, \dfrac{c}{d} \in R_P\)</span> are
+zero divisors of each other. Hence, <span class="arithmatex">\(a \ne 0\)</span> and <span class="arithmatex">\(c \ne 0\)</span>.
+Then we see that </p>
+<div class="arithmatex">\[
+\frac{a}{b} \cdot \frac{c}{d} = \frac{0}{1}.
+\]</div>
+<p>In this case, we see that there exists a <span class="arithmatex">\(x \in D\)</span> such that </p>
+<div class="arithmatex">\[
+x \cdot (ac \cdot 1 - bd \cdot 0) \implies x \cdot(ac).            
+\]</div>
+<p>Since <span class="arithmatex">\(a, c \ne 0\)</span>, and <span class="arithmatex">\(R\)</span> is an integral domain, we see that
+<span class="arithmatex">\(ac \ne 0\)</span>. But <span class="arithmatex">\(x\)</span> is also nonzero, while <span class="arithmatex">\(x \cdot (ac) =
+0\)</span>. This cannot happen since <span class="arithmatex">\(R\)</span> is an integral domain, so we
+have a contradiction. Therefore there are no zero divisors,
+and since <span class="arithmatex">\(R_P\)</span> is a commutative, this makes it an integral
+domain. </p>
+<p>\item[3.] Let <span class="arithmatex">\(M_P = D^{-1}P\)</span>. We'll show that this is our unique,
+maximal ideal. </p>
+<p>First observe that in the previous theorem, if <span class="arithmatex">\(P\)</span> is a prime
+ideal and <span class="arithmatex">\(P \cap D = \varnothing\)</span>, then <span class="arithmatex">\(D^{-1}P\)</span> is a prime
+ideal of <span class="arithmatex">\(D^{-1}R\)</span>. </p>
+<p>In our case, <span class="arithmatex">\(D = R - P\)</span>. Hence <span class="arithmatex">\(P \cap D
+= \varnothing\)</span>, so we may conclude that <span class="arithmatex">\(M_P\)</span> is a prime
+ideal.</p>
+<p>Now we show <span class="arithmatex">\(M_p\)</span> is maximal. Let <span class="arithmatex">\(I\)</span> be a proper ideal, i.e. <span class="arithmatex">\(I
+\ne D^{-1}R\)</span>, and suppose <span class="arithmatex">\(I
+\not\subset M_P\)</span>. That is, there exist an element
+<span class="arithmatex">\(\dfrac{a}{b} \in I\)</span> such that <span class="arithmatex">\(\dfrac{a}{b} \not\in M_P\)</span>.</p>
+<p>Since <span class="arithmatex">\(\dfrac{a}{b} \not\in M_P\)</span>, we see that <span class="arithmatex">\(a \not\in P\)</span>.
+Hence, <span class="arithmatex">\(a \in R - P = D\)</span>, and of course <span class="arithmatex">\(b \in D\)</span> as well. Now
+consider the element <span class="arithmatex">\(\dfrac{b}{a}\)</span>. Observe that
+<span class="arithmatex">\(\dfrac{b}{a} \not\in M_P\)</span>, since <span class="arithmatex">\(b, a \in D\)</span>, as shown
+earlier. Since <span class="arithmatex">\(\dfrac{a}{b} \in I\)</span>, we have that </p>
+<div class="arithmatex">\[
+\dfrac{a}{b}\cdot \dfrac{b}{a} \in I \implies = \dfrac{1}{1} \in I.
+\]</div>
+<p>Since <span class="arithmatex">\(I\)</span> contains <span class="arithmatex">\(\dfrac{1}{1}\)</span>, we have that <span class="arithmatex">\(I = D^{-1}R\)</span>.
+This is because we see that for any
+<span class="arithmatex">\(\dfrac{c}{d} \in D^{-1}R\)</span>, </p>
+<div class="arithmatex">\[
+\dfrac{c}{d} =\dfrac{c}{d}\cdot\dfrac{1}{1} \in I \implies \dfrac{c}{d} \in I.
+\]</div>
+<p>Hence, <span class="arithmatex">\(I = D^{-1}R\)</span>. But we assumed <span class="arithmatex">\(I\)</span> was a proper ideal; thus we
+have a contradiction, so we see that <span class="arithmatex">\(M_P = D^{-1}P\)</span> is in fact maxmial.
+Since we assumed <span class="arithmatex">\(I\)</span> was <em>any</em> ideal of <span class="arithmatex">\(D^{-1}R\)</span>, this
+also proves that <span class="arithmatex">\(M_P\)</span> is a unique maximal ideal, since what we
+showed is that any other ideal is automatically contained in
+<span class="arithmatex">\(M_P\)</span>. 
+\end{description}
+</span></p>
+<p>As an example, consider the prime ideal <span class="arithmatex">\(\{0\}\)</span> of the ring
+<span class="arithmatex">\(\mathbb{Z}\)</span>. Then the localization of <span class="arithmatex">\(\mathbb{Z}\)</span> at <span class="arithmatex">\(\{0\}\)</span> is
+given by </p>
+<div class="arithmatex">\[
+\left\{ \dfrac{a}{b} \mid a \in \ZZ, b \in \ZZ - \{0\}  \right\}
+\]</div>
+<p>which is just the rational numbers. </p>
+<p><span style="display:block" class="theorem">
+Let <span class="arithmatex">\((R, +, \cdot)\)</span> be an integral domain, and <span class="arithmatex">\(P\)</span> be a prime
+ideal of <span class="arithmatex">\(R\)</span>. Let <span class="arithmatex">\(R_P\)</span> be the localization of <span class="arithmatex">\(R\)</span> at <span class="arithmatex">\(P\)</span>, and
+<span class="arithmatex">\(M_P\)</span> be its unique maximal ideal. Consider the map <span class="arithmatex">\(\phi: R/P
+\to R_P/M_P\)</span> which sends <span class="arithmatex">\(r + P \mapsto r/1 + M_P\)</span>. 
+\begin{description}
+\item[1.] <span class="arithmatex">\(\phi\)</span> is a well-defined, injective ring
+homomorphism. 
+\item[2.] <span class="arithmatex">\(\phi\)</span> is an isomorphism if <span class="arithmatex">\(P\)</span> is a
+maximal ideal. 
+\end{description}
+</span></p>
+<p><span style="display:block" class="proof">
+\begin{description}
+\item[1.]     \underline{<strong>Well-defined.</strong>}\ First observe that this function is
+well-defined. Suppose that <span class="arithmatex">\(r + P = r' + P\)</span>; that is, <span class="arithmatex">\(r = r'
++ p\)</span> for some <span class="arithmatex">\(p \in P\)</span>. Observe that </p>
+<div class="arithmatex">\[\begin{align*}
+\phi(r + P) = \frac{r}{1} + M_P
+&amp;= \frac{r' + p}{1} + M_P\\
+&amp;= \frac{r'}{1} + \frac{p}{1} + M_P\\
+&amp;= \frac{r'}{1} + M_P\\
+&amp;= \phi(r' + P)
+\end{align*}\]</div>
+<p>where in the fourth step we used that fact that <span class="arithmatex">\(\dfrac{p}{1}
+\in M_P\)</span> since <span class="arithmatex">\(p \in P\)</span>, <span class="arithmatex">\(1 \in D\)</span>. Since <span class="arithmatex">\(\phi(r + P) =
+\phi(r' + P)\)</span>, we see that
+this function is well-defined. 
+\
+\
+\underline{<strong>Ring homomorphism.</strong>}\
+We demonstrate that <span class="arithmatex">\(\phi: R/P \to R_P/M_P\)</span> is a ring
+homomorphism. 
+\begin{description}
+\item[<span class="arithmatex">\(\bm{\phi(a + b) = \phi(a) + \phi(b)}\)</span>.]
+Let <span class="arithmatex">\(a = r + P\)</span> and <span class="arithmatex">\(b = r' + P\)</span> be elements or <span class="arithmatex">\(R/P\)</span>.
+Then</p>
+<div class="arithmatex">\[\begin{align*}
+\phi(a + b) = \phi\big((r + r') + P \big)
+&amp; = \frac{r + r'}{1} + M_P\\
+&amp; = \frac{r}{1} + \frac{r'}{1} + M_P\\
+&amp; = \left( \frac{r}{1} + M_P\right) + \left(\frac{r'}{1} + M_P\right)\\
+&amp; = \phi(a) + \phi(b)
+\end{align*}\]</div>
+<p>which is what we set out to show.
+\item[<span class="arithmatex">\(\bm{\phi(ab) = \phi(a)\phi(b)}\)</span>.] Again, suppose <span class="arithmatex">\(a
+= r + P\)</span> and <span class="arithmatex">\(b = r' + P\)</span>. Then observe that </p>
+<div class="arithmatex">\[\begin{align*}
+\phi(ab) = \phi\big( (r + P)(r' + P) \big) &amp; = \phi(rr' + P)\\
+&amp; = \frac{rr'}{1} + M_P\\
+&amp; = \left(\frac{r}{1} + M_P\right)\left(\frac{r'}{1} + M_P\right)\\
+&amp; = \phi(a)\phi(b)
+\end{align*}\]</div>
+<p>which is what we set out to show. 
+\end{description}
+With these two properties, we have that <span class="arithmatex">\(\phi: R/P \to
+R\)</span> is a ring homomorphism.
+\
+\
+\underline{<strong>Injectivity.</strong>}\
+Next we show that this is an injective function. Suppose <span class="arithmatex">\(r +
+P,r' + P \in D^{-1}R\)</span> such that </p>
+<div class="arithmatex">\[
+\phi(r + P)= \phi(r' + P).
+\]</div>
+<p>Then we have that <span class="arithmatex">\(\dfrac{r}{1} + M_P = \dfrac{r'}{1} + M_P\)</span>. In
+other words, we see that </p>
+<div class="arithmatex">\[
+\frac{r}{1} = \frac{r'}{1} + \frac{a}{b}
+\]</div>
+<p>for some <span class="arithmatex">\(\dfrac{a}{b} \in M_P\)</span>. This further implies that
+<span class="arithmatex">\(\dfrac{r}{1} = \dfrac{r'b + a}{b}\)</span>. Hence, <span class="arithmatex">\((r, 1) \sim (r'b
++ a, b)\)</span>. For this equivalence to
+occur, there must exist an element <span class="arithmatex">\(x \in D\)</span> such that </p>
+<div class="arithmatex">\[
+x\cdot(rb - (r'b + a)) = 0.
+\]</div>
+<p>Since <span class="arithmatex">\(R\)</span> is an integral domain, and <span class="arithmatex">\(x \ne 0\)</span>, we require
+that <span class="arithmatex">\(rb = r'b + a\)</span>. Rearranging, we see that this implies
+that </p>
+<div class="arithmatex">\[
+rb - r'b = a \implies (r - r')b = a.
+\]</div>
+<p>The above equality implies that <span class="arithmatex">\((r - r')b \in P\)</span>; recall that
+<span class="arithmatex">\(\dfrac{a}{b} \in M_P = D^{-1}P\)</span>, so that <span class="arithmatex">\(a \in P\)</span>
+and <span class="arithmatex">\(b \in D = R - P\)</span>. </p>
+<p>Since <span class="arithmatex">\(P\)</span> is a prime ideal, we thus see that either <span class="arithmatex">\(r -
+r' \in P\)</span> or <span class="arithmatex">\(b \in P\)</span>. Since we just said that <span class="arithmatex">\(b \not\in P\)</span>,
+we must have that <span class="arithmatex">\(r - r' \in P.\)</span> In other words, </p>
+<div class="arithmatex">\[
+r - r' = p \implies r = r' + p
+\]</div>
+<p>for some <span class="arithmatex">\(p \in P\)</span>. Hence, </p>
+<div class="arithmatex">\[
+r + P = r' + p + P = r' + P.   
+\]</div>
+<p>Therefore we see that <span class="arithmatex">\(\phi(r + P) = \phi(r' + P) \implies r +
+P = r' + P\)</span>, so that <span class="arithmatex">\(\phi\)</span> is injective.</p>
+<p>\item[2.] Suppose <span class="arithmatex">\(P\)</span> is a maximal ideal (in addition to being
+prime). To demonstrate that <span class="arithmatex">\(\phi: R/P \to R_P/M_P\)</span> is an
+isomorphism, it suffices to show that <span class="arithmatex">\(\phi\)</span> is surjective,
+since in the previous step we already showed that it was
+injective. </p>
+<p>Since <span class="arithmatex">\(P\)</span> is a maximal ideal, we see
+that <span class="arithmatex">\(R/P\)</span> is a field. Therefore inverse elements exist, so
+for the element <span class="arithmatex">\(b + P\)</span>, there exists an element <span class="arithmatex">\(b' + P\)</span>
+where <span class="arithmatex">\(b' \not\in P\)</span> such that </p>
+<div class="arithmatex">\[
+(b + P)(b' + P) =  1 + P.
+\]</div>
+<p>That is, <span class="arithmatex">\(bb' = 1 + p\)</span> for some <span class="arithmatex">\(p \in P\)</span>. </p>
+<p>Let <span class="arithmatex">\(r = ab'\)</span>, and consider the elements <span class="arithmatex">\(\dfrac{a}{b} + M_P\)</span>
+and <span class="arithmatex">\(\dfrac{r}{1} + M_P\)</span>. Since we want <span class="arithmatex">\(\dfrac{a}{b} + M_P\)</span>
+to be nontrivial, we let <span class="arithmatex">\(a, b \in D\)</span> (that is, <span class="arithmatex">\(a \not\in P\)</span>
+or else in that case <span class="arithmatex">\(\dfrac{a}{b} \in M_P\)</span>).</p>
+<p>Observe that <span class="arithmatex">\(\dfrac{r}{1} \not\in
+M_P\)</span> since <span class="arithmatex">\(a \in D, b' \in D\)</span>, and because <span class="arithmatex">\(D\)</span> is a
+multiplicative set, <span class="arithmatex">\(r = ab \in D\)</span>. Therefore <span class="arithmatex">\(r \not\in P\)</span>,
+so that <span class="arithmatex">\(\dfrac{r}{1} \not\in M_P\)</span>. Hence, <span class="arithmatex">\(\dfrac{r}{1} + M_P
+\ne \dfrac{0}{1} + M_P\)</span>. </p>
+<p>Now observe that </p>
+<div class="arithmatex">\[\begin{align*}
+\left(\frac{a}{b} + M_p\right) - \left(\frac{r}{1} + M_P\right)
+&amp; = \left( \frac{a}{b} - \frac{r}{1} \right) + M_P\\
+&amp; = \frac{a - br}{b} + M_P\\
+&amp; = \frac{a - b(ab')}{b} + M_P\\
+&amp; = \frac{a - abb'}{b} + M_P \text{ (by commutativity)}\\
+&amp; = \frac{a - a(1 + p)}{b} + M_P\\
+&amp; = \frac{-ap}{b} + M_P.
+\end{align*}\]</div>
+<p>Since <span class="arithmatex">\(P\)</span> is an ideal, we see that <span class="arithmatex">\(-ap \in P\)</span>. Therefore,
+<span class="arithmatex">\(\dfrac{-ap}{b} \in M_P\)</span>, so that
+<span class="arithmatex">\(\dfrac{-ap}{b} + M_P = \dfrac{0}{1} + M_P\)</span>. Thus what we've shown is that </p>
+<div class="arithmatex">\[
+\left(\frac{a}{b} + M_P\right) - \left( \frac{r}{1} + M_P \right) = \frac{0}{1} + M_P.
+\]</div>
+<p>which implies that </p>
+<div class="arithmatex">\[
+\frac{a}{b} + M_P = \frac{r}{1} + M_P.
+\]</div>
+<p>Thus we see that <span class="arithmatex">\(\phi(r + P) = \dfrac{r}{1} + M_P =
+\dfrac{a}{b} + M_P\)</span>. However, <span class="arithmatex">\(\dfrac{a}{b} + M_P\)</span> was an
+arbitrary element of <span class="arithmatex">\(R_P/M_P\)</span>. Hence, we've shown that for
+any <span class="arithmatex">\(\dfrac{a}{b} + M_P\)</span>, there exists an <span class="arithmatex">\(r + P\in R/P\)</span> such that 
+<span class="arithmatex">\(\phi(r + P) = \dfrac{a}{b} + M_P\)</span>. In particular, <span class="arithmatex">\(\phi(0 + P) =
+\dfrac{0}{1} + M\)</span>. Therefore <span class="arithmatex">\(\phi\)</span> is surjective,
+and as we already showed it is injective, this makes it an
+isomorphism. 
+\end{description}
+</span></p>
+<script src="../../mathjax_helper.js"></script>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

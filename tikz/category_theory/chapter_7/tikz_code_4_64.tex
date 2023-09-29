@@ -1,0 +1,200 @@
+\begin{center}
+    \makebox[0pt]{
+        \begin{tikzpicture}
+            \node at (-4, 5.3) {Front.  (Note that the product $\odot$ and the associators in $\textbf{It}(\mm)$ are suppressed.)};
+            \node at (-9, -5.2) {Back.};
+            \node at (-3,-0.5){
+                \begin{tikzcd}[ampersand replacement=\Z]
+                    \Z[-2cm]
+                    \Z[-2.5cm]
+                    \Z[-1cm]
+                    \id ((\id  \id)  (\id  \id))
+                    \arrow[dll, swap, ]
+                    \arrow[drr, ]
+                    \Z[-1cm]
+                    \Z[-2.5cm]
+                    \Z[-2cm]
+                    \\[0.2cm] 
+                    \Z
+                    \id((( \id  \id ) \id)  \id)
+                    \arrow[dddr, ]
+                    \Z
+                    \Z
+                    \textcolor{Black!30!White}{\bullet}
+                    \arrow[<-,Black!30!White, dashed,u]
+                    \Z
+                    \Z
+                    (\id (\id  \id))  (\id  \id)
+                    \arrow[dr, ]
+                    \arrow[dddl, swap, ]
+                    \Z
+                    \\[0.4cm] 
+                    \id ((\id  (\id  \id)) \id)
+                    \arrow[ur, ]
+                    \arrow[ddddr, swap, ]
+                    \arrow[<-, drr, dashed, Black!30!White]
+                    \Z
+                    \Z
+                    \Z
+                    \Z
+                    \Z
+                    \Z
+                    ((\id \id)  \id)  (\id  \id)
+                    \arrow[<-, Black!30!White, dashed, dll]
+                    \arrow[ddddl, ]
+                    \\[-0.7cm] 
+                    \Z
+                    \Z
+                    \textcolor{Black!30!White}{\bullet}
+                    \arrow[<-, Black!30!White, dashed, uur]
+                    \Z
+                    \Z
+                    \textcolor{Black!30!White}{\bullet}
+                    \arrow[<-, Black!30!White, dashed, uul]
+                    \Z
+                    \Z
+                    \\[0.2cm] 
+                    \Z
+                    \Z
+                    (\id ((\id  \id)  \id))  \id
+                    \arrow[rr, ]
+                    \Z
+                    \Z
+                    ((\id (\id  \id)) \id)  \id
+                    \arrow[ddr, swap, ]
+                    \Z
+                    \Z
+                    \\[-0.7cm] 
+                    \Z
+                    \Z
+                    \Z
+                    \textcolor{Black!30!White}{\bullet}
+                    \arrow[<-, Black!30!White, dashed, uur]
+                    \arrow[<-, Black!30!White, dashed, uul]
+                    \Z
+                    \Z
+                    \Z
+                    \\[0.4cm] 
+                    \Z
+                    (\id (\id  (\id  \id)))  \id
+                    \arrow[uur, swap, ]
+                    \arrow[drr, swap, ]
+                    \Z
+                    \Z
+                    \Z
+                    \Z
+                    (((\id \id)  \id)  \id)  \id
+                    \Z
+                    \\[0.2cm] 
+                    \Z
+                    \Z
+                    \Z
+                    ((\id \id)  (\id  \id))  \id
+                    \arrow[urr, swap, ]
+                    \arrow[<-, uu, dashed, Black!30!White]
+                    \Z
+                    \Z
+                    \Z
+                \end{tikzcd}
+            };
+        \node at (-3,-12){
+            \begin{tikzcd}[ampersand replacement=\Z]
+                \Z[-2cm]
+                \Z[-2.5cm]
+                \Z[-1cm]
+                \id ((\id  \id)  (\id  \id))
+                \arrow[drr, ]
+                \arrow[dll, swap, ]
+                \Z[-1cm]
+                \Z[-2.5cm]
+                \Z[-2cm]
+                \\[0.2cm] 
+                \Z
+                (\id (\id  \id))  (\id  \id)
+                \arrow[dl, swap, ]
+                \arrow[dddr, Black!30!White, dashed]
+                \Z
+                \Z 
+                \id (\id (\id (\id \id)))
+                \arrow[u, ]
+                \arrow[ddl, swap, ]
+                \arrow[ddr, ]
+                \Z
+                \Z
+                \id((( \id  \id ) \id)  \id)
+                \arrow[dddl,dashed, Black!30!White]
+                \Z
+                \\[0.4cm] 
+                ((\id \id)  \id)  (\id  \id)
+                \arrow[ddddr, swap, ]
+                \Z
+                \Z
+                \Z
+                \Z
+                \Z
+                \Z
+                \id ((\id  (\id  \id)) \id)
+                \arrow[swap, ul, ]
+                \arrow[swap, ddddl, swap, ]
+                \\[-0.7cm] 
+                \Z
+                \Z
+                (\id \id)(\id (\id \id))
+                \arrow[ull, swap,  
+                start anchor = {[yshift=-0.25cm]},
+                end anchor = {[xshift=-0.5cm]} ]
+                \arrow[ddr,swap,]
+                \Z
+                \Z
+                \id (\id ((\id \id)\id )
+                \arrow[urr, swap, ,
+                start anchor = {[yshift=-0.25cm]},
+                end anchor = {[xshift=1cm]}]
+                \arrow[ddl, ]
+                \Z
+                \Z
+                \\[1cm] 
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[Black!30!White, dashed, ddl]
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[swap, ll, dashed, Black!30!White]
+                \Z
+                \Z
+                \\[-0.7cm] 
+                \Z
+                \Z
+                \Z
+                (\id \id)((\id \id)\id)
+                \arrow[dd, ]
+                \Z
+                \Z
+                \Z
+                \\[0.4cm] 
+                \Z
+                (((\id \id)  \id)  \id)  \id
+                \Z
+                \Z
+                \Z
+                \Z
+                (\id (\id  (\id  \id)))  \id
+                \arrow[Black!30!White, dashed, uul]
+                \arrow[swap, dll, swap, ]
+                \Z
+                \\[0.2cm] 
+                \Z
+                \Z
+                \Z
+                ((\id \id)  (\id  \id))  \id
+                \arrow[swap, ull, swap, ]
+                \Z
+                \Z
+                \Z
+            \end{tikzcd}
+            };
+        \end{tikzpicture}
+    }
+\end{center}

@@ -1,0 +1,18 @@
+\begin{center}
+            \begin{tikzcd}[column sep =  1.4cm, row sep = 1.4cm]
+                & \displaystyle \prod_{i \in J} F_i 
+                \arrow[dl, swap, "\pi_k"] \arrow[d, dashed, Red, "f"]\\
+                F_k & \displaystyle \prod_{u:j \to k} F_k \arrow[l,swap, "\pi'_k"]
+            \end{tikzcd}
+            \hspace{1cm}
+            \begin{tikzcd}[column sep =  1.4cm, row sep = 1.4cm]
+                \displaystyle \prod_{i \in J}F_i \arrow[r, Blue, dashed, "g"]
+                \arrow[d, swap, "\pi_i"] 
+                &
+                \displaystyle \prod_{u:i \to k}F_k 
+                \arrow[d, "\pi'_k"]\\
+                F_i \arrow[r, swap, "F(u)"] 
+                &
+                F_k
+            \end{tikzcd}
+        \end{center}

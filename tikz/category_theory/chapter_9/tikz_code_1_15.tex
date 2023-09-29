@@ -1,0 +1,14 @@
+\begin{center}
+    \begin{tikzcd}
+        (\textcolor{Red}{1, 2, \dots, a_1}, \dots, \textcolor{RoyalBlue}{1', 2', \dots, a_n})
+        \arrow[d, "{(\rho_1, \dots, \rho_n)}"]
+        \\
+        (\rho_1^{-1}(1), \rho_1^{-1}(2), \dots, \rho_1^{-1}(a_1), \dots, \rho_n^{-1}(1), \rho_n^{-1}(2), \dots, \rho_n^{-1}(a_n))
+        \arrow[d, "{\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)}"]
+        \\
+        (\overbrace{\sigma_{\tau^{-1}(1)}(\rho_{\tau^{-1}(1)}(1)), \sigma_{\tau^{-1}(1)}(\rho_{\tau^{-1}(1)}(2)), \dots, \sigma_{\tau^{-1}(1)}(\rho_{\tau^{-1}(1)}(a_{\tau^{-1}(1)}))}^{1\text{st block}}, \dots
+        \\[-1cm]
+        \dots, 
+        \overbrace{\sigma_{\tau^{-1}(n)}(\rho_{\tau^{-1}(n)}(1)), \sigma_{\tau^{-1}(n)}(\rho_{\tau^{-1}(n)}(2)), \dots, \sigma_{\tau^{-1}(n)}(\rho_{\tau^{-1}(n)}(a_{\tau^{-1}(n)})}^{n\text{-th block}})
+    \end{tikzcd}
+\end{center}

@@ -1,0 +1,18 @@
+\begin{center}
+            \begin{tikzpicture}
+                \fill[draw, Yellow!30, rounded corners]
+                (-2.5, -1.2) rectangle (2.5, 1);
+                \node at (-2,0.6) {$J$};
+                \node at (0,0){
+                    \begin{tikzcd}
+                        \textcolor{Blue}{\bullet}
+                        \arrow[out=120,in=60,looseness=3,loop, "1_{\textcolor{Blue}{\bullet}}"]
+                        \arrow[r, shift right = -0.5ex]
+                        \arrow[r, shift right = 0.5ex]
+                        &
+                        \textcolor{Orange}{\bullet}
+                        \arrow[out=120,in=60,looseness=3,loop, "1_{\textcolor{Orange}{\bullet}}"]
+                    \end{tikzcd}
+                };
+            \end{tikzpicture}
+        \end{center}

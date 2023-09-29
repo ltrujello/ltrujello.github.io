@@ -1,0 +1,24 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
+        H\circ F(x) \arrow[rr, "H(F(\eta_{K(\Gamma(x))}))"] 
+        \arrow[dr, swap, "H(\phi_x)"]
+        &
+        &
+        H\circ F(K(\Gamma(x)))\\
+        &
+        H\circ G(\Gamma(x))
+        \arrow[ur, swap, "H(\psi_{\Gamma(x)})"]
+        &
+        \end{tikzcd}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
+            H\circ G(x) \arrow[rr, "H(G(\eta_{\Gamma(K(x))}))"] 
+            \arrow[dr, swap, "H(\psi_x)"]
+            &
+            &
+            H\circ G(\Gamma(K(x)))\\
+            &
+            H\circ F(K(x))
+            \arrow[ur, swap, "H(\phi_{K(x)})"]
+            &   
+        \end{tikzcd}
+    \end{center}

@@ -1,0 +1,15 @@
+\begin{center}
+            \begin{tikzcd}[row sep = 1.4cm, column sep = 2cm]
+                X_n \times(X_{a_1}\times \cdots \times X_{a_n})
+                \arrow[r, "{(F_n, F_{a_1}, \dots, F_{a_n})}"]
+                \arrow[d, swap, "{\circ_{a_1, \dots, a_n}}"]
+                &
+                \hom(A^n,A)\times (\hom(A^{a_1}, A)\times \cdots \times \hom(A^{a_n}, A))
+                \arrow[d, "{\circ'_{a_1, \dots, a_n}}"]
+                \\
+                X_{a_1 + \cdots + a_n}
+                \arrow[r, swap, "F_{a_1 + \cdots + a_n}"]
+                &
+                \hom(A^{a_1 + \cdots + a_n}, A)
+            \end{tikzcd}
+        \end{center}

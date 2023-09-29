@@ -1,0 +1,84 @@
+\begin{center}
+    \begin{tikzcd}
+            &[-2cm]
+            &[-3cm]
+            &[-1cm]
+            A ((A  A)  (A  A))
+            \arrow[ddddr, swap, line width = 0.25mm, near start, " (\gamma)_A"]
+            \arrow[dll, NavyBlue, shift right = 0.5ex, swap, "1_{A}\otimes \alpha_{A A,A,A}"]
+            \arrow[dll, Purple, shift right = -0.5ex]
+            \arrow[drr, Orange, "\alpha_{A,A A,A A}"]
+            &[-1cm]
+            &[-3cm]
+            &[-2cm]
+            \\[0.2cm] 
+            &
+            A((( A  A ) A)  A)
+            \arrow[dddr, NavyBlue, "\alpha_{A, A (A A), A}"]
+            &
+            &
+            &
+            &
+            (A (A  A))  (A  A)
+            \arrow[dr, "\alpha_{A,A,A}\otimes (1_{A} \otimes 1_{A})"]
+            \arrow[dddl, near start, Orange, swap, "\alpha_{A (A A), A, A}"]
+            &
+            \\[0.4cm] 
+            A ((A  (A  A)) A)
+            \arrow[<-, Purple, ur, "(1_{A} \otimes \alpha^{-1}_{A,A,A})\otimes 1_{A}"]
+            \arrow[ddddr, swap, Purple, "\alpha_{A,A A A, A}"]
+            &
+            &
+            &
+            &
+            &
+            &
+            ((A A)  A)  (A  A)
+            \arrow[ddddl, "\alpha_{(A A) A, A, A}"]
+            \\[-0.7cm] 
+            &
+            &
+            &
+            &
+            &
+            &
+            \\[0.2cm] 
+            &
+            &
+            (A ((A  A)  A))  A
+            \arrow[rr, NavyBlue, "\alpha_{A, A A, A}\otimes 1_{A}"]
+            &
+            &
+            ((A (A  A)) A)  A
+            \arrow[<-, ddr, swap, Purple, "(\alpha^{-1}_{A,A,A}\otimes 1_{A})\otimes 1_{A}"]
+            &
+            &
+            \\[-0.7cm] 
+            &
+            &
+            &
+            &
+            &
+            &
+            \\[0.4cm] 
+            &
+            (A (A  (A  A)))  A
+            \arrow[uur, swap, "(1_{A} \otimes \alpha_{A,A,A}) \otimes 1_{A}"]
+            \arrow[drr, swap, Purple, "\alpha_{A, A, A A} \otimes 1_{A}"]
+            &
+            &
+            &
+            &
+            (((A A)  A)  A)  A
+            &
+            \\[0.2cm] 
+            &
+            &
+            &
+            ((A A)  (A  A))  A
+            \arrow[urr, Purple, swap, "\alpha_{A A, A, A}\otimes 1_{A}"]
+            &
+            &
+            &
+    \end{tikzcd}
+\end{center}

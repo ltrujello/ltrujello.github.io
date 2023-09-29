@@ -1,0 +1,27 @@
+\begin{center}
+\begin{tikzcd}[row sep = 1cm]
+    &[-3cm]
+    T(A) \otimes T(B) \otimes T(C) 
+    \arrow[dl, swap, "1 \otimes B_{B,C}"]
+    \arrow[r, "y_{A,B} \otimes 1"]
+    &[0.8cm]
+    T(B) \otimes T(A) \otimes T(C)
+    \arrow[dr, "1\otimes y_{A,C}"]
+    &[-3cm]
+    \\
+    T(A)\otimes T(C) \otimes T(B)
+    \arrow[dr, swap, "y_{A,C} \otimes 1"]
+    &
+    &
+    &
+    T(B) \otimes T(C) \otimes T(A)
+    \arrow[dl, "y_{B,C} \otimes 1"]
+    \\
+    &
+    T(C) \otimes T(A) \otimes T(B)
+    \arrow[r, swap, "1 \otimes y_{A,B}"]
+    &
+    T(C) \otimes T(B) \otimes T(A)
+    &
+\end{tikzcd}
+\end{center}

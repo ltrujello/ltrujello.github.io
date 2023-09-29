@@ -1,0 +1,39 @@
+\begin{center}
+        \begin{tikzcd}[column sep =  1.4cm, row sep = 1.4cm]
+            C \arrow[drr, bend left, "f"]
+            \arrow[ddr, bend right, swap, "g"]
+            \arrow[dr, dashed, "h"]
+            &[-0.7cm]
+            &
+            \\[-1.2cm]
+            &[-1cm]
+            P
+            \arrow[r, "p_1"]
+            \arrow[d, swap, "p_2"]
+            &
+            A
+            \arrow[d, "t_A"]\\
+            &[-1cm]
+            B 
+            \arrow[r, swap, "t_B"] 
+            &
+            T 
+        \end{tikzcd}
+        $\implies$
+        \begin{tikzcd}[column sep =  1.4cm, row sep = 1.4cm]
+            &
+            C
+            \arrow[dr, "f"]
+            \arrow[dl, swap, "g"]
+            \arrow[d, dashed, "h"]
+            &
+            \\
+            B
+            &
+            P
+            \arrow[l, "p_2"]
+            \arrow[r, swap, "p_1"]
+            &
+            A
+        \end{tikzcd}
+    \end{center}

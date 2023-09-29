@@ -1,0 +1,99 @@
+\begin{center}
+            \begin{tikzpicture}
+                
+                \begin{scope}
+                    \pgfmathsetmacro{\radius}{2.5}
+                    \shade[
+                    left color = NavyBlue!30, 
+                    right color = NavyBlue,
+                    opacity = 0.3] (0,0) circle (\radius);
+        
+                    \draw[line width = 0.2mm] (0,0) circle (\radius) ;
+                    \path[draw,dashed] (\radius,0) arc [start angle=0, end angle=180,
+                    x radius=\radius cm,
+                    y radius=\radius*0.5 cm] ;
+                    \path[draw] (-\radius,0) arc [start angle=180, end angle=360,
+                        x radius=\radius cm,
+                    y radius=\radius*0.5 cm] ;
+                \end{scope}
+        
+                
+                \begin{scope}[xshift = 3cm]
+                    \pgfmathsetmacro{\scale}{2}
+                    \coordinate (A) at (-\scale,\scale);
+                    \path (A);\pgfgetlastxy{\ax}{\ay} 
+                    \coordinate (B) at (-\scale,-\scale);
+                    \path (B);\pgfgetlastxy{\bx}{\by}
+                    \coordinate (C) at (\scale,-\scale);
+                    \path (C);\pgfgetlastxy{\cx}{\cy}
+                    \coordinate (D) at (\scale, \scale);
+                    \path (D);\pgfgetlastxy{\dx}{\dy}
+                    \pgfmathsetmacro{\nlines}{22}
+                    
+                    \shade[
+                    left color = NavyBlue!30, 
+                    right color = NavyBlue,
+                    opacity = 0.3,
+                    line width = 0.1mm, dashed]
+                    ([xshift = 2.5cm]A) to 
+                    ([xshift = 2.5cm]B) to 
+                    ([xshift = 2.5cm]C) to 
+                    ([xshift = 2.5cm]D) to cycle;
+                    
+                    \draw[line width = 0.2mm, dashed]
+                    ([xshift = 2.5cm]A) to 
+                    ([xshift = 2.5cm]B) to 
+                    ([xshift = 2.5cm]C) to 
+                    ([xshift = 2.5cm]D) to cycle;
+                \end{scope}
+        
+                
+                \begin{scope}[xshift = 11cm]
+                    \pgfmathsetmacro{\radius}{2.5}
+                    \pgfmathsetmacro{\tilt}{0.7}
+        
+                    
+                    \shade[left color = NavyBlue!30, 
+                    right color = NavyBlue, opacity = 0.3 ] (\radius,0) arc [start angle=0, end angle=360,
+                    x radius=\radius cm,
+                    y radius=\radius*\tilt cm] ;
+                    \draw (\radius,0) arc [start angle=0, end angle=360,
+                    x radius=\radius cm,
+                    y radius=\radius*\tilt cm] ;
+        
+                    
+                    \filldraw[white] (\radius*0.2,-0.15) arc [start angle=0, end angle=180,
+                    x radius=\radius*0.2 cm,
+                    y radius=\radius*0.2*\tilt cm] ;
+        
+                    
+                    \draw[name path=A] (-\radius*0.4,0.3) arc [start angle=180, end angle=360,
+                    x radius=\radius*0.4 cm,
+                    y radius=\radius*0.3*\tilt cm] ;
+        
+                    
+                    \draw[name path=B] (\radius*0.21,-0.15) arc [start angle=0, end angle=180,
+                    x radius=\radius*0.21 cm,
+                    y radius=\radius*0.21*\tilt cm] ;
+        
+                    
+                    \filldraw[white, name intersections={of=A and B,}]
+                    (intersection-1) to[bend right=10] (intersection-2)
+                    -- cycle;
+        
+                    
+                    \draw (-\radius*0.4,0.3) arc [start angle=180, end angle=360,
+                    x radius=\radius*0.4 cm,
+                    y radius=\radius*0.3*\tilt cm] ;
+        
+        
+                \end{scope}
+            \end{tikzpicture}
+            
+            \emph{In the middle, we have the topological space 
+            $(0,1)\times (0,1)$. As this isn't compact, we can compactify it 
+            to either (1) a sphere, 
+            by adding a point and identifying all four sides with the point, 
+            or adding sufficient points to (2) identify opposite edges 
+            to obtain a torus.}
+        \end{center}

@@ -1,0 +1,3718 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Partial%20Composition%3A%20Restructuring%20Operads/">
+      
+      
+        <link rel="next" href="../../Sheaves/Topological%20Presheaves%20and%20Sheaves/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>9.4 The Braid Groups Form a (nonsymmetric) Operad - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#94-the-braid-groups-form-a-nonsymmetric-operad" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9.4 The Braid Groups Form a (nonsymmetric) Operad
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="mydarkscheme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Category Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algebra/" class="md-tabs__link">
+          
+  
+  Algebra Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../associahedron/" class="md-tabs__link">
+        
+  
+    
+  
+  Associahedron
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-tabs__link">
+        
+  
+    
+  
+  Tikz-Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-tabs__link">
+        
+  
+    
+  
+  Poly-Rust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Category Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Category Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories, Functors and Natural Transformations.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories, Functors and Natural Transformations.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Introduction%3A%20What%20are%20the%20Foundations%20of%20Math%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introduction: What are the Foundations of Math?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Motivation%20for%20Category%20Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Motivation for Category Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Category%20Theory%20Axioms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Category Theory Axioms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Examples of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Paths%20and%20Diagrams%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Paths and Diagrams in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20and%20Nonexamples%20of%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Examples and Nonexamples of Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Forgetful%2C%20Full%20and%20Faithful%20Functors./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Forgetful, Full and Faithful Functors.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Natural%20Transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Natural Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Monic%2C%20Epics%2C%20and%20Isomorphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Monic, Epics, and Isomorphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Initial%2C%20Terminal%2C%20and%20Zero%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Initial, Terminal, and Zero Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Duality and Categorical Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Duality and Categorical Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/%24%5Cmathcal%7BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 $\mathcal{C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Products%20of%20Categories%2C%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Products of Categories, Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Functor%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Functor Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Vertical%2C%20Horizontal%20Composition%3B%20Interchange%20Laws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Vertical, Horizontal Composition; Interchange Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Slice%20and%20Comma%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Slice and Comma Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Graphs%2C%20Quivers%20and%20Free%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Graphs, Quivers and Free Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Quotient%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Quotient Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Monoids%2C%20Groups%20and%20Groupoids%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Monoids, Groups and Groupoids in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Universal Constructions and Limits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Universal Constructions and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Universal%20Morphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Universal Morphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Representable%20Functors%20and%20Yoneda%27s%20Lemma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Representable Functors and Yoneda's Lemma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Finite%20Products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Finite Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Finite%20Coproducts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Finite Coproducts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Arbitrary%20Products%20and%20Coproducts%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Arbitrary Products and Coproducts in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Introduction%20to%20Limits%20and%20Colimits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introduction to Limits and Colimits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Equalizers%20and%20Coequalizers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Equalizers and Coequalizers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Pullbacks%20and%20Pushouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Pullbacks and Pushouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adjunctions.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adjunctions.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Introduction%20to%20Adjunctions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introduction to Adjunctions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Reflective%20Subcategories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Reflective Subcategories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Equivalence%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Equivalence of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Adjoints%20on%20Preorders./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Adjoints on Preorders.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Exponential%20Objects%20and%20Cartesian%20Closed%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Exponential Objects and Cartesian Closed Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Limits and Colimits.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Limits and Colimits.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Every%20Limit%20in%20Set%3B%20Creation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Every Limit in Set; Creation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Inverse%20and%20Direct%20Limits./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Inverse and Direct Limits.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Limits%20from%20Products%2C%20Equalizers%2C%20and%20Pullbacks./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Limits from Products, Equalizers, and Pullbacks.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Preservation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Preservation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Adjoints%20on%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 Adjoints on Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Existence%20of%20Universal%20Morphisms%20and%20Adjoint%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 Existence of Universal Morphisms and Adjoint Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Subobjects%20and%20Quotient%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Subobjects and Quotient Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtered Colimits, Coends, and Kan Extensions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Filtered Colimits, Coends, and Kan Extensions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Filtered%20Colimits%2C%20Coends%2C%20and%20Kan%20Extensions/Filtered%20Categories%20and%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Filtered Categories and Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monoidal Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Monoidal Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Monoidal%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Monoidal Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/What%20are%20those%20Coherence%20Conditions%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 What are those Coherence Conditions?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Mac%20Lane%27s%20Coherence%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Mac Lane's Coherence Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Braided%20and%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Braided and Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Coherence%20for%20Braided%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Coherence for Braided Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Monoids%2C%20Groups%2C%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Monoids, Groups, in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Enriched%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.8 Enriched Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Abelian Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Abelian Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Preadditive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Preadditive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Additive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Additive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Preabelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Preabelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Kernels%20and%20Cokernels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Kernels and Cokernels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Abelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Abelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operads
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Operads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Operads%20on%20Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Operads on Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../General%20Operads%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 General Operads in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Partial%20Composition%3A%20Restructuring%20Operads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Partial Composition: Restructuring Operads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9.4 The Braid Groups Form a (nonsymmetric) Operad
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_11" >
+        
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sheaves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Sheaves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sheaves/Topological%20Presheaves%20and%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Topological Presheaves and Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sheaves/Abstracting%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Abstracting Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sheaves/Stalks%20and%20Germs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Stalks and Germs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_12" >
+        
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Persistence Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Persistence Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/Persistence%20modules%20on%20%24%5Crr%24./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Persistence modules on $\rr$.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/Generalized%20Persistence%20Modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Generalized Persistence Modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/Interleaving%20Distances%20via%20Sublinear%20Projections%20and%20Superlinear%20Families/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Interleaving Distances via Sublinear Projections and Superlinear Families
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/General%20Persistence%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 General Persistence Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Permutation%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Permutation Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Homomorphism%20and%20Isomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Homomorphism and Isomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Cyclic%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Cyclic Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Left%20and%20Right%20Cosets%2C%20Lagrange%27s%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Left and Right Cosets, Lagrange's Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Normal%20subgroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Normal subgroups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Quotient%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Quotient Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Isomorphism%20Theorems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Isomorphism Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Group%20Actions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Group Actions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Conjugation%2C%20The%20Class%20Equation%2C%20and%20Cauchy%27s%20Theorem./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Conjugation, The Class Equation, and Cauchy's Theorem.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Sylow%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Sylow Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Fundamental%20Theorem%20of%20Finite%20Abelian%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.12 Fundamental Theorem of Finite Abelian Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Ring%20homomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Ring homomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Ideals%20and%20Quotient%20Rings./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Ideals and Quotient Rings.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Principal%2C%20Maximal%20and%20Prime%20Ideals./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Principal, Maximal and Prime Ideals.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Ring%20of%20Fractions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Ring of Fractions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/PIDs%20and%20Euclidean%20Domains./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 PIDs and Euclidean Domains.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Polynomial%20Rings%20%28for%20Galois%20Theory%29./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Polynomial Rings (for Galois Theory).
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Submodules%2C%20Quotient%20Modules%20and%20Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Submodules, Quotient Modules and Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Generating%20Modules%2C%20Torsions%2C%20Annihilators./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Generating Modules, Torsions, Annihilators.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Cartesian%20Products%20and%20Direct%20Sums.%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Cartesian Products and Direct Sums. 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Exact%20Sequences%20and%20the%20Hom%20Functor./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Exact Sequences and the Hom Functor.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Free%20%24R%24-modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Free $R$-modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../associahedron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associahedron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tikz-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poly-Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="94-the-braid-groups-form-a-nonsymmetric-operad">9.4. The Braid Groups Form a (nonsymmetric) Operad</h1>
+<p>Recall that the <span class="arithmatex">\(n\)</span>-th braid group <span class="arithmatex">\(B_n\)</span> is the collection 
+of all possible braidings of <span class="arithmatex">\(n\)</span>-strands, forming a group under composition. 
+Each braid group has the presentation </p>
+<div class="arithmatex">\[
+B_n = \left&lt; \sigma_1, \dots, \sigma_{n-1} \mid \sigma_i\sigma_{i+1}\sigma_{i} = \sigma_{i+1}\sigma_{i}\sigma_{i+1}^{(\texttt{1})}, \sigma_i\sigma_j = \sigma_j\sigma_i^{(\texttt{2})} \right&gt;   
+\]</div>
+<p>where (\texttt{1}) holds only when <span class="arithmatex">\(1 \le i \le n - 2\)</span> and (\texttt{2}) hold only when 
+<span class="arithmatex">\(|i - j| &gt; 1\)</span>. Below is the braid <span class="arithmatex">\(\sigma_1 \sigma_3 \sigma_2 \sigma_2 \sigma_3\)</span>, 
+where we envision application of the generators starting from the left and going to the right.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Each braid group has a natural projection mapping <span class="arithmatex">\(\pi: B_n \to S_n\)</span>, where 
+each braid is sent to the underlying permutation. The kernel of this map is the 
+pure braid group, which doesn't change the permutation. However, recall that <span class="arithmatex">\(S_n\)</span> 
+is a symmetric operad, whose composition is given by a block permutation. 
+That is, given a permutation <span class="arithmatex">\(S_n\)</span>, and <span class="arithmatex">\(n\)</span>-many other permutations <span class="arithmatex">\(\sigma_1 \in S_{a_1}, \dots, 
+\sigma_n \in S_{a_n}\)</span>, we can form a permutation in <span class="arithmatex">\(S_{a_1 + \cdots + a_n}\)</span>.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>This then suggests the idea that there exists an operadic composition for braids; and such 
+an observation checks out. Given a braid <span class="arithmatex">\(\beta \in B_n\)</span>, and <span class="arithmatex">\(n\)</span>-many other 
+braids <span class="arithmatex">\(\alpha_1 \in B_{a_i}, \dots, \alpha_n \in B_{a_n}\)</span>, we can form a 
+braid in <span class="arithmatex">\(B_{a_1 + \cdots + a_n}\)</span>. The operadic composition is analogous to what 
+we had before with permutations; we're going to stick braids inside of braids. </p>
+<p><span style="display:block" class="definition">
+(<strong>Topological.</strong>)
+Let <span class="arithmatex">\(\beta \in B_n\)</span> be a braid. We say that the <span class="arithmatex">\(i, (i+1), \dots (i + k)\)</span>-th strands
+form a <strong>cable</strong> if there exist a cylinder (depends on ambient space; need to decide 
+one for consistency)
+which is disjoint from all other strands of <span class="arithmatex">\(\beta\)</span>.
+</span></p>
+<p><span style="display:block" class="proposition">
+Every cable is obtained from a map <span class="arithmatex">\(\circ_k: B_n \times B_m \to B_{m + n -1}\)</span>. 
+</span></p>
+<p>In general, we can define an "operadic" composition where the composition is the cabling of <span class="arithmatex">\(n\)</span>-braids.</p>
+<div class="arithmatex">\[
+\circ_{a_1, \dots, a_n}: B_n \times B_{a_1} \times \cdots \times B_{a_n} \to B_{a_1 + \cdots + a_n}
+\]</div>
+<p>We'll want to show that this does form an operad. But before we do that we'll need to 
+obtain an algebraic expression, based on the generators of the braids being cabled,
+which describe the resultant braid. </p>
+<p>Towards that goal,
+consider the generator <span class="arithmatex">\(\sigma_1\)</span>, which simply swaps the first strand over 
+the second. Suppose we would like to substitute 4 parallel strands in the first strand 
+of <span class="arithmatex">\(\sigma_1\)</span>, and just one strand in the second strand of <span class="arithmatex">\(\sigma_1\)</span>. 
+How do we calculate this braid?</p>
+<p>\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+The blue line travels diagonally down, going <em>underneath</em> each red strand once.
+The blue line crossing underneath the <span class="arithmatex">\(i\)</span>-th red strand can be represented as 
+<span class="arithmatex">\(\sigma_{i}\)</span>. We then multiply all of these together to get the braid.</p>
+<p>\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+ence we see that the braid is simply <span class="arithmatex">\(\sigma_4\sigma_3\sigma_2\sigma_1\)</span>. </p>
+<p>Suppose now that we would like to substitute 2 parallel strands into 
+the first strand of <span class="arithmatex">\(\sigma_1\)</span>, and also substitute 3 parallel strands 
+in the second strand of <span class="arithmatex">\(\sigma_2\)</span>. Then this produces a braid of 5 strands. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+How do we calculate this braid? Observe that the <span class="arithmatex">\(\textcolor{Red}{i}\)</span>-th red strand 
+crossing over the <span class="arithmatex">\(\textcolor{RoyalBlue}{j}\)</span>-th strand can be represented 
+as <span class="arithmatex">\(\sigma_{i + j - 1}\)</span>. In the previous situation, <span class="arithmatex">\(j\)</span> was equal to 1, so it 
+each crossing was just <span class="arithmatex">\(\sigma_{i}\)</span>.</p>
+<p>\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+verall, we can simply see that the braid is given by </p>
+<div class="arithmatex">\[
+(\sigma_2\sigma_1)(\sigma_3\sigma_2)(\sigma_4\sigma_3).  
+\]</div>
+<p>Now suppose more generally that we have <span class="arithmatex">\(k_1\)</span>-many red lines and <span class="arithmatex">\(k_2\)</span>-many blue lines.
+Then we can iteratively describe their 
+crossings one line at time, just like we did above. 
+The crossings will look somewhat like this:</p>
+<p>To describe this braid, we note that there will be <span class="arithmatex">\(k_1\cdot k_2\)</span>-many crossings, 
+and hence <span class="arithmatex">\(k_1\cdot k_2\)</span>-many generators required to describe 
+the crossings. If we follow the first blue line, and track 
+each time it crosses with the red lines, we see that their 
+crossings will be <span class="arithmatex">\(\sigma_{k_1}, \sigma_{k_1-1}, \dots, 
+\sigma_{1}\)</span>. Moving onto the second blue and again traveling down, the crossings 
+will be <span class="arithmatex">\(\sigma_{k_1+1}, \sigma_{k_1}, \dots, 
+\sigma_{2}\)</span>. If we have <span class="arithmatex">\(k_2\)</span>-many blue lines, this will be done <span class="arithmatex">\(k_2\)</span> many times.</p>
+<p>\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Hence we have that 
+\begin{equation}
+\sigma_1(k_1, k_2)
+=
+\prod_{m = 1}^{k_2}\sigma_{(k_1 + \textcolor{NavyBlue}{m}-1)}\sigma_{(k_1 + \textcolor{NavyBlue}{m}-2)}\cdots\sigma_{\textcolor{NavyBlue}{m}}
+\end{equation}
+where starting from <span class="arithmatex">\(m= 1, 2, \dots, k_2\)</span> represents us following the <span class="arithmatex">\(m\)</span>-th blue line and recording 
+its crossings with the red lines.</p>
+<p>We get a similar story if we instead consider <span class="arithmatex">\(\sigma_1^{-1}(k_1, k_2)\)</span>. Here, 
+we are swapping <span class="arithmatex">\(k_1\)</span> many strands <em>under</em> <span class="arithmatex">\(k_2\)</span> many strands, 
+so, we have to 
+swap <span class="arithmatex">\(k_1\)</span> and <span class="arithmatex">\(k_2\)</span>. This then gives us the expression </p>
+<div class="arithmatex">\[
+\sigma_1^{-1}(k_1, k_2)
+=
+\prod_{m = 1}^{k_1}
+\sigma_{(k_1 - \textcolor{NavyBlue}{m})+1}^{-1}
+\sigma_{(k_1 - \textcolor{NavyBlue}{m})+2}^{-1}
+\cdots 
+\sigma_{(k_1 - \textcolor{NavyBlue}{m})+ k_2}^{-1}
+\]</div>
+<p>Now it is easily to generalize this to the other generators; we simply 
+\textcolor{NavyBlue}{shift the indices}.</p>
+<div class="arithmatex">\[\begin{align*}
+\sigma_i(k_1, k_2)
+&amp;=
+\prod_{m = 1}^{k_2}\sigma_{(k_1 + m-1 + \textcolor{NavyBlue}{(i-1)} )}\sigma_{(k_1 + m-2) + \textcolor{NavyBlue}{(i-1)} }\cdots\sigma_{m + \textcolor{NavyBlue}{(i-1)}}
+\\
+&amp;=
+\prod_{m' = i}^{(i-1) + k_2}\sigma_{(k_1 + m'-1)}\sigma_{(k_1 + m'-2)}\cdots\sigma_{m'}
+\end{align*}\]</div>
+<p>where we set <span class="arithmatex">\(m' = m + (i - 1)\)</span> to reindex. Note that this returns the original formula 
+we had once we set <span class="arithmatex">\(i = 1\)</span>.</p>
+<p>Thus we have that: </p>
+<p><span style="display:block" class="lemma">
+Let <span class="arithmatex">\(\sigma_i\)</span> be a generator. Then the braid obtained by cabling 
+<span class="arithmatex">\(k_1\)</span>-many parallel lines into the <span class="arithmatex">\(i\)</span>-th strand and <span class="arithmatex">\(k_2\)</span>-many parallel lines 
+into the <span class="arithmatex">\((i+1)\)</span>-th strand returns a braid in <span class="arithmatex">\(B_{k_1 + k_2}\)</span> which may 
+be expressed as </p>
+<div class="arithmatex">\[\begin{align*}
+\sigma_i(k_1, k_2)
+&amp;=
+\prod_{m' = i}^{(i-1) + k_2}\sigma_{(k_1 + m'-1)}\sigma_{(k_1 + m'-2)}\cdots\sigma_{m'}
+\end{align*}\]</div>
+<p></span></p>
+<p>Now we move onto the more difficult question:
+suppose we have a general braiding <span class="arithmatex">\(\beta\)</span> of <span class="arithmatex">\(n\)</span> strands, 
+and suppose we have <span class="arithmatex">\(k_1, \dots, k_n\)</span> sets of parallel strands. Suppose that we'd 
+like to substitute <span class="arithmatex">\(k_1\)</span>-parallel strands in the first strand of <span class="arithmatex">\(\beta\)</span>, 
+<span class="arithmatex">\(k_2\)</span>-parallel strands in the second, all the way to <span class="arithmatex">\(k_n\)</span> strands in
+the <span class="arithmatex">\(n\)</span>-th strand. This then defines a braid of <span class="arithmatex">\((k_1 + \cdots + k_n)\)</span>-many strands
+which we denote as </p>
+<div class="arithmatex">\[
+\beta(k_1, k_2, \dots, k_n).
+\]</div>
+<p>For example, if <span class="arithmatex">\(\beta = \sigma_1\sigma_3\sigma_2\sigma_2\)</span>,
+then we have <span class="arithmatex">\(\beta\)</span> below on the bottom left. On the bottom right, 
+we have <span class="arithmatex">\(\beta(k_1, k_2, k_3, k_4)\)</span>
+where <span class="arithmatex">\(k_1 = 3, k_2 = 2, k_3 = 1, k_4 = 3\)</span>.</p>
+<p>\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+taring at the diagram, we can see that it may be expressed as</p>
+<div class="arithmatex">\[\begin{gather*}
+(\sigma_3\sigma_2\sigma_1 \cdot \sigma_4\sigma_3\sigma_2) (\sigma_6\sigma_7\sigma_8) 
+(\sigma_5\sigma_4\sigma_3 \cdot \sigma_6\sigma_5\sigma_4 \cdot \sigma_7\sigma_6\sigma_5)\\
+(\sigma_5\sigma_4\sigma_3 \cdot \sigma_6\sigma_5\sigma_4 \cdot \sigma_7\sigma_6\sigma_5)
+(\sigma_8 \sigma_7 \sigma_6).
+\end{gather*}\]</div>
+<p>But how can we do this in general? To explain, first suppose </p>
+<div class="arithmatex">\[
+\beta = \sigma_{i_1}\sigma_{i_2}\cdots\sigma_{i_k}.
+\]</div>
+<p>To draw the cabled braid <span class="arithmatex">\(\beta(k_1, k_2, \dots, k_n)\)</span>, we see that we have <span class="arithmatex">\(k\)</span>-crossings to focus on; 
+these are where the crossings will happen in our cabled braid. For example, in the braid we provided above, we 
+can highlight the crossings in yellow.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+t each crossing, we're going to have something like this: 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+That is, at each crossing, there will be a number of red strands crossing over 
+blue strands. If we can just describe each of these 
+crossings using generators <span class="arithmatex">\(\sigma_j\)</span> like we did before, 
+then we can describe the whole braid. </p>
+<p>We now face the main problem. To describe an arbitrary crossing, we need to know 
+which generators <span class="arithmatex">\(\sigma_1, \sigma_2, \dots, \sigma_{k_1 + \cdots + k_n}\)</span> 
+to use, and in general it's not clear which ones to use. For example, 
+how do we describe the first crossing? We don't know, so we'll write <span class="arithmatex">\(\sigma_{??}\)</span>. 
+If, however, we know that the first red strand is, say the <span class="arithmatex">\(k\)</span>-th strand in <span class="arithmatex">\(\beta(k_1, \dots, k_n)\)</span>,
+then we can write the crossing as <span class="arithmatex">\(\sigma_k\)</span>. Then we can travel down the blue line, 
+writing <span class="arithmatex">\(\sigma_{k-1}, \sigma_{k - 2}, \dots\)</span> until we've hit all the red strands. Then 
+we can repeat this process for each blue line.</p>
+<p>So to do this in general, we need to answer three questions:</p>
+<ul>
+<li>
+<p>How far are all of our red strands from the left? </p>
+</li>
+<li>
+<p>How many red strands are there?</p>
+</li>
+<li>
+<p>How many blue strands are there?</p>
+</li>
+</ul>
+<p>If we can answer those three questions, then we can describe exactly what happens 
+in terms of generators using formula (\ref{sigma_1_cabling}).</p>
+<p>We answer the first question:</p>
+<p><span style="display:block" class="definition">
+Let <span class="arithmatex">\(\beta \in B_n\)</span> be a braid. Suppose <span class="arithmatex">\(\beta\)</span> can be written 
+as a product of <span class="arithmatex">\(k\)</span>-many generators <span class="arithmatex">\(\beta = \sigma_{i_1}\sigma_{i_2} \cdots \sigma_{i_k}\)</span><br />
+(where any <span class="arithmatex">\(\sigma\)</span> is equally possibly an inverse). 
+Then we define the quantity </p>
+<div class="arithmatex">\[
+\phi(\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_j}, s)
+= 
+\begin{cases}
+\text{The order which strand }s\\
+\text{is from the left after generators}\\
+\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_j}
+\text{ have been applied.}
+\end{cases}
+\]</div>
+<p>Of course, <span class="arithmatex">\(\phi(-, s) = s\)</span>, where <span class="arithmatex">\(-\)</span> represent empty input,
+for each strand <span class="arithmatex">\(s\)</span>. This is because each <span class="arithmatex">\(s\)</span>-th strand is originally the 
+<span class="arithmatex">\(s\)</span>-th strand.</p>
+<p>However, a way to define this is to calculate the underlying permutation 
+of <span class="arithmatex">\(\sigma_i^{1}\sigma_j^{2}\dots, \sigma_k^{p}\)</span> using the natural projection 
+map <span class="arithmatex">\(\pi: B_n \to S_n\)</span>. Hence we see that </p>
+<div class="arithmatex">\[
+\phi(\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_k}, s)
+= 
+\pi(\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_k})(s).
+\]</div>
+<p></span></p>
+<p><span style="display:block" class="example">
+Consider the braid <span class="arithmatex">\(\sigma_1\sigma_3\sigma_2\sigma_2\sigma_3\)</span> pictured below.
+Suppose we've applied <span class="arithmatex">\(\sigma_1\sigma_3\)</span>. Then our braids are now reordered from how 
+they were initially positioned. For instance, after the application of these 
+generators, the green strand is now the first strand; the red strand is now 
+the second; the blue strand is the third; and the black strand is now the fourth. 
+Each color strand is now in a different position than which it started in.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+However, we can express this observation using our tool.
+Note that <span class="arithmatex">\(\pi(\sigma_1\sigma_3)\)</span> is the permutation <span class="arithmatex">\((1, 2, 3, 4) \mapsto 
+(2, 1, 4, 3)\)</span>. Hence we see that </p>
+<div class="arithmatex">\[
+\phi(\sigma_1\sigma_3, 1) = \textcolor{Green}{2} \quad \phi(\sigma_1\sigma_3, 2) = \textcolor{Red}{1} \quad
+\phi(\sigma_1\sigma_3, 3) = \textcolor{RoyalBlue}{4} \quad \phi(\sigma_1\sigma_3, 4) = \textcolor{Purple}{3}.
+\]</div>
+<p>What about after the first three generators have been applied? We calculate 
+again: <span class="arithmatex">\(\pi(\sigma_1\sigma_3\sigma_2)\)</span> is the permutation <span class="arithmatex">\((1, 2, 3, 4) \mapsto (2, 4, 1, 3)\)</span>.
+Hence we have that </p>
+<div class="arithmatex">\[
+\phi(\sigma_1\sigma_3\sigma_2, 1) = \textcolor{Green}{2} \quad \phi(\sigma_1\sigma_3\sigma_2, 2) = \textcolor{NavyBlue}{4} \quad
+\phi(\sigma_1\sigma_3\sigma_2, 3) = \textcolor{red}{1} \quad \phi(\sigma_1\sigma_3\sigma_2, 4) = \textcolor{Purple}{3}.
+\]</div>
+<p>which matches a simple hand-count that we can perform using the picture below.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+end{example}</p>
+<p>This tool allows us to answer our second and third questions. For example, consider again 
+<span class="arithmatex">\(\beta(3, 2, 1, 3)\)</span> where <span class="arithmatex">\(\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3\)</span>. 
+How do we calculate, 
+for example, the crossing \raisebox{-0.1cm}{<span class="arithmatex">\(\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {5};\end{tikzpicture}\)</span>},
+of 3 blue lines over 1 black line, as in the picture below?</p>
+<p>\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+his crossing is induced by <span class="arithmatex">\(\sigma_3\)</span>, the fifth generator of <span class="arithmatex">\(\beta\)</span>. 
+Hence <span class="arithmatex">\(\beta\)</span> tells us to cross the <span class="arithmatex">\(3\)</span>nd cable over the <span class="arithmatex">\(4\)</span>rd cable. But what 
+are these cables? From looking at the diagram, we definitely know. But in general we won't 
+be able to just look at the diagram. However, our tool can tell us: Since we've applied <span class="arithmatex">\(\sigma_1\sigma_3\sigma_2\sigma_2\)</span>, 
+we see that </p>
+<div class="arithmatex">\[
+\phi(\sigma_1\sigma_3\sigma_2\sigma_2, 3) = \textcolor{RoyalBlue}{4} \qquad \phi(\sigma_1\sigma_3\sigma_2\sigma_2, 4) = \textcolor{Black}{1}.
+\]</div>
+<p>Therefore, we're crossing blue cables over the black cables. We also now know there
+are <span class="arithmatex">\(k_{\textcolor{RoyalBlue}{4}} = 3\)</span> blue cables and <span class="arithmatex">\(k_{\textcolor{Black}{3}} = 1\)</span> many black cables.
+We have almost everything we need except the following: how far 
+are the blue cables from the left of the diagram? </p>
+<p>Well, since the blue strands are inside of the third cable, we just need to ask how many 
+stands are in the first and second cables. But what is the first cable? What's the second?
+We see that</p>
+<div class="arithmatex">\[
+\phi(\sigma_1\sigma_3\sigma_2\sigma_2, 1) =  \textcolor{Green}{2}.
+\quad 
+\phi(\sigma_1\sigma_3\sigma_2\sigma_2, 2) = \textcolor{Red}{1}.
+\]</div>
+<p>Hence there are </p>
+<div class="arithmatex">\[
+k_{\textcolor{Green}{2}} + k_{\textcolor{Red}{1}} = 2 + 3 = 5    
+\]</div>
+<p>strands before the blue strands. We can now calculate the crossings: </p>
+<div class="arithmatex">\[\begin{align*}
+\sigma_{5 + 3}\sigma_{5 + 2} \sigma_{5 + 1}
+&amp;=
+\prod_{m = 1 + 5}^{1 + 5}\sigma_{3 + (m - 1)}\sigma_{3 + (m - 2)}\sigma_m\\
+&amp;=
+\prod_{m = p}^{p + (r - 1)}\sigma_{q + (m - 1)}\sigma_{q + (m - 2)}\sigma_m
+\end{align*}\]</div>
+<p>where </p>
+<div class="arithmatex">\[
+p = 1 + \hspace{-1.5cm}\overbrace{k_2 + k_3}^{\text{\# of strands before the red strands}}
+\quad 
+q = \hspace{-1cm}\underbrace{k_{\textcolor{RoyalBlue}{4}}}_{\text{\# of strands in the 3rd cable}}
+r = \hspace{-1cm}\overbrace{k_{\textcolor{Black}{3}}}^{\text{\# of strands in the 4th cable}}
+\]</div>
+<p>Therefore we propose the following. </p>
+<p><span style="display:block" class="lemma">
+Let <span class="arithmatex">\(\beta \in B_n\)</span> be a braid, and suppose it 
+may be expressed as <span class="arithmatex">\(\sigma_{i_1}\sigma_{i_2} \cdots \sigma_{i_k}\)</span> in terms of <span class="arithmatex">\(k\)</span>-many 
+generators. Let <span class="arithmatex">\(k_1, \dots, k_n\)</span> be positive integers. Then we have that </p>
+<div class="arithmatex">\[
+\beta(k_1, k_2, \dots, k_n) 
+= 
+\psi_1\psi_2\dots\psi_k
+\]</div>
+<p>where, depending on if <span class="arithmatex">\(\sigma_{i_j}\)</span> is an instance of an inverse or not, 
+we have 
+\begin{statement}{ProcessBlue!10}</p>
+<div class="arithmatex">\[
+\prod_{m = p_j}^{p_j + (r_j-1)}
+\sigma_{q_j + (m-1)}
+\sigma_{q_j + (m-2)}
+\cdots 
+\sigma_{m}
+\quad 
+\text{ or }
+\quad 
+\prod_{m = p_j}^{p_j + (r_j-1)}
+\sigma^{-1}_{(q_j + m) - 1}
+\sigma^{-1}_{(q_j -m) - 2}
+\cdots 
+\sigma^{-1}_{m}
+\]</div>
+<p>\end{statement}
+where in both cases
+\begin{statement}{ProcessBlue!10}</p>
+<div class="arithmatex">\[
+p_j
+=
+\overbrace{
+1 +
+\sum_{u = 1}^{i_j-1}
+k_{\phi(\sigma_{i_1}\cdots\sigma_{i_{j-1}}, u)}
+}^{\text{\# strands before } i_j\text{-th cable} }
+\qquad
+\underbrace{
+q_j = 
+k_{\phi(\sigma_{i_1}\cdots\sigma_{i_{j-1}}, i_j)}
+}_{\text{\# of strands in the }i_j \text{-th cable}}
+\qquad 
+\overbrace{
+r_j
+=
+k_{\phi(\sigma_{i_1}\cdots\sigma_{i_{(j-1)}}, (i_j+1))}
+}^{\text{\# of stands in the } (i_j+1)\text{-th cable} }
+\]</div>
+<p>\end{statement}
+</span></p>
+<p>The three quantities are the three answers to our original questions: </p>
+<ul>
+<li>
+<p>After applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>,
+how many strands come before the cable <span class="arithmatex">\(i_j\)</span>, relative to the left? <span class="arithmatex">\(p_j\)</span>.</p>
+</li>
+<li>
+<p>How many strands are in the <span class="arithmatex">\(i_j\)</span>-th cable after applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>? 
+<span class="arithmatex">\(q_j\)</span>.</p>
+</li>
+<li>
+<p>How many strands are in the <span class="arithmatex">\((i_j+1)\)</span>-th after applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>? 
+<span class="arithmatex">\(r_j\)</span>.</p>
+</li>
+</ul>
+<p>\begin{example}
+We can apply this to our previous example. 
+Recall that <span class="arithmatex">\(\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3\)</span>. 
+One way to interpret out braid diagram is as a sequence of permutations.
+In this case we see that we get five permutations because we have five generators.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+First we compute the table 
+\begin{center}</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(j\)</span></th>
+<th><span class="arithmatex">\(i_{j}\)</span></th>
+<th><span class="arithmatex">\(p_j\)</span></th>
+<th><span class="arithmatex">\(q_j\)</span></th>
+<th><span class="arithmatex">\(r_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[0.5ex]                           1</td>
+<td>1</td>
+<td>1</td>
+<td>k_1 = 3$</td>
+<td><span class="arithmatex">\(k_2 = 2\)</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td><span class="arithmatex">\(1 + k_1 + k_2 = 6\)</span></td>
+<td><span class="arithmatex">\(k_3 = 1\)</span></td>
+<td><span class="arithmatex">\(k_4 = 3\)</span></td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td><span class="arithmatex">\(1 + k_2 = 3\)</span></td>
+<td><span class="arithmatex">\(k_1 = 3\)</span></td>
+<td><span class="arithmatex">\(k_4 = 3\)</span></td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td><span class="arithmatex">\(1 + k_2 = 3\)</span></td>
+<td><span class="arithmatex">\(k_4 = 3\)</span></td>
+<td><span class="arithmatex">\(k_1 = 3\)</span></td>
+</tr>
+<tr>
+<td>5</td>
+<td>3</td>
+<td><span class="arithmatex">\(1 + k_1 + k_2 = 6\)</span></td>
+<td><span class="arithmatex">\(k_4 = 3\)</span></td>
+<td><span class="arithmatex">\(k_3 = 1\)</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>\end{center}   This then gives us the product </p>
+<div class="arithmatex">\[\begin{gather*}
+\left(\prod_{m = p_1}^{p_1 + (r_1-1)}
+\sigma_{q_1 + (m-1)}
+\sigma_{q_1 + (m-2)}
+\cdots 
+\sigma_{m}\right)
+\left(\prod_{m = p_2}^{p_2 + (r_2-1)}
+\sigma_{q_2 + (m-1)}
+\sigma_{q_2 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\\
+\left(     \prod_{m = p_3}^{p_3 + (r_3-1)}
+\sigma_{q_3 + (m-1)}
+\sigma_{q_3 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\\
+\left(    \prod_{m = p_4}^{p_4 + (r_4-1)}
+\sigma_{q_4 + (m-1)}
+\sigma_{q_4 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\left(     \prod_{m = p_5}^{p_5 + (r_5-1)}
+\sigma_{q_5 + (m-1)}
+\sigma_{q_5 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\end{gather*}\]</div>
+<p>which becomes </p>
+<div class="arithmatex">\[\begin{gather*}
+\left(\prod_{m = 1}^{1 + (2-1)}
+\sigma_{3 + (m-1)}
+\sigma_{3 + (m-2)}
+\cdots 
+\sigma_{m}\right)
+\left(\prod_{m = 6}^{6 + (3-1)}
+\sigma_{1 + (m-1)}
+\sigma_{1 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\\
+\left(     \prod_{m = 3}^{3 + (3-1)}
+\sigma_{3 + (m-1)}
+\sigma_{3 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\\
+\left(    \prod_{m = 3}^{3 + (3-1)}
+\sigma_{3 + (m-1)}
+\sigma_{3 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\left(     \prod_{m = 6}^{6 + (1-1)}
+\sigma_{3 + (m-1)}
+\sigma_{3 + (m-2)}
+\cdots 
+\sigma_{m} \right)
+\end{gather*}\]</div>
+<p>which reduces to </p>
+<div class="arithmatex">\[\begin{gather*}
+(\sigma_3\sigma_2\sigma_1 \cdot \sigma_4\sigma_3\sigma_2)
+(\sigma_6 \sigma_7\sigma_8)(\sigma_5\sigma_4\sigma_3\cdot \sigma_6\sigma_5\sigma_4 \cdot \sigma_7\sigma_6\sigma_5)
+\\
+(\sigma_5\sigma_4\sigma_3\cdot \sigma_6\sigma_5\sigma_4 \cdot \sigma_7\sigma_6\sigma_5)
+(\sigma_8\sigma_7\sigma_6)
+\end{gather*}\]</div>
+<p>which correctly matches what we had before. 
+</span></p>
+<p><span style="display:block" class="example">
+We haven't looked at a braid with an under crossing. So, 
+consider the braid <span class="arithmatex">\(\beta = \sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\sigma_1 \in B_4\)</span>, 
+and let <span class="arithmatex">\(k_1 = 2, k_2 = 3, k_3 = 4, k_4 = 5\)</span>. We'll want to calculate 
+the braid <span class="arithmatex">\(\beta(2, 3, 4, 5)\)</span>. Below is <span class="arithmatex">\(\beta\)</span> and <span class="arithmatex">\(\beta(2,3,4,5)\)</span>.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+To calculate the resulting braid we need to create our table of values.
+This is more easily done by generating the permutation table on the left; it 
+tells us how our cables are swapped around. 
+\begin{center}</p>
+<table>
+<thead>
+<tr>
+<th>Generator</th>
+<th>Permutation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(\varnothing\)</span></td>
+<td><span class="arithmatex">\((\textcolor{Red}{1}, \textcolor{Green}{2}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4})\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_1^{-1}\)</span></td>
+<td><span class="arithmatex">\((\textcolor{Green}{2}, \textcolor{Red}{1}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4})\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_1^{-1}\sigma_2^{-1}\)</span></td>
+<td><span class="arithmatex">\((\textcolor{Green}{2}, \textcolor{Purple}{3}, 1, \textcolor{RoyalBlue}{4})\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_1^{-1}\sigma_2^{-1}\sigma_3\)</span></td>
+<td><span class="arithmatex">\((\textcolor{Green}{2}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4}, 1)\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\)</span></td>
+<td><span class="arithmatex">\((\textcolor{Green}{2}, \textcolor{RoyalBlue}{4}, \textcolor{Purple}{3}, 1)\)</span></td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\sigma_1\)</span></td>
+<td><span class="arithmatex">\((\textcolor{RoyalBlue}{4}, \textcolor{Green}{2}, \textcolor{Purple}{3}, 1)\)</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>\hspace{1cm}</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(j\)</span></th>
+<th><span class="arithmatex">\(i_{j}\)</span></th>
+<th><span class="arithmatex">\(p_j\)</span></th>
+<th><span class="arithmatex">\(q_j\)</span></th>
+<th><span class="arithmatex">\(r_j\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[1ex]                           1</td>
+<td>1</td>
+<td>1</td>
+<td><span class="arithmatex">\(k_1 = 2\)</span></td>
+<td><span class="arithmatex">\(k_2 = 3\)</span></td>
+</tr>
+<tr>
+<td>[.1ex]                           2</td>
+<td>2</td>
+<td><span class="arithmatex">\(1 + k_2 = 4\)</span></td>
+<td><span class="arithmatex">\(k_1 =2\)</span></td>
+<td><span class="arithmatex">\(k_3 = 4\)</span></td>
+</tr>
+<tr>
+<td>[.1ex]                           3</td>
+<td>3</td>
+<td><span class="arithmatex">\(1 + k_2 + k_3 = 8\)</span></td>
+<td><span class="arithmatex">\(k_1 = 2\)</span></td>
+<td><span class="arithmatex">\(k_4 = 5\)</span></td>
+</tr>
+<tr>
+<td>[.1ex]                           4</td>
+<td>2</td>
+<td><span class="arithmatex">\(1 + k_2 = 4\)</span></td>
+<td><span class="arithmatex">\(k_3 =4\)</span></td>
+<td><span class="arithmatex">\(k_4 = 5\)</span></td>
+</tr>
+<tr>
+<td>.1ex]                           5</td>
+<td>1</td>
+<td><span class="arithmatex">\(1\)</span></td>
+<td><span class="arithmatex">\(k_2 = 3\)</span></td>
+<td><span class="arithmatex">\(k_4 = 5\)</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>\end{center}   This then generates the products </p>
+<div class="arithmatex">\[\begin{gather*}
+\left(\prod_{m = 1}^{3}\sigma_{m + 2}^{-1}\sigma^{-1}_m\right)
+\left( \prod_{m = 4}^{7}\sigma^{-1}_{(m+2)-1}\sigma_m^{-1} \right)
+\left( \prod_{m = 8}^{12}\sigma_{(m+2)-1}\sigma_m \right)
+\left( \prod_{m = 4}^{8}\sigma_{(m+4)-1}\sigma_{(m+4)-2}\sigma_{(m+4)-3}\sigma_{m} \right)
+\\
+\left( \prod_{m = 1}^{5}\sigma_{(m+3)-1}\sigma_{(m+3)-2}\sigma_m \right)
+\end{gather*}\]</div>
+<p>which becomes </p>
+<div class="arithmatex">\[\begin{gather*}
+(\sigma^{-1}_2\sigma^{-1}_1 \cdot \sigma^{-1}_3\sigma^{-1}_2 \cdot \sigma^{-1}_4\sigma^{-1}_3)
+(\sigma^{-1}_5\sigma^{-1}_4\cdot \sigma^{-1}_6\sigma^{-1}_5 \cdot \sigma^{-1}_7\sigma^{-1}_6 \cdot \sigma^{-1}_8\sigma^{-1}_7)
+\\
+(\sigma_9\sigma_8 \cdot \sigma_{10}\sigma_9 \cdot \sigma_{11}\sigma_{10} \cdot \sigma_{12}\sigma_{11} \cdot \sigma_{13}\sigma_{12})
+(\sigma_7\sigma_6\sigma_5\sigma_4 \cdot \sigma_8\sigma_7\sigma_6\sigma_5 \cdot \sigma_9\sigma_8\sigma_7\sigma_6 \cdot 
+\sigma_{10}\sigma_9\sigma_8\sigma_7\cdot \sigma_{11}\sigma_{10}\sigma_9\sigma_8)
+\\
+(\sigma_3\sigma_2\sigma_1 \cdot \sigma_4\sigma_3\sigma_2 \cdot \sigma_5\sigma_4\sigma_3 \cdot \sigma_6\sigma_5\sigma_4 \cdot \sigma_7\sigma_6\sigma_5)
+\end{gather*}\]</div>
+<p>which is the correct description of the braid <span class="arithmatex">\(\beta(2,3,4,5)\)</span>. 
+</span></p>
+<p>Now we can finally answer our desired question: 
+\begin{center}
+Given a braid <span class="arithmatex">\(\beta \in B_n\)</span>, and <span class="arithmatex">\(n\)</span> other braids <span class="arithmatex">\(\alpha_1 \in B_{a_1}, \dots, \alpha_n \in B_{a_n}\)</span>, 
+what is the formula for <span class="arithmatex">\(\beta(\alpha_1, \dots, \alpha_n)\)</span>? 
+\end{center}To answer this question, we build on our previous work by making the following observation. 
+Suppose we want to compute <span class="arithmatex">\(\sigma_1(\alpha_1, \alpha_2)\)</span> where <span class="arithmatex">\(\sigma_1, \alpha_1, \alpha_2\)</span>
+appear as below.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Then we get the braid diagram as in \raisebox{-0.1cm}{<span class="arithmatex">\(\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {1};\end{tikzpicture}\)</span>}.
+\begin{center}
+\includegraphics[scale = 0.1]{braids_cabled.jpg}
+\end{center}owever, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{<span class="arithmatex">\(\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {2};\end{tikzpicture}\)</span>}, 
+then \raisebox{-0.1cm}{<span class="arithmatex">\(\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {3};\end{tikzpicture}\)</span>}, 
+and then reaching a final stage of \raisebox{-0.1cm}{<span class="arithmatex">\(\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {4};\end{tikzpicture}\)</span>}. 
+But note that \raisebox{-0.1cm}{<span class="arithmatex">\(\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {4};\end{tikzpicture}\)</span>}
+may be expressed in either of the equivalent ways:
+\</p>
+<p>\begin{minipage}{0.5\textwidth}
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+end{minipage}
+\begin{minipage}{0.5\textwidth}
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+end{minipage}
+\vspace{1cm}</p>
+<p>This then gives us the following idea. Suppose we want to calculate 
+<span class="arithmatex">\(\beta(\alpha_1, \dots, \alpha_n)\)</span> where <span class="arithmatex">\(\alpha_i \in B_{a_i}\)</span>.
+Define <span class="arithmatex">\(\alpha_1\oplus \dots \oplus \alpha_n\)</span> as the <span class="arithmatex">\((a_1 + \cdots + a_n)\)</span>-braid. 
+Suppose that <span class="arithmatex">\(\alpha_j = \sigma_{j, i_j}, \dots, \sigma_{j, i_{k_j}}\)</span>. Then </p>
+<div class="arithmatex">\[\begin{gather*}
+\alpha_1 \oplus \alpha_2 \oplus \cdots \oplus 
+=
+(\sigma_{1, i_1}\sigma_{1, i_2}, \dots, \sigma_{1, i_{k_1}})
+(\sigma_{2, (i_1+a_1)}\sigma_{2, (i_2+a_2)}, \dots, \sigma_{2, (i_{k_1} + a_1) })\\
+\cdots 
+(\sigma_{n, (i_1+a_1 + \cdots + a_{n-1})}\sigma_{2, (i_2+a_2)}, \dots, \sigma_{n, (i_{k_1} + a_1 + \cdots + a_{n-1}) })
+\end{gather*}\]</div>
+<p>which concatenates the braid horizontally. Then we see that </p>
+<div class="arithmatex">\[\begin{align*}
+\beta(\alpha_1, \dots, \alpha_n)
+=
+\beta(a_1, a_2, \dots, a_n) \circ \alpha_1 \oplus \alpha_2 \oplus \dots \oplus \alpha_n.
+\end{align*}\]</div>
+<script src="../../mathjax_helper.js"></script>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

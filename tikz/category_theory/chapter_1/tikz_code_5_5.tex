@@ -1,0 +1,33 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            & Z 
+            \arrow[dl, swap, "f"]
+            \arrow[dr, "g"]
+            \arrow[d, "h"]
+            & 
+            \\
+            X
+            &
+            \arrow[l, "\pi_1"]
+            X \times Y
+            \arrow[r, swap, "\pi_2"]
+            &
+            Y
+        \end{tikzcd}
+        \hspace{1cm}
+        \begin{tikzcd}[column sep = 1.2cm, row sep = 1.4cm]
+            & z
+            \arrow[dl, maps to]
+            \arrow[dr, maps to]
+            \arrow[d, maps to]
+            & 
+            \\
+            f(z)
+            &
+            \arrow[l, "\pi_1"]
+            h(z) = (f(z), g(z))
+            \arrow[r, swap, "\pi_2"]
+            &
+            g(z)
+        \end{tikzcd}
+    \end{center}

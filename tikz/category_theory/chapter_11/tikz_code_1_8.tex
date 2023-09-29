@@ -1,0 +1,25 @@
+\begin{center}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+        \cdots 
+        \arrow[r]
+        & P(s_i) 
+        \arrow[r, ProcessBlue, "j"]
+        & P(r)
+        \arrow[r]
+        & P(s_{i+1})
+        \arrow[r]
+        & \cdots\\
+        \cdots 
+        \arrow[r]
+        & \overline{K}(s_i) 
+        \arrow[u, ProcessBlue, "\eta'_{s_i}"]
+        \arrow[r, equal]
+        & \overline{K}(r)
+        \arrow[u, Red, "\eta'_r"]
+        \arrow[r]
+        & \overline{K}(s_{i+1})
+        \arrow[u, "\eta'_{s_{i+1}}"]
+        \arrow[r]
+        & \cdots
+    \end{tikzcd}
+\end{center}

@@ -1,0 +1,30 @@
+\begin{center}
+    \adjustbox{scale=0.8}{
+    \begin{tikzcd}
+        X_n \otimes(
+        \underbrace{X_1\otimes \cdots \otimes \hspace{-0.3cm} \overbracket{X_r}^{k\text{-th spot}}\hspace{-0.3cm} \otimes \cdots \otimes X_1}_{n\text{ factors}}
+        \otimes \underbrace{X_1 \otimes
+        \cdots \otimes \hspace{-0.3cm} \overbracket{X_s}^{\ell\text{-th spot}}\hspace{-0.3cm} \otimes \cdots \otimes X_1}_{(n+r-1)\text{ factors}})
+        \arrow[d, swap, "\mu_{1, 1, \dots, r, \dots, 1}"]
+        \arrow[rr, "\sim"]
+        &[-1.6cm]
+        &[-1.6cm]
+        X_n \otimes(
+        \underbrace{X_1\otimes \cdots \otimes \hspace{-0.3cm} \overbracket{X_s}^{k\text{-th spot}}\hspace{-0.3cm} \otimes \cdots \otimes X_1}_{n\text{ factors}}
+        \otimes \underbrace{X_1 \otimes
+        \cdots \otimes \hspace{-0.3cm} \overbracket{X_r}^{\ell\text{-th spot}}\hspace{-0.3cm} \otimes \cdots \otimes X_1}_{(n+r-1)\text{ factors}})
+        \arrow[d, "\mu_{1, 1, \dots, s, \dots, 1}"]
+        \\[1cm]
+        X_{n + r - 1}\otimes(I \otimes \cdots \otimes X_r \otimes \cdots \otimes I)
+        \arrow[dr, swap, "\mu_{1, 1, \dots, s, \dots, 1}"]
+        &
+        &
+        X_{n + s - 1}\otimes(I \otimes \cdots \otimes X_r \otimes \cdots \otimes I)
+        \arrow[dl, "\mu_{1, 1, \dots, r, \dots, 1}"]
+        \\
+        &
+        X_{m + n + r -2}
+        &   
+    \end{tikzcd} 
+    }
+\end{center}

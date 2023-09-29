@@ -1,0 +1,27 @@
+\begin{center}
+        \begin{tikzpicture}
+            \filldraw[yellow!30, rounded corners] (-2.75,-0.5) rectangle (2.2, 0.9);
+            \node at (0,0){
+                \begin{tikzcd}
+                    (u_1,v_1)
+                    \arrow[r, "{(\gamma, \beta)}"]
+                    &
+                    (u_2, v_2)    
+                \end{tikzcd}    
+            };
+            \node at (-1.8, 0.6){$\ww\times\ww$};
+        \end{tikzpicture}
+        \raisebox{0.5cm}{maps to}
+        \begin{tikzpicture}
+            \filldraw[yellow!30, rounded corners] (-2.75,-0.5) rectangle (2, 0.9);
+            \node at (-0.25,0){
+                \begin{tikzcd}
+                    u \otimes v
+                    \arrow[r, "\gamma \otimes \beta"]
+                    &
+                    u' \otimes v'
+                \end{tikzcd}
+            };
+            \node at (-2.2, 0.6){$\ww$};
+        \end{tikzpicture}
+    \end{center}

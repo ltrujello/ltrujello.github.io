@@ -1,0 +1,10 @@
+\begin{center}
+        \begin{tikzpicture}
+            \node at (0,2.5) {$\hom_R(M, N)$};
+            \draw[red, ->] (0, 2.2) to (0, 1.3);
+            \node{\begin{tikzcd}[column sep = large, row sep = large]
+                M \arrow[r, "\phi"] \arrow[rd, swap, "f \circ \phi"]& N \arrow[d, "f"]\\
+                & N'
+            \end{tikzcd}};
+        \end{tikzpicture}
+    \end{center}

@@ -1,0 +1,11 @@
+\begin{center}
+    \begin{tikzcd}
+        (\textcolor{Red}{1, 2, \dots, a_1}, \dots, \textcolor{RoyalBlue}{1', 2', \dots, a_n})
+        \arrow[d, "\rho'"]
+        \\
+        (1', 2', \dots, a_{\rho^{-1}(1)}, \dots, 1', 2', \dots, a_{\rho^{-1}(n)})
+        \arrow[d, "{(\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))}"]
+        \\
+        (\sigma'_{\rho^{-1}(\tau^{-1}(1))}(1),\dots, \sigma'_{\rho^{-1}(\tau^{-1}(1))}(a_{\rho^{-1}(\tau^{-1}(1))}), \dots, \sigma'_{\rho^{-1}(\tau^{-1}(n))}(1),\dots, \sigma'_{\rho^{-1}(\tau^{-1}(n))}(a_{\rho^{-1}(\tau^{-1}(n))}))
+    \end{tikzcd}
+\end{center}

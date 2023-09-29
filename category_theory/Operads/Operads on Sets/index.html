@@ -1,0 +1,3681 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Abelian%20Categories/Abelian%20Categories/">
+      
+      
+        <link rel="next" href="../General%20Operads%20in%20Symmetric%20Monoidal%20Categories/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>9.1 Operads on Sets - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#91-operads-on-sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9.1 Operads on Sets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="mydarkscheme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Category Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../algebra/" class="md-tabs__link">
+          
+  
+  Algebra Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../associahedron/" class="md-tabs__link">
+        
+  
+    
+  
+  Associahedron
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-tabs__link">
+        
+  
+    
+  
+  Tikz-Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-tabs__link">
+        
+  
+    
+  
+  Poly-Rust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Category Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Category Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories, Functors and Natural Transformations.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories, Functors and Natural Transformations.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Introduction%3A%20What%20are%20the%20Foundations%20of%20Math%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introduction: What are the Foundations of Math?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Motivation%20for%20Category%20Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Motivation for Category Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Category%20Theory%20Axioms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Category Theory Axioms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Examples of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Paths%20and%20Diagrams%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Paths and Diagrams in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20and%20Nonexamples%20of%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Examples and Nonexamples of Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Forgetful%2C%20Full%20and%20Faithful%20Functors./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Forgetful, Full and Faithful Functors.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Natural%20Transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Natural Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Monic%2C%20Epics%2C%20and%20Isomorphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Monic, Epics, and Isomorphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Categories%2C%20Functors%20and%20Natural%20Transformations./Initial%2C%20Terminal%2C%20and%20Zero%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Initial, Terminal, and Zero Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Duality and Categorical Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Duality and Categorical Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/%24%5Cmathcal%7BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 $\mathcal{C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Products%20of%20Categories%2C%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Products of Categories, Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Functor%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Functor Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Vertical%2C%20Horizontal%20Composition%3B%20Interchange%20Laws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Vertical, Horizontal Composition; Interchange Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Slice%20and%20Comma%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Slice and Comma Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Graphs%2C%20Quivers%20and%20Free%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Graphs, Quivers and Free Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Quotient%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Quotient Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Duality%20and%20Categorical%20Constructions/Monoids%2C%20Groups%20and%20Groupoids%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Monoids, Groups and Groupoids in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Universal Constructions and Limits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Universal Constructions and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Universal%20Morphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Universal Morphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Representable%20Functors%20and%20Yoneda%27s%20Lemma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Representable Functors and Yoneda's Lemma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Finite%20Products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Finite Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Finite%20Coproducts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Finite Coproducts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Arbitrary%20Products%20and%20Coproducts%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Arbitrary Products and Coproducts in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Introduction%20to%20Limits%20and%20Colimits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introduction to Limits and Colimits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Equalizers%20and%20Coequalizers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Equalizers and Coequalizers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Universal%20Constructions%20and%20Limits/Pullbacks%20and%20Pushouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Pullbacks and Pushouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adjunctions.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adjunctions.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Introduction%20to%20Adjunctions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introduction to Adjunctions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Reflective%20Subcategories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Reflective Subcategories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Equivalence%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Equivalence of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Adjoints%20on%20Preorders./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Adjoints on Preorders.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Adjunctions./Exponential%20Objects%20and%20Cartesian%20Closed%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Exponential Objects and Cartesian Closed Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Limits and Colimits.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Limits and Colimits.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Every%20Limit%20in%20Set%3B%20Creation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Every Limit in Set; Creation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Inverse%20and%20Direct%20Limits./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Inverse and Direct Limits.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Limits%20from%20Products%2C%20Equalizers%2C%20and%20Pullbacks./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Limits from Products, Equalizers, and Pullbacks.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Preservation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Preservation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Adjoints%20on%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 Adjoints on Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Existence%20of%20Universal%20Morphisms%20and%20Adjoint%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 Existence of Universal Morphisms and Adjoint Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Limits%20and%20Colimits./Subobjects%20and%20Quotient%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Subobjects and Quotient Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtered Colimits, Coends, and Kan Extensions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Filtered Colimits, Coends, and Kan Extensions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Filtered%20Colimits%2C%20Coends%2C%20and%20Kan%20Extensions/Filtered%20Categories%20and%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Filtered Categories and Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monoidal Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Monoidal Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Monoidal%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Monoidal Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/What%20are%20those%20Coherence%20Conditions%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 What are those Coherence Conditions?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Mac%20Lane%27s%20Coherence%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Mac Lane's Coherence Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Braided%20and%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Braided and Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Coherence%20for%20Braided%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Coherence for Braided Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Monoids%2C%20Groups%2C%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Monoids, Groups, in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Monoidal%20Categories/Enriched%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.8 Enriched Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Abelian Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Abelian Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Preadditive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Preadditive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Additive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Additive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Preabelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Preabelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Kernels%20and%20Cokernels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Kernels and Cokernels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Abelian%20Categories/Abelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Abelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
+        
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operads
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Operads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Operads on Sets
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../General%20Operads%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 General Operads in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Partial%20Composition%3A%20Restructuring%20Operads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Partial Composition: Restructuring Operads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../The%20Braid%20Groups%20Form%20a%20%28nonsymmetric%29%20Operad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 The Braid Groups Form a (nonsymmetric) Operad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_11" >
+        
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sheaves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Sheaves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sheaves/Topological%20Presheaves%20and%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Topological Presheaves and Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sheaves/Abstracting%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Abstracting Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sheaves/Stalks%20and%20Germs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Stalks and Germs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_12" >
+        
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Persistence Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Persistence Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/Persistence%20modules%20on%20%24%5Crr%24./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Persistence modules on $\rr$.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/Generalized%20Persistence%20Modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Generalized Persistence Modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/Interleaving%20Distances%20via%20Sublinear%20Projections%20and%20Superlinear%20Families/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Interleaving Distances via Sublinear Projections and Superlinear Families
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Persistence%20Modules/General%20Persistence%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 General Persistence Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Permutation%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Permutation Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Homomorphism%20and%20Isomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Homomorphism and Isomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Cyclic%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Cyclic Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Left%20and%20Right%20Cosets%2C%20Lagrange%27s%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Left and Right Cosets, Lagrange's Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Normal%20subgroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Normal subgroups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Quotient%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Quotient Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Isomorphism%20Theorems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Isomorphism Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Group%20Actions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Group Actions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Conjugation%2C%20The%20Class%20Equation%2C%20and%20Cauchy%27s%20Theorem./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Conjugation, The Class Equation, and Cauchy's Theorem.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Sylow%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Sylow Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Groups/Fundamental%20Theorem%20of%20Finite%20Abelian%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.12 Fundamental Theorem of Finite Abelian Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Ring%20homomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Ring homomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Ideals%20and%20Quotient%20Rings./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Ideals and Quotient Rings.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Principal%2C%20Maximal%20and%20Prime%20Ideals./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Principal, Maximal and Prime Ideals.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Ring%20of%20Fractions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Ring of Fractions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/PIDs%20and%20Euclidean%20Domains./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 PIDs and Euclidean Domains.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Rings/Polynomial%20Rings%20%28for%20Galois%20Theory%29./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Polynomial Rings (for Galois Theory).
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Submodules%2C%20Quotient%20Modules%20and%20Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Submodules, Quotient Modules and Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Generating%20Modules%2C%20Torsions%2C%20Annihilators./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Generating Modules, Torsions, Annihilators.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Cartesian%20Products%20and%20Direct%20Sums.%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Cartesian Products and Direct Sums. 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Exact%20Sequences%20and%20the%20Hom%20Functor./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Exact Sequences and the Hom Functor.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algebra/Modules/Free%20%24R%24-modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Free $R$-modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../associahedron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associahedron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tikz-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poly-Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="91-operads-on-sets">9.1. Operads on Sets</h1>
+<p>Let <span class="arithmatex">\(Y, Z\)</span> be sets. Consider a function <span class="arithmatex">\(g: Y \to Z\)</span>. The way we've been 
+taught to think about this function is as a process where we're 
+sending an element <span class="arithmatex">\(y \mapsto g(y)\)</span> 
+in a well-defined manner. </p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Furthermore, if we have another function <span class="arithmatex">\(f: X \to Y\)</span>, 
+then we can set up a pipeline <span class="arithmatex">\(x \mapsto f(x) \mapsto g(f(x))\)</span>. This then 
+establishes an obvious function <span class="arithmatex">\(g \circ f: X \to Z\)</span>. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+But the way that we've thought about functions, and more generally morphisms,
+is actually over-simplistic. Here we will demonstrate that we can \emph{generalize 
+the concept of morphism composition}.</p>
+<p>Denote <span class="arithmatex">\(\aend_n(X)\)</span> to be the set of all functions 
+<span class="arithmatex">\(f:X^n \to X\)</span>. Then for such a function, if we stick with our simplistic concept of plugging things in, we 
+imagine something like
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>However, a more natural way is to imagine that we're taking values 
+<span class="arithmatex">\(n\)</span>-many values <span class="arithmatex">\(x_i \in X\)</span> and plugging them into the function <span class="arithmatex">\(f: X^n \to X\)</span>. 
+That is, we don't have to just think of <em>one</em> <span class="arithmatex">\(g: Y \to X^n\)</span> to form a concept of 
+composition. We can instead imagine that each of these <span class="arithmatex">\(x_i\)</span> values came 
+from functions <span class="arithmatex">\(g_1: Y_1 \to X\)</span>, <span class="arithmatex">\(g_2: Y_2 \to X, \cdots, g_n: Y_n \to X\)</span>. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+his is in its own right a function; a function from <span class="arithmatex">\(Y_1 \times Y_2 \times Y_n \to X\)</span>.
+It's a generalization of function composition; when we only have one <span class="arithmatex">\(g_1\)</span> we just 
+get back our original notion of function composition. We've been restricting ourselves this whole time.
+Now to make this even more interesting, suppose <span class="arithmatex">\(Y_1 = X^{a_1}, Y_2 = X^{a_2}, \dots, Y_n = X^{a_n}\)</span>
+where <span class="arithmatex">\(a_1, a_2, \dots, a_n\)</span> are positive integers. That is, suppose we have that <span class="arithmatex">\(g_i \in \aend_{a_i}(X)\)</span>. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+he above composition can be expressed as <span class="arithmatex">\(f(g_1, g_2, \dots, g_n)\)</span> which we may<br />
+denote as</p>
+<div class="arithmatex">\[
+f \circ_{a_1, a_2, \dots, a_n}(g_1, g_2, \dots, g_n): X^{a_1}\times X^{a_2}\times \cdots \times X^{a_n} \to X.
+\]</div>
+<p>and note that we've construction a function in <span class="arithmatex">\(\aend_{a_1 + a_2 + \cdots + a_n}(X)\)</span> using
+one <span class="arithmatex">\(f \in \aend_n(X)\)</span> and <span class="arithmatex">\(n\)</span>-many <span class="arithmatex">\(g_i \in \aend_i(X)\)</span>. 
+Then what we see is that our composition map is really a function that can be written formally as </p>
+<div class="arithmatex">\[
+\circ_{a_1, a_2, \dots, a_n}: X^n \times (X^{a_1}\times X^{a_2}\times \cdots \times X^{a_n})
+\to 
+X^{a_1 + a_2 + \cdots + a_n} 
+\]</div>
+<p>Then we can make this even more interesting. Each <span class="arithmatex">\(g_i: X^{a_i} \to X\)</span> is <em>just like</em> <span class="arithmatex">\(f: X^n \to X\)</span>.
+Hence we can repeat the same process on each <span class="arithmatex">\(g_i\)</span>, and plug a family of functions <span class="arithmatex">\(h_{i, j}: X^{k_{i,j}}\to X\)</span>
+where <span class="arithmatex">\(j = 1, 2, \dots, a_i\)</span>. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+ow there are two ways to think about this function. There is </p>
+<div class="arithmatex">\[
+[f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})
+\]</div>
+<p>which first composes <span class="arithmatex">\(f\)</span> with the <span class="arithmatex">\(g\)</span>-family, and then composes with the <span class="arithmatex">\(h\)</span>-family, and then there is </p>
+<div class="arithmatex">\[
+f \circ_{(k_{1,1}+ \cdots + k_{1, a_1}), \dots, (k_{n, 1}+ \cdots + k_{n, a_n})}
+\big(g_1 \circ_{k_{1,1}, \dots, k_{1, a_1}}(h_{1,1}, \dots, h_{1, a_1}), \dots, g_n \circ_{k_{n, 1}, \dots, k_{n, a_n}}(h_{n,1}, \dots, h_{n, a_n})\big)
+\]</div>
+<p>which first composes each <span class="arithmatex">\(g\)</span> with its respective <span class="arithmatex">\(h\)</span>-family, and then composing the resulting
+structure with <span class="arithmatex">\(f\)</span>. Since these are just functions, and individual composition is associative, 
+the above two ways are the same. This construction which we have demonstrated is an example
+of an <em>operad</em>; specifically, a symmetric operad.
+The previous example can now be seen as motivation for the following two
+definitions (which will definitely need repeated read-overs).</p>
+<p><span style="display:block" class="definition">
+A <strong>nonsymmetric operad</strong> <span class="arithmatex">\(X\)</span> in <strong>Set</strong> consists of 
+a family of sets <span class="arithmatex">\(\{X_n\}_{n=1}^{\infty}\)</span>, an identity element <span class="arithmatex">\(I \in X_1\)</span> (whose purpose will soon be elaborated),
+and a composition map </p>
+<div class="arithmatex">\[\begin{align*}
+\circ_{n, a_1, a_2, \dots, a_n}: X_n \times (X_{a_1} \times X_{a_2}\times \cdots \times X_{a_n}) \to X_{a_1 + a_2 + \cdots + a_n}\\
+(f, g_1, g_2, \dots, g_n) \mapsto f\circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)
+\end{align*}\]</div>
+<p>which must exist for each <span class="arithmatex">\(n = 1, 2, \dots\)</span>, and any <span class="arithmatex">\(a_1, a_2, \dots, a_n \in \mathbb{N}\)</span>, 
+such that
+\begin{description}
+\item[(NS-OP1: Associativity.) ] Let <span class="arithmatex">\(n \in \mathbb{N}\)</span> and consider <span class="arithmatex">\(f \in X_n\)</span>. 
+Let <span class="arithmatex">\(a_1, a_2 \dots, a_n \in \mathbb{N}\)</span>. Then  </p>
+<div class="arithmatex">\[\begin{gather*}
+[f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})\\
+=\\
+f \circ_{(k_{1,1}+ \cdots + k_{1, a_1}), \dots, (k_{n, 1}+ \cdots + k_{n, a_n})}
+\big(g_1 \circ_{k_{1,1}, \dots, k_{1, a_1}}(h_{1,1}, \dots, h_{1, a_1}), \dots, g_n \circ_{k_{n, 1}, \dots, k_{n, a_n}}(h_{n,1}, \dots, h_{n, a_n})\big)
+\end{gather*}\]</div>
+<p>\item[(NS-OP2): Identity.] For every <span class="arithmatex">\(f \in X_n\)</span> we have that </p>
+<div class="arithmatex">\[
+f \circ_{1, 1, \dots, 1} (I, I, \dots, I) = f = I \circ_n (f).
+\]</div>
+<p>\end{description}
+</span></p>
+<p><span style="display:block" class="definition">
+A <strong>symmetric operad</strong> is a nonsymmetric operad <span class="arithmatex">\(X\)</span> with a 
+right group action <span class="arithmatex">\(\cdot_n: X_n \times S_n \to X_n\)</span>
+by the symmetric group <span class="arithmatex">\(S_n\)</span>
+for each <span class="arithmatex">\(n = 1, 2, \dots\)</span>, subject to the following axioms. 
+\begin{description}
+\item[(S-OP1: Equivariance 1)]
+Let <span class="arithmatex">\(f \in X_n\)</span> and pick <span class="arithmatex">\(g_{1} \in X_{a_1}, \dots, g_n \in X_{a_n}\)</span> for 
+some <span class="arithmatex">\(a_1, a_2, \dots, a_n \in \mathbb{N}\)</span>. Then for a <span class="arithmatex">\(\tau \in S_n\)</span>, we must 
+have </p>
+<div class="arithmatex">\[
+(f \cdot \tau)\circ_{a_1, \dots, a_n}(g_1, \dots, g_n)
+=
+(f \circ_{a_{\tau^{-1}(1)}, \dots, a_{\tau^{-1}(n)}}(g_{\tau^{-1}(1)}, \dots, g_{\tau^{-1}(n)}))\cdot \tau'
+\]</div>
+<p>where <span class="arithmatex">\(\tau' \in S_{a_1 + \cdots + a_n}\)</span>. Here, <span class="arithmatex">\(\tau'\)</span> is a <em>block permutation</em> 
+that swaps the <span class="arithmatex">\(i\)</span>-th block with the <span class="arithmatex">\(\tau(i)\)</span>-th block. That is, if 
+<span class="arithmatex">\(\tau \in S^n\)</span> as a permutation acts as </p>
+<div class="arithmatex">\[
+(1, 2, \dots, n) \mapsto (\tau(1), \tau(2), \dots, \tau(n))
+\]</div>
+<p>then <span class="arithmatex">\(\tau' \in S_{a_1 + a_2 + \cdots + a_n}\)</span> acts as </p>
+<div class="arithmatex">\[\begin{gather*}
+(\overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\text{1st block}}, \dots, 
+\overbrace{\textcolor{Green}{a_1 + \cdots + a_i+1, \dots a_1 + \cdots + a_{i+1}}}^{i\text{-th block}}, \dots
+\overbrace{\textcolor{RoyalBlue}{a_1 + \cdots + a_{n-1}+ 1, \dots, a_1 + \cdots + a_n}}^{n\text{-th block}})\\
+\mapsto\\
+(\dots, \overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\tau(1)\text{-th block}}, \dots 
+,  \overbrace{\textcolor{Green}{a_1 + \cdots + a_i+1, \dots, a_1 + \cdots + a_{i+1}}}^{\tau(i)\text{-th block}}, \dots
+,  \overbrace{\textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+1, \dots, a_1 + \cdots + a_{n}}}^{\tau(n)\text{-th block}}, \dots
+).
+\end{gather*}\]</div>
+<p>\item[(S-OP2: Equivariance 2)]<br />
+Let <span class="arithmatex">\(f, g_i\)</span> is as above, and choose <span class="arithmatex">\(\sigma_1 \in S_1, \dots, \sigma_{n} \in S_n\)</span>. 
+Then we have that </p>
+<div class="arithmatex">\[
+f \circ_{a_1, \dots, a_n}(g_1 \cdot \sigma_1, \dots, g_n \cdot \sigma_n)
+=
+(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))\cdot (\sigma_1, \dots,\sigma_n)
+\]</div>
+<p>where <span class="arithmatex">\((\sigma_1, \sigma_2, \dots, \sigma_n) \in S_{a_1 + a_2 + \cdots + a_n}\)</span> 
+is the permutation described as below. </p>
+<p>\begin{gather*}
+(\overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\text{1st block}}
+,\dots,
+\overbrace{\textcolor{RoyalBlue}{a_1 + \cdots + a_{n-1}+ 1,, \dots, a_1 + \cdots + a_{n-1}a_n}}^{n\text{-th block}} )
+\
+\mapsto\
+(\underbrace{\sigma_1(\textcolor{Red}{1}), \sigma_1(\textcolor{Red}{2}), \dots, \sigma_1(\textcolor{Red}{a_1})}_{\text{1st block}}, 
+\dots, </p>
+<p>\underbrace{\textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+}
+\sigma_n(\textcolor{RoyalBlue}{1}), 
+\dots, \textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+}\sigma_n(\textcolor{RoyalBlue}{a_n})
+}_{n\text{-th block}}
+)
+\end{gather*}</p>
+<p>\end{description}
+</span></p>
+<p><span style="display:block" class="example">
+We can continue with our previous construction concerning 
+the family of sets </p>
+<div class="arithmatex">\[
+\aend_n(X) = \{f: X^n \to X \mid f \in **Set**\}
+\]</div>
+<p>to demonstrate that it 
+forms a symmetric operad. As we already established associativity <strong>NS-OP1</strong>, we need 
+to verify the identity axiom <strong>NS-OP2</strong>. Such an identity element can be chosen if 
+we select <span class="arithmatex">\(I = 1_X: X \to X\)</span>. On one hand we have for any <span class="arithmatex">\(f \in X^n\)</span> that</p>
+<div class="arithmatex">\[
+f \circ_{1, 1, \dots, 1}(I, I, \dots, I) = f(1_x, 1_x, \dots, 1_x) = f
+\]</div>
+<p>while on the other we have that <span class="arithmatex">\(I \circ_n f = 1_X \circ f = f\)</span>. 
+Next, define a group action of <span class="arithmatex">\(S_n\)</span> on <span class="arithmatex">\(\aend_n(X)\)</span> as </p>
+<div class="arithmatex">\[
+(f \cdot \sigma)(x_1, x_2, \dots, x_n) = f(x_{\sigma(1)}, x_{\sigma(2)}, \dots, x_{\sigma(n)}).
+\]</div>
+<p>We now verify <strong>S-OP1</strong> with this group action. 
+Let <span class="arithmatex">\(f \in \aend_n(X)\)</span> and <span class="arithmatex">\(g_i \in \aend_i(X)\)</span> for <span class="arithmatex">\(i = 1, 2, \dots, n\)</span>.
+For a given <span class="arithmatex">\(\tau \in S_n\)</span>, consider the points <span class="arithmatex">\((x_1, \dots, a_1) \in X^{a_1}, \dots, (x_1, \dots, a_n) \in X^{a_n}\)</span>.
+Observe that <span class="arithmatex">\((f \cdot \tau) \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)\)</span> first plugs in 
+the each <span class="arithmatex">\((x_{a_{i}-1}, \dots, x_{a_i})\)</span> into <span class="arithmatex">\(g_i\)</span>, which is then 
+plugged into <span class="arithmatex">\(f\)</span>. However, the action of <span class="arithmatex">\(\tau\)</span> swaps these resulting coordinates. 
+Thus we get that </p>
+<div class="arithmatex">\[
+(f \cdot \tau) \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)(x_1, \dots, a_1, \dots, x_{a_{n-1}+1}, \dots, x_{a_n})
+= 
+(\dots, \overbrace{g_i(x_{a_{i-1}+1}, \dots, x_{a_i})}^{\tau(i)-\text{th entry}}, \dots )
+\]</div>
+<p>How do we write this more formally? Well, to answer that, we need to know the answer 
+to the following question: which <span class="arithmatex">\(g_i(x_{a_{i-1}+1}, \dots, x_{a_i})\)</span>
+maps to, say, the 1st coordinate? This is equivalently to asking: what is <span class="arithmatex">\(\tau^{-1}(1)\)</span>? 
+Hence we see that </p>
+<div class="arithmatex">\[\begin{gather*}
+(f \cdot \tau) \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)(x_1, \dots, a_1, \dots, x_{a_{n-1}+1}, \dots, x_{a_n})\\
+=
+f(g_{\tau^{-1}(1)}(x_{a_{\tau^{-1}(1)-1}+1}, \dots, x_{a_{\tau^{-1}(1)}}), \dots, g_{\tau^{-1}(n)}(x_{a_{\tau^{-1}(n)-1}+1}, \dots, x_{a_{\tau^{-1}(n)}}))\\
+= 
+f \circ_{\tau^{-1}(1), \tau^{-1}(2), \dots, \tau^{-1}(n)}(g_{\tau^{-1}(1)}, g_{\tau^{-1}(2)}, \dots, g_{\tau^{-1}(n)})
+(x_{a_{\tau^{-1}(1)-1}+1}, \dots, x_{a_{\tau^{-1}(1)}}, \dots, x_{a_{\tau^{-1}(n)-1}+1}, \dots, x_{a_{\tau^{-1}(n)}})\\
+=
+\Big(f \circ_{\tau^{-1}(1), \tau^{-1}(2), \dots, \tau^{-1}(n)}(g_{\tau^{-1}(1)}, g_{\tau^{-1}(2)}, \dots, g_{\tau^{-1}(n)}) \cdot \tau'\Big)(x_1, \dots, x_{a_1}, \dots, x_{a_{n-1}+1}, \dots, x_{a_n}).
+\end{gather*}\]</div>
+<p>where <span class="arithmatex">\(\tau'\)</span> is the block permutation described in the definition. 
+Thus we see that </p>
+<div class="arithmatex">\[
+(f \cdot \tau) \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)
+=
+f \circ_{\tau^{-1}(1), \tau^{-1}(2), \dots, \tau^{-1}(n)}(g_{\tau^{-1}(1)}, g_{\tau^{-1}(2)}, \dots, g_{\tau^{-1}(n)}) \cdot \tau'
+\]</div>
+<p>as desired. Thus we have <strong>S-OP1</strong>. Finally, we show <strong>S-OP2</strong>, which 
+is a bit easier to demonstrate. As before, let <span class="arithmatex">\(f, a_i\)</span> and <span class="arithmatex">\(g_i\)</span> be as described 
+before. Let <span class="arithmatex">\(\sigma_1 \in S_1, \dots, \sigma_n \in S_n\)</span>. 
+Then </p>
+<div class="arithmatex">\[\begin{gather*}
+f \circ_{a_1, \dots, a_n}(g_1 \cdot \sigma_1, \dots, g_n \cdot \sigma_n)(x_1, \dots, x_{a_1}, \dots, x_{a_{n-1}+1}, \dots, x_{a_n})\\
+=
+f\Big( (g_1 \cdot \sigma_1)(x_1, \dots, x_{a_1}), \dots, (g_n \cdot \sigma_n)(x_{a_{n-1}+1}, \dots, x_{a_n})  \Big)\\
+=
+f\Big( g_1(x_{\sigma_1(1)}, \dots, x_{\sigma_1(a_1)}), \dots, g_n(x_{\sigma_n(1)}, \dots, x_{\sigma_n(a_n)}) \Big)\\
+= 
+\Big( f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n) \Big)(x_{\sigma_1(1)}, \dots, x_{\sigma_1(a_1)}, \dots, x_{\sigma_n(1)}, \dots, x_{\sigma_n(a_n)})\\
+= 
+\Big( f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n) \Big) \cdot (\sigma_1, \dots, \sigma_n)(x_1, \dots, x_{a_1}, \dots, x_{a_{n-1}+1}, \dots, x_{a_n})
+\end{gather*}\]</div>
+<p>Thus we see that </p>
+<div class="arithmatex">\[
+f \circ_{a_1, \dots, a_n}(g_1 \cdot \sigma_1, \dots, g_n \cdot \sigma_n)
+=(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)) \cdot (\sigma_1, \dots, \sigma_n)
+\]</div>
+<p>so that <strong>S-OP2</strong> is satisfied. 
+All together, we have that for any set <span class="arithmatex">\(X\)</span>, the family of sets <span class="arithmatex">\(\aend_{n}(X)\)</span> 
+forms a symmetric operad.
+</span></p>
+<p><span style="display:block" class="example">
+Consider the family of sets <span class="arithmatex">\(\text{Assoc}_n = S_n\)</span> where each level 
+is the <span class="arithmatex">\(n\)</span>-th symmetric group. Suppose that <span class="arithmatex">\(\tau \in S_n\)</span> and 
+that <span class="arithmatex">\(\sigma_1 \in S_{a_1}, \sigma_2 \in S_{a_2}, \dots, \sigma_n \in S_{a_n}\)</span>
+for <span class="arithmatex">\(a_1, a_2, \dots, a_n \in \mathbb{N}\)</span>. Then we define </p>
+<div class="arithmatex">\[
+\tau \circ_{a_1, \dots, a_n}(\sigma_1, \sigma_2, \dots, \sigma_n) \in S_{a_1 + a_2 + \cdots + a_n}   
+\]</div>
+<p>as a permutation of <span class="arithmatex">\(a_1 + a_2 + \cdots + a_n\)</span> letters. Before we describe the permutation, we'll
+introduce some notation. Consider the (ordered) tuple of the first <span class="arithmatex">\(a_1 + \cdots + a_n\)</span> integers. </p>
+<div class="arithmatex">\[
+(\textcolor{Red}{1, 2, \dots, a_1}, 
+\textcolor{Green}{a_1 + 1, a_1 + 2, \dots, a_1 + a_2},
+\dots
+\textcolor{RoyalBlue}{(a_{1} + \cdots + a_{n-1})+1, \dots, (a_{1} + \cdots + a_{n-1}) + a_n})
+\]</div>
+<p>We can more compactly denote this tuple as </p>
+<div class="arithmatex">\[
+(\textcolor{Red}{1, 2, \dots, a_1},
+\textcolor{Green}{1', 2', \dots, a'_2}, 
+\dots, 
+\textcolor{RoyalBlue}{1', 2', \dots, a'_n}) 
+\]</div>
+<p>where from either context or coloring it will be clear what each <span class="arithmatex">\(1', 2',\dots\)</span> 
+indicates. For example, above we'll have that 
+<span class="arithmatex">\(\textcolor{Green}{1' = a_1 + 1}\)</span> and <span class="arithmatex">\(\textcolor{Green}{2' = a_1+ 2}\)</span> 
+wheres 
+<span class="arithmatex">\(\textcolor{RoyalBlue}{1' = (a_1 + \cdots + a_{n-1}) + 1}\)</span> and <span class="arithmatex">\(\textcolor{RoyalBlue}{2' = (a_1 + \cdots + a_{n-1}) + 2}\)</span>.
+With that said, we can define <span class="arithmatex">\(\tau \circ_{a_1, \dots, a_n}(\sigma_1, \sigma_2, \dots, \sigma_n) \in S_{a_1 + a_2 + \cdots + a_n}\)</span>
+by its action on such a tuple, pictured below. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+which can be rewritten more formally as </p>
+<div class="arithmatex">\[
+(\overbrace{\sigma'_{\tau^{-1}(1)}(1), \sigma'_{\tau^{-1}(1)}(2), \dots, \sigma'_{\tau^{-1}(1)}(a_{\tau^{-1}(1)})}^{1\text{st block}}, 
+\dots, 
+\overbrace{\sigma'_{\tau^{-1}(n)}(1), \sigma'_{\tau^{-1}n}(2), \dots, \sigma'_{\tau^{-1}(n)}(a_{\tau^{-1}(n)})}^{n\text{-th block}} )
+\in 
+S_{a_1 + \cdots + a_n}.
+\]</div>
+<p>Now for each <span class="arithmatex">\(\sigma_i \in S_{a_i}\)</span>, let <span class="arithmatex">\(\rho_{i, j} \in S_{k_{i,j}}\)</span> 
+for <span class="arithmatex">\(j = 1, 2, \dots, a_i\)</span> and for <span class="arithmatex">\(k_{i,j} \in \mathbb{N}\)</span>. 
+For notational convenience, denote <span class="arithmatex">\(K = k_{1,1}+ \cdots + k_{1,a_1}+ \cdots + k_{n,1} + \cdots + k_{n, a_n}\)</span>. 
+By our above definition, we can construct a permutation in <span class="arithmatex">\(S_{K}\)</span>
+by composing <span class="arithmatex">\(\tau\)</span> with the <span class="arithmatex">\(\sigma\)</span>-family and with the <span class="arithmatex">\(\rho\)</span>-family.
+There are two possible ways to construct such a permutation 
+(and we'll show 
+that they are equivalent, therefore satisfying <strong>NS-OP1</strong>). 
+But before we do that 
+we must consider the first <span class="arithmatex">\(K\)</span> integers. 
+This will be a <em>huge</em> tuple; in full notation this is
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Using our previous notation we can rewrite this as </p>
+<div class="arithmatex">\[
+(
+\overbrace{\textcolor{Red}{1, 2, \dots, k_{1,1}}}^{1\text{st block}}, 
+\overbrace{\textcolor{Orange}{1'}, 
+\textcolor{Orange}{2'}, \dots, \textcolor{Orange}{k_{1,2}}}^{2\text{nd block}}, 
+\dots, 
+\overbrace{\textcolor{Green}{1'}, \textcolor{Green}{2'}, \dots, \textcolor{Green}{k_{1, a_1}}}^{a_1\text{-th block}},
+\dots,
+\hspace{-0.5cm}
+\overbrace{\textcolor{Purple}{1'}, \textcolor{Purple}{2'}, \dots, \textcolor{Purple}{k_{n, 1}}}^{(a_1 + \cdots + a_{n-1}+1)\text{-th block}}
+\hspace{-0.5cm}
+,\dots,
+\overbrace{\textcolor{RoyalBlue}{1'}, \textcolor{RoyalBlue}{2'}, \dots, \textcolor{RoyalBlue}{k_{n, a_n}}}^{(a_1 + \cdots + a_n)\text{-th block}}
+)
+\]</div>
+<p>where again, for example, <span class="arithmatex">\(\displaystyle \textcolor{Orange}{1' = k_{1,1}+1}\)</span> whereas 
+<span class="arithmatex">\(\displaystyle \textcolor{RoyalBlue}{1' =  \sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j} + (k_{n, 1} + \cdots + k_{n, (a_n-1)}) +1}\)</span>.</p>
+<p>Now we will first want to calculate </p>
+<div class="arithmatex">\[
+(\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n))\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, 1}, \dots, k_{n, a_n}}
+\circ(\rho_{1,1}, \dots, \rho_{n, a_n}).
+\]</div>
+<p>The first step to computing this is to note that each <span class="arithmatex">\(\rho_{i,j}\)</span> permutes the numbers <em>within its block</em>. 
+\begin{tikzcd}
+(
+\overbrace{\textcolor{Red}{1, 2, \dots, k_{1,1}}}^{1\text{st block}}, 
+\overbrace{\textcolor{Orange}{1'}, 
+\textcolor{Orange}{2'}, \dots, \textcolor{Orange}{k_{1,2}}}^{2\text{nd block}}, 
+\dots,
+\hspace{-0.5cm}
+\overbrace{\textcolor{ProcessBlue}{1'}, \textcolor{ProcessBlue}{2'}, \dots, \textcolor{ProcessBlue}{k_{i, j}}}^{(a_1 + \cdots + a_{i-1}+j)\text{-th block}}
+\hspace{-0.5cm}
+,\dots,
+\overbrace{\textcolor{RoyalBlue}{1'}, \textcolor{RoyalBlue}{2'}, \dots, \textcolor{RoyalBlue}{k_{n, a_n}}}^{(a_1 + \cdots + a_n)\text{-th block}}
+)
+\arrow[d, "\rho_{1,1}", start anchor = {[xshift = -5.7cm]}, end anchor = {[xshift=-5.7cm]}]
+\arrow[d, "\rho_{1,1}", start anchor = {[xshift = -5.7cm]}, end anchor = {[xshift=-5.7cm]}]
+\arrow[d,draw = none, start anchor = {[xshift = -3cm]}, end anchor = {[xshift=-3cm]}, "\raisebox{+0.2ex}{\dots}" description]
+\arrow[d, "\rho_{i,j}", start anchor = {[xshift = 0cm]}, end anchor = {[xshift=0cm]}]
+\arrow[d,draw = none, start anchor = {[xshift = 1.5cm]}, end anchor = {[xshift=1.5cm]}, "\raisebox{+0.2ex}{...}" description]
+\arrow[d, "\rho_{n, a_n}", start anchor = {[xshift = 3.4cm]}, end anchor = {[xshift=3.4cm]}]
+\
+(
+\underbrace{\rho_{1,1}(\textcolor{Red}{1}), \rho_{1,1}(\textcolor{Red}{2}), \dots, \rho_{1,1}(\textcolor{Red}{k_{1,1}})}<em>{1\text{st block}}, 
+\dots,
+\underbrace{\rho</em>{i,j}'(\textcolor{ProcessBlue}{1})\rho'<em>{i,j}(\textcolor{ProcessBlue}{2}), \dots, \rho'</em>{i,j}(\textcolor{ProcessBlue}{k_{i,j}})}<em>{(a_1 + \cdots + a</em>{i-1}+j)\text{-th block}},
+\dots,
+\underbrace{\rho_{n, a_n}'(\textcolor{RoyalBlue}{1}), 
+\rho_{n, a_n}'(\textcolor{RoyalBlue}{2}), \dots, \rho_{n, a_n}'(\textcolor{RoyalBlue}{k_n, a_n})}<em>{(a_1 + \cdots + a</em>{n})\text{-th block}}
+))
+\end{tikzcd}
+Now that we've applied the <span class="arithmatex">\(\rho\)</span> permutations, we must apply the permutation 
+<span class="arithmatex">\(\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n)\)</span> in <span class="arithmatex">\(S_{a_1 + \cdots + a_n}\)</span>. 
+This will instead be a block permutation. Hopefully it is now clear why we were paying 
+so much attention and to and keeping track of the blocks; we knew ahead of time that
+we were going to permute our <span class="arithmatex">\(a_1 + \cdots+ a_n\)</span> blocks
+by using our <span class="arithmatex">\(S_{a_1 + \cdot+ a_n}\)</span> permutation <span class="arithmatex">\(\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n)\)</span> in <span class="arithmatex">\(S_{a_1 + \cdots + a_n}\)</span>. </p>
+<p>Recall that for <span class="arithmatex">\(\rho_{i, j}\)</span>, <span class="arithmatex">\(i\)</span> ranges from <span class="arithmatex">\(1\)</span> to <span class="arithmatex">\(n\)</span> 
+while <span class="arithmatex">\(j\)</span> ranges from <span class="arithmatex">\(1\)</span> to <span class="arithmatex">\(a_i\)</span>. Hence if we permute a block, we can represent it as follows. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+hich can be written more formally (that is, more horribly) as </p>
+<div class="arithmatex">\[
+(
+\dots,
+\underbrace{\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(1), 
+\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(2),
+\dots, 
+\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(k_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)})
+}_{(a_1 + \cdots + a_{i-1}+j)\text{-th block}}
+,\dots
+)
+\]</div>
+<p>At this point we'll want to see that this is the same as </p>
+<div class="arithmatex">\[
+\tau \circ_{(k_{1,1} + \cdots + k_{1,a_1}), \dots, (h_{n, 1} + \cdots + k_{n,a_n})}
+(\sigma_1 \circ_{k_{1,1}, \dots, k_{1,a_1}}(\rho_{1,1}, \dots, \rho_{1,a_1}),
+\dots,
+\sigma_n \circ_{k_{n,1}, \dots, k_{n,a_n}}(\rho_{n,1}, \dots, \rho_{n,a_n}) 
+)
+\]</div>
+<p>To do this we need to think about each <span class="arithmatex">\(\sigma_i \circ_{k_{i, 1}, \dots, k_{i, a_i}}(\rho_{i,1}, \dots, \rho_{i, a_i})\)</span>
+which isn't too bad. Each is a permutation in <span class="arithmatex">\(S_{k_{i,1} + \cdots + k_{i, a_i}}\)</span>, and 
+hence a permutation of the (ordered) tuple below. </p>
+<div class="arithmatex">\[
+(
+\textcolor{Red}{1, 2, \dots, k_{i, 1}}, 
+\textcolor{Orange}{k_{i, 1} + 1, k_{i, 1} + 2, \dots, k_{i, 1} + k_{i, 2}},
+\dots, 
+\textcolor{RoyalBlue}{(k_{i, 1} + k_{i, 2} + \cdots + k_{i, a_{i-1}})+1},
+\dots,
+\textcolor{RoyalBlue}{(k_{i, 1} + k_{i, 2} + \cdots )+ k_{i, a_i}}
+)
+\]</div>
+<p>which we again abbreviate as </p>
+<div class="arithmatex">\[
+(\textcolor{Red}{1, 2, \dots, k_{i, 1}}, 
+\textcolor{Orange}{1', 2', k_{i, 2}},
+\dots, 
+\textcolor{RoyalBlue}{1'},
+\textcolor{RoyalBlue}{2'},
+\dots,
+\textcolor{RoyalBlue}{k_{i, a_i}}).
+\]</div>
+<p>With those notation above each permutation acts as 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+hich can be more formally understood as the tuple 
+\begin{equation}
+(
+\overbrace{\rho'<em>{i, \sigma_i^{-1}(1)}(1),
+\rho'</em>{i, \sigma_i^{-1}(1)}(2),
+\dots, 
+\rho'<em>{i, \sigma_i^{-1}(1)}(k</em>{i, \sigma_1^{-1}(1)})}^{1\text{st tuple}},
+\dots, 
+\overbrace{\rho'<em>{i, \sigma_i^{-1}(a_i)}(1),
+\rho'</em>{i, \sigma_i^{-1}(a_i)}(2),
+\dots, 
+\rho'<em>{i, \sigma_i^{-1}(a_i)}(k</em>{i, \sigma_i^{-1}(a_i)})}^{a_i\text{-th tuple}}
+)
+\end{equation}
+Now that we understand what each <span class="arithmatex">\(\sigma_i \circ_{k_{i, 1}, \dots, k_{i, a_i}}(\rho_{i,1}, \dots, \rho_{i, a_i})\)</span>
+does for <span class="arithmatex">\(i = 1, 2, \dots, n\)</span>, and because we know that <span class="arithmatex">\(\tau \in S_n\)</span>, 
+this means we can compose <span class="arithmatex">\(\tau\)</span> with this family of <span class="arithmatex">\(n\)</span>-permutations,
+which will give rise to a <span class="arithmatex">\(S_{k_{1,1}+ \cdots + k_{1, a_1} + \cdots + k_{n, 1} + \cdots + k_{n, a_n}}\)</span>
+permutation. To calculate this 
+we just now directly apply their composition. This will act on the 
+<span class="arithmatex">\(k_{1,1} + \cdots k_{1, a_1} + \cdots + k_{n, 1} + \cdots + k_{n, a_n}\)</span> tuple
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+y rearranging the tuple as below
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+nd using (\ref{tuples}) we know that this becomes 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+The above tuple can be (again, horribly) understood as </p>
+<div class="arithmatex">\[        
+(
+\dots,
+\underbrace{\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(1), 
+\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(2),
+\dots, 
+\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(k_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)})
+}_{(a_1 + \cdots + a_{i-1}+j)\text{-th block}}
+,\dots
+)
+\]</div>
+<p>Which shows that </p>
+<div class="arithmatex">\[\begin{gather*}
+(\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n))\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, 1}, \dots, k_{n, a_n}}
+\circ(\rho_{1,1}, \dots, \rho_{n, a_n})\\
+=\\
+\tau \circ_{(k_{1,1} + \cdots + k_{1,a_1}), \dots, (h_{n, 1} + \cdots + k_{n,a_n})}
+(\sigma_1 \circ_{k_{1,1}, \dots, k_{1,a_1}}(\rho_{1,1}, \dots, \rho_{1,a_1}),
+\dots,
+\sigma_n \circ_{k_{n,1}, \dots, k_{n,a_n}}(\rho_{n,1}, \dots, \rho_{n,a_n}) 
+)
+\end{gather*}\]</div>
+<p>so that <strong>NS-OP1</strong> is satisfied. Now verifying <strong>NS-OP2</strong> is simple; 
+note that as <span class="arithmatex">\(S_1\)</span> has one element, we are forced to identify our identity element 
+as <span class="arithmatex">\(\sigma_1\)</span>, the unique permutation of one element that doesn't do anything. Then 
+for any <span class="arithmatex">\(\tau \in S_n\)</span>, we of course have that <span class="arithmatex">\(\tau \circ_{1, 1, \dots, 1}(\sigma_1, \sigma_1, \dots \sigma_1)
+= \tau\)</span>, as each element is unchanged by <span class="arithmatex">\(\sigma_1\)</span> before <span class="arithmatex">\(\tau\)</span> is applied. 
+We also know that <span class="arithmatex">\(\sigma_1 \circ_n (\tau) = \tau\)</span>, since this is just 
+applying <span class="arithmatex">\(\tau\)</span> and then applying the trivial block permutation to the <span class="arithmatex">\(n\)</span> elements.</p>
+<p>Now we show <strong>S-OP1</strong>. As we need a right action of <span class="arithmatex">\(S_n\)</span> on the <span class="arithmatex">\(n\)</span>-th level 
+of our operad, which also happens to be <span class="arithmatex">\(S_n\)</span>, an evident choice would be to 
+just take the group product. Hence for any <span class="arithmatex">\(\sigma \in S_n\)</span>, we say <span class="arithmatex">\(\tau \in S_n\)</span> 
+acts on <span class="arithmatex">\(\sigma\)</span> to give rise to </p>
+<div class="arithmatex">\[
+(\sigma \cdot \tau) = \sigma \circ \tau
+\]</div>
+<p>which is clearly in <span class="arithmatex">\(S_n\)</span>. </p>
+<p>To demonstrate <strong>S-OP1</strong>,
+let <span class="arithmatex">\(\tau, \rho \in S_n\)</span>, and <span class="arithmatex">\(\sigma_1 \in S_{a_1}, \dots, \sigma_n\in S_{a_n}\)</span>
+for <span class="arithmatex">\(a_i \in \mathbb{N}\)</span>. To compute <span class="arithmatex">\((\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)\)</span>, 
+denote an (ordered) tuple of the first <span class="arithmatex">\(a_1 + \cdots + a_n\)</span>
+integers as </p>
+<div class="arithmatex">\[
+(\textcolor{Red}{1, 2, \dots, a_1}, \dots, \textcolor{RoyalBlue}{1', 2', \dots, a_n}).
+\]</div>
+<p>Then we see that <span class="arithmatex">\((\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)\)</span>
+acts on the tuple to give rise to </p>
+<div class="arithmatex">\[
+(\sigma'_{\rho^{-1}(\tau^{-1}(1))}(1),\dots, \sigma'_{\rho^{-1}(\tau^{-1}(1))}(a_{\rho^{-1}(\tau^{-1}(1))}), \dots, \sigma'_{\rho^{-1}(\tau^{-1}(n))}(1),\dots, \sigma'_{\rho^{-1}(\tau^{-1}(n))}(a_{\rho^{-1}(\tau^{-1}(n))}))
+\]</div>
+<p>On the other hand we need to also compute <span class="arithmatex">\((\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))\cdot \rho'\)</span> 
+where <span class="arithmatex">\(\rho'\)</span> is the evident block permutation. However, this is really just 
+<span class="arithmatex">\((\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))\circ \rho'\)</span>;
+below we see that its action on an ordered <span class="arithmatex">\(a_1 + \cdots + a_n\)</span> tuple is as we would expect.
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+herefore we see that </p>
+<div class="arithmatex">\[
+(\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)
+=
+(\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))\cdot \rho'
+\]</div>
+<p>so that <strong>S-OP1</strong> is satisfied. We just now need to show <strong>S-OP2</strong> is satisfied, 
+which is nearly immediate. We will however not pretend we're too good to show 
+this and demonstrate it anyways. 
+For each <span class="arithmatex">\(\sigma_i \in S_{a_i}\)</span>, pick <span class="arithmatex">\(\rho_i \in S_{a_i}\)</span>.
+Observe that <span class="arithmatex">\(\tau \circ_{a_1, \dots, a_n}(\sigma_1 \cdot \rho_1, \dots, \sigma_n \cdot \rho_n)\)</span>
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+eturns the same result as <span class="arithmatex">\((\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\cdot(\rho_1, \dots, \rho_n)\)</span>
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+ince <span class="arithmatex">\((\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\cdot(\rho_1, \dots, \rho_n) = 
+(\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\circ(\rho_1, \dots, \rho_n)\)</span> in our case. 
+As we have that <strong>S-OP2</strong> is satisfied, we have that <span class="arithmatex">\(\text{Assoc}_n = S_n\)</span> is a symmetric operad.</p>
+<p></span></p>
+<p><span style="display:block" class="definition">
+An <strong>morphism of operads</strong> <span class="arithmatex">\(F: X \to Y\)</span> between two 
+(symmetric) operads <span class="arithmatex">\(X, Y\)</span> with units <span class="arithmatex">\(I \in X_1\)</span> and <span class="arithmatex">\(J \in Y_1\)</span> 
+and <span class="arithmatex">\(S_n\)</span> group actions <span class="arithmatex">\(\cdot\)</span> and <span class="arithmatex">\(*\)</span>
+is a family of maps <span class="arithmatex">\(F_n: X_n \to Y_n\)</span> such that 
+\begin{description}
+\item[(M-OP1)] <span class="arithmatex">\(F_1(I) = J\)</span> 
+\item[(M-OP2)] If <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\(g_1 \in X_{a_1}, \dots, g_n \in X_{a_n}\)</span> 
+for <span class="arithmatex">\(a_i \in \mathbb{N}\)</span>, then </p>
+<div class="arithmatex">\[
+F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
+=
+F_n(f)\circ_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n))
+\]</div>
+<p>\item[(M-OP3)] If <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\(\tau \in S_n\)</span>, then </p>
+<div class="arithmatex">\[
+F_n(f \cdot \tau) = F_n(f) * \tau 
+\]</div>
+<p>\end{description}
+</span>
+Note: in the case where <span class="arithmatex">\(X, Y\)</span> are symmetric operads, we define a morphism between 
+<span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> to be a family of maps <span class="arithmatex">\(F_n: X_n \to Y_n\)</span> such that only <strong>M-OP1</strong>
+and <strong>M-OP2</strong> hold. </p>
+<p><span style="display:block" class="definition">
+A <strong>algebra over an Operad</strong> <span class="arithmatex">\(X\)</span> is a morphism of operads <span class="arithmatex">\(F: X \to \aend_A\)</span> 
+where <span class="arithmatex">\(A\)</span> is some set. Spelled out, this is a mapping </p>
+<div class="arithmatex">\[\begin{align*}
+F_n: X_n \to \hom_{**Set**}(A^n, A)\\
+f \mapsto F_n(f): A^n \to A 
+\end{align*}\]</div>
+<p>so that we're mapping elements of our operad
+to <span class="arithmatex">\(n\)</span>-ary operations over <span class="arithmatex">\(A\)</span>. This mapping also requires that</p>
+<ul>
+<li>
+<p>[1.] <span class="arithmatex">\(F_1(I) = \id_A: A \to A\)</span></p>
+</li>
+<li>
+<p>[2.] For <span class="arithmatex">\(f \in X_n\)</span>, <span class="arithmatex">\(g_i \in X_{a_i}\)</span> for <span class="arithmatex">\(i = 1,2, \dots, n\)</span>, </p>
+</li>
+</ul>
+<div class="arithmatex">\[
+F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
+=
+F_n(f)\circ'_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n)).
+\]</div>
+<p>Diagrammatically, this means the following diagrams commutes:
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Or, more visually, 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<ul>
+<li>[3.] Finally, we have that if <span class="arithmatex">\(\tau \in S_n\)</span>, then for <span class="arithmatex">\(f \in X_n\)</span>
+and <span class="arithmatex">\((a_1, \dots, a_n) \in A^n\)</span>, then</li>
+</ul>
+<div class="arithmatex">\[
+F_n(f \cdot \tau)(a_1, \dots, a_n) 
+= (F_n(f) *\tau) (a_1, \dots, a_n) 
+= F_n(f)(a_{\tau(1)}, \dots, a_{\tau(n)}).
+\]</div>
+<p></span></p>
+<p><span style="display:block" class="definition">
+Let <span class="arithmatex">\(X\)</span> be an operad. A \textbf{morphism <span class="arithmatex">\(\Phi: F \to G\)</span> 
+between algebras}
+<span class="arithmatex">\(F: X \to \aend_A\)</span> and <span class="arithmatex">\(G: X \to \aend_B\)</span> over <span class="arithmatex">\(X\)</span> is a function 
+<span class="arithmatex">\(\phi: A \to B\)</span> such that, for <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\((a_1, \dots, a_n) \in A^n\)</span>, </p>
+<div class="arithmatex">\[
+\phi(F_n(f)(a_1, \dots, a_n)) = G(f)(\phi(a_1), \dots, \phi(a_n))
+\]</div>
+<p>The above relation can be more conveniently expressed as the diagram below 
+commuting: 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+which must hold for all <span class="arithmatex">\(f \in X_n\)</span> with <span class="arithmatex">\(n \in \mathbb{N}\)</span>. 
+Now suppose that for an operad <span class="arithmatex">\(X\)</span> we have</p>
+<p>\noindent
+\begin{minipage}{0.7\textwidth}      <br />
+three algebras </p>
+<div class="arithmatex">\[
+F: X \to \aend_A \quad G: X \to \aend_B \quad H: X \to \aend_C
+\]</div>
+<p>such that <span class="arithmatex">\(\Phi: F \to G\)</span> 
+and <span class="arithmatex">\(\Psi: G \to H\)</span> are morphisms of algebras given by functions 
+<span class="arithmatex">\(\phi: A \to B\)</span> and <span class="arithmatex">\(\psi: B \to C\)</span>. A natural question is whether 
+or not one can define a morphism <span class="arithmatex">\(\Psi \circ \Phi: F \to G\)</span>. This is however 
+immediate upon realization that we can stack the diagrams to see 
+that <span class="arithmatex">\(\Phi \circ \Psi: F \to H\)</span> is a morphism of algebras.
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}
+</span></p>
+<p>As a result, if we are given an operad <span class="arithmatex">\(X\)</span>, we can create a category 
+<span class="arithmatex">\(**Alg**_X\)</span> whose objects are algebras <span class="arithmatex">\(\Phi: X \to \aend_A\)</span> 
+and whose morphisms are morphisms between such algebras. These categories 
+actually return ordinary categories that we've dealt with in the past. </p>
+<p><span style="display:block" class="example">
+Consider the operad <span class="arithmatex">\(\text{Assoc}_n = S_n\)</span>. Then we have that </p>
+<div class="arithmatex">\[
+**Alg**_{\text{Assoc}_n} \cong **Mon**
+\]</div>
+<p>where <strong>Mon</strong> is the category of monoids. (In terms of set theory, we're 
+being sloppy; but if anyone challenges this we can just pull out a Grothendieck universe 
+and satisfy their demands.) 
+To demonstrate this isomorphism we must produce a pair of inverse functors 
+between these categories. </p>
+<p>Before we do that, 
+first consider an object in this category, which 
+is a family of functions <span class="arithmatex">\(F_n: S_n \to \hom_{**Set**}(A^n, A)\)</span> 
+for some set <span class="arithmatex">\(A\)</span>. To save some space, denote <span class="arithmatex">\(\hom_{**Set**}(A^n, A)\)</span> 
+as <span class="arithmatex">\([A^n, A]\)</span>.
+Then the fact that <span class="arithmatex">\(F: **Assoc**_n \to \aend_A\)</span> is an algebra gives us that 
+the diagram on the left commutes. 
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+As this diagram commutes, we can follow the specific path which is taken 
+by the identity elements <span class="arithmatex">\(e_2 \in S_2\)</span> and <span class="arithmatex">\(e_1 \in S_1\)</span>. If we denote 
+<span class="arithmatex">\(F_n(e_n) = \mu_n: A^n \to A\)</span>, then we see that <span class="arithmatex">\(\mu_3 = \mu_2(\mu_2, \id_A)\)</span>. 
+Note that in particular, <span class="arithmatex">\(\mu_1 = \id_A\)</span> by hypothesis.
+Hence for <span class="arithmatex">\(a, b, c \in A\)</span>, we see that <span class="arithmatex">\(\mu_3 = \mu_2(\mu_2(a, b), c)\)</span>. 
+Conversely, we can repeat the same thing with <span class="arithmatex">\(S_1\)</span> and <span class="arithmatex">\(S_2\)</span> swapped, and 
+obtain a commutative diagram on the left:
+\
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and following the identity elements again grants us that 
+<span class="arithmatex">\(\mu_3 = \mu_2(\id_A, \mu_2)\)</span>. Hence we see that for <span class="arithmatex">\(a, b ,c \in A\)</span> 
+<span class="arithmatex">\(\mu_3(a, b, c) = \mu_2(a, \mu_2(b, c))\)</span>. All together we have that </p>
+<div class="arithmatex">\[
+\mu_2(\mu_2(a, b), c) = \mu_2(a, \mu_2(b, c)).
+\]</div>
+<p>What does this mean? Perhaps this will make it more clear: denote <span class="arithmatex">\(\mu_2(a,b) = a \cdot b\)</span>. 
+Then this means that </p>
+<div class="arithmatex">\[
+(a \cdot b) \cdot c = a \cdot (b \cdot c).
+\]</div>
+<p>This means that we've proved that <span class="arithmatex">\(A\)</span> is a set equipped with a binary operator <span class="arithmatex">\(\mu_2: A \times A \to A\)</span>
+which is associative! This is almost a monoid; we're just missing an identity element. 
+However, note that 
+</span></p>
+<script src="../../mathjax_helper.js"></script>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.tabs"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

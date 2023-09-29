@@ -1,0 +1,20 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 1cm]
+            \hom(B,B)\otimes \hom(A, B)
+            \arrow[r, "\circ_{A, B, B}"]
+            &
+            \hom(A, B)
+            &
+            \hom(A, B)\otimes \hom(A, A)
+            \arrow[l, swap, "\circ_{A, A, B}"]
+            \\
+            I \otimes \hom(A, B)
+            \arrow[u, "i_B \otimes 1"]
+            \arrow[ur, swap, "\lambda"]
+            &
+            &
+            \hom(A, B)\otimes I
+            \arrow[u, swap, "1\otimes i_A"]
+            \arrow[ul, "\rho"]
+        \end{tikzcd} 
+    \end{center}

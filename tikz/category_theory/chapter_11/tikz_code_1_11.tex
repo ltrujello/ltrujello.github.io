@@ -1,0 +1,33 @@
+\begin{center}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+        P(r)
+        \arrow[rr, "\sigma_r"]
+        &
+        &
+        P'(r)\\
+        &
+        I \arrow[ul, Purple, "i_{P(r)}"]
+        \arrow[ur, swap, "i_{P'(r)}"]
+        &
+    \end{tikzcd}
+    \hspace{1cm}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+        P'(s_i)
+        \arrow[r, OliveGreen, "P'(j)"]
+        &
+        P'(r)\\
+        P(s_i)
+        \arrow[u, Red, "\sigma_{s_i} = \sigma'_{s_i}"]
+        \arrow[r, "P(j)"]
+        &
+        P'(r)
+        \arrow[u,swap, "\sigma_r"]
+        \\
+        K(s_i) 
+        \arrow[u, "\eta_{s_i}"]
+        \arrow[r, equal]
+        &
+        \overline{K}(r) 
+        \arrow[u, swap, "\eta'_r"]
+    \end{tikzcd}
+\end{center}

@@ -1,0 +1,36 @@
+\begin{center}
+                \begin{tikzpicture}
+                    \filldraw[yellow!30, rounded corners] (-2,-2) rectangle  (2,2);
+                    \node at (-1.5, 1.7) {$\cc$};
+                    \node {
+                        \begin{tikzcd}[row sep = 1.4cm]
+                            A \arrow[d, swap, "f_1"]
+                            &
+                            C \arrow[d, swap, "f_2"]
+                            \\
+                            B 
+                            &
+                            D
+                        \end{tikzcd}
+                    };
+                \end{tikzpicture}
+                \hspace{1cm}
+                \begin{tikzpicture}
+                    \filldraw[yellow!30, rounded corners] (-2.5,-2) rectangle  (2.5,2);
+                    \node at (-2, 1.7) {$\dd$};
+                    \node {
+                        \begin{tikzcd}[row sep = 1.4cm]
+                            X
+                            \arrow[rr, "g_3"]
+                            \arrow[dr, swap, "g_1"]
+                            &
+                            &
+                            Z\\
+                            &
+                            Y
+                            \arrow[ur, swap, "g_2"]
+                            &
+                        \end{tikzcd}
+                    };
+                \end{tikzpicture}
+            \end{center}

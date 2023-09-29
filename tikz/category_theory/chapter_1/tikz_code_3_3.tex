@@ -1,0 +1,52 @@
+\begin{center}
+            \begin{tikzpicture}
+                \begin{scope}
+                    \filldraw[rounded corners, Yellow!30]
+                    (-2, -1.5) rectangle (2, 1.5);
+                    \node at (0,0){
+                        \begin{tikzcd}
+                            \bullet \arrow[out=120,in=60,looseness=3,loop, "\id_{\bullet}"]
+                        \end{tikzcd}
+                    };
+                    \node at (-1.5, 1) {$\bm{1}$};
+                \end{scope}
+                \begin{scope}[xshift = 5cm]
+                    \filldraw[rounded corners, Yellow!30]
+                    (-2, -1.5) rectangle (2, 1.5);
+                    \node at (0,0){
+                        \begin{tikzcd}
+                            \textcolor{NavyBlue}{\bullet} 
+                            \arrow[out=120,in=60,looseness=3,loop, "\id_{\textcolor{NavyBlue}{\bullet}}"]
+                            \arrow[r, "f"]
+                            &
+                            \textcolor{Orange}{\bullet}
+                            \arrow[out=120,in=60,looseness=3,loop, "\id_{\textcolor{Orange}{\bullet}}"]
+                        \end{tikzcd}
+                    };
+                    \node at (-1.5, 1) {$\bm{2}$};
+                \end{scope}
+                \begin{scope}[xshift=11cm]
+                    \filldraw[rounded corners, Yellow!30]
+                    (-3, -1.5) rectangle (3, 1.5);
+                    \node at (0,0){
+                        \begin{tikzcd}
+                            &
+                            \textcolor{Purple}{\bullet}
+                            \arrow[out=120,in=60,looseness=3,loop, "\id_{\textcolor{Purple}{\bullet}}"]
+                            \arrow[dr, "g"]
+                            &
+                            \\
+                            \textcolor{NavyBlue}{\bullet}
+                            \arrow[out=120,in=60,looseness=3,loop, "\id_{\textcolor{NavyBlue}{\bullet}}"]
+                            \arrow[ur, "f"]
+                            \arrow[rr, swap, "g \circ f"]
+                            &
+                            &
+                            \arrow[out=120,in=60,looseness=3,loop , "\id_{\textcolor{Orange}{\bullet}}"]
+                            \textcolor{Orange}{\bullet}
+                        \end{tikzcd}
+                    };
+                    \node at (-2.5, 1) {$\bm{3}$};
+                \end{scope}
+            \end{tikzpicture}
+        \end{center}

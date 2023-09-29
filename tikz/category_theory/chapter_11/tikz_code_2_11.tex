@@ -1,0 +1,28 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+            F(x) \arrow[rr, Blue, "F(\eta_{K_1(\Gamma_1(x))})"] 
+            \arrow[dr, Blue, swap, "\phi_x"]
+            &[-1cm]
+            &[-1cm]
+            F(K_1(\Gamma_1(x)))
+            \arrow[r, "F(K_1(\eta_{K_2\Gamma_2})\Gamma_1) "]
+            &[1cm]
+            F(K_1(K_2(\Gamma_2(\Gamma_1(x)))))
+            \\
+            &
+            G(\Gamma_1(x))
+            \arrow[ur, Blue, swap, "\psi_{\Gamma_1(x)}"]
+            \arrow[dr, swap, Red, "\phi'_{\Gamma_1(x)}"]
+            \arrow[rr, Red, "G(\eta_{K_2\Gamma_2}(\Gamma_1(x)))"]
+            &[-0.5cm]
+            &[-0.5cm]
+            G(K_2(\Gamma_2(\Gamma_1(x))))
+            \arrow[u, swap, "\psi_{K_2(\Gamma_2(\Gamma_1(x)))}"] 
+            \\
+            &
+            &
+            H(\Gamma_2(\Gamma_1(x)))
+            \arrow[ur, swap, Red, "\psi'_{\Gamma_2(\Gamma_1(x))}"]
+            &
+        \end{tikzcd}
+    \end{center}

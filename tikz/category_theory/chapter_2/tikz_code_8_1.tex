@@ -1,0 +1,36 @@
+\begin{center}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 0.7cm]
+        (\bullet, m) 
+        \arrow[r, maps to, "\eta \times 1_M"]
+        \arrow[dr, maps to, swap, "\pi_M", end anchor={[xshift = -8ex]}]
+        &
+        (e, m) 
+        \arrow[d, maps to, shift right = -0.5ex, start anchor = {[xshift = 3ex]},end anchor={[xshift = 3ex]}, "\mu"]
+        \quad
+        (m, e)
+        \arrow[d, maps to, shift right = 0.5ex, swap, start anchor = {[xshift = -3ex]}, end anchor={[xshift = -3ex]}, "\mu"]
+        &
+        (m, \bullet) \arrow[l, swap, maps to, "1_M \times \eta"]
+        \arrow[dl, maps to, "1_M \times \eta", end anchor={[xshift=8ex]}]
+        \\
+        &
+        m = e \cdot m = m \cdot e = m
+        &
+    \end{tikzcd}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 1cm]
+        \{\bullet\}\times M
+        \arrow[r, "\eta \times 1_M"]
+        \arrow[dr, swap, "\pi_M"]
+        &
+        M \times M
+        \arrow[d, "\mu"]
+        &
+        M \times \{\bullet\}
+        \arrow[l, swap, "1_M \times \eta"]
+        \arrow[dl, "\pi_M"]
+        \\
+        &
+        M
+        &
+    \end{tikzcd}
+\end{center}

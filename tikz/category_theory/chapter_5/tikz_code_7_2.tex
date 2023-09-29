@@ -1,0 +1,22 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            A 
+            \arrow[d, "f"]\\
+            B
+        \end{tikzcd}
+        \hspace{1cm}
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            G(A)
+            \arrow[d, shift right = -0.5ex, "G(f)"]
+            \arrow[d, shift right = 0.5ex, swap, "F(f)\big|_{G(A)}"]
+            \arrow[r, swap, hookrightarrow, swap, "i_A"]
+            &
+            F(A)
+            \arrow[d, "F(f)"]
+            \\
+            G(B)
+            \arrow[r, hookrightarrow, swap, "i_B"]
+            & 
+            F(B)
+        \end{tikzcd}
+    \end{center}
