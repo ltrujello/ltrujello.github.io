@@ -1,0 +1,85 @@
+\begin{center}
+    \def\nstrands{4}
+    \begin{tikzpicture}
+        \pic[local bounding box=my braid,braid/.cd, 
+        number of strands = \nstrands, 
+        thick,
+        height = 1.5cm,
+        name prefix=braid]
+        {braid={ s_1, s_3}}; 
+        \draw[thick] 
+        ([xshift=-1ex]my braid.north west) --  ([xshift=1ex]my braid.north east)
+        ([xshift=-1ex]my braid.south west) --  ([xshift=1ex]my braid.south east);
+        
+        
+        
+        
+        
+        
+        
+        
+    \end{tikzpicture}
+    \raisebox{2cm}{$=$}
+    \begin{tikzpicture}
+        \pic[local bounding box=my braid,braid/.cd, 
+        number of strands = \nstrands, 
+        thick,
+        height = 1.5cm,
+        name prefix=braid]
+        {braid={ s_3, s_1}}; 
+        \draw[thick] 
+        ([xshift=-1ex]my braid.north west) --  ([xshift=1ex]my braid.north east)
+        ([xshift=-1ex]my braid.south west) --  ([xshift=1ex]my braid.south east);
+        
+        
+        
+        
+        
+        
+        
+        
+    \end{tikzpicture}
+    \hspace{1cm}
+    \begin{tikzpicture}
+        \pic[local bounding box=my braid,braid/.cd, 
+        number of strands = 3, 
+        thick,
+        name prefix=braid]
+        {braid={ s_1, s_2 s_1}}; 
+        \draw[thick] 
+        ([xshift=-1ex]my braid.north west) --  ([xshift=1ex]my braid.north east)
+        ([xshift=-1ex]my braid.south west) --  ([xshift=1ex]my braid.south east);
+        
+        
+        
+        
+        
+        
+        
+        
+    \end{tikzpicture}
+    \raisebox{2cm}{$=$}
+    \begin{tikzpicture}
+        \pic[local bounding box=my braid,braid/.cd, 
+        number of strands = 3, 
+        thick,
+        name prefix=braid]
+        {braid={ s_2, s_1 s_2}}; 
+        \draw[thick] 
+        ([xshift=-1ex]my braid.north west) --  ([xshift=1ex]my braid.north east)
+        ([xshift=-1ex]my braid.south west) --  ([xshift=1ex]my braid.south east);
+        
+        
+        
+        
+        
+        
+        
+        
+    \end{tikzpicture}
+
+    \emph{Geometrically, the above braids are clearly equivalent. Algebraically 
+    this translates 
+    to the statements $\sigma_3\sigma_1 = \sigma_1\sigma_3$ and $\sigma_1\sigma_2\sigma_1 = \sigma_2\sigma_1\sigma_2$.
+    }
+\end{center}

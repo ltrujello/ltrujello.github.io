@@ -1,0 +1,22 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 1.5cm, row sep = 1.5cm]
+            A \arrow[d, "f"]\\
+            B
+        \end{tikzcd}
+        \hspace{1cm}
+        \begin{tikzcd}[column sep = 1.5cm, row sep = 1.5cm]
+            F(A)
+            \arrow[r, shift right = -0.5ex, "\eta_A"]
+            \arrow[r, swap, shift right = 0.5ex, "\epsilon_A"]
+            \arrow[d, swap, "F(f)"]
+            &
+            G(A)
+            \arrow[d, "G(A)"]
+            \\
+            F(B)
+            \arrow[r, shift right = -0.5ex, "\eta_B"]
+            \arrow[r, swap, shift right = 0.5ex, "\epsilon_B"]
+            &
+            G(B)
+        \end{tikzcd}
+    \end{center}

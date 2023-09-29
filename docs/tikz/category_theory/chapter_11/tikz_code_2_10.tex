@@ -1,0 +1,36 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+            F(x) \arrow[r] 
+            \arrow[d, swap, "\phi_x"]
+            &
+            F(y) 
+            \arrow[d, "\phi_y"]\\
+            G(\Gamma_1(x)) \arrow[r]
+            \arrow[d, Blue, swap, "\phi'_{\Gamma_1(x)}"]
+            &
+            G(\Gamma_1(y))
+            \arrow[d, "\phi'_{\Gamma_1(y)}"]
+            \\
+            H(\Gamma_2(\Gamma_1(x))) 
+            \arrow[r]
+            &
+            H(\Gamma_2(\Gamma_1(y)))
+        \end{tikzcd}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+            H(x) \arrow[r] 
+            \arrow[d, Green, swap, "\psi'_x"]
+            &
+            H(y) 
+            \arrow[d, "\psi'_y"]\\
+            G(K_2(x)) \arrow[r]
+            \arrow[d,swap, "\psi_{K_2(x)}"]
+            &
+            G(K_2(y))
+            \arrow[d, "\phi'_{K_2(y)}"]
+            \\
+            F(K_1(K_2(x))) 
+            \arrow[r]
+            &
+            F(K_1(K_2(y)))
+        \end{tikzcd}
+    \end{center}

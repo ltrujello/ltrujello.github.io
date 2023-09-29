@@ -1,0 +1,24 @@
+\begin{center}
+        \def\bottomYCoord{3.5}
+        \begin{tikzpicture}
+            \braid[number of strands = 3, thick,
+            style strands={1}{Green},
+            style strands={2}{Green},
+            style strands={3}{Green},
+            ]
+            s_2 s_1 s_2;
+            \draw[thick] (0.8,0) -- (3.2,0);
+            \draw[thick] (0.8,-\bottomYCoord) -- (3.2,-\bottomYCoord);
+        \end{tikzpicture}
+        \hspace{0.3cm}
+        \begin{tikzpicture}
+            \braid[number of strands= 3, thick, height = 1.5cm,
+            style strands={1}{Red},
+            style strands={2}{Red},
+            style strands={3}{Red},
+            ]
+            s_2 s_1;
+            \draw[thick] (0.8,0) -- (3.2,0);
+            \draw[thick] (0.8,-\bottomYCoord) -- (3.2,-\bottomYCoord);
+        \end{tikzpicture}
+    \end{center}

@@ -1,0 +1,18 @@
+\begin{center}
+    \begin{tikzpicture}
+        \draw[->] (1.1,0.35) -- (1.1, -0.25) node at (1.4, 0.1) {$\eta$};
+        \draw[->] (2.8,0.35) -- (2.8, -0.25) node at (3.1, 0.1) {$\eta'$};
+        node at (0,0) {
+            \begin{tikzcd}
+            \bb 
+            \arrow[r, shift left = 4, "F"]
+            \arrow[r, shift right= 4, swap, "G"]
+            & 
+            \cc
+            \arrow[r, shift left=4, "F'"]
+            \arrow[r, shift right=4, swap,"G'"]
+            &
+            \dd
+            \end{tikzcd}};
+    \end{tikzpicture}
+    \end{center}

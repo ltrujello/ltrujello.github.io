@@ -1,0 +1,14 @@
+\begin{center}
+        Objects $(C, f)$:
+        \begin{tikzcd}[row sep = 1.4cm]
+            \textcolor{Purple}{A} \arrow[d, "f"]\\
+            C
+        \end{tikzcd}
+        \hspace{1cm}
+        \parbox{6cm}{Morphisms $\textcolor{NavyBlue}{h}: (C, f) \to (C', f')$
+        are given by $\textcolor{NavyBlue}{h}: C \to C'$ such that}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
+            & \textcolor{Purple}{A} \arrow[dl, swap, "f"] \arrow[dr, "f'"] & \\
+            C \arrow[rr, swap, NavyBlue, "h"] & & C'
+        \end{tikzcd}
+    \end{center}

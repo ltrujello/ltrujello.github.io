@@ -1,0 +1,14 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.2cm, column sep = 1.4cm]
+            A \arrow[dd, "h", swap] \arrow["f", dr] & \\[-15pt] 
+            &  B \arrow[dl, "g"]\\[-15pt] 
+            C & 
+        \end{tikzcd}
+        \hspace{1cm}
+        \begin{tikzcd}[row sep = 1.2cm, column sep = 1.4cm]
+            F(A) \arrow[dd, "F(h)", swap] \arrow["F(f)", dr] \arrow[rr, "\eta_A"] & &
+            G(A) \arrow[dd, "G(h)", near start] \arrow[dr, "G(f)"] \\[-15pt] 
+            &  F(B) \arrow[rr, "\eta_B", crossing over, near start] \arrow[dl, "F(g)"] & &  G(B) \arrow[dl, "G(g)"] \\[-15pt] 
+            F(C) \arrow[rr, "\eta_C"] & & G(C)
+        \end{tikzcd}
+    \end{center}

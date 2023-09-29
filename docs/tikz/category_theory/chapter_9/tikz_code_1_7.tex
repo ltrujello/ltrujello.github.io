@@ -1,0 +1,32 @@
+\begin{center}
+        \begin{tikzcd}
+            \Big(
+            \overbrace{
+            \textcolor{Red}{1,2,\dots,k_{1,1}}}^{1\text{st block}},
+            \overbrace{\textcolor{Orange}{k_{1,1}+1, k_{1,1} +2, \dots, k_{1,1}+k_{1,2}}}^{2\text{nd block}},\dots\\
+            \dots
+            \overbrace{\textcolor{Green}{(k_{1,1} + k_{1,2} + \cdots + k_{1, a_{1}-1})+1,
+            (k_{1,1} + k_{1,2} + \cdots + k_{1, a_{1}-1})+2,
+            \dots,
+            (k_{1,1} + k_{1,2} + \cdots + k_{1, a_1-1}) + k_{1,a_1}}}^{a_1\text{-th block}}
+            \dots
+            \\
+            \dots 
+            \overbrace{
+            \textcolor{Purple}{\displaystyle{\sum_{i=1}^{n-1}\sum_{j=1}^{a_i}k_{i, j}} + 1
+            \displaystyle{\sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j}} + 2, 
+            \dots, 
+            \displaystyle{\sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j}} + k_{n, 1}}}^{(a_1 + a_2 + \cdots + a_{n-1}+1)\text{-th block}},
+            \dots
+            \\
+            \dots, 
+            \overbrace{
+            \textcolor{RoyalBlue}{\displaystyle{\sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j}} + (k_{n, 1} + \cdots + k_{n, (a_n-1)})
+            + 1,
+            \displaystyle{\sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j}} + (k_{n, 1} + \cdots + k_{n, (a_n-1)})
+            + 2,
+            \dots, 
+            \displaystyle{\sum_{i}^{n}\sum_{j=1}^{a_i}k_{i, j}}} }^{(a_1 + a_2 + \cdots + a_{n-1}+ a_n)\text{-th block}}
+            \Big)
+        \end{tikzcd}
+    \end{center}

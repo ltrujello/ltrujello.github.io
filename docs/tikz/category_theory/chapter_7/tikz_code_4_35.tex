@@ -1,0 +1,25 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.4cm]
+            x_0 \otimes x_0 
+            \arrow[d, shift right = -0.5ex, "\lambda_{x_0}"]
+            \arrow[d, shift left = -0.5ex, swap, "\rho_{x_0}"]
+            \\
+            x_0
+        \end{tikzcd}
+        \hspace{0.5cm}
+        \begin{tikzcd}[row sep = 1.4cm]
+            x_0 \otimes (x_0 \otimes v)
+            \arrow[d, shift left = -0.5ex, swap, "1_{x_0} \otimes \lambda_{v}"]
+            \arrow[d, shift right = -0.5ex, "\lambda_{(x_0 \otimes v)}"]
+            \\
+            x_0 \otimes v
+        \end{tikzcd}
+        \hspace{0.5cm}
+        \begin{tikzcd}[row sep = 1.4cm]
+            (u \otimes x_0) \otimes x_0
+            \arrow[d, shift right = -0.5ex, "\rho_{(u \otimes x_0)}"]
+            \arrow[d, shift left = -0.5ex, swap, "\rho_u \otimes 1_{x_0}"]
+            \\
+            u \otimes x_0
+        \end{tikzcd}
+    \end{center}

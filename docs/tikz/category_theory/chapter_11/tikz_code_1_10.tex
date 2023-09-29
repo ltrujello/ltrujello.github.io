@@ -1,0 +1,32 @@
+\begin{center}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+        \hom_{\cc^S}(K,P_S) 
+        \arrow[r, Blue, "\phi"]
+        \arrow[d, Red]
+        &
+        \hom_{\cc^{\rr}}(\overline{K}, P)
+        \arrow[d, YellowOrange]\\
+        \hom_{\cc^S}(K, P'_S) 
+        \arrow[r, Blue, "\phi"]
+        &
+        \hom_{\cc^{\rr}}(\overline{K}, P')
+    \end{tikzcd}
+    \hspace{1cm}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+        \eta: K \to P_S \arrow[r, Blue ,maps to]
+        \arrow[d, Red, maps to]
+        &
+        \eta': \overline{K}  \to P
+        \arrow[d, YellowOrange, maps to]
+        \\
+        \sigma' \circ \eta: K \to P'_S 
+        \arrow[r, Blue, maps to] 
+        &
+        \parbox{3.2cm}{
+        \centering
+        $\sigma \circ \eta':K  \to P'$\\
+        $=$\\
+        $(\sigma' \circ \eta)':K  \to P'$
+        }
+    \end{tikzcd}
+\end{center}

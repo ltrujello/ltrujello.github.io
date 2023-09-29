@@ -1,0 +1,26 @@
+\begin{center}
+        \begin{tikzcd}
+            A
+            \arrow[bend left = 50, shift left=2pt, ""{name=UL, below}]{r}{f} 
+            \arrow[bend right = 50, shift right=2pt, ""name=LL]{r}[swap]{g} &
+            B
+            \arrow[bend left = 50, shift left=2pt,""{name=RRUL, below}]{r}{h}
+            \arrow[bend right = 50, shift right=2pt, ""name=RRLL]{r}[swap]{k}
+            & 
+            C
+            \\
+            \arrow[Rightarrow, from=UL, to=LL, "\gamma", shorten <= -2pt, shorten >= -2pt]
+            &
+            &
+            \arrow[Rightarrow, from=RRUL, to=RRLL, "\delta", shorten <= -2pt, shorten >= -2pt]
+        \end{tikzcd} 
+        $\implies$
+        \begin{tikzcd}
+            A
+            \arrow[bend left = 50, shift left=2pt, ""{name=UL, below}]{r}{h \circ f} 
+            \arrow[bend right = 50, shift right=2pt, ""name=LL]{r}[swap]{k \circ g} &
+            B 
+            \\
+            \arrow[Rightarrow, from=UL, to=LL, "\delta \circ \gamma", shorten <= -2pt, shorten >= -2pt]
+        \end{tikzcd} 
+    \end{center}

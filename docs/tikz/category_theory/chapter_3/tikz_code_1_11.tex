@@ -1,0 +1,25 @@
+\begin{center}
+            \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+                &
+                D
+                \arrow[dl,swap, Red, "u"]
+                \arrow[dr, "f"]
+                &
+                \\
+                F(\textcolor{NavyBlue}{A})
+                \arrow[rr, swap, dashed, "F(h)"]
+                &
+                &
+                F(A')
+            \end{tikzcd}
+            \raisebox{0.5cm}{$=$}
+            \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+                D \arrow[r, Red, "u"] \arrow[dr, swap, "f"] & F(\textcolor{NavyBlue}{A})\arrow[d, dashed, "F(h)"] \\
+                & F(A') 
+            \end{tikzcd}
+            \hspace{1cm}
+            \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+                \textcolor{NavyBlue}{A} \arrow[d, dashed, "h"]\\
+                A'
+            \end{tikzcd}
+        \end{center}

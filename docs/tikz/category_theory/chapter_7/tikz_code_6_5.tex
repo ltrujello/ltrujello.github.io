@@ -1,0 +1,28 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 0.8cm, row sep = 1cm]
+            Q
+            \arrow[r]
+            \arrow[d]
+            &
+            \hom (\mathbb{B}\int\aa, \vv)
+            \arrow[d, "(-) \circ i_A"]
+            \\
+            \{*\}
+            \arrow[r]
+            &
+            \hom (\aa, \vv)
+        \end{tikzcd}
+        \begin{tikzcd}[column sep = 0.8cm, row sep = 1cm]
+            (K', T')
+            \arrow[r, maps to]
+            \arrow[d, maps to]
+            &
+            T':\mathbb{B} \to \{\aa, \vv\}
+            \arrow[d, maps to]
+            \\
+            *
+            \arrow[r, swap, "\{S\}", maps to]
+            &
+            S = T' \circ i_A
+        \end{tikzcd}
+    \end{center}

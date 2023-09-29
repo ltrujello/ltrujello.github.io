@@ -1,0 +1,201 @@
+\begin{center}
+\makebox[0pt]{
+    \begin{tikzpicture}
+        \node at (-4, 5.3) {Front. (Note that the symbol $\otimes$ has been suppressed.)
+        };
+        \node at (-9, -5.2) {Back.};
+        \node at (-3,-0.5){
+            \begin{tikzcd}[ampersand replacement=\Z]
+                \Z[-2cm]
+                \Z[-2.5cm]
+                \Z[-1cm]
+                A ((B  C)  (D  E))
+                \arrow[dll, swap, "1_{A}\otimes \alpha_{B C,D,E}"]
+                \arrow[drr, "\alpha_{A,B C,D E}"]
+                \Z[-1cm]
+                \Z[-2.5cm]
+                \Z[-2cm]
+                \\[0.2cm] 
+                \Z
+                A((( B  C ) D)  E)
+                \arrow[dddr, "\alpha_{A, B (C D), E}"]
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[<-,Black!30!White, dashed,u]
+                \Z
+                \Z
+                (A (B  C))  (D  E)
+                \arrow[dr, "\alpha_{A,B,C}\otimes (1_{D} \otimes 1_{E})"]
+                \arrow[dddl, swap, "\alpha_{A (B C), D, E}"]
+                \Z
+                \\[0.4cm] 
+                A ((B  (C  D)) E)
+                \arrow[ur, "(1_{A} \otimes \alpha_{B,C,D})\otimes 1_{E}"]
+                \arrow[ddddr, swap, "\alpha_{A,B C D, E}"]
+                \arrow[<-, drr, dashed, Black!30!White]
+                \Z
+                \Z
+                \Z
+                \Z
+                \Z
+                \Z
+                ((A B)  C)  (D  E)
+                \arrow[<-, Black!30!White, dashed, dll]
+                \arrow[ddddl, "\alpha_{(A B) C, D, E}"]
+                \\[-0.7cm] 
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[<-, Black!30!White, dashed, uur]
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[<-, Black!30!White, dashed, uul]
+                \Z
+                \Z
+                \\[0.2cm] 
+                \Z
+                \Z
+                (A ((B  C)  D))  E
+                \arrow[rr, "\alpha_{A, B C, D}\otimes 1_{E}"]
+                \Z
+                \Z
+                ((A (B  C)) D)  E
+                \arrow[ddr, swap, "(\alpha_{A,B,C}\otimes 1_{D})\otimes 1_{E}"]
+                \Z
+                \Z
+                \\[-0.7cm] 
+                \Z
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[<-, Black!30!White, dashed, uur]
+                \arrow[<-, Black!30!White, dashed, uul]
+                \Z
+                \Z
+                \Z
+                \\[0.4cm] 
+                \Z
+                (A (B  (C  D)))  E
+                \arrow[uur, swap, "(1_{A} \otimes \alpha_{B,C,D}) \otimes 1_{E}"]
+                \arrow[drr, swap, "\alpha_{A, B, C D} \otimes 1_{E}"]
+                \Z
+                \Z
+                \Z
+                \Z
+                (((A B)  C)  D)  E
+                \Z
+                \\[0.2cm] 
+                \Z
+                \Z
+                \Z
+                ((A B)  (C  D))  E
+                \arrow[urr, swap, "\alpha_{A B, C, D}\otimes 1_{E}"]
+                \arrow[<-, uu, dashed, Black!30!White]
+                \Z
+                \Z
+                \Z
+            \end{tikzcd}
+            };
+            \node at (-3,-12){
+            \begin{tikzcd}[ampersand replacement=\Z]
+                \Z[-2cm]
+                \Z[-2.5cm]
+                \Z[-1cm]
+                A ((B  C)  (D  E))
+                \arrow[drr, "1_{A}\otimes \alpha_{B C,D,E}"]
+                \arrow[dll, swap, "\alpha_{A,B C,D E}"]
+                \Z[-1cm]
+                \Z[-2.5cm]
+                \Z[-2cm]
+                \\[0.2cm] 
+                \Z
+                (A (B  C))  (D  E)
+                \arrow[dl, swap, "\alpha_{A,B,C}\otimes (1_{D} \otimes 1_{E})"]
+                \arrow[dddr, Black!30!White, dashed]
+                \Z
+                \Z 
+                A (B (C (D E)))
+                \arrow[u, "1_{A}\otimes \alpha_{B,C,D E}"]
+                \arrow[ddl, swap, "\alpha_{A,B, C (D E)}"]
+                \arrow[ddr, "1_{A}\otimes(1_{B}\otimes \alpha_{C,D,E})"]
+                \Z
+                \Z
+                A((( B  C ) D)  E)
+                \arrow[dddl,dashed, Black!30!White]
+                \Z
+                \\[0.4cm] 
+                ((A B)  C)  (D  E)
+                \arrow[ddddr, swap, "\alpha_{(A B)C, D, E}"]
+                \Z
+                \Z
+                \Z
+                \Z
+                \Z
+                \Z
+                A ((B  (C  D)) E)
+                \arrow[swap, ul, "(1_{A} \otimes \alpha_{B,C,D})\otimes 1_{E}"]
+                \arrow[swap, ddddl, swap, "\alpha_{A,B C D, E}"]
+                \\[-0.7cm] 
+                \Z
+                \Z
+                (A B)(C (D E))
+                \arrow[ull, swap, "\alpha_{A B, C, D E}", 
+                start anchor = {[yshift=-0.25cm]},
+                end anchor = {[xshift=-0.5cm]} ]
+                \arrow[ddr,swap,"(1_{A}\otimes 1_{B}) \otimes \alpha_{C,D,E}"]
+                \Z
+                \Z
+                A (B ((C D)E )
+                \arrow[urr, swap, "1_{A}\otimes \alpha_{B, C D, E}",
+                start anchor = {[yshift=-0.25cm]},
+                end anchor = {[xshift=1cm]}]
+                \arrow[ddl, "\alpha_{A,B,(C D) E}"]
+                \Z
+                \Z
+                \\[1cm] 
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[Black!30!White, dashed, ddl]
+                \Z
+                \Z
+                \textcolor{Black!30!White}{\bullet}
+                \arrow[swap, ll, dashed, Black!30!White]
+                \Z
+                \Z
+                \\[-0.7cm] 
+                \Z
+                \Z
+                \Z
+                (A B)((C D)E)
+                \arrow[dd, "\alpha_{A B, C D, E}"]
+                \Z
+                \Z
+                \Z
+                \\[0.4cm] 
+                \Z
+                (((A B)  C)  D)  E
+                \Z
+                \Z
+                \Z
+                \Z
+                (A (B  (C  D)))  E
+                \arrow[Black!30!White, dashed, uul]
+                \arrow[swap, dll, swap, "\alpha_{A, B, C D} \otimes 1_{E}"]
+                \Z
+                \\[0.2cm] 
+                \Z
+                \Z
+                \Z
+                ((A B)  (C  D))  E
+                \arrow[swap, ull, swap, "\alpha_{A B, C, D}\otimes 1_{E}"]
+                \Z
+                \Z
+                \Z
+            \end{tikzcd}
+            };
+    \end{tikzpicture}
+}
+\end{center}

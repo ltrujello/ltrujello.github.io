@@ -1,0 +1,42 @@
+\begin{center}
+        \begin{tikzpicture}
+            \filldraw[rounded corners, Yellow!30]
+            (-3.5, -2.5) rectangle (3.5, 2.5);
+            \node at (0,0){
+                \begin{tikzcd}
+                    B
+                    &
+                    C
+                    &
+                    D
+                    \\
+                    &
+                    A
+                    \arrow[u]
+                    \arrow[d]
+                    
+                    
+                    \arrow[ur]
+                    \arrow[ul]
+                    \arrow[dr]
+                    \arrow[dl]
+                    &
+                    \\
+                    E
+                    &
+                    F
+                    &
+                    G
+                \end{tikzcd}
+                };
+            \node at (2, 1.8) {\rotatebox[origin=c]{70}{$\ddots$}};
+            \node at (-2.1, 1.8) {$\ddots$};
+            \node at (-2.2, -1.8) {\rotatebox[origin=c]{70}{$\ddots$}};
+            \node at (2.2, -1.6) {$\ddots$};
+            \node at (0, 2.1) {$\vdots$};
+            \node at (0, -1.9) {$\vdots$};
+            
+            
+            \node at (-3, 1.9){$\pp$};
+    \end{tikzpicture}
+    \end{center}

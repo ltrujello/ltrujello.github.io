@@ -1,0 +1,25 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 1cm, row sep = 1.4cm]
+            & D \arrow[d, dashed, "h"] \arrow[ddl,swap, bend right = 20,
+            "f_i"] \arrow[ddr, bend left = 20, "f_j"] &\\
+            & \arrow[dl, swap, "\tau_i"] \Lim G \circ F 
+            \arrow[dr, "\tau_j"] & \\
+            G(F(i))
+            \arrow[rr, swap, "G(F(u))"] 
+            & 
+            &
+            G(F(j))
+        \end{tikzcd}
+        $\implies$
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            & C \arrow[d, dashed, "h"] \arrow[ddl,swap, bend right = 20,
+            "f_i"] \arrow[ddr, bend left = 20, "f_j"] &\\
+            & \arrow[dl, swap, "\sigma_i"] \Lim F 
+            \arrow[dr, "\sigma_j"] & \\
+            F(i)
+            \arrow[rr, swap, "F(u)"] 
+            & 
+            &
+            F(j) 
+        \end{tikzcd}
+    \end{center}

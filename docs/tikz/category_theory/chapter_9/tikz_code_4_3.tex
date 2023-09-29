@@ -1,0 +1,29 @@
+\begin{center}
+    \begin{tikzpicture}
+        \braid[number of strands= 2, thick, height = 4cm,
+        style strands={1}{red},
+        style strands={2}{RoyalBlue}]
+        (braid) s_1;
+    \end{tikzpicture}
+    \hspace{1cm}
+    \raisebox{2cm}{$\mapsto$}
+    \hspace{1cm}
+    \begin{tikzpicture}
+        \braid[number of strands= 5, thick,
+        style strands={1}{red},
+        style strands={2}{red},
+        style strands={3}{red},
+        style strands={4}{red},
+        style strands={5}{RoyalBlue}] 
+        (braid) 
+        s_4 s_3 s_2 s_1;
+        \filldraw[yellow, opacity = 0.6] (4.5,-0.7) circle (0.3cm);
+        \draw (4.5,-0.7) circle (0.3cm);
+        \filldraw[yellow, opacity = 0.6] (3.5,-1.7) circle (0.3cm);
+        \draw (3.5,-1.7) circle (0.3cm);
+        \filldraw[yellow, opacity = 0.6] (2.5,-2.7) circle (0.3cm);
+        \draw (2.5,-2.7) circle (0.3cm);
+        \filldraw[yellow, opacity = 0.6] (1.5,-3.7) circle (0.3cm);
+        \draw (1.5,-3.7) circle (0.3cm);
+    \end{tikzpicture}
+\end{center}

@@ -1,0 +1,182 @@
+:root {
+    --md-primary-fg-color: #222b3a;
+    --md-primary-fg-color--light: #5d6cc0;
+    --md-primary-fg-color--dark: #303fa1;
+    --md-primary-bg-color: #fff;
+    --md-primary-bg-color--light: #ffffffb3;
+    --md-accent-fg-color: #526cfe;
+    --md-accent-fg-color--transparent: #526cfe1a;
+    --md-accent-bg-color: #fff;
+    --md-accent-bg-color--lighffft: #ffffffb3;
+
+    /* /1* main background color *1/ */ 
+    /* --md-default-bg-color: #0d1117; */
+    /* /1* text color *1/ */ 
+    /* --md-typeset-color: #fff; */
+    /* /1* header color *1/ */ 
+    /* --md-default-fg-color--light: #fff; */
+    /* /1* clicked text color *1/ */ 
+    /* --md-typeset-a-color */
+}
+
+[data-md-color-scheme="mylightscheme"] {
+  --md-primary-fg-color:        #EE0F0F;
+  --md-primary-fg-color--light: #ECB7B7;
+  --md-primary-fg-color--dark:  #90030C;
+}
+
+[data-md-color-scheme="mydarkscheme"] {
+  --md-primary-fg-color:        #282d3f;
+  /* --md-primary-fg-color--light: #ECB7B7; */
+  /* --md-primary-fg-color--dark:  #90030C; */
+  --md-default-bg-color: #0d1117; /* text color */ 
+  --md-typeset-color: #fff; /* header color */ 
+  --md-default-fg-color--light: #fff; /* clicked text color */ 
+  --md-typeset-a-color: #5683cf;
+}
+
+
+.img_center img {        
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+.theorem {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.theorem:before {
+    content: "Theorem.";
+    font-weight: bold;
+    font-style: normal;
+}
+.lemma {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.lemma:before {
+    content: "Lemma.";
+    font-weight: bold;
+    font-style: normal;
+}
+.proof {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.proof:before {
+    content: "Proof.";
+    font-style: italic;
+}
+.proof:after {
+    content: "\25FC";
+    float:right;
+}
+.definition {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.definition:before {
+    content: "Definition.";
+    font-weight: bold;
+    font-style: normal;
+}
+.example {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.example:before {
+    content: "Example.";
+    font-weight: bold;
+    font-style: normal;
+}
+.proposition {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.proposition:before {
+    content: "Proposition.";
+    font-weight: bold;
+    font-style: normal;
+}
+.corollary {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.corollary:before {
+    content: "Corollary.";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* for associahedron */
+.scene-nav-info {
+    bottom: 5px;
+    /* width: 100%; */
+    text-align: center;
+    color: rgb(0, 0, 0) !important;
+    opacity: 0.7;
+    font-size: 15px !important;
+}
+
+.shit {
+    width : 500px;
+}
+  
+  
+.wrapper {
+    position: relative;
+    border: solid #aaaaaa;
+    border-width: thin;
+
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    /* align-items: center; */
+    /* display: flex; */
+    /* justify-content: center; */
+    width:800px;
+    /* margin:200px; */
+    /* padding-left:200px; */
+    /* border-left:200px; */
+  
+}
+#info{
+    position: absolute;
+    top: 0.5em;
+    left:1em;
+    right: 0;
+    width: fit-content;
+}
+#3d-graph{
+    height: 500px;
+}
+.dg .cr.boolean {
+    border-left: 3px solid #fa003e !important;
+    margin-bottom: 0px;
+}
+
+.dg .cr.number {
+    border-left: 3px solid #13a6fc !important;
+    margin-bottom: 0px;
+}
+
+
+#gui {   
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+}
+
+
+
+

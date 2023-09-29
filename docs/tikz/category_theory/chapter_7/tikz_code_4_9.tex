@@ -1,0 +1,58 @@
+\begin{center}
+    \begin{tikzpicture}
+        \node at (2.5,-2.3) {
+            \begin{tikzpicture}
+                \node {$\underbrace{\textcolor{White}{this is a really really really realy really really really really long}}$};
+            \end{tikzpicture}
+        };
+        \node[rectangle,draw, fill = green!15!White] (a1) {
+            \parbox{4cm}{
+                \centering
+                Work of Section 1.7
+            }
+        };
+        \node[rectangle,draw] (b1) at (5, 0) {
+            \parbox{4cm}{
+                \centering
+                Diamond Lemma
+            }
+        };
+        \node[rectangle,draw, fill = green!15!White] (a2) at (0, -2) {
+            \parbox{4cm}{
+                \centering
+                Proposition \ref{proposition_existence_of_w_to_wn}
+            }   
+        };
+        \node[rectangle,draw] (b2) at (5, -2) {
+            \parbox{4cm}{
+                \centering
+                Proposition \ref{proposition:parallel_w_to_wn_equal_in_M}
+            }   
+        };
+        
+        
+        
+        
+        
+        
+        \node[rectangle,draw](a3) at (2.5, -4){
+            \centering
+            \parbox{4cm}{
+                \centering
+                Proposition \ref{proposition:parallel_in_M_are_equal}
+            }
+        };
+        \node[rectangle,draw](a4) at (2.5, -6){
+            \centering
+            \parbox{4cm}{
+                \centering
+                Theorem \ref{theorem:coherence_in_alpha}
+            }
+        };
+
+        \draw[-implies,double equal sign distance, shorten >= 2pt, shorten <=2pt, thick] (a1) -- (a2);
+        \draw[-implies,double equal sign distance, shorten >= 2pt, shorten <=2pt, thick] (b1) -- (b2);
+        \draw[-implies,double equal sign distance, shorten >= 2pt, shorten <= 10pt, thick] (2.5, -2.3) -- (a3);
+        \draw[-implies,double equal sign distance, shorten >= 2pt, shorten <= 2pt, thick] (a3) -- (a4);
+    \end{tikzpicture}
+\end{center}

@@ -1,0 +1,22 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            (A, B)
+            &
+            \Delta(A \times B) \arrow[l, swap, "u"]\\
+            & \Delta(C) \arrow[u, swap, dashed, "\Delta(f')"]
+            \arrow[ul, "h"]
+        \end{tikzcd}
+        =
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            (A, B)
+            &
+            (A \times B, A \times B) \arrow[l, swap, "{(\pi_A, \pi_B)}"]\\
+            & (C, C) \arrow[u, dashed, swap, "{(f', f')}"]
+            \arrow[ul, "h"]
+        \end{tikzcd}
+        \hspace{1cm}
+        \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+            A \times B\\
+            C \arrow[u, dashed, "f'"]
+        \end{tikzcd}
+    \end{center}

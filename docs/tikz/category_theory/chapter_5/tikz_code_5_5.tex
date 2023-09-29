@@ -1,0 +1,29 @@
+\begin{center}
+            \begin{tikzcd}[column sep = 1cm, row sep = 1.4cm]
+                &
+                C
+                &
+                \\
+                &
+                F(G(C))
+                \arrow[u, "\epsilon_C"]
+                &
+                \\
+                & 
+                F(\Colim H)
+                \arrow[u, "F(k)"]
+                \arrow[<-, dl, swap, "F(\sigma_i)"] 
+                \arrow[<-, dr, "F(\sigma_j)"] 
+                & 
+                \\
+                H(i)
+                \arrow[rr, swap, "F(H(f))"] 
+                \arrow[uur, bend left = 20,"F(\delta_i)"]
+                \arrow[uuur, bend left = 40,"\tau_i"]
+                & 
+                &
+                H(j)
+                \arrow[uul, bend right = 20, swap, "F(\delta_j)"]
+                \arrow[uuul, bend right = 40, swap, "\tau_j"]
+            \end{tikzcd}
+        \end{center}

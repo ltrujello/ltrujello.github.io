@@ -1,0 +1,55 @@
+\begin{center}
+        \begin{tikzpicture}
+            \begin{scope}
+                \filldraw[draw, Yellow!30, rounded corners]
+                (-3, -2) rectangle (3, 2);
+                \node at (-2.5, 1.5) {$\cc$};
+                \node at (-2.4, -0.9) {$\cdots$};
+                \node at (2.4, -0.9) {$\cdots$};
+                \node at (-0.7, 0.9) {$\cdots$};
+                \node at (0.7, 0.9) {$\cdots$};
+
+                \node at (0.05, 1.7) {$\vdots$};
+                \node at (-1.7, -1.4) {$\vdots$};
+                \node at (1.7, -1.4) {$\vdots$};
+                \node at (0,0){
+                \begin{tikzcd}[row sep = 1.2cm]
+                    &
+                    A
+                    \arrow[dl, swap,  "f"]
+                    \arrow[dr, "g\circ f"]
+                    & 
+                    \\
+                    B \arrow[rr, swap, "g"]
+                    & & C
+                \end{tikzcd}};
+            \end{scope}
+
+
+            \begin{scope}[xshift = 9cm]
+                \filldraw[draw, ProcessBlue!10, rounded corners]
+                (-4, -2) rectangle (4, 2);
+                \node at (-3.3, 1.5) {$\dd$};
+
+                \node at (-3.2, -0.9) {$\cdots$};
+                \node at (3.2, -0.9) {$\cdots$};
+                \node at (-1, 0.9) {$\cdots$};
+                \node at (1, 0.9) {$\cdots$};
+
+                \node at (0, 1.7) {$\vdots$};
+                \node at (-2.4, -1.4) {$\vdots$};
+                \node at (2.4, -1.4) {$\vdots$};
+                \node at (0,0){
+                \begin{tikzcd}[row sep = 1.2cm]
+                    &
+                    F(A)
+                    \arrow[dl, swap,  "F(f)"]
+                    \arrow[dr, "F(g\circ f)"]
+                    & 
+                    \\
+                    F(B) \arrow[rr, swap, "F(g)"]
+                    & & F(C)
+                \end{tikzcd}};
+            \end{scope}
+        \end{tikzpicture}
+    \end{center}

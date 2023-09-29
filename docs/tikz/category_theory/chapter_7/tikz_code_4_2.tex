@@ -1,0 +1,27 @@
+\begin{center}
+        \begin{tikzcd}[column sep = 0.1cm, row sep = 1cm]
+            u \otimes(x_0 \otimes v) 
+            \arrow[rr, "\alpha_{u, x_0, v}"] 
+            \arrow[dr, swap, "1_u\otimes \lambda_{v}"] 
+            & &
+            (u \otimes x_0)\otimes v
+            \arrow[dl, "\rho_{u} \otimes 1_v"]
+            \\
+            & u \otimes v &
+        \end{tikzcd}
+        \begin{tikzcd}[column sep = 1.8cm, row sep = 1.6cm]
+            u\otimes (v \otimes (w \otimes z)) 
+            \arrow[r, "\alpha_{u,v,w\otimes z}"] 
+            \arrow[d, swap, "1_u\otimes \alpha_{v, w, z}"]
+            &
+            (u \otimes v)\otimes(w\otimes z) 
+            \arrow[r, "\alpha_{u\otimes v, w, z}"]
+            &
+            ((u \otimes v)\otimes w)\otimes z\\
+            u\otimes((v\otimes w)\otimes z)
+            \arrow[rr, swap, "\alpha_{u, v\otimes w, z}"]
+            &&
+            (u \otimes(v\otimes w))\otimes z
+            \arrow[u, swap, "\alpha_{u, v, w}\otimes 1_z"]
+        \end{tikzcd}
+    \end{center}

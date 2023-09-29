@@ -1,0 +1,197 @@
+extra_css:
+- stylesheets/extra.css
+extra_javascript:
+- https://polyfill.io/v3/polyfill.min.js?features=es6
+- https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+markdown_extensions:
+- pymdownx.arithmatex:
+    generic: true
+nav:
+- Home: index.md
+- Category Theory:
+  - Home: category_theory/index.md
+  - Categories, Functors and Natural Transformations.:
+    - '1.1 Introduction: What are the Foundations of Math?': 'category_theory/Categories,
+        Functors and Natural Transformations./Introduction: What are the Foundations
+        of Math?.md'
+    - 1.2 Motivation for Category Theory: category_theory/Categories, Functors and
+        Natural Transformations./Motivation for Category Theory.md
+    - 1.3 Category Theory Axioms.: category_theory/Categories, Functors and Natural
+        Transformations./Category Theory Axioms..md
+    - 1.4 Examples of Categories: category_theory/Categories, Functors and Natural
+        Transformations./Examples of Categories.md
+    - 1.5 Paths and Diagrams in Categories: category_theory/Categories, Functors and
+        Natural Transformations./Paths and Diagrams in Categories.md
+    - 1.6 Functors: category_theory/Categories, Functors and Natural Transformations./Functors.md
+    - 1.7 Examples and Nonexamples of Functors: category_theory/Categories, Functors
+        and Natural Transformations./Examples and Nonexamples of Functors.md
+    - 1.8 Forgetful, Full and Faithful Functors.: category_theory/Categories, Functors
+        and Natural Transformations./Forgetful, Full and Faithful Functors..md
+    - 1.9 Natural Transformations: category_theory/Categories, Functors and Natural
+        Transformations./Natural Transformations.md
+    - 1.10 Monic, Epics, and Isomorphisms: category_theory/Categories, Functors and
+        Natural Transformations./Monic, Epics, and Isomorphisms.md
+    - 1.11 Initial, Terminal, and Zero Objects: category_theory/Categories, Functors
+        and Natural Transformations./Initial, Terminal, and Zero Objects.md
+  - Duality and Categorical Constructions:
+    - 2.1 $\mathcal{C: category_theory/Duality and Categorical Constructions/$\mathcal{C.md
+    - 2.2 Products of Categories, Functors: category_theory/Duality and Categorical
+        Constructions/Products of Categories, Functors.md
+    - 2.3 Functor Categories: category_theory/Duality and Categorical Constructions/Functor
+        Categories.md
+    - 2.4 Vertical, Horizontal Composition; Interchange Laws: category_theory/Duality
+        and Categorical Constructions/Vertical, Horizontal Composition; Interchange
+        Laws.md
+    - 2.5 Slice and Comma Categories.: category_theory/Duality and Categorical Constructions/Slice
+        and Comma Categories..md
+    - 2.6 Graphs, Quivers and Free Categories: category_theory/Duality and Categorical
+        Constructions/Graphs, Quivers and Free Categories.md
+    - 2.7 Quotient Categories: category_theory/Duality and Categorical Constructions/Quotient
+        Categories.md
+    - 2.8 Monoids, Groups and Groupoids in Categories: category_theory/Duality and
+        Categorical Constructions/Monoids, Groups and Groupoids in Categories.md
+  - Universal Constructions and Limits:
+    - 3.1 Universal Morphisms: category_theory/Universal Constructions and Limits/Universal
+        Morphisms.md
+    - 3.2 Representable Functors and Yoneda's Lemma: category_theory/Universal Constructions
+        and Limits/Representable Functors and Yoneda's Lemma.md
+    - 3.3 Finite Products: category_theory/Universal Constructions and Limits/Finite
+        Products.md
+    - 3.4 Finite Coproducts: category_theory/Universal Constructions and Limits/Finite
+        Coproducts.md
+    - 3.5 Arbitrary Products and Coproducts in Categories: category_theory/Universal
+        Constructions and Limits/Arbitrary Products and Coproducts in Categories.md
+    - 3.6 Introduction to Limits and Colimits: category_theory/Universal Constructions
+        and Limits/Introduction to Limits and Colimits.md
+    - 3.7 Equalizers and Coequalizers: category_theory/Universal Constructions and
+        Limits/Equalizers and Coequalizers.md
+    - 3.8 Pullbacks and Pushouts: category_theory/Universal Constructions and Limits/Pullbacks
+        and Pushouts.md
+  - Adjunctions.:
+    - 4.1 Introduction to Adjunctions.: category_theory/Adjunctions./Introduction
+        to Adjunctions..md
+    - 4.2 Reflective Subcategories.: category_theory/Adjunctions./Reflective Subcategories..md
+    - 4.3 Equivalence of Categories: category_theory/Adjunctions./Equivalence of Categories.md
+    - 4.4 Adjoints on Preorders.: category_theory/Adjunctions./Adjoints on Preorders..md
+    - 4.5 Exponential Objects and Cartesian Closed Categories.: category_theory/Adjunctions./Exponential
+        Objects and Cartesian Closed Categories..md
+  - Limits and Colimits.:
+    - 5.1 Every Limit in Set; Creation of Limits: category_theory/Limits and Colimits./Every
+        Limit in Set; Creation of Limits.md
+    - 5.2 Inverse and Direct Limits.: category_theory/Limits and Colimits./Inverse
+        and Direct Limits..md
+    - 5.3 Limits from Products, Equalizers, and Pullbacks.: category_theory/Limits
+        and Colimits./Limits from Products, Equalizers, and Pullbacks..md
+    - 5.4 Preservation of Limits: category_theory/Limits and Colimits./Preservation
+        of Limits.md
+    - 5.5 Adjoints on Limits: category_theory/Limits and Colimits./Adjoints on Limits.md
+    - 5.6 Existence of Universal Morphisms and Adjoint Functors: category_theory/Limits
+        and Colimits./Existence of Universal Morphisms and Adjoint Functors.md
+    - 5.7 Subobjects and Quotient Objects: category_theory/Limits and Colimits./Subobjects
+        and Quotient Objects.md
+  - Filtered Colimits, Coends, and Kan Extensions:
+    - 6.1 Filtered Categories and Limits: category_theory/Filtered Colimits, Coends,
+        and Kan Extensions/Filtered Categories and Limits.md
+  - Monoidal Categories:
+    - 7.1 Monoidal Categories: category_theory/Monoidal Categories/Monoidal Categories.md
+    - 7.2 Monoidal Functors: category_theory/Monoidal Categories/Monoidal Functors.md
+    - 7.3 What are those Coherence Conditions?: category_theory/Monoidal Categories/What
+        are those Coherence Conditions?.md
+    - 7.4 Mac Lane's Coherence Theorem: category_theory/Monoidal Categories/Mac Lane's
+        Coherence Theorem.md
+    - 7.5 Braided and Symmetric Monoidal Categories: category_theory/Monoidal Categories/Braided
+        and Symmetric Monoidal Categories.md
+    - 7.6 Coherence for Braided Monoidal Categories: category_theory/Monoidal Categories/Coherence
+        for Braided Monoidal Categories.md
+    - 7.7 Monoids, Groups, in Symmetric Monoidal Categories: category_theory/Monoidal
+        Categories/Monoids, Groups, in Symmetric Monoidal Categories.md
+    - 7.8 Enriched Categories: category_theory/Monoidal Categories/Enriched Categories.md
+  - Abelian Categories:
+    - 8.1 Preadditive Categories: category_theory/Abelian Categories/Preadditive Categories.md
+    - 8.2 Additive Categories: category_theory/Abelian Categories/Additive Categories.md
+    - 8.3 Preabelian Categories: category_theory/Abelian Categories/Preabelian Categories.md
+    - 8.4 Kernels and Cokernels: category_theory/Abelian Categories/Kernels and Cokernels.md
+    - 8.5 Abelian Categories: category_theory/Abelian Categories/Abelian Categories.md
+  - Operads:
+    - 9.1 Operads on Sets: category_theory/Operads/Operads on Sets.md
+    - 9.2 General Operads in Symmetric Monoidal Categories: category_theory/Operads/General
+        Operads in Symmetric Monoidal Categories.md
+    - '9.3 Partial Composition: Restructuring Operads': 'category_theory/Operads/Partial
+        Composition: Restructuring Operads.md'
+    - 9.4 The Braid Groups Form a (nonsymmetric) Operad: category_theory/Operads/The
+        Braid Groups Form a (nonsymmetric) Operad.md
+  - Sheaves:
+    - 10.1 Topological Presheaves and Sheaves: category_theory/Sheaves/Topological
+        Presheaves and Sheaves.md
+    - 10.2 Abstracting Sheaves: category_theory/Sheaves/Abstracting Sheaves.md
+    - 10.3 Stalks and Germs: category_theory/Sheaves/Stalks and Germs.md
+  - Persistence Modules:
+    - 11.1 Persistence modules on $\rr$.: category_theory/Persistence Modules/Persistence
+        modules on $\rr$..md
+    - 11.2 Generalized Persistence Modules.: category_theory/Persistence Modules/Generalized
+        Persistence Modules..md
+    - 11.3 Interleaving Distances via Sublinear Projections and Superlinear Families: category_theory/Persistence
+        Modules/Interleaving Distances via Sublinear Projections and Superlinear Families.md
+    - 11.4 General Persistence Diagrams: category_theory/Persistence Modules/General
+        Persistence Diagrams.md
+- Algebra Notes:
+  - Home: algebra/index.md
+  - Groups:
+    - 1.1 Definitions: algebra/Groups/Definitions.md
+    - 1.2 Permutation Groups.: algebra/Groups/Permutation Groups..md
+    - 1.3 Homomorphism and Isomorphisms.: algebra/Groups/Homomorphism and Isomorphisms..md
+    - 1.4 Cyclic Groups.: algebra/Groups/Cyclic Groups..md
+    - 1.5 Left and Right Cosets, Lagrange's Theorem: algebra/Groups/Left and Right
+        Cosets, Lagrange's Theorem.md
+    - 1.6 Normal subgroups: algebra/Groups/Normal subgroups.md
+    - 1.7 Quotient Groups.: algebra/Groups/Quotient Groups..md
+    - 1.8 Isomorphism Theorems: algebra/Groups/Isomorphism Theorems.md
+    - 1.9 Group Actions.: algebra/Groups/Group Actions..md
+    - 1.10 Conjugation, The Class Equation, and Cauchy's Theorem.: algebra/Groups/Conjugation,
+        The Class Equation, and Cauchy's Theorem..md
+    - 1.11 Sylow Theorems.: algebra/Groups/Sylow Theorems..md
+    - 1.12 Fundamental Theorem of Finite Abelian Groups.: algebra/Groups/Fundamental
+        Theorem of Finite Abelian Groups..md
+  - Rings:
+    - 2.1 Definitions.: algebra/Rings/Definitions..md
+    - 2.2 Ring homomorphisms.: algebra/Rings/Ring homomorphisms..md
+    - 2.3 Ideals and Quotient Rings.: algebra/Rings/Ideals and Quotient Rings..md
+    - 2.4 Isomorphism Theorems.: algebra/Rings/Isomorphism Theorems..md
+    - 2.5 Principal, Maximal and Prime Ideals.: algebra/Rings/Principal, Maximal and
+        Prime Ideals..md
+    - 2.6 Ring of Fractions.: algebra/Rings/Ring of Fractions..md
+    - 2.7 PIDs and Euclidean Domains.: algebra/Rings/PIDs and Euclidean Domains..md
+    - 2.8 Polynomial Rings (for Galois Theory).: algebra/Rings/Polynomial Rings (for
+        Galois Theory)..md
+  - Modules:
+    - 3.1 Definitions.: algebra/Modules/Definitions..md
+    - 3.2 Submodules, Quotient Modules and Isomorphism Theorems.: algebra/Modules/Submodules,
+        Quotient Modules and Isomorphism Theorems..md
+    - 3.3 Generating Modules, Torsions, Annihilators.: algebra/Modules/Generating
+        Modules, Torsions, Annihilators..md
+    - '3.4 Cartesian Products and Direct Sums. ': algebra/Modules/Cartesian Products
+        and Direct Sums. .md
+    - 3.5 Exact Sequences and the Hom Functor.: algebra/Modules/Exact Sequences and
+        the Hom Functor..md
+    - 3.6 Free $R$-modules.: algebra/Modules/Free $R$-modules..md
+- Associahedron: associahedron/index.md
+- Tikz-Python: https://ltrujello.github.io/Tikz-Python/
+- Poly-Rust: https://github.com/ltrujello/poly-rust
+site_name: Home
+theme:
+  features:
+  - content.code.copy
+  - navigation.expand
+  - navigation.tabs
+  name: material
+  palette:
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: mydarkscheme
+    toggle:
+      icon: material/brightness-4
+      name: Switch to light mode

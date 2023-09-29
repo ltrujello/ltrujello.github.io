@@ -1,0 +1,40 @@
+\begin{center}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
+        F(x) \arrow[r] \arrow[d, swap, "\phi_x"]
+        \arrow[dd, bend right = 60, swap, NavyBlue, near end, "F(\eta_{K(\gamma(x))})"]
+        &
+        F(y) \arrow[d, "\phi_y"]
+        \arrow[dd, bend left = 60, NavyBlue, near end, "F(\eta_{K(\gamma(y))})"]
+        \\
+        G(\Gamma(x)) \arrow[r]
+        \arrow[d, "\psi_{\Gamma(x)}"]
+        &
+        G(\Gamma(y))
+        \arrow[d, swap, "\psi_{\Gamma(y)}"]
+        \\
+        F(K(\Gamma(x)))
+        \arrow[r]
+        &  
+        F(K(\Gamma(y)))
+    \end{tikzcd}
+    \hspace{-2cm}
+    \begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
+        G(x) \arrow[r]
+        \arrow[d, swap, "\psi_x"]
+        \arrow[dd, bend right = 60, Red, swap, near start, "G(\eta_{\Gamma(K(x))})"]
+        &
+        G(y) \arrow[d, "\psi_y"]
+        \arrow[dd, bend left = 60, Red, near start, "G(\eta_{\Gamma(K(y))})"]
+        \\
+        F(K(x)) \arrow[r]
+        \arrow[d, swap, "\phi_{K(x)}"]
+        &
+        F(K(y))
+        \arrow[d, swap, "\phi_{K(y)}"]
+        \\
+        G(\Gamma(K(x)))
+        \arrow[r]
+        &
+        G(\Gamma(K(y)))
+    \end{tikzcd}
+\end{center}

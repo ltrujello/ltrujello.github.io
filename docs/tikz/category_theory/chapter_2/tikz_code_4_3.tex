@@ -1,0 +1,26 @@
+\begin{center}
+            \begin{tikzcd}[row sep = 1.4cm]
+                B \arrow[d, "f"]\\
+                B'
+            \end{tikzcd}
+            \hspace{1cm}
+            \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+                F' \circ F(B) 
+                \arrow[r, "F'\circ \eta(B)"] 
+                \arrow[d, swap, "F'\circ F(f)"]
+                &
+                F' \circ G(B) 
+                \arrow[r, "\eta' \circ G(B)"]
+                \arrow[d, "F'\circ G(f)"]
+                &
+                G' \circ G(B) 
+                \arrow[d, "G' \circ G(f)"]\\
+                F'\circ F(B')
+                \arrow[r,swap, "F' \circ \eta(B')"]
+                &
+                F' \circ G(B')
+                \arrow[r, swap, "\eta' \circ \eta(B')"]
+                &
+                G'\circ G(B')
+            \end{tikzcd}
+        \end{center}

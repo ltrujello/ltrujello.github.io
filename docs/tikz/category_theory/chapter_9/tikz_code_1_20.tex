@@ -1,0 +1,28 @@
+\begin{center}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 0.7cm]
+            S_2 \times (S_2 \times S_1)
+            \arrow[r]
+            \arrow[d]
+            &
+            {[A^2, A]\times \big([A^{2}, A], \times [A, A]\big)}
+            \arrow[d]
+            \\
+            S_3
+            \arrow[r]
+            &
+            \hom(A^3, A)
+        \end{tikzcd}
+        \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+            (e_2, e_2, e_1)
+            \arrow[r, maps to]
+            \arrow[d, maps to]
+            &
+            (\mu_2, \mu_2, \id_A)
+            \arrow[d, maps to]
+            \\
+            e_3
+            \arrow[r, maps to]
+            &
+            \mu_3 = \mu_2(\mu_2, \id_A)
+        \end{tikzcd}
+    \end{center}

@@ -1,0 +1,20 @@
+\begin{center}
+            \begin{tikzcd}[row sep = 1.4cm]
+                R \arrow[d, "f"]\\
+                C
+            \end{tikzcd}
+            \hspace{1cm}
+            \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+                \hom_{\cc}(R, R) 
+                \arrow[d, swap, "f \circ (-)"]
+                \arrow[r, "\eta_R"] & 
+                K(R) \arrow[d, "K(f)"]\\
+                \hom_{\cc}(R, C) \arrow[r, swap, "\eta_C"] & K(C)
+            \end{tikzcd}
+            \hspace{1cm}
+            \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+                1_A \arrow[d, mapsto]\arrow[r, mapsto] & \eta_R(1_R) =
+                u \arrow[d, mapsto]\\
+                f \arrow[r, mapsto] & \eta_C(f) = K(f)(u)
+            \end{tikzcd}
+        \end{center}
