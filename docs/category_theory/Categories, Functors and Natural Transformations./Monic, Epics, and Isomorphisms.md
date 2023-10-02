@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.10. Monic, Epics, and Isomorphisms
 In category theory the ultimate focus is placed on the morphisms within a category.
 What we really care about are the relationships between the objects.
@@ -66,32 +71,14 @@ g \circ f  = 1_A.
 \begin{minipage}{0.1\textwidth}
 \vspace{-2.2cm}
 
-\begin{tikzpicture}
-\filldraw[yellow!30, rounded corners]
-(-2.25,-1.5) rectangle (2.25,1.5);
-\node at (0,0){
-\begin{tikzcd}[row sep = 1.2cm, column sep = 1.4cm]
-C  \arrow[dr,swap, "f \circ g_1 = f \circ g_2"] \arrow[r, yshift=0.7ex, "g_1"] \arrow[r,
-yshift=-0.7ex,swap,  "g_2"]     
-&
-A \arrow[d, "f"]\\
-& B 
-\end{tikzcd} 
-};
-\end{tikzpicture}
+
+<img src="../../../png/category_theory/chapter_1/tikz_code_10_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \vspace{0.2cm}
 
-\begin{tikzpicture}
-\filldraw[yellow!30, rounded corners]
-(-2.25,-1.5) rectangle (2.25,1.5);
-\node at (0,0){
-\begin{tikzcd}[row sep = 1.2cm, column sep = 1.4cm]
-A \arrow[d, swap, "f"] \arrow[dr, "g_1 \circ f = g_2 \circ f"]\\
-B \arrow[r, yshift=0.7ex, "g_1"]
-\arrow[r,yshift=-0.7ex,swap,  "g_2"] & C
-\end{tikzcd}
-};
-\end{tikzpicture}
+
+<img src="../../../png/category_theory/chapter_1/tikz_code_10_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{minipage}
 \vspace{1cm}
 

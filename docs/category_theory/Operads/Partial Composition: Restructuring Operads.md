@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #9.3. Partial Composition: Restructuring Operads
 After one stares at the definition of an operad for quite some time, they 
 will realize that the vast and mysterious diagrams and indices are really just 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.2. Permutation Groups.
 One of the most important and well-known types of groups are the
 permutation groups, which we introduce formally as follows. 

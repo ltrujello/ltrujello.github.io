@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.10. Conjugation, The Class Equation, and Cauchy's Theorem.
 \textcolor{blue}{We now touch on a very deep example of a group action, known as
 conjugation.} Let $G$ act on itself "by conjugation", which we define

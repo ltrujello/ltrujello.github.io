@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #9.4. The Braid Groups Form a (nonsymmetric) Operad
 Recall that the $n$-th braid group $B_n$ is the collection 
 of all possible braidings of $n$-strands, forming a group under composition. 
@@ -305,7 +310,9 @@ end{example}
 This tool allows us to answer our second and third questions. For example, consider again 
 $\beta(3, 2, 1, 3)$ where $\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3$. 
 How do we calculate, 
-for example, the crossing \raisebox{-0.1cm}{$\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {5};\end{tikzpicture}$},
+for example, the crossing \raisebox{-0.1cm}{$
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$},
 of 3 blue lines over 1 black line, as in the picture below?
 
 \
@@ -606,13 +613,23 @@ Suppose we want to compute $\sigma_1(\alpha_1, \alpha_2)$ where $\sigma_1, \alph
 appear as below.
 \
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Then we get the braid diagram as in \raisebox{-0.1cm}{$\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {1};\end{tikzpicture}$}.
+Then we get the braid diagram as in \raisebox{-0.1cm}{$
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$}.
 \\begin{center}
 \includegraphics[scale = 0.1]{braids_cabled.jpg}
-\end{center}owever, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{$\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {2};\end{tikzpicture}$}, 
-then \raisebox{-0.1cm}{$\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {3};\end{tikzpicture}$}, 
-and then reaching a final stage of \raisebox{-0.1cm}{$\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {4};\end{tikzpicture}$}. 
-But note that \raisebox{-0.1cm}{$\begin{tikzpicture}\draw (0,0.2) circle(0.2cm) node {4};\end{tikzpicture}$}
+\end{center}owever, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{$
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$}, 
+then \raisebox{-0.1cm}{$
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_23.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$}, 
+and then reaching a final stage of \raisebox{-0.1cm}{$
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_24.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$}. 
+But note that \raisebox{-0.1cm}{$
+<img src="../../../png/category_theory/chapter_9/tikz_code_4_25.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$}
 may be expressed in either of the equivalent ways:
 \\
 

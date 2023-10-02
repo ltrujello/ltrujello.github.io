@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.8. Monoids, Groups and Groupoids in Categories
 
 One of the most simplest, useful and yet underrated concepts in mathematics 

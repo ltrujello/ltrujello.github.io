@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.4. Mac Lane's Coherence Theorem
 
 \subsection*{Step One: Category of Binary Words}

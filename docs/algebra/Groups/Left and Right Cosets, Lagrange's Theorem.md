@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.5. Left and Right Cosets, Lagrange's Theorem
 
 The result of the previous proof is a special case of a more general
@@ -126,14 +131,9 @@ cosets of $H$, namely the sets $Ha$.)
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}
-\node at (0,0) {Cosets};
-\draw[->] (0.3, 0.3) -- (2, 1.7);
-\node at (2, 2) {Equivalence Relations};
-\draw[->] (0.9, 0) -- (2.4, 0);
-\draw[->] (2.2, 1.7) -- (3.6, 0.3);
-\node at (4,0) {Properties of $G$};
-\end{tikzpicture}
+
+<img src="../../../png/algebra/chapter_1/tikz_code_5_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{figure}
 Once we understand cosets, we can understand a lot about a group,
 because they're really 
@@ -178,63 +178,9 @@ we listed. This is demonstrated in the figure below.
 
 \begin{figure}[h]
 \centering
-\begin{tikzpicture}
-\node at (-1,3.2) {$5\ZZ + 1$};
-\node at (-1,2.5) {$5\ZZ + 2$};
-\node at (-1,1.8) {$5\ZZ + 3$};
-\node at (-1,1) {$5\ZZ + 4$};
-\node at (-0.7,.3) {$5\ZZ$};
 
-\draw (0,0) rectangle (7.3,3.6);
-\node at (0.5, 3.2) {$\cdots$};
-\node at (1.4, 3.2) {$-14,$};
-\node at (2.3, 3.2) {$-9,$};
-\node at (3.2, 3.2) {$-4,$};
-\node at (4.1, 3.2) {$1,$};
-\node at (5.0, 3.2) {$6,$};
-\node at (5.9, 3.2) {$11,$};
-\node at (6.8, 3.2) {$\cdots$};
+<img src="../../../png/algebra/chapter_1/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-
-\node at (0.5, 2.5) {$\cdots$};
-\node at (1.4, 2.5) {$-13,$};
-\node at (2.3, 2.5) {$-8,$};
-\node at (3.2, 2.5) {$-3,$};
-\node at (4.1, 2.5) {$2,$};
-\node at (5.0, 2.5) {$7,$};
-\node at (5.9, 2.5) {$12,$};
-\node at (6.8, 2.5) {$\cdots$};
-
-
-\node at (0.5, 1.8) {$\cdots$};
-\node at (1.4, 1.8) {$-12,$};
-\node at (2.3, 1.8) {$-7,$};
-\node at (3.2, 1.8) {$-2,$};
-\node at (4.1, 1.8) {$3,$};
-\node at (5.0, 1.8) {$8,$};
-\node at (5.9, 1.8) {$13,$};
-\node at (6.8, 1.8) {$\cdots$};
-
-
-\node at (0.5, 1.0) {$\cdots$};
-\node at (1.4, 1.0) {$-11,$};
-\node at (2.3, 1.0) {$-6,$};
-\node at (3.2, 1.0) {$-1,$};
-\node at (4.1, 1.0) {$4,$};
-\node at (5.0, 1.0) {$9,$};
-\node at (5.9, 1.0) {$14,$};
-\node at (6.8, 1.0) {$\cdots$};
-
-
-\node at (0.5, .3) {$\cdots$};
-\node at (1.4, .3) {$-10,$};
-\node at (2.3, .3) {$-5,$};
-\node at (3.2, .3) {$0,$};
-\node at (4.1, .3) {$5,$};
-\node at (5.0, .3) {$10,$};
-\node at (5.9, .3) {$15,$};
-\node at (6.8, .3) {$\cdots$};
-\end{tikzpicture}
 \end{figure}
 
 Note that in this figure we can identify every integer in $\ZZ$.

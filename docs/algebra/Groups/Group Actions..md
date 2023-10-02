@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.9. Group Actions.
 As we shall see, a group action is a special type of mapping one can
 formulate involving a group $G$ and an arbitrary set of objects $X$.
@@ -87,35 +92,9 @@ gives an illustration how this plays out for one particular
 $g \in G$ acting on a set $X$ with five elements.
 \end{minipage}\hfill
 \begin{minipage}{0.2\textwidth}
-\begin{tikzpicture}
-\draw (-0.8,0.5)--(1.8,0.5);
-\draw[->] (0,0) -- (1,0);
-\draw[->] (0,-1) -- (1,-1);
-\draw[->] (0,-2) -- (1,-2);
-\draw[->] (0,-3) -- (1,-3);
-\draw[->] (0,-4) -- (1,-4);
 
-\node at (-0.4, .8) {$X$};
-\node at (-0.4, 0) {$x_1$};
-\node at (-0.4, -1) {$x_2$};
-\node at (-0.4, -2) {$x_3$};
-\node at (-0.4, -3) {$x_4$};
-\node at (-0.4, -4) {$x_5$};
+<img src="../../../png/algebra/chapter_1/tikz_code_9_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-\node at (0.5, 0.2) {$\sigma_g$};
-\node at (0.5, -0.8) {$\sigma_g$};
-\node at (0.5, -1.8) {$\sigma_g$};
-\node at (0.5, -2.8) {$\sigma_g$};
-\node at (0.5, -3.8) {$\sigma_g$};
-
-\node at (1.4, 0.8){$X$};
-\node at (1.4, 0) {$x_2$};
-\node at (1.4, -1) {$x_3$};
-\node at (1.4, -2) {$x_5$};
-\node at (1.4, -3) {$x_1$};
-\node at (1.4, -4) {$x_4$};
-
-\end{tikzpicture}
 
 \end{minipage} 
 \vspace{.5cm}

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.4. Cartesian Products and Direct Sums. 
 
 In group and ring theories, we can make sense of the idea of a

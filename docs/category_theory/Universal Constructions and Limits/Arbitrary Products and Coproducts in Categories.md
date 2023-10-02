@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.5. Arbitrary Products and Coproducts in Categories
 
 In this section, we perform a construction that allows us to have finite products and coproducts 
@@ -10,22 +15,9 @@ We will often visualize $\mathcal{D}_n$ as below.
 
 
 \begin{align}
-\begin{tikzpicture}
-\filldraw[yellow!30, rounded corners] (-4.3, -0.7) rectangle (4.3,0.7);
-\node at (0,0){
-\begin{tikzcd}[ampersand replacement= \&]
-\bullet_1 \arrow[out=120,in=60,looseness=3,loop]
-\&
-\bullet_2 \arrow[out=120,in=60,looseness=3,loop]
-\&
-\bullet_3 \arrow[out=120,in=60,looseness=3,loop]
-\&
-\cdots 
-\& 
-\bullet_n \arrow[scale = 1, out=123,in=57,looseness = 3, loop]
-\end{tikzcd}
-};
-\end{tikzpicture}
+
+<img src="../../../png/category_theory/chapter_3/tikz_code_5_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{align}
 
 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.5. Paths and Diagrams in Categories
 In this section we give an overview of the concept of a *path* and 
 of a *diagram* within a category, which are concepts that are exactly 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.7. Monoids, Groups, in Symmetric Monoidal Categories
 Recall from section ? that we were able to construct monoid and groups which 
 were internal to some category $\cc$. The philosophy behind the construction 

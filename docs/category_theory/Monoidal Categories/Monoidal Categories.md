@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.1. Monoidal Categories
 
 The concept of a monoidal category is motivated by the very simple observation that 

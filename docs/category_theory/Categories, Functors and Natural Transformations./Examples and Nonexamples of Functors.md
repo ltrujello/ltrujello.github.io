@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.7. Examples and Nonexamples of Functors
 Functors were not defined out of arbitrary interest. The definition of a functor 
 was motivated by constructions that were seen in mathematics

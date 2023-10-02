@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.5. Slice and Comma Categories.
 In this section we introduce comma categories, which serve as 
 a very useful categorical construction. The reason why it is so useful is 

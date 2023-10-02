@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.6. Graphs, Quivers and Free Categories
 In studying category it is often helpful to imagine the objects
 and morphisms in action as vertices and edges corresponding to a

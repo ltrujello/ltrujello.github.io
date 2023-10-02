@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.4. Isomorphism Theorems.
 With the concept of a quotient ring defined, we can formulate
 analagous Isomorphism Theorems as we had in group theory. As

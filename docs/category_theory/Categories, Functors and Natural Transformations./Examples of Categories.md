@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.4. Examples of Categories
 
 Now that we have some idea of basic categories and a few examples in mind on 

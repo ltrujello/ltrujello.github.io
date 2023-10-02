@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #4.4. Adjoints on Preorders.
 
 Interesting things happen when one applies adjoint concepts to

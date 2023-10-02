@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.2. Ring homomorphisms.
 After one understand the fundamentals of group theory, they go
 on to construct maps between different groups. This is the

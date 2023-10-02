@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.5. Principal, Maximal and Prime Ideals.
 We'll now move more deeper into ring theory. The results
 prior were already things we've been familiar with, since they

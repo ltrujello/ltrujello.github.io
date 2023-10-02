@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #8.2. Additive Categories
 
 Let $G$ and $H$ be abelian groups in **Ab**. A natural question to ask in any 

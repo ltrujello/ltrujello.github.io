@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #11.1. Persistence modules on $\rr$.
 
 <span style="display:block" class="definition">

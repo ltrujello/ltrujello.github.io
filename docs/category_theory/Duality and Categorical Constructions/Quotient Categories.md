@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.7. Quotient Categories
 The quotient category is a concept that generalizes the ideas of
 forming quotient groups, rings, modules, and even topological

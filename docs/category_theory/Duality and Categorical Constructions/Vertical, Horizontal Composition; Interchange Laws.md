@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.4. Vertical, Horizontal Composition; Interchange Laws
 In the previous section, we considered the idea of forming a
 composition of natural transformations, and we verified that this

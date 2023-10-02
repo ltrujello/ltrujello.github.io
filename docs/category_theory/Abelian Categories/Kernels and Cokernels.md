@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #8.4. Kernels and Cokernels
 At this point we've discussed preadditive, additive, and preabelian categories, where 
 preabelian categories are just additive categories with the additional hypothesis 

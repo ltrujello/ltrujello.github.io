@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.2. Representable Functors and Yoneda's Lemma
 This is probably the most important section out of these entire set 
 of notes. The propositions proved here will allows us to perform slick 

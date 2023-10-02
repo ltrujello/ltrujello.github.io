@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #6.1. Filtered Categories and Limits
 
 Outside of category theory, the most common types of limits that are taken 

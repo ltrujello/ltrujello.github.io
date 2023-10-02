@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #5.1. Every Limit in Set; Creation of Limits
 
 While we have been discussing limits and colimits of functors, we generally 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.4. Cyclic Groups.
 Cyclics groups are a special type of group that are easy to
 recognize as group structures. In a cyclic group, one can always

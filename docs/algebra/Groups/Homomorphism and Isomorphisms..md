@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.3. Homomorphism and Isomorphisms.
 
 {\color{BlueViolet}As with all mathematical objects, now that we have a well defined

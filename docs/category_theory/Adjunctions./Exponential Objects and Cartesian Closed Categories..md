@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #4.5. Exponential Objects and Cartesian Closed Categories.
 Before we introduce the notion of cartesian closed category, we 
 begin with a preliminary proposition. 

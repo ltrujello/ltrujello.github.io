@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.2. Products of Categories, Functors
 As one may expect, the product of categories can be easily
 defined.
@@ -346,11 +351,9 @@ diagram in the bottom right.
 \end{minipage}  
 \hspace{1cm}
 \begin{minipage}{0.1\textwidth}
-\begin{tikzpicture}
-\draw[white] (0,0) -- (1,0);
-\draw[thick, Green, ->] (0,-2) -- (2,0);
-\draw[thick, Orange, ->] (2.6,-2) to [bend right = 80] (2.6,-4);
-\end{tikzpicture}
+
+<img src="../../../png/category_theory/chapter_2/tikz_code_2_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 \end{minipage}
 \hfill

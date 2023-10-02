@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.11. Sylow Theorems.
 Lagrange's Theorem states that $H \le G$, then $|H|$ divides
 $|G|$. However, you may wonder if there is some kind of converse.

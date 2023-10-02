@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #5.2. Inverse and Direct Limits.
 In the previous example, we calculated the limit of the diagram
 indexed by $\omega\op$. It turns out that in general, we can construct 

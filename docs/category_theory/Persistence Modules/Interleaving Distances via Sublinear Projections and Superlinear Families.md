@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #11.3. Interleaving Distances via Sublinear Projections and Superlinear Families
 
 <span style="display:block" class="definition">

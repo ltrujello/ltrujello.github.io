@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.6. Free $R$-modules.
 Free modules are the type of modules that you are probably
 already familiar with. Basically, they're modules who have some

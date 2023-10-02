@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.12. Fundamental Theorem of Finite Abelian Groups.
 
 Due to Sylow's Theorem, it is now an easy task to classify groups

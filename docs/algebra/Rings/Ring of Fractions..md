@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.6. Ring of Fractions.
 As rings were modeled based on the behavior of the integers,
 we can hypothesize that it is possible to generalize the

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #5.5. Adjoints on Limits
 
 Consider the free monoid functor $F$ and the 

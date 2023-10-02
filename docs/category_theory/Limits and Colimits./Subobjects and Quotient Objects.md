@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #5.7. Subobjects and Quotient Objects
 The entire point of category theory, contrary to its name, is to unify 
 mathematics. Mathematicians saw the same stories over and over again in algebra 

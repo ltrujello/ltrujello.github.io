@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.7. PIDs and Euclidean Domains.
 
 Rings were invented in order to generalize mathematical domains which

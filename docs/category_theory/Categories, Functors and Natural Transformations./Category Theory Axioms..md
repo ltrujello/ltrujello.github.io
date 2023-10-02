@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.3. Category Theory Axioms.
 
 Now we have an understanding of the fact that (1) there is no

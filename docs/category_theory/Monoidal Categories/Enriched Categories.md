@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.8. Enriched Categories
 
 When we originally defined categories, we sought a degree of large generality 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.8. Isomorphism Theorems
 With our knowledge of homomorphisms, normality and quotient
 groups, we are now able to develop four important theorems, known
@@ -402,31 +407,9 @@ of $G$ and they contain $N$, then
 \begin{minipage}{0.4\textwidth}
 
 
-\begin{tikzpicture}
-\draw[->] (0,0) -- (2, 0);
-\draw[->] (0,-1) -- (2, -1);
-\draw[->] (0,-2) -- (2, -2);
 
-\node at (-0.4, 0) {$H_1$};
-\node at (-0.4, -1) {$H_2$};
-\node at (-0.4, -2) {$H_3$};
+<img src="../../../png/algebra/chapter_1/tikz_code_8_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-\node at (3.4, 0) {$M_1 \le G/N$};
-\node at (3.4, -1) {$M_2 \le G/N$};
-\node at (3.4, -2) {$M_3 \le G/N$};
-
-\node at (-1.2, 0) {$G \ge $};
-\node at (-1.2, -1) {$G \ge $};
-\node at (-1.2, -2) {$G \ge $};
-
-\node at (1, -2.4) {$\vdots$};
-
-\node at (-0.4, -3) {$H_n$};
-\node at (3.4, -3) {$M_n \le G/N$};
-\node at (-1.2, -3) {$G \ge $};
-\draw[->] (0,-3) -- (2, -3);
-
-\end{tikzpicture}
 
 \end{minipage}\hfill
 \begin{minipage}{0.55\textwidth}

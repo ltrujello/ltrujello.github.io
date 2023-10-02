@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #4.1. Introduction to Adjunctions.
 As promised, we now build upon the work we did with universal morphisms to 
 define the concept of an adjunction. Adjunctions are special cases of universal morphisms 

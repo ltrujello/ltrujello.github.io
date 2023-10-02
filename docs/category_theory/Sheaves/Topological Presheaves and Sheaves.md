@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #10.1. Topological Presheaves and Sheaves
 
 Let $X$ be a topological space. Denote the set of open subsets of $X$

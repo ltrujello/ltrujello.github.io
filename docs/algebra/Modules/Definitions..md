@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.1. Definitions.
 
 In group theory, we started with a set $G$ equipped with a bilinear

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.5. Exact Sequences and the Hom Functor.
 
 This section will be the first encounter with the extremely

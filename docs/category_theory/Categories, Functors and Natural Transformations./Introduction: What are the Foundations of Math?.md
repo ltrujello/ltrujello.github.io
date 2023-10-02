@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.1. Introduction: What are the Foundations of Math?
 
 Category theory attempts to "zoom out" of mathematical constructions

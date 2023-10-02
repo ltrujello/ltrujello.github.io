@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #11.4. General Persistence Diagrams
 
 Persistence diagrams (and barcodes) give a visual representation of 

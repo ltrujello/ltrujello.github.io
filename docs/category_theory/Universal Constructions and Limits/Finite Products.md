@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.3. Finite Products
 In this section we will discuss products in categories, which will be 
 our first  encounter with  the 

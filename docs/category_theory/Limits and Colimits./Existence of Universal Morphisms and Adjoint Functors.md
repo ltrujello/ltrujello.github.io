@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #5.6. Existence of Universal Morphisms and Adjoint Functors
 When we introduced functors, we introduced several if and only 
 if propositions which gave us criterion on the existence of an adjoint 

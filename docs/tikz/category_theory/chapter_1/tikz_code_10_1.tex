@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+            \filldraw[yellow!30, rounded corners]
+            (-2.25,-1.5) rectangle (2.25,1.5);
+            \node at (0,0){
+                \begin{tikzcd}[row sep = 1.2cm, column sep = 1.4cm]
+                    A \arrow[d, swap, "f"] \arrow[dr, "g_1 \circ f = g_2 \circ f"]\\
+                    B \arrow[r, yshift=0.7ex, "g_1"]
+                    \arrow[r,yshift=-0.7ex,swap,  "g_2"] & C
+                \end{tikzcd}
+            };
+        \end{tikzpicture}

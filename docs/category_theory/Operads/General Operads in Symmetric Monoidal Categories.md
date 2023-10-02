@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #9.2. General Operads in Symmetric Monoidal Categories
 
 Every time we find ourselves working in **Set**, we should feel a great 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.8. Forgetful, Full and Faithful Functors.
 
 Like functions, functors can be composed to form new functors.

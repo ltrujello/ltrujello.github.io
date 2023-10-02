@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.4. Finite Coproducts
 
 We now move onto the concept of coproducts in categories. We will see that this concept 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #4.3. Equivalence of Categories
 In an ideal world, if we have a category of which we are
 interested in, our goal would be to find an isomorphism between it

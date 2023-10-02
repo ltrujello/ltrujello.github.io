@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.2. Monoidal Functors
 \begin{definition}
 Let $(\cc, \otimes, I)$ and $(\dd, \odot, J)$ be monoidal categories. 

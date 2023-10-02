@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.11. Initial, Terminal, and Zero Objects
 We can also be more specific in discussing the nature of the
 objects of a given category $\cc$.

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.8. Pullbacks and Pushouts
 \section*{Pullbacks.}
 

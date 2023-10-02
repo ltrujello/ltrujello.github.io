@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #5.3. Limits from Products, Equalizers, and Pullbacks.
 In our construction of limits for **Sets**, we basically forced 
 the existence of a cone, because we could. This is usually the general strategy 

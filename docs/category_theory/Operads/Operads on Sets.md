@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #9.1. Operads on Sets
 
 Let $Y, Z$ be sets. Consider a function $g: Y \to Z$. The way we've been 

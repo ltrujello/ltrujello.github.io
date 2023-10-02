@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #8.3. Preabelian Categories
 In **Ab**, kernels and cokernels exists for every group homomorphism.
 \\

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.3. Generating Modules, Torsions, Annihilators.
 The concepts we have introduced so far are not new. In fact, this
 is the third time you've probably seen all of these concepts.

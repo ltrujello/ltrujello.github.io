@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.6. Introduction to Limits and Colimits
 In our previous work, we learned a lot about universal morphisms and 
 then studied the basics of how products and coproducts behave in categories. 

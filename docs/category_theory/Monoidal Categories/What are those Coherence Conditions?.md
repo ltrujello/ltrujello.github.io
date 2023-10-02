@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.3. What are those Coherence Conditions?
 We are now going to address the elephant in the room: we have not explained why 
 we have included diagrams \ref{triangle_diag_1} and \ref{pentagonal_diag} in our definition. 

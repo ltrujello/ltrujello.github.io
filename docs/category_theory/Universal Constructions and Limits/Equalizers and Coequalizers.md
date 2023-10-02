@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #3.7. Equalizers and Coequalizers
 We introduce equalizers and coequalizers as
 further examples of limits, and therefore examples of universal 

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #10.3. Stalks and Germs
 Let $(I, \le)$ be a partially ordered set, and suppose we have a functor 
 $F: I \to **Set**$. With this functor, denote $F(i) = A_i$ and 

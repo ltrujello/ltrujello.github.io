@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.3. Functor Categories
 In the proof for the last proposition, we used a trick of forming
 a desired natural transformation by composing two composable

@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.7. Quotient Groups.
 The work done in the previous section on Normal subgroups now
 leads to the formulation of the **Quotient Group**. Up to

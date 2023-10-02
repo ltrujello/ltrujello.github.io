@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.3. Ideals and Quotient Rings.
 
 Consider a ring

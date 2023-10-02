@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #2.1. $\mathcal{C
 op$ and Contravariance}
 

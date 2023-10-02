@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #1.2. Motivation for Category Theory
 What do groups $G$, topological spaces $X$ and vector spaces $V$ have 
 in common?

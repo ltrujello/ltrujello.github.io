@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #7.6. Coherence for Braided Monoidal Categories
 We saw with monoidal categories that ultimately everything we were saying *made sense*. 
 That is, we saw that our definition does not give us an contradictions, and that we 

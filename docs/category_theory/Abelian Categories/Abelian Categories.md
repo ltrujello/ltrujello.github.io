@@ -1,3 +1,8 @@
+<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
 #8.5. Abelian Categories
 
 Let $\cc$ be a preabelian category, and consider an arbitrary morphism 
