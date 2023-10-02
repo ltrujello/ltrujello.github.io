@@ -4,8 +4,16 @@ extra_javascript:
 - https://polyfill.io/v3/polyfill.min.js?features=es6
 - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 markdown_extensions:
-- pymdownx.arithmatex:
-    generic: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
 nav:
 - Home: index.md
 - Category Theory:
@@ -177,6 +185,11 @@ nav:
 - Associahedron: associahedron/index.md
 - Tikz-Python: https://ltrujello.github.io/Tikz-Python/
 - Poly-Rust: https://github.com/ltrujello/poly-rust
+plugins:
+- blog:
+    archive: false
+    blog_dir: .
+    post_dir: posts
 site_name: Home
 theme:
   features:

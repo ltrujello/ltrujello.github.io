@@ -19,6 +19,20 @@
     /* --md-typeset-a-color */
 }
 
+.md-grid {
+    margin-left: 0;
+    max-width: 200em;
+}
+
+.md-content {
+    flex-grow: 1;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100em;
+
+}
+
 [data-md-color-scheme="mylightscheme"] {
   --md-primary-fg-color:        #EE0F0F;
   --md-primary-fg-color--light: #ECB7B7;
