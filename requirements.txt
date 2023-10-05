@@ -8,8 +8,6 @@ ghp-import==2.1.0
 idna==3.4
 iniconfig==2.0.0
 Jinja2==3.1.2
-# Editable Git install with no remote (latex-to-markdown==0.0.1)
--e /Users/luke/website
 Markdown==3.4.4
 MarkupSafe==2.1.3
 mergedeep==1.3.4
