@@ -1,0 +1,3249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../01/31/des/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>IBM Model 1: Statistical Machine Translation and Alignment - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ibm-model-1-statistical-machine-translation-and-alignment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IBM Model 1: Statistical Machine Translation and Alignment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="mydarkscheme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../category_theory/" class="md-tabs__link">
+          
+  
+  Category Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algebra/" class="md-tabs__link">
+          
+  
+  Algebra Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../associahedron/" class="md-tabs__link">
+        
+  
+    
+  
+  Associahedron
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-tabs__link">
+        
+  
+    
+  
+  Tikz-Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-tabs__link">
+        
+  
+    
+  
+  Poly-Rust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Category Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Category Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories, Functors and Natural Transformations.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories, Functors and Natural Transformations.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Introduction%3A%20What%20are%20the%20Foundations%20of%20Math%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introduction: What are the Foundations of Math?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Motivation%20for%20Category%20Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Motivation for Category Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Category%20Theory%20Axioms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Category Theory Axioms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Examples of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Paths%20and%20Diagrams%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Paths and Diagrams in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20and%20Nonexamples%20of%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Examples and Nonexamples of Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Forgetful%2C%20Full%20and%20Faithful%20Functors./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Forgetful, Full and Faithful Functors.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Natural%20Transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Natural Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Monic%2C%20Epics%2C%20and%20Isomorphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Monic, Epics, and Isomorphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Initial%2C%20Terminal%2C%20and%20Zero%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Initial, Terminal, and Zero Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Duality and Categorical Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Duality and Categorical Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/%24%5Cmathcal%7BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 $\mathcal{C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Products%20of%20Categories%2C%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Products of Categories, Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Functor%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Functor Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Vertical%2C%20Horizontal%20Composition%3B%20Interchange%20Laws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Vertical, Horizontal Composition; Interchange Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Slice%20and%20Comma%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Slice and Comma Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Graphs%2C%20Quivers%20and%20Free%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Graphs, Quivers and Free Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Quotient%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Quotient Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Monoids%2C%20Groups%20and%20Groupoids%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Monoids, Groups and Groupoids in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Universal Constructions and Limits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Universal Constructions and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Universal%20Morphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Universal Morphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Representable%20Functors%20and%20Yoneda%27s%20Lemma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Representable Functors and Yoneda's Lemma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Finite Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Coproducts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Finite Coproducts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Arbitrary%20Products%20and%20Coproducts%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Arbitrary Products and Coproducts in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Introduction%20to%20Limits%20and%20Colimits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introduction to Limits and Colimits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Equalizers%20and%20Coequalizers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Equalizers and Coequalizers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Pullbacks%20and%20Pushouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Pullbacks and Pushouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adjunctions.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adjunctions.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Introduction%20to%20Adjunctions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introduction to Adjunctions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Reflective%20Subcategories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Reflective Subcategories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Equivalence%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Equivalence of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Adjoints%20on%20Preorders./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Adjoints on Preorders.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Exponential%20Objects%20and%20Cartesian%20Closed%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Exponential Objects and Cartesian Closed Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Limits and Colimits.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Limits and Colimits.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Every%20Limit%20in%20Set%3B%20Creation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Every Limit in Set; Creation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Inverse%20and%20Direct%20Limits./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Inverse and Direct Limits.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Limits%20from%20Products%2C%20Equalizers%2C%20and%20Pullbacks./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Limits from Products, Equalizers, and Pullbacks.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Preservation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Preservation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Adjoints%20on%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 Adjoints on Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Existence%20of%20Universal%20Morphisms%20and%20Adjoint%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 Existence of Universal Morphisms and Adjoint Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Subobjects%20and%20Quotient%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Subobjects and Quotient Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtered Colimits, Coends, and Kan Extensions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Filtered Colimits, Coends, and Kan Extensions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Filtered%20Colimits%2C%20Coends%2C%20and%20Kan%20Extensions/Filtered%20Categories%20and%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Filtered Categories and Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monoidal Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Monoidal Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoidal%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Monoidal Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/What%20are%20those%20Coherence%20Conditions%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 What are those Coherence Conditions?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Mac%20Lane%27s%20Coherence%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Mac Lane's Coherence Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Braided%20and%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Braided and Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Coherence%20for%20Braided%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Coherence for Braided Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoids%2C%20Groups%2C%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Monoids, Groups, in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Enriched%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.8 Enriched Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Abelian Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Abelian Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Preadditive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Preadditive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Additive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Additive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Preabelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Preabelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Kernels%20and%20Cokernels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Kernels and Cokernels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Abelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Abelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operads
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Operads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/Operads%20on%20Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Operads on Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/General%20Operads%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 General Operads in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/Partial%20Composition%3A%20Restructuring%20Operads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Partial Composition: Restructuring Operads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/The%20Braid%20Groups%20Form%20a%20%28nonsymmetric%29%20Operad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 The Braid Groups Form a (nonsymmetric) Operad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sheaves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Sheaves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Topological%20Presheaves%20and%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Topological Presheaves and Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Abstracting%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Abstracting Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Stalks%20and%20Germs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Stalks and Germs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Persistence Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Persistence Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Persistence%20modules%20on%20%24%5Crr%24./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Persistence modules on $\rr$.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Generalized%20Persistence%20Modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Generalized Persistence Modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Interleaving%20Distances%20via%20Sublinear%20Projections%20and%20Superlinear%20Families/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Interleaving Distances via Sublinear Projections and Superlinear Families
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/General%20Persistence%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 General Persistence Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Permutation%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Permutation Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Homomorphism%20and%20Isomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Homomorphism and Isomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Cyclic%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Cyclic Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Left%20and%20Right%20Cosets%2C%20Lagrange%27s%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Left and Right Cosets, Lagrange's Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Normal%20subgroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Normal subgroups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Quotient%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Quotient Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Isomorphism%20Theorems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Isomorphism Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Group%20Actions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Group Actions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Conjugation%2C%20The%20Class%20Equation%2C%20and%20Cauchy%27s%20Theorem./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Conjugation, The Class Equation, and Cauchy's Theorem.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Sylow%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Sylow Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Fundamental%20Theorem%20of%20Finite%20Abelian%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.12 Fundamental Theorem of Finite Abelian Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ring%20homomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Ring homomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ideals%20and%20Quotient%20Rings./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Ideals and Quotient Rings.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Principal%2C%20Maximal%20and%20Prime%20Ideals./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Principal, Maximal and Prime Ideals.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ring%20of%20Fractions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Ring of Fractions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/PIDs%20and%20Euclidean%20Domains./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 PIDs and Euclidean Domains.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Polynomial%20Rings%20%28for%20Galois%20Theory%29./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Polynomial Rings (for Galois Theory).
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Submodules%2C%20Quotient%20Modules%20and%20Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Submodules, Quotient Modules and Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Generating%20Modules%2C%20Torsions%2C%20Annihilators./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Generating Modules, Torsions, Annihilators.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Cartesian%20Products%20and%20Direct%20Sums.%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Cartesian Products and Direct Sums. 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Exact%20Sequences%20and%20the%20Hom%20Functor./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Exact Sequences and the Hom Functor.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Free%20%24R%24-modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Free $R$-modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../associahedron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associahedron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tikz-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poly-Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#notation" class="md-nav__link">
+    Notation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-of-machine-translation" class="md-nav__link">
+    Goal of Machine Translation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#word-alignment" class="md-nav__link">
+    Word Alignment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ibm-model-1" class="md-nav__link">
+    IBM Model 1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chicken-and-egg-problem-expectation-maximization" class="md-nav__link">
+    Chicken and Egg problem: Expectation Maximization
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../.." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-10-03 00:00:00" class="md-ellipsis">October 3, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              7 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="ibm-model-1-statistical-machine-translation-and-alignment">IBM Model 1: Statistical Machine Translation and Alignment</h1>
+<p>In the area of statistical machine translation, the IBM models were a series of models proposed by IBM in the 1990s to perform (1) machine translation
+and (2) word alignment
+from one source language into another. While these models are now superseded by more modern neural translation models, the ideas and 
+algorithms introduced by these models were later utilized in other statistical machine translation models and they're of historical importance. 
+Here, we'll discuss the probability theory behind the first model, IBM Model 1, and implement the model in Python.</p>
+<!-- more -->
+
+<p>The problem that IBM Model 1 attempted to solve can be stated as follows: Suppose we are given a large corpus of pairs of French and English sentences that 
+are translations of each other. Given an French sentence, how can we translate the French sentence into English, and how do we align the words in the pair of translated sentences?</p>
+<p>Of course, the actual languages (French, English) are not fixed; ideally we'd like to be able to translate arbitrarily between languages, but of course in 
+practice some languages can be translated more easily into others.</p>
+<h2 id="notation">Notation</h2>
+<p>Let us establish some notation. We'll denote English sentences with a boldface symbol <span class="arithmatex">\(\mathbf{e}\)</span>, and we'll 
+denote English words appearing in a sentence as <span class="arithmatex">\(e_1, \dots, e_n\)</span>. 
+Similarly, we'll denote French sentences as <span class="arithmatex">\(\mathbf{f}\)</span> with French words <span class="arithmatex">\(f_1, f_2, \dots, f_n\)</span>. </p>
+<h2 id="goal-of-machine-translation">Goal of Machine Translation</h2>
+<p>Ultimately, what we seek is some kind of conditional probabilistic model that can tell us how likely an English sentence is <em>given</em> some French sentence.</p>
+<div class="arithmatex">\[
+    p(\mathbf{e} | \mathbf{f}) = p(e_1, \dots, e_n | f_1, \dots, f_m)
+\]</div>
+<p>If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model. This 
+would lead to our proposed English translation of a given French sentence. </p>
+<p>Defining this model is a very hard. Suppose for a moment we switch to Spanish (because I know Spanish better than French). 
+Suppose we have the Spanish sentence "Tienes hambre? Vamos a comer." 
+The following are possible translations of the sentence into English.</p>
+<ul>
+<li>Are you hungry? Let's go get something to eat.</li>
+<li>Are you hungry? Let's go eat some food. </li>
+<li>Are you hungry? Let's go eat.</li>
+</ul>
+<p>Even from this simple example, we can immediately see that this is going to be a very hard problem to solve.</p>
+<ul>
+<li>The number of words in each possible valid translation can vary, and it is usually not equal to the number of words in the original foreign sentence.</li>
+<li>Some English words don't correspond to anything in the source language, and vice versa. For example, the word 
+"Are" in "Are you hungry" does not align to any Spanish word in "Tienes hambre?". It's technically just "You hungry?" in English but of course that would not be a 
+good translation. This is a problem because if you are a machine translating Spanish, how are you supposed to know you need to generate the word "Are" if that English word 
+doesn't even correspond to anything in the sentence you're trying to translate?</li>
+<li>We can't really translate one-word-at-a-time; context matters. For example, "Tienes hambre" means "Are you hungry?" but that does not 
+mean that "Tienes tarea?" means "Are you homework?"</li>
+<li>Sometimes, languages have conflicting rules. For example "la linea azul" translates to "The blue line", because in Spanish usually the adjective is used 
+after the subject, whereas in English it is before. If you're a machine translating this sentence, you might know "azul" means "blue", but how are you supposed to know to 
+put "blue" before the subject whereas before, "azul" came after the subject in Spanish? </li>
+</ul>
+<p>Solving this problem in general is extremely difficult. While languages do have structure and coherence, the rules change depending on context like emotion, intention, etc., and they are very far from being well defined in the same way that programming languages are 100% capable of being defined with an explicit grammar, which we can then plug into a parser generator like Lex and Yacc to generate programming language parsers.</p>
+<p>IBM Model 1 was created in an attempt to address machine translation, but it turns out that it's actually not a great
+translation model. It is, however, pretty good at perform lexical translation, and pretty good at aligning words 
+between pairs of translated sentences. </p>
+<h2 id="word-alignment">Word Alignment</h2>
+<p>For IBM Model 1, they introduced the concept of a word alignment between translated sentences to make the desired conditional probabilistic model less complex. Suppose <span class="arithmatex">\(\mathbf{e} = (e_1, \dots, e_n)\)</span> is a translation of <span class="arithmatex">\(\mathbf{f} = (f_1, \dots, f_m)\)</span>. Then an <strong>alignment</strong> of 
+<span class="arithmatex">\(\mathbf{e}\)</span> to <span class="arithmatex">\(\mathbf{f}\)</span> is a sequence of <span class="arithmatex">\(n\)</span> values <span class="arithmatex">\(a_1, \dots, a_n\)</span> such that 
+<span class="arithmatex">\(a_i \in \{0, 1, \dots, m\}\)</span>, with the interpretation that 
+the word <span class="arithmatex">\(f_{a_i}\)</span> is a translation of the English word <span class="arithmatex">\(e_{i}\)</span>. </p>
+<p>Thus, each word <span class="arithmatex">\(e_i\)</span> has an alignment value <span class="arithmatex">\(a_i\)</span>, whose duty is essentially 
+to point the French word <span class="arithmatex">\(f_{a_i}\)</span> that it best corresponds to.</p>
+<p>However, it's sometimes the case that a given English word <span class="arithmatex">\(e_i\)</span> doesn't correspond to any word in the original translation. 
+In this case, we assign <span class="arithmatex">\(a_i = 0\)</span>. We saw this earlier; the "Are" in "Are you hungry" translation does not correspond to any spanish word in the sentence "Tienes hambre?"</p>
+<h2 id="ibm-model-1">IBM Model 1</h2>
+<p>Now that we have defined what an alignment is between a pair of translated sentences, we can go ahead and offer the definition 
+of IBM Model 1. For this model, it is not that ambitious because it actually takes into account word alignment, which is extra information that we usually don't have.
+However, making this assumption allows us to achieve a closed-form model which we can directly work with.</p>
+<p>Let <span class="arithmatex">\(\mathbf{e} = (e_1, \dots, e_n)\)</span> be an English sentence, <span class="arithmatex">\(\mathbf{f} = (f_1, \dots, f_m)\)</span> a French sentence, and let <span class="arithmatex">\(a_1, \dots, a_n\)</span> be an alignment 
+from <span class="arithmatex">\(\mathbf{e}\)</span> to <span class="arithmatex">\(\mathbf{f}\)</span>. Then </p>
+<div class="arithmatex">\[
+   p(\mathbf{e}, a_1, \dots, a_m | \mathbf{f}) 
+   = 
+   p(n | m) \cdot \prod_{i = 1}^{n} p(a_i | m) \cdot t(e_i | f_{a_i}) 
+\]</div>
+<p>We explain the factors in the above expression.</p>
+<ul>
+<li><span class="arithmatex">\(p(n | m)\)</span> is the probability that the translated sentence has length <span class="arithmatex">\(n\)</span> given the input had length <span class="arithmatex">\(m\)</span>. For IBM model one, this is uniformly picked. If <span class="arithmatex">\(N\)</span> is the maximum 
+length possible for an English sentence, then <span class="arithmatex">\(p(n | m) = 1/N\)</span>.</li>
+<li><span class="arithmatex">\(p(a_i |m)\)</span> is the probability that <span class="arithmatex">\(e_i\)</span> aligns to <span class="arithmatex">\(f_{a_i}\)</span>  given the length of the original sentence <span class="arithmatex">\(m\)</span>. Note that this is <strong>not</strong> the same thing as the probability that <span class="arithmatex">\(e_{i}\)</span> translates the word <span class="arithmatex">\(f_{a_i}\)</span>; that's different. 
+For IBM model 1, this is also uniform and is equal to <span class="arithmatex">\(1/(m + 1)\)</span> (plus one because of the null word).</li>
+<li><span class="arithmatex">\(t(e_i | f_{a_i})\)</span> is the probability that <span class="arithmatex">\(e_i\)</span> is translated, or is <em>explained</em>, by the word <span class="arithmatex">\(f_{a_i}\)</span>. </li>
+</ul>
+<p>This leads to the definition of IBM model 1:</p>
+<div class="arithmatex">\[
+   p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f}) 
+   = 
+   \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} t(e_i | f_{a_i}) 
+\]</div>
+<p>From our simplistic assumptions, we have reduced the model to something very simple. What are the parameters of this model? 
+The parameters are the values <span class="arithmatex">\(t(e | f)\)</span> for all possible pairs of words <span class="arithmatex">\(e, f\)</span> in our dataset. If we have this, then we can compute <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span> and go on with our day.</p>
+<h2 id="chicken-and-egg-problem-expectation-maximization">Chicken and Egg problem: Expectation Maximization</h2>
+<p>So now that we have a conditional probabilistic model, suppose we are given a dataset in which we cant try to find the parameters that best
+fit the dataset given the model. In our case, our dataset will be a set of <span class="arithmatex">\(n\)</span> translation pairs <span class="arithmatex">\(\{(\mathbf{f}_1, \mathbf{e}), \dots, (\mathbf{f}_nm \mathbf{e}_n)  \}\)</span>.</p>
+<p>However, we actually can't learn the parameters of our probabilistic model <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span>, because
+a parallel corpus of translations does not give use 
+the alignments on the lexical level. Viewed another way, we are being tasked with learning our model using data that is incomplete (the alignments are "missing").</p>
+<p>So, we are in a bit of a chicken and egg problem.</p>
+<ul>
+<li>If we had alignments for all sentences <span class="arithmatex">\(\mathbf{e}\)</span>, <span class="arithmatex">\(\mathbf{f}\)</span> in our dataset, then we could estimate <span class="arithmatex">\(t(e | f)\)</span>. How? We would just loop over the sentences, keep track of how often a word <span class="arithmatex">\(e\)</span> is aligned to a word <span class="arithmatex">\(f\)</span>, leading to an estimate <span class="arithmatex">\(t(e | f)\)</span> for all words in the vocabulary. Then, we could go ahead and happily calculate <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_m | \mathbf{f})\)</span>. </li>
+<li>If we already had the parameters of the model <span class="arithmatex">\(t(e | f)\)</span>, then we could determine the best possible alignments for every sentence pair <span class="arithmatex">\(\mathbf{e}\)</span> and <span class="arithmatex">\(\mathbf{f}\)</span>. With the alignments all calculated, we could then happily calculate <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span>.</li>
+<li>However, we have neither of these from our parallel corpus dataset. So we're stuck.</li>
+</ul>
+<p>The main problem here is that </p>
+<ul>
+<li>The alignments are a required variable in our model.</li>
+<li>We do not get alignment data from a parallel corpus dataset. </li>
+</ul>
+<p>This is actually a very common scenario in statistics: you have a model, and everything's great, but your dataset lacks any data for some of the variables required in your model. In this case, we refer to the sentences <span class="arithmatex">\(\mathbf{e}\)</span> as our <strong>observed variables</strong>, because we are given these in our dataset, and we refer to the alignment variables <span class="arithmatex">\(a_1, \dots, a_n\)</span> as our <strong>unobserved</strong> or <strong>latent</strong> variables. 
+This type of problem can be solved with the <a href="https://courses.csail.mit.edu/6.867/wiki/images/b/b5/Em_tutorial.pdf"><strong>Expectation Maximization</strong></a>.
+algorithm.</p>
+<p>However, rather than bring out the big statistical guns and call it a day, we are going to solve this intuitively. Then it will become clear how 
+this becomes an instance of Expectation Maximization.</p>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
