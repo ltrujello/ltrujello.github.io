@@ -21,8 +21,6 @@ Converts a LaTeX source file into markdown files.
 - converts LaTeX chapter, sections to Markdown headers 
 
 # TODO: don't replace \textbf{} in math environments. 
-# DONE: convert latex tables to markdown tables
-# DONE: put \begin{gather} on new lines
 # TODO: address statement, description, environments
 # To address description env
 # - Replace each itemize env. If an itemize env contains a description env, then stop and replace the description env.
@@ -97,6 +95,12 @@ repl_example = lambda x: repl_asmthm_statement(x, "example")
 repl_proof = lambda x: repl_asmthm_statement(x, "proof")
 repl_remark = lambda x: repl_asmthm_statement(x, "remark")
 
+EXTRA_MKDOCS_CSS = """<style>
+.md-content {
+    max-width: 80em;
+}
+</style>
+"""
 
 def repl_asmthm_statement(match, class_name):
     env_contents = match.group(1)
@@ -121,8 +125,6 @@ def repl_listing_env(match, env):
             items.append(code[ind + curr_match.end():ind + curr_match.end() + next_match.start()])
             ind = ind + curr_match.end() + next_match.start()
         else:
-            print(f"{items=}")
-            print("looking for the end {env=}")
             if env == "itemize":
                 next_match = re.search(end_itemize_env, code[ind + curr_match.end():])
             else:
@@ -239,34 +241,88 @@ def find_image_end_boundary(img_data):
         ind -= 1
     return ind
 
+begin_tikzpicture = re.compile("\\\\begin{tikzpicture}")
+end_tikzpicture = re.compile("\\\\end{tikzpicture}")
+
+
+def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str):
+    """ Finds the balanced start and end indices in the code string given a start delimeter 
+    and end delimeter. 
+    """
+
+    ind = 0 
+    num_seen = 0
+    start = 0
+    balanced_matches: list[tuple[int, int]] = []
+    while ind < len(code):
+        if code[ind : ind + len(start_delimeter)] == start_delimeter:
+            if num_seen == 0: 
+                start = ind
+            num_seen += 1
+
+        elif code[ind : ind + len(end_delimeter)] == end_delimeter:
+            if num_seen == 1:
+                end = ind + len(end_delimeter) - 1
+                balanced_matches.append((start, end))
+                num_seen = 0
+            else:
+                num_seen -= 1
+        ind += 1
+    return balanced_matches
+
+
 class Latex2Md:
-    def __init__(self, tex_file: Path, markdown_dest: Path, page_name: str):
+    def __init__(self, tex_file: Path, markdown_dest: Path, page_name: str, create_dirs: bool = False):
         self.tex_file = tex_file
         self.markdown_dest = markdown_dest
         self.page_name = page_name
         self.pdf_dir = Path(f"docs/pdf/{markdown_dest.name}")
         self.png_dir = Path(f"docs/png/{markdown_dest.name}")
         self.tikz_dir = Path(f"docs/tikz/{markdown_dest.name}")
+        self.num_figures = 0
 
-        self.pdf_dir.mkdir(exist_ok=True)
-        self.png_dir.mkdir(exist_ok=True)
-        self.tikz_dir.mkdir(exist_ok=True)
+        if create_dirs is True:
+            self.pdf_dir.mkdir(exist_ok=True)
+            self.png_dir.mkdir(exist_ok=True)
+            self.tikz_dir.mkdir(exist_ok=True)
 
     def write_tikz_to_disk(self,raw_tikz_code: str, chapter_num:int, section_num:int, figure_num:int):
         with open(f"{self.tikz_dir}/chapter_{chapter_num}/tikz_code_{section_num}_{figure_num}.tex", "w") as f:
             f.write(raw_tikz_code)
 
-    def repl_center_env(self, match, chapter, section, ind):
+    def repl_center_env(self, match, chapter, section):
         code = match.group(0)
         tikz_code_match = re.search(tikz_stmt, code)
         tikz_cd_code_match = re.search(tikz_cd_stmt, code)
         if tikz_code_match is None and tikz_cd_code_match is None:
             print(f"Found a center environment but it contains no tikz code, returning {code=}")
             return code, False
-        self.write_tikz_to_disk(code, chapter, section, ind)
-        img_url = f"\n<img src=\"../../../png/{self.markdown_dest.name}/chapter_{chapter}/tikz_code_{section}_{ind}.png\" width=\"99%\" style=\"display: block; margin-left: auto; margin-right: auto;\"/>\n"
-
+        self.write_tikz_to_disk(code, chapter, section, self.num_figures)
+        img_url = f"\n<img src=\"../../../png/{self.markdown_dest.name}/chapter_{chapter}/tikz_code_{section}_{self.num_figures}.png\" width=\"99%\" style=\"display: block; margin-left: auto; margin-right: auto;\"/>\n"
+        self.num_figures += 1
         return img_url, True
+    
+
+    def repl_tikzpicture(self, code, chapter, section):
+        begin_tikzpicture= "\\begin{tikzpicture}"
+        end_tikzpicture= "\\end{tikzpicture}"
+
+        balanced_delimeters = find_balanced_delimeters(code, begin_tikzpicture, end_tikzpicture)
+
+        new_code = code
+        offset = 0
+        for start, end in balanced_delimeters:
+            # Associate tikz_code on disk with img_url eventually holding png of tikz code 
+            self.write_tikz_to_disk(new_code[start + offset: end + offset + 1], chapter, section, self.num_figures)
+            img_url = f"\n<img src=\"../../../png/{self.markdown_dest.name}/chapter_{chapter}/tikz_code_{section}_{self.num_figures}.png\" width=\"99%\" style=\"display: block; margin-left: auto; margin-right: auto;\"/>\n"
+
+            # Replace tikz code with img tag
+            new_code = new_code[:start + offset] + img_url + new_code[end + 1 + offset:]
+            offset += len(img_url) - (end - start + 1)
+
+            self.num_figures += 1
+        # reset count for each chapter and section
+        return new_code
 
     def clean_code(self, code: str, chapter:int, section: int) -> str:
         print(f"doing {chapter=} {section=}")
@@ -275,11 +331,10 @@ class Latex2Md:
 
         new_code = code
         ind = 0
-        num_figures = 0
         center_env_match = re.search(center_env, new_code)
         while center_env_match is not None:
             i = ind + center_env_match.start()
-            replaced_code, updated = self.repl_center_env(center_env_match, chapter, section, num_figures)
+            replaced_code, updated = self.repl_center_env(center_env_match, chapter, section)
             j = ind + center_env_match.end() + 1
 
             # look for next instance of \begin{center} before updating new_code
@@ -287,8 +342,10 @@ class Latex2Md:
             # update new code
             new_code = new_code[:i] + replaced_code + new_code[j:]
             ind = i + len(replaced_code) + 1
-            if updated:
-                num_figures += 1
+        # replace all of the tikzpictures 
+        new_code = self.repl_tikzpicture(new_code, chapter, section)
+        self.num_figures = 0
+
         # get rid of labels for now. alg might be chopping off leading backslash after label.
         new_code = re.sub(label_stmt, "", new_code)
         new_code = re.sub(label_stmt2, "", new_code)
@@ -440,6 +497,7 @@ class Latex2Md:
             for section_name, code in sections.items():
                 with open(chapter_dir / f"{section_name}.md", "w") as f:
                     code = self.clean_code(code, chapter_num, section_num)
+                    f.write(EXTRA_MKDOCS_CSS)
                     f.write(f"#{chapter_num}.{section_num}. {section_name}\n")
                     f.write(code)
                     f.write("\n<script src=\"../../mathjax_helper.js\"></script>")
@@ -542,6 +600,7 @@ if __name__ == "__main__":
         tex_file=tex_file,
         markdown_dest=markdown_dest,
         page_name=page_name,
+        create_dirs=True,
     )    
 
     chapters: dict = handler.latex_to_markdown(tex_file, markdown_dir=markdown_dest)
@@ -555,7 +614,6 @@ if __name__ == "__main__":
 
     if GENERATE_PNGS:
         # convert tikz pdfs to pngs
-        print("meow")
         for pdf_file in Path(".").glob(f"docs/pdf/{markdown_dest.name}/**/*.pdf"):
             print(pdf_file)
             handler.convert_pdf_to_png(str(pdf_file))
