@@ -32,7 +32,8 @@ Ultimately, what we seek is some kind of conditional probabilistic model that ca
     p(\mathbf{e} | \mathbf{f}) = p(e_1, \dots, e_n | f_1, \dots, f_m)
 \]
 
-If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model. This 
+If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model (which, is a whole 
+other problem on its own that we won't get into). This 
 would lead to our proposed English translation of a given French sentence. 
 
 Defining this model is a very hard. Suppose for a moment we switch to Spanish (because I know Spanish better than French). 
@@ -124,7 +125,7 @@ So, we are in a bit of a chicken and egg problem.
 
 - If we had alignments for all sentences $\mathbf{e}$, $\mathbf{f}$ in our dataset, then we could estimate $t(e | f)$. How? We would just loop over the sentences, keep track of how often a word $e$ is aligned to a word $f$, leading to an estimate $t(e | f)$ for all words in the vocabulary. Then, we could go ahead and happily calculate $p(\mathbf{e}, a_1, \dots, a_m | \mathbf{f})$. 
 - If we already had the parameters of the model $t(e | f)$, then we could determine the best possible alignments for every sentence pair $\mathbf{e}$ and $\mathbf{f}$. With the alignments all calculated, we could then happily calculate $p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})$.
-- However, we have neither of these from our parallel corpus dataset. So we're stuck.
+- However, we have neither of these from our parallel corpus dataset. 
 
 The main problem here is that 
 
@@ -138,4 +139,93 @@ algorithm.
 However, rather than bring out the big statistical guns and call it a day, we are going to solve this intuitively. Then it will become clear how 
 this becomes an instance of Expectation Maximization.
 
+
+# Estimating the model parameters
+
+In order to estimate our model parameters $t(e | f)$, suppose we have a sentence pair $\mathbf{e}$, $\mathbf{f}$. 
+If word $e_i$ is a translation of word $f_j$, then intuitively we'd expect that $t(e | f)$ is high. In addition, 
+for any alignment $a_1, \dots, a_n$ such that $a_i = j$, we'd expect that 
+$p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})$ to be high. This quantity is actually the posterior probability, and we can calculate it 
+via 
+
+\[
+   p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) = \frac{ p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f}) }{p(\mathbf{e}|\mathbf{f})}
+\]
+
+We already have a formula for $p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})$, so we can go ahead and focus on calculating $p(\mathbf{e}|\mathbf{f})$. 
+Note that 
+
+\[
+   p(\mathbf{e}|\mathbf{f}) = \sum_{a_1 = 0}^{m} \dots \sum_{a_n = 0}^{m} p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})
+\]
+
+which we can rewrite as 
+
+\[
+   p(\mathbf{e}|\mathbf{f}) = \sum_{a_1 = 0}^{m} \dots \sum_{a_n = 0}^{m} \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} t(e_i | f_{a_i}) 
+\]
+
+At first, this is a horribly complex summation which would be wildly inefficient in a program implementation.
+Fortunately, there is a trick we can perform on this expression to obtain an equivalent but simpler expression.
+To demonstrate this trick, let us ignore the factor $\frac{1/N}{(m + 1)^n}$ which we can trivially factor out of the equation. Observe that we can perform a 
+simplification to get rid of one of the sigma sums.
+
+\begin{align}
+   p(\mathbf{e}|\mathbf{f}) 
+   &= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-1} = 0}^{m} \sum_{a_n = 0}^{m} \prod_{i = 1}^{n} t(e_i | f_{a_i}) \\
+   &= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-1} = 0}^{m} 
+   \left(
+   \prod_{i = 1}^{n-1} t(e_i | f_{a_i}) \cdot t(e_{n}| f_{0}) + \dots + \prod_{i = 1}^{n-1} t(e_i | f_{a_i})\cdot t(e_{n}| f_{m}) \right)\\
+   &= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-1} = 0}^{m} \left(\prod_{i = 1}^{n-1} t(e_i | f_{a_i}) \sum_{j = 0}^{m}t(e_n | f_j) \right)
+\end{align}
+
+Performing this trick again on the resulting above expression, we obtain
+
+\begin{align}
+   p(\mathbf{e}|\mathbf{f}) 
+   &= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-2} = 0}^{m} \left(\prod_{i = 1}^{n-2} t(e_i | f_{a_i}) \sum_{j = 0}^{m}t(e_{n-1} | f_j) \sum_{j = 0}^{m}t(e_n | f_j) \right)
+\end{align}
+
+Performing this trick on each sigma symbol $n$ times leads to 
+
+\begin{align}
+   p(\mathbf{e}|\mathbf{f}) 
+   &= 
+   \sum_{j = 0}^{m}t(e_{1} | f_j) \cdots \sum_{j = 0}^{m}t(e_{n-1} | f_j) \cdot \sum_{j = 0}^{m}t(e_n | f_j) \\
+   &= 
+   \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j)
+\end{align}
+
+Of course, adding back our original factor leads to 
+
+\[
+   p(\mathbf{e}|\mathbf{f}) 
+   = 
+   \frac{1/N}{(m + 1)^n}
+   \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j)
+\]
+
+Now that we have this calculation, we can state now that 
+
+\begin{align}
+   p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   &= 
+   \frac{ p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f}) }{p(\mathbf{e}|\mathbf{f})} \\
+   &= 
+   \frac{ \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} t(e_i | f_{a_i}) }{ \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j) }\\
+   &= 
+   \frac{ \prod_{i = 1}^{n} t(e_i | f_{a_i}) }{ \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j) }\\
+\end{align}
+
+We can then combine the products in the numerator and denominator to obtain that 
+
+\[
+   p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   = \prod_{i = 1}^{n}
+   \frac{  t(e_i | f_{a_i}) }{ \sum_{j = 0}^{m} t(e_i | f_j) }
+\]
 
