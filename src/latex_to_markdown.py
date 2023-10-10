@@ -334,14 +334,14 @@ class Latex2Md:
         center_env_match = re.search(center_env, new_code)
         while center_env_match is not None:
             i = ind + center_env_match.start()
-            replaced_code, updated = self.repl_center_env(center_env_match, chapter, section)
+            replaced_code, _ = self.repl_center_env(center_env_match, chapter, section)
             j = ind + center_env_match.end() + 1
 
             # look for next instance of \begin{center} before updating new_code
             center_env_match = re.search(center_env, new_code[j:])
             # update new code
             new_code = new_code[:i] + replaced_code + new_code[j:]
-            ind = i + len(replaced_code) + 1
+            ind = i + len(replaced_code)
         # replace all of the tikzpictures 
         new_code = self.repl_tikzpicture(new_code, chapter, section)
         self.num_figures = 0
@@ -403,9 +403,9 @@ class Latex2Md:
         chapter_dir = pdf_file.parts[-2]
         png_filename = Path(pdf_file.parts[-1]).with_suffix(".png")
         png_destination = Path(f"{self.png_dir}/{chapter_dir}/{png_filename}")
-        if png_destination.exists():
-            return
-        print(png_destination.resolve())
+        if CACHE_PNGS:
+            if png_destination.exists():
+                return
 
         pdf_fp = str(pdf_file.resolve())
         page_pngs = convert_from_path(pdf_fp)
@@ -540,11 +540,10 @@ class Latex2Md:
     def compile_tikz_blocks(self, tikz_code_path):
         chapter_dir = tikz_code_path.parts[-2]
         pdf_filename = Path(tikz_code_path.parts[-1]).with_suffix(".pdf")
-        print("XXXXX", chapter_dir, pdf_filename)
         pdf_destination = Path(f"{self.pdf_dir}/{chapter_dir}/{pdf_filename}")
-        
-        if pdf_destination.exists():
-            return
+        if CACHE_TIKZ:
+            if pdf_destination.exists():
+                return
 
         with open(tikz_code_path) as f:
             raw_tikz_code = f.read()
@@ -580,6 +579,8 @@ if __name__ == "__main__":
     parser.add_argument("--page-name", required=True)
     parser.add_argument("--compile-tikz", action='store_true', default=False)
     parser.add_argument("--generate-pngs", action='store_true', default=False)
+    parser.add_argument("--cache-tikz", action='store_true', default=False)
+    parser.add_argument("--cache-pngs", action='store_true', default=False)
     args = parser.parse_args()
 
     tex_file = Path(args.tex_file)
@@ -587,6 +588,8 @@ if __name__ == "__main__":
     page_name = args.page_name
     COMPILE_TIKZ = args.compile_tikz
     GENERATE_PNGS = args.generate_pngs
+    CACHE_TIKZ = args.cache_tikz
+    CACHE_PNGS = args.cache_pngs
 
     if not tex_file.exists():
         print(f"Error: {args.tex_file} does not exist")

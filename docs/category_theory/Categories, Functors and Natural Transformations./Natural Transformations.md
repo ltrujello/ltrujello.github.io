@@ -63,8 +63,9 @@ are zero.
 In algebraic topology, one observes that these abelian groups assemble into a 
 chain via a boundary operator $\partial_n: C_n \to C_{n-1}$
 with the property that $\partial_{n+1}\circ\partial_n = 0$ for all $n$.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Now suppose that $f: X \to Y$ is a continuous map between topological spaces.
 Then for each $n$, there is an evident mapping between the chain complexes.
 
@@ -78,7 +79,7 @@ However this presents us with an issue, one we faced in the earlier example.
 On one hand, we have a map $C_{n-1}(f) \circ \partial_n: C_n(X) \to C_n(Y)$. 
 On the other hand, we have a map $\partial_n \circ C_n(f): C_n(X) \to C_n(Y)$. 
 But are these equivalent maps? 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 It's a simple exercise to show that this diagram does in fact commute, i.e., that 
 $C_{n-1}(f) \circ \partial_n = \partial_n \circ C_n(f)$ for all $n$. 
@@ -129,7 +130,7 @@ to be a
 
 in $\dd$ such that for every $f: A \to B$, we have that 
 \begin{statement}{ProcessBlue!10}
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{statement}
 which amounts to $\eta_B \circ F(f) = G(f) \circ \eta_A$.
@@ -138,10 +139,10 @@ Thus we can imagine that $\eta$ translates the diagram produced by
 the functor $F$ to a diagram produced by $G$. For example; if
 $\eta$ is a natural transformation between $F$ and $G$, then we
 also see that the following diagram commutes:
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and this diagram commutes
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 if the above diagram on the left commutes. Colors are added to aid
 the visualization in seeing how the natural transformation
@@ -201,7 +202,7 @@ is given by
 where $S_n$ is the symmetric group, and $\text{sgn}(\sigma)$ is the sign 
 of a permutation.
 Now for $\det$ to form a natural transformation, we'll need that the diagram below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that $f: K \to K'$ is a commutative ring homomorphism.
 To show this diagram commutes, consider any $M = [a_{ij}] \in GL_n(K)$. Observe that 
@@ -253,7 +254,7 @@ Our claim is that for each $k$, the functions $\theta_k$ assemble into a
 natural transformation. 
 
 That is, for a field homomorphism $\phi: k \to k'$, the diagram
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. 
 The reader is encouraged to fill in the details for this one. It's quite 
@@ -269,7 +270,7 @@ perhaps it might be motivation for the reader to check out an algebraic geometry
 If $Y$ is an algebraic subset of $P^n(k)$, then we can build the **affine cone**
 $C(Y) = \theta^{-1}(Y) \cup\{(0,\dots, 0)\}$. With $n = 2$, $Y$ corresponds to 
 a curve in $P^2(k)$, which generates the surface $C(Y)$ in in $A^3(k)$.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -318,7 +319,7 @@ T_H\circ f = f^*\circ T_G
 \]
 
 so that the following diagram commutes 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and hence $T$ is a natural transformation.
 </span>
@@ -356,7 +357,7 @@ $\Set\bm{_F}$, associate $f$ with the morphism $\#f:
 \]
 
 Thus we have that the following diagram is commutative:
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and $\theta$ acts a natural transformation between the
 two functors.
@@ -385,7 +386,7 @@ $f, g: [0, 1] \to Y$ are simply two continuous paths in $Y$. A
 homotopy, in this situation, between $f,g$ is pictured on 
 the bottom left. 
 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 On the above right we have the situation for when $f, g$ start and end at the same point; this homotopy 
 is know as a **path homotopy**. 
@@ -398,7 +399,7 @@ define a homotopy.}.
 But this story is familar! A natural transformation $\eta: F \to G$ between two functors 
 $F, G: \cc \to \dd$ give rise to a family of morphisms $\eta_A: F(A) \to G(A)$ which are parameterized by  
 the objects of $\cc$ (which also satisfy the naturality property). Below we have this pictured of what this generally looks like. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_9_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 So, what gives? Is the concept of a natural transformation somewhat logically 
 and conceptually analogous to the concept of a homotopy? The answer is yes, and we can define 

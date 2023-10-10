@@ -139,7 +139,7 @@ Moreover, this $h$ is **unique** with respect to $f$ and $g$; Showing this is th
 Exercise \ref{section:universal_morphisms}.\exerciseCartesianProduct.
 We now have an answer to our question.
 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.8\textwidth}
 **A:** The product $X \times Y$ is 
 characterized by the following data: two projection functions 
@@ -147,7 +147,7 @@ $p_1: X\times Y \to X, p_2: X \times Y \to Y$, such that for any
 pair of functions $f: Z \to X, g: Z \to Y$, there exists a **unique**
 third $h: Z \to X \times Y$ such that diagram \ref{diagram:cartesian_product} commutes.
 \end{minipage}
-\end{center}   </span>
+\end{center}    </span>
 
 With the above example in mind, we now introduce our first definition of a product.
 
@@ -165,7 +165,7 @@ equipped with morphisms
 with the following universal property: For any object $Z$ of $\cc$ with morphisms
 $f: Z \to A$, $g: Z \to B$, there exists a unique morphism $h: Z \to A \times B$ 
 such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -327,7 +327,7 @@ $T$ exists.
 \item[Inductive Step.] Suppose the statement holds for $n =
 k$. Then for any objects $A_1, A_2, \cdots, A_k$, 
 we have the product diagram
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and a unique, induced arrow $u$ whenever such a $D \in \cc$ with
 morphisms $f_i: D \to A_i$ exists.
@@ -337,7 +337,7 @@ product $(A_1 \times A_2 \times \cdots \times A_k)\times
 A_{k+1}$ exists, since by assumption,  
 the product of any two objects in our
 category must exist, and gives rise to the product diagram: 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 whenever such an object $D$ with a family of morphisms $g_1: D
 \to A_1 \times A_k$ and  $g_2: D \to A_{k+1}$ exist.
@@ -361,7 +361,7 @@ family of morphisms $h_i: C \to A_i$. Then by the first
 diagram, there exists a unique morphism $u: C \to A_1 \times \cdots
 \times A_k$ such that $h_i = \pi_i \circ u$. Thus we have the
 diagram:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 so we have a unique morphism $v: C \to A_1 \times \cdots
@@ -389,7 +389,7 @@ A_1 \times \cdots \times A_{k+1}$ such that
 
 for $i = 1, 2, \dots, k + 1$. Therefore, we have the product
 diagram 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that the product $A_1 \times A_k \times A_{k+1}$ exists and
 is well-defined in $\cc$. Hence, $P(n)$ is true for $n = k+1$.
@@ -416,7 +416,7 @@ B'.
 \]
 
 Then observe we get the diagram
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus, there exists a unique morphism $u: A \times B \to A'
 \times B'$ whenever such $f, g$ exist. Therefore, we can
@@ -439,16 +439,16 @@ an family of morphisms $h_1: D \to A$, $h_2: D \to B$ and
 $h_3: D \to C$. Then we get the following product diagrams. 
 
 \begin{minipage}{0.5\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 Since we have unique morphisms $v: D \to B \times C$ and $w: D
 \to A \times B$, we also get the product diagrams. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 for the products $A \times (B \times C)$ and $(A \times B)
 \times C$, respectively. Thus we have the collection of
@@ -503,12 +503,12 @@ do that).
 Finally, let $T$ be the terminal object of $\cc$. Denote $t_C:
 C \to T$ as the unique morphism from $C$ to $T$. Now consider
 the product diagram associated with the product $T \times A$: 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Observe that $t_D$ always exists for any $D$. Hence the
 existence of  $u$ is completely dependent $f$. Therefore, we
 can see that this diagram is equivalent  to 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we see that $A$ with the morphism $t_A, 1_A$ forms a
 universal cone. But so does $T \times A$; hence, uniqueness
@@ -539,7 +539,8 @@ The above functor is a bit silly; it really doesn't do much. However, it necessa
 to really understand what exactly a product is. It helps us realize that a product in 
 a category is actually a universal morphism. 
 
-\begin{definition}[Rigorous Product Definition.]
+
+<span style="display:block" class="definition">[Rigorous Product Definition.]
 Let $\cc$ be a category with objects $A, B$. The **product $A \times B$ of $A$ and $B$**
 is a universal morphism 
 
@@ -550,9 +551,9 @@ is a universal morphism
 from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$\Delta$ to $(A, B)$}}. This means that for any
 other pair $(C, q: \Delta(C) \to (A, B))$, there exists a unique 
 $h: C \to A \times B$ in $\cc$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 This definition is exactly equivalent to our previous. What this tells us is that 
 a product is an instance of a universal morphism. We show how this definition is equivalent 
@@ -563,13 +564,14 @@ to the previous via the following example.
 To see this for the case when $n = 2$,
 consider the product $A\times B$ of two objects $A, B$ in some category $\cc$. 
 Then 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Let's spell out what's going on above; you might have seen this exposition, without even realizing, demonstrating the universality of
 products. Suppose there exists another object $C$ with morphisms
 $f: C \to A$ and $g: C \to B$. Then we force the existence of a
 morphism $f': C \to A \times B$.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 When we usually do this, we simply just set 
 

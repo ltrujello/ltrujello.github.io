@@ -44,12 +44,13 @@ this expresses our associativity axiom. Now to express the second axiom diagramm
 identity map. So define the map $\eta: \{\bullet\} \to M$ where $\eta(\bullet) = e$. This 
 is just a stupid map that picks out the identity. Then axiom (2) can be translated 
 diagramatically to state that the bottom left diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ince we want this to hold for all $m \in M$, we generalize this to create a
+Since we want this to hold for all $m \in M$, we generalize this to create a
 commutative diagram as on the above right. We now have what we need to define a monoid more generally. 
 
-\begin{definition}
+
+<span style="display:block" class="definition">
 Let $\cc$ be a category with cartesian products. Denote the terminal 
 object as $T$. An object $M$ is said to 
 be a **monoid** in $\cc$ if there exist maps 
@@ -60,7 +61,7 @@ be a **monoid** in $\cc$ if there exist maps
 \end{align*}
 
 such that the diagrams below commute. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Dually, a **comonoid** is an object $C$ with maps 
 
@@ -70,9 +71,9 @@ Dually, a **comonoid** is an object $C$ with maps
 \end{align*}
 
 such that the dual diagrams commute. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 \textcolor{NavyBlue}{Note that we're being a little sloppy here. For example, the object 
 $M \times M \times M$ doesn't actually exist; we have either $M \times (M \times M)$ or $(M \times M) \times M$. 
 } However, for any category with cartesian products, we always have that these two objects 

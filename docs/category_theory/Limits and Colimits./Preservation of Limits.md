@@ -45,13 +45,13 @@ Let $F: J \to \mathcal{C}$ be a diagram with a limiting object
 $\text{Lim } F$ equipped with the morphisms $\sigma_i: \text{Lim } F \to F_i$.
 Then applying the $\text{Hom}_{\mathcal{C}}(C, -)$ functor to $\text{Lim } F$ and to 
 each $u_i$, we realize it forms a cone in $**Set**$. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now we show that $\text{Hom}_{\mathcal{C}}(C, \text{Lim } F)$, equipped with the morphisms 
 $\sigma_{i*}$, is a universal cone; that is, it is a limit. 
 Suppose that $X$ is a set which forms a cone with the
 morphisms $\tau_i: X \to \text{Hom}_{\mathcal{C}}(C, F_i)$. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Then for each $x \in X$, 
@@ -59,14 +59,14 @@ we see that $\tau_i(x) : C \to F_i$.
 The diagram above tells us that $u \circ \tau_i(x) = \tau_j(x)$ for each $x$.
 Hence each $x \in X$ induces a 
 cone with apex $C$ with morphisms $\tau_i(x): C \to F_i$. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, $\text{Lim } F$ is the limit of $F: J \to \mathcal{C}$. Therefore, there 
 exists a unique arrow $h_x: C \to \text{Lim } F$ such that 
 $h_x \circ \sigma_i = \tau_i(x)$. Now we can uniquely
 define a function $: X \to \text{Hom}_{\mathcal{C}}(C, \text{Lim } F)$ where 
 $h(x) = h_x: C \to \text{Lim } F$, in such a way that the diagram below commutes.  
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, $\text{Hom}_{\mathcal{C}}(C, \text{Lim } F)$ is a limit in **Set**.
 </span>

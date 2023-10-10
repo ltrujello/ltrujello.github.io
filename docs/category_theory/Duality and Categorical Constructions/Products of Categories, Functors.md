@@ -21,7 +21,7 @@ and $\dd$ as below.
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the morphisms $(f, g)$ and $(f', g')$ in $\cc \times \dd$ 
 are composable too, and their composition is defined as $(f', g') \circ (f , g) = ( f' \circ f, g' \circ g)$.
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 We also define the **projection functors**
@@ -47,7 +47,7 @@ Then $F$ and $G$ determine a unique functor $H: \bb \to \cc
 
 That is, we see that for any morphism $f$ in $\bb$ we have that $H(f)
 = ( F(f), G(f) )$. Hence the following diagram commutes
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and we dash the middle arrow to represent that $H$ is induced, or
 defined, by this process.
@@ -89,7 +89,7 @@ Note that in this formulation we have that
 
 Hence, we have the following commutative diagram.
 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Again, the dashed arrow is written to express that $F \times G$ is
 the functor defined by this process and makes this diagram
@@ -128,7 +128,7 @@ K_{B'}(g) \circ H_C(f) = H_{C'}(f) \circ K_B(g).
 \]
 
 Diagrammatically, this condition is
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -163,7 +163,7 @@ bifunctor
 
 This is
 because for any $h: A \to A'$ and $k: B \to B'$, the diagram,
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes.
 Hence the proposition guarantees that $\hom:\cc\op\times\cc \to
@@ -195,7 +195,7 @@ GL(n, -): **Ring** \to **Grp**.
 \]
 
 Below we can visualize the activity of this functor:
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Above, we start with $\zz$ since the this is the initial object of the category 
 **Ring**. 
@@ -247,7 +247,7 @@ in $C$ for each $B \in \bb$.
 natural transformation. Then every object $(B, C)$ is
 associated with a morphism $\eta_{(B, C)}: F(B, C) \to
 G(B, C)$ in $\dd$, and this gives rise to the following diagram:
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now let $C \in \cc$ and observe that 
 
@@ -293,7 +293,7 @@ $(B, C)$ and
 $\textcolor{blue}{\eta}_{(B', -)}$ acting on $(B', C)$.
 Then we get the following commutative diagrams.
 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Observe that
 the bottom row of the first diagram matches the top row of
@@ -334,7 +334,7 @@ G(f, g) \circ \textcolor{red}{\eta}_{(B, C)} = \textcolor{blue}{\eta}_{(B', C')}
 which implies that $eta$ itself is a natural
 transformation. Specifically, it implies the following
 diagram. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{description}
 </span>
@@ -346,7 +346,7 @@ corner, and then "\textcolor{Orange}{squish}" this diagram down to obtain the th
 diagram in the bottom right. 
 
 \begin{minipage}{0.3\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}  
 \hspace{1cm}
@@ -358,7 +358,7 @@ diagram in the bottom right.
 \end{minipage}
 \hfill
 \begin{minipage}{0.5\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 \vspace{1cm}

@@ -38,16 +38,16 @@ some axioms. But really, that's what all our mathematical objects
 are. So at this point, our foundations \textbf{are grounded in set
 theory.}
 
-\\begin{center}
+\begin{center}
 **What is set theory?**
-\end{center}   Suppose I ask you what is set theory. While we all know there are 
+\end{center}    Suppose I ask you what is set theory. While we all know there are 
 different set theories, most people don't think about set theory axioms on a daily 
 and won't know (like myself). But answering
 this question requires answering the next. 
 
-\\begin{center}
+\begin{center}
 **What is a set?**
-\end{center}   We usually never have to face this question. But in developing a
+\end{center}    We usually never have to face this question. But in developing a
 theory that considers relationships between different sets, we
 have to. 
 
@@ -101,9 +101,9 @@ This is because no, not every collection of objects is a set.
 Thus we need to go back and fix our definition of a set.
 }
 
-\\begin{center}
+\begin{center}
 **What do we do?**
-\end{center}   This is what many mathematicians asked in the early 1900s
+\end{center}    This is what many mathematicians asked in the early 1900s
 when they identified the paradoxes that arise from our notion of
 a set. The result has been multiple different types of set theories, 
 and so there isn't a clear 

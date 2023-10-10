@@ -72,7 +72,7 @@ $F(\bullet) = A$ for some $A \in \cc$, and $F(1_\bullet) = 1_A$, we see that thi
 simply picks out one element of $\cc$. So these functors are in correspondence 
 with the objects of $\cc$; the picture below may help.
 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -81,13 +81,13 @@ with the objects of $\cc$; the picture below may help.
 Let $\bm{2}$ be the category with two objects $\textcolor{Blue}{\bullet}$ 
 and $\textcolor{Orange}{\bullet}$ with one nontrivial $f: \textcolor{Blue}{\bullet} \to \textcolor{Orange}{\bullet}$. 
 The category can be pictured as below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Suppose now that $\cc$ is an arbitrary category, and that we 
 have a functor $F: \bm{2} \to \cc$. Then note that $F(\textcolor{Blue}{\bullet}) = A$ 
 and $F(\textcolor{Orange}{\bullet}) = B$ for some objects $A, B \in \cc$. Hence we have that 
 $F(f) = \phi: A \to B$ for some $\phi \in \cc$. Below we have the functor pictured. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note we suppressed the identity morphisms. 
 Therefore, we see that this functor simply picks out morphisms $\phi: A \to B$ in $\cc$. 
@@ -165,10 +165,10 @@ some extra structure; this is the object of enriched category theory, which we'l
 
 This functor in general also exhibits nice properites. For example, 
 let $R$ be a ring. Then the sequence below
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is exact if and only if, for every $R$-module $N$, the sequence 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is exact. This result even extends to split short exact sequences. We 
 also have that for $R$-modules $N$, $M_1, M_2$ that 

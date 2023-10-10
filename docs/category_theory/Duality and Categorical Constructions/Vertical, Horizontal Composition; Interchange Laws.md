@@ -38,7 +38,7 @@ G'$. Then we have diagram such as the following.
 \begin{minipage}{0.7\textwidth}
 \vspace{0.5cm}
 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \hspace{5cm}   
 \end{minipage}
@@ -58,7 +58,7 @@ elements in $\cc$:
 Hence, we have two objects in $\cc$ and a morphism in between
 them. Hence, we know that the natural transformation $\eta': F'
 \to G'$ implies the following diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that in the last diagram, all of the objects and morphisms
 between them exist in $\dd$. The easiest way to see why this
@@ -106,7 +106,7 @@ transformation between the functors $F'\circ F, G' \circ G:
 To show this, we consider a morphism $f: B \to B'$ between two
 objects $B$ and $B'$ in $\bb$. We then claim that the
 following diagram is commutative:
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 First, observe that the left square is commutative due to the
 fact that $\eta$ is a natural transformation from $F$ to $G$.
@@ -158,7 +158,7 @@ following diagram may be more helpful than words:
 \\
 
 \begin{minipage}{0.65\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \hspace{7cm}   
 \end{minipage}
@@ -176,7 +176,7 @@ $\sigma(B): G(B) \to H(B)$. However, we also know that $\eta',
 \sigma'$ are natural transformations between $\cc$ and $\dd$, and
 hence imply the following commutative diagram. 
 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Suppose we start at the upper left corner and want to achieve the
 value at the bottom right. There are two ways we can do this: We

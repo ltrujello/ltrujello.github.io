@@ -43,7 +43,7 @@ the form
 
 where morphisms between $(D, f: C \to G(D))$ and $(D', f': C \to G(D'))$ 
 will be induced by morphisms $h: D \to D'$ such that 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. First, observe that $(F(C), \eta_C: C \to G(F(C)))$ 
 is an object of the comma category. Second, observe that the 
@@ -57,7 +57,7 @@ bijection of homsets
 guarantees that every object
 $(D, f: C \to G(D))$ in the comma category corresponds uniquely to
 a morphism $h: F(C) \to D$. Moreover, uniqueness guarantees that the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence, $(F(C), \eta_C: C \to G(F(C)) )$ is an 
 initial object $C \downarrow G$. 
@@ -77,14 +77,14 @@ object can be written as
 This defines a mapping on objects $C \mapsto F(C)$. To show that this 
 is a functor, suppose we have a morphism $f: C \to C'$ in $\cc$. Then 
 we have square 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Adding the final leg to this diagram would show that $F$ is a functor. But 
 since $(F(C), \eta_C: C \to G(F(C)))$ is an initial object in $(C \downarrow G)$, 
 and $(F(C'), \eta_{C'}: C' \to G(F(C)))$ is an object in this category, 
 there must be a *unique* morphism $F(f):F(C) \to F(C')$. Uniqueness of 
 this morphism forces commutativity of the square 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and therefore $F$ is a functor. Simultaneously, this shows $F$ is left adjoint 
 to $G$, as desired. 
@@ -108,13 +108,14 @@ We can investigate a little deeper into this.
 If $\cc$ is a complete category with small homsets, then $\cc$ 
 has an initial object if and only if it satisfies the \textbf{Solution 
 Set Condition}: 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.9\textwidth}
 There exists
 objects $(C_i)_{i \in I} \in \cc$ such that for every $C \in \cc$, there is a 
 a morphism $f_i: C_i \to C$ for at least one $i \in I$. 
 \end{minipage}
-\end{center}    </span>
+\end{center}
+</span>
 
 
 <span style="display:block" class="proof">
@@ -156,7 +157,7 @@ f_k \circ \pi_k\circ e: V \to C.
 We'll now show that all morphisms are equal. Suppose the contrary; 
 that there are two distinct morphisms $f, g: V \to C$. Denote the equalizer 
 of this pair as $e_1: u \to v$. Then we have that 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. The morphism $s$ is induced via the universality of 
 both $U$ and $V$. Since $e \circ e_1 \circ s : W \to W$, and 
@@ -189,7 +190,7 @@ one, which is the main adjoint functor theorem of interest.
 Let $\dd$ be complete with small homsets. A functor 
 $G: \dd \to \cc$ has a left adjoint if and only if it preserves all small 
 limits and satisfies the **solution set condition**: 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.9\textwidth}
 For each $C \in \cc$, 
 there exists a set of objects $(D_i)_{i \in I}$ $\dd$ and a family 
@@ -207,7 +208,7 @@ h = G(t) \circ f_i.
 \]
 
 \end{minipage}  
-\end{center}   </span>
+\end{center}    </span>
 
 \textcolor{Plum}{The above theorem helps us find out when we can get a 
 left adjoint. Prior to this theorem, we already know what happened if 
@@ -225,7 +226,7 @@ As a converse to the above theorem, we have the following.
 Let $\cc$ be a small, complete category. A functor $K: \cc \to 
 **Set**$ is representable if and only if $K$ preserves limits 
 and satisfies the following **solution set condition**: 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.9\textwidth}
 There exists a set $S \subset \ob(\cc)$ such that for any 
 $C \in \cc$ and any $x \in K(C)$, there exists an $s \in S$, 
@@ -236,7 +237,7 @@ f: s \to C \text{ such that } K(f)(y) = x.
 \]
 
 \end{minipage}
-\end{center}   </span>
+\end{center}    </span>
 
 
 

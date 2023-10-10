@@ -24,9 +24,9 @@ be modeled as a functor from $\rr \to **Vec**$.
 
 Let $S = \{s_1, s_2, \dots, s_n\}$ be a finite subset of $\rr^n$. Then we can describe  
 an adjunction  
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s follows. First observe that since $S \subset \rr$, there exists
+as follows. First observe that since $S \subset \rr$, there exists
 a restriction functor 
 $R: \cc^{\rr} \to \cc^{S}$, which acts as a restriction (hence the naming $R$): 
 
@@ -37,12 +37,13 @@ R(F: \rr \to \cc) = F\big|_{S}: S \to \cc.
 How can we write a functor going in the opposite direction? That is, given a
 persistence module which acts on $S$, 
 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s there a canonical way to extend this 
+is there a canonical way to extend this 
 to a persistence module which acts on the rest of $\rr$? 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 One way we may extend a persistence module $K: S \to \cc$ in $\cc^S$ to 
 a persistence module in $\cc^{\rr}$ is to define a functor $\overline{K}: \rr \to \cc$ 
 where 
@@ -69,9 +70,9 @@ $\overline{\eta}: \overline{K} \to \overline{P}$ from $\eta$? That is, may we
 extend this relationship to a functor? 
 
 First, observe that we may write $\eta: K \to P$ as follows. 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-he top and bottom rows come about by functoriality of $K$ and $P$,  
+The top and bottom rows come about by functoriality of $K$ and $P$,  
 while the upward arrows are the family of morphisms created by the existence 
 of a natural transformation. 
 
@@ -92,9 +93,9 @@ by stating
 Thus we see that we really do have a functor $\cc^{S} \to \cc^{\rr}$ on our hands
 If we denote this as a functor $E: \cc^{S} \to \cc^{\rr}$, 
 where $E$ can be read as *extends*, then we overall have 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-e can now demonstrate that this pair of functors gives rise to an adjunction; there 
+We can now demonstrate that this pair of functors gives rise to an adjunction; there 
 a few ways to do this. We'll demonstrate that 
 
 \[
@@ -104,25 +105,25 @@ a few ways to do this. We'll demonstrate that
 is natural, where $P_S = \text{R}(P)$ and $\overline{K} = E(K)$. Towards this 
 goal, consider a morphism $\eta: K \to P_S$. Then we have something like this 
 again 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ow we seek a natural transformation $\eta': \overline{K} \to P$. Since $\overline{K}$ 
+Now we seek a natural transformation $\eta': \overline{K} \to P$. Since $\overline{K}$ 
 is constructed from $K$, a good choice would be to write 
 $\eta'_{s_i} = \eta_{s_i}$ for $s_i \in S$. 
 Now our concern is considering how to define $\eta'_r$
 when $r \not \in S$. That is, we want something like 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-o define the morphism in red, we first recall that in 
+To define the morphism in red, we first recall that in 
 this situation we have $K(r) = K(s_i)$. Hence we know that any morphism  
 from $K(r)$ must originate from $K(s_i)$; one such morphism we already know 
 about is $\eta_{s_i}: K(s_i) \to P_s(s_i)$. Now, $P_s(s_i) = P(s_i)$; 
 and in our case the desired target for $\eta'$ is $P(r)$, not $P(s_i)$. However, 
 we can compose this with the morphism $P(j): P(s_i)  \to P(r)$.
 where $j : s_i \to r$.
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-herefore, in this case we define 
+Therefore, in this case we define 
 
 \[
 \eta'_{r} := P(j) \circ \eta_{s_i}.
@@ -167,8 +168,9 @@ each other. Therefore, we see that we have a bijection between the hom-sets,  as
 Finally, we must demonstrate naturality. So suppose we have a natural transformation 
 $\alpha: K \to K'$ between two persistence modules $K, K' : S \to \cc$.
 Consider the squares below, which we do not yet know commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Note that on one hand, 
 
 \[
@@ -215,9 +217,9 @@ Thus we see that the previous squares we discussed do in fact commute.
 Now suppose we have a natural transformation $\sigma: P \to P'$ between 
 two functors $P, P': \rr \to \cc$.
 Consider the diagrams below, which we will show are commutative.
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-o show this, observe that 
+To show this, observe that 
 
 \begin{align*}
 \sigma \circ \eta' 
@@ -244,13 +246,13 @@ the change in \textcolor{Purple}{purple} occurs by commutativity of the diagram 
 results due to the universal nature of morphisms originating from the initial object $I$. Second, 
 the changes in \textcolor{OliveGreen}{green} and \textcolor{Red}{red}
 occur by commutativity of the diagram on the right. 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hus we see that our original squares are commutative. At this point, we can conclude that 
+Thus we see that our original squares are commutative. At this point, we can conclude that 
 we do in fact have an adjunction 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s desired. 
+as desired. 
 
 
 

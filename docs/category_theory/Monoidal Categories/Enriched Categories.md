@@ -22,14 +22,15 @@ act the same exact way. For example, the categories
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-here the above objects are $n$ words describing how politicians suck,
+where the above objects are $n$ words describing how politicians suck,
 are the same preorders. Thus, because categorical 
 structure is primarily found within the morphisms, i.e. the homsets, we only need to 
 fix these to take back our original structure. 
 
-\begin{definition}
+
+<span style="display:block" class="definition">
 Let $(\mathcal{V}, \otimes, I)$ be a monoidal category. A small category $\cc$ is a $\mathcal{V}$-category 
 or an **enriched category** over $\mathcal{V}$ if 
 
@@ -54,13 +55,13 @@ i_A: I \to \hom_{\cc}(A, A)
 
 
 such that our composition operator is associative: 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and such that our unital elements in each homset behave morally like an identity 
 element should:
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 
 <span style="display:block" class="example">
@@ -128,14 +129,14 @@ Recall that a (strict) 2-category is a category $\cc$ such that, in addition
 to the morphisms $f: A \to B$ between objects $A, B \in \cc$, there 
 exists 2-morphisms $\alpha: f \to g$ between parallel morphisms 
 $f, g: A \to B$. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 These two morphisms have access to two different forms of composition. On one hand, there 
 is "vertical" composition 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 while on the other, there is "horizontal" composition.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Moreover, we require that the interchange law be satisfied and that 
 the morphisms form a category under the vertical composition given by $\circ$.
@@ -145,7 +146,7 @@ However, we can rephrase this as saying a category $\cc$ is a 2-category if
 
 
 * [2.] There exist a composition operator $\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)$
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 

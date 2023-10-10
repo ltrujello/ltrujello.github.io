@@ -78,15 +78,15 @@ With both products, consider the projection morphisms
 Note that because we have products, we have universal
 properties which we can take advantage of. That is, 
 the following diagrams must commute for some $f$ and $g$. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note however that we can stack these diagrams on top of each other, to obtain  
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since we have equalizers for every pair of arrows, we can form
 the equalizer $\displaystyle e:D \to \prod_{i \in J}F_i$ 
 of both $f$ and $g$ for some object $D$.
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Now that we have a morphism 
@@ -95,7 +95,7 @@ we can compose this with projections $\displaystyle
 \prod_{i \in J}F_i \to F_i$ to produce a family of
 morphisms $\pi_i \circ e: D \to F_i$. If we like, we can even 
 add this to our diagram above to get the following:
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 (\textcolor{Red}{It looks like a boat!}) Denote $\mu_i = \pi_i \circ e: D \to F_i$. Then what the above boat diagram 
 tells us is that 
@@ -118,7 +118,7 @@ F(u) \circ \pi_i \circ e = \pi_k \circ e \implies F(u) \circ \mu_i = \mu_k.
 
 for every $u: i \to k$ in $J$. 
 Therefore, we see that we have that 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, so that $D$ equipped with the morphisms $\mu_i: D \to F_i$ forms a cone.
 We now show that this is universal, so that $D$ is our limit. We do this 
@@ -133,7 +133,7 @@ $f \circ e = g \circ e$. But the universal property of
 the equalizer $e$
 states that for any subject object, there exists a morphism 
 $h: D \to C$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since $h: D \to C$ is unique, this shows that $D$ 
 equipped with the morphisms 
@@ -173,7 +173,7 @@ For any pair of objects $A, B$ in $\cc$, suppose we take the pull back on
 the morphisms $t_A: A \to T$ and $t_B: B \to T$. This then give 
 rise to an object $P$ equipped with two morphisms $p_1: P \to A$ 
 and $p_2: P \to B$, universal in the sense demonstrated below. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now on the top left we have our pull back. However, on the top right, we've 
 unraveled the pullback and ignored the terminal object to observe that $P$ 
@@ -185,19 +185,20 @@ was a discrete category, we wouldn't even have any morphisms to take a pullback 
 
 Now to derive equalizers, consider a pair of parallel morphisms 
 $f, g: A \to B$. Then we may simply take their pullback to obtain the diagram below. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If $p: A \times A \to A$ is the natural projection map, then 
 because we have a trivial mapping $1_A: A \to A$, there exists a canonical 
 canonical map $i: A \to A \times A$ such that $p \circ i = 1_A$. 
 Similarly, because we have mappings $p_1, p_2: P \to B$, we must have a 
 mapping $h: P \to A \times A$. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now we can take the pullback on the morphism $h: P \to A \times A$ 
 and $i: A \to A \times A$ to obtain the equalizer.  
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Hence we see that for finite limits, we can reduce our assumptions to pullbacks and 
 a terminal object, giving rise to the final corollary. 
 

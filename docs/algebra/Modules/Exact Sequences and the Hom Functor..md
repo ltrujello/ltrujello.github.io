@@ -101,7 +101,7 @@ The above proposition offers the following definitions.
 
 <span style="display:block" class="definition">
 Let $M_1, M_2$ and $M$ be $R$-modules. If the sequence
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is exact then we say it forms an \textbf{short exact
 sequence}. Furthermore, if there exists an $R$-module $N$ such
@@ -122,9 +122,9 @@ objects.
 * [1.] Let $M$ be an $R$-module with a submodule $N$. If
 $i:N \to M$ is the inclusion map and 
 $\pi: M \to M/N$ is the projection map, then the sequence 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s exact. \\
+is exact. \\
 $\bm{\im(i) \subset \ker(\pi)}$. Observe
 that if $n \in N$ then 
 
@@ -148,7 +148,7 @@ so that the sequence is exact.
 * [2.] Let $N$ and $P$ be $R$-modules. If we define $i':N
 \to N \oplus P$ where $i'(n) = (n, 0)$ and $\pi': N \oplus P
 \to P$ where $\pi'(n, p) = p$, we see that the sequence
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is exact. We can realize this by simply observing that
 $\ker(\pi')$ is the set of all elements $(n, 0) \in N \oplus
@@ -158,7 +158,7 @@ P$, which is exactly the image of $i'$. Therefore $\im(i') =
 
 
 * [3.] The sequence
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where $f:\ZZ_p \to \ZZ_{pq}$ is given by $f(n) = qn$ and
 $g: \ZZ_{pq} \to \ZZ_q$ is given by $g(n) = n \mbox{ mod } q$,
@@ -177,7 +177,7 @@ sequence.
 
 
 * [4.] If instead we have the sequence
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where $f:\ZZ_p \to \ZZ_{p^2}$ is given by $f(n) = pn$ and
 $g: \ZZ_{p^2} \to \ZZ_p$ is given by $g(n) = n \mbox{ mod }p$,
@@ -201,8 +201,9 @@ exact.
 
 <span style="display:block" class="theorem">
 Let $M_1, M_2$ and $M$ be $R$-modules such that 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is exact. Then the following are equivalent:
 
 * [1.] There exists a homomorphism $\alpha : M \to M_1$
@@ -250,7 +251,7 @@ where in the third step we used the fact that $\alpha
 \circ f = 1_{M_1}$, and hence $\alpha(f(m)) = m$ for all
 $m \in M_1$. Hence, $m - f(\alpha(m)) \in \ker(\alpha)$. 
 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since $f: M_1 \to M$ is injective, we see that $\alpha: M
 \to M_1$ is surjective. To see this, let $m' \in M_1$.
@@ -279,7 +280,7 @@ for some $y \in M_1$, and $\alpha(x) = 0$ as well. Hence,
 
 But $\alpha \circ f = 0$, which implies that $y = 0$.
 Therefore $\ker(\alpha) \cap \im(f) = \{0\}$. 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Theorem
 1.\ref{fin_module_sums}, we see that this implies that 
@@ -307,7 +308,7 @@ where in the second step we used the fact that $g \circ
 \beta = 1_{M_2}$. Therefore, $\textcolor{blue}{m -
 \beta(g(m)) \in \ker(g)}.$
 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Now note that 
@@ -339,7 +340,7 @@ Furthermore, since $m' \in \ker(g)$,
 since $g \circ \beta = 1_{M_2}$. Hence, $m_2 = 0$, so that
 $\beta(m_2) = 0 = m$. Therefore $m = 0$, so that
 $\im(\beta) \cap \ker(g) = \{0\}$. 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -518,9 +519,9 @@ the diagram to the right commutes.
 \end{minipage}
 \hfill
 \begin{minipage}{0.4\textwidth}
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\end{minipage}
 \vspace{0.5cm}
 
 \begin{minipage}{0.6\textwidth}
@@ -534,9 +535,9 @@ this with a red arrow, to remind the reader that this arrow
 \end{minipage}
 \hfill
 \begin{minipage}{0.4\textwidth}
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\end{minipage}
 
 \begin{minipage}{0.6\textwidth}
 Note that we've described a well-defined system for assigning for each $\phi
@@ -554,9 +555,9 @@ the set).
 \end{minipage}
 \hfill
 \begin{minipage}{0.4\textwidth}
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\end{minipage}
 \vspace{0.5cm}
 
 \begin{minipage}{0.6\textwidth}
@@ -569,9 +570,9 @@ we assign it the function $f \circ \phi \in \hom_R(M, N')$.
 \end{minipage}
 \hfill
 \begin{minipage}{0.4\textwidth}
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\end{minipage}
 
 
 \noindent $\hom_R(- , M)$.\\
@@ -619,16 +620,17 @@ $g_*$ become $R$-module homomorphisms.}
 Now suppose a family of $R$-modules $\{M_i \mid i \in \mathbb{N}\}$ associated with a
 set of homomorphisms $\{f_i \mid f_i :M_{i-1} \to M_i, i
 \in \mathbb{N}\}$ for a long sequence, not necessarily exact.
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hen if we apply the $\hom_R(M, -)$ functor,
+Then if we apply the $\hom_R(M, -)$ functor,
 then we see that the above sequence implies a sequence between the
 $\hom$ groups:
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-nd applying the $\hom_R(-, M)$ functor we get 
-\
+and applying the $\hom_R(-, M)$ functor we get 
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Thus the long sequence of $R$-modules implies the existence of two other long
 sequences of abelian groups. The interesting thing is that the two sequences are
 similar but differ in the direction of the arrows (this is why we
@@ -824,13 +826,13 @@ that $\im(f) \subset \ker(g)$.
 
 <span style="display:block" class="theorem">
 Let $N$ be an $R$-module. If 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is a split exact sequence of $R$-modules, then 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 are split exact sequences of abelian groups ($R$-modules if
 $R$ is commutative).
@@ -899,16 +901,16 @@ be isomorphisms of $R$-modules if $R$ is commutative.
 <span style="display:block" class="proof">
 Consider one of our earlier examples of a split exact
 sequences:
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where $i$ defined as $i(m_1) = (m_1, 0)$ is the inclusion map
 and $\pi$ defined by $\pi(m_1, m_2) = m_2$ is the projection
 map. As this is split exact, we can apply the previous theorem
 to gaurantee the existence of sequences 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_5_23.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which are both split exact. Then by applying Theorem
 1.\ref{split_exact_lemma} we have that 

@@ -321,7 +321,7 @@ convenient to work with.
 <span style="display:block" class="proposition">
 Suppose $F$ is a free $R$-module. Then every short exact
 sequence 
-\
+
 <img src="../../../png/algebra/chapter_3/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is a split exact sequence. 
 </span>

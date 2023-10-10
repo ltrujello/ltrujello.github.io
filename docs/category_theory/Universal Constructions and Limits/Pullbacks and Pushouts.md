@@ -19,13 +19,13 @@ Another way we
 can describe this is using the language of limits, and hence show
 that pullbacks are simply limit objects. Let $J$ be the category
 of three objects with the following shape:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The numbers 1, 2, and 3 here mean nothing; they are simply place
 holders for *some* distinct objects.
 So any functor $F: J \to \cc$ simply corresponds to a triple of
 object and a pair of morphisms in $\cc$: 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 if we have $F(1) = A$, $F(2) = C$ and $F(3) = B$.
 Now we can equivalently describe a pullback as follows: 
@@ -54,12 +54,12 @@ u_3: \Delta(D)(3) \to F(3) \implies u_3: D \to B
 \end{align*}
 
 which arrange themselves in $\cc$ into the following diagram:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and if we "tip" this diagram over, and force the arrows $f$ and
 $g$ meeting at
 $C$ into a 90 degree angle, we get the following cone:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Note that we removed the morphism $u_2$ because it's redundant,
@@ -73,7 +73,7 @@ whenever we have a cone over $F$, we have a commutative square! And
 in even *other* words, whenever we have a family of
 morphisms $v_i: E \to F(i)$ for $i=1,2,3$, we have a commutative
 square! 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -82,12 +82,12 @@ with the universality of the pullback? Well, since this object is
 universal, we know that for any other pair $(E, v: \Delta(E) \to
 F)$, there exists a morphism $f': E \to D$ such that the following
 diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The commutativity of the top left diagram gives us the relation
 that $u \circ \Delta(f') = v$, which implies that $u_1 \circ f' =
 v_1$ and $u_3 \circ f' = v_3$. We then have that 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which is just the pullback. Thus the pullback is in fact a limit object,
 and we understand just exactly how it is a limit object of the
@@ -99,13 +99,13 @@ functor $F: J \to \cc$.
 Let $\cc$ be a category, and consider a pair of morphism $f: A
 \to B$, $g:A \to C$ in $\cc$. A **pushout** of $(f, g)$
 is the commutative diagram on the left
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 such that for every commutative square as on the right, there
 exists a unique morphism $t: R \to S$ such that $t \circ u =
 h$ and $t \circ v = k$. We can actually summarize this
 information more compactly
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where the diagram is commutative. \textcolor{NavyBlue}{One way
 to imagine a pushout is a commutative diagram which swallows
@@ -116,7 +116,7 @@ $f, g$.}
 As you might suspect, the pushout can in fact be related as the
 universal arrow of a functor. Consider the category **3**,
 which contains 3 objects and two nontrivial morphisms. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now construct the functor category $\cc^**3**$, where 
 
@@ -128,7 +128,7 @@ and $g: A \to C$ in $\cc$
 
 * [2.] Morphisms are natural transformations, which in this
 case simply reduce to a triple of morphisms $(h, l, k)$ where 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -137,11 +137,11 @@ Now construct the functor $\Delta: \cc \to \cc^**3**$ where
 $C \longmapsto (1_C, 1_C)$ where $1_C: C \to C$ is the identity
 morphism. Suppose there exists a natural transformation $\eta_S: (f,
 g) \to \Delta(S)$, which we can represent as follows:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If we have a pushout associated with the object $R$ in $\cc$, the existence of these commutative squares implies the existence
 of a morphism $t: R \to S$, so that we have 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we see that a pushout is a universal arrow from $(f, g)$ to
 $\Delta$.

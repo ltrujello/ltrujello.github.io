@@ -29,7 +29,7 @@ by the following observation: If $G'$ is another group with
 $\vartheta: G' \to G$ another map such that $\phi \circ \vartheta = \psi \circ \vartheta$, 
 then there exists a unique $i: G' \to \ker(\phi - \psi)$ 
 such that the diagram below commutes.  
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note above that $i: \ker(\phi - \psi) \to G$ is the inclusion morphism. 
 Also note that this construction is possible for any two parallel 
@@ -60,7 +60,7 @@ following property.
 For any other morphism $h: C \to A$ such that $f \circ h = g \circ h$,
 there exists a unique morphism $f': C \to E$ such that the
 following commutes.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -70,8 +70,9 @@ Let $\cc$ be a category and consider a pair of parallel morphisms
 $f, g: A \to B$.
 Let $J$ be the category with two elements and two nontrivial
 morphisms as below.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 and let $F: J \to \cc$ be the functor such that 
 \begin{tikzcd}
 F(\textcolor{Blue}{\bullet}
@@ -104,7 +105,7 @@ monic.
 <span style="display:block" class="proof">
 Consider any pair $f_1, f_2: C \to D$ such that $e \circ f_1 =
 e \circ f_2$. Then we have that 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since $e \circ f_1 = e \circ f_2$, we see that 
 
@@ -116,7 +117,7 @@ f \circ e = g \circ e &\implies f \circ (e \circ f_1) = g \circ
 
 Hence we see $e \circ f_1 = e \circ f_2 : C \to D$ is another
 morphism which is equalized by $f$ and $g$. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By the
 universality of the equalizer $e: D \to A$, we know that there
@@ -138,7 +139,7 @@ is, an object which is both initial and terminal, such that
 for any objects $A, B$ of $\cc$ there exists a unique pair of
 morphisms $f, g$
 such that 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Denote $f \circ g = 0$ as the zero arrow (any morphism which
 passes through $z$ is a zero arrow).
@@ -156,7 +157,7 @@ D$.
 
 
 Visually, this becomes 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 </span>    
@@ -193,7 +194,7 @@ We can represent this with the following commutative diagram.\\
 we can interpret a coequalizers as a morphism which uniquely
 "flattens" morphisms, and for any other morphism which also
 "flattens" is related to the original coequalizer.}
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -220,7 +221,7 @@ that
 
 
 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is a commutative diagram. Finally consider the diagonal
 functor $\Delta: \cc \to \cc^**2**$ where 

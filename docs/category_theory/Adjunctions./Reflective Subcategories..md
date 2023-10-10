@@ -128,7 +128,7 @@ morphism $\phi: G \to I(H)$, where $H \in
 **Ab**_{**TF**}$. Then there exists a morphism
 $\psi: F(G) \to H$ such that $I(\phi) \circ \eta_{G} = \phi$.
 Visually, that is, 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Sure such a morphism exists, but why the equality? 
 \begin{description}

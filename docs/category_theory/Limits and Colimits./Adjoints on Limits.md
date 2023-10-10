@@ -95,11 +95,11 @@ limits.
 <span style="display:block" class="proof">
 Let $(\Colim H, \sigma_i: H(i) \to \Colim H)$ be the colimit
 of the functor $H: J \to \cc$. This means that we have the universal diagram below. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Mapping this to $\dd$ under $F: \cc \to \dd$, we obtain the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 We see that $(F(\Colim H), F(\sigma_i): F(H(i)) \to F(\Colim H))$ 
@@ -121,16 +121,16 @@ this property.
 We show existence. Observe that each 
 $\tau_i: F(H(i)) \to C$ induces a unique morphism 
 $\delta_i: H(i) \to G(C)$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence, we have a family of $\delta_i: H(i) \to G(C)$. However, since $\Colim H$ is the colimit of $H$, 
 we obtain a unique morphism $k: \Colim H \to G(C)$ such that the diagram commutes.     
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 We then map this diagram in $\cc$ to the diagram below in $\dd$ 
 via $F$:
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Thus we see that $\epsilon_C \circ F(k): F(\Colim H) \to C$ is a morphism 

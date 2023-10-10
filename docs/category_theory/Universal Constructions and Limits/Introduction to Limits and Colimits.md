@@ -33,7 +33,7 @@ Dually, a **cone with $F$ over $A$** is a family of morphisms
 \]
 
 such that, for each morphism $f: i \to j$ in $J$, the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Similarly, we define the set of cones with $F$ over $A$ as $\text{Cone}(F, A)$. 
 </span>
@@ -88,15 +88,16 @@ We now define limits and colimits.
 Let $F: J \to \cc$ be a functor. The **limit of $F$** 
 is an object $\Lim F$ equipped with a natural transformation 
 $u: \Delta(\Lim F) \to F$ such that 
-\\begin{center}
+\begin{center}
 $(\Lim F, u: \Delta(\Lim F) \to F)$ is universal from 
 \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$\Delta$ to $\Lim F$}}.
-\end{center}       
+\end{center}        
 *  This means that, for any other pair $(C, v: \Delta(C) \to F)$ with $v$ a natural transformation
 and with $C \in \cc$, there exists a unique morphism $h: C \to \Lim F$ in $\cc$ such that 
 the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 
 *  By Proposition \ref{proposition:cones_are_natural_transformations}, 
@@ -108,7 +109,7 @@ via a family of morphisms $v_i: C \to F(i)$ with $i \in J$.
 
 Thus, the universal property, states that there exists a unique $h: C \to \Lim F$ such that the diagram 
 below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -129,10 +130,10 @@ Next, we offer the definition of a limit.
 Let $F: J \to \cc$ be a functor. The **colimit of $F$** is an object 
 $\Colim F$ equipped with a natural transformation $u: F \to \Delta(\Colim F)$ 
 such that 
-\\begin{center}
+\begin{center}
 $(\Colim F, u: F \to \Delta(\Colim F))$ is universal from 
 \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{$F$ to $\Delta$}}.
-\end{center}   </span>
+\end{center}    </span>
 
 Now is a good time to use Proposition \ref{proposition:cones_are_natural_transformations} 
 and reinterpret the definition of a colimit as a family of morphisms 
@@ -278,8 +279,9 @@ blindly expand what this means. This means that for any other
 pair $(C, v: \{\bullet\} \to \cone(F, C))$, there exists a unique $h: R \to C$ such that 
 diagram below commutes. 
 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Now let us turn our brains back on and understand what this means. 
 A function $u: \{\bullet\} \to \cone(F, R)$ simply picks out some
 cone $\sigma \in \cone(F, R)$ whose family we denote as
@@ -290,7 +292,7 @@ we may denote as $\tau$.
 What the universal property then says is the following: Given any cone $\tau$
 with $F$ over some object $C$, there exists a unique $h$ such that the diagram below commutes. 
 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This then means that $R = \Colim F$, which proves this direction.
 </span>

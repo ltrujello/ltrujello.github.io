@@ -20,9 +20,9 @@ $(C, f: C \to A)$ and $(D, g: D \to A)$ is a morphism $h: D \to C$ in $\cc$ such
 $f = g \circ h$. Similarly, a morphism in the comma category $(A \downarrow \cc)$ 
 between two objects $(P, m: A \to P)$ and $(Q, n: A \to Q)$ is a morphism $k: P \to Q$ such that 
 $n = h \circ m$. These relations give rise to the bow-tie diagram:
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ith that said, we can actually turn these categories into partial orders. 
+With that said, we can actually turn these categories into partial orders. 
 In $(\cc \downarrow A)$, we say $g \le f$ if there exists an $h$ such that $f \circ h = g$, 
 and in $(A \downarrow \cc)$, we say $m \le n$ if there exists a $k$ such that 
 $n = k \circ m$. 
@@ -67,7 +67,7 @@ Suppose we have two objects of our
 comma category $(C, f: A \to C)$ and $(D, g: A \to D)$, and that $h: D \to C$
 is a morphism in $(A \downarrow \cc)$ 
 from $(D, g: A \to D)$ to $(C, f: A \to C)$. Then we have the diagram below.
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now note that 
 
@@ -78,7 +78,7 @@ f \circ e_2 = (h \circ g) \circ e_2 = h \circ (g \circ e_2) = 0.
 Thus, by the universal property of $e_1: \ker(f) \to A$, we know there 
 exists a *unique* morphism $h': \ker(g) \to \ker(f)$ such that the diagram 
 below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 However, this is exactly what it means to have a morphism between the objects 
@@ -102,7 +102,7 @@ $\coker: (\cc \downarrow A) \to (A \downarrow \cc)$.
 Now this creates a Galois correspondence by regarding the comma categories as 
 partially ordered sets. Suppose that $g \le \ker(f)$. That is, there exists a $h$ such that 
 $\ker(f) \circ h = g$. Then we can compare $\coker(g)$ and $f$ by considering the diagram below. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now observe that 
 
@@ -113,7 +113,7 @@ f \circ g = f \circ (e \circ h) = 0 \circ h = 0.
 Therefore, by the universal property of the cokernel, we know there 
 exists a unique morphism $h': \coker(g) \to f$ such that the diagram 
 below commutes. This then implies that $f \le \coker(g)$. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By a similar argument, we have that if $f \le \coker(g)$, 
 then $g \le \ker(f)$. Hence we have that 

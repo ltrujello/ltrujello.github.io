@@ -70,17 +70,17 @@ are related via the natural isomorphism $\alpha_{A,B,C}$.
 We also know from the axioms of a monoidal category that 
 the 5 products of 4 objects are related via the diagram consisting 
 of natural isomorphisms as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-oreover, this diagram is guaranteed to be commutative for all $A$,$B$,$C$,$D$ in $\mm$ (we 
+Moreover, this diagram is guaranteed to be commutative for all $A$,$B$,$C$,$D$ in $\mm$ (we 
 will elaborate why this is a profound, useful fact).
 
 Finally, repeatedly using instances of $\alpha$, 
 the 14 ways to multiply 5 objects are related via the 3 dimensional 
 diagram as below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-owever, it is not an axiom of monoidal categories that this last diagram is commutative 
+However, it is not an axiom of monoidal categories that this last diagram is commutative 
 (with a ton of work, one could prove it to be commutative).
 
 To understand what's going on, let us  first understand why commutativity is important. 
@@ -94,9 +94,9 @@ my favorite way to do it is $(A\otimes B)\otimes(C \otimes D)$,
 while you choose $(A\otimes(B\otimes C))\otimes D$. Then we might be in trouble: 
 I have two possible ways, displayed below in \textcolor{NavyBlue}{blue} 
 and \textcolor{Orange}{orange}, to "reparenthesize" my product to get your object. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ortunately, the commutativity of the pentagonal diagram enures that 
+Fortunately, the commutativity of the pentagonal diagram enures that 
 the two paths are equal. That is, 
 
 \[

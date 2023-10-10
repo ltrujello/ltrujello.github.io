@@ -64,7 +64,7 @@ f_n \circ \pi_{n+1} \left( \sum_{k = 0}^{\infty}a_kp^k \right)
 so we may conclude that $f_n \circ \pi{n+1} = \pi_n$.
 Therefore, $\zz_p$ does in fact form a cone with the 
 morphisms $\pi_n$, so the following diagram commutes.
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Showing this is universal is simple once we realize that each
 element of $\zz_p$ may be thought of as a cone, in the same
@@ -82,7 +82,7 @@ dual of the above construction.
 Consider the functor $F: \omega \to **Grp**$ where we have 
 $F(n) = F_n = \zz/p^n\zz$, with $p$ being a prime. This time however 
 we have the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where we define each $f_n: \zz/p^n\zz \to \zz/p^{n+1}\zz$ 
 as the homomorphism 
@@ -96,9 +96,9 @@ f_n\left( \sum_{k =0}^{n-1}a_kp^k + p^{n}\zz \right)
 That is, we simply multiply the sum by a power of $p$. It turn outs 
 that the direct limit is the **Prüfer $\bm{p**$-Group} $\zz(p^\infty)$.
 The Prüfer 2-Group is pictured below.
-\\begin{center}
+\begin{center}
 \includegraphics{../pictures/chapter5_pic/prufer_2_group/prufer_2_group.pdf}
-\end{center}       
+\end{center}        
 The Prüfer $p$-group is the set of all $p^n$ roots of unity,
 as $n$ ranges over all positive integers. Hence the points lie
 on the complex unit circle. Specifically, it is the group  
@@ -175,7 +175,7 @@ Then we define
 \]
 
 So $\gal(L/F)$ forms a cone with morphisms $\pi_{K_i}$:
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We then have to work to show that this cone is universal.
 However, the faster route is to simply recognize that we can 

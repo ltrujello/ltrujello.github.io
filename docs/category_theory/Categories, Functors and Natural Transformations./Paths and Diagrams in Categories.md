@@ -37,7 +37,7 @@ of arrows between objects. Below are some diagrams.
 
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We can also have more complicated diagrams such as the diagrams below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Of course, a diagram does not really mean anything on its own; it is simply 
 a graph\footnote{Technically, since a diagram can have multiple morphisms between 
@@ -73,8 +73,9 @@ $A$ and $B$, we say $p$ and $q$ are **parallel paths**.
 For example, we have a path of length five from $A_1$ to $A_6$ 
 in some category $\cc$ displayed below in blue.
 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Note that in the above picture, we will in general have many possible paths 
 between two different objects. We now face the question: is there a way to 
 organize this data without getting too complicated? 
@@ -136,7 +137,7 @@ of any length.
 Some simple diagrams are pictured below. In the first diagram, the 
 source and targets are $X$ and $Z$; in the second, they are $A$ and $F$; 
 in the third, they are $V$ and $V_7$.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In many situations, simple diagrams are what we really care about. This is because 
 often times we have two objects of interests, and we consider many possible paths between 
@@ -154,7 +155,7 @@ they make all the time. Let $n \ge 2$. Consider the functions
 
 
 Often times, they get confused and think that the paths of the diagram below are equivalent.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Sadly, this equation does not hold generally, and the two paths of the diagram 
 are not equivalent. Thus at this point we introduce terminology for 
@@ -172,7 +173,7 @@ For example, an extremely important diagram that will
 eventually become engrained in your brain is pictured below on the left.\footnote{Understanding this diagram right now is not important; there is a lot 
 more stuff one needs to learn before we get into what this means. Long story short, 
 it is the *universal property of a product*.}
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Here, the objects are sets, and the morphisms are functions; the underlying function 
 maps are pictured above on the right. 
@@ -189,7 +190,7 @@ diagrams.
 * [1.] Consider a category $\cc$ with objects $A, A_0, \dots, A_n, B, B_0, B_1, \dots, B_m$.
 Let $A_0 = B_0 = A$ and $A_n = B_m = B$, and suppose we have a family of  
 isomorphisms $f_i: A_{i-1} \isomarrow A_i$ and $g_i: B_{i-1} \isomarrow B_i$ as below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Suppose we have another object $C$ and isomorphisms $\phi_i: A_i \isomarrow C$,
 $\psi_i: B_i \isomarrow C$ with $\psi_0 = \phi_0$ and $\phi_n = \psi_m$. 

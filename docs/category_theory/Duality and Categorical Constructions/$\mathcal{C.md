@@ -59,7 +59,7 @@ has the three morphisms $f, g, h$, in addition to their composites.
 Therefore, $\cc\op$ also has three morphisms 
 $f\op:B \to A$, $g\op: C \to
 B$ and $h\op: A \to C$ and their composites. Hence, $\cc\op$ looks like this:
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 

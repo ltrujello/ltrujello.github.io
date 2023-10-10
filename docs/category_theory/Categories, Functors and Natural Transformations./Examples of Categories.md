@@ -141,10 +141,10 @@ A category $\mathcal{P}$ is said to be **thin** or a **preorder**
 if there is **at most** one morphism $f:  A \to B$ for each $A, B \in \mathcal{P}$. 
 </span>
 The simplest thin categories are of the form below 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 but they may also have more complex shapes such as the category below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thin categories are very common since we often times only care about one single 
 type of relation between any two objects. An example of such a relation is a binary relation; 
@@ -196,7 +196,7 @@ Here we introduce some examples of thin categories.
 \item[Natural Numbers.] 
 The sets $\{1, 2, \dots, n\}$ for any $n \in N$ are
 linear orders, each of which forms a category as pictured below.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In this figure, the loops represent the trivial identity functions.
 
@@ -255,12 +255,12 @@ ropes then they would behave the same way.
 Each generator $\sigma_i$ is interpreted as swapping the $i$-th strand *over*
 the $(i+1)$-th strand, while $\sigma_i$ is swapping the $(i+1)$-th strand over the $i$-th strand.
 Below are some example generators.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The reason why we care about these generators is because every braid can be expressed 
 by over and under crossings (although such an expression may not be unique).
 Now, the group multiplication in this group is simply stacking of braids. For example, the braid
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 can be obtained by stacking $\sigma_1, \sigma_2$ and then $\sigma_1$ again. 
 Hence, the  braid $\sigma_1\sigma_2\sigma_1$. 
@@ -388,7 +388,7 @@ $g \in G$ induces a map
 
 This then gives rise to a collection of maps $f_g: G \to G$ for each 
 $g \in G$, which we can picture as below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In particular, if $e\in G$ is the identity, then $f_e = 1_G$. 
 Moreover, composition of these maps is associative.
@@ -405,7 +405,7 @@ is a group action we have that $\phi_g \circ \phi_{g'} = \phi_{g\cdot g'}$
 and $\phi_e = 1_X$. Hence composition is associative and we have a well-behaved
 identity morphism. Usually, when we draw group actions, we think of something 
 like this: 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 What we're seeing is that group actions can be phrased as a category with one object, 
 with morphisms as isomorphisms. This generalizes our previous discussion, which makes 

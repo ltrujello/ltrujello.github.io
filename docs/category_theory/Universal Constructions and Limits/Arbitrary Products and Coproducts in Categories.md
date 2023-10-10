@@ -118,9 +118,9 @@ is universal from
 *  The **coproduct** of $A_1, A_2, \dots, A_n$
 is an object $C$ of $\cc$ equipped with 
 a (natural transformation) $i: F \to \Delta_n(C)$ such that 
-\\begin{center}
+\begin{center}
 $(C, i: F \to \Delta_n(C))$ is universal from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$C$ to $\Delta_n$}}.
-\end{center}       In the case where the coproduct $C$ exists, we write $C = \coprod_{i = 1}^{n} A_i$ 
+\end{center}        In the case where the coproduct $C$ exists, we write $C = \coprod_{i = 1}^{n} A_i$ 
 
 
 
@@ -175,20 +175,20 @@ Let $F: \dd_{\lambda} \to \cc$ be the functor such that $F(\bullet_{i}) = A_i$ f
 $P$ of $\cc$
 equipped with a (natural transformation) $\displaystyle p: \Delta_{\lambda}\left( P\right) \to F$ 
 such that 
-\\begin{center}
+\begin{center}
 $\left( P, \Delta_{\lambda}\left( P \right) \to F \right)$ is universal from 
 \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$\Delta_{\lambda}$ to $P$}.}
-\end{center}           In the case where the product $P$ exists, we write $P = \prod_{i \in \lambda}A_i.$
+\end{center}            In the case where the product $P$ exists, we write $P = \prod_{i \in \lambda}A_i.$
 
 
 
 *  The **coproduct** of $\{A_i\}_{i \in \lambda}$ is the object 
 $C$ of $\cc$ equipped with a (natural transformation) $i: F \to \Delta_{\lambda}(C)$
 such that 
-\\begin{center}
+\begin{center}
 $(C, i:  F \to \Delta_{\lambda}(C))$ is universal from 
 \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{$C$ to $\Delta_{\lambda}$}}.
-\end{center}       
+\end{center}        
 
 
 </span>

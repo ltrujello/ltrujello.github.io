@@ -31,7 +31,7 @@ where, for each $C \in \cc$, we define
 Visually, we can picture what we are doing as follows.
 For a given morphism $f: A \to B$ in $\cc$,
 we define the morphism $(\tau \cdot \sigma)_C$ as
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus, we see that natural transformations can be "composed,"
 and we can thus ask: If we view functors as objects, and view natural transformations 
@@ -89,7 +89,7 @@ $\cc$.
 Let $\bm{2}$ be the category consisting of two
 elements, containing the two identities and one nontrivial
 morphism between the objects. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now consider the functor category $\cc^{\bm{2}}$ where $\cc$ is
 any category. Each functor $F:\bm{2} \to \cc$ maps the pair of
@@ -174,7 +174,7 @@ Now observe that $\psi$ induces another ring homomorphism
 As a result, we see that such a ring homomorphism induces a natural transformation.
 To show this, let $\phi: G \to H$ be a group homomorphism. Then observe that
 we get the diagram in the middle. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, we can follow the elements as in the diagram on the right, which shows 
 us that the diagram commutes. Hence we see that $\psi^*$ is a natural transformation 

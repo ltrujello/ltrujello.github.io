@@ -105,8 +105,9 @@ Could we logically call $G$ a "**subfunctor**" of $F$? We could with a little mo
 Because $G(A) \subset F(A)$,  we know that there exists a monomorphism (just an injection here)
 $i_A: G(A) \to F(A)$. Now a natural question to ask here is if this translates to a
 natural transformation. That is, does the diagram below commute?
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_7_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 The answer is no. This is because $G(f)$ and $F(f)$ could be two entirely different functions which do 
 two entirely different things to the same elements in different domains; however, 
 one way for this diagram to commute is if $G(f)$ is $F(f)$ *restricted* to 
@@ -119,7 +120,7 @@ G(f) = F(f)\big|_{G(A)}.
 The diagram then commutes. But is this the only way to make it commute? Suppose with no assumption of $G(f)$
 that the diagram did commute. Then we can still make a morphism $F(f)\big|_{G(A)}: G(A) \to G(B)$ to 
 get the commutative diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_7_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Then we see that $i_B \circ G(f) = i_B \circ F(f)\big|_{G(A)}$. However, 

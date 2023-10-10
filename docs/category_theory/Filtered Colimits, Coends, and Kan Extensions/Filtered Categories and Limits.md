@@ -107,7 +107,7 @@ commutes.
 We do not say the empty category is filtered; this should be obvious, but 
 it also needs to be said.
 
-\
+
 <img src="../../../png/category_theory/chapter_6/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -122,9 +122,9 @@ for $J$ to be filtered, we simply need to satisfy (1). But in the language
 of thin categories, condition (1) can be read as ``for any $j, j \in J$, 
 there exists a $k$ such that $j, j' \le k$''. Such a condition holds 
 if and only if
-\\begin{center}
+\begin{center}
 every finite subset $S \subset J$ has an upper bound *in* $J$.
-\end{center}   Thus, a thin category $J$ needs to have the above property in order to 
+\end{center}    Thus, a thin category $J$ needs to have the above property in order to 
 be a filtered category.
 
 An example of this concerns the category $**Open**(X)$, where 

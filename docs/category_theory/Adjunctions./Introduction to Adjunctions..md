@@ -64,7 +64,7 @@ is universal from \hyperref[definition:universal_morphism_from_D_to_F]{\textcolo
 That is, if $K$ is a 
 ring, and we have a mapping $\phi: G \to K^{\times}$, then there exists a
 unique ring homomorphism $h: R[G] \to K$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The reason why this works is as follows: $\phi$ tells us to where to send 
 elements of $G$. Since a map on $R[G]$ can be defined by (1) defining where 
@@ -93,11 +93,11 @@ is universal from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolo
 That is, if $G$ is a group and we have a mapping $\psi: R[G] \to K$, 
 then there exists a unique $j: G \to (K)^{\times}$ such that the following diagram 
 commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We obtain $j$ as follows: Note that $\phi(1_R g) \in K^{\times}$, since 
 ring homomorphisms send units to units. Hence, the composite 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where $i$ is defined earlier, yields $j$. Moreover, the diagram commutes in this way. 
 By Exercise \ref{exercise:universality_bijection}, if $K$ is a ring, then for every group $G$ 
@@ -114,7 +114,7 @@ This demonstrates our first example of an adjunction.
 
 <span style="display:block" class="definition">
 Let $\cc, \dd$ be categories. Consider a pair of functors 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We say that $F, G$ form an **adjunction** and that 
 $F$ is **left adjoint to $G$** (and so $G$ is **right adjoint to $F$**)
@@ -260,9 +260,9 @@ is the **counit of the adjunction**.
 <span style="display:block" class="example">
 We already saw this proposition in action in the introductory example. 
 In that example, we found a pair functors 
-\\begin{center}
+\begin{center}
 \adjunction{**Grp**}{{R[-]}}{**Ring**}{(-)^{\times}}
-\end{center}   that formed an adjunction with universal morphisms 
+\end{center}    that formed an adjunction with universal morphisms 
 
 \[
 i_G: G \to (R[G])^{\times}
@@ -321,7 +321,7 @@ The proof is left to the reader.
 
 <span style="display:block" class="example">
 We have already encountered the pair of functors 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where $F$ is the free monoid functor and $U$ is the forgetful monoid functor.
 We previously saw that given a set $X$, there
@@ -356,8 +356,9 @@ Moreover, we know exactly how this bijection works.
 
 
 This data assembles into the commutative diagrams as below. 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 </span>
 
 Now we offer some sufficient conditions for establishing an
@@ -374,7 +375,7 @@ to $G$.
 
 <span style="display:block" class="proof">
 To have universality from $C$ to $G$, the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence we have a bijection 
 
@@ -383,7 +384,7 @@ must commute. Hence we have a bijection
 \]
 
 Now suppose $h: C \to C'$. Then the dashed arrow 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must exist by universality; we simply utilize the previous
 diagram. In other words, if $h: C \to C'$, then there exists a
@@ -420,7 +421,7 @@ suppose we have the pair of natural transformations:
 \end{align*}
 
 such that the following composites are the identity: 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then there exists a bijective $\phi$ such that $(F, G, \phi)$
 form an adjunction between $\cc$ and $\dd$. 
@@ -450,8 +451,9 @@ where
 Our construction ensures that this is a well-defined $R$-module
 homomorphism. Hence we clearly have the equality $U(\phi) \circ \eta_A =
 f$. Visually, this becomes 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Since the construction of $\phi$ depends directly on the existence
 of $f$, we see that it is unique. Hence we see that $\eta_A: A \to
 U(F(A))$ is universal from $A$ to $U$. Then by Theorem 4.1, we see
@@ -487,7 +489,7 @@ F'(C)$ by universality such that $G(\theta_C) \circ \eta_C =
 
 Now let $h: C \to C'$ be a morphism in $\cc$. Then 
 $F'(h) \circ \theta_C = \theta_{C'} \circ F(h)$ so that the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. Hence we see that $\theta: F \to F'$ is a natural
 isomorphic transformation between $F$ and $F'$, so that these
@@ -513,7 +515,7 @@ form composition of adjoints.
 <span style="display:block" class="proposition">
 Let $\cc, \dd$ and $\ee$ be categories. Suppose we have
 two adjunctions as below.
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the functors $F'\circ F$, $G \circ G'$
 form an adjunction between $\cc$ and $\ee$.

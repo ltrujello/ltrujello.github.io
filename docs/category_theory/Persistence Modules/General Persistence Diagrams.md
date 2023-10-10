@@ -180,8 +180,9 @@ D(f) = \bigcup_{i=0}^{n+1}\bigcup_{j = 0}^{n+1} \left( \bigcup_{k = 1}^{\mu_i^{j
 </span>
 
 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Persistence diagrams consist of points in $\rr \times \rr \cup\{\infty\}$ 
 above the diagonal $y = x$. Thus let $**Dgm**$ be the category of half
 open intervals $[p, q)$ with $p < q$ and intervals of the form $[p, \infty)$. 
@@ -215,8 +216,9 @@ Suppose that our critical points are $S = \{s_0, s_1, s_2, s_3\}$
 and that we have two intervals $I = [a, b]$ 
 and $J = [c, d]$ such that $I \subset J$ and $I \cap S = J \cap S$. 
 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Clearly in this case we have that $I \cap S = J \cap S$. Now observe that 
 
 \[

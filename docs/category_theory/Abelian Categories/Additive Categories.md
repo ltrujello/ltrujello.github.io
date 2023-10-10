@@ -13,9 +13,9 @@ universal property
 <img src="../../../png/category_theory/chapter_8/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Here, $K$ is a third group, $\phi$ and $\psi$ are arbitrary group homomorphisms, and $\pi_G, \pi_H$ are the natural projection morphisms. 
 Interestingly, this object also satisfies the universal property 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ere $i_G$ and $i_H$ are the natural injections, e.g. $i_G(g) = g \otimes e_H$. 
+Here $i_G$ and $i_H$ are the natural injections, e.g. $i_G(g) = g \otimes e_H$. 
 However, this implies that $G \oplus H$ is a coproduct!
 What this implies is 
 that \textcolor{NavyBlue}{product and coproducts coincide in **Ab**}.
@@ -23,9 +23,10 @@ This is actually a pretty remarkable property because this isn't the case even
 in nice categories. For example, in **Set**, products and coproducts are 
 definitely distinct.
 
-\\begin{center}
+\begin{center}
 Why is this the case? 
 \end{center}
+
 <span style="display:block" class="proposition">
 Let $\cc$ be a preadditive category with a zero object $z$. 
 Then for any objects $A, B \in \cc$, the following are equivalent
@@ -53,23 +54,25 @@ We only demonstrate one direction because the proof is self-dual.
 Suppose $A \times B$ exists. Then then if $C$ is an object equipped 
 with morphisms $f: C \to A$ and $g: C \to B$, the following diagram 
 must hold. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Equip $A$ with the morphisms $1_A: A \to A$ and the unique  
 zero morphism $\emptyset_A^B: A \to B$. Then there exists a unique 
 $i_A: A \to A \times B$ such that the diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Symmetrically, equip $B$ with the unique zero morphism $\emptyset_B^A: B \to A$
 and $1_B: B \to B$. Then there exists a unique $i_B: B \to A\times B$ such that the 
 diagram commutes.
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Now we'll demonstrate that we have a coproduct structure on our hands. 
 To do this, suppose we have an object $C$ equipped with morphisms 
 $f: A \to C$ and $g: B \to C$. Then we can construct a morphism $h$ such that the following 
 diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Observe that $h = f\circ \pi_A + g \circ \pi_B$ suffices, where 
 $+$ is the group operation on the abelian group $\hom(A \times B, C)$.

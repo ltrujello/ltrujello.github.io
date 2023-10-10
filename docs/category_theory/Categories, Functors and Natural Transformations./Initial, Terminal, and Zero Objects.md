@@ -94,7 +94,7 @@ always have to coincide like they did in the previous example.
 Let $n$ be a positive integer. Recall that we can create a category, specifically a 
 preorder, by taking our objects to be positive integers less than $n$, 
 and allowing one morphism $f: k \to m$ whenever $k \le m$.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_11_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then 1 is an initial object while $n$ is a terminal object. This 
 is because for any number $1 \le m \le n$, there exists a unique morphism 

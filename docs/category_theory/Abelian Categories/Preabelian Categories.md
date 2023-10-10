@@ -41,9 +41,9 @@ to be the coequalizer of $f$ and $\emptyset_A^B: A \to B$.
 
 
 In diagrams, we have that 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 
 <span style="display:block" class="example">
@@ -98,7 +98,7 @@ suppose that we have kernels for every morphism in $\cc$. Then consider two
 morphisms $\phi, \psi: G \to H$. We can combine these two morphisms by our 
 group operation on $\hom(G, H)$ and consider $\phi - \psi$. Since we can take kernels, we 
 take the kernel of this morphism.
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We now argue that this is the equalizer of $\phi, \psi$. First observe that 
 
@@ -111,7 +111,7 @@ we now need to demonstrate its universal property.
 
 Now suppose that there exists an object $K$ equipped with a morphism $\sigma: K \to G$ such 
 that $\psi \circ \sigma = \psi \circ \phi$. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, note that 
 
@@ -125,7 +125,7 @@ Since $e: \ker(\phi) \to G$ is kernel, we note that its
 universal property implies that because $(\phi - \psi)\circ \sigma = 0$ 
 that there must exists a unique morphism $u: K \to \ker(\phi)$ such that 
 $e \circ u = \sigma$. Thus we have shown the diagram below 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must hold so that $(\ker(\phi), e: \ker(\phi) \to G)$, is actually an equalizer!
 </span>
@@ -134,7 +134,8 @@ Note that we've once more utilized the bilinearity of $\circ$ to construct the a
 which again reminds us that the assumptions we've made so far are necessary and useful. The above proof now motivates 
 the following definition.
 
-\begin{definition}
+
+<span style="display:block" class="definition">
 Let $\cc$ be an additive category. Then we say $\cc$ is **preabelian**
 if it has kernels and cokernels; or, equivalently, if it has all equalizers and coequalizers. 
 </span>
@@ -174,7 +175,7 @@ Then
 
 <span style="display:block" class="proof">
 Recall the limit satisfies universal property 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 for every object $C$ equipped with a family of morphisms $f^i: C \to F(i)$. 
 Construct the family of morphisms 
@@ -191,7 +192,7 @@ where $\emptyset_i^j: F(i) \to F(j)$ is the unique zero morphism
 from $F(i)$ to $F(j)$.
 Then by the universal property of the limit, for each $i \in J$, there 
 exists a unique morphism $h_i: F(i) \to \Lim F$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 That is, we have $u^j \circ h_i = f_i^j$. 
 We now argue that we have a colimit on our hands. Specifically, suppose $D$ is an 
@@ -204,7 +205,7 @@ Then observe that we can supply a morphism
 
 where the addition operation is from the group structure of $\hom(\Lim F, D)$, 
 such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This diagram commutes since 
 
@@ -232,7 +233,7 @@ h_i: F(i) \to \Lim F
 \]
 
 under the contravariant hom functor to get an epic group homomorphism 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 between abelian groups, as $\circ$ obeys bilinearity 
 properties. By the first isomorphism theorem we then have that 

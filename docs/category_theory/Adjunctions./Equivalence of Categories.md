@@ -164,7 +164,7 @@ transformation between the two functors:
 
 Let $C = G(D)$. Then we have the following sequence of
 natural transformations:
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Composing the natural transformations, we finally
 obtain a natural transformation 
@@ -253,7 +253,7 @@ isomorphisms
 
 Let $f: C \to C'$ be a morphism in $\cc$. Then observe
 that the following diagram
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative. In an equations, we have that $f = \psi_C'
 \circ G(F(f)) \circ \psi_{C'}^{-1}$. Thus suppose that
@@ -277,7 +277,7 @@ To show that $F$ is full, suppose there exists a morphism
 $h: F(C) \to F(C')$ for a pair of objects $C, C'$. Let $f
 = \psi_{C'} \circ G(h) \circ \psi_C$. Then we have the
 commutative squares
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and hence we have that $G(h) = G(F(f))$. But since $G$ is faithful, 
 this implies that $h = F(f)$. Hence we have that there
@@ -301,7 +301,7 @@ Suppose $(iii)$ holds. For any  arbitrary object $C \in
 object $D \in \dd$. Denote such an object as $F_0(C)$. 
 Now consider any other morphism $g: C
 \to G(D')$. Then we have that 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative. Now since $g \circ \eta_C^{-1}: G(F_0(C)) \to
 G(D')$, and because $G$ is full, we know that there exists
@@ -393,7 +393,7 @@ previous theorem, we know however that there exists an
 object $A$ of $\cc$ such that $D \cong F(A)$. Hence
 there exists an isomorphism $\theta: F(A) \to D$. We
 then have the diagram:
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that $h \circ \theta, g \circ \theta: F(A) \to
 F(C)$. Since $F$ is full, we know that there exists 

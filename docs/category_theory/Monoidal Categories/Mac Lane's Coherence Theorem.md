@@ -175,7 +175,7 @@ is mapped to the identity $1_{u\otimes v} :u \otimes v \to u \otimes v$.
 Finally, to demonstrate that this respects composition, suppose that 
 $(\gamma, \beta)$ is composable with $(\gamma', \beta')$
 as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 As both $(\gamma', \beta')\otimes(\gamma, \beta)$ and $(\gamma' \circ \gamma)\otimes (\beta' \circ \beta)$
 are parallel morphisms acting as $(u_1,v_1) \to (u_3,  v_3)$, they must be equal 
@@ -212,7 +212,7 @@ the isomorphisms
 are forced to exist. Further, these isomorphisms are natural because all diagrams 
 commute in a thin category. In addition, since $\ww$ is a thin category, 
 all diagrams commute, and so, in particular, the required diagrams 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 also commute, so that $(\ww, \otimes, x_0)$ satisfies the axioms of a monoidal category. 
 </span>
@@ -367,17 +367,17 @@ inverse of a forward $\alpha$-arrow.
 <span style="display:block" class="example">
 Below are a few simple examples of $\alpha$-arrows. The first two are forward, 
 while the third is backward.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We can have even more complicated examples; for example, the morphism below 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is an $\alpha$-morphism for any pure binary words $u, v$. For example, setting 
 $u = (x_1 \otimes x_1)\otimes x_1$ and $v = x_1 \otimes x_1$, we obtain the forward $\alpha$-arrow 
 as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{example}
+</span>
 
 We emphasize that $\alpha$-arrows only ever involve a single 
 instance of $\alpha$ or $\alpha^{-1}$ in their expression.
@@ -403,20 +403,22 @@ More informally, the terminal word is the unique pure binary
 word of length $n$ for which all parentheses begin on the left.
 </span> 
 
-\begin{example}
-Below we list the terminal words by length.
-\\begin{center}
 
-|                          Length |\multicolumn{1}{c|}{Terminal Word}|
-|---------------------------------|----------------------------------|
-|                         $1$ |$x_1$|
-|            $2$ |$x_1 \otimes x_1 $|
-|            $3$ |$(x_1 \otimes x_1)\otimes x_1 $|
-|            $4$ |$((x_1 \otimes x_1)\otimes x_1)\otimes x_1 $|
-|            $5$ |$(((x_1 \otimes x_1)\otimes x_1)\otimes x_1)\otimes x_1$|
+<span style="display:block" class="example">
+Below we list the terminal words by length.
+\begin{center}
+
+|                  Length |\multicolumn{1}{c|}{Terminal Word}|
+|-------------------------|----------------------------------|
+|                 $1$ |$x_1$|
+|        $2$ |$x_1 \otimes x_1 $|
+|        $3$ |$(x_1 \otimes x_1)\otimes x_1 $|
+|        $4$ |$((x_1 \otimes x_1)\otimes x_1)\otimes x_1 $|
+|        $5$ |$(((x_1 \otimes x_1)\otimes x_1)\otimes x_1)\otimes x_1$|
 ||
 
-\end{center}</span>
+\end{center}
+</span>
 
 
 We now introduce a quantity which provides a "distance-measure"
@@ -691,7 +693,7 @@ the unique morphism from $v$ to $w$. By Proposition \ref{proposition_existence_o
 there exists chains of forward $\alpha$-arrows whose composite 
 we denote as $\Gamma_1: v \to w^{(n)}, \Gamma_2: w \to w^{(n)}$. Our situation is pictured
 below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, $\wp$ is a thin category, so parallel morphisms must be equal. Therefore
 
@@ -863,9 +865,9 @@ Let
 Then we have many possible ways of expressing $\gamma$ in terms of 
 our $\alpha$-arrows. Some potential ways we could express $\gamma$ are displayed 
 below in \textcolor{Purple}{purple}, \textcolor{NavyBlue}{blue}, or \textcolor{Orange}{orange}.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s this is a thin category, we know that the composition of these paths 
+As this is a thin category, we know that the composition of these paths 
 are equal in $\wp$. 
 However, we now have many ways to define $\gamma$ under the proxy map $(-)_A$. 
 We could write
@@ -903,9 +905,9 @@ or
 
 But as morphisms in $\mm$, we don't know if 
 these compositions in $\mm$, displayed below, are all equal.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ence we need to show that the \textcolor{Purple}{purple}, \textcolor{NavyBlue}{blue}, and \textcolor{Orange}{orange} compositions
+Hence we need to show that the \textcolor{Purple}{purple}, \textcolor{NavyBlue}{blue}, and \textcolor{Orange}{orange} compositions
 are equal in $\mm$. While we could perform tedious diagram chases to show that they  are 
 equal in $\mm$, that would only address three of the many possible ways to express 
 $\gamma$. It also would not take care of the case for much larger binary words! 
@@ -963,22 +965,24 @@ We summarize our plan on how to prove Theorem \ref{theorem:coherence_in_alpha}.
 The uncolored boxes, and the implications between them,
 are what is left to do.
 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 
 <span style="display:block" class="lemma">[Diamond Lemma]
 Let $w$ be a pure binary word and suppose $\beta_1,\beta_2$ are two 
 forward $\alpha$-arrows as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 There exists a pure binary word $z$ and two $\gamma_1: w_1 \to z, \gamma_2: w_2 \to z$,
 with $\gamma_1, \gamma_2$ a composition of forward $\alpha$-arrows,
 such that for any monoidal category 
 $(\mm, \otimes, I, \alpha, \lambda, \rho)$ the diagram below is 
 commutative in $\mm$.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 </span>
 
 Since the above lemma is an existence result, 
@@ -1017,18 +1021,18 @@ we see that $w = w^{(n)}$ so that this statement is trivial.
 Next suppose the statement is true for all words with rank at 
 most $k$ where $k \ge 0$. Let $w$ be a pure binary word of rank $k+1$.
 We want to show that the diagram in $\mm$
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative. By the Diamond Lemma \ref{lemma:diamond_lemma}, 
 there exists exist a pure binary word $z$ and two composites of 
 forward $\alpha$-arrows $\beta'$ and $\gamma'$ such that the diagram below 
 is commutative in $\mm$. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Let $\Gamma_z: z \to w^{(n)}$ by any composition of forward $\alpha$-arrows from $z$ to $w^{(n)}$; 
 at least one must exist by Proposition \ref{proposition_existence_of_w_to_wn}. 
 We can now combine our two diagrams in $\mm$ to obtain the diagram below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Lemma \ref{lemma:directed_decreases_rank}, we know  that forward $\alpha$-arrows 
 decrease rank, so that $r(u_1) < r(w)$ and 
@@ -1080,11 +1084,11 @@ Note that each morphism may either be
 forward or backward. 
 With this notation we can picture our parallel $\alpha$-arrows in $\wp$ 
 as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now consider the image of this diagram in $\mm$, 
 which we do not yet know to be commutative. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Our goal is to show that this diagram in $\mm$ is in fact commutative. 
 This will then show our desired equality.
@@ -1095,10 +1099,10 @@ to the terminal word $w^{(n)}$ with forward $\alpha$-arrows
 $\Gamma_{u_i}: u_i \to w^{(n)}$ and $\Gamma_{t_i}: t_i \to w^{(n)}$.
 If we add these to our diagram (and suppress the notation on the $\Gamma$'s), 
 it becomes
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 whose image under the proxy map in $\mm$ is
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus the diagram has become a cone, with apex $w^{(n)}$, which 
 is sliced by the triangles. The base of this cone is
@@ -1107,7 +1111,7 @@ the original diagram. We now show that each triangle is commutative.
 Note that each triangle is of two possible forms: it either 
 consists of $\beta_i$ or $\gamma_i$. Without loss of generality, 
 consider a triangle with an instance of $\beta_i$, as below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now if $\beta_i$ is a forward $\alpha$-arrow, 
 observe that by Proposition \ref{proposition:parallel_w_to_wn_equal_in_M} 
@@ -1116,7 +1120,7 @@ it is a commutative diagram in $\mm$.
 On the other hand, suppose $\beta_i$ is a backward $\alpha$-arrow. 
 Then $\beta_i^{-1}$ is a forward $\alpha$-arrow.
 Then we may rewrite the triangle as 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that it now consists entirely of forward $\alpha$-arrows. This then 
 allows us to apply Proposition \ref{proposition:parallel_w_to_wn_equal_in_M}  
@@ -1182,7 +1186,7 @@ However, $u_k = t_{\ell}$ and $u_0 = t_0$, so that
 \]
 
 Thus we have that our original diagram in $\mm$
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative. Therefore we have that 
 parallel sequences of $\alpha$-arrows are equal in $\mm$, as desired.
@@ -1268,14 +1272,14 @@ seen to play a critical role in this proof.
 \begin{customlemma}{\ref{lemma:diamond_lemma}}[Diamond Lemma]
 Let $w$ be a pure binary word and suppose $\beta_1,\beta_2$ are two 
 forward $\alpha$-arrows as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 There exists a pure binary word $z$ and two $\gamma_1: w_1 \to z, \gamma_2: w_2 \to z$,
 with $\gamma_1, \gamma_2$ a composition of forward $\alpha$-arrows,
 such that for any monoidal category 
 $(\mm, \otimes, I, \alpha, \lambda, \rho)$ the diagram below is 
 commutative in $\mm$.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_23.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative. 
 \end{customlemma}
@@ -1310,7 +1314,7 @@ and $\beta_2$ could be of the forms
 with $\gamma_1, \gamma_2$ already forward $\alpha$-arrows.
 Therefore, our cases for $\beta_1,\beta_2$, 
 displayed in tuples, are listed in the table below.
-\\begin{center}
+\begin{center}
 
 |                 $(\beta_1,\beta_2)$                 |                $\alpha_{u,s,t}$                 |                $1_u\otimes \gamma_2$                 |                $\gamma_2 \otimes 1_v$                 \ \[0.2cm]                                  $\alpha_{u,s,t}$                 |                $\textcolor{Red}{(\alpha_{u,s,t}, \alpha_{u,s,t})}$ |$\textcolor{NavyBlue}{(\alpha_{u,s,t},1_u \otimes \gamma_2)}$                  |$\textcolor{Orange}{(\alpha_{u,s,t}, \gamma_2\otimes 1_v)}$|
 |-----------------------------------------------------|-------------------------------------------------|------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------|
@@ -1318,7 +1322,7 @@ displayed in tuples, are listed in the table below.
 |0.2cm]                 $\gamma_1\otimes 1_v$                 |                $\textcolor{Orange}{(\gamma_1\otimes 1_v, \alpha_{u,s,t})}$                  |$\textcolor{Purple}{(\gamma_1\otimes 1_v ,1_u \otimes \gamma_2)}$                  |$\textcolor{ProcessBlue}{(\gamma_1\otimes 1_v, \gamma_2\otimes 1_v)}$|
 ||
 
-\end{center}  
+\end{center}   
 While there are 9 cases displayed above, we have pointed out via color the pairs of cases which are logically 
 equivalent to each other due to the symmetry of our problem. Therefore, we actually have 6 cases to check 
 We now proceed to the proof.
@@ -1331,7 +1335,7 @@ In this case, we have that $\beta_1 =  \beta_2$, for which the statement is triv
 Suppose $\beta_1 = \gamma_1 \otimes 1_v$ and $\beta_2 = 1_u\otimes \gamma_2$. 
 Here, $\gamma_1: u \to u'$ and $\gamma_2: v \to  v'$ for some pure binary 
 words $ u',v'$. Then we get the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_24.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes by the bifunctoriality of $\otimes$. 
 \\
@@ -1343,23 +1347,23 @@ with $\gamma_1: u \to u_1$ and $\gamma_2: u \to u_2$ both forward $\alpha$-arrow
 
 
 Then in this case we have the triangle below in $\mm$.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_25.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that the above diagram 
 is the image of diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_26.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 under the functor $(-)\otimes (v)_A$. As $\ll(u) < \ll(u\otimes v)$, 
 we know by our induction hypothesis that 
 there exists a pure binary word $z$
 and a pair of composite, forward $\alpha$-arrows $\sigma_1: u_1 \to z$ and 
 $\sigma_2: u_2 \to z$ such that the diagram below commutes in $\mm$.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_27.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore we can apply the functor 
 $(-)\otimes (v)_A$ on the above diagram 
 to obtain the commutative diagram below
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_28.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which proves this case.
 \\
@@ -1376,7 +1380,7 @@ Let $\beta_2 = \gamma_2 \otimes 1_{v}
 = \gamma_2 \otimes 1_{s\otimes t}$ 
 with $\gamma_2: u \to u'$
 a forward $\alpha$-arrow. Then we will have the diagram in $\mm$
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_29.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes in $\mm$ by naturality of $\alpha$. 
 \\
@@ -1392,7 +1396,7 @@ we have three possible cases for $\gamma$.
 With $\gamma = 1_s \otimes \gamma'$ with $\gamma' : t\to t'$ 
 already a forward $\alpha$-arrow,
 we have the diagram in $\mm$
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_30.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes in $\mm$ by naturality of $\alpha$.
 \\
@@ -1400,7 +1404,7 @@ which commutes in $\mm$ by naturality of $\alpha$.
 **Case 6.2:** $\gamma = \gamma' \otimes 1_t$\\
 If $\gamma = \gamma' \otimes 1_t$ with $\gamma': s \to s'$ 
 already a forward $\alpha$-arrow, we can create the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_31.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which also commutes in $\mm$ by naturality of $\alpha$.
 \\
@@ -1409,7 +1413,7 @@ The third case for $\gamma$ is when $\gamma = \alpha_{s,p,q}$.
 In this case, we 
 express $w = u\otimes (s\otimes (p \otimes q))$. 
 We can then construct the diagram  
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_32.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which is always commutative in $\mm$.
 In this case, the word $((u\otimes s)\otimes p)\otimes q$
@@ -1494,7 +1498,7 @@ the clean word to be $x_0$ .
 
 <span style="display:block" class="example">
 We offer some examples of clean words obtained from binary words.
-\\begin{center}
+\begin{center}
 
 |                  Word |Clean Word|
 |-----------------------|----------|
@@ -1505,7 +1509,7 @@ We offer some examples of clean words obtained from binary words.
 |        $(x_1 \otimes x_0) \otimes ((x_1 \otimes x_0) \otimes x_1)$ |$x_1 \otimes (x_1 \otimes x_1)$|
 ||
 
-\end{center}   The above example also shows that two different binary words 
+\end{center}    The above example also shows that two different binary words 
 can have the same clean word. 
 </span>
 
@@ -1553,14 +1557,15 @@ Similarly, a  **backward unitor arrow** is the inverse of a forward unitor arrow
 As we have already seen forward $\alpha$-arrows, 
 we provide examples of forward and backward $\lambda, \rho$-arrows.
 
-\begin{example}
+
+<span style="display:block" class="example">
 Below we have a forward and backward $\lambda$-arrow.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_33.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We also have forward and backward $\rho$-arrows below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_34.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{example}
+</span>
 
 We now move onto proving some important lemmas regarding 
 monoidal arrows that we will use for the coherence theorem.
@@ -1985,12 +1990,12 @@ a forward unitor arrow in $\ww$ can be expressed in two ways.
 
 
 The reader may check that all possible cases for ambiguity are the three cases below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_35.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 As parallel morphisms in $\ww$, they are equal.
 Therefore, in order for our definition to be well-defined, we need 
 that the corresponding pairs of morphisms
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_36.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 to be equal in $\mm$. 
 One can show that these morphisms are equal in $\mm$
@@ -2143,7 +2148,7 @@ we know that the domain of the composition of our unitors is $\overline{w}$:
 \]
 
 Diagramatically, our situation is displayed below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_37.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Proposition \ref{proposition:unitor_chain_equivalence}, the upper half of this diagram (above $(\overline{w})_A$) 
 must commute. By 
@@ -2174,15 +2179,17 @@ There exists a binary word $z$,
 a forward unitor arrow $\iota': w \to z$ 
 and a forward $\alpha$-arrow $\mu': z \to w_2$ such that, for any monoidal 
 category $\mm$, the diagram below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_38.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
 *  There exists a forward unitor arrow $\iota': w \to w_2$ such that, for any monoidal 
 category $\mm$, the diagram below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_39.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{itemize}
+
+
+
 </span>
 
 
@@ -2233,14 +2240,15 @@ with $\eta_2$ either a forward unitor arrow.
 We display our table below, this time coloring the entries 
 in order to group together similar cases.
 
-\\begin{center}
+\begin{center}
 
 |             $(\mu,\iota)$             |            $1_u\otimes \eta_2$             |            $\eta_2 \otimes 1_v$             |             $\lambda_v$             |            $\rho_u$             \ \[0.2cm]                          $\alpha$             |$\textcolor{NavyBlue}{(\alpha_{u,s,t},1_u \otimes \eta_2)}$              |$\textcolor{NavyBlue}{(\alpha_{u,s,t}, \eta_2\otimes 1_v)}$             |             $\textcolor{Orange}{(\alpha_{u,s,t}, \lambda_v)}$              |            $\textcolor{Orange}{(\alpha_{u,s,t}, \rho_u)}$             |
 |---------------------------------------|--------------------------------------------|---------------------------------------------|-------------------------------------|------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------------|-----------------------------------------------------------------------|
 |0.2cm]             $1_u \otimes \eta_1$             |$\textcolor{Purple}{(1_u \otimes \eta_1 ,1_u \otimes \eta_2)}$              |$\textcolor{Purple}{(1_u \otimes \eta_1, \eta_2\otimes 1_v)}$             |             $\textcolor{ProcessBlue}{(1_u\otimes\eta_1 ,\lambda_v)}$              |            $\textcolor{ProcessBlue}{(1_u\otimes\eta_1 ,\rho_u)}$             |
 |0.2cm]             $\eta_1\otimes 1_v$             |$\textcolor{Purple}{(\eta_1\otimes 1_v ,1_u \otimes \eta_2)}$              |$\textcolor{Purple}{(\eta_1\otimes 1_v, \eta_2\otimes 1_v)}$             |             $ \textcolor{ProcessBlue}{(\eta_1\otimes 1_v, \lambda_v)}$              |
 
-\end{center}    \noindent 
+\end{center}
+\noindent 
 
 
 **Case 1: $(\alpha_{u,s,t**, 1_{u\otimes s} \otimes \eta_2)$}\\
@@ -2250,7 +2258,7 @@ $\eta_2: t \to t'$ either a forward $\lambda$ or $\rho$ arrow.
 We select the forward unitor arrow 
 $1_{u_A}\otimes(1_{s_A} \otimes (\eta_2)_A)$ and the forward 
 $\alpha$-arrow $\alpha_{u_A, s_A, t'_A}$ to obtain the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_40.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes by naturality of $\alpha$. 
 \\
@@ -2270,7 +2278,7 @@ Thus we check each of these cases are satisfied.
 In this case, $u = I$. We can construct a triangular diagram 
 by appending $\lambda_{s_A \otimes t_A}: I \otimes (s_A \otimes t_A) \to s_A \otimes t_A$ as 
 below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_41.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes in $\mm$ by Proposition \ref{proposition:unitor_diagrams}.
 \\
@@ -2278,7 +2286,7 @@ which commutes in $\mm$ by Proposition \ref{proposition:unitor_diagrams}.
 In this case, $s_A = I$. We can append the morphism 
 $1_{u_A} \otimes \lambda_{t_A}: u_A \otimes (I \otimes t_A) \to u_A \otimes t_A$ 
 to create a triangular diagram as below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_42.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The above diagram is guaranteed to commute by unitor-axiom (Diagram \ref{mon_definition_diag_2})
 in any monoidal category $\mm$.
@@ -2288,7 +2296,7 @@ In this case, $\eta_2 = \tau \otimes 1_s$ with $\tau$ a forward $\lambda$
 or $\rho$-arrow.
 We can first apply the forward arrow $\tau \otimes (1_{s_A} \otimes 1_{t_A})$
 followed by $\alpha_{u'_A, s_A, t_A}$ to obtain the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_43.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 which commutes by naturality of $\alpha$. 
@@ -2312,7 +2320,7 @@ $\iota = \rho_{u_A \otimes s_A}$. This implies that
 $t_A = I$. 
 We can then append the forward $\rho$-arrow $1_{u_A}\otimes \rho_{s_A}$ 
 to obtain the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_44.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 which we know commutes due to Proposition \ref{proposition:unitor_diagrams}.
@@ -2326,7 +2334,7 @@ We can prove this case by induction.
 Suppose the statement 
 is true for word of length less than $n$, and let $w = u\otimes v$
 be a binary word of length $n$. Then we have the diagram on the left
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_45.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which is the image of the diagram on the right under 
 the functor $u_A \otimes (-)$. By induction, there exists either a binary 
@@ -2334,11 +2342,11 @@ word $z$, and a
 forward $\lambda$ or $\rho$ arrow $\eta': v_A \to z$ and 
 a forward $\alpha$-arrow $\eta'': z \to v_A''$ such that the diagram below commutes in 
 $\mm$. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_46.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We can then take the image of this under the functor $u_A\otimes (-)$ to obtain the 
 commutative diagram below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_47.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 As $1_{u_A} \otimes (\eta')_A$ is a forward $\lambda$ or $\rho$ arrow 
 since $(\eta')_A$ is, and since $1_{u_A} \otimes (\eta'')_A$ is a forward 
@@ -2353,7 +2361,7 @@ either a forward $\lambda$ or $\rho$ arrow.
 We can use the forward $\lambda$ or $\rho$ arrow 
 $(\eta_2)_A \otimes 1_{v_A}$ followed by the $\alpha$-arrow 
 $1_{u'_A}\otimes (\eta_1)_A$ to obtain the diagram below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_48.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The above diagram commutes by functoriality of $\otimes$, completing this case.
 \\
@@ -2363,7 +2371,7 @@ $\eta_1$ a forward $\alpha$-arrow and $\iota = \lambda_{v'}$.
 This then implies that $u = I$. 
 We can then append the $\lambda$-arrow $\lambda_{v_A}$ followed 
 by the $\alpha$-arrow $(\eta_1)_A: v_A \to v'_A$ to obtain the diagram
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_49.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes by naturality of $\lambda$. 
 \\
@@ -2389,7 +2397,7 @@ and $\eta_2 = \rho_{u_A}$. This implies that
 $v_A = I$. 
 We can then append the forward $\rho$ arrow $\rho_{u_A}$ followed 
 by the forward $\alpha$-arrow $(\eta_1)_A$ to the diagram to obtain 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_50.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commutes by naturality of $\rho$. 
 
@@ -2403,16 +2411,16 @@ prove the Unitor-Chain Equivalence. To do so, it suffices to prove the following
 <span style="display:block" class="lemma">(Unitor Diamond Lemma.)
 Let $w$ be a binary word, and $\mu_1, \mu_2$ a pair of forward unitor arrows 
 as below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_51.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 There there exists a binary word $z$ and a pair
 of forward unitor arrows 
 $\eta_1: w_1 \to z$, $\eta_2: w_2 \to z$ such that for any 
 monoidal category $(\mm, \otimes, I, \alpha, \lambda, \rho)$, 
 the diagram below is commutative in $\mm$.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_52.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{lemma}
+</span>
 
 As before, we color the arrows which we are asserting to exist Green.
 
@@ -2438,7 +2446,7 @@ Therefore, our possible cases are as follows.
 We could have $\mu_1 = \mu_2$. Or, we could have any of the cases below. 
 The paired-coloring indicates logically equivalent cases
 due to the symmetry of our problem. 
-\\begin{center}
+\begin{center}
 
 |         $(\beta_1,\beta_2)$         |        $1_u\otimes \eta_2$         |        $\eta_2 \otimes 1_v$         |         $\lambda_v$         |        $\rho_u$         \ \[0.2cm]                  $1_u \otimes \eta_1$         |$\textcolor{Orange}{(1_u \otimes \eta_1 ,1_u \otimes \eta_2)}$          |$\textcolor{ForestGreen}{(1_u \otimes \eta_1, \eta_2\otimes 1_v)}$         |         $\textcolor{Purple}{(1_u\otimes\eta_1 ,\lambda_v)}$          |        $\textcolor{red!80!White}{(1_u\otimes\eta_1 ,\rho_u)}$         |
 |-------------------------------------|------------------------------------|-------------------------------------|-----------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -2448,6 +2456,7 @@ due to the symmetry of our problem.
 ||
 
 \end{center}
+
 
 
 Since we've already implemented this case-by-case proof strategy several times, 
@@ -2467,9 +2476,9 @@ Case 2 of Lemma \ref{lemma:diamond_lemma}.
 With $\mu_1 = 1_u\otimes \eta_1$ and $\mu_2 = \lambda_v$, denote $\eta_1: v \to v'$.
 In this case, we can use the morphisms $\lambda_{(v')_A}$ and $\eta_1$ to obtain the 
 diagram
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_53.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hich commutes by naturality of $\lambda$. 
+which commutes by naturality of $\lambda$. 
 \\
 **Case 5:** $\textcolor{red!80!White}{(1_u\otimes\eta_1 ,\rho_u)}$.\\
 With $\mu_1 = 1_u\otimes \eta_1, \mu_2 = \rho_u$, note that the only 
@@ -2486,9 +2495,9 @@ with domain $x_0$, so this is also not a valid case that we need to consider.
 \\
 With $\mu_1 = \eta_1\otimes 1_v, \mu_2 = \rho_u$, we can use the morphisms 
 $\rho_{(u')_A}$ and $\eta_1$ to obtain 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_54.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hich commutes by naturality of $\rho$. 
+which commutes by naturality of $\rho$. 
 
 **Case 8:** $\textcolor{Blue}{(\lambda_v, \lambda_v)}$. 
 In this case, we see that $\mu_1 = \mu_2$, so that the statement is trivially 
@@ -2520,12 +2529,12 @@ We prove this by induction on $\ee(w)$. Suppose the result is true for
 binary words $v$ with $\ee(v) < \ee(w)$, and consider two composable 
 chains of forward unitors $\mu_1, \dots, \mu_k, \eta_1, \dots, \eta_k$ 
 as described above. We seek to show that the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_55.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative in $\mm$. By the Unitor Diamond Lemma, there exists a binary 
 word $z$ and two forward unitors $\iota_1: u \to z$ and $\iota_2: v \to z$ 
 such that 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_56.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is commutative in $\mm$. Now, by Lemma \ref{lemma:unitors_preserve_clean_word}, 
 we have that 
@@ -2536,7 +2545,7 @@ there exists a chain of forward unitors $\nu_1, \dots, \nu_{k-2}$
 such that $\nu_{k-2} \circ \cdots \circ \nu_1: z \to \overline{w}$.
 Our situation is displayed below. For clarity, we suppress $\nu_{k-2} \circ \cdots \circ \nu_1: z \to \overline{w}$ 
 in the diagram below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_57.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Lemma \ref{lemma:unitors_decrease_unit_length}, we know that 
 $\ee(u_1), \ee(v_1) < \ee(w)$. Therefore, we may apply our induction 
@@ -2581,13 +2590,9 @@ So I made one up. Today, this construction is known as an endomorphism
 operad.} of $\mm$}, denoted as
 $**It**(\mathcal{M})$, to be the category where:
 \begin{description}
-
-
-* [Objects.] Functors $F: \mathcal{M}^n \to \mathcal{M}$ for all $n = 0, 1, 2, \dots$
+\item[Objects.] Functors $F: \mathcal{M}^n \to \mathcal{M}$ for all $n = 0, 1, 2, \dots$
 When $n = 0$, we let $\mm^0 = **1**$.
-
-
-* [Morphisms.] Natural transformations $\eta: F \to G$ between such functors.
+\item[Morphisms.] Natural transformations $\eta: F \to G$ between such functors.
 \end{description}
 </span>
 
@@ -2601,9 +2606,7 @@ Towards that goal, we introduce the following bifunctor
 
 whose behavior we describe on objects and morphisms as follows. 
 \begin{description}
-
-
-* [On objects.] For two functors $F: \mm^n \to \mm$, $G: \mm^m \to \mm$, 
+\item[On objects.] For two functors $F: \mm^n \to \mm$, $G: \mm^m \to \mm$, 
 we define the functor $F \odot G: \mm^{n+m} \to \mm$ pointwise as 
 
 \[
@@ -2613,9 +2616,7 @@ F(A_1, \dots, A_n) \otimes G(A_{n+1}, \dots, A_{n+m})
 \]
 
 where $\otimes$ is the monoidal product of $\mm$.
-
-
-* [On morphisms.] 
+\item[On morphisms.] 
 Let $F_1, G_1: \mm^n \to \mm$ and $F_2, G_2: \mm^m \to \mm$. 
 Given natural transformations 
 
@@ -2635,7 +2636,8 @@ pointwise as
 The above bifunctor is what allows us to regard $**It**(\mm)$ as a monoidal 
 category. This is more precisely stated in the following lemma.
 
-\begin{lemma}
+
+<span style="display:block" class="lemma">
 Let $(\mathcal{M}, \otimes, I, \alpha, \lambda, \rho)$ be a monoidal category. 
 Then 
 
@@ -2644,8 +2646,6 @@ Then
 \]
 
 is a monoidal category where 
-\begin{itemize}
-
 
 *  The monoidal product is the bifunctor
 $\odot: **It**(\mathcal{M})\times **It**(\mathcal{M}) \to 
@@ -2720,12 +2720,12 @@ A reader might be wondering: How does the above theorem grant us coherence?
 Let us first investigate the behavior of this functor. 
 
 Under the functor, the morphism in $\ww$ 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_58.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s mapped by $\Phi_{\id}$ to the natural transformation between the functors in $**It**(\mm)$
-\
+is mapped by $\Phi_{\id}$ to the natural transformation between the functors in $**It**(\mm)$
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_59.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-nd, as functors from $\mm^3 \to \mm$, 
+and, as functors from $\mm^3 \to \mm$, 
 we may substitute any $A,B,C$ to obtain a natural isomorphism 
 
 \[
@@ -2735,18 +2735,18 @@ we may substitute any $A,B,C$ to obtain a natural isomorphism
 in $\mm$.
 Next, we know that functors preserve diagrams. Therefore, our commutative 
 pentagon diagram in $\ww$
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_60.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s mapped by $\Phi_{\id}$ to a commutative 
+is mapped by $\Phi_{\id}$ to a commutative 
 diagram of natural transformations in $**It**(\mm)$ 
 between the functors below
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_61.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-nd as the above functors are of the form $\mm^4 \to \mm$,
+and as the above functors are of the form $\mm^4 \to \mm$,
 we may substitute any $A,B,C,D \in \mm$ to obtain the commutative diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_62.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-n $\mm$. 
+in $\mm$. 
 
 So far, our functor makes sense. Moreover, we already knew that the above pentagon commutes 
 for all $A,B,C,D \in \mm$. Thus, what about diagram \ref{diagram:assoc_5}?
@@ -2759,13 +2759,15 @@ between functors (see second page)
 and as functors from $\mm^5 \to \mm$, we may substitute any $A,B,C,D,E$ to obtain the 
 commutative diagram in $\mm$ (on the third page).
 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_63.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_64.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_65.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-his process continues for every possible diagram in $\ww$. 
+This process continues for every possible diagram in $\ww$. 
 Each diagram in $\ww$ is mapped to a corresponding diagram 
 in $**It**(\mm)$ made up of identity functors, and 
 with the identity functor, we are free to substitute whatever instance 

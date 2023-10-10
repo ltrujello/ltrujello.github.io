@@ -14,9 +14,9 @@ $A$ equipped with functions $\phi_i: A_i \to A$ with the universal property disp
 We may naively suppose that $\displaystyle A = \coprod_{i \in I}A_i = \{(a, i) \mid a \in A_i, i \in I \}$, since such a set 
 admits a family of functions $\displaystyle \text{inc}_i: A_i \to \coprod_{i \in I}A_i$. 
 However, we cannot guarantee that this the triangle 
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ill commute. In fact, it will never commute, since it would imply that 
+will commute. In fact, it will never commute, since it would imply that 
 for each $a \in A_i$, $(a, i) = (f_{ij}(a), j)$, which cannot happen as the 
 tuples are mismatched. Since it is too strong to demand equality, we can define 
 an equivalence relation $\sim$ on $\displaystyle \coprod_{i \in I}A_i$ 

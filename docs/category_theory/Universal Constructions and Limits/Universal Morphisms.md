@@ -30,7 +30,7 @@ $\phi - \psi: G \to H$, and every element in the kernel is such a desired elemen
 we've answered the first question. The kernel is a subgroup of $G$, so we've answered the last question. 
 Now because this is a kernel, it has an inclusion 
 homomorphism $i: \ker(\phi - \psi) \to G$. So far, our picture looks like this:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and clearly $\phi \circ i = \psi \circ i$. 
 Now suppose that $\sigma: K \to G$ is another group homomorphism with the property 
@@ -45,7 +45,7 @@ Hence instead of mapping $K$ into $G$, we can instead map $K$ into $\ker(\phi - 
 and then travel back to $G$ using $i$.
 So, there is **a unique** morphism $\tau: K \to \ker(\phi - \psi)$
 such that the diagram below commutes (Prove it is unique; it shouldn't be too bad).
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 What's really going on? This is an example of a universal construction. We have a 
@@ -71,7 +71,7 @@ to be a morphism
 
 with $\textcolor{NavyBlue}{C} \in \ob(\cc)$ and 
 $\textcolor{Red}{u}$ a morphism in $\dd$ equipped with the **universal property:**
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{center}
 The arrow $h$ is dashed, and should be read as 
@@ -99,11 +99,11 @@ such that $F(h) \circ \textcolor{Red}{u} = f$.
 <span style="display:block" class="example">
 Let $V$, $W$ be finite-dimensional vector spaces over a field $k$. Denote their 
 bases as $\{v_1,  v_2, \dots, v_n\}$ and $\{w_1, w_2, \dots, w_m\}$. 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.8\textwidth}
 **Q:** What does it take for a function $T: V \to W$ to be a linear transformation? 
 \end{minipage}
-\end{center}       Well, suppose we have a linear transformation. Since each element of 
+\end{center}        Well, suppose we have a linear transformation. Since each element of 
 $V$ may be written as $c_1v_1 + \cdots + c_nv_n$  for $c_i \in k$, we 
 see that 
 
@@ -112,13 +112,13 @@ T(c_1v_1 + \cdots + c_nv_n) = c_1T(v_1) + \cdots + c_nT(v_n).
 \]
 
 Thus we have an answer. 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.8\textwidth}
 **A:** To define a linear transformation $T: V \to W$, it suffices to specify 
 where we want $T$ to send the basis elements $v_1, \dots, v_n$.
 \end{minipage}
-\end{center}       An illustration of this fact is below. 
-\
+\end{center}        An illustration of this fact is below. 
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \noindent This observation helps us build our first example of universality.
 
@@ -156,7 +156,7 @@ T(x) = f(x).
 
 Since we know where the basis elements go, we see that such a linear transformation is well defined.
 Moreover, we see that our construction makes the diagram below commute. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, we see that a universal morphism from $X$ to the forgetful functor 
 $U: **Vect**_k \to **Set**$ is its inclusion morphism $i: X \to U(V_x)$ 
@@ -179,7 +179,7 @@ a *dense* subspace of $X^*$. In other words, we want a compact $X^*$
 which has a dense subspace $S \subset X^*$ that is homeomorphic to $X$.
 We can then identify $X$ with $S$ and work within $X^*$, which is a nicer 
 space to work inside of.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 We can, however, do even better. We can compactify $X$ into a space that is 
@@ -191,7 +191,7 @@ space $\beta X$, equipped with a dense embedding
 $i_X: X \to \beta X$ such that, for any other compact, Hausdorff space $K$ equipped 
 with a continuous map $f: X \to K$, there exists a *unique* continuous function 
 $\beta f: \beta X \to K$ such that 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This universal property is what demonstrates that the Stone-Čech compactification 
 $\beta X$ is the "most compact, Hausdorff" space we can densely embed $X$ into. 
@@ -199,7 +199,7 @@ However, in the language of category theory we see that this is just another exa
 a universal morphism. To see this, let $I: **CHaus** \to **Top**$ 
 be the inclusion functor from compact Hausdorff spaces into topological spaces. 
 Then we can rewrite the diagram as 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Of course, in practice, we'd never actually write it like this; but this is just for 
 us to be able to see that the dense embedding $i_X: X \to \beta X$ is universal 
@@ -233,7 +233,7 @@ to send every individual $x \in X$. This is achieved by
 defining a set function $\phi_0: X \to U(M)$, and by setting 
 $\phi(x) = \phi_0(x)$. This makes the 
 diagram below commutative.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We thus see that $(X, i_X: X \to F(X))$ is universal from $X$ to $U: **Mon** \to **Set**$. 
 </span>
@@ -265,7 +265,7 @@ Now consider a mapping $f: X \to U(R)$ in **Set**. Because we
 also have a mapping $i: X \to U(F(X))$, which acts an inclusion function,
 we see that we can create a mapping $h: F(X) \to A$ such that the diagram below 
 commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The way we do this is we defined $h: F(X) \to A$ to act linearly 
 on the basis elements, sending $x \mapsto g(x)$. This defines a $k$-algebraic 
@@ -301,13 +301,13 @@ the category $(D \downarrow \dd)$ is the category where
 \item[Objects.] Pairs $(C, f: D \to F(C))$ with $C \in \cc$ and $f: D \to \dd$ a morphism in $\dd$. 
 \item[Morphisms.] Morphisms between two objects $(C, f: D \to F(C))$ and $(C', f: D \to F(C'))$ 
 are given by morphisms $h: C \to C'$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{description}
 Suppose $(\textcolor{NavyBlue}{A}, u: D \mathbin{\textcolor{Red}{\to}} F(\textcolor{NavyBlue}{A}))$ is an initial object in $(D \downarrow F)$. Then for every 
 other pair $(A, f: D \to F(A'))$, there exists a unique morphism $h: A \to A'$ 
 such that the diagram on the bottom left commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, if we rearrange this we see that this is just the universal property in disguise!
 Conversely, any pair $(A, f:  A \to F(A))$ being a universal morphism
@@ -359,7 +359,7 @@ Let $F: \cc \to \dd$ be a functor and $C$ an object of $\cc$. A
 \]
 
 equipped with the **universal property**:
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 Note that this is basically the previous definition
@@ -450,7 +450,7 @@ this map is unique (to the pair $f$ and $g$).
 * [$ii.$] Using your map $h: Z \to X \times Y$, show that the 
 diagram on the left commutes, and that the diagram on the right is 
 equivalent.  
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 To be clear, the diagram on the right is in the category 
 $**Set**\times **Set**$. 
@@ -460,7 +460,7 @@ $**Set**\times **Set**$.
 Let $\Delta: **Set**\to **Set**\times**Set**$ be 
 the "copy functor" which sends $X \mapsto (X, X)$. Then the above diagram 
 translates to 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Deduce how the product $(\pi_1, \pi_2): \Delta(X\times Y) \to (X,Y)$ is 
 universal from $(X,Y)$ to $\Delta$. 

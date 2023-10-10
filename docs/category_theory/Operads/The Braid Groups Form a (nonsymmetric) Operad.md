@@ -24,7 +24,7 @@ pure braid group, which doesn't change the permutation. However, recall that $S_
 is a symmetric operad, whose composition is given by a block permutation. 
 That is, given a permutation $S_n$, and $n$-many other permutations $\sigma_1 \in S_{a_1}, \dots, 
 \sigma_n \in S_{a_n}$, we can form a permutation in $S_{a_1 + \cdots + a_n}$.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -64,30 +64,32 @@ the second. Suppose we would like to substitute 4 parallel strands in the first 
 of $\sigma_1$, and just one strand in the second strand of $\sigma_1$. 
 How do we calculate this braid?
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 The blue line travels diagonally down, going *underneath* each red strand once.
 The blue line crossing underneath the $i$-th red strand can be represented as 
 $\sigma_{i}$. We then multiply all of these together to get the braid.
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ence we see that the braid is simply $\sigma_4\sigma_3\sigma_2\sigma_1$. 
+Hence we see that the braid is simply $\sigma_4\sigma_3\sigma_2\sigma_1$. 
 
 
 Suppose now that we would like to substitute 2 parallel strands into 
 the first strand of $\sigma_1$, and also substitute 3 parallel strands 
 in the second strand of $\sigma_2$. Then this produces a braid of 5 strands. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 How do we calculate this braid? Observe that the $\textcolor{Red}{i}$-th red strand 
 crossing over the $\textcolor{RoyalBlue}{j}$-th strand can be represented 
 as $\sigma_{i + j - 1}$. In the previous situation, $j$ was equal to 1, so it 
 each crossing was just $\sigma_{i}$.
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-verall, we can simply see that the braid is given by 
+Overall, we can simply see that the braid is given by 
 
 \[
 (\sigma_2\sigma_1)(\sigma_3\sigma_2)(\sigma_4\sigma_3).  
@@ -109,8 +111,9 @@ crossings will be $\sigma_{k_1}, \sigma_{k_1-1}, \dots,
 will be $\sigma_{k_1+1}, \sigma_{k_1}, \dots, 
 \sigma_{2}$. If we have $k_2$-many blue lines, this will be done $k_2$ many times.
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Hence we have that 
 \begin{equation}
 \sigma_1(k_1, k_2)
@@ -185,9 +188,9 @@ then we have $\beta$ below on the bottom left. On the bottom right,
 we have $\beta(k_1, k_2, k_3, k_4)$
 where $k_1 = 3, k_2 = 2, k_3 = 1, k_4 = 3$.
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-taring at the diagram, we can see that it may be expressed as
+Staring at the diagram, we can see that it may be expressed as
 
 \begin{gather*}
 (\sigma_3\sigma_2\sigma_1 \cdot \sigma_4\sigma_3\sigma_2) (\sigma_6\sigma_7\sigma_8) 
@@ -205,11 +208,12 @@ But how can we do this in general? To explain, first suppose
 To draw the cabled braid $\beta(k_1, k_2, \dots, k_n)$, we see that we have $k$-crossings to focus on; 
 these are where the crossings will happen in our cabled braid. For example, in the braid we provided above, we 
 can highlight the crossings in yellow.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-t each crossing, we're going to have something like this: 
-\
+At each crossing, we're going to have something like this: 
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 That is, at each crossing, there will be a number of red strands crossing over 
 blue strands. If we can just describe each of these 
 crossings using generators $\sigma_j$ like we did before, 
@@ -282,7 +286,7 @@ they were initially positioned. For instance, after the application of these
 generators, the green strand is now the first strand; the red strand is now 
 the second; the blue strand is the third; and the black strand is now the fourth. 
 Each color strand is now in a different position than which it started in.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, we can express this observation using our tool.
 Note that $\pi(\sigma_1\sigma_3)$ is the permutation $(1, 2, 3, 4) \mapsto 
@@ -303,9 +307,9 @@ Hence we have that
 \]
 
 which matches a simple hand-count that we can perform using the picture below.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{example}
+</span>
 
 This tool allows us to answer our second and third questions. For example, consider again 
 $\beta(3, 2, 1, 3)$ where $\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3$. 
@@ -315,9 +319,9 @@ for example, the crossing \raisebox{-0.1cm}{$
 $},
 of 3 blue lines over 1 black line, as in the picture below?
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-his crossing is induced by $\sigma_3$, the fifth generator of $\beta$. 
+This crossing is induced by $\sigma_3$, the fifth generator of $\beta$. 
 Hence $\beta$ tells us to cross the $3$nd cable over the $4$rd cable. But what 
 are these cables? From looking at the diagram, we definitely know. But in general we won't 
 be able to just look at the diagram. However, our tool can tell us: Since we've applied $\sigma_1\sigma_3\sigma_2\sigma_2$, 
@@ -447,15 +451,17 @@ $r_j$.
 
 
 
-\begin{example}
+
+<span style="display:block" class="example">
 We can apply this to our previous example. 
 Recall that $\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3$. 
 One way to interpret out braid diagram is as a sequence of permutations.
 In this case we see that we get five permutations because we have five generators.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 First we compute the table 
-\\begin{center}
+\begin{center}
 
 |                           $j$ |$i_{j}$ |$p_j$ |$q_j$ |$r_j$ |
 |-------------------------------|--------|------|------|------|
@@ -466,7 +472,7 @@ First we compute the table
 |                         5 |3 |$1 + k_1 + k_2 = 6$ |$k_4 = 3$ |$k_3 = 1$ |
 ||
 
-\end{center}   This then gives us the product 
+\end{center}    This then gives us the product 
 
 \begin{gather*}
 \left(\prod_{m = p_1}^{p_1 + (r_1-1)}
@@ -549,12 +555,12 @@ We haven't looked at a braid with an under crossing. So,
 consider the braid $\beta = \sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\sigma_1 \in B_4$, 
 and let $k_1 = 2, k_2 = 3, k_3 = 4, k_4 = 5$. We'll want to calculate 
 the braid $\beta(2, 3, 4, 5)$. Below is $\beta$ and $\beta(2,3,4,5)$.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 To calculate the resulting braid we need to create our table of values.
 This is more easily done by generating the permutation table on the left; it 
 tells us how our cables are swapped around. 
-\\begin{center}
+\begin{center}
 
 |                          Generator |Permutation|
 |------------------------------------|-----------|
@@ -577,7 +583,7 @@ tells us how our cables are swapped around.
 |.1ex]                           5 |1 |$1$ |$k_2 = 3$ |$k_4 = 5$|
 ||
 
-\end{center}   This then generates the products 
+\end{center}    This then generates the products 
 
 \begin{gather*}
 \left(\prod_{m = 1}^{3}\sigma_{m + 2}^{-1}\sigma^{-1}_m\right)
@@ -605,20 +611,22 @@ which is the correct description of the braid $\beta(2,3,4,5)$.
 </span>
 
 Now we can finally answer our desired question: 
-\\begin{center}
+\begin{center}
 Given a braid $\beta \in B_n$, and $n$ other braids $\alpha_1 \in B_{a_1}, \dots, \alpha_n \in B_{a_n}$, 
 what is the formula for $\beta(\alpha_1, \dots, \alpha_n)$? 
-\end{center}To answer this question, we build on our previous work by making the following observation. 
+\end{center}
+To answer this question, we build on our previous work by making the following observation. 
 Suppose we want to compute $\sigma_1(\alpha_1, \alpha_2)$ where $\sigma_1, \alpha_1, \alpha_2$
 appear as below.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Then we get the braid diagram as in \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 $}.
-\\begin{center}
+\begin{center}
 \includegraphics[scale = 0.1]{braids_cabled.jpg}
-\end{center}owever, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{$
+\end{center}However, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 $}, 
 then \raisebox{-0.1cm}{$
@@ -634,17 +642,17 @@ may be expressed in either of the equivalent ways:
 \\
 
 \begin{minipage}{0.5\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\end{minipage}
 \begin{minipage}{0.5\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\end{minipage}
 \vspace{1cm}
 
 This then gives us the following idea. Suppose we want to calculate 

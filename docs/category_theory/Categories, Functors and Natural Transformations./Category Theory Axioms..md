@@ -50,7 +50,7 @@ morphism $h \in \hom(A, C)$ such that $h = g \circ f$.
 
 \item[(3) **Associativity under Composition.**] For
 objects $A, B, C$ and $D$ such that  
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 we have the equality 
 
@@ -85,7 +85,7 @@ categories. To describe them, we need to tell the reader (1) what the objects ar
 Therefore our preferred format of describing an arbitrary 
 category $\cc$ is using a bold-faced list. 
 An example:
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This is simply to avoid a lot of unnecessary 
 words to describe a category (e.g. ''the objects of this category are... the morphisms of this category are...'').
@@ -110,13 +110,14 @@ in general, categorical objects are not sets.
 Furthemore, morphisms are in general not functions.
 This might be strange, but you will get used to it and it will eventually become natural to you.
 The moral of the story is:
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.7\textwidth}
 \textcolor{NavyBlue}{The canonical example of a category is $\Set$, but 
 *in general* the objects of an arbitrary category $\cc$ are not sets, 
 and the morphisms are not functions. }
 \end{minipage}
-\end{center}    
+\end{center}
+
 <span style="display:block" class="example">
 The second canonical example is the **category of groups**, denoted 
 as $\grp$. This can be described as 
@@ -200,7 +201,7 @@ if we did not include the existence of $h$, then this would not be closed under 
 and hence it would not even be a category.
 
 We can picture all three categories as below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 
@@ -325,11 +326,11 @@ we have that
 \end{description}
 To define composition in this category, suppose we have composable morphisms in $\cc$ 
 and $\dd$ as below. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the morphisms $(f, g)$ and $(f', g')$ in $\cc \times \dd$ 
 are composable too, and their composition is defined as $(f', g') \circ (f , g) = ( f' \circ f, g' \circ g)$.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 </span>

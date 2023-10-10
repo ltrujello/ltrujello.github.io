@@ -70,12 +70,12 @@ which verifies that $F_H(\phi)$ is a group homomorphism. Therefore, we see that
 $F_H: **Ab** \to **Ab**$ is in fact a functor.
 
 Now your category-theory-voice should be asking: 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.8\textwidth}
 \textcolor{NavyBlue}{If $G$ is an abelian group, can we *also* create 
 a functor $F^G: **Ab** \to **Ab**$ where $H \mapsto \hom(G, H)$?}
 \end{minipage}
-\end{center}ne can easily show that the answer is yes. In this direction, the functor is covariant. That 
+\end{center}One can easily show that the answer is yes. In this direction, the functor is covariant. That 
 is, for $\psi: H \to H'$, we have that 
 
 \[
@@ -98,16 +98,17 @@ F_H(G) = F^G(H).
 
 This is *bifunctor-ish*. Therefore, our category theory voice is now 
 asking: 
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.8\textwidth}
 \textcolor{NavyBlue}{Do we have a bifunctor 
 $F: **Ab**\times **Ab** \to **Ab**$ on our hands, where 
 $F(G, H) = \hom(G, H)$? }
 \end{minipage}
-\end{center}o see if this answer is true, we ought to be able to show that, given 
+\end{center}To see if this answer is true, we ought to be able to show that, given 
 $\phi: G' \to G$ and $\psi: H \to H'$, the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is commutative. The above diagram is in fact commutative since function composition 
 is associative! That is, given $\sigma: G \to H$, observe that going right and then down 
 gives
@@ -287,7 +288,7 @@ To demonstrate this, consider the hom-set $\hom_{\cc^J}(F, G)$ between two
 functors $F, G: J \to \cc$. Now consider
 two natural transformations $\eta, \epsilon \in \hom_{\cc^J}(F, G)$. Then 
 for each $f \in \hom_{\cc}(A, B)$, the familiar diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This diagram tells us that $G(f) \circ \eta_A  = \eta_B \circ F(f)$ 
 and that $G(f) \circ \epsilon_A  = \epsilon_B \circ F(f)$. However, since 
@@ -301,7 +302,7 @@ F(f)
 \]
 
 Hence the diagram below 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. Therefore, using the group product of $(\hom_{\cc}(F(A), F(B)), +)$,
 we've derived a new natural transformation from $F$ to $G$ using $\eta$ and $\epsilon$ 

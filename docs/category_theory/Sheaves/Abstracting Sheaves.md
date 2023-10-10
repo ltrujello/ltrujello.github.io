@@ -60,9 +60,11 @@ The fact that the functions $p_{k, \ell}, q_{k, \ell}$ exist for all $k, \ell \i
 the existence of $p$ and $q$ below which make the diagram commute. (This 
 is just applying the universal property of the product $\prod_{i, j}F(U_i \cap U_j)$.)
 These two functions are rather important.
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{itemize}
+
+
+
 
 Now consider the set of all $(h_i)_{i \in \lambda} \in \prod_{i \in \lambda}F(U_i)$ 
 such that they agree on overlaps; i.e., such that $h_i\big|_{U_i \cap U_j} = 
@@ -83,8 +85,9 @@ that
 Okay, so that's just a slightly more complicated way of expressing $C(U)$. 
 What's interesting about this, however, is that $\text{Eq}(p, q)$ is quite literally 
 the equalizer of $p$ and $q$ (hence the naming we chose for the set).
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 This is the motivation behind the following definition of a sheaf, which is exactly equivalent to 
 our previous one.
 
@@ -101,13 +104,11 @@ with the following property: If $U$ is an open set
 and $\mathcal{U} = \{U_i\}_{i \in \lambda}$ an open cover of $U$,
 then $F(U)$ is an equalizer of $p$, $q$, constructed using $\mathcal{U}$ 
 as above. The equalizer diagram is below:
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 We remark two comments on this definition.
-
-\begin{itemize}
 
 
 *  It is more important to understand the *philosophy* of the above 
@@ -127,7 +128,8 @@ capture many useful situations and it is useful for proofs.
 
 
 Now before we move on, we are going to briefly introduce a new concept. 
-\begin{definition}
+
+<span style="display:block" class="definition">
 Let $\cc$ be a category and $C$ an object of $\cc$. 
 A **sieve on $C$**
 is a set $S$ which is a subset of all morphisms with codomain $C$:
@@ -167,7 +169,7 @@ So, what is a sieve in this case? It is any $S \subset \Omega_U$ such that
 Take note that this is a bit of subtle concept; it's a very versatile definition. 
 For example, considering $\rr^2$ with its standard topology, the following 
 (blue) open sets create sieves on the same open set (the open disk at the origin).
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 On the left, we consider the set of all open sets contained in $V_1$ and $V_2$; this is a 
 sieve on the open disk (which we call $U$ to be consistent with our notation and discussion). 
@@ -210,8 +212,9 @@ the equalizer $E$ of $p, q$ categorically (i.e., without reference to its elemen
 Let $P: \mathcal{O}(X)\op \to **Set**$ be a presheaf. Given an open set 
 $U$ with open cover $\mathcal{U} = \{U_i\}_{i \in \lambda}$, we may construct 
 $p, q$ using $\mathcal{U}$ as before, and take their equalizer $E$:
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 We now prove the following result. 
 
 <span style="display:block" class="lemma">
@@ -250,7 +253,7 @@ but it might not be the only index. Thus, a natural objection to this definition
 question: What if $V$ is contained in $U_i$ and $U_j$ for distinct $i$, $j$? 
 In this case, how do we define $h_V$?
 
-\
+
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If $(h_i)_{i \in \lambda} \in E$, then we know that 
 agreement on the overlaps is guaranteed and so we may unambiguously 

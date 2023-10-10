@@ -4,7 +4,8 @@
 }
 </style>
 #7.2. Monoidal Functors
-\begin{definition}
+
+<span style="display:block" class="definition">
 Let $(\cc, \otimes, I)$ and $(\dd, \odot, J)$ be monoidal categories. 
 A **(lax) monoidal functor** is a functor $F: \cc \to \dd$ equipped with
 the following data.
@@ -26,7 +27,7 @@ we suppress the subscripts for clarity.)
 *  There exists a unique morphism $\epsilon: J \to F(I)$ such that, for any object $A$ of $\cc$, 
 the diagrams below commute. (Again, 
 we suppress the subscripts for clarity.)
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -39,9 +40,9 @@ We say the $F$ is
 We also define a **monoidal natural transformation** between two monoidal
 functors $\eta: F \to G$ to be a natural transformation between the functors 
 such that, for every $A, B$, the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 
 <span style="display:block" class="example">
@@ -73,10 +74,10 @@ In addition, we define the function $\epsilon: \{\bullet\}
 
 Observe that with this data we have that for any
 sets $A,B,C$, the diagram below commutes
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and that for any set $A$ the diagrams below commute.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that our choice that $\epsilon(\bullet) = \{\bullet\}$ was necessary in 
 order for the above two diagrams to commute. 
@@ -163,7 +164,7 @@ In addition, this isomorphism to be natural: for two pointed topological spaces
 $(X, x_0)$ and $(Y, y_0)$, and for a pair of base-point preserving continuous 
 functions $f: (X, x_0) \to (W, w_0)$ and $g: (Y, y_0) \to (Z, z_0)$, 
 the following diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus $\phi_{X,Y}$ is our desired natural isomorphism. 
 

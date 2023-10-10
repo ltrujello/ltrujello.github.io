@@ -16,8 +16,9 @@ in a well-defined manner.
 Furthermore, if we have another function $f: X \to Y$, 
 then we can set up a pipeline $x \mapsto f(x) \mapsto g(f(x))$. This then 
 establishes an obvious function $g \circ f: X \to Z$. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 But the way that we've thought about functions, and more generally morphisms,
 is actually over-simplistic. Here we will demonstrate that we can \emph{generalize 
 the concept of morphism composition}.
@@ -25,24 +26,25 @@ the concept of morphism composition}.
 Denote $\aend_n(X)$ to be the set of all functions 
 $f:X^n \to X$. Then for such a function, if we stick with our simplistic concept of plugging things in, we 
 imagine something like
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 However, a more natural way is to imagine that we're taking values 
 $n$-many values $x_i \in X$ and plugging them into the function $f: X^n \to X$. 
 That is, we don't have to just think of *one* $g: Y \to X^n$ to form a concept of 
 composition. We can instead imagine that each of these $x_i$ values came 
 from functions $g_1: Y_1 \to X$, $g_2: Y_2 \to X, \cdots, g_n: Y_n \to X$. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-his is in its own right a function; a function from $Y_1 \times Y_2 \times Y_n \to X$.
+This is in its own right a function; a function from $Y_1 \times Y_2 \times Y_n \to X$.
 It's a generalization of function composition; when we only have one $g_1$ we just 
 get back our original notion of function composition. We've been restricting ourselves this whole time.
 Now to make this even more interesting, suppose $Y_1 = X^{a_1}, Y_2 = X^{a_2}, \dots, Y_n = X^{a_n}$
 where $a_1, a_2, \dots, a_n$ are positive integers. That is, suppose we have that $g_i \in \aend_{a_i}(X)$. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-he above composition can be expressed as $f(g_1, g_2, \dots, g_n)$ which we may  
+The above composition can be expressed as $f(g_1, g_2, \dots, g_n)$ which we may  
 denote as
 
 \[
@@ -62,9 +64,9 @@ X^{a_1 + a_2 + \cdots + a_n}
 Then we can make this even more interesting. Each $g_i: X^{a_i} \to X$ is *just like* $f: X^n \to X$.
 Hence we can repeat the same process on each $g_i$, and plug a family of functions $h_{i, j}: X^{k_{i,j}}\to X$
 where $j = 1, 2, \dots, a_i$. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ow there are two ways to think about this function. There is 
+Now there are two ways to think about this function. There is 
 
 \[
 [f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})
@@ -323,8 +325,9 @@ wheres
 $\textcolor{RoyalBlue}{1' = (a_1 + \cdots + a_{n-1}) + 1}$ and $\textcolor{RoyalBlue}{2' = (a_1 + \cdots + a_{n-1}) + 2}$.
 With that said, we can define $\tau \circ_{a_1, \dots, a_n}(\sigma_1, \sigma_2, \dots, \sigma_n) \in S_{a_1 + a_2 + \cdots + a_n}$
 by its action on such a tuple, pictured below. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 which can be rewritten more formally as 
 
 \[
@@ -346,7 +349,7 @@ that they are equivalent, therefore satisfying **NS-OP1**).
 But before we do that 
 we must consider the first $K$ integers. 
 This will be a *huge* tuple; in full notation this is
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Using our previous notation we can rewrite this as 
 
@@ -415,9 +418,9 @@ by using our $S_{a_1 + \cdot+ a_n}$ permutation $\tau \circ_{a_1, \dots, a_n} (\
 
 Recall that for $\rho_{i, j}$, $i$ ranges from $1$ to $n$ 
 while $j$ ranges from $1$ to $a_i$. Hence if we permute a block, we can represent it as follows. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hich can be written more formally (that is, more horribly) as 
+which can be written more formally (that is, more horribly) as 
 
 \[
 (
@@ -469,9 +472,9 @@ which we again abbreviate as
 \]
 
 With those notation above each permutation acts as 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hich can be more formally understood as the tuple 
+which can be more formally understood as the tuple 
 \begin{equation}
 (
 \overbrace{\rho'_{i, \sigma_i^{-1}(1)}(1),
@@ -492,14 +495,15 @@ which will give rise to a $S_{k_{1,1}+ \cdots + k_{1, a_1} + \cdots + k_{n, 1} +
 permutation. To calculate this 
 we just now directly apply their composition. This will act on the 
 $k_{1,1} + \cdots k_{1, a_1} + \cdots + k_{n, 1} + \cdots + k_{n, a_n}$ tuple
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-y rearranging the tuple as below
-\
+by rearranging the tuple as below
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-nd using (\ref{tuples}) we know that this becomes 
-\
+and using (\ref{tuples}) we know that this becomes 
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 The above tuple can be (again, horribly) understood as 
 
 \[        
@@ -567,9 +571,9 @@ On the other hand we need to also compute $(\tau \circ_{a_{\rho^{-1}(1)}, \dots,
 where $\rho'$ is the evident block permutation. However, this is really just 
 $(\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))\circ \rho'$;
 below we see that its action on an ordered $a_1 + \cdots + a_n$ tuple is as we would expect.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-herefore we see that 
+Therefore we see that 
 
 \[
 (\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)
@@ -582,12 +586,12 @@ which is nearly immediate. We will however not pretend we're too good to show
 this and demonstrate it anyways. 
 For each $\sigma_i \in S_{a_i}$, pick $\rho_i \in S_{a_i}$.
 Observe that $\tau \circ_{a_1, \dots, a_n}(\sigma_1 \cdot \rho_1, \dots, \sigma_n \cdot \rho_n)$
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-eturns the same result as $(\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\cdot(\rho_1, \dots, \rho_n)$
-\
+returns the same result as $(\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\cdot(\rho_1, \dots, \rho_n)$
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ince $(\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\cdot(\rho_1, \dots, \rho_n) = 
+since $(\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\cdot(\rho_1, \dots, \rho_n) = 
 (\tau \circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n))\circ(\rho_1, \dots, \rho_n)$ in our case. 
 As we have that **S-OP2** is satisfied, we have that $\text{Assoc}_n = S_n$ is a symmetric operad.
 
@@ -648,10 +652,10 @@ F_n(f)\circ'_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n)).
 \]
 
 Diagrammatically, this means the following diagrams commutes:
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Or, more visually, 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -683,7 +687,7 @@ $\phi: A \to B$ such that, for $f \in X_n$ and $(a_1, \dots, a_n) \in A^n$,
 
 The above relation can be more conveniently expressed as the diagram below 
 commuting: 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which must hold for all $f \in X_n$ with $n \in \mathbb{N}$. 
 Now suppose that for an operad $X$ we have
@@ -704,7 +708,7 @@ immediate upon realization that we can stack the diagrams to see
 that $\Phi \circ \Psi: F \to H$ is a morphism of algebras.
 \end{minipage}
 \begin{minipage}{0.3\textwidth}
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 </span>
@@ -735,7 +739,7 @@ for some set $A$. To save some space, denote $\hom_{**Set**}(A^n, A)$
 as $[A^n, A]$.
 Then the fact that $F: **Assoc**_n \to \aend_A$ is an algebra gives us that 
 the diagram on the left commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 As this diagram commutes, we can follow the specific path which is taken 
 by the identity elements $e_2 \in S_2$ and $e_1 \in S_1$. If we denote 
@@ -744,7 +748,7 @@ Note that in particular, $\mu_1 = \id_A$ by hypothesis.
 Hence for $a, b, c \in A$, we see that $\mu_3 = \mu_2(\mu_2(a, b), c)$. 
 Conversely, we can repeat the same thing with $S_1$ and $S_2$ swapped, and 
 obtain a commutative diagram on the left:
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and following the identity elements again grants us that 
 $\mu_3 = \mu_2(\id_A, \mu_2)$. Hence we see that for $a, b ,c \in A$ 

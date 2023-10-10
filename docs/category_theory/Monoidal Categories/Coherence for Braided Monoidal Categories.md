@@ -157,7 +157,7 @@ Let $\vv$ be a strict monoidal category.
 Suppose $T: **1** \to \vv$ has a Yang-Baxter operator
 $y$. Then there exists a
 unique strict monoidal functor $T': \mathbb{B} \to \vv$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Further, we have that $T'(\sigma) = y$.
 </span>
@@ -189,7 +189,7 @@ Let $\vv$ be a strict monoidal category, and suppose we have a
 functor $T: \aa \to \vv$ with associated Yang-Baxter operator
 $y$. Let $z$ be the Yang-Baxter operator on $i_{\aa}: \aa \to \mathbb{B}\int\aa$.
 Then there exists a unique strict monoidal functor $T': \mathbb{B}\int\aa \to \vv$ such that the diagram
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes and that $T'(y') = y$. 
 </span>
@@ -200,22 +200,22 @@ and
 $j: \mathbf{1} \to  \mathbb{B}$
 where $F_T(\bullet) = T: \aa \to \vv$ and $i(\bullet) = 1$. Then by the previous work,
 there exists a map $T^{\#}: \mathbb{B} \to \{\aa, \vv\}$ such that the diagram below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Now construct the maps $\{F_S\}: \{*\} \to \hom(\mathbf{1}, \{\aa, \vv\})$ and $\{S\}: \{*\} \to \hom (\aa, \vv)$ where $\{F_S\}(*) = F_S$ and $\{S\}(*) = S$. Consider the pullback squares below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 First, $P$ corresponds to the set of functors $T: \mathbb{B} \to \{\aa, \vv\}$ such that precomposition with $i$ is equal to $F$. Meanwhile, the set $Q$ consists of functors $T': \mathbb{B}\int\aa \to \vv$ where precomposition with $i_{\aa}$ is equal to $S$. However, these sets are in bijection due to the adjoint relation we have. In other words, the diagrams 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 are in bijection. Hence we see that $T^{\#}$
 corresponds uniquely with a functor $T'$ such that 
 the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes and preserves the Yang-Baxter operators as desired. 
 \end{proof}
@@ -233,7 +233,7 @@ given by precomposition of each $F: \mathbb{B}\int\aa \to \vv$ with $i_{\aa}: \a
 
 \begin{proof}
 We follow the same argument as Joyal and Street. By the previous lemma, every $SB$-monoidal category is strongly equivalent to a strict $SB$-monoidal category $\vv'$ via a pair of functors $E: \vv \to \vv'$ and $E': \vv' \to \vv$. Hence observe that if we have an equivalence of categories $(-) \circ i_{\aa}: \mathbb{B}\fun(\mathbb{B}\int\aa, \vv') \to \fun(\aa, \vv')$, then the diagram below commutes
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and the top dashed arrow is an equivalence as well.
 So it suffices to prove this for the strict case. 
@@ -270,7 +270,7 @@ The fact that $\phi(\eta) = \phi(\eta')$ implies that
 \]
 
 As these are natural transformations between monoidal functors, we have that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The morphisms $P_1$ and $P_2$ are the isomorphisms built inductively from 
 

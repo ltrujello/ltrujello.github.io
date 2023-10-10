@@ -44,11 +44,12 @@ we have a bijective correspondence
 
 Now to demonstrate naturality, we consider a morphism $k: C \to C'$
 and we check that the diagram below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \begin{minipage}{0.5\textwidth}
 \hspace{-1cm}
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 \hspace{-0.4cm}
@@ -95,7 +96,7 @@ Now for any $f: R \to C$,
 the diagram on the bottom left commutes by naturality; 
 however, we are more interested in following the element 
 $1_R \in \hom_{\dd}(R, R)$. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We see that any such $\phi$ must act on $\hom_{\dd}(R, C)$ 
 by bijectively send $f: R \to C$ to $F(f) \circ u$. What this 
@@ -295,7 +296,7 @@ the backwards direction is similar to the proof of Proposition \ref{prop_univers
 First let's interpret what it means for $u: \{\bullet\} \to K(R)$ to 
 be universal. This means that for any other $f: \{\bullet\} \to K(C')$, there 
 exists a unique morphism $h: R \to C'$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Proposition \ref{prop_universality_bijection} we also have the natural 
 bijection 
@@ -330,7 +331,7 @@ Conversely, suppose that $K: \cc \to **Set**$ is representable. Specifically, su
 $\phi: \hom_{\cc}(R, -) \isomarrow K(-)$ is our natural isomorphism between the functors. 
 Then in particular, for any $h: R \to C$, naturality guarantees that the following 
 diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now take a step back; define the morphism $u: \{\bullet\} \to K(R)$ where 
 $u(\bullet) = \phi(1_R)$, and suppose $f: \{\bullet\} \to K(C)$ is some morphism. Then 
@@ -344,7 +345,7 @@ K(h)\big(\phi(1_R)\big) = \phi(h) \implies K(h)(u(\bullet)) = f(\bullet).
 
 In other words, we have that given any $f:\{\bullet\} \to K(C)$, 
 there exists a unique $h: R \to C$ such that the diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, the fact that $K$ is representable gives 
 rise to a $u: \{\bullet\} \to K(R)$ which is universal, which is what we set 
@@ -380,7 +381,7 @@ demonstrate that they are inverses.
 
 Suppose we have a natural transformation $\eta: \hom_{\cc}(R, -) \to K$. 
 Then for every $C \in \cc$, the diagram below on the left commutes.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 With this diagram, we can follow what happens to the identity morphism $1_R \in \hom_{\cc}(R, R)$.
 As above, denote $\eta_R(1_R) = u \in K(R)$.
@@ -443,7 +444,7 @@ $A,B \in \cc$, which we can use to build the functors $\hom(A, -),
 What is a natural transformation $\eta: \hom(A, -) \to \hom(B, -)$?
 It is a family of *functions*, indexed by all objects in  $\cc$,
 such that for each $f: C \to D$ the diagram below commutes.
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 We see that these functions must satisfy the 
@@ -607,7 +608,7 @@ Now what's a natural transformation $\eta$ between two functors?
 Since there is only one object of $\cc$, a natural transformation is *one* function 
 $\eta: U(G) \to U(G)$ such that for each $g'\in G$, 
 the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now, Yoneda's Lemma gives us the bijection below, which we may denote as 
 $\psi$,

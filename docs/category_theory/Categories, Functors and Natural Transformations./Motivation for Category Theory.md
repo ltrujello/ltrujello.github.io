@@ -21,12 +21,12 @@ $\partial_n \circ \partial_{n-1} = 0$.
 <img src="../../../png/category_theory/chapter_1/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 Within topology, we are often mapping topological spaces via continuous functions.
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 With vector spaces, we often use linear transformations to map 
 from one to another. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 At some point when we're learning different basic constructions in 
 pure mathematics, we often realize that we're just 

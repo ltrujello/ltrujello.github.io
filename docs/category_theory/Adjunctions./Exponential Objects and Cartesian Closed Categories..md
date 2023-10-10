@@ -73,7 +73,7 @@ Then for each object $(A, B) \in \cc \times \cc$, we have the
 morphism $\eta_{(A,B)}: (A, B) \to \Delta(F(A,B))$, which we can 
 rewrite as $\eta_{(A,B)}: (A, B) \to (F(A,B), F(A,B))$.
 We can put this into a universal diagram 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where the diagram on the right is the coproduct diagram of $A \times
 B$. Since both of the pairs $\Big((F(A,B), F(A,B)), \eta_{(A,B)}\Big)$ 
@@ -90,13 +90,13 @@ so that a left adjoint gives rise to products.
 
 Let $G: \cc \times \cc \to \cc$ be a right adjoint of $\Delta$, so
 that we have 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The adjunction gives rise to a universal morphism
 $\epsilon_{(A,B)}: \Delta(G(A,B)) \to (A,B)$, which we can rewrite
 as $\epsilon_{(A,B)}: (G(A,B), G(A,B)) \to (A,B)$. We then have
 the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where the diagram on the right is the product diagram of $A \times B$. 
 Thus we see that\\
@@ -132,7 +132,7 @@ object $Z$.
 
 Visually, this translates into requiring that the following
 diagram commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 \textcolor{Purple}{Hence, every morphism,
@@ -182,7 +182,7 @@ h_a(f) = f(a, y): Y \to Z.
 \]
 
 Thus we get the following commutative diagram:
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 What is this? What's really going on and why do we care?\\
 \textcolor{MidnightBlue}{This construction relates to a concept in
@@ -248,7 +248,7 @@ Z^Y$.
 
 \item[Morphisms.] Let $f: A \to B$ be in $\cc$. Then we 
 note that we have the following diagrams. 
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now observe that we can form the morphism $f \circ
 \textcolor{Red}{**eval**_A} : A^Y \times Y \to B$. 
@@ -256,7 +256,7 @@ Hence by universality
 of $B^Y$, there exists a unique morphism $h': A^Y \to B^Y$.
 Diagrammatically, we take the above diagram on the right, and
 replace $X$ with $A^Y$ and $g$ with $f \circ **eval**_A$.
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since $h$ exists if $f: A \to B$ exists, we therefore define 
 
@@ -308,7 +308,7 @@ which is natural for all objects $X, Y, Z \in \cc$.
 For each object $A \in \cc$, the exponential object gives rise
 to a universal morphism $**eval**_A: A^Y \times Y \to A$.
 So on one hand, we get the diagram on the left
-\
+
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 but on the other hand, the diagram on the right is exactly
 equivalent. Hence we see that $**eval**$ is actually a

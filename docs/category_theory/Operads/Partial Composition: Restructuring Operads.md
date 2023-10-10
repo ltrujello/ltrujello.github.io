@@ -70,11 +70,12 @@ for some $p \le n$, and set $X_{k_{i,j}} = X_1$
 except for $X_{k_{p,q}} = X_s$ for some $q \le a_p$. Then we get 
 the commutative diagram below. 
 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ith similar substitutions, we also get that the diagram below commutes. 
-\
+With similar substitutions, we also get that the diagram below commutes. 
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 
 

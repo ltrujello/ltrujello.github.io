@@ -45,11 +45,11 @@ Now suppose $F: \omega\op \to **Set**$ is a functor.
 Then if we write $F(i) = A_i$ with $A_i \in **Set**$, 
 then we see that the image of $F$ is a family of sets 
 $F_n$ with functions $f_{n}:A_{n+1} \to A_{n}$: 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 One way we could try forming a limit of this diagram is by
 constructing a cone, using the product of these sets. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, this isn't exactly what we want. A cone must
 form a commutative diagram and it's not always true
@@ -70,7 +70,7 @@ and equip $L$ with the functions $\pi'_{n}$ where
 
 where $i: L \to \prod\limits_{i = 1}^{\infty} F_i$ is the
 inclusion function. Then we have
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that $L$ forms a cone. We now prove that this cone is universal. 
 
@@ -115,13 +115,14 @@ so we then have that
 
 Hence, this shows that $(L, \pi_n: L \to F_n)$ is universal,
 so that $L = \Lim F$! 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 </span>
 
 If we want to view this in terms of the spider diagrams, then we
 have 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 </span>
@@ -155,7 +156,7 @@ the family of functions $\pi^*_n: \{*\} \to F_n$, defined as
 Now since $x \in \Lim F$, we know that $f_n(x_{n+1}) = x_{n}$.
 But, note that this is equivalent to stating that $f_n \circ
 \pi_{n+1}(*) = \pi_{n-1}(*)$. Therefore the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes for every $f_n: F_{n+1} \to F_n$, so that's how we can
 regard every $x \in \Lim F$ as a cone.
@@ -195,7 +196,7 @@ We now show that it is a cone.
 Suppose $f: i \to j$ is a morphism in $J$. Then observe that 
 $F(f) \circ v_i(x) = F(f) \circ \sigma^x_i(x) = \sigma^x_j(x)
 = v_j(x)$. Hence the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, so $\cone(*, F)$ really does form a cone over $F$. 
 To show this is universal, and hence our limit, suppose that 
@@ -203,7 +204,7 @@ $A$ in **Set** also forms a cone over $F$ with morphisms
 $\tau_j: X \to F_j$. Note that for each $a \in A$, we can form
 a cone from $\{*\}$ to $F$, if we define $\sigma^a_j: \{*\} 
 \to F_j$ as $\sigma^a_j(*) = \tau_j(a)$. Then the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must also commutes since it commutes for each $\tau_j$. 
 Thus we can define a unique 
@@ -254,7 +255,7 @@ The diagram below visually explains this process; the existence of limit
 in $\dd$ on the left implies the existence of the limit in $\cc$ on the right. 
 Moreover, the diagram on the left is the image of the diagram on the right 
 under $G$. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 
@@ -353,14 +354,14 @@ for some $C_j \in \cc$ and $f_j: A \to C_j$. If $u: j \to k$ is a morphism in
 $J$, then $F(u) : C_j \to C_k$ is a morphism in $\cc$ 
 such that the diagram below commutes (as, that's what morphisms  
 do in comma categories). 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that this is a cone over $F$ in $\cc$. 
 Now suppose we have a limit $\Lim P \circ F$ in $\cc$ with 
 morphisms $\mu_i: \Lim P \circ F \to C_i$ with $i \in J$. 
 Then because $\Lim P \circ F$ is a limiting cone, and we must 
 have a unique $v$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_5/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The claim now is that $(\Lim P \circ F, v: A \to  \Lim P \circ F)$ 
 is the limit $\Lim F$ of $F: J \to (A \downarrow \cc)$, which is left 

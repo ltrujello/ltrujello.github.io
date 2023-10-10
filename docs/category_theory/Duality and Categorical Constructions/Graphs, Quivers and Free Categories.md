@@ -75,15 +75,16 @@ f_V \circ s = s' \circ f_E \qquad f_V \circ t = t' \circ f_E.
 
 </span>
 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \noindent Now that we have all of those definitions out of the way, what's really going 
 on here? A quiver can be abstracted as a pair of objects and morphisms.
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If we let $C\op$ be the category with two objects, two nontrivial morphisms 
 and two identity morphisms as below
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 then we see that a **quiver is a functor** $F: \cc\op \to **Set**$. 
 With that said, 
@@ -96,8 +97,9 @@ The reason is because the underlying structure of small categories
 take the form of a quiver. For example, the category on the left below 
 can be turned into a quiver, as on the right, after "forgetting" composition and identity 
 morphisms. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 In general, since categories allow multiple arrows between objects, 
 we can construct a forgetful functor which forgets composition 
 and identity arrows.
@@ -126,12 +128,12 @@ the category with
 \item[Morphisms.] The **paths** of the quiver.   
 \end{description}
 Precisely, a **path** is any sequence of edges and vertices 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 with composition of paths defined in the intuitive way: 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 When we generate the free category, we also remember to add identity arrows to 
 each vertex. 
@@ -170,8 +172,9 @@ Let $Q$ be a quiver. Then there is a graph homomorphism $i: Q \to U(F_C(Q))$
 such that, for any other graph homomorphism
 $\phi: Q \to U(\cc)$ with $\cc$ a category, there exists a unique
 functor $F: F_C(Q) \to \cc$ where $U(F) \circ i = \phi$. That is,
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 </span>
 This is an example of a universal arrow; the dotted lines are the
 morphisms which are forced to exist by the conditions of the
@@ -180,7 +183,7 @@ diagram, which is the idea of a universal element.
 
 <span style="display:block" class="proof">
 Denote each morphism or path in $F_C(Q)$ of length $n$
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 as $(v_0, e_0e_1\cdots e_{n-1}, v_n): v_0 \to v_n$. Now define the inclusion 
 $i: Q \to U(F_C(Q))$ where each vertex and edge is sent identically. That is, vertices 
@@ -193,9 +196,9 @@ i(e: v \to v') = (v, e, v').
 
 An important observation to make is the fact that every morphism $(v_0, e_0e_1\cdots e_{n-1}, v_n): v_0 \to v_n)$
 in $F_C(Q)$ is a composition of length 2-morphism: 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_6_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, for any graph homomorphism $\phi: Q \to U(\cc)$, 
 we can create a unique functor $F: F_C(Q) \to \cc$ where 

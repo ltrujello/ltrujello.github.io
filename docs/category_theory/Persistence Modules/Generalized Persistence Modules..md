@@ -31,21 +31,22 @@ one (or both) of the diagrams below must commute for any $x \le y$  in $P$.
 Thus we set $\Gamma \le K$ whenever there exists a natural transformation 
 $\eta_{\Gamma K}: \Gamma \to K$. 
 
-\begin{definition}
+
+<span style="display:block" class="definition">
 Let $P$ be a preorder and $\Gamma, K \in **Trans**_P$. Suppose 
 $F, G \in \dd^P$. We say $F, G$ are $(\Gamma, K)$-interleaved if there exists 
 a pair of natural transformations $\phi: F \to G \circ \Gamma$ and 
 $\psi: G \to F\circ K$ such that 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 Note that, given the first two commutative squares, we can stack them to create a 
 larger commutative square: 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-f the two triangular diagrams did not hold, then we would we would see 
+If the two triangular diagrams did not hold, then we would we would see 
 that there would be two different, but not necessarily equal ways of getting from
 $F$ to $F(K(\Gamma))$ and $G$ to $G(\Gamma(K(x)))$. Note also that, if we really 
 wanted to, we could keep stacking these diagrams on and on.
@@ -63,9 +64,9 @@ also $(\Gamma, K)$ interleaved.
 This is true since any functor applied to a commutative diagram will output a commutative diagram. 
 Thus if we compose $H$ with the commutative diagrams which arise from the interleaving 
 of $F, G$,  we get 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The above diagrams can be reconciled with the definition of an $(\Gamma, K)$ 
 interleaving, so that $H\circ F, H\circ G$  are $(\Gamma, K)$ are  
@@ -86,14 +87,14 @@ Since $\Gamma_1 \le \Gamma_2$ and $K_1 \le K_2$, there must exist
 natural transformations $\alpha: \Gamma_1 \to \Gamma_2$ and $\beta: K_1 \to K_2$. 
 Now since $F, G$ are $(\Gamma_1, K_1)$-interleaved, this means we get the usual diagrams, 
 but we can stack an extra layer on the bottom. 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we can see our natural transformations of interest are 
 $G(\alpha) \circ \phi: F \to G \circ \Gamma_2$ and 
 $F(\beta)\circ \psi: G \to F \circ K_2$. We now have to show that our 
 two required triangular diagrams must commute. 
 Towards this goal, consider the diagram below.
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The left triangle commutes since $F, G$ are a $(\Gamma_1, K_1)$ interleaving, 
 while the rightmost commutes by the original square diagrams. 
@@ -102,12 +103,12 @@ we need to make sure $\textcolor{Orange}{F(K_2(\alpha_x))}\circ
 \textcolor{Blue}{F(\beta_{\Gamma_1(x)})}\circ 
 F(\eta_{\Gamma_1(K_1(x))}) = F(\eta_{\Gamma_2(K_2(x))})$. 
 To do this, observe that the diagram
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must necessarily commute as it is a diagram inside of $P$, a preordered set. 
 Therefore, the image of this diagram under $F$ must produce a commutative diagram, so that we do 
 in fact get our desired relation. All together, we then have 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The same procedure can be repeated 
 dually to demonstrate commutativity for the other required triangular diagram.
@@ -132,13 +133,13 @@ $G,H$ are $(\Gamma_2, K_2)$-interleaved, we have the natural transformations
 \end{align*}
 
 which satisfy the required diagrams. Consider the diagrams  
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commute by our given interleavings.
 Then there are natural transformations $\psi'_{\Gamma_1} \circ \phi: F \to H(\Gamma_2\circ\Gamma_1)$ 
 and $\phi'_{K_2}\circ \psi: H \to F(K_1\circ K_2)$. We now must check they satisfy the required triangular diagrams. 
 We can demonstrate this for at least one; Consider the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_11/tikz_code_2_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The above diagram commutes by our given interleavings. The diagram 
 in \textcolor{Blue}{blue} commutes since $F, G$ are $(\Gamma_1, K_1)$ interleaved, 

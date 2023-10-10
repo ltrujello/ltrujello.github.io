@@ -69,9 +69,9 @@ know as the "twist" morphism
 \end{statement} 
 such that the following diagrams commute for all objects $A, B, C$ of $\cc$. 
 \begin{statement}{ProcessBlue!10}
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{statement}
+\end{statement}
 </span>
 
 Note that just because we have a twist morphism, it is not necessarily the case 
@@ -100,7 +100,7 @@ Composition in this category is simply braid composition. We can introduce a ten
 product $\otimes$ on $\mathbb{B}$ where on objects $n \otimes m = n + m$ 
 while on morphisms $\alpha \otimes \beta$ is the direct sum braid. The direct 
 sum braid is simply the braid obtained by placing two braids side-by-side.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 With an identity object being the empty braid, we see that $\mathbb{B}$ 
 is a strict monoidal category. The associators and unitors are simply identity morphisms.
@@ -151,10 +151,10 @@ $\sigma_{M,P}: M \otimes P \to P \otimes M$ to be the graded module homomorphism
 
 whenever $m \in M_i$ and $p \in P_j$. 
 Observe that with this braiding we get that
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which clearly commutes. The second hexagon axiom is also easily seen to be satisfied:
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus we see that $**GrMod**_R$ is more than just a monoidal category; each invertible 
 element of $R$ induces a braiding, making it a braided monoidal category as well.
@@ -231,7 +231,7 @@ simply horizontally stacks).
 
 In this category, we can introduce a symmetric braiding $\sigma_{n,m}: n+m \to m+n$
 to be the unique permutation $\sigma_{n,m} \in S_{n+m}$ pictured below. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 One thing to notice is that this is the underlying permutation of braid given in 
 Figure \ref{figure:braiding_on_braid_category}.
@@ -359,7 +359,7 @@ All of these establish a bijection, and hence an isomorphism.
 Now to demonstrate that they are natural, consider $f: n \to n'$, 
 $g: m \to m'$ and $h: p \to p'$.
 First, we'll want to show that the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, which we can do by a case-by-case basis.
 First we follow the path
@@ -436,7 +436,7 @@ Hence we see that this diagram does commute, so that $\alpha$ is natural.
 
 Now we show that these natural isomorphisms satisfy the monoidal properties. 
 Specifically, we'll show that the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. To do this, we consider how these functions are realized in **Set**. 
 If we consider $(x, i) \in S_n\amalg(\varnothing \amalg S_m)$, we see that 

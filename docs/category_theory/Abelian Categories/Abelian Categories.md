@@ -18,8 +18,9 @@ $c \circ \phi = 0$, we see that there exists a unique map $u: A \to \ker(\coker(
 such that $\phi = e' \circ u$. 
 Dually, since $\phi \circ e = 0$, there exists a unique map $v: \coker(\ker(f)) \to B$. 
 such that $\phi = v \circ c'$. 
-\
+
 <img src="../../../png/category_theory/chapter_8/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 
 

@@ -63,8 +63,9 @@ Then we demand that the diagram below commutes.
 Letting $A$ be an arbitrary object of $\cc$, let $\lambda: I \otimes A \isomarrow A$ and $\rho: A \otimes I \isomarrow A$ 
 as the left and right unitors in our symmetric monoidal category. Then 
 the diagrams below must hold for all $n \ge 0$. 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 
 \item[(OP3) Equivariance 1.]
 Let $\tau \in S_n$, 
@@ -72,7 +73,7 @@ and let $\tau^*$ be the isomorphism $\tau^*: X_{a_1} \otimes \cdots \otimes X_{a
 \isomarrow X_{\tau(a_1)} \otimes \cdots \otimes X_{\tau(a_n)}$ and by abuse of notation 
 denote $\tau$ as the morphism $\tau: X_n \to X_n$ which is given by the group action. 
 Then the diagram below must commute.
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Here, $\tau'$ is the block permutation described below:
 
@@ -93,7 +94,7 @@ Let $\sigma_i \in S_{a_i}$ for $i = 1, 2, \dots, n$.
 By abuse of notation, denote $\sigma_i: X_{a_i} \to X_{a_i}$ to 
 be the map given by the group action.
 Then we have that 
-\
+
 <img src="../../../png/category_theory/chapter_9/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where $(\sigma_1, \sigma_2, \dots, \sigma_n)$ is the permutation in $S_{a_1 + \cdots + a_n}$
 defined as below.

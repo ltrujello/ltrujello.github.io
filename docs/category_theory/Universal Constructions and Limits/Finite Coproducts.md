@@ -71,7 +71,8 @@ it doesn't matter what basepoint for the fundamental group we select).
 We will soon see that the free product is the coproduct in the category of **Grp**, although 
 such a statement should not make any sense the reader until we define what a coproduct is. 
 
-\begin{example}
+
+<span style="display:block" class="example">
 In **Set**, we can combine two different sets $X$ and $Y$ to create the 
 **disjoint union** $X \amalg Y$, which is defined to be the set 
 
@@ -144,7 +145,7 @@ g(z) & \text{if } i = 1
 This definition of this unique $h: X \amalg Y \to Z$ is described above on the right.
 With the above definition, one can easily see that the above diagram does in fact commute.
 We now have an answer to our question.
-\\begin{center}
+\begin{center}
 \begin{minipage}{0.8\textwidth}
 **A:** The disjoint union $X \amalg Y$ is characterized by two 
 inclusion functions $i_1: X \to X \amalg Y$, $i_2: Y \to X \amalg Y$, 
@@ -152,11 +153,12 @@ such that, for any $f: X \to Z$, $g: Y \to Z$, there exists a **unique**
 $h: X \amalg Y \to Z$ such that diagram \ref{diagram:disjoint_union_diagram} 
 commutes.
 \end{minipage}
-\end{center}end{example}
+\end{center}</span>
 
 This now motivates the following definition of a *coproduct*. 
 
-\begin{definition}[Nice Coproduct Definition.]
+
+<span style="display:block" class="definition">[Nice Coproduct Definition.]
 Let $\cc$ be a category with objects $A$ and $B$. The **coproduct** of $A$ and $B$ 
 is an object $A \amalg B$ of $\cc$ which is equipped with morphisms 
 
@@ -167,9 +169,9 @@ i_A: A \to A \amalg B \qquad i_B: B \to A \amalg B
 with the following universal property: For any object $Z$ of $\cc$ with a pair 
 of morphisms $f: A \to Z$ and $g: B \to Z$, then there exists a unique morphism 
 $h: A \amalg B \to Z$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 It is now clear that, coproducts in **Set** exist; it is the disjoint union.
 
@@ -210,7 +212,8 @@ natural in $A$, where $T$ is the initial object of the category.
 \end{description}
 </span>
 
-\begin{definition}[Rigorous Coproduct Definition]
+
+<span style="display:block" class="definition">[Rigorous Coproduct Definition]
 Let $\cc$ be a category with objects $A, B$. The 
 **coproduct $A \amalg B$ of $A$ and $B$** is 
 a universal morphism 
@@ -222,12 +225,13 @@ a universal morphism
 from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$(A,B)$ to $\Delta$}}. 
 This means that, for any other pair $(C, j: (A, B) \to \Delta(C))$, there exists 
 a unique $h: A \amalg B \to C$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Visually, we have that 
-\
+
 <img src="../../../png/category_theory/chapter_3/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+</span>
 
 
 

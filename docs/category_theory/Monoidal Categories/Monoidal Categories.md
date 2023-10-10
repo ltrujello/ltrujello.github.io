@@ -51,7 +51,7 @@ diagram below commutes
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 while naturality for $\lambda$ and $\rho$ means that for any function $f: A \to A'$, the diagrams 
 below commute. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 (Here, 1 denotes the identity $1: \{\bullet\} \to \{\bullet\}$). While being able to find 
 the functions $\alpha, \rho, \lambda$ and observing that they are natural 
@@ -113,12 +113,12 @@ Here, we've defined the two transformations on the bases.
 Similarly to our last example, we comment that $\alpha, \lambda, \rho$ defined here 
 are natural. This means that for any three linear transformations 
 $f: U \to U'$, $g: V \to V'$, and $h: W \to W'$, the diagram below commutes
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and we additionally have that the diagrams below commute. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{example}
+</span>
 
 The observations we have made here continue to be true upon investigating many
 other categories $\cc$ in which we have some known, natural way of combining elements. In each case, the 
@@ -233,7 +233,8 @@ understand why those diagrams are necessary.
 Before we explain why the diagrams are necessary, we develop further intuition regarding 
 monoidal categories with some more examples. 
 
-\begin{example}
+
+<span style="display:block" class="example">
 As one might expect, $(**Set**, \times, \{\bullet\})$
 is a monoidal category. We have verified most of the details except the coherence 
 conditions, but it is not too difficult to show that the unit and pentagon diagram 
@@ -307,7 +308,7 @@ tensor product between two $R$-modules $N \otimes M$ is an initial object
 in the comma category $(N \times M \downarrow R**-Mod**$ 
 where the morphisms are bilinear. Alternatively in diagrams, we have 
 that 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now consider a third $R$-module $P$; then we have two ways of constructing 
 the tensor product. To demonstrate that we may identify these objects up 
@@ -334,7 +335,7 @@ f': M \times (N \otimes P) \to (M \otimes M) \otimes P
 These maps are bilinear due to the bilinearity of $\otimes$. Hence we see 
 that the universal property of the tensor product gives us unique map $\alpha$ and 
 $\alpha'$ such that the diagrams below commute. 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Based on how we defined $f$ and $f'$, and since we know that $\phi$ and $\phi'$ 
 is, we can determine that $\alpha$ and $\alpha'$ are "shift maps", i.e, 
@@ -549,11 +550,12 @@ where $\sigma \in S_n$ and $\tau \in S_m$ and where $\sigma \otimes \tau$ denote
 **direct sum permutation**. I could tell you in esoteric language and 
 notation what that is, or I could just show you:
 $\sigma$ and $\tau$, displayed as below 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 become $\sigma \otimes \tau$ which is displayed as below.
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 To make this monoidal, we specify that $0$ is our identity element whose associated 
 identity morphism is the empty permutation.
 Now clearly this operation is strict on objects. On morphisms, it is also strict in 
@@ -577,13 +579,13 @@ Let $\cc$ be a category equipped with natural isomorphisms
 for all objects $A, B, C \in \cc$ and some identity object $I$. 
 Suppose the pentagonal diagram \ref{pentagonal_diag} holds for 
 all objects of $\cc$. Then for all $A, B \in \cc$, the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes if and only if the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, which commutes if and only if the diagram 
-\
+
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes.
 </span>

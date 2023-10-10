@@ -67,8 +67,9 @@ f'' = h' \circ f' \hspace{0.5cm}\text{and}\hspace{0.5cm} f' = h \circ f \implies
 
 We can visually justify composition as well. If we have two commutative diagrams 
 as on the left, we can just squish them together to get the final commutative diagram on the right. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Hence, we see that $h' \circ h :(f, C) \to (f'', C'')$ is
 defined whenever $h'$ and $h$ are composable as morphisms of
 $\cc$.
@@ -142,7 +143,7 @@ a single point $x_0 \in X$}.  Hence, on objects it is clear why we have an isomo
 Now, a morphism in this comma category will be of the form 
 $p: (X, f_1: \{\bullet\} \to X) \to (Y, f_1: \{\bullet\} \to Y)$. 
 Specifically, it is a continuous function $p: X \to Y$ such that the diagram below commutes. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In other words, if $f_1(\bullet) = x_0$ and $f_2(\bullet) = y_0$, 
 it is a continuous function $p: X \to Y$ such that $f(x_0) = y_0$.
@@ -207,8 +208,9 @@ $\textcolor{NavyBlue}{h'}: (f', C') \to (f'', C'')$ exists whenever
 $\textcolor{NavyBlue}{h'} \circ \textcolor{NavyBlue}{h}$ is
 defined as morphisms in $\cc$. Again, we can represent the
 elements of the category in a visual manner 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 The following is a nice example that isn't traditionally seen as
 an example of a functor. 
 
@@ -232,7 +234,7 @@ process is functorial:
 To see this, we have to understand what happens on the morphisms.
 So, suppose we have two objects $(G, \phi: G \to H)$ and $(K, \psi: K \to H)$ 
 of $(**Grp**\downarrow H)$ and a morphism $h: G \to K$ between the objects. 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then we can define $\ker(h): \ker(\phi) \to \ker(\psi)$, the image 
 of $h$ under the functor, to 
@@ -256,9 +258,9 @@ functor from a slice category.
 In geometry and topology, one often meets the need to define a $(-)$-bundle. By $(-)$
 we mean vector, group, etc. That is, we often want topological spaces to parameterize 
 a family of vector spaces or groups in a coherent way. 
-\\begin{center}
+\begin{center}
 \includegraphics[width = 0.9\textwidth]{mobius_sphere.png}
-\end{center}
+\end{center} 
 For example, on the above left we can map the Möbius strip onto $S_1$ in such a way that the 
 inverse image of each $x \in S_1$ is homeomorphic to the interval $[0, 1]$. Hence, 
 each point of $x \in S_1$ carries the information of a topological space, specifically one of $[0, 1]$.
@@ -367,7 +369,7 @@ $h:B \to B'$ in $\bb$ such that $f' = F(h) \circ f$.
 \end{description}
 </span>
 Representing this visually, we have that 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Composition of the morphisms in $(C \downarrow F)$ simply
 requires composition of morphisms in $\bb$. 
@@ -381,7 +383,7 @@ concept of the comma category.
 <span style="display:block" class="definition">
 Let $\bb, \cc, \dd$ be categories and let $F: \bb \to \dd$
 and $G:\cc \to \dd$ functors. That is, 
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then we define the **comma category** $(F \downarrow
 G)$ as follows. 
@@ -407,7 +409,7 @@ f' \circ F(h) = G(k) \circ f.
 \end{description}
 </span>
 As usual, we can represent this visually via diagrams:
-\
+
 <img src="../../../png/category_theory/chapter_2/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where in the above picture we have that $(h, k):(B, C, f) \to
 (B', C', f')$. Since functors naturally respect composition of

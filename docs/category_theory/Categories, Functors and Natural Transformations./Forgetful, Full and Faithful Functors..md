@@ -205,7 +205,7 @@ F_{A,B}: \hom_{\cc}(A, B) \to \hom_{\dd}(F(A), F(B))
 
 where a morphism $f:A \to B$ is sent to its image $F(f): F(A) \to F(B)$ 
 under the functor $F$. 
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 As we have a family of functions $F_{A,B}$, we can ask:
@@ -363,7 +363,7 @@ is not a category.
 \\
 *Hint*:
 Picture two categories $\cc$ and $\dd$ below
-\
+
 <img src="../../../png/category_theory/chapter_1/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and consider the functor $F(A) = X, F(B) = F(C) = Y$, and $F(D) = Z$. 
 Explain what goes wrong, and more generally why the image of a functor 
