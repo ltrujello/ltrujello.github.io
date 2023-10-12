@@ -140,12 +140,14 @@ However, rather than bring out the big statistical guns and call it a day, we ar
 this becomes an instance of Expectation Maximization.
 
 
-# Estimating the model parameters
+## Estimating alignment probabilities from $(t | e)$
 
-In order to estimate our model parameters $t(e | f)$, suppose we have a sentence pair $\mathbf{e}$, $\mathbf{f}$. 
-If word $e_i$ is a translation of word $f_j$, then intuitively we'd expect that $t(e | f)$ is high. In addition, 
-for any alignment $a_1, \dots, a_n$ such that $a_i = j$, we'd expect that 
-$p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})$ to be high. This quantity is actually the posterior probability, and we can calculate it 
+When we were discussing the chicken and egg issue before, we said that if we had the 
+model parameters $t(e | f)$, we could determine the best possible alignment. How would that work?
+
+For a specific sentence pair $\mathbf{e}$, $\mathbf{f}$, finding an optimal alignment $a_1, \dots, a_n$ 
+would involve calculating the probability
+$p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})$. This quantity is actually a posterior probability, and we can calculate it 
 via 
 
 \[
@@ -228,4 +230,34 @@ We can then combine the products in the numerator and denominator to obtain that
    = \prod_{i = 1}^{n}
    \frac{  t(e_i | f_{a_i}) }{ \sum_{j = 0}^{m} t(e_i | f_j) }
 \]
+
+Therefore, we see that if we know the model parameters $t(e | f)$, then we could estimate the best possible alignments via the above expression.
+
+## Estimating $t(e | f)$ from alignment probabilities
+
+On the other hand, recall again that when we were discussing the chicken and egg problem, we said that if we knew 
+the alignment (probabilities) for each sentence then we could estimate the model parameters. How would that work?
+
+Since we want to estimate $t(e | f)$ given knowledge about the probabilities of alignments, let's start with a simpler 
+goal of estimating $t(e | f; \mathbf{e}, \mathbf{f})$ where $\mathbf{e}$ is a sentence containing the word $e$ and $\mathbf{f}$ is a 
+sentence containing the word $f$. That is, we'll try to estimate this probability given two sentences. 
+
+If one has access to $p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})$ for all alignments $a_1, \dots, a_n$, 
+then we can estimate $t(e | f; \mathbf{e}, \mathbf{f})$ by adding up the probability of each alignment in which 
+$e$ and $f$ are aligned via the alignment. More formally, we could state that
+
+\[
+   t(e | f; \mathbf{e}, \mathbf{f}) \propto \sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | e) 
+   \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
+\]
+
+
+
+
+ from some words $e$ and $f$. 
+Consider a sentence pair $\mathbf{e}$ and $\mathbf{f}$. 
+
+
 
