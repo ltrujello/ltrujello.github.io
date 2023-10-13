@@ -243,8 +243,8 @@ goal of estimating $t(e | f; \mathbf{e}, \mathbf{f})$ where $\mathbf{e}$ is a se
 sentence containing the word $f$. That is, we'll try to estimate this probability given two sentences. 
 
 If one has access to $p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})$ for all alignments $a_1, \dots, a_n$, 
-then we can estimate $t(e | f; \mathbf{e}, \mathbf{f})$ by adding up the probability of each alignment in which 
-$e$ and $f$ are aligned via the alignment. More formally, we could state that
+then we can estimate $t(e | f; \mathbf{e}, \mathbf{f})$ by adding up the probabilities of all alignments where 
+$e$ and $f$ are aligned in some way. More formally, we could state that
 
 \[
    t(e | f; \mathbf{e}, \mathbf{f}) \propto \sum_{a_1 = 0}^{m} \dots 
@@ -253,11 +253,51 @@ $e$ and $f$ are aligned via the alignment. More formally, we could state that
    \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
 \]
 
+We state this is *proportional* to $t(e | f)$, because this is not normalized. To normalize this, note that in theory, every 
+other word in the sentence $e$ could also be a translation of $f$. Therefore, the correct probability is  
 
+\[
+   t(e | f; \mathbf{e}, \mathbf{f}) =
+   \frac{\sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
+   }{
+   \sum_{k = 0}^{n}
+   \sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   \sum_{i = 1}^{n}\delta(e_k, e_i) \delta(f, f_{a_i})\right)
+   }
+\]
 
+Another way to see that this is the correct normalization is to observe that 
+for this probability distribution, we'd need that
+$\sum_{e \in \mathbf{e}} t(e | f; \mathbf{e}, \mathbf{f}) = 1$ to be satisfied, which 
+the above expression does in fact satisfy. 
 
- from some words $e$ and $f$. 
-Consider a sentence pair $\mathbf{e}$ and $\mathbf{f}$. 
+Perhaps an easier way to understand the above expression is to declare  
+
+\[
+   c(e| f ;\mathbf{e}, \mathbf{f}) =
+   \sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
+\]
+
+That is, the sum in the denominator indexes over each word in $\mathbf{e}$. With this notation, 
+we can more simply write
+
+\[
+   t(e | f; \mathbf{e}, \mathbf{f}) =
+   \frac{
+      c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }{
+      \sum_{e \in \mathbf{e}}c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }
+\]
+
 
 
 
