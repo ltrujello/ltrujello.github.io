@@ -37,8 +37,8 @@ Therefore this is a group action.
 We'll now show that this group action is very special and
 important. Conjugation itself is important in math. In Linear
 Algebra, two matrices which are similar (i.e., $A$ is similar to
-$B$ if there exists $P$ such that $A = P^{-1}BP$) have \textbf{the same 
-rank, determinants, trace, eigenvalues, and much more}. Basically,
+$B$ if there exists $P$ such that $A = P^{-1}BP$) have **the same 
+rank, determinants, trace, eigenvalues, and much more**. Basically,
 they represent the same linear transformation, just in different
 bases. To learn more about conjugation, we make a few definitions
 with this group action.
@@ -58,8 +58,8 @@ is known as a **conjugacy class** of $G$.
 
 \textcolor{purple}{Previously we discussed how orbits of a group action partition the
 set $X$ which is being acted on. Since $G$ acts on itself in this
-example, we see that \textbf{the conjugacy classes form a
-partition of $G$!}}
+example, we see that **the conjugacy classes form a
+partition of $G$!**}
 \\
 \\
 **Remark.**
@@ -144,8 +144,8 @@ and $n \in \mathbb{N}$. Then $|Z(G)| > 1$. That is, $|Z(G)|
 \in \{p, p^2, \dots, p^{n}\}$.
 </span>
 \textcolor{Purple}{Equivalently, this theorem says that $Z(G)$ is nontrivial.
-Moreover, this implies that \textbf{there exists
-non identity elements of $\mathbf{G}$ which commute with every
+Moreover, this implies that **there exists
+non identity elements of $\mathbf{G**$ which commute with every
 element of $\mathbf{G}$.}}
 
 

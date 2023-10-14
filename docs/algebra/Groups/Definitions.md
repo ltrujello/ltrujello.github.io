@@ -687,8 +687,8 @@ of $S$ in $G$ is defined to be the set $C_G(S)$
 
 </span>
 In the case where $G$ is abelian, we $C_G(S) = G$ for any nonempty
-subset $S$ of $G$. This definition is close to the \textbf{center
-of a group}, which is as follows.
+subset $S$ of $G$. This definition is close to the **center
+of a group**, which is as follows.
 
 
 <span style="display:block" class="definition">

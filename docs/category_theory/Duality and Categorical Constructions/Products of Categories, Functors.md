@@ -9,8 +9,8 @@ defined.
 
 
 <span style="display:block" class="definition">
-Let $\cc$ and $\dd$ be categories. Then the \textbf{product
-category} $\cc \times \dd$ is the category where 
+Let $\cc$ and $\dd$ be categories. Then the **product
+category** $\cc \times \dd$ is the category where 
 \begin{description}
 \item[Objects.] All pairs  $(C, D)$ with $C \in \ob(\cc)$ and $D \in \ob(\dd)$
 \item[Morphisms.] All pairs $(f, g)$ where $f \in \hom(\cc)$ and $g \in \hom(\dd)$.   

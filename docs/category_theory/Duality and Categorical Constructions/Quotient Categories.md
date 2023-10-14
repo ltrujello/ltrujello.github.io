@@ -13,8 +13,8 @@ For example, in constructing the quotient group, one can go about
 constructing it in two different ways. One is easy, in which you
 simply form the concept of a coset, and then observe that nice
 things happen when you make cosets with normal subgroups. The hard
-way is to construct an equivalence relation, which \textit{gives
-rise} to what we recognize as the concept of a coset, and then
+way is to construct an equivalence relation, which *gives
+rise* to what we recognize as the concept of a coset, and then
 continuing further to create the quotient groups from normal
 subgroups. Both ways are equivalent, but one ignores the crucial
 and powerful idea of equivalence relations. 

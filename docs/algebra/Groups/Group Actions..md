@@ -14,8 +14,8 @@ the formal definition.
 
 
 <span style="display:block" class="definition">
-Let $G$ be a group and $X$ an arbitrary set. A \textbf{group
-action} of $G$ on $X$ is a mapping $* : G \times X \to X$
+Let $G$ be a group and $X$ an arbitrary set. A **group
+action** of $G$ on $X$ is a mapping $* : G \times X \to X$
 that 
 
 * [1.] $g_1 * (g_2 * x) = (g_1 \cdot g_2) * x$ for
@@ -166,8 +166,8 @@ when one grabs a single element of $x \in X$, and multiplies it by
 every element $g \in G$. {\color{purple}{Note that since $g
 \cdot x \in X$ for every $g \in G, x \in X$, we have that $Gx \subset X$.}}
 
-\textcolor{NavyBlue}{Orbits are rather interesting since \textbf{they partition their acting
-set $X$}. That is, if $X = \{x_1, x_2, \dots, x_n\}$, then 
+\textcolor{NavyBlue}{Orbits are rather interesting since **they partition their acting
+set $X$**. That is, if $X = \{x_1, x_2, \dots, x_n\}$, then 
 $Gx_1 \cup Gx_2 \cup \cdots \cup Gx_n = X$. Note that $x_i \in
 Gx_i$ for $i = 1, 2, \dots, n$, so this definitely makes sense.
 \\

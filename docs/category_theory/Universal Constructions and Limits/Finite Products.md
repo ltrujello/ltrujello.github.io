@@ -84,8 +84,8 @@ What
 is the bare minimum amount of logical data that perfectly characterizes 
 the above product $X \times Y$?  
 \end{minipage}
-\end{center}        Well, observe that for such a set, we have *two* \textbf{projection 
-functions} 
+\end{center}        Well, observe that for such a set, we have *two* **projection 
+functions** 
 
 \begin{align*}
 &p_1: X \times Y \to X \qquad p_1(x, y) = x\\

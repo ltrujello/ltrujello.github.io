@@ -89,8 +89,8 @@ that $H \normal G$.)
 
 {\color{NavyBlue} Note that there is another way to think about $G/H$. The elements
 of the quotient group are cosets, right? However, let us not forget
-that cosets are simply \textbf{\textit{equivalence classes which
-respect the following equivalence relation}} }: {\color{Black} if $G$ is a group, $H$ is a
+that cosets are simply ***equivalence classes which
+respect the following equivalence relation*** }: {\color{Black} if $G$ is a group, $H$ is a
 subgroup, then for any $a, b \in G$ we say that $a \sim
 b$ if and only if $ab^{-1} \in H$.} {\color{NavyBlue} Thus we can
 recast our definition follows:}
@@ -149,7 +149,7 @@ Thus observe that for $aH, bH \in G/H$, we have that
 Thus the set $G/H$ must be abelian.
 \\
 \\
-**The answer to the second question is \textbf{no, not always**}. If $G/H$ is abelian, 
+**The answer to the second question is \textbf{no, not always}**. If $G/H$ is abelian, 
 we know that 
 $$
 (aH)(bH) = (bH)(aH) \implies (ab)H = (ba)H.
@@ -160,8 +160,8 @@ An example of this is $D_{6}$ with the subgroup $H = \{1, r, r^2\}.$
 In this case $H \unlhd D_6$ because all the left cosets are $H, sH$ and therefore 
 $[D_{2n}: H] = 2$ (Hence $H \normal G$ by the previous proposition). In addition, 
 $H(sH) = sH=  sH(H)$, $sH(sH) = s^2H = (sH)sH$, so $G/H$ is abelian, but the set $D_{2n}$
-is itself not an abelian group. Thus, \textbf{it is possible for
-$G/H$ to be ableian while $G$ itself is not abelian }
+is itself not an abelian group. Thus, **it is possible for
+$G/H$ to be ableian while $G$ itself is not abelian **
 \\
 \\
 Another fun example for when the quotient group $G/H$ is abelian,

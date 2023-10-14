@@ -184,8 +184,8 @@ This leads to the following definition.
 
 <span style="display:block" class="definition">
 Let $R$ be a ring and $M$ an $R$-module. If $N$ is a submodule
-of $M$, then we defined $M/N$ to be the \textbf{quotient
-$R$-module} of $M$ with respect to $N$. As we showed earlier,
+of $M$, then we defined $M/N$ to be the **quotient
+$R$-module** of $M$ with respect to $N$. As we showed earlier,
 this is in fact an $R$-module.
 </span>
 

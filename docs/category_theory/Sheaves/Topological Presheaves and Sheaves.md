@@ -210,8 +210,8 @@ unique.
 We will see this in a few examples. 
 
 
-*  With the notion of a morphism of sheaves, we can define the \textbf{category 
-of topological sheaves (of **Sets**)}, denoted $**Sh**(X, **Set**)$,
+*  With the notion of a morphism of sheaves, we can define the **category 
+of topological sheaves (of \textbf{Sets})**, denoted $**Sh**(X, **Set**)$,
 to be the category with objects sheaves and morphisms with natural transformations.
 
 

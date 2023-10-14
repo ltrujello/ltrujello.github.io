@@ -7,8 +7,8 @@
 With the concept of a quotient ring defined, we can formulate
 analagous Isomorphism Theorems as we had in group theory. As
 we move forward, recall that the main ingredients of the
-isomorphism theorems in group theory were \textbf{normal
-subgroups} and **quotient groups**. For our ring
+isomorphism theorems in group theory were **normal
+subgroups** and **quotient groups**. For our ring
 isomorphism theorems, the "normal groups" will be
 **ideals** while the "quotient groups" will be the
 **quotient rings**. 

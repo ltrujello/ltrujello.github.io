@@ -246,8 +246,8 @@ Next we introduce a theorem.
 <span style="display:block" class="theorem">
 Let $(R, +, \cdot)$ be a commutative ring with $1 \ne 0$, and $D
 \subset R$ be a multiplicative set. Denote $S = D^{-1}R = \{a/b
-\mid a \in R, b \in D\}$ as the \textit{ring of fractions of $R$
-by $D$}. Then 
+\mid a \in R, b \in D\}$ as the *ring of fractions of $R$
+by $D$*. Then 
 \begin{description}
 \item[1.] Let $I$ be an ideal of $R$. Then $D^{-1}I =\{x/b
 \mid x \in I, b \in D\}$ is an ideal of $S$. (This is called

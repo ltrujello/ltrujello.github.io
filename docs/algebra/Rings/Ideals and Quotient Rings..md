@@ -35,8 +35,8 @@ a + I = I + a
 \]
 
 for all $a \in R$. Hence, left and right cosets are the
-concept here. Finally, we define the \textbf{collection of
-cosets} by 
+concept here. Finally, we define the **collection of
+cosets** by 
 
 \[
 R/I = \{\overline{a} \mid a \in R\}.               

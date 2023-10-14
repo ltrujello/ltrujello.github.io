@@ -141,8 +141,8 @@ in such a way that for a second mapping $g: Y \to Z$, $H_n(g \circ f)
 = H_n(g) \circ H_n(f)$ for all $n$. Finally, we also know that 
 $H_n(1_X) = 1_{H_n(X)}$.
 Therefore, what we see is that this process can be cast into the language 
-of category theory, so that we may define a \textbf{singular 
-homology functor}
+of category theory, so that we may define a **singular 
+homology functor**
 
 \[
 H_n: \top \to \ab
@@ -682,8 +682,8 @@ become a functor.
 
 <span style="display:block" class="example">
 Let $X$ be a set. Recall from topology that we can treat $X$ as a
-topological space by associating to it the \textbf{finite complement 
-topology:} 
+topological space by associating to it the **finite complement 
+topology:** 
 
 \[
 \tau^X_{FC}= \{U \subset X \mid X - U \text{ is finite.}\}

@@ -103,14 +103,14 @@ The above proposition offers the following definitions.
 Let $M_1, M_2$ and $M$ be $R$-modules. If the sequence
 
 <img src="../../../png/algebra/chapter_3/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-is exact then we say it forms an \textbf{short exact
-sequence}. Furthermore, if there exists an $R$-module $N$ such
+is exact then we say it forms an **short exact
+sequence**. Furthermore, if there exists an $R$-module $N$ such
 that $M = N \oplus \im(f) = N \oplus \ker(g)$ (since $\im(f) =
-\ker(g)$) then we say the above sequence is \textbf{split
-exact}.
+\ker(g)$) then we say the above sequence is **split
+exact**.
 
-In this case, we say $N$ or $\im(f)$ is a \textbf{direct   
-summand} of $M$.
+In this case, we say $N$ or $\im(f)$ is a **direct   
+summand** of $M$.
 </span>
 
 We can offer a few short exact sequences with some familiar

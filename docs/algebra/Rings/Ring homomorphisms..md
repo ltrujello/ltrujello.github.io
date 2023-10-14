@@ -80,9 +80,9 @@ identity of $(R,+)$ is still mapped to the identity of $(S, +)$. But
 this is mapping the *additive* identity of $R$ to the
 *additive* identity of $S$. 
 
-\textbf{What we're saying is that
-*multiplicative* identities may not always be mapped to each
-other. }
+**What we're saying is that
+*multiplicative** identities may not always be mapped to each
+other. *
 
 Now since we can't always guarantee that
 $f(1_R) = 1_S$, \textcolor{red}{we also can't guarantee that $f(a^{-1}) =

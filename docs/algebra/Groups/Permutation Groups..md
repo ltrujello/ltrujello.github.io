@@ -48,8 +48,8 @@ always enumerate objects with natural numbers) as $S_n$.
 \textcolor{NavyBlue}{What is interesting about this is that if we define
 "multiplication" of elements of $S_n$ to be function composition,
 then the 
-\textbf{set of permutations
-of $X$ form a group} which we show as follows.}
+**set of permutations
+of $X$ form a group** which we show as follows.}
 
 Let $X = \{1, 2, \dots, n\}$. 
 \begin{description}

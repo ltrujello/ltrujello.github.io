@@ -281,8 +281,8 @@ p = p' \circ q.
 
 Hence we see that a bundle over a topological space $X$ is an element of the 
 comma category $**Top**/X$, and a morphism of bundles is a morphism in the comma category. 
-We therefore see that $**Top**/X$ can be interpreted as the \textbf{category of 
-bundles of $X$}.
+We therefore see that $**Top**/X$ can be interpreted as the **category of 
+bundles of $X$**.
 
 One particular case of interest concerns **vector bundles.**
 Let $E, X$ be topological spaces. Recall that a vector bundle 
@@ -349,8 +349,8 @@ We can also formulate categories of objects *under* and
 
 <span style="display:block" class="definition">
 Let $\cc$ be a category, $C$ an object of $\cc$ and $F: 
-\bb \to \cc$ a functor. Then we define the \textbf{category $C$
-over the functor $F$}, denoted as $(C \downarrow F)$,
+\bb \to \cc$ a functor. Then we define the **category $C$
+over the functor $F$**, denoted as $(C \downarrow F)$,
 as follows. 
 \begin{description}
 \item[Objects.] All
@@ -374,8 +374,8 @@ Representing this visually, we have that
 Composition of the morphisms in $(C \downarrow F)$ simply
 requires composition of morphisms in $\bb$. 
 
-One can easily construct the \textbf{category $C$ under the
-functor $F$}, $(F \downarrow C)$, in a completely analogous
+One can easily construct the **category $C$ under the
+functor $F$**, $(F \downarrow C)$, in a completely analogous
 manner as before. But we'll move onto finally defining the
 concept of the comma category. 
 

@@ -30,8 +30,8 @@ if we have that
 F(P) \le Q \iff P \ge G(Q)
 \]
 
-then $F$ and $G$ are called a \textbf{antitone Galois
-connection}. 
+then $F$ and $G$ are called a **antitone Galois
+connection**. 
 </span>
 
 

@@ -12,8 +12,8 @@ If $\mathcal{A}, \mathcal{B}$ and $\mathcal{C}$ are categories
 where 
 
 <img src="../../../png/category_theory/chapter_1/tikz_code_8_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-are functors, then we can define the \textbf{composite
-functor} $G \circ F: \mathcal{A} \to \mathcal{C}$ where 
+are functors, then we can define the **composite
+functor** $G \circ F: \mathcal{A} \to \mathcal{C}$ where 
 
 \[
 C \mapsto G(F(C)) \in \cc \quad\quad (f: A \to B) \mapsto G(F(f)) \in \hom_{\cc}(G(F(A)), G(F(B))).

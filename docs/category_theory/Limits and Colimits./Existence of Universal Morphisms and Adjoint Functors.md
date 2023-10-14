@@ -106,8 +106,8 @@ We can investigate a little deeper into this.
 
 <span style="display:block" class="lemma">(Initial Object Existence.)
 If $\cc$ is a complete category with small homsets, then $\cc$ 
-has an initial object if and only if it satisfies the \textbf{Solution 
-Set Condition}: 
+has an initial object if and only if it satisfies the **Solution 
+Set Condition**: 
 \begin{center}
 \begin{minipage}{0.9\textwidth}
 There exists
@@ -215,8 +215,8 @@ left adjoint. Prior to this theorem, we already know what happened if
 we were given a functor who has a left adjoint. Namely, it must preserve 
 limits. This natural question one would then ask is if
 the converse holds. The above theorem tells us no, the converse doesn't hold 
-and in fact we need to make sure the functor satisfies the \textbf{solution 
-set condition}. In the next section, we'll give an example of a functor 
+and in fact we need to make sure the functor satisfies the **solution 
+set condition**. In the next section, we'll give an example of a functor 
 which preserves limits from a complete category, but still has no left adjoint.}
 
 As a converse to the above theorem, we have the following. 

@@ -322,8 +322,8 @@ of this section.
 
 
 <span style="display:block" class="definition">
-Let $\cc$ be a category. We say $\cc$ is a \textbf{cartesian closed 
-category} if the functors 
+Let $\cc$ be a category. We say $\cc$ is a **cartesian closed 
+category** if the functors 
 
 \[
 U: **C** \to **1** 

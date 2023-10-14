@@ -2584,10 +2584,10 @@ whose sole object is denoted $\bullet$.
 
 <span style="display:block" class="definition">
 Let $(\mm, \otimes, I)$ be a monoidal category. 
-Define the \textbf{iterated functor category\footnote{The notation of this category 
+Define the **iterated functor category\footnote{The notation of this category 
 is due to Mac Lane, but he did not supply a name for this category.
 So I made one up. Today, this construction is known as an endomorphism 
-operad.} of $\mm$}, denoted as
+operad.** of $\mm$}, denoted as
 $**It**(\mathcal{M})$, to be the category where:
 \begin{description}
 \item[Objects.] Functors $F: \mathcal{M}^n \to \mathcal{M}$ for all $n = 0, 1, 2, \dots$

@@ -20,8 +20,8 @@ establishes an obvious function $g \circ f: X \to Z$.
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 But the way that we've thought about functions, and more generally morphisms,
-is actually over-simplistic. Here we will demonstrate that we can \emph{generalize 
-the concept of morphism composition}.
+is actually over-simplistic. Here we will demonstrate that we can *generalize 
+the concept of morphism composition*.
 
 Denote $\aend_n(X)$ to be the set of all functions 
 $f:X^n \to X$. Then for such a function, if we stick with our simplistic concept of plugging things in, we 
@@ -676,8 +676,8 @@ F_n(f \cdot \tau)(a_1, \dots, a_n)
 
 
 <span style="display:block" class="definition">
-Let $X$ be an operad. A \textbf{morphism $\Phi: F \to G$ 
-between algebras}
+Let $X$ be an operad. A **morphism $\Phi: F \to G$ 
+between algebras**
 $F: X \to \aend_A$ and $G: X \to \aend_B$ over $X$ is a function 
 $\phi: A \to B$ such that, for $f \in X_n$ and $(a_1, \dots, a_n) \in A^n$, 
 

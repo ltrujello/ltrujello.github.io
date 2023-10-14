@@ -8,8 +8,8 @@
 Rings were invented in order to generalize mathematical domains which
 are parralel to the properties of integers and polynomials, since
 there exist many mathematical structures which share such properties.
-Two major properites of interest include the \textbf{fundamental
-theorem of arithmetic} and **factorization** via Euclid's
+Two major properites of interest include the **fundamental
+theorem of arithmetic** and **factorization** via Euclid's
 algorithm. These concepts generalize to rings, specifically to
 Principal Ideal Domains, which we will demonstrate in this section. 
 

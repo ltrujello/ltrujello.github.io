@@ -64,8 +64,8 @@ of a monoid is one of the most underrated yet powerful concepts of mathematics,
 and for some reason it's usually ignored in algebra courses. It's an
 innate, fundamental *human* concept, a consequence of our physical 
 reality. How many years have our ancestors been saying: ``Let's stack stuff together and see what 
-happens!'' \emph{Stacking three things in two different ways is the same. 
-Stacking nothing is an "identity"}. Thus what we see is that groups, topological 
+happens!'' *Stacking three things in two different ways is the same. 
+Stacking nothing is an "identity"*. Thus what we see is that groups, topological 
 spaces and vector spaces are all similar in that (1) we have morphisms of interest 
 and (2) the morphisms behave like a monoid. This notion 
 is what category theory takes care of.

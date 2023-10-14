@@ -40,8 +40,8 @@ as morphisms, do we get a category? The answer is yes.
 
 <span style="display:block" class="definition">
 Let $\cc$ and $\dd$ be small categories and consider set of
-all functors $F: \cc \to \dd$. Then the \textbf{functor
-category}, denoted as $\dd^\cc$ or $\fun(\cc, \dd)$, is the
+all functors $F: \cc \to \dd$. Then the **functor
+category**, denoted as $\dd^\cc$ or $\fun(\cc, \dd)$, is the
 category where 
 \begin{description}
 \item[Objects.] Functors $F: \cc \to \dd$

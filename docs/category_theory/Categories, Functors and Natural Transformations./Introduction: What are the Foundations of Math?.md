@@ -35,8 +35,8 @@ list the axioms for each object.
 That is, a correct answer will characterize $X$, $G$ or $\mathbb{R}$ as a
 set which satisfies 
 some axioms. But really, that's what all our mathematical objects
-are. So at this point, our foundations \textbf{are grounded in set
-theory.}
+are. So at this point, our foundations **are grounded in set
+theory.**
 
 \begin{center}
 **What is set theory?**
@@ -51,8 +51,8 @@ this question requires answering the next.
 theory that considers relationships between different sets, we
 have to. 
 
-Our intuition tells us that sets $X$ are a \textbf{collection of
-objects, and that every collection of objects is a set}. We
+Our intuition tells us that sets $X$ are a **collection of
+objects, and that every collection of objects is a set**. We
 intuitively *think* that  
 we can form collections of objects to create a set $X$, and that
 we can form 
@@ -91,12 +91,12 @@ other words, $X \not\in X \implies X \in X$.
 
 
 
-See the problem here? \textbf{Not every collection of objects is a
-set.} So our previous notions of sets aren't correct.
+See the problem here? **Not every collection of objects is a
+set.** So our previous notions of sets aren't correct.
 
 \textcolor{MidnightBlue}{Note that our trouble arose when we said
-that \textbf{a set is a collection of objects, and a collection of
-objects is a set.} 
+that **a set is a collection of objects, and a collection of
+objects is a set.** 
 This is because no, not every collection of objects is a set.
 Thus we need to go back and fix our definition of a set.
 }
