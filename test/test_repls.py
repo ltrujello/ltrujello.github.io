@@ -31,6 +31,20 @@ def test_find_balanced_delimeters(tikzpicture_code):
     end_delimeter= "\\end{tikzpicture}"
     assert find_balanced_delimeters(tikzpicture_code, start_delimeter, end_delimeter) == [(13, 641)]
 
+
+def test_find_balanced_delimeters():
+    start_delimeter = "\\textbf{"
+    end_delimeter= "}"
+    assert find_balanced_delimeters("\\textbf{presheaf of rings},", start_delimeter, end_delimeter) == [(0, 25)]
+
+def test_repl_surround():
+    start_delimeter = "\\textbf{"
+    end_delimeter= "}"
+    new_start_delimeter = "**"
+    new_end_delimeter = "**"
+    handler = Latex2Md(Path("foo"), Path("bar"), Path("foo"))
+    assert handler.repl_surround("$} \omega: \\textbf{Trans}_P \to [0, \infty]$", start_delimeter, end_delimeter, new_start_delimeter, new_end_delimeter) == "$} \omega: **Trans**_P \to [0, \infty]$"
+
 def test_repl_tikzpicture():
     handler = Latex2Md(Path("foo"), Path("bar"), Path("foo"))
     handler.write_tikz_to_disk  = Mock()

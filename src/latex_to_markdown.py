@@ -256,16 +256,18 @@ def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str
     balanced_matches: list[tuple[int, int]] = []
     while ind < len(code):
         if code[ind : ind + len(start_delimeter)] == start_delimeter:
+            print(f"found start delimeter at {ind=}")
             if num_seen == 0: 
                 start = ind
             num_seen += 1
 
         elif code[ind : ind + len(end_delimeter)] == end_delimeter:
-            if num_seen == 1:
-                end = ind + len(end_delimeter) - 1
-                balanced_matches.append((start, end))
-                num_seen = 0
-            else:
+            # only care about end delimieter if we've already seen a start delimeter
+            if num_seen > 0:
+                print(f"found end delimeter at {ind=}")
+                if num_seen == 1:
+                    end = ind + len(end_delimeter) - 1
+                    balanced_matches.append((start, end))
                 num_seen -= 1
         ind += 1
     return balanced_matches
@@ -324,6 +326,26 @@ class Latex2Md:
         # reset count for each chapter and section
         return new_code
 
+    def repl_surround(self, content, start_delimeter, end_delimeter, new_start_delimeter, new_end_delimeter):
+        """ Finds and replaces the start, and end delimeters with new delimeters. 
+        E.g. repl_surround("\\textbf{Meowmix}", "\\textbf{", "}", "*", "*") = *Meowmix*
+        """
+
+        balanced_delimeters = find_balanced_delimeters(content, start_delimeter, end_delimeter)
+
+        new_code = content
+        offset = 0
+        for start, end in balanced_delimeters:
+            captured_content = new_code[start + offset + len(start_delimeter): end + 1 + offset - len(end_delimeter)]
+            replacement = f"{new_start_delimeter}{captured_content}{new_end_delimeter}"
+            print(f"replacing {captured_content=} with {replacement=}")
+
+            new_code = new_code[:start + offset] + replacement + new_code[end + 1 + offset:]
+            offset += len(replacement) - (end - start + 1)
+
+        return new_code
+
+
     def clean_code(self, code: str, chapter:int, section: int) -> str:
         print(f"doing {chapter=} {section=}")
         # remove comments
@@ -362,10 +384,11 @@ class Latex2Md:
         new_code = re.sub(remark_env, repl_remark, new_code)
 
         # replace latex bolding with ** syntax
-        new_code = re.sub(textbf, "**\\1**", new_code)
-        # replace latex bolding with * syntax
-        new_code = re.sub(emph_cmd, "*\\1*", new_code)
-        new_code = re.sub(textit, "*\\1*", new_code)
+        # new_code = re.sub(textbf, "**\\1**", new_code)
+        new_code = self.repl_surround(new_code, "\\textbf{", "}", "**", "**")
+        # replace latex italics with * syntax
+        new_code = self.repl_surround(new_code, "\\emph{", "}", "*", "*")
+        new_code = self.repl_surround(new_code, "\\textit{", "}", "*", "*")
         # replace latex quotes with " syntax
         new_code = re.sub(latex_quotes, "\"\\1\"", new_code)
         # set display math on newlines
