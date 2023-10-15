@@ -32,8 +32,9 @@ Ultimately, what we seek is some kind of conditional probabilistic model that ca
     p(\mathbf{e} | \mathbf{f}) = p(e_1, \dots, e_n | f_1, \dots, f_m)
 \]
 
-If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model (which, is a whole 
-other problem on its own that we won't get into). This 
+If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model.
+The task of doing this given such a probabilistic model as above is known as **decoding**, and is a whole 
+other problem on its own that we won't get into. This 
 would lead to our proposed English translation of a given French sentence. 
 
 Defining this model is a very hard. Suppose for a moment we switch to Spanish (because I know Spanish better than French). 
@@ -119,7 +120,9 @@ fit the dataset given the model. In our case, our dataset will be a set of $n$ t
 
 However, we actually can't learn the parameters of our probabilistic model $p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})$, because
 a parallel corpus of translations does not give use 
-the alignments on the lexical level. Viewed another way, we are being tasked with learning our model using data that is incomplete (the alignments are "missing").
+the alignments on the lexical level. In fact, not only do we not have the explicit alignment data, we don't know 
+what alignments are more "likely".
+Viewed another way, we are being tasked with learning our model using data that is incomplete (the alignments are "missing").
 
 So, we are in a bit of a chicken and egg problem.
 
@@ -276,7 +279,7 @@ for this probability distribution, we'd need that
 $\sum_{e \in \mathbf{e}} t(e | f; \mathbf{e}, \mathbf{f}) = 1$ to be satisfied, which 
 the above expression does in fact satisfy. 
 
-Perhaps an easier way to understand the above expression is to declare  
+An easier way to understand the above expression is to define
 
 \[
    c(e| f ;\mathbf{e}, \mathbf{f}) =
@@ -286,8 +289,10 @@ Perhaps an easier way to understand the above expression is to declare
    \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
 \]
 
-That is, the sum in the denominator indexes over each word in $\mathbf{e}$. With this notation, 
-we can more simply write
+This quantity appears more complicated than it actually is: it's just **counting** how many times $e$ and $f$ are aligned in the 
+sentence pair, and it is **weighting** this count by the probability of the alignment. 
+
+With this notation, we can more simply write
 
 \[
    t(e | f; \mathbf{e}, \mathbf{f}) =
@@ -298,6 +303,77 @@ we can more simply write
    }
 \]
 
+That is, the sum in the denominator indexes over each word in $\mathbf{e}$. 
+Alright, so *if* we somehow had access to the probabilities of each alignment for a given sentence pair,
+then we could actually estimate the translation probability for each English and French word pair in the sentence. 
+However, this is one just estimating $t(e| f)$ relative to one specific sentence pair picked from our 
+more large parallel corpus.
+Thus how do we generalize out work across all sentences in the corpus to obtain an estimate of $t(e | f )$? 
 
+This is not that much harder than what we did before. Note that we need 
 
+\[
+   \sum_{e \in E}t(e | f)= 1.
+\]
+
+where $E$ is the (obviously finite) set of all possible English words,
+Therefore, we see that 
+
+\[
+   t(e | f) = \frac{\sum_{(\mathbf{e}, \mathbf{f})} t(e | f ; \mathbf{e}, \mathbf{f})}{
+   \sum_{e \in E} \sum_{(\mathbf{e}, \mathbf{f})} t(e | f ; \mathbf{e}, \mathbf{f})
+   }
+\]
+
+Note here that $\sum_{\mathbf{e}, \mathbf{f}}$ indicates a sum over all sentence pairs in
+our dataset. 
+
+Obviously, we are being pathological and binding ourselves in a contradiction; if $t(e | f)$ is what 
+we are estimating, why is it appearing in our formula? 
+Note that we can actually do some mathematical simplification here. 
+
+\[
+   t(e | f) = \frac{
+      \sum_{(\mathbf{e}, \mathbf{f})}   
+      \frac{
+         c(e| f ;\mathbf{e}, \mathbf{f}) 
+         }{
+            \sum_{e \in \mathbf{e}}c(e| f ;\mathbf{e}, \mathbf{f}) 
+         } 
+   }{
+   \sum_{e \in E} \sum_{(\mathbf{e}, \mathbf{f})} 
+      \frac{
+         c(e| f ;\mathbf{e}, \mathbf{f}) 
+         }{
+            \sum_{e \in \mathbf{e}}c(e| f ;\mathbf{e}, \mathbf{f}) 
+         } 
+   }
+\]
+
+Observe that we can factor out a common factor in both the numerator and denominator: $\sum_{e \in E}c(e | f; \mathbf{e}, \mathbf{f})$.
+This then leads to a more simpler formula:
+
+\[
+   t(e | f) = \frac{
+      \sum_{(\mathbf{e}, \mathbf{f})}   
+      c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }{
+   \sum_{e \in E} \sum_{(\mathbf{e}, \mathbf{f})} 
+         c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }
+\]
+
+Thus, we have an answer to our question. We can estimate $t(e | f)$ using our parallel corpus by basically 
+counting how often $e$ and $f$ are aligned in sentence pairs, and by using 
+knowledge of how likely any given alignment is between a sentence pair. 
+
+# Alignment algorithm
+
+To summarize at this point:
+
+- If we knew $t(e |f )$ for all words, we could estimate alignment probabilities $p(a_1, \dots, a_n| \mathbf{e}, \mathbf{f})$ 
+- If we knew the alignment probabilities $p(a_1, \dots, a_n| \mathbf{e}, \mathbf{f})$, then we could estimate weighted counts
+$c(e | f; \mathbf{e}, \mathbf{f})$ across sentence pairs. This then would allow us to estimate $t(e | f)$. 
+
+However, we have neither. This is where the clever idea of the EM algorithm comes in: we simply initialize $t(e | f)$ to be uniform across all word pairs, calculate  $p(a_1, \dots, a_n| \mathbf{e}, \mathbf{f})$, then calculate $c(e | f; \mathbf{e}, \mathbf{f})$ across sentence pairs, and then finally re-estimate $t(e | f)$. Repeating this a few times will allow us to build a table of values $t(e | f)$ which converge on somewhat reasonable word translations. 
 
