@@ -46,6 +46,7 @@ latex_quotes = re.compile("``(.*?)''")
 display_math = re.compile("(\\\\\\[([\s\S]*?)\\\\\\])")
 align_stmt = re.compile("(\\\\begin{align}([\s\S]*?)\\\\end{align})")
 align_topbot_stmt = re.compile("\\\\begin{align_topbot}([\s\S]*?)\\\\end{align_topbot}")
+
 align_star_stmt = re.compile("(\\\\begin{align\*}([\s\S]*?)\\\\end{align\*})")
 gather_env = re.compile("(\\\\begin{gather}([\s\S]*?)\\\\end{gather})")
 gather_star_env = re.compile("(\\\\begin{gather\*}([\s\S]*?)\\\\end{gather\*})")
@@ -241,9 +242,6 @@ def find_image_end_boundary(img_data):
         ind -= 1
     return ind
 
-begin_tikzpicture = re.compile("\\\\begin{tikzpicture}")
-end_tikzpicture = re.compile("\\\\end{tikzpicture}")
-
 
 def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str):
     """ Finds the balanced start and end indices in the code string given a start delimeter 
@@ -323,7 +321,26 @@ class Latex2Md:
             offset += len(img_url) - (end - start + 1)
 
             self.num_figures += 1
-        # reset count for each chapter and section
+        return new_code
+    
+    def repl_tikzcd(self, code, chapter, section):
+        begin_tikzcd = "\\begin{tikzcd}"
+        end_tikzcd = "\\end{tikzcd}"
+
+        balanced_delimeters = find_balanced_delimeters(code, begin_tikzcd, end_tikzcd)
+
+        new_code = code
+        offset = 0
+        for start, end in balanced_delimeters:
+            # Associate tikz_code on disk with img_url eventually holding png of tikz code 
+            self.write_tikz_to_disk(new_code[start + offset: end + offset + 1], chapter, section, self.num_figures)
+            img_url = f"\n<img src=\"../../../png/{self.markdown_dest.name}/chapter_{chapter}/tikz_code_{section}_{self.num_figures}.png\" width=\"99%\" style=\"display: block; margin-left: auto; margin-right: auto;\"/>\n"
+
+            # Replace tikz code with img tag
+            new_code = new_code[:start + offset] + img_url + new_code[end + 1 + offset:]
+            offset += len(img_url) - (end - start + 1)
+
+            self.num_figures += 1
         return new_code
 
     def repl_surround(self, content, start_delimeter, end_delimeter, new_start_delimeter, new_end_delimeter):
@@ -366,6 +383,8 @@ class Latex2Md:
             ind = i + len(replaced_code)
         # replace all of the tikzpictures 
         new_code = self.repl_tikzpicture(new_code, chapter, section)
+        new_code = self.repl_tikzcd(new_code, chapter, section)
+        # replace all of the tikzcd
         self.num_figures = 0
 
         # get rid of labels for now. alg might be chopping off leading backslash after label.
@@ -389,8 +408,8 @@ class Latex2Md:
         # replace latex italics with * syntax
         new_code = self.repl_surround(new_code, "\\emph{", "}", "*", "*")
         new_code = self.repl_surround(new_code, "\\textit{", "}", "*", "*")
-        # replace latex quotes with " syntax
-        new_code = re.sub(latex_quotes, "\"\\1\"", new_code)
+        # replace latex quotes `` '' with " syntax
+        new_code = self.repl_surround(new_code, "``", "''", "\"", "\"")
         # set display math on newlines
         new_code = re.sub(display_math, "\n\\1\n", new_code)
         # set align_topbot environments on newlines
