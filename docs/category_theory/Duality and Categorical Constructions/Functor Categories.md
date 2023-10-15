@@ -54,8 +54,8 @@ they're the categorical version of representations.
 When we think of 
 representations, we usually think of a group homomorphism $\rho: G \to \text{GL}_n(V)$ 
 for some vector space $V$ over a field $k$. However, suppose we wanted to be 
-a real smart-ass and say ``Well, can't we regard $\rho$ as actually a functor 
-between two one-object categories whose morphisms are all isomorphism?''
+a real smart-ass and say "Well, can't we regard $\rho$ as actually a functor 
+between two one-object categories whose morphisms are all isomorphism?"
 The answer is yes! 
 
 What this then means is that the category of representations of a group $G$

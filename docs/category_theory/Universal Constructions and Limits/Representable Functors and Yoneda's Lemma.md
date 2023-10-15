@@ -567,8 +567,8 @@ must be faithful. Hence we see that $\cc$ is concrete.
 Finally, we end this section with a curious connection to group theory. 
 It turns out that Yoneda's Lemma can actually be used in the proof of Cayley's Theorem.
 Sometimes this statement is taken too literally by others 
-and they think ``Yoneda's Lemma is a *generalization* of 
-Cayley's Theorem'' but that is simply 
+and they think "Yoneda's Lemma is a *generalization* of 
+Cayley's Theorem" but that is simply 
 not true, so the reader is warned to not believe someone when they hear that.
 Put simply, Yoneda's Lemma offers a bijection on sets which, with a little extra *separate* 
 work, extends to an isomorphism of groups.

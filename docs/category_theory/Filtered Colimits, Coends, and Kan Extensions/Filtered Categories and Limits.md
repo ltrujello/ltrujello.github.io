@@ -119,8 +119,8 @@ Let $J$ be a thin category. What does it take for $J$ to be filtered?
 Well, in a thin category, there is never 
 any pair of distinct morphisms. Hence condition (2) is trivial. Therefore, 
 for $J$ to be filtered, we simply need to satisfy (1). But in the language 
-of thin categories, condition (1) can be read as ``for any $j, j \in J$, 
-there exists a $k$ such that $j, j' \le k$''. Such a condition holds 
+of thin categories, condition (1) can be read as "for any $j, j \in J$, 
+there exists a $k$ such that $j, j' \le k$". Such a condition holds 
 if and only if
 \begin{center}
 every finite subset $S \subset J$ has an upper bound *in* $J$.
