@@ -83,7 +83,7 @@ which could be factorized as
 which demonstrates the existence of a zero object (the name "zero" makes sense now, right?), 
 which we already know is $\{e\}$.
 Note in this example, we did not actually use much group theory. In fact, this could be repeated 
-for the categories $R\rmod$, $\ab$, and other similar categories. 
+for the categories $R\mod$, $\ab$, and other similar categories. 
 </span>
 
 The next two examples demonstrate that terminal and initial objects of course don't 

@@ -115,6 +115,9 @@ where on objects the addition is simply permuted; on morphisms, however,
 $\sigma_{n,m}$ corresponds to the braid of length $n + m$ as below.
 \begin{figure}[h!]
 \centering
+\def\height{5}
+\def\ptsep{0.7}
+\def\sep{5.333}
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 

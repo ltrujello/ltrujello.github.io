@@ -625,7 +625,9 @@ Then we get the braid diagram as in \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 $}.
 \begin{center}
-\includegraphics[scale = 0.1]{braids_cabled.jpg}
+
+<img src="../../../png/category_theory/chapter_9/braids_cabled.jpg" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{center}However, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 $}, 

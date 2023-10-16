@@ -97,7 +97,9 @@ That is, we simply multiply the sum by a power of $p$. It turn outs
 that the direct limit is the **Prüfer $\bm{p**$-Group} $\zz(p^\infty)$.
 The Prüfer 2-Group is pictured below.
 \begin{center}
-\includegraphics{../pictures/chapter5_pic/prufer_2_group/prufer_2_group.pdf}
+
+<img src="../../../png/category_theory/chapter_5/prufer_2_group.pdf" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{center}        
 The Prüfer $p$-group is the set of all $p^n$ roots of unity,
 as $n$ ranges over all positive integers. Hence the points lie

@@ -259,7 +259,9 @@ In geometry and topology, one often meets the need to define a $(-)$-bundle. By 
 we mean vector, group, etc. That is, we often want topological spaces to parameterize 
 a family of vector spaces or groups in a coherent way. 
 \begin{center}
-\includegraphics[width = 0.9\textwidth]{mobius_sphere.png}
+
+<img src="../../../png/category_theory/chapter_2/mobius_sphere.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{center} 
 For example, on the above left we can map the Möbius strip onto $S_1$ in such a way that the 
 inverse image of each $x \in S_1$ is homeomorphic to the interval $[0, 1]$. Hence, 
