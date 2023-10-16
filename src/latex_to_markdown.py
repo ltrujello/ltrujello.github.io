@@ -2,11 +2,13 @@ import sys
 import re
 import yaml
 from pathlib import Path
+import shutil
 import tempfile
 import subprocess
 import textwrap
 import numpy as np
 import argparse 
+import logging
 
 from PIL import Image
 from pdf2image import convert_from_path
@@ -21,7 +23,7 @@ Converts a LaTeX source file into markdown files.
 - converts LaTeX chapter, sections to Markdown headers 
 
 # TODO: don't replace \textbf{} in math environments. 
-# TODO: address statement, description, environments
+# TODO: address statement, description, minipage, figure, center environments
 # To address description env
 # - Replace each itemize env. If an itemize env contains a description env, then stop and replace the description env.
 # - Replace each description env. If a description env contained an itemize env, then it already go replaced so ignore it. 
@@ -29,11 +31,13 @@ Converts a LaTeX source file into markdown files.
 # TODO: handle section references
 # DONE: handle isomarrow macro
 # TODO: remove footnotes
-# TODO: replace alignbot environment
 """
 
 GENERATE_PNGS = False
 COMPILE_TIKZS = False
+LOGGER = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
 
 begin_document = re.compile("\\\\begin{document}")
 end_document = re.compile("\\\\end{document}")
@@ -103,11 +107,23 @@ EXTRA_MKDOCS_CSS = """<style>
 </style>
 """
 
+KNOWN_ENVS = [
+    "align",
+    "align*",
+    "bmatrix",
+    "pmatrix",
+    "cases",
+    "equation",
+    "gather",
+    "gather*",
+]
+
 def repl_asmthm_statement(match, class_name):
     env_contents = match.group(1)
     env_contents = textwrap.dedent(env_contents)
     repl = f"\n<span style=\"display:block\" class=\"{class_name}\">{env_contents}</span>"
     return repl
+
 
 def repl_listing_env(match, env):
     code = match.group(0)
@@ -134,7 +150,7 @@ def repl_listing_env(match, env):
             if next_match is not None:
                 items.append(code[ind + curr_match.end(): ind + curr_match.end() + next_match.start()])
             else:
-                print(f"Failed to find \\item or \\end{{itemize}} in {code[ind + curr_match.end():]}")
+                LOGGER.error(f"Failed to find \\item or \\end{{itemize}} in {code[ind + curr_match.end():]} in {chapter=} {section=}")
             break
     res = "\n"
     for item in items:
@@ -184,7 +200,7 @@ def repl_tabular_env(match):
                 else:
                     curr_match = re.search(end_tabular_env, code[ind:])
                     if curr_match is None:
-                        print(f"Warning: failed to find an ampersand or \\\\\\\\ in {code[ind:]}")
+                        LOGGER.debug(f"Warning: failed to find an ampersand or \\\\\\\\ in {code[ind:]}")
                     j = len(contents)
                 break
         rows.append(row)
@@ -219,7 +235,6 @@ def find_image_start_boundary(img_data):
         found = False
         for col in row:
             if col < 255:
-                print(ind)
                 found = True
                 break
         if found:
@@ -234,7 +249,6 @@ def find_image_end_boundary(img_data):
         found = False
         for col in row:
             if col < 255:
-                print(ind)
                 found = True
                 break
         if found:
@@ -254,7 +268,7 @@ def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str
     balanced_matches: list[tuple[int, int]] = []
     while ind < len(code):
         if code[ind : ind + len(start_delimeter)] == start_delimeter:
-            print(f"found start delimeter at {ind=}")
+            LOGGER.debug(f"found start delimeter at {ind=}")
             if num_seen == 0: 
                 start = ind
             num_seen += 1
@@ -262,13 +276,15 @@ def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str
         elif code[ind : ind + len(end_delimeter)] == end_delimeter:
             # only care about end delimieter if we've already seen a start delimeter
             if num_seen > 0:
-                print(f"found end delimeter at {ind=}")
+                LOGGER.debug(f"found end delimeter at {ind=}")
                 if num_seen == 1:
                     end = ind + len(end_delimeter) - 1
                     balanced_matches.append((start, end))
                 num_seen -= 1
         ind += 1
     return balanced_matches
+
+
 
 
 class Latex2Md:
@@ -295,12 +311,64 @@ class Latex2Md:
         tikz_code_match = re.search(tikz_stmt, code)
         tikz_cd_code_match = re.search(tikz_cd_stmt, code)
         if tikz_code_match is None and tikz_cd_code_match is None:
-            print(f"Found a center environment but it contains no tikz code, returning {code=}")
+            LOGGER.debug(f"Found a center environment but it contains no tikz code, returning {code=}")
             return code, False
         self.write_tikz_to_disk(code, chapter, section, self.num_figures)
         img_url = f"\n<img src=\"../../../png/{self.markdown_dest.name}/chapter_{chapter}/tikz_code_{section}_{self.num_figures}.png\" width=\"99%\" style=\"display: block; margin-left: auto; margin-right: auto;\"/>\n"
         self.num_figures += 1
         return img_url, True
+    
+    def repl_include_graphics(self, code, chapter):
+        # parse the width option, if any
+        img_options = find_balanced_delimeters(code, "[", "]")
+        # parse the relative png path
+        img_path_inds = find_balanced_delimeters(code, "{", "}")
+        if len(img_path_inds) == 0:
+            LOGGER.error(f"Failed to find any img path associated with {code=}, returning original code")
+            return code
+
+        if len(img_path_inds) > 1:
+            LOGGER.error(f"Found multiple img paths associated with {code=}, using the first match")
+            return code
+
+        start = img_path_inds[0][0] + 1  # don't include { 
+        end = img_path_inds[0][1]  # don't include } 
+        rel_img_name = code[start: end]
+
+        img_path = (self.tex_file.parent / rel_img_name).resolve()
+        if not img_path.exists():
+            LOGGER.error(f"{self.tex_file.parent} / {rel_img_name}")
+            LOGGER.error(f"Failed to find image with destination {img_path=}")
+            return code
+        img_name = img_path.name  
+
+        # copy the png over to our png directory
+        img_dest = f"docs/png/{self.markdown_dest.name}/chapter_{chapter}/{img_name}"
+        LOGGER.info(f"Copying {img_path} to {img_dest}")
+        shutil.copy(img_path, img_dest)
+
+        # return the img url 
+        img_url = f"\n<img src=\"../../../png/{self.markdown_dest.name}/chapter_{chapter}/{img_name}\" width=\"99%\" style=\"display: block; margin-left: auto; margin-right: auto;\"/>\n"
+        return img_url
+    
+    def repl_all_include_graphics(self, code, chapter):
+        begin = "\\includegraphics"
+        end = "}"
+
+        balanced_delimeters = find_balanced_delimeters(code, begin, end)
+
+        new_code = code
+        offset = 0
+        for start, end in balanced_delimeters:
+            # Associate tikz_code on disk with img_url eventually holding png of tikz code 
+            include_graphics_code = new_code[start + offset: end + offset + 1]
+            repl = self.repl_include_graphics(include_graphics_code, chapter)
+
+            # Replace tikz code with img tag
+            new_code = new_code[:start + offset] + repl + new_code[end + 1 + offset:]
+            offset += len(repl) - (end - start + 1)
+
+        return new_code
     
 
     def repl_tikzpicture(self, code, chapter, section):
@@ -355,7 +423,7 @@ class Latex2Md:
         for start, end in balanced_delimeters:
             captured_content = new_code[start + offset + len(start_delimeter): end + 1 + offset - len(end_delimeter)]
             replacement = f"{new_start_delimeter}{captured_content}{new_end_delimeter}"
-            print(f"replacing {captured_content=} with {replacement=}")
+            LOGGER.debug(f"replacing {captured_content=} with {replacement=}")
 
             new_code = new_code[:start + offset] + replacement + new_code[end + 1 + offset:]
             offset += len(replacement) - (end - start + 1)
@@ -364,7 +432,7 @@ class Latex2Md:
 
 
     def clean_code(self, code: str, chapter:int, section: int) -> str:
-        print(f"doing {chapter=} {section=}")
+        LOGGER.info(f"doing {chapter=} {section=}")
         # remove comments
         code = re.sub(tex_comment, "", code)
 
@@ -403,7 +471,6 @@ class Latex2Md:
         new_code = re.sub(remark_env, repl_remark, new_code)
 
         # replace latex bolding with ** syntax
-        # new_code = re.sub(textbf, "**\\1**", new_code)
         new_code = self.repl_surround(new_code, "\\textbf{", "}", "**", "**")
         # replace latex italics with * syntax
         new_code = self.repl_surround(new_code, "\\emph{", "}", "*", "*")
@@ -432,6 +499,16 @@ class Latex2Md:
         new_code = re.sub(tabular_env, repl_tabular_env, new_code)
         # replace minipage environment
 
+        # replace includegraphics
+        new_code = self.repl_all_include_graphics(new_code, chapter)
+
+        # log unrecognized environments
+        start_env = re.compile("\\\\begin{([\S\s]+?)}")
+        for env_match in re.finditer(start_env, new_code):
+            env = env_match.group(1)
+            if env not in KNOWN_ENVS:
+                LOGGER.warning(f"Unrecognized environment {env_match.group(1)} remains in {chapter=} {section=}")
+
         # de indent everything
         final_code = ""
         for line in new_code.split("\n"):
@@ -456,13 +533,13 @@ class Latex2Md:
         total = len(page_pngs)
         ind = 0
         if total > 1:
-            print(f"WARNING! {pdf_file=} has more than two pages, expected only one. Going to use"
+            LOGGER.error(f"WARNING! {pdf_file=} has more than two pages, expected only one. Going to use"
                 " the last page. ")
             ind = len(page_pngs) - 1
 
         page_pngs = list(page_pngs)
         image = page_pngs[ind]
-        print(f"Converting page {ind}/{total}")
+        LOGGER.debug(f"Converting page {ind}/{total}")
         # easier to find boundaries of a grayscale image
         grayscale_image = image.convert("L")
         img_data = np.asarray(grayscale_image)
@@ -608,7 +685,7 @@ class Latex2Md:
                 shell=True,
             )
             if proc_res.returncode != 0:
-                print(f"Experience an error while processing {tikz_code_path=}")
+                LOGGER.error(f"Experience an error while processing {tikz_code_path=}")
 
             pdf_file = Path(f"{tmpdirname}/tikz_code.pdf")
             pdf_file.replace(pdf_destination)
@@ -634,11 +711,11 @@ if __name__ == "__main__":
     CACHE_PNGS = args.cache_pngs
 
     if not tex_file.exists():
-        print(f"Error: {args.tex_file} does not exist")
+        LOGGER.error(f"Error: {args.tex_file} does not exist")
         sys.exit()
 
     if not markdown_dest.exists():
-        print(f"Error: {args.markdown_dest} does not exist")
+        LOGGER.error(f"Error: {args.markdown_dest} does not exist")
         sys.exit()
 
     handler = Latex2Md(
@@ -654,12 +731,12 @@ if __name__ == "__main__":
     if COMPILE_TIKZ:
         # compile tikz drawings to pdfs
         for tikz_file in Path(".").glob(f"docs/tikz/{markdown_dest.name}/**/*.tex"):
-            print(tikz_file)
+            LOGGER.info(tikz_file)
             handler.compile_tikz_blocks(tikz_file)
 
     if GENERATE_PNGS:
         # convert tikz pdfs to pngs
         for pdf_file in Path(".").glob(f"docs/pdf/{markdown_dest.name}/**/*.pdf"):
-            print(pdf_file)
+            LOGGER.info(pdf_file)
             handler.convert_pdf_to_png(str(pdf_file))
 
