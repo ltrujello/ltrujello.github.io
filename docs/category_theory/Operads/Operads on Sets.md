@@ -381,34 +381,9 @@ Now we will first want to calculate
 \]
 
 The first step to computing this is to note that each $\rho_{i,j}$ permutes the numbers *within its block*. 
-\begin{tikzcd}
-(
-\overbrace{\textcolor{Red}{1, 2, \dots, k_{1,1}}}^{1\text{st block}}, 
-\overbrace{\textcolor{Orange}{1'}, 
-\textcolor{Orange}{2'}, \dots, \textcolor{Orange}{k_{1,2}}}^{2\text{nd block}}, 
-\dots,
-\hspace{-0.5cm}
-\overbrace{\textcolor{ProcessBlue}{1'}, \textcolor{ProcessBlue}{2'}, \dots, \textcolor{ProcessBlue}{k_{i, j}}}^{(a_1 + \cdots + a_{i-1}+j)\text{-th block}}
-\hspace{-0.5cm}
-,\dots,
-\overbrace{\textcolor{RoyalBlue}{1'}, \textcolor{RoyalBlue}{2'}, \dots, \textcolor{RoyalBlue}{k_{n, a_n}}}^{(a_1 + \cdots + a_n)\text{-th block}}
-)
-\arrow[d, "\rho_{1,1}", start anchor = {[xshift = -5.7cm]}, end anchor = {[xshift=-5.7cm]}]
-\arrow[d, "\rho_{1,1}", start anchor = {[xshift = -5.7cm]}, end anchor = {[xshift=-5.7cm]}]
-\arrow[d,draw = none, start anchor = {[xshift = -3cm]}, end anchor = {[xshift=-3cm]}, "\raisebox{+0.2ex}{\dots}" description]
-\arrow[d, "\rho_{i,j}", start anchor = {[xshift = 0cm]}, end anchor = {[xshift=0cm]}]
-\arrow[d,draw = none, start anchor = {[xshift = 1.5cm]}, end anchor = {[xshift=1.5cm]}, "\raisebox{+0.2ex}{...}" description]
-\arrow[d, "\rho_{n, a_n}", start anchor = {[xshift = 3.4cm]}, end anchor = {[xshift=3.4cm]}]
-\\
-(
-\underbrace{\rho_{1,1}(\textcolor{Red}{1}), \rho_{1,1}(\textcolor{Red}{2}), \dots, \rho_{1,1}(\textcolor{Red}{k_{1,1}})}_{1\text{st block}}, 
-\dots,
-\underbrace{\rho_{i,j}'(\textcolor{ProcessBlue}{1})\rho'_{i,j}(\textcolor{ProcessBlue}{2}), \dots, \rho'_{i,j}(\textcolor{ProcessBlue}{k_{i,j}})}_{(a_1 + \cdots + a_{i-1}+j)\text{-th block}},
-\dots,
-\underbrace{\rho_{n, a_n}'(\textcolor{RoyalBlue}{1}), 
-\rho_{n, a_n}'(\textcolor{RoyalBlue}{2}), \dots, \rho_{n, a_n}'(\textcolor{RoyalBlue}{k_n, a_n})}_{(a_1 + \cdots + a_{n})\text{-th block}}
-))
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_9/tikz_code_1_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 Now that we've applied the $\rho$ permutations, we must apply the permutation 
 $\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n)$ in $S_{a_1 + \cdots + a_n}$. 
 This will instead be a block permutation. Hopefully it is now clear why we were paying 

@@ -162,21 +162,9 @@ the impression that, for example, $NH \le G$ but $HN \not\le G$.
 We think it is fair to be thorough and precise.
 \begin{minipage}{0.25 \textwidth}
 \begin{figure}[H]
-\begin{tikzcd}[column sep=small] 
-&  
-NH
-\\
-H 
-\arrow[ur, dash]
-&&
-N
-\arrow[ul,swap,"\normal"]
-\\
-&
-H\cap N 
-\arrow{ul}{\normal}
-\arrow[ur, dash]
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_1/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{figure}
 \end{minipage} \hfill
 \begin{minipage}{0.7\textwidth}

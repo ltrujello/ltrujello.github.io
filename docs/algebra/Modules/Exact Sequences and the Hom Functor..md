@@ -30,26 +30,26 @@ infinite exact sequences.
 Let $M_1, M_2$ and $M$ be $R$-modules. Then
 
 * [1.] The sequence
-\begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] & M_1 \arrow[r, "f"] & M     
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_24.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is exact if and only if $f$ is injective.
 
 
 
 * [2.] The sequence
-\begin{tikzcd}[column sep = \smallish]
-M \arrow[r, "g"] & M_2 \arrow[r] & 0    
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_25.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is exact if and only if $g$ is surjective. 
 
 
 
 * [3.] 
 The sequence
-\begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] & M_1 \arrow[r, "f"] & M \arrow[r, "g"] & M_2 \arrow[r] & 0    
-\end{tikzcd} is exact if and only if $f$ is injective
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_26.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is exact if and only if $f$ is injective
 and $g$ is injective.
 
 
@@ -61,25 +61,25 @@ and $g$ is injective.
 
 * [1.]  
 ($\implies$) Suppose the sequence 
-\begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] & M_1 \arrow[r, "f"] & M     
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_27.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is exact. Then we have that $\im(0) = \ker(f) \implies
 \ker(f) = \{0\}$. Therefore we see that $f$ is injective. 
 
 ($\impliedby$)Now suppose $f$ is injective. Then $\ker(f) = 0$. Since
 $\im(0) = \{0\}$ we see $\im(0) = \ker(f)$, so that the
-sequence             \begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] & M_1 \arrow[r, "f"] & M     
-\end{tikzcd}
+sequence             
+<img src="../../../png/algebra/chapter_3/tikz_code_5_28.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is exact.
 
 
 
 * [2.] ($\implies$) Suppose the sequence 
-\begin{tikzcd}[column sep = \smallish]
-M \arrow[r, "g"] & M_2 \arrow[r] & 0    
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_29.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 is exact. Then we see that $\im(g) = \ker(0) = M_2$, since
 the zero map simply takes all of $M_2$ and sends it to $0$.
 Hence we see that $g$ is surjective. 
@@ -645,51 +645,27 @@ two sequences.
 Let $M_1, M$ and $M_2$ be $R$-modules, and suppose $f:M_1 \to
 M$ and $g:M \to M_2$ are $R$-modules. Then the sequence
 \begin{equation}
-\begin{tikzcd}
-0 \arrow[r]
-&
-M_{1} \arrow[r, "f"]
-&
-M \arrow[r, "g"]
-&
-M_{2}
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_30.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{equation}
 is exact if and only if the sequence 
 \begin{equation} 
-\begin{tikzcd}
-0 \arrow[r]
-&
-\hom_R(N,M_{1}) \arrow[r, "f_*"]
-&
-\hom_R(N, M) \arrow[r, "g_*"]
-&
-\hom_R(N,M_{2})
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_31.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{equation}
 is an exact sequence of abelian groups. Furthermore, the sequence 
 \begin{equation}
-\begin{tikzcd}
-M_{1} \arrow[r, "f"]
-&
-M \arrow[r, "g"]
-&
-M_{2} \arrow[r]
-&
-0
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_32.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{equation}
 is exact if and only if 
 \begin{equation}
-\begin{tikzcd}
-\hom_R(M_{1}, N)
-&
-\hom_R(M, N) \arrow[l, swap, "f^*"]
-&
-\hom_R(M_{2}, N)\arrow[l, swap, "g^*"]
-& 
-0 \arrow[l]
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_3/tikz_code_5_33.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{equation}
 is an exact sequence of abelain groups.
 </span>

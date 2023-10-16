@@ -116,23 +116,9 @@ Then there exists a unique function $h: X \amalg Y \to Z$ such that the diagram 
 commutes. 
 
 \begin{align}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm
-,ampersand replacement=\&]
-\&
-Z 
-\arrow[<-, dr,  "g"]
-\arrow[<-, dl, swap,"f"]
-\arrow[<-, d, dashed, "h"]
-\&
-\\
-X 
-\& 
-\arrow[<-, l, "i_1"]
-X \amalg Y 
-\arrow[<-, r, swap, "i_2"]
-\&
-Y
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_3/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \qquad
 h(z, i)
 =

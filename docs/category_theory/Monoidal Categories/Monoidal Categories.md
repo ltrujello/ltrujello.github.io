@@ -169,33 +169,14 @@ and three natural isomorphisms
 such that the following **coherence conditions** hold.
 \begin{statement}{ProcessBlue!10}
 \begin{equation}
-\begin{tikzcd}[column sep = 0.1cm, row sep = 1cm]
-A \otimes(I \otimes B) 
-\arrow[rr, "\alpha_{A, I, B}"] 
-\arrow[dr, swap, "1_A\otimes \lambda_{B}"] 
-& &
-(A \otimes I)\otimes B
-\arrow[dl, "\rho_{A} \otimes 1_B"]
-\\
-& A \otimes B &
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_7/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{equation}
 \begin{equation}
-\begin{tikzcd}[column sep = 1.8cm, row sep = 1.6cm]
-A\otimes (B \otimes (C \otimes D)) 
-\arrow[r, "\alpha_{A,B,C\otimes D}"] 
-\arrow[d, swap, "1_A\otimes \alpha_{B, C, D}"]
-&
-(A \otimes B)\otimes(C\otimes D) 
-\arrow[r, "\alpha_{A\otimes B, C, D}"]
-&
-((A \otimes B)\otimes C)\otimes D\\
-A\otimes((B\otimes C)\otimes D)
-\arrow[rr, swap, "\alpha_{A, B\otimes C, D}"]
-&&
-(A \otimes(B\otimes C))\otimes D 
-\arrow[u, swap, "\alpha_{A, B, C}\otimes 1_D"]
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_7/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{equation}
 \end{statement}    
 We also define some terminology within this definition.
@@ -447,18 +428,9 @@ category as follows: on objects $F, G: \cc \to M$, we define $F\boxtimes G$
 as the composite
 
 \[
-\begin{tikzcd}
-F \boxtimes G: \cc \to 
-\arrow[r, "\Delta"]
-&
-\cc \times \cc 
-\arrow[r, "(F \times G)"]
-&
-M \times M 
-\arrow[r, "\otimes"]
-&
-M
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_7/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \]
 
 which can be stated pointwise as $(F\boxtimes G)(C) = F(C)\otimes G(C)$. On morphisms, 
@@ -474,25 +446,13 @@ Note that such a natural transformation is well-defined
 as the diagram below commutes
 
 \[
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-A \arrow[d, "f"]
-\\
-B
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_7/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \hspace{1cm}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-F_1(A)\otimes G_1(A)
-\arrow[r, "\eta_A\otimes \eta_A'"]
-\arrow[d, swap, "F_1(f)\otimes G_1(f)"]
-&
-F_2(A)\otimes G_2(A)
-\arrow[d, "F_2(f)\otimes G_2(f)"]
-\\
-F_1(B)\otimes G_1(B)
-\arrow[r, swap, "\eta_B\otimes \eta_B'"]
-&
-F_2(A)\otimes G_2(A)
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_7/tikz_code_1_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \]
 
 since $\otimes: M \times M \to M$ is a bifunctor.

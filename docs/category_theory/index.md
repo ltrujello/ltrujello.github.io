@@ -1,6 +1,7 @@
 # Category Theory
 
-These are a set of notes on category theory I worked on for the latter two years as an undegraduate. 
+These are a set of notes on category theory I worked on for the latter two years as an undergraduate. In PDF format, 
+this totals to about over 400 pages of notes.
 
 This is the html version rendered via MathJax. 
 If you'd like the original LaTeX PDF version, see [here](https://github.com/ltrujello/cat_book).

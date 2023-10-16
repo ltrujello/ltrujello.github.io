@@ -55,16 +55,9 @@ f \le g \text{ if there exists an } h \text{ where } f = g \circ h.
 
 \end{minipage} 
 \begin{minipage}{0.4\textwidth}
-\begin{tikzcd}[column sep = 1.6cm, row sep = 0.3cm]
-C \arrow[dr, hookrightarrow, "f"]
-&
-\\
-&
-A 
-\\
-D \arrow[ur,hookrightarrow, swap, "g"]
-\arrow[uu, dashed, "h"]
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_5/tikz_code_7_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{minipage}
 \end{statement}
 for some monomorphism $h: D' \to D$. Note that if $f \le g$ and $f \ge g$, 
@@ -196,17 +189,9 @@ f \le g \text{ if there exists an } h \text{ where } f = h \circ g.
 
 \end{minipage} 
 \begin{minipage}{0.4\textwidth}
-\begin{tikzcd}[column sep = 1.6cm, row sep = 0.3cm]
-& C 
-\\
-A 
-\arrow[ur, ->>, "f"]
-\arrow[dr, ->>, swap, "g"]
-&
-\\
-&
-D \arrow[uu, dashed, swap, "h"]
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_5/tikz_code_7_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{minipage}
 \end{statement}
 Observing that $f \le g$ and $g \le f$ together imply that $C \cong D$, we see that 

@@ -98,41 +98,13 @@ and $p_2\circ h = g$. By this description, we can deduce that
 $h(z) = (f(z), g(z))$.
 
 \begin{align}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm
-,ampersand replacement=\&]
-\&
-Z 
-\arrow[dr,  "g"]
-\arrow[dl, swap,"f"]
-\arrow[d, dashed, "h"]
-\&
-\\
-X 
-\& 
-\arrow[l, "p_1"]
-X \times Y 
-\arrow[r, swap, "p_2"]
-\&
-Y
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_3/tikz_code_3_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \hspace{0.5cm}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm
-,ampersand replacement=\&]
-\&
-z
-\arrow[dr, maps to]
-\arrow[dl, maps to]
-\arrow[d, maps to]
-\&
-\\
-f(z) 
-\& 
-\arrow[l, maps to]
-(f(z), g(z))
-\arrow[r, maps to]
-\&
-g(z)
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_3/tikz_code_3_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{align}
 
 Moreover, this $h$ is **unique** with respect to $f$ and $g$; Showing this is the bulk of 

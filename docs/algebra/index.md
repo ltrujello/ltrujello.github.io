@@ -1,6 +1,7 @@
 # Algebra Notes
 
 These are notes on general algebra that I wrote and maintained throughout my math undergraduate education. 
+In PDF format, this totals to about 150 pages of notes.
 
 This is the html version rendered via MathJax. If you'd like the original LaTeX PDF version, see here.
 

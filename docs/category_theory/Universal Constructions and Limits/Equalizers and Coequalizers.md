@@ -74,21 +74,13 @@ morphisms as below.
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
 and let $F: J \to \cc$ be the functor such that 
-\begin{tikzcd}
-F(\textcolor{Blue}{\bullet}
-\arrow[r, shift right = -0.5ex]
-\arrow[r, shift right = 0.5ex]
-&
-\textcolor{Orange}{\bullet})        
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_3/tikz_code_7_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 $=$
-\begin{tikzcd}
-A
-\arrow[r, shift right = -0.5ex, "f"]
-\arrow[r, shift right = 0.5ex, swap, "g"]
-&
-B
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_3/tikz_code_7_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 We define the **equalizer** of $f$ and $g$ to be 
 limit $(\Lim F, e: \Delta(\Lim F) \to F)$ of $F$. 
 </span>

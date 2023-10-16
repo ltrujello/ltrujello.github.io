@@ -31,9 +31,9 @@ if we have $F(1) = A$, $F(2) = C$ and $F(3) = B$.
 Now we can equivalently describe a pullback as follows: 
 
 <span style="display:block" class="definition">
-If $J$ is the category with the shape $\begin{tikzcd}
-1 \arrow[r] & 2 & 3 \arrow[l]
-\end{tikzcd}$, and $F: J \to \cc$ is a functor, 
+If $J$ is the category with the shape $
+<img src="../../../png/category_theory/chapter_3/tikz_code_8_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$, and $F: J \to \cc$ is a functor, 
 then a **pullback** is a universal
 arrow $(D, u: \Delta(D) \to F)$ from $\Delta$ to $F$. 
 </span>

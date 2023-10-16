@@ -128,21 +128,9 @@ of $R$. Then
 
 \begin{minipage}{0.25 \textwidth}
 \begin{figure}[H]
-\begin{tikzcd}[column sep=small] 
-&  
-S + I
-\\
-S 
-\arrow[ur, dash]
-&&
-I
-\arrow[ul,swap,"\text{(ideal)}"]
-\\
-&
-S\cap I 
-\arrow{ul}{\text{(ideal)}}
-\arrow[ur, dash]
-\end{tikzcd}
+
+<img src="../../../png/algebra/chapter_2/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 \end{figure}
 \end{minipage} \hfill
 \begin{minipage}{0.7\textwidth}

@@ -168,13 +168,9 @@ this is something we already saw in our introductory example.
 
 <span style="display:block" class="proposition">
 Let $\cc, \dd$ be categories and consider a pair of functors         
-\begin{tikzcd}
-\cc
-\arrow[r, shift right = -0.5ex, "F"]
-&
-\dd
-\arrow[l, shift right = -0.5ex, "G"]
-\end{tikzcd}.
+
+<img src="../../../png/category_theory/chapter_4/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+.
 The following are equivalent. 
 
 * [(*i*.)] The functors $F$, $G$ form an adjunction where
@@ -292,13 +288,9 @@ The next proposition characterizes the bijection.
 
 <span style="display:block" class="proposition">
 Let $\cc$, $\dd$ be categories, and suppose 
-\begin{tikzcd}
-\cc
-\arrow[r, shift right = -0.5ex, "F"]
-&
-\dd
-\arrow[l, shift right = -0.5ex, "G"]
-\end{tikzcd}
+
+<img src="../../../png/category_theory/chapter_4/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+
 form an adjunction with $F$ left adjoint to $G$. 
 Let $\eta$, $\epsilon$ be the unit and counit.
 
