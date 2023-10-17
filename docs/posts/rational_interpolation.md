@@ -241,7 +241,7 @@ def f(x):
 interpolate_and_plot(x_data, f)
 ```
 which gives
-![alt text](/png/rational_interpolation/double_peak.png)
+![alt text](png/rational_interpolation/double_peak.png)
 
 It looks pretty good. Let's try another rational function:
 $$
@@ -348,7 +348,7 @@ x_test = list(np.linspace(0, 5, 100))
 plot_interpolater(x_test, rat, f)
 ```
 gives
-![alt text](/png/rational_interpolation/exponential_50_pts.png)
+![alt text](png/rational_interpolation/exponential_50_pts.png)
 Thus rational interpolation is subject to overfitting fallacies just like any approximation model. 
 
 
