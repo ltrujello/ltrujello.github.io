@@ -3016,21 +3016,19 @@ diagram on the right commutes, and <span class="arithmatex">\(f'\)</span> is uni
 <p>Another way we
 can describe this is using the language of limits, and hence show
 that pullbacks are simply limit objects. Let <span class="arithmatex">\(J\)</span> be the category
-of three objects with the following shape:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+of three objects with the following shape:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The numbers 1, 2, and 3 here mean nothing; they are simply place
 holders for <em>some</em> distinct objects.
 So any functor <span class="arithmatex">\(F: J \to \cc\)</span> simply corresponds to a triple of
-object and a pair of morphisms in <span class="arithmatex">\(\cc\)</span>: 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+object and a pair of morphisms in <span class="arithmatex">\(\cc\)</span>: </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 if we have <span class="arithmatex">\(F(1) = A\)</span>, <span class="arithmatex">\(F(2) = C\)</span> and <span class="arithmatex">\(F(3) = B\)</span>.
 Now we can equivalently describe a pullback as follows: </p>
 <p><span style="display:block" class="definition">
-If <span class="arithmatex">\(J\)</span> is the category with the shape <span class="arithmatex">\(\begin{tikzcd}
-1 \arrow[r] &amp; 2 &amp; 3 \arrow[l]
-\end{tikzcd}\)</span>, and <span class="arithmatex">\(F: J \to \cc\)</span> is a functor, 
+If <span class="arithmatex">\(J\)</span> is the category with the shape $
+<img src="../../../png/category_theory/chapter_3/tikz_code_8_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+$, and <span class="arithmatex">\(F: J \to \cc\)</span> is a functor, 
 then a <strong>pullback</strong> is a universal
 arrow <span class="arithmatex">\((D, u: \Delta(D) \to F)\)</span> from <span class="arithmatex">\(\Delta\)</span> to <span class="arithmatex">\(F\)</span>. 
 </span>
@@ -3047,14 +3045,12 @@ u_1: \Delta(D)(1) \to F(1) \implies u_1: D \to A\\
 u_2: \Delta(D)(2) \to F(2) \implies u_2: D \to C\\
 u_3: \Delta(D)(3) \to F(3) \implies u_3: D \to B
 \end{align*}\]</div>
-<p>which arrange themselves in <span class="arithmatex">\(\cc\)</span> into the following diagram:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>which arrange themselves in <span class="arithmatex">\(\cc\)</span> into the following diagram:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and if we "tip" this diagram over, and force the arrows <span class="arithmatex">\(f\)</span> and
 <span class="arithmatex">\(g\)</span> meeting at
-<span class="arithmatex">\(C\)</span> into a 90 degree angle, we get the following cone:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<span class="arithmatex">\(C\)</span> into a 90 degree angle, we get the following cone:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Note that we removed the morphism <span class="arithmatex">\(u_2\)</span> because it's redundant,
 unnecessary information; after all <span class="arithmatex">\(u_2 = f \circ u_1 = g \circ
 u_3\)</span>; which is information already captured in both the original
@@ -3064,36 +3060,31 @@ diagram and the commutative square. </p>
 whenever we have a cone over <span class="arithmatex">\(F\)</span>, we have a commutative square! And
 in even <em>other</em> words, whenever we have a family of
 morphisms <span class="arithmatex">\(v_i: E \to F(i)\)</span> for <span class="arithmatex">\(i=1,2,3\)</span>, we have a commutative
-square! 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+square! </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>So, how do we connect the universality of <span class="arithmatex">\((D, u: \Delta(D) \to F)\)</span>
 with the universality of the pullback? Well, since this object is
 universal, we know that for any other pair <span class="arithmatex">\((E, v: \Delta(E) \to
 F)\)</span>, there exists a morphism <span class="arithmatex">\(f': E \to D\)</span> such that the following
-diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The commutativity of the top left diagram gives us the relation
 that <span class="arithmatex">\(u \circ \Delta(f') = v\)</span>, which implies that <span class="arithmatex">\(u_1 \circ f' =
-v_1\)</span> and <span class="arithmatex">\(u_3 \circ f' = v_3\)</span>. We then have that 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+v_1\)</span> and <span class="arithmatex">\(u_3 \circ f' = v_3\)</span>. We then have that </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which is just the pullback. Thus the pullback is in fact a limit object,
 and we understand just exactly how it is a limit object of the
 functor <span class="arithmatex">\(F: J \to \cc\)</span>. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category, and consider a pair of morphism <span class="arithmatex">\(f: A
 \to B\)</span>, <span class="arithmatex">\(g:A \to C\)</span> in <span class="arithmatex">\(\cc\)</span>. A <strong>pushout</strong> of <span class="arithmatex">\((f, g)\)</span>
-is the commutative diagram on the left
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is the commutative diagram on the left</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 such that for every commutative square as on the right, there
 exists a unique morphism <span class="arithmatex">\(t: R \to S\)</span> such that <span class="arithmatex">\(t \circ u =
 h\)</span> and <span class="arithmatex">\(t \circ v = k\)</span>. We can actually summarize this
-information more compactly
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+information more compactly</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where the diagram is commutative. \textcolor{NavyBlue}{One way
 to imagine a pushout is a commutative diagram which swallows
 every other commutative diagram which contains the morphisms
@@ -3101,9 +3092,8 @@ every other commutative diagram which contains the morphisms
 </span></p>
 <p>As you might suspect, the pushout can in fact be related as the
 universal arrow of a functor. Consider the category <strong>3</strong>,
-which contains 3 objects and two nontrivial morphisms. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+which contains 3 objects and two nontrivial morphisms. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now construct the functor category <span class="arithmatex">\(\cc^**3**\)</span>, where </p>
 <ul>
 <li>
@@ -3113,21 +3103,18 @@ and <span class="arithmatex">\(g: A \to C\)</span> in <span class="arithmatex">\
 </li>
 <li>
 <p>[2.] Morphisms are natural transformations, which in this
-case simply reduce to a triple of morphisms <span class="arithmatex">\((h, l, k)\)</span> where 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+case simply reduce to a triple of morphisms <span class="arithmatex">\((h, l, k)\)</span> where </p>
 </li>
 </ul>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Now construct the functor <span class="arithmatex">\(\Delta: \cc \to \cc^**3**\)</span> where
 <span class="arithmatex">\(C \longmapsto (1_C, 1_C)\)</span> where <span class="arithmatex">\(1_C: C \to C\)</span> is the identity
 morphism. Suppose there exists a natural transformation <span class="arithmatex">\(\eta_S: (f,
-g) \to \Delta(S)\)</span>, which we can represent as follows:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+g) \to \Delta(S)\)</span>, which we can represent as follows:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If we have a pushout associated with the object <span class="arithmatex">\(R\)</span> in <span class="arithmatex">\(\cc\)</span>, the existence of these commutative squares implies the existence
-of a morphism <span class="arithmatex">\(t: R \to S\)</span>, so that we have 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_8_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+of a morphism <span class="arithmatex">\(t: R \to S\)</span>, so that we have </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_8_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we see that a pushout is a universal arrow from <span class="arithmatex">\((f, g)\)</span> to
 <span class="arithmatex">\(\Delta\)</span>.</p>
 <p>\chapterimage{chapter4_pic/chapt4head.pdf}</p>

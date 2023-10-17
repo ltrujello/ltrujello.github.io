@@ -3039,12 +3039,11 @@ all elements in <span class="arithmatex">\(M\)</span>, we construct the diagram 
 this expresses our associativity axiom. Now to express the second axiom diagrammatically, we need a way to discuss the 
 identity map. So define the map <span class="arithmatex">\(\eta: \{\bullet\} \to M\)</span> where <span class="arithmatex">\(\eta(\bullet) = e\)</span>. This 
 is just a stupid map that picks out the identity. Then axiom (2) can be translated 
-diagramatically to state that the bottom left diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ince we want this to hold for all <span class="arithmatex">\(m \in M\)</span>, we generalize this to create a
+diagramatically to state that the bottom left diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Since we want this to hold for all <span class="arithmatex">\(m \in M\)</span>, we generalize this to create a
 commutative diagram as on the above right. We now have what we need to define a monoid more generally. </p>
-<p>\begin{definition}
+<p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category with cartesian products. Denote the terminal 
 object as <span class="arithmatex">\(T\)</span>. An object <span class="arithmatex">\(M\)</span> is said to 
 be a <strong>monoid</strong> in <span class="arithmatex">\(\cc\)</span> if there exist maps </p>
@@ -3052,18 +3051,16 @@ be a <strong>monoid</strong> in <span class="arithmatex">\(\cc\)</span> if there
 &amp;\mu: M \times M \to M \qquad &amp;&amp;**(Multiplication)**\\
 &amp;\eta: T \to M \qquad &amp;&amp;**(Identity)**
 \end{align*}\]</div>
-<p>such that the diagrams below commute. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>such that the diagrams below commute. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Dually, a <strong>comonoid</strong> is an object <span class="arithmatex">\(C\)</span> with maps </p>
 <div class="arithmatex">\[\begin{align*}
 &amp;\Delta: C \to C \times C \qquad &amp;&amp;**(Comultiplication)**\\
 &amp;\epsilon: C \to T \qquad &amp;&amp;**(Identity)**
 \end{align*}\]</div>
-<p>such that the dual diagrams commute. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+<p>such that the dual diagrams commute. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span>
 \textcolor{NavyBlue}{Note that we're being a little sloppy here. For example, the object 
 <span class="arithmatex">\(M \times M \times M\)</span> doesn't actually exist; we have either <span class="arithmatex">\(M \times (M \times M)\)</span> or <span class="arithmatex">\((M \times M) \times M\)</span>. 
 } However, for any category with cartesian products, we always have that these two objects 

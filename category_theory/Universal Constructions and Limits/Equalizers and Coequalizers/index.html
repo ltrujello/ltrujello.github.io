@@ -3024,9 +3024,8 @@ In fact, it is the smallest such set, a notion we can make precise
 by the following observation: If <span class="arithmatex">\(G'\)</span> is another group with 
 <span class="arithmatex">\(\vartheta: G' \to G\)</span> another map such that <span class="arithmatex">\(\phi \circ \vartheta = \psi \circ \vartheta\)</span>, 
 then there exists a unique <span class="arithmatex">\(i: G' \to \ker(\phi - \psi)\)</span> 
-such that the diagram below commutes.<br />
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+such that the diagram below commutes.  </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note above that <span class="arithmatex">\(i: \ker(\phi - \psi) \to G\)</span> is the inclusion morphism. 
 Also note that this construction is possible for any two parallel 
 group homomorphisms. 
@@ -3048,34 +3047,20 @@ Let <span class="arithmatex">\(\cc\)</span> be a category and consider a pair of
 following property.
 For any other morphism <span class="arithmatex">\(h: C \to A\)</span> such that <span class="arithmatex">\(f \circ h = g \circ h\)</span>,
 there exists a unique morphism <span class="arithmatex">\(f': C \to E\)</span> such that the
-following commutes.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+following commutes.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span></p>
 <p><span style="display:block" class="definition">[Equalizer as a Limit]
 Let <span class="arithmatex">\(\cc\)</span> be a category and consider a pair of parallel morphisms 
 <span class="arithmatex">\(f, g: A \to B\)</span>.
 Let <span class="arithmatex">\(J\)</span> be the category with two elements and two nontrivial
-morphisms as below.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and let <span class="arithmatex">\(F: J \to \cc\)</span> be the functor such that 
-\begin{tikzcd}
-F(\textcolor{Blue}{\bullet}
-\arrow[r, shift right = -0.5ex]
-\arrow[r, shift right = 0.5ex]
-&amp;
-\textcolor{Orange}{\bullet})      <br />
-\end{tikzcd}
-<span class="arithmatex">\(=\)</span>
-\begin{tikzcd}
-A
-\arrow[r, shift right = -0.5ex, "f"]
-\arrow[r, shift right = 0.5ex, swap, "g"]
-&amp;
-B
-\end{tikzcd}
-We define the <strong>equalizer</strong> of <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> to be 
+morphisms as below.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>and let <span class="arithmatex">\(F: J \to \cc\)</span> be the functor such that </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p><span class="arithmatex">\(=\)</span></p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>We define the <strong>equalizer</strong> of <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> to be 
 limit <span class="arithmatex">\((\Lim F, e: \Delta(\Lim F) \to F)\)</span> of <span class="arithmatex">\(F\)</span>. 
 </span></p>
 <p><span style="display:block" class="proposition">
@@ -3085,9 +3070,8 @@ monic.
 </span></p>
 <p><span style="display:block" class="proof">
 Consider any pair <span class="arithmatex">\(f_1, f_2: C \to D\)</span> such that <span class="arithmatex">\(e \circ f_1 =
-e \circ f_2\)</span>. Then we have that 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+e \circ f_2\)</span>. Then we have that </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since <span class="arithmatex">\(e \circ f_1 = e \circ f_2\)</span>, we see that </p>
 <div class="arithmatex">\[\begin{align*}
 f \circ e = g \circ e &amp;\implies f \circ (e \circ f_1) = g \circ 
@@ -3095,9 +3079,8 @@ f \circ e = g \circ e &amp;\implies f \circ (e \circ f_1) = g \circ
 &amp;\implies f \circ (e \circ f_1) = g \circ (e \circ f_2).
 \end{align*}\]</div>
 <p>Hence we see <span class="arithmatex">\(e \circ f_1 = e \circ f_2 : C \to D\)</span> is another
-morphism which is equalized by <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+morphism which is equalized by <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By the
 universality of the equalizer <span class="arithmatex">\(e: D \to A\)</span>, we know that there
 must exist a unique morphism <span class="arithmatex">\(f': C \to D\)</span> such that </p>
@@ -3113,9 +3096,8 @@ Let <span class="arithmatex">\(\cc\)</span> be a category with a zero object <sp
 is, an object which is both initial and terminal, such that
 for any objects <span class="arithmatex">\(A, B\)</span> of <span class="arithmatex">\(\cc\)</span> there exists a unique pair of
 morphisms <span class="arithmatex">\(f, g\)</span>
-such that 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+such that </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Denote <span class="arithmatex">\(f \circ g = 0\)</span> as the zero arrow (any morphism which
 passes through <span class="arithmatex">\(z\)</span> is a zero arrow).</p>
 <p>Now we define the <strong>cokernel</strong> a morphism <span class="arithmatex">\(f: A \to B\)</span> to
@@ -3130,9 +3112,8 @@ be an arrow <span class="arithmatex">\(u:B \to C\)</span> where </p>
 D\)</span>.</p>
 </li>
 </ul>
-<p>Visually, this becomes 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Visually, this becomes </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p></span>  <br />
 The cokernel is a special object in <strong>Ab</strong>, as it plays a
 role in the concept of exact sequences and hence homology as
@@ -3162,9 +3143,8 @@ We can represent this with the following commutative diagram.\
 \textcolor{NavyBlue}{Note that
 we can interpret a coequalizers as a morphism which uniquely
 "flattens" morphisms, and for any other morphism which also
-"flattens" is related to the original coequalizer.}
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+"flattens" is related to the original coequalizer.}</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span></p>
 <p>With coequalizers, we get the following nice result. </p>
 <p><span style="display:block" class="lemma">
@@ -3186,8 +3166,7 @@ therefore a pair of arrows <span class="arithmatex">\(h : A \to A'\)</span> and 
 that</p>
 </li>
 </ul>
-<p>\
-<img src="../../../png/category_theory/chapter_3/tikz_code_7_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_7_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is a commutative diagram. Finally consider the diagonal
 functor <span class="arithmatex">\(\Delta: \cc \to \cc^**2**\)</span> where </p>
 <div class="arithmatex">\[\begin{align*}

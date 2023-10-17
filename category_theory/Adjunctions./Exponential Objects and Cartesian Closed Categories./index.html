@@ -3057,9 +3057,8 @@ that we have the relation</p>
 Then for each object <span class="arithmatex">\((A, B) \in \cc \times \cc\)</span>, we have the
 morphism <span class="arithmatex">\(\eta_{(A,B)}: (A, B) \to \Delta(F(A,B))\)</span>, which we can 
 rewrite as <span class="arithmatex">\(\eta_{(A,B)}: (A, B) \to (F(A,B), F(A,B))\)</span>.
-We can put this into a universal diagram 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+We can put this into a universal diagram </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where the diagram on the right is the coproduct diagram of <span class="arithmatex">\(A \times
 B\)</span>. Since both of the pairs <span class="arithmatex">\(\Big((F(A,B), F(A,B)), \eta_{(A,B)}\Big)\)</span> 
 and <span class="arithmatex">\(\Big((A\times B, A \times B), (\pi_A, \pi_B)\Big)\)</span> are universal
@@ -3070,15 +3069,13 @@ F(A, B) \cong A \amalg B
 \]</div>
 <p>so that a left adjoint gives rise to products. </p>
 <p>Let <span class="arithmatex">\(G: \cc \times \cc \to \cc\)</span> be a right adjoint of <span class="arithmatex">\(\Delta\)</span>, so
-that we have 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+that we have </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The adjunction gives rise to a universal morphism
 <span class="arithmatex">\(\epsilon_{(A,B)}: \Delta(G(A,B)) \to (A,B)\)</span>, which we can rewrite
 as <span class="arithmatex">\(\epsilon_{(A,B)}: (G(A,B), G(A,B)) \to (A,B)\)</span>. We then have
-the diagram 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the diagram </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where the diagram on the right is the product diagram of <span class="arithmatex">\(A \times B\)</span>. 
 Thus we see that\
 <span class="arithmatex">\(\Big((G(A,B), G(A, B)), \epsilon_{(A,B)}\Big)\)</span> 
@@ -3106,9 +3103,8 @@ objects in <span class="arithmatex">\(\cc\)</span>. We say <span class="arithmat
 \to Z\)</span> which is universal from <span class="arithmatex">\(-\times Y: \cc \to \cc\)</span> to the
 object <span class="arithmatex">\(Z\)</span>. </p>
 <p>Visually, this translates into requiring that the following
-diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 \textcolor{Purple}{Hence, every morphism,
 with the domain being any product with <span class="arithmatex">\(\bm{Y}\)</span>, and codomain being
@@ -3143,9 +3139,8 @@ Then for every such <span class="arithmatex">\(g_a\)</span>, there exists a uniq
 <div class="arithmatex">\[ 
 h_a(f) = f(a, y): Y \to Z.
 \]</div>
-<p>Thus we get the following commutative diagram:
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Thus we get the following commutative diagram:</p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 What is this? What's really going on and why do we care?\
 \textcolor{MidnightBlue}{This construction relates to a concept in
 computer science called
@@ -3197,17 +3192,15 @@ every pair of objects. Then for each <span class="arithmatex">\(Y\)</span> in <s
 \item[Objects.] For each <span class="arithmatex">\(Z \in \cc\)</span>, we define <span class="arithmatex">\(E^Y(Z) =
 Z^Y\)</span>. </p>
 <p>\item[Morphisms.] Let <span class="arithmatex">\(f: A \to B\)</span> be in <span class="arithmatex">\(\cc\)</span>. Then we 
-note that we have the following diagrams. 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+note that we have the following diagrams. </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now observe that we can form the morphism <span class="arithmatex">\(f \circ
 \textcolor{Red}{**eval**_A} : A^Y \times Y \to B\)</span>. 
 Hence by universality
 of <span class="arithmatex">\(B^Y\)</span>, there exists a unique morphism <span class="arithmatex">\(h': A^Y \to B^Y\)</span>.
 Diagrammatically, we take the above diagram on the right, and
-replace <span class="arithmatex">\(X\)</span> with <span class="arithmatex">\(A^Y\)</span> and <span class="arithmatex">\(g\)</span> with <span class="arithmatex">\(f \circ **eval**_A\)</span>.
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+replace <span class="arithmatex">\(X\)</span> with <span class="arithmatex">\(A^Y\)</span> and <span class="arithmatex">\(g\)</span> with <span class="arithmatex">\(f \circ **eval**_A\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since <span class="arithmatex">\(h\)</span> exists if <span class="arithmatex">\(f: A \to B\)</span> exists, we therefore define </p>
 <div class="arithmatex">\[
 E^Y(f: A \to B) = h': A^Y \to B^Y
@@ -3245,9 +3238,8 @@ Therefore, </p>
 <p><span style="display:block" class="proof">
 For each object <span class="arithmatex">\(A \in \cc\)</span>, the exponential object gives rise
 to a universal morphism <span class="arithmatex">\(**eval**_A: A^Y \times Y \to A\)</span>.
-So on one hand, we get the diagram on the left
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+So on one hand, we get the diagram on the left</p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 but on the other hand, the diagram on the right is exactly
 equivalent. Hence we see that <span class="arithmatex">\(**eval**\)</span> is actually a
 counit <span class="arithmatex">\(\epsilon_A: P_Y(E^Y(A)) \to A\)</span>. Since such a counit
@@ -3257,8 +3249,8 @@ exists for each <span class="arithmatex">\(A\)</span>, this gives rise to an adj
 <p>Finally, we have everything we need to move onto to the main point
 of this section. </p>
 <p><span style="display:block" class="definition">
-Let <span class="arithmatex">\(\cc\)</span> be a category. We say <span class="arithmatex">\(\cc\)</span> is a \textbf{cartesian closed 
-category} if the functors </p>
+Let <span class="arithmatex">\(\cc\)</span> be a category. We say <span class="arithmatex">\(\cc\)</span> is a <strong>cartesian closed 
+category</strong> if the functors </p>
 <div class="arithmatex">\[
 U: **C** \to **1** 
 \qquad

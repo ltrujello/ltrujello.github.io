@@ -3046,10 +3046,9 @@ are of <span class="arithmatex">\(C_n\)</span> are of the form </p>
 are zero. </p>
 <p>In algebraic topology, one observes that these abelian groups assemble into a 
 chain via a boundary operator <span class="arithmatex">\(\partial_n: C_n \to C_{n-1}\)</span>
-with the property that <span class="arithmatex">\(\partial_{n+1}\circ\partial_n = 0\)</span> for all <span class="arithmatex">\(n\)</span>.
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Now suppose that <span class="arithmatex">\(f: X \to Y\)</span> is a continuous map between topological spaces.
+with the property that <span class="arithmatex">\(\partial_{n+1}\circ\partial_n = 0\)</span> for all <span class="arithmatex">\(n\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Now suppose that <span class="arithmatex">\(f: X \to Y\)</span> is a continuous map between topological spaces.
 Then for each <span class="arithmatex">\(n\)</span>, there is an evident mapping between the chain complexes.</p>
 <div class="arithmatex">\[
 C_n(f): C_n(X) \to C_n(Y) \qquad \sum_{\phi} n_{\phi} \cdot \phi \mapsto \sum_{\phi} n_{\phi} \cdot f \circ \phi.
@@ -3059,9 +3058,8 @@ is also a singular map because <span class="arithmatex">\(f\)</span> is continuo
 However this presents us with an issue, one we faced in the earlier example. 
 On one hand, we have a map <span class="arithmatex">\(C_{n-1}(f) \circ \partial_n: C_n(X) \to C_n(Y)\)</span>. 
 On the other hand, we have a map <span class="arithmatex">\(\partial_n \circ C_n(f): C_n(X) \to C_n(Y)\)</span>. 
-But are these equivalent maps? 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+But are these equivalent maps? </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 It's a simple exercise to show that this diagram does in fact commute, i.e., that 
 <span class="arithmatex">\(C_{n-1}(f) \circ \partial_n = \partial_n \circ C_n(f)\)</span> for all <span class="arithmatex">\(n\)</span>. </p>
 <p>As a result, this "natural" result (again pun intended) 
@@ -3098,21 +3096,18 @@ That nice word will turn out to be morphism, and you will see soon why.
 \eta_C : F(C) \to G(C)
 \]</div>
 <p>in <span class="arithmatex">\(\dd\)</span> such that for every <span class="arithmatex">\(f: A \to B\)</span>, we have that 
-\begin{statement}{ProcessBlue!10}
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\begin{statement}{ProcessBlue!10}</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{statement}
 which amounts to <span class="arithmatex">\(\eta_B \circ F(f) = G(f) \circ \eta_A\)</span>.
 </span>
 Thus we can imagine that <span class="arithmatex">\(\eta\)</span> translates the diagram produced by
 the functor <span class="arithmatex">\(F\)</span> to a diagram produced by <span class="arithmatex">\(G\)</span>. For example; if
 <span class="arithmatex">\(\eta\)</span> is a natural transformation between <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(G\)</span>, then we
-also see that the following diagram commutes:
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and this diagram commutes
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+also see that the following diagram commutes:</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and this diagram commutes</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 if the above diagram on the left commutes. Colors are added to aid
 the visualization in seeing how the natural transformation
 translates the diagram produced by <span class="arithmatex">\(F\)</span> to the diagram produced by
@@ -3156,9 +3151,8 @@ is given by </p>
 \]</div>
 <p>where <span class="arithmatex">\(S_n\)</span> is the symmetric group, and <span class="arithmatex">\(\text{sgn}(\sigma)\)</span> is the sign 
 of a permutation.
-Now for <span class="arithmatex">\(\det\)</span> to form a natural transformation, we'll need that the diagram below commutes.
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Now for <span class="arithmatex">\(\det\)</span> to form a natural transformation, we'll need that the diagram below commutes.</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that <span class="arithmatex">\(f: K \to K'\)</span> is a commutative ring homomorphism.
 To show this diagram commutes, consider any <span class="arithmatex">\(M = [a_{ij}] \in GL_n(K)\)</span>. Observe that </p>
 <div class="arithmatex">\[\begin{align*}
@@ -3200,9 +3194,8 @@ Let <span class="arithmatex">\(\theta_k: A^{n+1}(k) \to P^n(k)\)</span> be the f
 a point <span class="arithmatex">\((a_0, \dots, a_n)\)</span> to its equivalence class <span class="arithmatex">\([(a_0, \dots, a_n)]\)</span>. 
 Our claim is that for each <span class="arithmatex">\(k\)</span>, the functions <span class="arithmatex">\(\theta_k\)</span> assemble into a 
 natural transformation. </p>
-<p>That is, for a field homomorphism <span class="arithmatex">\(\phi: k \to k'\)</span>, the diagram
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>That is, for a field homomorphism <span class="arithmatex">\(\phi: k \to k'\)</span>, the diagram</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. 
 The reader is encouraged to fill in the details for this one. It's quite 
 surprising that this does assemble into a natural transformation, because in general 
@@ -3215,9 +3208,8 @@ abstract nonsense so that the reader knows we're doing real, relevant mathematic
 perhaps it might be motivation for the reader to check out an algebraic geometry text!}. 
 If <span class="arithmatex">\(Y\)</span> is an algebraic subset of <span class="arithmatex">\(P^n(k)\)</span>, then we can build the <strong>affine cone</strong>
 <span class="arithmatex">\(C(Y) = \theta^{-1}(Y) \cup\{(0,\dots, 0)\}\)</span>. With <span class="arithmatex">\(n = 2\)</span>, <span class="arithmatex">\(Y\)</span> corresponds to 
-a curve in <span class="arithmatex">\(P^2(k)\)</span>, which generates the surface <span class="arithmatex">\(C(Y)\)</span> in in <span class="arithmatex">\(A^3(k)\)</span>.
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+a curve in <span class="arithmatex">\(P^2(k)\)</span>, which generates the surface <span class="arithmatex">\(C(Y)\)</span> in in <span class="arithmatex">\(A^3(k)\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span></p>
 <p><span style="display:block" class="example">
 Earlier, we showed that <span class="arithmatex">\(p_G: \grp \to \ab\)</span> in which <span class="arithmatex">\(G \mapsto G/[G, G]\)</span> was a functor. It
@@ -3251,9 +3243,8 @@ Hence, we see that </p>
 <div class="arithmatex">\[
 T_H\circ f = f^*\circ T_G
 \]</div>
-<p>so that the following diagram commutes 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>so that the following diagram commutes </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and hence <span class="arithmatex">\(T\)</span> is a natural transformation.
 </span></p>
 <p><span style="display:block" class="example">
@@ -3281,9 +3272,8 @@ represent this bijective mapping as </p>
 <div class="arithmatex">\[
 \#f =\theta_Y \circ f \circ \theta_X^{-1}.
 \]</div>
-<p>Thus we have that the following diagram is commutative:
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Thus we have that the following diagram is commutative:</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and <span class="arithmatex">\(\theta\)</span> acts a natural transformation between the
 two functors.</p>
 <p>Note that if <span class="arithmatex">\(X\)</span> is an ordinal number, we define <span class="arithmatex">\(\theta_X\)</span> to
@@ -3306,8 +3296,7 @@ A simple example of a homotopy is when <span class="arithmatex">\(X = [0, 1]\)</
 <span class="arithmatex">\(f, g: [0, 1] \to Y\)</span> are simply two continuous paths in <span class="arithmatex">\(Y\)</span>. A 
 homotopy, in this situation, between <span class="arithmatex">\(f,g\)</span> is pictured on 
 the bottom left. </p>
-<p>\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 On the above right we have the situation for when <span class="arithmatex">\(f, g\)</span> start and end at the same point; this homotopy 
 is know as a <strong>path homotopy</strong>. </p>
 <p>Of course, a homotopy doesn't always exist. When it does, a homotopy can be 
@@ -3316,9 +3305,8 @@ which <em>continuously</em> deform <span class="arithmatex">\(f\)</span> into <s
 define a homotopy.}. </p>
 <p>But this story is familar! A natural transformation <span class="arithmatex">\(\eta: F \to G\)</span> between two functors 
 <span class="arithmatex">\(F, G: \cc \to \dd\)</span> give rise to a family of morphisms <span class="arithmatex">\(\eta_A: F(A) \to G(A)\)</span> which are parameterized by<br />
-the objects of <span class="arithmatex">\(\cc\)</span> (which also satisfy the naturality property). Below we have this pictured of what this generally looks like. 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_9_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the objects of <span class="arithmatex">\(\cc\)</span> (which also satisfy the naturality property). Below we have this pictured of what this generally looks like. </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_9_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 So, what gives? Is the concept of a natural transformation somewhat logically 
 and conceptually analogous to the concept of a homotopy? The answer is yes, and we can define 
 a natural transformation in the following manner which is strikingly similar to the 

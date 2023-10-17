@@ -3063,25 +3063,21 @@ With both products, consider the projection morphisms</p>
 \end{align*}\]</div>
 <p>Note that because we have products, we have universal
 properties which we can take advantage of. That is, 
-the following diagrams must commute for some <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Note however that we can stack these diagrams on top of each other, to obtain<br />
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the following diagrams must commute for some <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Note however that we can stack these diagrams on top of each other, to obtain  </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since we have equalizers for every pair of arrows, we can form
 the equalizer <span class="arithmatex">\(\displaystyle e:D \to \prod_{i \in J}F_i\)</span> 
-of both <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> for some object <span class="arithmatex">\(D\)</span>.
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+of both <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> for some object <span class="arithmatex">\(D\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Now that we have a morphism 
 <span class="arithmatex">\(\displaystyle e: D \to \prod_{i \in J}F_i\)</span>,<br />
 we can compose this with projections <span class="arithmatex">\(\displaystyle 
 \prod_{i \in J}F_i \to F_i\)</span> to produce a family of
 morphisms <span class="arithmatex">\(\pi_i \circ e: D \to F_i\)</span>. If we like, we can even 
-add this to our diagram above to get the following:
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+add this to our diagram above to get the following:</p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 (\textcolor{Red}{It looks like a boat!}) Denote <span class="arithmatex">\(\mu_i = \pi_i \circ e: D \to F_i\)</span>. Then what the above boat diagram 
 tells us is that </p>
 <div class="arithmatex">\[
@@ -3096,9 +3092,8 @@ tells us is that </p>
 F(u) \circ \pi_i \circ e = \pi_k \circ e \implies F(u) \circ \mu_i = \mu_k.
 \]</div>
 <p>for every <span class="arithmatex">\(u: i \to k\)</span> in <span class="arithmatex">\(J\)</span>. 
-Therefore, we see that we have that 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Therefore, we see that we have that </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, so that <span class="arithmatex">\(D\)</span> equipped with the morphisms <span class="arithmatex">\(\mu_i: D \to F_i\)</span> forms a cone.
 We now show that this is universal, so that <span class="arithmatex">\(D\)</span> is our limit. We do this 
 by taking advantage of the universal property which equalizers
@@ -3110,9 +3105,8 @@ morphisms <span class="arithmatex">\(\tau_i: C \to F_i\)</span>. Then there exis
 <span class="arithmatex">\(f \circ e = g \circ e\)</span>. But the universal property of 
 the equalizer <span class="arithmatex">\(e\)</span>
 states that for any subject object, there exists a morphism 
-<span class="arithmatex">\(h: D \to C\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(h: D \to C\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since <span class="arithmatex">\(h: D \to C\)</span> is unique, this shows that <span class="arithmatex">\(D\)</span> 
 equipped with the morphisms 
 <span class="arithmatex">\(\displaystyle \mu_i: D \to F_i\)</span> forms a limit of the diagram,
@@ -3142,9 +3136,8 @@ finite products from pullbacks. </p>
 For any pair of objects <span class="arithmatex">\(A, B\)</span> in <span class="arithmatex">\(\cc\)</span>, suppose we take the pull back on 
 the morphisms <span class="arithmatex">\(t_A: A \to T\)</span> and <span class="arithmatex">\(t_B: B \to T\)</span>. This then give 
 rise to an object <span class="arithmatex">\(P\)</span> equipped with two morphisms <span class="arithmatex">\(p_1: P \to A\)</span> 
-and <span class="arithmatex">\(p_2: P \to B\)</span>, universal in the sense demonstrated below. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and <span class="arithmatex">\(p_2: P \to B\)</span>, universal in the sense demonstrated below. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now on the top left we have our pull back. However, on the top right, we've 
 unraveled the pullback and ignored the terminal object to observe that <span class="arithmatex">\(P\)</span> 
 has the universal property of what a product would demand. Hence we may denote 
@@ -3153,21 +3146,18 @@ has the universal property of what a product would demand. Hence we may denote
 to construct this if we didn't have a terminal object; For example, if <span class="arithmatex">\(\cc\)</span> 
 was a discrete category, we wouldn't even have any morphisms to take a pullback on!}</p>
 <p>Now to derive equalizers, consider a pair of parallel morphisms 
-<span class="arithmatex">\(f, g: A \to B\)</span>. Then we may simply take their pullback to obtain the diagram below. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(f, g: A \to B\)</span>. Then we may simply take their pullback to obtain the diagram below. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If <span class="arithmatex">\(p: A \times A \to A\)</span> is the natural projection map, then 
 because we have a trivial mapping <span class="arithmatex">\(1_A: A \to A\)</span>, there exists a canonical 
 canonical map <span class="arithmatex">\(i: A \to A \times A\)</span> such that <span class="arithmatex">\(p \circ i = 1_A\)</span>. 
 Similarly, because we have mappings <span class="arithmatex">\(p_1, p_2: P \to B\)</span>, we must have a 
-mapping <span class="arithmatex">\(h: P \to A \times A\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+mapping <span class="arithmatex">\(h: P \to A \times A\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now we can take the pullback on the morphism <span class="arithmatex">\(h: P \to A \times A\)</span> 
-and <span class="arithmatex">\(i: A \to A \times A\)</span> to obtain the equalizer.<br />
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Hence we see that for finite limits, we can reduce our assumptions to pullbacks and 
+and <span class="arithmatex">\(i: A \to A \times A\)</span> to obtain the equalizer.  </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Hence we see that for finite limits, we can reduce our assumptions to pullbacks and 
 a terminal object, giving rise to the final corollary. </p>
 <p><span style="display:block" class="theorem">
 If a category has pullbacks and a terminal object, then it has all finite limits. 

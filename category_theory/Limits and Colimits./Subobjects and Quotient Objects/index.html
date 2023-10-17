@@ -3045,18 +3045,9 @@ and more manageable.</p>
 f \le g \text{ if there exists an } h \text{ where } f = g \circ h.
 \]</div>
 <p>\end{minipage} 
-\begin{minipage}{0.4\textwidth}
-\begin{tikzcd}[column sep = 1.6cm, row sep = 0.3cm]
-C \arrow[dr, hookrightarrow, "f"]
-&amp;
-\
-&amp;
-A 
-\
-D \arrow[ur,hookrightarrow, swap, "g"]
-\arrow[uu, dashed, "h"]
-\end{tikzcd}
-\end{minipage}
+\begin{minipage}{0.4\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_7_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{minipage}
 \end{statement}
 for some monomorphism <span class="arithmatex">\(h: D' \to D\)</span>. Note that if <span class="arithmatex">\(f \le g\)</span> and <span class="arithmatex">\(f \ge g\)</span>, 
 then <span class="arithmatex">\(C\)</span> and <span class="arithmatex">\(D\)</span> are isomorphic (this is not true in general; this only true here 
@@ -3086,10 +3077,9 @@ G(A) \subset F(A)?
 <p>Could we logically call <span class="arithmatex">\(G\)</span> a "<strong>subfunctor</strong>" of <span class="arithmatex">\(F\)</span>? We could with a little more work. 
 Because <span class="arithmatex">\(G(A) \subset F(A)\)</span>,  we know that there exists a monomorphism (just an injection here)
 <span class="arithmatex">\(i_A: G(A) \to F(A)\)</span>. Now a natural question to ask here is if this translates to a
-natural transformation. That is, does the diagram below commute?
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_7_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-The answer is no. This is because <span class="arithmatex">\(G(f)\)</span> and <span class="arithmatex">\(F(f)\)</span> could be two entirely different functions which do 
+natural transformation. That is, does the diagram below commute?</p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_7_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>The answer is no. This is because <span class="arithmatex">\(G(f)\)</span> and <span class="arithmatex">\(F(f)\)</span> could be two entirely different functions which do 
 two entirely different things to the same elements in different domains; however, 
 one way for this diagram to commute is if <span class="arithmatex">\(G(f)\)</span> is <span class="arithmatex">\(F(f)\)</span> <em>restricted</em> to 
 the set <span class="arithmatex">\(G(A)\)</span>. That is, if </p>
@@ -3098,9 +3088,8 @@ G(f) = F(f)\big|_{G(A)}.
 \]</div>
 <p>The diagram then commutes. But is this the only way to make it commute? Suppose with no assumption of <span class="arithmatex">\(G(f)\)</span>
 that the diagram did commute. Then we can still make a morphism <span class="arithmatex">\(F(f)\big|_{G(A)}: G(A) \to G(B)\)</span> to 
-get the commutative diagram 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_7_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+get the commutative diagram </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_7_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Then we see that <span class="arithmatex">\(i_B \circ G(f) = i_B \circ F(f)\big|_{G(A)}\)</span>. However, 
 <span class="arithmatex">\(i_B\)</span> is a monomorphism,  so <span class="arithmatex">\(G(f) = F(f)\big|_{G(A)}\)</span>. Hence the <em>only</em> way to 
 make the diagram commute is if <span class="arithmatex">\(G(f)\)</span> is a restriction of <span class="arithmatex">\(F(f)\)</span>. </p>
@@ -3157,19 +3146,9 @@ objects is too large, so we instead consider ordering relation </p>
 f \le g \text{ if there exists an } h \text{ where } f = h \circ g.
 \]</div>
 <p>\end{minipage} 
-\begin{minipage}{0.4\textwidth}
-\begin{tikzcd}[column sep = 1.6cm, row sep = 0.3cm]
-&amp; C 
-\
-A 
-\arrow[ur, -&gt;&gt;, "f"]
-\arrow[dr, -&gt;&gt;, swap, "g"]
-&amp;
-\
-&amp;
-D \arrow[uu, dashed, swap, "h"]
-\end{tikzcd}
-\end{minipage}
+\begin{minipage}{0.4\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_7_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{minipage}
 \end{statement}
 Observing that <span class="arithmatex">\(f \le g\)</span> and <span class="arithmatex">\(g \le f\)</span> together imply that <span class="arithmatex">\(C \cong D\)</span>, we see that 
 we may construct an equivalence relation <span class="arithmatex">\(\sim\)</span> where $f \sim g $ if there exists an isomorphism 

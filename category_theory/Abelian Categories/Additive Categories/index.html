@@ -3011,20 +3011,19 @@ the answer is yes; it is the <strong>direct sum</strong> <span class="arithmatex
 universal property </p>
 <p><img src="../../../png/category_theory/chapter_8/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Here, <span class="arithmatex">\(K\)</span> is a third group, <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\psi\)</span> are arbitrary group homomorphisms, and <span class="arithmatex">\(\pi_G, \pi_H\)</span> are the natural projection morphisms. 
-Interestingly, this object also satisfies the universal property 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ere <span class="arithmatex">\(i_G\)</span> and <span class="arithmatex">\(i_H\)</span> are the natural injections, e.g. <span class="arithmatex">\(i_G(g) = g \otimes e_H\)</span>. 
+Interestingly, this object also satisfies the universal property </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Here <span class="arithmatex">\(i_G\)</span> and <span class="arithmatex">\(i_H\)</span> are the natural injections, e.g. <span class="arithmatex">\(i_G(g) = g \otimes e_H\)</span>. 
 However, this implies that <span class="arithmatex">\(G \oplus H\)</span> is a coproduct!
 What this implies is 
 that \textcolor{NavyBlue}{product and coproducts coincide in <strong>Ab</strong>}.
 This is actually a pretty remarkable property because this isn't the case even 
 in nice categories. For example, in <strong>Set</strong>, products and coproducts are 
 definitely distinct.</p>
-<p>\begin{center}
+<div class="arithmatex">\[\begin{center}
 Why is this the case? 
-\end{center}
-<span style="display:block" class="proposition">
+\end{center}\]</div>
+<p><span style="display:block" class="proposition">
 Let <span class="arithmatex">\(\cc\)</span> be a preadditive category with a zero object <span class="arithmatex">\(z\)</span>. 
 Then for any objects <span class="arithmatex">\(A, B \in \cc\)</span>, the following are equivalent</p>
 <ul>
@@ -3045,25 +3044,21 @@ Then for any objects <span class="arithmatex">\(A, B \in \cc\)</span>, the follo
 We only demonstrate one direction because the proof is self-dual. </p>
 <p>Suppose <span class="arithmatex">\(A \times B\)</span> exists. Then then if <span class="arithmatex">\(C\)</span> is an object equipped 
 with morphisms <span class="arithmatex">\(f: C \to A\)</span> and <span class="arithmatex">\(g: C \to B\)</span>, the following diagram 
-must hold. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+must hold. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Equip <span class="arithmatex">\(A\)</span> with the morphisms <span class="arithmatex">\(1_A: A \to A\)</span> and the unique<br />
 zero morphism <span class="arithmatex">\(\emptyset_A^B: A \to B\)</span>. Then there exists a unique 
-<span class="arithmatex">\(i_A: A \to A \times B\)</span> such that the diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Symmetrically, equip <span class="arithmatex">\(B\)</span> with the unique zero morphism <span class="arithmatex">\(\emptyset_B^A: B \to A\)</span>
+<span class="arithmatex">\(i_A: A \to A \times B\)</span> such that the diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Symmetrically, equip <span class="arithmatex">\(B\)</span> with the unique zero morphism <span class="arithmatex">\(\emptyset_B^A: B \to A\)</span>
 and <span class="arithmatex">\(1_B: B \to B\)</span>. Then there exists a unique <span class="arithmatex">\(i_B: B \to A\times B\)</span> such that the 
-diagram commutes.
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Now we'll demonstrate that we have a coproduct structure on our hands. 
+diagram commutes.</p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Now we'll demonstrate that we have a coproduct structure on our hands. 
 To do this, suppose we have an object <span class="arithmatex">\(C\)</span> equipped with morphisms 
 <span class="arithmatex">\(f: A \to C\)</span> and <span class="arithmatex">\(g: B \to C\)</span>. Then we can construct a morphism <span class="arithmatex">\(h\)</span> such that the following 
-diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Observe that <span class="arithmatex">\(h = f\circ \pi_A + g \circ \pi_B\)</span> suffices, where 
 <span class="arithmatex">\(+\)</span> is the group operation on the abelian group <span class="arithmatex">\(\hom(A \times B, C)\)</span>.
 Observe that </p>

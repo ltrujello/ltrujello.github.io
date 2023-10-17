@@ -3025,21 +3025,18 @@ one (or both) of the diagrams below must commute for any <span class="arithmatex
 <p><img src="../../../png/category_theory/chapter_11/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus we set <span class="arithmatex">\(\Gamma \le K\)</span> whenever there exists a natural transformation 
 <span class="arithmatex">\(\eta_{\Gamma K}: \Gamma \to K\)</span>. </p>
-<p>\begin{definition}
+<p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(P\)</span> be a preorder and <span class="arithmatex">\(\Gamma, K \in **Trans**_P\)</span>. Suppose 
 <span class="arithmatex">\(F, G \in \dd^P\)</span>. We say <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\((\Gamma, K)\)</span>-interleaved if there exists 
 a pair of natural transformations <span class="arithmatex">\(\phi: F \to G \circ \Gamma\)</span> and 
-<span class="arithmatex">\(\psi: G \to F\circ K\)</span> such that 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}
+<span class="arithmatex">\(\psi: G \to F\circ K\)</span> such that </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span>
 Note that, given the first two commutative squares, we can stack them to create a 
-larger commutative square: 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-f the two triangular diagrams did not hold, then we would we would see 
+larger commutative square: </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+If the two triangular diagrams did not hold, then we would we would see 
 that there would be two different, but not necessarily equal ways of getting from
 <span class="arithmatex">\(F\)</span> to <span class="arithmatex">\(F(K(\Gamma))\)</span> and <span class="arithmatex">\(G\)</span> to <span class="arithmatex">\(G(\Gamma(K(x)))\)</span>. Note also that, if we really 
 wanted to, we could keep stacking these diagrams on and on.</p>
@@ -3052,11 +3049,9 @@ also <span class="arithmatex">\((\Gamma, K)\)</span> interleaved.
 <p><span style="display:block" class="proof">
 This is true since any functor applied to a commutative diagram will output a commutative diagram. 
 Thus if we compose <span class="arithmatex">\(H\)</span> with the commutative diagrams which arise from the interleaving 
-of <span class="arithmatex">\(F, G\)</span>,  we get 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+of <span class="arithmatex">\(F, G\)</span>,  we get </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The above diagrams can be reconciled with the definition of an <span class="arithmatex">\((\Gamma, K)\)</span> 
 interleaving, so that <span class="arithmatex">\(H\circ F, H\circ G\)</span>  are <span class="arithmatex">\((\Gamma, K)\)</span> are<br />
 interleaved. 
@@ -3071,30 +3066,26 @@ such that <span class="arithmatex">\(\Gamma_1  \le \Gamma_2\)</span> and <span c
 Since <span class="arithmatex">\(\Gamma_1 \le \Gamma_2\)</span> and <span class="arithmatex">\(K_1 \le K_2\)</span>, there must exist 
 natural transformations <span class="arithmatex">\(\alpha: \Gamma_1 \to \Gamma_2\)</span> and <span class="arithmatex">\(\beta: K_1 \to K_2\)</span>. 
 Now since <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\((\Gamma_1, K_1)\)</span>-interleaved, this means we get the usual diagrams, 
-but we can stack an extra layer on the bottom. 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+but we can stack an extra layer on the bottom. </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we can see our natural transformations of interest are 
 <span class="arithmatex">\(G(\alpha) \circ \phi: F \to G \circ \Gamma_2\)</span> and 
 <span class="arithmatex">\(F(\beta)\circ \psi: G \to F \circ K_2\)</span>. We now have to show that our 
 two required triangular diagrams must commute. 
-Towards this goal, consider the diagram below.
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Towards this goal, consider the diagram below.</p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The left triangle commutes since <span class="arithmatex">\(F, G\)</span> are a <span class="arithmatex">\((\Gamma_1, K_1)\)</span> interleaving, 
 while the rightmost commutes by the original square diagrams. 
 We've outlined their correspondence in colors. We almost have what we want, but 
 we need to make sure <span class="arithmatex">\(\textcolor{Orange}{F(K_2(\alpha_x))}\circ 
 \textcolor{Blue}{F(\beta_{\Gamma_1(x)})}\circ 
 F(\eta_{\Gamma_1(K_1(x))}) = F(\eta_{\Gamma_2(K_2(x))})\)</span>. 
-To do this, observe that the diagram
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+To do this, observe that the diagram</p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must necessarily commute as it is a diagram inside of <span class="arithmatex">\(P\)</span>, a preordered set. 
 Therefore, the image of this diagram under <span class="arithmatex">\(F\)</span> must produce a commutative diagram, so that we do 
-in fact get our desired relation. All together, we then have 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+in fact get our desired relation. All together, we then have </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The same procedure can be repeated 
 dually to demonstrate commutativity for the other required triangular diagram.
 Thus we have that <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\((\Gamma_2, K_2)\)</span>-interleaved.
@@ -3111,15 +3102,13 @@ First observe that since  <span class="arithmatex">\(F, G\)</span> are <span cla
 \phi&amp;: F \to G \circ \Gamma_1  &amp;&amp;\phi': G \to H\circ \Gamma_2\\
 \psi&amp;: G \to F\circ K_1 &amp;&amp;\psi':  H \to G\circ K_2
 \end{align*}\]</div>
-<p>which satisfy the required diagrams. Consider the diagrams<br />
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>which satisfy the required diagrams. Consider the diagrams  </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which commute by our given interleavings.
 Then there are natural transformations <span class="arithmatex">\(\psi'_{\Gamma_1} \circ \phi: F \to H(\Gamma_2\circ\Gamma_1)\)</span> 
 and <span class="arithmatex">\(\phi'_{K_2}\circ \psi: H \to F(K_1\circ K_2)\)</span>. We now must check they satisfy the required triangular diagrams. 
-We can demonstrate this for at least one; Consider the diagram 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_2_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+We can demonstrate this for at least one; Consider the diagram </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_2_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The above diagram commutes by our given interleavings. The diagram 
 in \textcolor{Blue}{blue} commutes since <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\((\Gamma_1, K_1)\)</span> interleaved, 
 while the diagram in \textcolor{Red}{red} commutes since <span class="arithmatex">\(G, H\)</span> 

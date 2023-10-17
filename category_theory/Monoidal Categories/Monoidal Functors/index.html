@@ -3005,7 +3005,7 @@
 }
 </style>
 <h1 id="72-monoidal-functors">7.2. Monoidal Functors</h1>
-<p>\begin{definition}
+<p><span style="display:block" class="definition">
 Let <span class="arithmatex">\((\cc, \otimes, I)\)</span> and <span class="arithmatex">\((\dd, \odot, J)\)</span> be monoidal categories. 
 A <strong>(lax) monoidal functor</strong> is a functor <span class="arithmatex">\(F: \cc \to \dd\)</span> equipped with
 the following data.</p>
@@ -3022,19 +3022,17 @@ we suppress the subscripts for clarity.) </p>
 <ul>
 <li>There exists a unique morphism <span class="arithmatex">\(\epsilon: J \to F(I)\)</span> such that, for any object <span class="arithmatex">\(A\)</span> of <span class="arithmatex">\(\cc\)</span>, 
 the diagrams below commute. (Again, 
-we suppress the subscripts for clarity.)
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></li>
+we suppress the subscripts for clarity.)</li>
 </ul>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>We say the <span class="arithmatex">\(F\)</span> is 
 <strong>strong</strong> if <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\epsilon\)</span> are isomorphisms and
 <strong>strict</strong> if <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\epsilon\)</span> are identities.</p>
 <p>We also define a <strong>monoidal natural transformation</strong> between two monoidal
 functors <span class="arithmatex">\(\eta: F \to G\)</span> to be a natural transformation between the functors 
-such that, for every <span class="arithmatex">\(A, B\)</span>, the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}</p>
+such that, for every <span class="arithmatex">\(A, B\)</span>, the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p><span style="display:block" class="example">
 Consider the power set functor <span class="arithmatex">\(\mathcal{P}: **Set** \to **Set**\)</span>
 which associates each set <span class="arithmatex">\(X\)</span> with its power set <span class="arithmatex">\(\pp(X)\)</span>. We may 
@@ -3056,12 +3054,10 @@ functor, but not a strong or strict. </p>
 \epsilon(\bullet) = \{\bullet\}.
 \]</div>
 <p>Observe that with this data we have that for any
-sets <span class="arithmatex">\(A,B,C\)</span>, the diagram below commutes
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and that for any set <span class="arithmatex">\(A\)</span> the diagrams below commute.
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+sets <span class="arithmatex">\(A,B,C\)</span>, the diagram below commutes</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and that for any set <span class="arithmatex">\(A\)</span> the diagrams below commute.</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that our choice that <span class="arithmatex">\(\epsilon(\bullet) = \{\bullet\}\)</span> was necessary in 
 order for the above two diagrams to commute. </p>
 <p>We now show that this cannot be a strong or strict monoidal functor. To see this, let <span class="arithmatex">\(A, B\)</span> 
@@ -3126,9 +3122,8 @@ products, so that <span class="arithmatex">\(\phi_{X, Y}\)</span> establishes th
 In addition, this isomorphism to be natural: for two pointed topological spaces 
 <span class="arithmatex">\((X, x_0)\)</span> and <span class="arithmatex">\((Y, y_0)\)</span>, and for a pair of base-point preserving continuous 
 functions <span class="arithmatex">\(f: (X, x_0) \to (W, w_0)\)</span> and <span class="arithmatex">\(g: (Y, y_0) \to (Z, z_0)\)</span>, 
-the following diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the following diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus <span class="arithmatex">\(\phi_{X,Y}\)</span> is our desired natural isomorphism. </p>
 <p>Next, define <span class="arithmatex">\(\epsilon: \{e\} \to \pi_1(\{\bullet\}, \bullet)\)</span>
 to be the group homomorphism that takes <span class="arithmatex">\(e\)</span> to the trivial loop at <span class="arithmatex">\(\bullet\)</span>. 

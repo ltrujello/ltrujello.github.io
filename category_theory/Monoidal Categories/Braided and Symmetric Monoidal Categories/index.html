@@ -3056,10 +3056,9 @@ know as the "twist" morphism
 \]</div>
 <p>\end{statement} 
 such that the following diagrams commute for all objects <span class="arithmatex">\(A, B, C\)</span> of <span class="arithmatex">\(\cc\)</span>. 
-\begin{statement}{ProcessBlue!10}
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{statement}
+\begin{statement}{ProcessBlue!10}</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{statement}
 </span></p>
 <p>Note that just because we have a twist morphism, it is not necessarily the case 
 that <span class="arithmatex">\(\sigma_{B,A}\circ\sigma_{A,B} = 1_{A\otimes B}\)</span>. That is, applying the twist morphism 
@@ -3082,9 +3081,8 @@ B_n &amp; \text{if } n = m\\
 Composition in this category is simply braid composition. We can introduce a tensor 
 product <span class="arithmatex">\(\otimes\)</span> on <span class="arithmatex">\(\mathbb{B}\)</span> where on objects <span class="arithmatex">\(n \otimes m = n + m\)</span> 
 while on morphisms <span class="arithmatex">\(\alpha \otimes \beta\)</span> is the direct sum braid. The direct 
-sum braid is simply the braid obtained by placing two braids side-by-side.
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+sum braid is simply the braid obtained by placing two braids side-by-side.</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 With an identity object being the empty braid, we see that <span class="arithmatex">\(\mathbb{B}\)</span> 
 is a strict monoidal category. The associators and unitors are simply identity morphisms.
 However, this category also have a natural braiding structure. For any two objects 
@@ -3095,7 +3093,10 @@ However, this category also have a natural braiding structure. For any two objec
 <p>where on objects the addition is simply permuted; on morphisms, however, 
 <span class="arithmatex">\(\sigma_{n,m}\)</span> corresponds to the braid of length <span class="arithmatex">\(n + m\)</span> as below.
 \begin{figure}[h!]
-\centering</p>
+\centering
+\def\height{5}
+\def\ptsep{0.7}
+\def\sep{5.333}</p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>\end{figure}</p>
 <p>It is a simple exercise to show that this satisfies the hexagon axioms; 
@@ -3122,12 +3123,10 @@ of two graded <span class="arithmatex">\(R\)</span> modules <span class="arithma
 &amp;(m \otimes p) \longmapsto k^{ij}p \otimes m
 \end{align*}\]</div>
 <p>whenever <span class="arithmatex">\(m \in M_i\)</span> and <span class="arithmatex">\(p \in P_j\)</span>. 
-Observe that with this braiding we get that
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-which clearly commutes. The second hexagon axiom is also easily seen to be satisfied:
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Observe that with this braiding we get that</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+which clearly commutes. The second hexagon axiom is also easily seen to be satisfied:</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus we see that <span class="arithmatex">\(**GrMod**_R\)</span> is more than just a monoidal category; each invertible 
 element of <span class="arithmatex">\(R\)</span> induces a braiding, making it a braided monoidal category as well.
 </span></p>
@@ -3184,9 +3183,8 @@ simply sums the object, while two permutations <span class="arithmatex">\(\tau \
 are sent to the direct sum permutation <span class="arithmatex">\(\tau\otimes \rho \in S_{n+m}\)</span> (this permutation 
 simply horizontally stacks). </p>
 <p>In this category, we can introduce a symmetric braiding <span class="arithmatex">\(\sigma_{n,m}: n+m \to m+n\)</span>
-to be the unique permutation <span class="arithmatex">\(\sigma_{n,m} \in S_{n+m}\)</span> pictured below. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+to be the unique permutation <span class="arithmatex">\(\sigma_{n,m} \in S_{n+m}\)</span> pictured below. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 One thing to notice is that this is the underlying permutation of braid given in 
 Figure \ref{figure:braiding_on_braid_category}.
 With the existence of this element of <span class="arithmatex">\(S_{n+m}\)</span> for every pair of objects 
@@ -3281,9 +3279,8 @@ for <span class="arithmatex">\(\lambda\)</span>, <span class="arithmatex">\(i\)<
 <p>All of these establish a bijection, and hence an isomorphism. 
 Now to demonstrate that they are natural, consider <span class="arithmatex">\(f: n \to n'\)</span>, 
 <span class="arithmatex">\(g: m \to m'\)</span> and <span class="arithmatex">\(h: p \to p'\)</span>.
-First, we'll want to show that the diagram 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+First, we'll want to show that the diagram </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, which we can do by a case-by-case basis.
 First we follow the path</p>
 <div class="arithmatex">\[\begin{align*}
@@ -3339,9 +3336,8 @@ Hence we see that this diagram does commute, so that <span class="arithmatex">\(
 \end{description}
 [Show naturality works for <span class="arithmatex">\(\lambda\)</span> and <span class="arithmatex">\(\rho\)</span>.]</p>
 <p>Now we show that these natural isomorphisms satisfy the monoidal properties. 
-Specifically, we'll show that the diagram 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Specifically, we'll show that the diagram </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. To do this, we consider how these functions are realized in <strong>Set</strong>. 
 If we consider <span class="arithmatex">\((x, i) \in S_n\amalg(\varnothing \amalg S_m)\)</span>, we see that 
 we have two cases to consider. 

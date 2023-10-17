@@ -3008,8 +3008,8 @@
 <p>As one may expect, the product of categories can be easily
 defined.</p>
 <p><span style="display:block" class="definition">
-Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. Then the \textbf{product
-category} <span class="arithmatex">\(\cc \times \dd\)</span> is the category where 
+Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. Then the <strong>product
+category</strong> <span class="arithmatex">\(\cc \times \dd\)</span> is the category where 
 \begin{description}
 \item[Objects.] All pairs  <span class="arithmatex">\((C, D)\)</span> with <span class="arithmatex">\(C \in \ob(\cc)\)</span> and <span class="arithmatex">\(D \in \ob(\dd)\)</span>
 \item[Morphisms.] All pairs <span class="arithmatex">\((f, g)\)</span> where <span class="arithmatex">\(f \in \hom(\cc)\)</span> and <span class="arithmatex">\(g \in \hom(\dd)\)</span>. <br />
@@ -3018,9 +3018,8 @@ To define composition in this category, suppose we have composable morphisms in 
 and <span class="arithmatex">\(\dd\)</span> as below. </p>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the morphisms <span class="arithmatex">\((f, g)\)</span> and <span class="arithmatex">\((f', g')\)</span> in <span class="arithmatex">\(\cc \times \dd\)</span> 
-are composable too, and their composition is defined as <span class="arithmatex">\((f', g') \circ (f , g) = ( f' \circ f, g' \circ g)\)</span>.
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+are composable too, and their composition is defined as <span class="arithmatex">\((f', g') \circ (f , g) = ( f' \circ f, g' \circ g)\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>We also define the <strong>projection functors</strong>
 <span class="arithmatex">\(\pi_\cc:
 \cc\times\dd \to \cc\)</span> and <span class="arithmatex">\(\pi_\dd: \cc\times\dd \to \dd\)</span>
@@ -3038,9 +3037,8 @@ Then <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(G\)</s
 \pi_\cc \circ H = F \qquad \pi_\dd \circ H = G.
 \]</div>
 <p>That is, we see that for any morphism <span class="arithmatex">\(f\)</span> in <span class="arithmatex">\(\bb\)</span> we have that <span class="arithmatex">\(H(f)
-= ( F(f), G(f) )\)</span>. Hence the following diagram commutes
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+= ( F(f), G(f) )\)</span>. Hence the following diagram commutes</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and we dash the middle arrow to represent that <span class="arithmatex">\(H\)</span> is induced, or
 defined, by this process.</p>
 <p>We can also take the product of two different functors. </p>
@@ -3071,8 +3069,7 @@ are composable functors. Then observe that </p>
 \pi_{\cc'}\circ (F\times G)  = F \circ \pi_\cc \quad \pi_{\cc'} \circ (F \times G) = G \circ \pi_{\dd}
 \]</div>
 <p>Hence, we have the following commutative diagram.</p>
-<p>\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Again, the dashed arrow is written to express that <span class="arithmatex">\(F \times G\)</span> is
 the functor defined by this process and makes this diagram
 commutative.</p>
@@ -3100,9 +3097,8 @@ for every pair of morphisms <span class="arithmatex">\(f:B \to B'\)</span> and
 <div class="arithmatex">\[
 K_{B'}(g) \circ H_C(f) = H_{C'}(f) \circ K_B(g).
 \]</div>
-<p>Diagrammatically, this condition is
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Diagrammatically, this condition is</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span></p>
 <p>The proof is left as an exercise for the reader.</p>
 <p><span style="display:block" class="example">
@@ -3125,9 +3121,8 @@ bifunctor </p>
 \hom: \cc\op \times \cc \to **Set**.
 \]</div>
 <p>This is
-because for any <span class="arithmatex">\(h: A \to A'\)</span> and <span class="arithmatex">\(k: B \to B'\)</span>, the diagram,
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+because for any <span class="arithmatex">\(h: A \to A'\)</span> and <span class="arithmatex">\(k: B \to B'\)</span>, the diagram,</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes.
 Hence the proposition guarantees that <span class="arithmatex">\(\hom:\cc\op\times\cc \to
 **Set**\)</span> exists and is unique.
@@ -3149,9 +3144,8 @@ GL(-, R): \bm{\mathbb{N}} \to **Grp**
 <div class="arithmatex">\[
 GL(n, -): **Ring** \to **Grp**.     
 \]</div>
-<p>Below we can visualize the activity of this functor:
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Below we can visualize the activity of this functor:</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Above, we start with <span class="arithmatex">\(\zz\)</span> since the this is the initial object of the category 
 <strong>Ring</strong>. 
 </span></p>
@@ -3188,9 +3182,8 @@ in <span class="arithmatex">\(C\)</span> for each <span class="arithmatex">\(B \
 \item[(<span class="arithmatex">\(\bm{\implies}\)</span>)] Suppose that <span class="arithmatex">\(\eta: F \to G\)</span> is a
 natural transformation. Then every object <span class="arithmatex">\((B, C)\)</span> is
 associated with a morphism <span class="arithmatex">\(\eta_{(B, C)}: F(B, C) \to
-G(B, C)\)</span> in <span class="arithmatex">\(\dd\)</span>, and this gives rise to the following diagram:
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+G(B, C)\)</span> in <span class="arithmatex">\(\dd\)</span>, and this gives rise to the following diagram:</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now let <span class="arithmatex">\(C \in \cc\)</span> and observe that </p>
 <div class="arithmatex">\[
 \eta_{(-, C)}: F(-, C) \to G(-,c)
@@ -3224,8 +3217,7 @@ transformation <span class="arithmatex">\(\textcolor{red}{\eta}_{(-, C)}\)</span
 <span class="arithmatex">\((B, C)\)</span> and
 <span class="arithmatex">\(\textcolor{blue}{\eta}_{(B', -)}\)</span> acting on <span class="arithmatex">\((B', C)\)</span>.
 Then we get the following commutative diagrams.</p>
-<p>\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Observe that
 the bottom row of the first diagram matches the top row of
 the second. 
@@ -3257,9 +3249,8 @@ G(f, g) \circ \textcolor{red}{\eta}_{(B, C)} = \textcolor{blue}{\eta}_{(B', C')}
 \]</div>
 <p>which implies that <span class="arithmatex">\(eta\)</span> itself is a natural
 transformation. Specifically, it implies the following
-diagram. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{description}
 </span>
 Note: A way to succinctly prove the
@@ -3268,18 +3259,16 @@ know the diagrams on the left are commutative, just "\textcolor{Green}{stack}" t
 on top of each other to achieve the diagram in the upper right
 corner, and then "\textcolor{Orange}{squish}" this diagram down to obtain the third
 diagram in the bottom right. </p>
-<p>\begin{minipage}{0.3\textwidth}
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>\begin{minipage}{0.3\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}<br />
 \hspace{1cm}
 \begin{minipage}{0.1\textwidth}</p>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_2_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>\end{minipage}
 \hfill
-\begin{minipage}{0.5\textwidth}
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_2_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\begin{minipage}{0.5\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 \vspace{1cm}</p>
 <p>This is essentially what we did in the proof, although this is more crude

@@ -3019,14 +3019,13 @@ in categories, objects are basically dummies. It doesn't matter how I denote my 
 in my category <span class="arithmatex">\(\cc\)</span>; you and are I talking about the same category if our morphisms 
 act the same exact way. For example, the categories </p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_8_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-here the above objects are <span class="arithmatex">\(n\)</span> words describing how politicians suck,
+and </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+where the above objects are <span class="arithmatex">\(n\)</span> words describing how politicians suck,
 are the same preorders. Thus, because categorical 
 structure is primarily found within the morphisms, i.e. the homsets, we only need to 
 fix these to take back our original structure. </p>
-<p>\begin{definition}
+<p><span style="display:block" class="definition">
 Let <span class="arithmatex">\((\mathcal{V}, \otimes, I)\)</span> be a monoidal category. A small category <span class="arithmatex">\(\cc\)</span> is a <span class="arithmatex">\(\mathcal{V}\)</span>-category 
 or an <strong>enriched category</strong> over <span class="arithmatex">\(\mathcal{V}\)</span> if </p>
 <ul>
@@ -3046,14 +3045,12 @@ or an <strong>enriched category</strong> over <span class="arithmatex">\(\mathca
 <div class="arithmatex">\[
 i_A: I \to \hom_{\cc}(A, A)  
 \]</div>
-<p>such that our composition operator is associative: 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>such that our composition operator is associative: </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and such that our unital elements in each homset behave morally like an identity 
-element should:
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}</p>
+element should:</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p><span style="display:block" class="example">
 The following is a classic example due to F.W. Lawvere.
 A <strong>Lawvere metric space</strong> is a set <span class="arithmatex">\(X\)</span> 
@@ -3105,16 +3102,13 @@ as a <strong>Lawvere metric space</strong>.
 Recall that a (strict) 2-category is a category <span class="arithmatex">\(\cc\)</span> such that, in addition 
 to the morphisms <span class="arithmatex">\(f: A \to B\)</span> between objects <span class="arithmatex">\(A, B \in \cc\)</span>, there 
 exists 2-morphisms <span class="arithmatex">\(\alpha: f \to g\)</span> between parallel morphisms 
-<span class="arithmatex">\(f, g: A \to B\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(f, g: A \to B\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 These two morphisms have access to two different forms of composition. On one hand, there 
-is "vertical" composition 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-while on the other, there is "horizontal" composition.
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is "vertical" composition </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+while on the other, there is "horizontal" composition.</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Moreover, we require that the interchange law be satisfied and that 
 the morphisms form a category under the vertical composition given by <span class="arithmatex">\(\circ\)</span>.
 However, we can rephrase this as saying a category <span class="arithmatex">\(\cc\)</span> is a 2-category if </p>
@@ -3123,14 +3117,13 @@ However, we can rephrase this as saying a category <span class="arithmatex">\(\c
 <p>[1.] For each <span class="arithmatex">\(A, B \in \cc\)</span> we have that <span class="arithmatex">\((\hom_{\cc}(A, B), \circ)\)</span> is a category</p>
 </li>
 <li>
-<p>[2.] There exist a composition operator <span class="arithmatex">\(\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)\)</span>
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>[2.] There exist a composition operator <span class="arithmatex">\(\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)\)</span></p>
 </li>
-<li>
-<p>[3.] For each object <span class="arithmatex">\(A\)</span>, we have a functor <span class="arithmatex">\(i_A: 1 \to \hom(A, A)\)</span>, where <span class="arithmatex">\(1\)</span> 
-is the one object category with one morphism that is sent to <span class="arithmatex">\(1_A\)</span>.  </p>
-</li>
+</ul>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<ul>
+<li>[3.] For each object <span class="arithmatex">\(A\)</span>, we have a functor <span class="arithmatex">\(i_A: 1 \to \hom(A, A)\)</span>, where <span class="arithmatex">\(1\)</span> 
+is the one object category with one morphism that is sent to <span class="arithmatex">\(1_A\)</span>.  </li>
 </ul>
 <p>Above, (3) is stupidly simple; but the reason we're framing it this way is to demonstrate 
 that a strict 2-category <span class="arithmatex">\(\cc\)</span> is the same thing as a category <span class="arithmatex">\(\cc\)</span> enriched over the monoidal 

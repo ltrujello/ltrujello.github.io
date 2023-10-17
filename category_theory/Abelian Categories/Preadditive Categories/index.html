@@ -3060,7 +3060,7 @@ F_H(\phi)(\psi + \sigma)(g) &amp;= \phi(\psi(g) + \sigma(g))\\
 \textcolor{NavyBlue}{If <span class="arithmatex">\(G\)</span> is an abelian group, can we <em>also</em> create 
 a functor <span class="arithmatex">\(F^G: **Ab** \to **Ab**\)</span> where <span class="arithmatex">\(H \mapsto \hom(G, H)\)</span>?}
 \end{minipage}
-\end{center}ne can easily show that the answer is yes. In this direction, the functor is covariant. That 
+\end{center}One can easily show that the answer is yes. In this direction, the functor is covariant. That 
 is, for <span class="arithmatex">\(\psi: H \to H'\)</span>, we have that </p>
 <div class="arithmatex">\[
 F^G(\psi): \hom(G, H) \to \hom(G, H')
@@ -3083,11 +3083,10 @@ asking:
 <span class="arithmatex">\(F: **Ab**\times **Ab** \to **Ab**\)</span> on our hands, where 
 <span class="arithmatex">\(F(G, H) = \hom(G, H)\)</span>? }
 \end{minipage}
-\end{center}o see if this answer is true, we ought to be able to show that, given 
-<span class="arithmatex">\(\phi: G' \to G\)</span> and <span class="arithmatex">\(\psi: H \to H'\)</span>, the diagram 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-is commutative. The above diagram is in fact commutative since function composition 
+\end{center}To see if this answer is true, we ought to be able to show that, given 
+<span class="arithmatex">\(\phi: G' \to G\)</span> and <span class="arithmatex">\(\psi: H \to H'\)</span>, the diagram </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is commutative. The above diagram is in fact commutative since function composition 
 is associative! That is, given <span class="arithmatex">\(\sigma: G \to H\)</span>, observe that going right and then down 
 gives</p>
 <div class="arithmatex">\[\begin{align*}
@@ -3221,9 +3220,8 @@ If <span class="arithmatex">\(\cc\)</span> is preadditive, then the functor cate
 To demonstrate this, consider the hom-set <span class="arithmatex">\(\hom_{\cc^J}(F, G)\)</span> between two 
 functors <span class="arithmatex">\(F, G: J \to \cc\)</span>. Now consider
 two natural transformations <span class="arithmatex">\(\eta, \epsilon \in \hom_{\cc^J}(F, G)\)</span>. Then 
-for each <span class="arithmatex">\(f \in \hom_{\cc}(A, B)\)</span>, the familiar diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+for each <span class="arithmatex">\(f \in \hom_{\cc}(A, B)\)</span>, the familiar diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This diagram tells us that <span class="arithmatex">\(G(f) \circ \eta_A  = \eta_B \circ F(f)\)</span> 
 and that <span class="arithmatex">\(G(f) \circ \epsilon_A  = \epsilon_B \circ F(f)\)</span>. However, since 
 <span class="arithmatex">\(\cc\)</span> is abelian, we can combine these morphisms and add both equations 
@@ -3233,9 +3231,8 @@ G(f) \circ \eta_A + G(f) \circ \epsilon_A = \eta_B \circ F(f) + \epsilon_B \circ
 F(f) 
 \implies G(f) \circ (\eta_A + \epsilon_A) = (\eta_B + \epsilon_B) \circ F(f).
 \]</div>
-<p>Hence the diagram below 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Hence the diagram below </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. Therefore, using the group product of <span class="arithmatex">\((\hom_{\cc}(F(A), F(B)), +)\)</span>,
 we've derived a new natural transformation from <span class="arithmatex">\(F\)</span> to <span class="arithmatex">\(G\)</span> using <span class="arithmatex">\(\eta\)</span> and <span class="arithmatex">\(\epsilon\)</span> 
 in <span class="arithmatex">\(\hom_{\cc^J}(F, G)\)</span>. This allows us to endow the homset <span class="arithmatex">\(\hom_{\cc^J}(F, G)\)</span> 

@@ -3025,9 +3025,8 @@ group homomorphisms. We now ask the question:
 <span class="arithmatex">\(\phi - \psi: G \to H\)</span>, and every element in the kernel is such a desired element; so 
 we've answered the first question. The kernel is a subgroup of <span class="arithmatex">\(G\)</span>, so we've answered the last question. 
 Now because this is a kernel, it has an inclusion 
-homomorphism <span class="arithmatex">\(i: \ker(\phi - \psi) \to G\)</span>. So far, our picture looks like this:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+homomorphism <span class="arithmatex">\(i: \ker(\phi - \psi) \to G\)</span>. So far, our picture looks like this:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and clearly <span class="arithmatex">\(\phi \circ i = \psi \circ i\)</span>. 
 Now suppose that <span class="arithmatex">\(\sigma: K \to G\)</span> is another group homomorphism with the property 
 that <span class="arithmatex">\(\phi \circ \sigma = \psi \circ \sigma\)</span>. Then by our previous work, this means 
@@ -3038,9 +3037,8 @@ that for each <span class="arithmatex">\(k \in K\)</span>, we have that <span cl
 <p>Hence instead of mapping <span class="arithmatex">\(K\)</span> into <span class="arithmatex">\(G\)</span>, we can instead map <span class="arithmatex">\(K\)</span> into <span class="arithmatex">\(\ker(\phi - \psi)\)</span>, 
 and then travel back to <span class="arithmatex">\(G\)</span> using <span class="arithmatex">\(i\)</span>.
 So, there is <strong>a unique</strong> morphism <span class="arithmatex">\(\tau: K \to \ker(\phi - \psi)\)</span>
-such that the diagram below commutes (Prove it is unique; it shouldn't be too bad).
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+such that the diagram below commutes (Prove it is unique; it shouldn't be too bad).</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>What's really going on? This is an example of a universal construction. We have a 
 "supreme" morphism <span class="arithmatex">\(i: \ker(\phi -\psi) \to G\)</span> with the property that <span class="arithmatex">\(\phi \circ i = \psi \circ i\)</span>.
 Any other morphism <span class="arithmatex">\(\sigma: K \to G\)</span> with the same property that <span class="arithmatex">\(\phi\circ\sigma = \psi \circ \sigma\)</span> 
@@ -3058,9 +3056,8 @@ to be a morphism</p>
 \textcolor{red}{u}: D \to F(\textcolor{NavyBlue}{C})
 \]</div>
 <p>with <span class="arithmatex">\(\textcolor{NavyBlue}{C} \in \ob(\cc)\)</span> and 
-<span class="arithmatex">\(\textcolor{Red}{u}\)</span> a morphism in <span class="arithmatex">\(\dd\)</span> equipped with the <strong>universal property:</strong>
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(\textcolor{Red}{u}\)</span> a morphism in <span class="arithmatex">\(\dd\)</span> equipped with the <strong>universal property:</strong></p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{center}
 The arrow <span class="arithmatex">\(h\)</span> is dashed, and should be read as 
 "there exists an <span class="arithmatex">\(h\)</span>.'' This is a practice 
@@ -3085,7 +3082,7 @@ bases as <span class="arithmatex">\(\{v_1,  v_2, \dots, v_n\}\)</span> and <span
 \begin{minipage}{0.8\textwidth}
 <strong>Q:</strong> What does it take for a function <span class="arithmatex">\(T: V \to W\)</span> to be a linear transformation? 
 \end{minipage}
-\end{center}       Well, suppose we have a linear transformation. Since each element of 
+\end{center}        Well, suppose we have a linear transformation. Since each element of 
 <span class="arithmatex">\(V\)</span> may be written as <span class="arithmatex">\(c_1v_1 + \cdots + c_nv_n\)</span>  for <span class="arithmatex">\(c_i \in k\)</span>, we 
 see that </p>
 <div class="arithmatex">\[
@@ -3097,9 +3094,8 @@ T(c_1v_1 + \cdots + c_nv_n) = c_1T(v_1) + \cdots + c_nT(v_n).
 <strong>A:</strong> To define a linear transformation <span class="arithmatex">\(T: V \to W\)</span>, it suffices to specify 
 where we want <span class="arithmatex">\(T\)</span> to send the basis elements <span class="arithmatex">\(v_1, \dots, v_n\)</span>.
 \end{minipage}
-\end{center}       An illustration of this fact is below. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{center}        An illustration of this fact is below. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \noindent This observation helps us build our first example of universality.</p>
 <p>Let <span class="arithmatex">\(X\)</span> be a (possibly infinite) set. For a field <span class="arithmatex">\(k\)</span>, we can generate a vector space <span class="arithmatex">\(\textcolor{NavyBlue}{V_x}\)</span> (Note 
 the color-coding here corresponds to the color-coding in the definition of a universal 
@@ -3128,9 +3124,8 @@ this "picking out" defines a linear transformation <span class="arithmatex">\(T:
 T(x) = f(x).
 \]</div>
 <p>Since we know where the basis elements go, we see that such a linear transformation is well defined.
-Moreover, we see that our construction makes the diagram below commute. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Moreover, we see that our construction makes the diagram below commute. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, we see that a universal morphism from <span class="arithmatex">\(X\)</span> to the forgetful functor 
 <span class="arithmatex">\(U: **Vect**_k \to **Set**\)</span> is its inclusion morphism <span class="arithmatex">\(i: X \to U(V_x)\)</span> 
 into the vector space <span class="arithmatex">\(V_x\)</span> generated by <span class="arithmatex">\(X\)</span>.
@@ -3147,9 +3142,8 @@ like this: Given <span class="arithmatex">\(X\)</span>, we seek a compact space 
 a <em>dense</em> subspace of <span class="arithmatex">\(X^*\)</span>. In other words, we want a compact <span class="arithmatex">\(X^*\)</span> 
 which has a dense subspace <span class="arithmatex">\(S \subset X^*\)</span> that is homeomorphic to <span class="arithmatex">\(X\)</span>.
 We can then identify <span class="arithmatex">\(X\)</span> with <span class="arithmatex">\(S\)</span> and work within <span class="arithmatex">\(X^*\)</span>, which is a nicer 
-space to work inside of.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+space to work inside of.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>We can, however, do even better. We can compactify <span class="arithmatex">\(X\)</span> into a space that is 
 not only compact, but is also Hausdorff. The optimal compactification 
 for this situation is the <strong>Stone-Čech Compactification</strong>, which 
@@ -3158,17 +3152,15 @@ Given a topological space <span class="arithmatex">\(X\)</span>, the Stone-Čech
 space <span class="arithmatex">\(\beta X\)</span>, equipped with a dense embedding 
 <span class="arithmatex">\(i_X: X \to \beta X\)</span> such that, for any other compact, Hausdorff space <span class="arithmatex">\(K\)</span> equipped 
 with a continuous map <span class="arithmatex">\(f: X \to K\)</span>, there exists a <em>unique</em> continuous function 
-<span class="arithmatex">\(\beta f: \beta X \to K\)</span> such that 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(\beta f: \beta X \to K\)</span> such that </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This universal property is what demonstrates that the Stone-Čech compactification 
 <span class="arithmatex">\(\beta X\)</span> is the "most compact, Hausdorff" space we can densely embed <span class="arithmatex">\(X\)</span> into. 
 However, in the language of category theory we see that this is just another example of 
 a universal morphism. To see this, let <span class="arithmatex">\(I: **CHaus** \to **Top**\)</span> 
 be the inclusion functor from compact Hausdorff spaces into topological spaces. 
-Then we can rewrite the diagram as 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Then we can rewrite the diagram as </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Of course, in practice, we'd never actually write it like this; but this is just for 
 us to be able to see that the dense embedding <span class="arithmatex">\(i_X: X \to \beta X\)</span> is universal 
 from <span class="arithmatex">\(X\)</span> to the the inclusion functor <span class="arithmatex">\(I:  **CHaus** \to **Top**\)</span>, so that the 
@@ -3193,9 +3185,8 @@ we have that </p>
 to send every individual <span class="arithmatex">\(x \in X\)</span>. This is achieved by 
 defining a set function <span class="arithmatex">\(\phi_0: X \to U(M)\)</span>, and by setting 
 <span class="arithmatex">\(\phi(x) = \phi_0(x)\)</span>. This makes the 
-diagram below commutative.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram below commutative.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We thus see that <span class="arithmatex">\((X, i_X: X \to F(X))\)</span> is universal from <span class="arithmatex">\(X\)</span> to <span class="arithmatex">\(U: **Mon** \to **Set**\)</span>. 
 </span></p>
 <p><span style="display:block" class="example">
@@ -3218,9 +3209,8 @@ as a function. </p>
 <p>Now consider a mapping <span class="arithmatex">\(f: X \to U(R)\)</span> in <strong>Set</strong>. Because we 
 also have a mapping <span class="arithmatex">\(i: X \to U(F(X))\)</span>, which acts an inclusion function,
 we see that we can create a mapping <span class="arithmatex">\(h: F(X) \to A\)</span> such that the diagram below 
-commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The way we do this is we defined <span class="arithmatex">\(h: F(X) \to A\)</span> to act linearly 
 on the basis elements, sending <span class="arithmatex">\(x \mapsto g(x)\)</span>. This defines a <span class="arithmatex">\(k\)</span>-algebraic 
 morphism and makes the above diagram commute. 
@@ -3248,15 +3238,13 @@ the category <span class="arithmatex">\((D \downarrow \dd)\)</span> is the categ
 \begin{description}
 \item[Objects.] Pairs <span class="arithmatex">\((C, f: D \to F(C))\)</span> with <span class="arithmatex">\(C \in \cc\)</span> and <span class="arithmatex">\(f: D \to \dd\)</span> a morphism in <span class="arithmatex">\(\dd\)</span>. 
 \item[Morphisms.] Morphisms between two objects <span class="arithmatex">\((C, f: D \to F(C))\)</span> and <span class="arithmatex">\((C', f: D \to F(C'))\)</span> 
-are given by morphisms <span class="arithmatex">\(h: C \to C'\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+are given by morphisms <span class="arithmatex">\(h: C \to C'\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{description}
 Suppose <span class="arithmatex">\((\textcolor{NavyBlue}{A}, u: D \mathbin{\textcolor{Red}{\to}} F(\textcolor{NavyBlue}{A}))\)</span> is an initial object in <span class="arithmatex">\((D \downarrow F)\)</span>. Then for every 
 other pair <span class="arithmatex">\((A, f: D \to F(A'))\)</span>, there exists a unique morphism <span class="arithmatex">\(h: A \to A'\)</span> 
-such that the diagram on the bottom left commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+such that the diagram on the bottom left commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, if we rearrange this we see that this is just the universal property in disguise!
 Conversely, any pair <span class="arithmatex">\((A, f:  A \to F(A))\)</span> being a universal morphism
 can be demonstrated to be an initial object in <span class="arithmatex">\((D, \downarrow F)\)</span> by reversing the 
@@ -3295,9 +3283,8 @@ Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor and <span cl
 <div class="arithmatex">\[
 \textcolor{Red}{v}: F(\textcolor{NavyBlue}{C}) \to D
 \]</div>
-<p>equipped with the <strong>universal property</strong>:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>equipped with the <strong>universal property</strong>:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span>
 Note that this is basically the previous definition
 of a universal arrow from an object to a functor, except the
@@ -3371,24 +3358,22 @@ this map is unique (to the pair <span class="arithmatex">\(f\)</span> and <span 
 <li>
 <p>[<span class="arithmatex">\(ii.\)</span>] Using your map <span class="arithmatex">\(h: Z \to X \times Y\)</span>, show that the 
 diagram on the left commutes, and that the diagram on the right is 
-equivalent.<br />
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+equivalent.  </p>
+</li>
+</ul>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 To be clear, the diagram on the right is in the category 
 <span class="arithmatex">\(**Set**\times **Set**\)</span>. </p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(iii.\)</span>]
+<ul>
+<li>[<span class="arithmatex">\(iii.\)</span>]
 Let <span class="arithmatex">\(\Delta: **Set**\to **Set**\times**Set**\)</span> be 
 the "copy functor" which sends <span class="arithmatex">\(X \mapsto (X, X)\)</span>. Then the above diagram 
-translates to 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+translates to </li>
+</ul>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Deduce how the product <span class="arithmatex">\((\pi_1, \pi_2): \Delta(X\times Y) \to (X,Y)\)</span> is 
 universal from <span class="arithmatex">\((X,Y)\)</span> to <span class="arithmatex">\(\Delta\)</span>. 
 This is an important fact that we'll build upon later.</p>
-</li>
-</ul>
 <p>\item[<strong>4.</strong>]
 Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets, and consider the coproduct</p>
 <div class="arithmatex">\[

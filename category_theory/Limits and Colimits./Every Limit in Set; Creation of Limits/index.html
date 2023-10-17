@@ -3037,13 +3037,11 @@ get the diagram below.</p>
 Now suppose <span class="arithmatex">\(F: \omega\op \to **Set**\)</span> is a functor. 
 Then if we write <span class="arithmatex">\(F(i) = A_i\)</span> with <span class="arithmatex">\(A_i \in **Set**\)</span>, 
 then we see that the image of <span class="arithmatex">\(F\)</span> is a family of sets 
-<span class="arithmatex">\(F_n\)</span> with functions <span class="arithmatex">\(f_{n}:A_{n+1} \to A_{n}\)</span>: 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(F_n\)</span> with functions <span class="arithmatex">\(f_{n}:A_{n+1} \to A_{n}\)</span>: </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 One way we could try forming a limit of this diagram is by
-constructing a cone, using the product of these sets. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+constructing a cone, using the product of these sets. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, this isn't exactly what we want. A cone must
 form a commutative diagram and it's not always true
 that <span class="arithmatex">\(f_n \circ \pi_{n+1} = \pi_n\)</span>. So let's instead restrict 
@@ -3058,9 +3056,8 @@ L = \big\{x = (a_0, a_1, a_2, \dots,)
 \textcolor{NavyBlue}{\pi'_n} = \pi_n \circ i  : L \to A_n
 \]</div>
 <p>where <span class="arithmatex">\(i: L \to \prod\limits_{i = 1}^{\infty} F_i\)</span> is the
-inclusion function. Then we have
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+inclusion function. Then we have</p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that <span class="arithmatex">\(L\)</span> forms a cone. We now prove that this cone is universal. </p>
 <p><span style="display:block" class="lemma">
 The set <span class="arithmatex">\(L\)</span> is the limit of the functor <span class="arithmatex">\(F: \omega\op \to **Set**\)</span>.
@@ -3091,14 +3088,12 @@ g(k) = (\mu_0(k), \mu_1(k), \mu_2(k), \dots)
 \pi'_n \circ g = \mu_n.
 \]</div>
 <p>Hence, this shows that <span class="arithmatex">\((L, \pi_n: L \to F_n)\)</span> is universal,
-so that <span class="arithmatex">\(L = \Lim F\)</span>! 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-</span></p>
+so that <span class="arithmatex">\(L = \Lim F\)</span>! </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p></span></p>
 <p>If we want to view this in terms of the spider diagrams, then we
-have 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+have </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p></span></p>
 <p>Here, we've taken a nice, simple diagram 
 <span class="arithmatex">\(F: \omega\op \to **Set**\)</span> and
@@ -3124,9 +3119,8 @@ the family of functions <span class="arithmatex">\(\pi^*_n: \{*\} \to F_n\)</spa
 \]</div>
 <p>Now since <span class="arithmatex">\(x \in \Lim F\)</span>, we know that <span class="arithmatex">\(f_n(x_{n+1}) = x_{n}\)</span>.
 But, note that this is equivalent to stating that <span class="arithmatex">\(f_n \circ
-\pi_{n+1}(*) = \pi_{n-1}(*)\)</span>. Therefore the diagram 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\pi_{n+1}(*) = \pi_{n-1}(*)\)</span>. Therefore the diagram </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes for every <span class="arithmatex">\(f_n: F_{n+1} \to F_n\)</span>, so that's how we can
 regard every <span class="arithmatex">\(x \in \Lim F\)</span> as a cone.
 Therefore, if we denote <span class="arithmatex">\(\cone(*, F)\)</span> as the set of all cones of
@@ -3156,17 +3150,15 @@ F) \to F_j\)</span> where <span class="arithmatex">\(v_j(x) = \sigma^x_j(x)\)</s
 <p>We now show that it is a cone. 
 Suppose <span class="arithmatex">\(f: i \to j\)</span> is a morphism in <span class="arithmatex">\(J\)</span>. Then observe that 
 <span class="arithmatex">\(F(f) \circ v_i(x) = F(f) \circ \sigma^x_i(x) = \sigma^x_j(x)
-= v_j(x)\)</span>. Hence the diagram 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+= v_j(x)\)</span>. Hence the diagram </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes, so <span class="arithmatex">\(\cone(*, F)\)</span> really does form a cone over <span class="arithmatex">\(F\)</span>. 
 To show this is universal, and hence our limit, suppose that 
 <span class="arithmatex">\(A\)</span> in <strong>Set</strong> also forms a cone over <span class="arithmatex">\(F\)</span> with morphisms 
 <span class="arithmatex">\(\tau_j: X \to F_j\)</span>. Note that for each <span class="arithmatex">\(a \in A\)</span>, we can form
 a cone from <span class="arithmatex">\(\{*\}\)</span> to <span class="arithmatex">\(F\)</span>, if we define <span class="arithmatex">\(\sigma^a_j: \{*\} 
-\to F_j\)</span> as <span class="arithmatex">\(\sigma^a_j(*) = \tau_j(a)\)</span>. Then the diagram 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\to F_j\)</span> as <span class="arithmatex">\(\sigma^a_j(*) = \tau_j(a)\)</span>. Then the diagram </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must also commutes since it commutes for each <span class="arithmatex">\(\tau_j\)</span>. 
 Thus we can define a unique 
 function <span class="arithmatex">\(g: A \to \cone(*, F)\)</span>, where each point <span class="arithmatex">\(a\)</span> is sent to
@@ -3204,9 +3196,8 @@ G(\Colim F) = \Colim G \circ F \qquad G(\sigma) = \tau.
 <p>The diagram below visually explains this process; the existence of limit 
 in <span class="arithmatex">\(\dd\)</span> on the left implies the existence of the limit in <span class="arithmatex">\(\cc\)</span> on the right. 
 Moreover, the diagram on the left is the image of the diagram on the right 
-under <span class="arithmatex">\(G\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+under <span class="arithmatex">\(G\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p><span style="display:block" class="example">
 Consider a functor <span class="arithmatex">\(F: J \to **Grp**\)</span>. We'll show that
 the forgetful functor <span class="arithmatex">\(U:**Grp** \to **Set**\)</span>
@@ -3287,16 +3278,14 @@ F(j) = (C_j , f_j: A \to C_j)
 <p>for some <span class="arithmatex">\(C_j \in \cc\)</span> and <span class="arithmatex">\(f_j: A \to C_j\)</span>. If <span class="arithmatex">\(u: j \to k\)</span> is a morphism in
 <span class="arithmatex">\(J\)</span>, then <span class="arithmatex">\(F(u) : C_j \to C_k\)</span> is a morphism in <span class="arithmatex">\(\cc\)</span> 
 such that the diagram below commutes (as, that's what morphisms<br />
-do in comma categories). 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+do in comma categories). </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that this is a cone over <span class="arithmatex">\(F\)</span> in <span class="arithmatex">\(\cc\)</span>. 
 Now suppose we have a limit <span class="arithmatex">\(\Lim P \circ F\)</span> in <span class="arithmatex">\(\cc\)</span> with 
 morphisms <span class="arithmatex">\(\mu_i: \Lim P \circ F \to C_i\)</span> with <span class="arithmatex">\(i \in J\)</span>. 
 Then because <span class="arithmatex">\(\Lim P \circ F\)</span> is a limiting cone, and we must 
-have a unique <span class="arithmatex">\(v\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+have a unique <span class="arithmatex">\(v\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The claim now is that <span class="arithmatex">\((\Lim P \circ F, v: A \to  \Lim P \circ F)\)</span> 
 is the limit <span class="arithmatex">\(\Lim F\)</span> of <span class="arithmatex">\(F: J \to (A \downarrow \cc)\)</span>, which is left 
 for the reader to show.

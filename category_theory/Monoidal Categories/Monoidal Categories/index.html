@@ -3040,9 +3040,8 @@ for any three functions <span class="arithmatex">\(f: A \to A'\)</span>, <span c
 diagram below commutes </p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 while naturality for <span class="arithmatex">\(\lambda\)</span> and <span class="arithmatex">\(\rho\)</span> means that for any function <span class="arithmatex">\(f: A \to A'\)</span>, the diagrams 
-below commute. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+below commute. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 (Here, 1 denotes the identity <span class="arithmatex">\(1: \{\bullet\} \to \{\bullet\}\)</span>). While being able to find 
 the functions <span class="arithmatex">\(\alpha, \rho, \lambda\)</span> and observing that they are natural 
 may not be surprising in <strong>Set</strong>, what is surpising is that this behavior continues in 
@@ -3089,13 +3088,11 @@ are given by the linear transformations</p>
 <p>Here, we've defined the two transformations on the bases. </p>
 <p>Similarly to our last example, we comment that <span class="arithmatex">\(\alpha, \lambda, \rho\)</span> defined here 
 are natural. This means that for any three linear transformations 
-<span class="arithmatex">\(f: U \to U'\)</span>, <span class="arithmatex">\(g: V \to V'\)</span>, and <span class="arithmatex">\(h: W \to W'\)</span>, the diagram below commutes
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and we additionally have that the diagrams below commute. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{example}</p>
+<span class="arithmatex">\(f: U \to U'\)</span>, <span class="arithmatex">\(g: V \to V'\)</span>, and <span class="arithmatex">\(h: W \to W'\)</span>, the diagram below commutes</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and we additionally have that the diagrams below commute. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p>The observations we have made here continue to be true upon investigating many
 other categories <span class="arithmatex">\(\cc\)</span> in which we have some known, natural way of combining elements. In each case, the 
 story is the same. The key ingredients are:</p>
@@ -3133,35 +3130,12 @@ and three natural isomorphisms
 <p>\end{statement}
 such that the following <strong>coherence conditions</strong> hold.
 \begin{statement}{ProcessBlue!10}
-\begin{equation}
-\begin{tikzcd}[column sep = 0.1cm, row sep = 1cm]
-A \otimes(I \otimes B) 
-\arrow[rr, "\alpha_{A, I, B}"] 
-\arrow[dr, swap, "1_A\otimes \lambda_{B}"] 
-&amp; &amp;
-(A \otimes I)\otimes B
-\arrow[dl, "\rho_{A} \otimes 1_B"]
-\
-&amp; A \otimes B &amp;
-\end{tikzcd}
-\end{equation}
-\begin{equation}
-\begin{tikzcd}[column sep = 1.8cm, row sep = 1.6cm]
-A\otimes (B \otimes (C \otimes D)) 
-\arrow[r, "\alpha_{A,B,C\otimes D}"] 
-\arrow[d, swap, "1_A\otimes \alpha_{B, C, D}"]
-&amp;
-(A \otimes B)\otimes(C\otimes D) 
-\arrow[r, "\alpha_{A\otimes B, C, D}"]
-&amp;
-((A \otimes B)\otimes C)\otimes D\
-A\otimes((B\otimes C)\otimes D)
-\arrow[rr, swap, "\alpha_{A, B\otimes C, D}"]
-&amp;&amp;
-(A \otimes(B\otimes C))\otimes D 
-\arrow[u, swap, "\alpha_{A, B, C}\otimes 1_D"]
-\end{tikzcd}
-\end{equation}
+\begin{equation}</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{equation}
+\begin{equation}</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{equation}
 \end{statement}  <br />
 We also define some terminology within this definition.</p>
 <ul>
@@ -3195,7 +3169,7 @@ understand why those diagrams are necessary.</p>
 </ul>
 <p>Before we explain why the diagrams are necessary, we develop further intuition regarding 
 monoidal categories with some more examples. </p>
-<p>\begin{example}
+<p><span style="display:block" class="example">
 As one might expect, <span class="arithmatex">\((**Set**, \times, \{\bullet\})\)</span>
 is a monoidal category. We have verified most of the details except the coherence 
 conditions, but it is not too difficult to show that the unit and pentagon diagram 
@@ -3259,9 +3233,8 @@ forms a monoidal category under the tensor product. Recall that the
 tensor product between two <span class="arithmatex">\(R\)</span>-modules <span class="arithmatex">\(N \otimes M\)</span> is an initial object 
 in the comma category <span class="arithmatex">\((N \times M \downarrow R**-Mod**\)</span> 
 where the morphisms are bilinear. Alternatively in diagrams, we have 
-that 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+that </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now consider a third <span class="arithmatex">\(R\)</span>-module <span class="arithmatex">\(P\)</span>; then we have two ways of constructing 
 the tensor product. To demonstrate that we may identify these objects up 
 to isomorphism, construct the maps</p>
@@ -3282,9 +3255,8 @@ f': M \times (N \otimes P) \to (M \otimes M) \otimes P
 \]</div>
 <p>These maps are bilinear due to the bilinearity of <span class="arithmatex">\(\otimes\)</span>. Hence we see 
 that the universal property of the tensor product gives us unique map <span class="arithmatex">\(\alpha\)</span> and 
-<span class="arithmatex">\(\alpha'\)</span> such that the diagrams below commute. 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(\alpha'\)</span> such that the diagrams below commute. </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Based on how we defined <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(f'\)</span>, and since we know that <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\phi'\)</span> 
 is, we can determine that <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\alpha'\)</span> are "shift maps", i.e, </p>
 <div class="arithmatex">\[\begin{align*}
@@ -3369,20 +3341,9 @@ I(A) = I \text{ for all } A
 <p>as the identity element, and we can define a tensor product on this 
 category as follows: on objects <span class="arithmatex">\(F, G: \cc \to M\)</span>, we define <span class="arithmatex">\(F\boxtimes G\)</span> 
 as the composite</p>
-<div class="arithmatex">\[
-\begin{tikzcd}
-F \boxtimes G: \cc \to 
-\arrow[r, "\Delta"]
-&amp;
-\cc \times \cc 
-\arrow[r, "(F \times G)"]
-&amp;
-M \times M 
-\arrow[r, "\otimes"]
-&amp;
-M
-\end{tikzcd}
-\]</div>
+<p>[</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>]</p>
 <p>which can be stated pointwise as <span class="arithmatex">\((F\boxtimes G)(C) = F(C)\otimes G(C)\)</span>. On morphisms, 
 we have that if <span class="arithmatex">\(\eta: F_1 \to F_2\)</span> and <span class="arithmatex">\(\eta': G_1 \to G_2\)</span> are natural 
 transformations, then we say <span class="arithmatex">\(\eta \boxtimes \eta': F_1\boxtimes G_1 \to F_2 \boxtimes G_2\)</span> 
@@ -3392,27 +3353,11 @@ is a natural transformation, where we define </p>
 \]</div>
 <p>Note that such a natural transformation is well-defined 
 as the diagram below commutes</p>
-<div class="arithmatex">\[
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-A \arrow[d, "f"]
-\\
-B
-\end{tikzcd}
-\hspace{1cm}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-F_1(A)\otimes G_1(A)
-\arrow[r, "\eta_A\otimes \eta_A'"]
-\arrow[d, swap, "F_1(f)\otimes G_1(f)"]
-&amp;
-F_2(A)\otimes G_2(A)
-\arrow[d, "F_2(f)\otimes G_2(f)"]
-\\
-F_1(B)\otimes G_1(B)
-\arrow[r, swap, "\eta_B\otimes \eta_B'"]
-&amp;
-F_2(A)\otimes G_2(A)
-\end{tikzcd}
-\]</div>
+<p>[</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\hspace{1cm}</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>]</p>
 <p>since <span class="arithmatex">\(\otimes: M \times M \to M\)</span> is a bifunctor.
 Finally, for functors <span class="arithmatex">\(F, G, H: \cc \to M\)</span> define the associator 
 <span class="arithmatex">\(\alpha'_{F, G, H}: F\boxtimes(G\boxtimes H) \isomarrow (F\boxtimes (G \boxtimes H))\)</span> 
@@ -3456,13 +3401,11 @@ on objects as addition of natural numbers and on morphisms as </p>
 <p>where <span class="arithmatex">\(\sigma \in S_n\)</span> and <span class="arithmatex">\(\tau \in S_m\)</span> and where <span class="arithmatex">\(\sigma \otimes \tau\)</span> denotes the 
 <strong>direct sum permutation</strong>. I could tell you in esoteric language and 
 notation what that is, or I could just show you:
-<span class="arithmatex">\(\sigma\)</span> and <span class="arithmatex">\(\tau\)</span>, displayed as below 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-become <span class="arithmatex">\(\sigma \otimes \tau\)</span> which is displayed as below.
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-To make this monoidal, we specify that <span class="arithmatex">\(0\)</span> is our identity element whose associated 
+<span class="arithmatex">\(\sigma\)</span> and <span class="arithmatex">\(\tau\)</span>, displayed as below </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+become <span class="arithmatex">\(\sigma \otimes \tau\)</span> which is displayed as below.</p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>To make this monoidal, we specify that <span class="arithmatex">\(0\)</span> is our identity element whose associated 
 identity morphism is the empty permutation.
 Now clearly this operation is strict on objects. On morphisms, it is also strict in 
 the same way that stacking three Lego pieces together in the two possible different 
@@ -3479,15 +3422,12 @@ Let <span class="arithmatex">\(\cc\)</span> be a category equipped with natural 
 \end{align*}\]</div>
 <p>for all objects <span class="arithmatex">\(A, B, C \in \cc\)</span> and some identity object <span class="arithmatex">\(I\)</span>. 
 Suppose the pentagonal diagram \ref{pentagonal_diag} holds for 
-all objects of <span class="arithmatex">\(\cc\)</span>. Then for all <span class="arithmatex">\(A, B \in \cc\)</span>, the diagram 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-commutes if and only if the diagram 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-commutes, which commutes if and only if the diagram 
-\
-<img src="../../../png/category_theory/chapter_7/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+all objects of <span class="arithmatex">\(\cc\)</span>. Then for all <span class="arithmatex">\(A, B \in \cc\)</span>, the diagram </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+commutes if and only if the diagram </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+commutes, which commutes if and only if the diagram </p>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes.
 </span></p>
 <p>\textcolor{NavyBlue}{This ultimately tells us that the definition of a monoidal category 

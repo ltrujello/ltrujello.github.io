@@ -3019,10 +3019,9 @@ category <span class="arithmatex">\(\cc\)</span>. For example, if we have some a
 then we say that such a chain is a persistence module since it can 
 be modeled as a functor from <span class="arithmatex">\(\rr \to **Vec**\)</span>.  </p>
 <p>Let <span class="arithmatex">\(S = \{s_1, s_2, \dots, s_n\}\)</span> be a finite subset of <span class="arithmatex">\(\rr^n\)</span>. Then we can describe<br />
-an adjunction<br />
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s follows. First observe that since <span class="arithmatex">\(S \subset \rr\)</span>, there exists
+an adjunction  </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+as follows. First observe that since <span class="arithmatex">\(S \subset \rr\)</span>, there exists
 a restriction functor 
 <span class="arithmatex">\(R: \cc^{\rr} \to \cc^{S}\)</span>, which acts as a restriction (hence the naming <span class="arithmatex">\(R\)</span>): </p>
 <div class="arithmatex">\[
@@ -3030,13 +3029,11 @@ R(F: \rr \to \cc) = F\big|_{S}: S \to \cc.
 \]</div>
 <p>How can we write a functor going in the opposite direction? That is, given a
 persistence module which acts on <span class="arithmatex">\(S\)</span>, </p>
-<p>\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s there a canonical way to extend this 
-to a persistence module which acts on the rest of <span class="arithmatex">\(\rr\)</span>? 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-One way we may extend a persistence module <span class="arithmatex">\(K: S \to \cc\)</span> in <span class="arithmatex">\(\cc^S\)</span> to 
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is there a canonical way to extend this 
+to a persistence module which acts on the rest of <span class="arithmatex">\(\rr\)</span>? </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>One way we may extend a persistence module <span class="arithmatex">\(K: S \to \cc\)</span> in <span class="arithmatex">\(\cc^S\)</span> to 
 a persistence module in <span class="arithmatex">\(\cc^{\rr}\)</span> is to define a functor <span class="arithmatex">\(\overline{K}: \rr \to \cc\)</span> 
 where </p>
 <div class="arithmatex">\[
@@ -3058,10 +3055,9 @@ By our above procedure we have a way of discussing the objects <span class="arit
 and <span class="arithmatex">\(\overline{P}\)</span>; but can we obtain a natural transformation 
 <span class="arithmatex">\(\overline{\eta}: \overline{K} \to \overline{P}\)</span> from <span class="arithmatex">\(\eta\)</span>? That is, may we 
 extend this relationship to a functor? </p>
-<p>First, observe that we may write <span class="arithmatex">\(\eta: K \to P\)</span> as follows. 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-he top and bottom rows come about by functoriality of <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(P\)</span>,<br />
+<p>First, observe that we may write <span class="arithmatex">\(\eta: K \to P\)</span> as follows. </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+The top and bottom rows come about by functoriality of <span class="arithmatex">\(K\)</span> and <span class="arithmatex">\(P\)</span>,<br />
 while the upward arrows are the family of morphisms created by the existence 
 of a natural transformation. </p>
 <p>We can extend this to a natural transformation <span class="arithmatex">\(\overline{\eta}: \overline{K} \to \overline{P}\)</span> 
@@ -3076,36 +3072,32 @@ by stating </p>
 <p>\subsection*{Adjoint Functors}</p>
 <p>Thus we see that we really do have a functor <span class="arithmatex">\(\cc^{S} \to \cc^{\rr}\)</span> on our hands
 If we denote this as a functor <span class="arithmatex">\(E: \cc^{S} \to \cc^{\rr}\)</span>, 
-where <span class="arithmatex">\(E\)</span> can be read as <em>extends</em>, then we overall have 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-e can now demonstrate that this pair of functors gives rise to an adjunction; there 
+where <span class="arithmatex">\(E\)</span> can be read as <em>extends</em>, then we overall have </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+We can now demonstrate that this pair of functors gives rise to an adjunction; there 
 a few ways to do this. We'll demonstrate that </p>
 <div class="arithmatex">\[
 \hom_{\cc^{S}}(K, P_S) \cong \hom_{\cc^{\rr}}(\overline{K}, P)
 \]</div>
 <p>is natural, where <span class="arithmatex">\(P_S = \text{R}(P)\)</span> and <span class="arithmatex">\(\overline{K} = E(K)\)</span>. Towards this 
 goal, consider a morphism <span class="arithmatex">\(\eta: K \to P_S\)</span>. Then we have something like this 
-again 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ow we seek a natural transformation <span class="arithmatex">\(\eta': \overline{K} \to P\)</span>. Since <span class="arithmatex">\(\overline{K}\)</span> 
+again </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Now we seek a natural transformation <span class="arithmatex">\(\eta': \overline{K} \to P\)</span>. Since <span class="arithmatex">\(\overline{K}\)</span> 
 is constructed from <span class="arithmatex">\(K\)</span>, a good choice would be to write 
 <span class="arithmatex">\(\eta'_{s_i} = \eta_{s_i}\)</span> for <span class="arithmatex">\(s_i \in S\)</span>. 
 Now our concern is considering how to define <span class="arithmatex">\(\eta'_r\)</span>
-when <span class="arithmatex">\(r \not \in S\)</span>. That is, we want something like 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-o define the morphism in red, we first recall that in 
+when <span class="arithmatex">\(r \not \in S\)</span>. That is, we want something like </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+To define the morphism in red, we first recall that in 
 this situation we have <span class="arithmatex">\(K(r) = K(s_i)\)</span>. Hence we know that any morphism<br />
 from <span class="arithmatex">\(K(r)\)</span> must originate from <span class="arithmatex">\(K(s_i)\)</span>; one such morphism we already know 
 about is <span class="arithmatex">\(\eta_{s_i}: K(s_i) \to P_s(s_i)\)</span>. Now, <span class="arithmatex">\(P_s(s_i) = P(s_i)\)</span>; 
 and in our case the desired target for <span class="arithmatex">\(\eta'\)</span> is <span class="arithmatex">\(P(r)\)</span>, not <span class="arithmatex">\(P(s_i)\)</span>. However, 
 we can compose this with the morphism <span class="arithmatex">\(P(j): P(s_i)  \to P(r)\)</span>.
-where <span class="arithmatex">\(j : s_i \to r\)</span>.
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-herefore, in this case we define </p>
+where <span class="arithmatex">\(j : s_i \to r\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Therefore, in this case we define </p>
 <div class="arithmatex">\[
 \eta'_{r} := P(j) \circ \eta_{s_i}.
 \]</div>
@@ -3139,10 +3131,9 @@ each other. Therefore, we see that we have a bijection between the hom-sets,  as
 <p>\subsection*{Naturality.}</p>
 <p>Finally, we must demonstrate naturality. So suppose we have a natural transformation 
 <span class="arithmatex">\(\alpha: K \to K'\)</span> between two persistence modules <span class="arithmatex">\(K, K' : S \to \cc\)</span>.
-Consider the squares below, which we do not yet know commutes. 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Note that on one hand, </p>
+Consider the squares below, which we do not yet know commutes. </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Note that on one hand, </p>
 <div class="arithmatex">\[
 \overline{\alpha}_r = 
 \begin{cases}
@@ -3180,10 +3171,9 @@ P(j: s_i \to r ) \circ (\eta \circ\alpha) &amp; \text{where } s_r \text{ is the 
 Thus we see that the previous squares we discussed do in fact commute. </p>
 <p>Now suppose we have a natural transformation <span class="arithmatex">\(\sigma: P \to P'\)</span> between 
 two functors <span class="arithmatex">\(P, P': \rr \to \cc\)</span>.
-Consider the diagrams below, which we will show are commutative.
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-o show this, observe that </p>
+Consider the diagrams below, which we will show are commutative.</p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+To show this, observe that </p>
 <div class="arithmatex">\[\begin{align*}
 \sigma \circ \eta' 
 &amp;= 
@@ -3207,14 +3197,12 @@ P'(j: s_i \to r) \circ (\textcolor{Red}{\sigma'} \circ \eta )_{s_i} &amp; \text{
 the change in \textcolor{Purple}{purple} occurs by commutativity of the diagram on the left; the commutativity 
 results due to the universal nature of morphisms originating from the initial object <span class="arithmatex">\(I\)</span>. Second, 
 the changes in \textcolor{OliveGreen}{green} and \textcolor{Red}{red}
-occur by commutativity of the diagram on the right. 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hus we see that our original squares are commutative. At this point, we can conclude that 
-we do in fact have an adjunction 
-\
-<img src="../../../png/category_theory/chapter_11/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s desired. </p>
+occur by commutativity of the diagram on the right. </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Thus we see that our original squares are commutative. At this point, we can conclude that 
+we do in fact have an adjunction </p>
+<p><img src="../../../png/category_theory/chapter_11/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+as desired. </p>
 <script src="../../mathjax_helper.js"></script>
 
 

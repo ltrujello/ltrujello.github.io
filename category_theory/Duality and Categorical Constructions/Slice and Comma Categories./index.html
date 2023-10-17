@@ -3055,10 +3055,9 @@ Composition of two composable morphisms <span class="arithmatex">\(h : (f, C) \t
 f'' = h' \circ f' \hspace{0.5cm}\text{and}\hspace{0.5cm} f' = h \circ f \implies f'' = h' \circ (h \circ f) = (h' \circ h) \circ f.
 \]</div>
 <p>We can visually justify composition as well. If we have two commutative diagrams 
-as on the left, we can just squish them together to get the final commutative diagram on the right. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Hence, we see that <span class="arithmatex">\(h' \circ h :(f, C) \to (f'', C'')\)</span> is
+as on the left, we can just squish them together to get the final commutative diagram on the right. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Hence, we see that <span class="arithmatex">\(h' \circ h :(f, C) \to (f'', C'')\)</span> is
 defined whenever <span class="arithmatex">\(h'\)</span> and <span class="arithmatex">\(h\)</span> are composable as morphisms of
 <span class="arithmatex">\(\cc\)</span>.</p>
 <p>One use of comma categories is to capture and generalize 
@@ -3116,9 +3115,8 @@ from the one point set into a topological space <span class="arithmatex">\(X\)</
 a single point <span class="arithmatex">\(x_0 \in X\)</span>}.  Hence, on objects it is clear why we have an isomorphism.</p>
 <p>Now, a morphism in this comma category will be of the form 
 <span class="arithmatex">\(p: (X, f_1: \{\bullet\} \to X) \to (Y, f_1: \{\bullet\} \to Y)\)</span>. 
-Specifically, it is a continuous function <span class="arithmatex">\(p: X \to Y\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Specifically, it is a continuous function <span class="arithmatex">\(p: X \to Y\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In other words, if <span class="arithmatex">\(f_1(\bullet) = x_0\)</span> and <span class="arithmatex">\(f_2(\bullet) = y_0\)</span>, 
 it is a continuous function <span class="arithmatex">\(p: X \to Y\)</span> such that <span class="arithmatex">\(f(x_0) = y_0\)</span>.
 This is exactly a morphism in <span class="arithmatex">\(**Top**^*\)</span>! We clearly have a bijection 
@@ -3172,10 +3170,9 @@ Composition of functions <span class="arithmatex">\(\textcolor{NavyBlue}{h}: (f,
 <span class="arithmatex">\(\textcolor{NavyBlue}{h'}: (f', C') \to (f'', C'')\)</span> exists whenever 
 <span class="arithmatex">\(\textcolor{NavyBlue}{h'} \circ \textcolor{NavyBlue}{h}\)</span> is
 defined as morphisms in <span class="arithmatex">\(\cc\)</span>. Again, we can represent the
-elements of the category in a visual manner 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-The following is a nice example that isn't traditionally seen as
+elements of the category in a visual manner </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>The following is a nice example that isn't traditionally seen as
 an example of a functor. </p>
 <p><span style="display:block" class="example">
 Let <span class="arithmatex">\((G, \cdot)\)</span> and <span class="arithmatex">\((H, \cdot)\)</span> be two groups, and consider a group 
@@ -3192,9 +3189,8 @@ process is functorial:</p>
 \]</div>
 <p>To see this, we have to understand what happens on the morphisms.
 So, suppose we have two objects <span class="arithmatex">\((G, \phi: G \to H)\)</span> and <span class="arithmatex">\((K, \psi: K \to H)\)</span> 
-of <span class="arithmatex">\((**Grp**\downarrow H)\)</span> and a morphism <span class="arithmatex">\(h: G \to K\)</span> between the objects. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+of <span class="arithmatex">\((**Grp**\downarrow H)\)</span> and a morphism <span class="arithmatex">\(h: G \to K\)</span> between the objects. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then we can define <span class="arithmatex">\(\ker(h): \ker(\phi) \to \ker(\psi)\)</span>, the image 
 of <span class="arithmatex">\(h\)</span> under the functor, to 
 be the restriction <span class="arithmatex">\(h|_{\text{ker}(\phi)}: \ker(\phi) \to \ker(\psi)\)</span>. 
@@ -3212,9 +3208,9 @@ functor from a slice category.
 In geometry and topology, one often meets the need to define a <span class="arithmatex">\((-)\)</span>-bundle. By <span class="arithmatex">\((-)\)</span>
 we mean vector, group, etc. That is, we often want topological spaces to parameterize 
 a family of vector spaces or groups in a coherent way. 
-\begin{center}
-\includegraphics[width = 0.9\textwidth]{mobius_sphere.png}
-\end{center}
+\begin{center}</p>
+<p><img src="../../../png/category_theory/chapter_2/mobius_sphere.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{center} 
 For example, on the above left we can map the Möbius strip onto <span class="arithmatex">\(S_1\)</span> in such a way that the 
 inverse image of each <span class="arithmatex">\(x \in S_1\)</span> is homeomorphic to the interval <span class="arithmatex">\([0, 1]\)</span>. Hence, 
 each point of <span class="arithmatex">\(x \in S_1\)</span> carries the information of a topological space, specifically one of <span class="arithmatex">\([0, 1]\)</span>.</p>
@@ -3231,8 +3227,8 @@ p = p' \circ q.
 \]</div>
 <p>Hence we see that a bundle over a topological space <span class="arithmatex">\(X\)</span> is an element of the 
 comma category <span class="arithmatex">\(**Top**/X\)</span>, and a morphism of bundles is a morphism in the comma category. 
-We therefore see that <span class="arithmatex">\(**Top**/X\)</span> can be interpreted as the \textbf{category of 
-bundles of <span class="arithmatex">\(X\)</span>}.</p>
+We therefore see that <span class="arithmatex">\(**Top**/X\)</span> can be interpreted as the <strong>category of 
+bundles of <span class="arithmatex">\(X\)</span></strong>.</p>
 <p>One particular case of interest concerns <strong>vector bundles.</strong>
 Let <span class="arithmatex">\(E, X\)</span> be topological spaces. Recall that a vector bundle 
 consists of a continuous map <span class="arithmatex">\(\pi: E \to X\)</span> such that</p>
@@ -3286,8 +3282,8 @@ vector bundle.
 <em>over</em> functors. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category, <span class="arithmatex">\(C\)</span> an object of <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(F: 
-\bb \to \cc\)</span> a functor. Then we define the \textbf{category <span class="arithmatex">\(C\)</span>
-over the functor <span class="arithmatex">\(F\)</span>}, denoted as <span class="arithmatex">\((C \downarrow F)\)</span>,
+\bb \to \cc\)</span> a functor. Then we define the <strong>category <span class="arithmatex">\(C\)</span>
+over the functor <span class="arithmatex">\(F\)</span></strong>, denoted as <span class="arithmatex">\((C \downarrow F)\)</span>,
 as follows. 
 \begin{description}
 \item[Objects.] All
@@ -3302,20 +3298,18 @@ f : C \to F(B)
 <span class="arithmatex">\(h:B \to B'\)</span> in <span class="arithmatex">\(\bb\)</span> such that <span class="arithmatex">\(f' = F(h) \circ f\)</span>. 
 \end{description}
 </span>
-Representing this visually, we have that 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Representing this visually, we have that </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Composition of the morphisms in <span class="arithmatex">\((C \downarrow F)\)</span> simply
 requires composition of morphisms in <span class="arithmatex">\(\bb\)</span>. </p>
-<p>One can easily construct the \textbf{category <span class="arithmatex">\(C\)</span> under the
-functor <span class="arithmatex">\(F\)</span>}, <span class="arithmatex">\((F \downarrow C)\)</span>, in a completely analogous
+<p>One can easily construct the <strong>category <span class="arithmatex">\(C\)</span> under the
+functor <span class="arithmatex">\(F\)</span></strong>, <span class="arithmatex">\((F \downarrow C)\)</span>, in a completely analogous
 manner as before. But we'll move onto finally defining the
 concept of the comma category. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\bb, \cc, \dd\)</span> be categories and let <span class="arithmatex">\(F: \bb \to \dd\)</span>
-and <span class="arithmatex">\(G:\cc \to \dd\)</span> functors. That is, 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and <span class="arithmatex">\(G:\cc \to \dd\)</span> functors. That is, </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then we define the <strong>comma category</strong> <span class="arithmatex">\((F \downarrow
 G)\)</span> as follows. 
 \begin{description}
@@ -3334,9 +3328,8 @@ f' \circ F(h) = G(k) \circ f.
 \]</div>
 <p>\end{description}
 </span>
-As usual, we can represent this visually via diagrams:
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+As usual, we can represent this visually via diagrams:</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where in the above picture we have that <span class="arithmatex">\((h, k):(B, C, f) \to
 (B', C', f')\)</span>. Since functors naturally respect composition of
 functions, one can easily define composition of morphism <span class="arithmatex">\((h,

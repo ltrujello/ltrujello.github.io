@@ -3051,9 +3051,8 @@ i: G \to (R[G])^{\times} \qquad g \mapsto 1_R g.
 is universal from \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{<span class="arithmatex">\(G\)</span> to <span class="arithmatex">\((-)^{\times}\)</span>}}.
 That is, if <span class="arithmatex">\(K\)</span> is a 
 ring, and we have a mapping <span class="arithmatex">\(\phi: G \to K^{\times}\)</span>, then there exists a
-unique ring homomorphism <span class="arithmatex">\(h: R[G] \to K\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+unique ring homomorphism <span class="arithmatex">\(h: R[G] \to K\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The reason why this works is as follows: <span class="arithmatex">\(\phi\)</span> tells us to where to send 
 elements of <span class="arithmatex">\(G\)</span>. Since a map on <span class="arithmatex">\(R[G]\)</span> can be defined by (1) defining where 
 elements of <span class="arithmatex">\(G\)</span> go and (2) extending linearly, <span class="arithmatex">\(\phi\)</span> induces the existence of <span class="arithmatex">\(h\)</span>. </p>
@@ -3074,13 +3073,11 @@ The reason why we care about this is because <span class="arithmatex">\((K, R[(K
 is universal from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(R[-]\)</span> to <span class="arithmatex">\((K)^{\times}\)</span>}}.
 That is, if <span class="arithmatex">\(G\)</span> is a group and we have a mapping <span class="arithmatex">\(\psi: R[G] \to K\)</span>, 
 then there exists a unique <span class="arithmatex">\(j: G \to (K)^{\times}\)</span> such that the following diagram 
-commutes. 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+commutes. </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We obtain <span class="arithmatex">\(j\)</span> as follows: Note that <span class="arithmatex">\(\phi(1_R g) \in K^{\times}\)</span>, since 
-ring homomorphisms send units to units. Hence, the composite 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+ring homomorphisms send units to units. Hence, the composite </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where <span class="arithmatex">\(i\)</span> is defined earlier, yields <span class="arithmatex">\(j\)</span>. Moreover, the diagram commutes in this way. 
 By Exercise \ref{exercise:universality_bijection}, if <span class="arithmatex">\(K\)</span> is a ring, then for every group <span class="arithmatex">\(G\)</span> 
 we have the following natural bijection </p>
@@ -3091,9 +3088,8 @@ we have the following natural bijection </p>
 This demonstrates our first example of an adjunction. 
 </span></p>
 <p><span style="display:block" class="definition">
-Let <span class="arithmatex">\(\cc, \dd\)</span> be categories. Consider a pair of functors 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Let <span class="arithmatex">\(\cc, \dd\)</span> be categories. Consider a pair of functors </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We say that <span class="arithmatex">\(F, G\)</span> form an <strong>adjunction</strong> and that 
 <span class="arithmatex">\(F\)</span> is <strong>left adjoint to <span class="arithmatex">\(G\)</span></strong> (and so <span class="arithmatex">\(G\)</span> is <strong>right adjoint to <span class="arithmatex">\(F\)</span></strong>)
 if, for all <span class="arithmatex">\(C \in \cc\)</span>, <span class="arithmatex">\(D \in \dd\)</span>, there is a natural bijection </p>
@@ -3134,14 +3130,9 @@ tells us how to write down the bijection. </p>
 <p>We now observe that this definition is equivalent to the existence of universal morphisms; 
 this is something we already saw in our introductory example. </p>
 <p><span style="display:block" class="proposition">
-Let <span class="arithmatex">\(\cc, \dd\)</span> be categories and consider a pair of functors       <br />
-\begin{tikzcd}
-\cc
-\arrow[r, shift right = -0.5ex, "F"]
-&amp;
-\dd
-\arrow[l, shift right = -0.5ex, "G"]
-\end{tikzcd}.
+Let <span class="arithmatex">\(\cc, \dd\)</span> be categories and consider a pair of functors         </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+.
 The following are equivalent. </p>
 <ul>
 <li>
@@ -3215,7 +3206,7 @@ We already saw this proposition in action in the introductory example.
 In that example, we found a pair functors 
 \begin{center}
 \adjunction{<strong>Grp</strong>}{{R[-]}}{<strong>Ring</strong>}{(-)^{\times}}
-\end{center}   that formed an adjunction with universal morphisms </p>
+\end{center}    that formed an adjunction with universal morphisms </p>
 <div class="arithmatex">\[
 i_G: G \to (R[G])^{\times}
 \qquad 
@@ -3235,15 +3226,9 @@ bijection that appears in the definition of an adjunction and the unit and couni
 However, we did not really describe what the bijection actually does on elements.
 The next proposition characterizes the bijection.</p>
 <p><span style="display:block" class="proposition">
-Let <span class="arithmatex">\(\cc\)</span>, <span class="arithmatex">\(\dd\)</span> be categories, and suppose 
-\begin{tikzcd}
-\cc
-\arrow[r, shift right = -0.5ex, "F"]
-&amp;
-\dd
-\arrow[l, shift right = -0.5ex, "G"]
-\end{tikzcd}
-form an adjunction with <span class="arithmatex">\(F\)</span> left adjoint to <span class="arithmatex">\(G\)</span>. 
+Let <span class="arithmatex">\(\cc\)</span>, <span class="arithmatex">\(\dd\)</span> be categories, and suppose </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>form an adjunction with <span class="arithmatex">\(F\)</span> left adjoint to <span class="arithmatex">\(G\)</span>. 
 Let <span class="arithmatex">\(\eta\)</span>, <span class="arithmatex">\(\epsilon\)</span> be the unit and counit.</p>
 <p>For each <span class="arithmatex">\(C, D\)</span>, the natural bijection</p>
 <div class="arithmatex">\[
@@ -3256,9 +3241,8 @@ Let <span class="arithmatex">\(\eta\)</span>, <span class="arithmatex">\(\epsilo
 <p></span></p>
 <p>The proof is left to the reader. </p>
 <p><span style="display:block" class="example">
-We have already encountered the pair of functors 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+We have already encountered the pair of functors </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where <span class="arithmatex">\(F\)</span> is the free monoid functor and <span class="arithmatex">\(U\)</span> is the forgetful monoid functor.
 We previously saw that given a set <span class="arithmatex">\(X\)</span>, there
 exists an inclusion morphism</p>
@@ -3285,10 +3269,9 @@ is right adjoint to <span class="arithmatex">\(F\)</span>, and we have the natur
 <p>For <span class="arithmatex">\(g: X \to U(M)\)</span>, we send <span class="arithmatex">\(\phi^{-1}(g)\)</span> to <span class="arithmatex">\(\epsilon_M \circ F(g)\)</span>. </p>
 </li>
 </ul>
-<p>This data assembles into the commutative diagrams as below. 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-</span></p>
+<p>This data assembles into the commutative diagrams as below. </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p></span></p>
 <p>Now we offer some sufficient conditions for establishing an
 adjunction. </p>
 <p><span style="display:block" class="proposition">
@@ -3299,16 +3282,14 @@ Then there exists a functor <span class="arithmatex">\(F: \cc \to \dd\)</span> w
 to <span class="arithmatex">\(G\)</span>.
 </span></p>
 <p><span style="display:block" class="proof">
-To have universality from <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(G\)</span>, the diagram 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+To have universality from <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(G\)</span>, the diagram </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence we have a bijection </p>
 <div class="arithmatex">\[
 \hom_{\dd}({F(C), D}) \cong \hom_\cc({C, G(D)}).  
 \]</div>
-<p>Now suppose <span class="arithmatex">\(h: C \to C'\)</span>. Then the dashed arrow 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Now suppose <span class="arithmatex">\(h: C \to C'\)</span>. Then the dashed arrow </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must exist by universality; we simply utilize the previous
 diagram. In other words, if <span class="arithmatex">\(h: C \to C'\)</span>, then there exists a
 morphism <span class="arithmatex">\(f: F_0(C) \to F_0(C')\)</span>. With that said, we can then
@@ -3335,9 +3316,8 @@ suppose we have the pair of natural transformations:</p>
 \eta_{C} : I_C \to G \circ F \quad
 \epsilon_{D}: I_D \to F \circ G
 \end{align*}\]</div>
-<p>such that the following composites are the identity: 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>such that the following composites are the identity: </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then there exists a bijective <span class="arithmatex">\(\phi\)</span> such that <span class="arithmatex">\((F, G, \phi)\)</span>
 form an adjunction between <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span>. 
 </span></p>
@@ -3358,10 +3338,9 @@ where </p>
 \]</div>
 <p>Our construction ensures that this is a well-defined <span class="arithmatex">\(R\)</span>-module
 homomorphism. Hence we clearly have the equality <span class="arithmatex">\(U(\phi) \circ \eta_A =
-f\)</span>. Visually, this becomes 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Since the construction of <span class="arithmatex">\(\phi\)</span> depends directly on the existence
+f\)</span>. Visually, this becomes </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Since the construction of <span class="arithmatex">\(\phi\)</span> depends directly on the existence
 of <span class="arithmatex">\(f\)</span>, we see that it is unique. Hence we see that <span class="arithmatex">\(\eta_A: A \to
 U(F(A))\)</span> is universal from <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(U\)</span>. Then by Theorem 4.1, we see
 that we have an adjunction, so that <span class="arithmatex">\(F\)</span> is truly left adjoint to
@@ -3386,9 +3365,8 @@ Hence there exists a unique isomorphism <span class="arithmatex">\(\theta_C :  F
 F'(C)\)</span> by universality such that <span class="arithmatex">\(G(\theta_C) \circ \eta_C =
 \eta_C'\)</span> (think of a universal diagram). </p>
 <p>Now let <span class="arithmatex">\(h: C \to C'\)</span> be a morphism in <span class="arithmatex">\(\cc\)</span>. Then 
-<span class="arithmatex">\(F'(h) \circ \theta_C = \theta_{C'} \circ F(h)\)</span> so that the diagram 
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(F'(h) \circ \theta_C = \theta_{C'} \circ F(h)\)</span> so that the diagram </p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. Hence we see that <span class="arithmatex">\(\theta: F \to F'\)</span> is a natural
 isomorphic transformation between <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(F'\)</span>, so that these
 two functors are naturally isomorphic.
@@ -3408,9 +3386,8 @@ functor, then <span class="arithmatex">\(F_0\)</span> is the object function of 
 form composition of adjoints. </p>
 <p><span style="display:block" class="proposition">
 Let <span class="arithmatex">\(\cc, \dd\)</span> and <span class="arithmatex">\(\ee\)</span> be categories. Suppose we have
-two adjunctions as below.
-\
-<img src="../../../png/category_theory/chapter_4/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+two adjunctions as below.</p>
+<p><img src="../../../png/category_theory/chapter_4/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the functors <span class="arithmatex">\(F'\circ F\)</span>, <span class="arithmatex">\(G \circ G'\)</span>
 form an adjunction between <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\ee\)</span>.
 Further, if <span class="arithmatex">\((\eta, \epsilon)\)</span> and <span class="arithmatex">\((\eta', \epsilon')\)</span> 

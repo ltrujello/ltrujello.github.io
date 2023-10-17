@@ -3021,6 +3021,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#estimating-alignment-probabilities-from-t-e" class="md-nav__link">
+    Estimating alignment probabilities from \((t | e)\)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimating-te-f-from-alignment-probabilities" class="md-nav__link">
+    Estimating \(t(e | f)\) from alignment probabilities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alignment-algorithm" class="md-nav__link">
+    Alignment algorithm
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3070,7 +3091,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              7 min read
+                              13 min read
                             
                           </span>
                         </div>
@@ -3111,7 +3132,9 @@ Similarly, we'll denote French sentences as <span class="arithmatex">\(\mathbf{f
 <div class="arithmatex">\[
     p(\mathbf{e} | \mathbf{f}) = p(e_1, \dots, e_n | f_1, \dots, f_m)
 \]</div>
-<p>If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model. This 
+<p>If we had such a model, then we could perform a search over a space of possible English words to maximize the probabilistic model.
+The task of doing this given such a probabilistic model as above is known as <strong>decoding</strong>, and is a whole 
+other problem on its own that we won't get into. This 
 would lead to our proposed English translation of a given French sentence. </p>
 <p>Defining this model is a very hard. Suppose for a moment we switch to Spanish (because I know Spanish better than French). 
 Suppose we have the Spanish sentence "Tienes hambre? Vamos a comer." 
@@ -3176,15 +3199,17 @@ For IBM model 1, this is also uniform and is equal to <span class="arithmatex">\
 The parameters are the values <span class="arithmatex">\(t(e | f)\)</span> for all possible pairs of words <span class="arithmatex">\(e, f\)</span> in our dataset. If we have this, then we can compute <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span> and go on with our day.</p>
 <h2 id="chicken-and-egg-problem-expectation-maximization">Chicken and Egg problem: Expectation Maximization</h2>
 <p>So now that we have a conditional probabilistic model, suppose we are given a dataset in which we cant try to find the parameters that best
-fit the dataset given the model. In our case, our dataset will be a set of <span class="arithmatex">\(n\)</span> translation pairs <span class="arithmatex">\(\{(\mathbf{f}_1, \mathbf{e}), \dots, (\mathbf{f}_nm \mathbf{e}_n)  \}\)</span>.</p>
+fit the dataset given the model. In our case, our dataset will be a set of <span class="arithmatex">\(n\)</span> translation pairs <span class="arithmatex">\(\{(\mathbf{f}_1, \mathbf{e}_1), \dots, (\mathbf{f}_k,  \mathbf{e}_k)  \}\)</span>.</p>
 <p>However, we actually can't learn the parameters of our probabilistic model <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span>, because
 a parallel corpus of translations does not give use 
-the alignments on the lexical level. Viewed another way, we are being tasked with learning our model using data that is incomplete (the alignments are "missing").</p>
+the alignments on the lexical level. In fact, not only do we not have the explicit alignment data, we don't know 
+what alignments are more "likely".
+Viewed another way, we are being tasked with learning our model using data that is incomplete (the alignments are "missing").</p>
 <p>So, we are in a bit of a chicken and egg problem.</p>
 <ul>
 <li>If we had alignments for all sentences <span class="arithmatex">\(\mathbf{e}\)</span>, <span class="arithmatex">\(\mathbf{f}\)</span> in our dataset, then we could estimate <span class="arithmatex">\(t(e | f)\)</span>. How? We would just loop over the sentences, keep track of how often a word <span class="arithmatex">\(e\)</span> is aligned to a word <span class="arithmatex">\(f\)</span>, leading to an estimate <span class="arithmatex">\(t(e | f)\)</span> for all words in the vocabulary. Then, we could go ahead and happily calculate <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_m | \mathbf{f})\)</span>. </li>
 <li>If we already had the parameters of the model <span class="arithmatex">\(t(e | f)\)</span>, then we could determine the best possible alignments for every sentence pair <span class="arithmatex">\(\mathbf{e}\)</span> and <span class="arithmatex">\(\mathbf{f}\)</span>. With the alignments all calculated, we could then happily calculate <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span>.</li>
-<li>However, we have neither of these from our parallel corpus dataset. So we're stuck.</li>
+<li>However, we have neither of these from our parallel corpus dataset. </li>
 </ul>
 <p>The main problem here is that </p>
 <ul>
@@ -3196,6 +3221,193 @@ This type of problem can be solved with the <a href="https://courses.csail.mit.e
 algorithm.</p>
 <p>However, rather than bring out the big statistical guns and call it a day, we are going to solve this intuitively. Then it will become clear how 
 this becomes an instance of Expectation Maximization.</p>
+<h2 id="estimating-alignment-probabilities-from-t-e">Estimating alignment probabilities from <span class="arithmatex">\((t | e)\)</span></h2>
+<p>When we were discussing the chicken and egg issue before, we said that if we had the 
+model parameters <span class="arithmatex">\(t(e | f)\)</span>, we could determine the best possible alignment. How would that work?</p>
+<p>For a specific sentence pair <span class="arithmatex">\(\mathbf{e}\)</span>, <span class="arithmatex">\(\mathbf{f}\)</span>, finding an optimal alignment <span class="arithmatex">\(a_1, \dots, a_n\)</span> 
+would involve calculating the probability
+<span class="arithmatex">\(p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})\)</span>. This quantity is actually a posterior probability, and we can calculate it 
+via </p>
+<div class="arithmatex">\[
+   p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) = \frac{ p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f}) }{p(\mathbf{e}|\mathbf{f})}
+\]</div>
+<p>We already have a formula for <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span>, so we can go ahead and focus on calculating <span class="arithmatex">\(p(\mathbf{e}|\mathbf{f})\)</span>. 
+Note that </p>
+<div class="arithmatex">\[
+   p(\mathbf{e}|\mathbf{f}) = \sum_{a_1 = 0}^{m} \dots \sum_{a_n = 0}^{m} p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})
+\]</div>
+<p>which we can rewrite as </p>
+<div class="arithmatex">\[
+   p(\mathbf{e}|\mathbf{f}) = \sum_{a_1 = 0}^{m} \dots \sum_{a_n = 0}^{m} \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} t(e_i | f_{a_i}) 
+\]</div>
+<p>At first, this is a horribly complex summation which would be wildly inefficient in a program implementation.
+Fortunately, there is a trick we can perform on this expression to obtain an equivalent but simpler expression.
+To demonstrate this trick, let us ignore the factor <span class="arithmatex">\(\frac{1/N}{(m + 1)^n}\)</span> which we can trivially factor out of the equation. Observe that we can perform a 
+simplification to get rid of one of the sigma sums.</p>
+<div class="arithmatex">\[\begin{align}
+   p(\mathbf{e}|\mathbf{f}) 
+   &amp;= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-1} = 0}^{m} \sum_{a_n = 0}^{m} \prod_{i = 1}^{n} t(e_i | f_{a_i}) \\
+   &amp;= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-1} = 0}^{m} 
+   \left(
+   \prod_{i = 1}^{n-1} t(e_i | f_{a_i}) \cdot t(e_{n}| f_{0}) + \dots + \prod_{i = 1}^{n-1} t(e_i | f_{a_i})\cdot t(e_{n}| f_{m}) \right)\\
+   &amp;= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-1} = 0}^{m} \left(\prod_{i = 1}^{n-1} t(e_i | f_{a_i}) \sum_{j = 0}^{m}t(e_n | f_j) \right)
+\end{align}\]</div>
+<p>Performing this trick again on the resulting above expression, we obtain</p>
+<div class="arithmatex">\[\begin{align}
+   p(\mathbf{e}|\mathbf{f}) 
+   &amp;= 
+   \sum_{a_1 = 0}^{m} \dots \sum_{a_{n-2} = 0}^{m} \left(\prod_{i = 1}^{n-2} t(e_i | f_{a_i}) \sum_{j = 0}^{m}t(e_{n-1} | f_j) \sum_{j = 0}^{m}t(e_n | f_j) \right)
+\end{align}\]</div>
+<p>Performing this trick on each sigma symbol <span class="arithmatex">\(n\)</span> times leads to </p>
+<div class="arithmatex">\[\begin{align}
+   p(\mathbf{e}|\mathbf{f}) 
+   &amp;= 
+   \sum_{j = 0}^{m}t(e_{1} | f_j) \cdots \sum_{j = 0}^{m}t(e_{n-1} | f_j) \cdot \sum_{j = 0}^{m}t(e_n | f_j) \\
+   &amp;= 
+   \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j)
+\end{align}\]</div>
+<p>Of course, adding back our original factor leads to </p>
+<div class="arithmatex">\[
+   p(\mathbf{e}|\mathbf{f}) 
+   = 
+   \frac{1/N}{(m + 1)^n}
+   \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j)
+\]</div>
+<p>Now that we have this calculation, we can state now that </p>
+<div class="arithmatex">\[\begin{align}
+   p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   &amp;= 
+   \frac{ p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f}) }{p(\mathbf{e}|\mathbf{f})} \\
+   &amp;= 
+   \frac{ \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} t(e_i | f_{a_i}) }{ \frac{1/N}{(m + 1)^n} \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j) }\\
+   &amp;= 
+   \frac{ \prod_{i = 1}^{n} t(e_i | f_{a_i}) }{ \prod_{i = 1}^{n} \sum_{j = 0}^{m} t(e_i | f_j) }\\
+\end{align}\]</div>
+<p>We can then combine the products in the numerator and denominator to obtain that </p>
+<div class="arithmatex">\[
+   p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   = \prod_{i = 1}^{n}
+   \frac{  t(e_i | f_{a_i}) }{ \sum_{j = 0}^{m} t(e_i | f_j) }
+\]</div>
+<p>Therefore, we see that if we know the model parameters <span class="arithmatex">\(t(e | f)\)</span>, then we could estimate the best possible alignments via the above expression.</p>
+<h2 id="estimating-te-f-from-alignment-probabilities">Estimating <span class="arithmatex">\(t(e | f)\)</span> from alignment probabilities</h2>
+<p>On the other hand, recall again that when we were discussing the chicken and egg problem, we said that if we knew 
+the alignment (probabilities) for each sentence then we could estimate the model parameters. How would that work?</p>
+<p>Since we want to estimate <span class="arithmatex">\(t(e | f)\)</span> given knowledge about the probabilities of alignments, let's start with a simpler 
+goal of estimating <span class="arithmatex">\(t(e | f; \mathbf{e}, \mathbf{f})\)</span> where <span class="arithmatex">\(\mathbf{e}\)</span> is a sentence containing the word <span class="arithmatex">\(e\)</span> and <span class="arithmatex">\(\mathbf{f}\)</span> is a 
+sentence containing the word <span class="arithmatex">\(f\)</span>. That is, we'll try to estimate this probability given two sentences. </p>
+<p>If one has access to <span class="arithmatex">\(p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f})\)</span> for all alignments <span class="arithmatex">\(a_1, \dots, a_n\)</span>, 
+then we can estimate <span class="arithmatex">\(t(e | f; \mathbf{e}, \mathbf{f})\)</span> by adding up the probabilities of all alignments where 
+<span class="arithmatex">\(e\)</span> and <span class="arithmatex">\(f\)</span> are aligned in some way. More formally, we could state that</p>
+<div class="arithmatex">\[
+   t(e | f; \mathbf{e}, \mathbf{f}) \propto \sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | e) 
+   \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
+\]</div>
+<p>We state this is <em>proportional</em> to <span class="arithmatex">\(t(e | f)\)</span>, because this is not normalized. To normalize this, note that in theory, every 
+other word in the sentence <span class="arithmatex">\(e\)</span> could also be a translation of <span class="arithmatex">\(f\)</span>. Therefore, the correct probability is  </p>
+<div class="arithmatex">\[
+   t(e | f; \mathbf{e}, \mathbf{f}) =
+   \frac{\sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
+   }{
+   \sum_{k = 0}^{n}
+   \sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   \sum_{i = 1}^{n}\delta(e_k, e_i) \delta(f, f_{a_i})\right)
+   }
+\]</div>
+<p>Another way to see that this is the correct normalization is to observe that 
+for this probability distribution, we'd need that
+<span class="arithmatex">\(\sum_{e \in \mathbf{e}} t(e | f; \mathbf{e}, \mathbf{f}) = 1\)</span> to be satisfied, which 
+the above expression does in fact satisfy. </p>
+<p>An easier way to understand the above expression is to define</p>
+<div class="arithmatex">\[
+   c(e| f ;\mathbf{e}, \mathbf{f}) =
+   \sum_{a_1 = 0}^{m} \dots 
+   \sum_{a_n = 0}^{m}
+   \left( p(a_1, \dots, a_n | \mathbf{e}, \mathbf{f}) 
+   \sum_{i = 1}^{n}\delta(e, e_i) \delta(f, f_{a_i})\right)
+\]</div>
+<p>This quantity appears more complicated than it actually is: it's just <strong>counting</strong> how many times <span class="arithmatex">\(e\)</span> and <span class="arithmatex">\(f\)</span> are aligned in the 
+sentence pair, and it is <strong>weighting</strong> this count by the probability of the alignment. </p>
+<p>With this notation, we can more simply write</p>
+<div class="arithmatex">\[
+   t(e | f; \mathbf{e}, \mathbf{f}) =
+   \frac{
+      c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }{
+      \sum_{e \in \mathbf{e}}c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }
+\]</div>
+<p>That is, the sum in the denominator indexes over each word in <span class="arithmatex">\(\mathbf{e}\)</span>. 
+Alright, so <em>if</em> we somehow had access to the probabilities of each alignment for a given sentence pair,
+then we could actually estimate the translation probability for each English and French word pair in the sentence. 
+However, this is one just estimating <span class="arithmatex">\(t(e| f)\)</span> relative to one specific sentence pair picked from our 
+more large parallel corpus.
+Thus how do we generalize out work across all sentences in the corpus to obtain an estimate of <span class="arithmatex">\(t(e | f )\)</span>? </p>
+<p>This is not that much harder than what we did before. Note that we need </p>
+<div class="arithmatex">\[
+   \sum_{e \in E}t(e | f)= 1.
+\]</div>
+<p>where <span class="arithmatex">\(E\)</span> is the (obviously finite) set of all possible English words,
+Therefore, we see that </p>
+<div class="arithmatex">\[
+   t(e | f) = \frac{\sum_{(\mathbf{e}, \mathbf{f})} t(e | f ; \mathbf{e}, \mathbf{f})}{
+   \sum_{e \in E} \sum_{(\mathbf{e}, \mathbf{f})} t(e | f ; \mathbf{e}, \mathbf{f})
+   }
+\]</div>
+<p>Note here that <span class="arithmatex">\(\sum_{\mathbf{e}, \mathbf{f}}\)</span> indicates a sum over all sentence pairs in
+our dataset. </p>
+<p>Obviously, we are being pathological and binding ourselves in a contradiction; if <span class="arithmatex">\(t(e | f)\)</span> is what 
+we are estimating, why is it appearing in our formula? 
+Note that we can actually do some mathematical simplification here. </p>
+<div class="arithmatex">\[
+   t(e | f) = \frac{
+      \sum_{(\mathbf{e}, \mathbf{f})}   
+      \frac{
+         c(e| f ;\mathbf{e}, \mathbf{f}) 
+         }{
+            \sum_{e \in \mathbf{e}}c(e| f ;\mathbf{e}, \mathbf{f}) 
+         } 
+   }{
+   \sum_{e \in E} \sum_{(\mathbf{e}, \mathbf{f})} 
+      \frac{
+         c(e| f ;\mathbf{e}, \mathbf{f}) 
+         }{
+            \sum_{e \in \mathbf{e}}c(e| f ;\mathbf{e}, \mathbf{f}) 
+         } 
+   }
+\]</div>
+<p>Observe that we can factor out a common factor in both the numerator and denominator: <span class="arithmatex">\(\sum_{e \in E}c(e | f; \mathbf{e}, \mathbf{f})\)</span>.
+This then leads to a more simpler formula:</p>
+<div class="arithmatex">\[
+   t(e | f) = \frac{
+      \sum_{(\mathbf{e}, \mathbf{f})}   
+      c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }{
+   \sum_{e \in E} \sum_{(\mathbf{e}, \mathbf{f})} 
+         c(e| f ;\mathbf{e}, \mathbf{f}) 
+   }
+\]</div>
+<p>Thus, we have an answer to our question. We can estimate <span class="arithmatex">\(t(e | f)\)</span> using our parallel corpus by basically 
+counting how often <span class="arithmatex">\(e\)</span> and <span class="arithmatex">\(f\)</span> are aligned in sentence pairs, and by using 
+knowledge of how likely any given alignment is between a sentence pair. </p>
+<h2 id="alignment-algorithm">Alignment algorithm</h2>
+<p>To summarize at this point:</p>
+<ul>
+<li>If we knew <span class="arithmatex">\(t(e |f )\)</span> for all words, we could estimate alignment probabilities <span class="arithmatex">\(p(a_1, \dots, a_n| \mathbf{e}, \mathbf{f})\)</span> </li>
+<li>If we knew the alignment probabilities <span class="arithmatex">\(p(a_1, \dots, a_n| \mathbf{e}, \mathbf{f})\)</span>, then we could estimate weighted counts
+<span class="arithmatex">\(c(e | f; \mathbf{e}, \mathbf{f})\)</span> across sentence pairs. This then would allow us to estimate <span class="arithmatex">\(t(e | f)\)</span>. </li>
+</ul>
+<p>However, we have neither. This is where the clever idea of the EM algorithm comes in: we simply initialize <span class="arithmatex">\(t(e | f)\)</span> to be uniform across all word pairs, calculate  <span class="arithmatex">\(p(a_1, \dots, a_n| \mathbf{e}, \mathbf{f})\)</span>, then calculate <span class="arithmatex">\(c(e | f; \mathbf{e}, \mathbf{f})\)</span> across sentence pairs, and then finally re-estimate <span class="arithmatex">\(t(e | f)\)</span>. Repeating this a few times will allow us to build a table of values <span class="arithmatex">\(t(e | f)\)</span> which converge on somewhat reasonable word translations. </p>
 
 
 

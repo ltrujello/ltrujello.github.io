@@ -3065,8 +3065,8 @@ What
 is the bare minimum amount of logical data that perfectly characterizes 
 the above product <span class="arithmatex">\(X \times Y\)</span>?<br />
 \end{minipage}
-\end{center}        Well, observe that for such a set, we have <em>two</em> \textbf{projection 
-functions} </p>
+\end{center}        Well, observe that for such a set, we have <em>two</em> <strong>projection 
+functions</strong> </p>
 <div class="arithmatex">\[\begin{align*}
 &amp;p_1: X \times Y \to X \qquad p_1(x, y) = x\\
 &amp;p_2: X \times Y \to Y \qquad p_2(x, y) = y.
@@ -3075,43 +3075,11 @@ functions} </p>
 Then there exists a third <span class="arithmatex">\(h: Z \to X \times Y\)</span> such that <span class="arithmatex">\(p_1\circ h = f\)</span>
 and <span class="arithmatex">\(p_2\circ h = g\)</span>. By this description, we can deduce that 
 <span class="arithmatex">\(h(z) = (f(z), g(z))\)</span>.</p>
-<div class="arithmatex">\[\begin{align}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm
-,ampersand replacement=\&amp;]
-\&amp;
-Z 
-\arrow[dr,  "g"]
-\arrow[dl, swap,"f"]
-\arrow[d, dashed, "h"]
-\&amp;
-\\
-X 
-\&amp; 
-\arrow[l, "p_1"]
-X \times Y 
-\arrow[r, swap, "p_2"]
-\&amp;
-Y
-\end{tikzcd}
-\hspace{0.5cm}
-\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm
-,ampersand replacement=\&amp;]
-\&amp;
-z
-\arrow[dr, maps to]
-\arrow[dl, maps to]
-\arrow[d, maps to]
-\&amp;
-\\
-f(z) 
-\&amp; 
-\arrow[l, maps to]
-(f(z), g(z))
-\arrow[r, maps to]
-\&amp;
-g(z)
-\end{tikzcd}
-\end{align}\]</div>
+<p>\begin{align}</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\hspace{0.5cm}</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{align}</p>
 <p>Moreover, this <span class="arithmatex">\(h\)</span> is <strong>unique</strong> with respect to <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>; Showing this is the bulk of 
 Exercise \ref{section:universal_morphisms}.\exerciseCartesianProduct.
 We now have an answer to our question.</p>
@@ -3123,7 +3091,7 @@ characterized by the following data: two projection functions
 pair of functions <span class="arithmatex">\(f: Z \to X, g: Z \to Y\)</span>, there exists a <strong>unique</strong>
 third <span class="arithmatex">\(h: Z \to X \times Y\)</span> such that diagram \ref{diagram:cartesian_product} commutes.
 \end{minipage}
-\end{center}   </span></p>
+\end{center}    </span></p>
 <p>With the above example in mind, we now introduce our first definition of a product.</p>
 <p><span style="display:block" class="definition">[Nice Product Definition.]
 Let <span class="arithmatex">\(\cc\)</span> be a category with objects <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. 
@@ -3135,9 +3103,8 @@ equipped with morphisms</p>
 \]</div>
 <p>with the following universal property: For any object <span class="arithmatex">\(Z\)</span> of <span class="arithmatex">\(\cc\)</span> with morphisms
 <span class="arithmatex">\(f: Z \to A\)</span>, <span class="arithmatex">\(g: Z \to B\)</span>, there exists a unique morphism <span class="arithmatex">\(h: Z \to A \times B\)</span> 
-such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 </span></p>
 <p><span style="display:block" class="remark">
 Note that to utilize the above universal property, one requires a <em>pair</em> of morphisms 
@@ -3260,18 +3227,16 @@ automatically true since we are given that a terminal object
 <span class="arithmatex">\(T\)</span> exists. </p>
 <p>\item[Inductive Step.] Suppose the statement holds for <span class="arithmatex">\(n =
 k\)</span>. Then for any objects <span class="arithmatex">\(A_1, A_2, \cdots, A_k\)</span>, 
-we have the product diagram
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+we have the product diagram</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and a unique, induced arrow <span class="arithmatex">\(u\)</span> whenever such a <span class="arithmatex">\(D \in \cc\)</span> with
 morphisms <span class="arithmatex">\(f_i: D \to A_i\)</span> exists.</p>
 <p>Let <span class="arithmatex">\(A_{k+1}\)</span> be an arbitrary object of <span class="arithmatex">\(\cc\)</span>. Then the
 product <span class="arithmatex">\((A_1 \times A_2 \times \cdots \times A_k)\times
 A_{k+1}\)</span> exists, since by assumption,<br />
 the product of any two objects in our
-category must exist, and gives rise to the product diagram: 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+category must exist, and gives rise to the product diagram: </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 whenever such an object <span class="arithmatex">\(D\)</span> with a family of morphisms <span class="arithmatex">\(g_1: D
 \to A_1 \times A_k\)</span> and  <span class="arithmatex">\(g_2: D \to A_{k+1}\)</span> exist.</p>
 <p>Look at the bottom of the second diagram; we have a unique
@@ -3289,9 +3254,8 @@ A_i
 family of morphisms <span class="arithmatex">\(h_i: C \to A_i\)</span>. Then by the first
 diagram, there exists a unique morphism <span class="arithmatex">\(u: C \to A_1 \times \cdots
 \times A_k\)</span> such that <span class="arithmatex">\(h_i = \pi_i \circ u\)</span>. Thus we have the
-diagram:
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+diagram:</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>so we have a unique morphism <span class="arithmatex">\(v: C \to A_1 \times \cdots
 \times A_{k+1}\)</span> such that <span class="arithmatex">\(\pi'_1 \circ v = u\)</span> and <span class="arithmatex">\(\pi'_2
 \circ v = h_{k+1}\)</span>. 
@@ -3311,9 +3275,8 @@ A_1 \times \cdots \times A_{k+1}\)</span> such that </p>
 \overline{\pi}_i \circ v = h_i
 \]</div>
 <p>for <span class="arithmatex">\(i = 1, 2, \dots, k + 1\)</span>. Therefore, we have the product
-diagram 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that the product <span class="arithmatex">\(A_1 \times A_k \times A_{k+1}\)</span> exists and
 is well-defined in <span class="arithmatex">\(\cc\)</span>. Hence, <span class="arithmatex">\(P(n)\)</span> is true for <span class="arithmatex">\(n = k+1\)</span>.
 \end{description}
@@ -3333,9 +3296,8 @@ we have canonical projections </p>
 \pi'_1: A' \times B' \to A' \qquad  \pi'_2: A' \times B' \to  
 B'.
 \]</div>
-<p>Then observe we get the diagram
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>Then observe we get the diagram</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus, there exists a unique morphism <span class="arithmatex">\(u: A \times B \to A'
 \times B'\)</span> whenever such <span class="arithmatex">\(f, g\)</span> exist. Therefore, we can
 define how <span class="arithmatex">\(\prod\)</span> acts on morphism as</p>
@@ -3352,18 +3314,15 @@ they're  isomorphic. Thus let <span class="arithmatex">\(A \times (B \times C)\)
 \times B) \times C\)</span> be two products in <span class="arithmatex">\(\cc\)</span>. Suppose we have
 an family of morphisms <span class="arithmatex">\(h_1: D \to A\)</span>, <span class="arithmatex">\(h_2: D \to B\)</span> and
 <span class="arithmatex">\(h_3: D \to C\)</span>. Then we get the following product diagrams. </p>
-<p>\begin{minipage}{0.5\textwidth}
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>\begin{minipage}{0.5\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\begin{minipage}{0.5\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 Since we have unique morphisms <span class="arithmatex">\(v: D \to B \times C\)</span> and <span class="arithmatex">\(w: D
-\to A \times B\)</span>, we also get the product diagrams. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\to A \times B\)</span>, we also get the product diagrams. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 for the products <span class="arithmatex">\(A \times (B \times C)\)</span> and <span class="arithmatex">\((A \times B)
 \times C\)</span>, respectively. Thus we have the collection of
 morphisms </p>
@@ -3409,14 +3368,12 @@ isomorphic. Showing naturality is not hard (again, too lazy to
 do that).</p>
 <p>Finally, let <span class="arithmatex">\(T\)</span> be the terminal object of <span class="arithmatex">\(\cc\)</span>. Denote <span class="arithmatex">\(t_C:
 C \to T\)</span> as the unique morphism from <span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(T\)</span>. Now consider
-the product diagram associated with the product <span class="arithmatex">\(T \times A\)</span>: 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the product diagram associated with the product <span class="arithmatex">\(T \times A\)</span>: </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Observe that <span class="arithmatex">\(t_D\)</span> always exists for any <span class="arithmatex">\(D\)</span>. Hence the
 existence of  <span class="arithmatex">\(u\)</span> is completely dependent <span class="arithmatex">\(f\)</span>. Therefore, we
-can see that this diagram is equivalent  to 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+can see that this diagram is equivalent  to </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we see that <span class="arithmatex">\(A\)</span> with the morphism <span class="arithmatex">\(t_A, 1_A\)</span> forms a
 universal cone. But so does <span class="arithmatex">\(T \times A\)</span>; hence, uniqueness
 guarantees they are isomorphic. 
@@ -3441,7 +3398,7 @@ Define the <strong>diagonal functor of <span class="arithmatex">\(\cc\)</span></
 <p>The above functor is a bit silly; it really doesn't do much. However, it necessary for us 
 to really understand what exactly a product is. It helps us realize that a product in 
 a category is actually a universal morphism. </p>
-<p>\begin{definition}[Rigorous Product Definition.]
+<p><span style="display:block" class="definition">[Rigorous Product Definition.]
 Let <span class="arithmatex">\(\cc\)</span> be a category with objects <span class="arithmatex">\(A, B\)</span>. The <strong>product <span class="arithmatex">\(A \times B\)</span> of <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span></strong>
 is a universal morphism </p>
 <div class="arithmatex">\[
@@ -3449,25 +3406,22 @@ is a universal morphism </p>
 \]</div>
 <p>from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(\Delta\)</span> to <span class="arithmatex">\((A, B)\)</span>}}. This means that for any
 other pair <span class="arithmatex">\((C, q: \Delta(C) \to (A, B))\)</span>, there exists a unique 
-<span class="arithmatex">\(h: C \to A \times B\)</span> in <span class="arithmatex">\(\cc\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}</p>
+<span class="arithmatex">\(h: C \to A \times B\)</span> in <span class="arithmatex">\(\cc\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p>This definition is exactly equivalent to our previous. What this tells us is that 
 a product is an instance of a universal morphism. We show how this definition is equivalent 
 to the previous via the following example.</p>
 <p><span style="display:block" class="example">
 To see this for the case when <span class="arithmatex">\(n = 2\)</span>,
 consider the product <span class="arithmatex">\(A\times B\)</span> of two objects <span class="arithmatex">\(A, B\)</span> in some category <span class="arithmatex">\(\cc\)</span>. 
-Then 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Let's spell out what's going on above; you might have seen this exposition, without even realizing, demonstrating the universality of
+Then </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Let's spell out what's going on above; you might have seen this exposition, without even realizing, demonstrating the universality of
 products. Suppose there exists another object <span class="arithmatex">\(C\)</span> with morphisms
 <span class="arithmatex">\(f: C \to A\)</span> and <span class="arithmatex">\(g: C \to B\)</span>. Then we force the existence of a
-morphism <span class="arithmatex">\(f': C \to A \times B\)</span>.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_3_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+morphism <span class="arithmatex">\(f': C \to A \times B\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_3_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 When we usually do this, we simply just set </p>
 <div class="arithmatex">\[
 f' = (f, g)   

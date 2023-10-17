@@ -3034,10 +3034,9 @@ to be the equalizer of <span class="arithmatex">\(f\)</span> and <span class="ar
 to be the coequalizer of <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(\emptyset_A^B: A \to B\)</span>. </p>
 </li>
 </ul>
-<p>In diagrams, we have that 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}</p>
+<p>In diagrams, we have that </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p><span style="display:block" class="example">
 In the category <strong>Grp</strong>, we certainly have a zero object <span class="arithmatex">\(z = \{e\}\)</span>.
 Observe that for a given morphism <span class="arithmatex">\(\phi: G \to H\)</span>, 
@@ -3077,9 +3076,8 @@ an equalizer with a morphism <span class="arithmatex">\(\phi\)</span> and a zero
 suppose that we have kernels for every morphism in <span class="arithmatex">\(\cc\)</span>. Then consider two 
 morphisms <span class="arithmatex">\(\phi, \psi: G \to H\)</span>. We can combine these two morphisms by our 
 group operation on <span class="arithmatex">\(\hom(G, H)\)</span> and consider <span class="arithmatex">\(\phi - \psi\)</span>. Since we can take kernels, we 
-take the kernel of this morphism.
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+take the kernel of this morphism.</p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We now argue that this is the equalizer of <span class="arithmatex">\(\phi, \psi\)</span>. First observe that </p>
 <div class="arithmatex">\[
 (\phi - \psi)\circ e = 0 \implies \phi \circ e - \psi \circ e = 0 \implies \phi \circ e = \psi \circ e
@@ -3087,9 +3085,8 @@ We now argue that this is the equalizer of <span class="arithmatex">\(\phi, \psi
 <p>using bilinearity of <span class="arithmatex">\(\circ\)</span>. Hence we see that <span class="arithmatex">\(e\)</span> equalizes <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\psi\)</span>, although 
 we now need to demonstrate its universal property. </p>
 <p>Now suppose that there exists an object <span class="arithmatex">\(K\)</span> equipped with a morphism <span class="arithmatex">\(\sigma: K \to G\)</span> such 
-that <span class="arithmatex">\(\psi \circ \sigma = \psi \circ \phi\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+that <span class="arithmatex">\(\psi \circ \sigma = \psi \circ \phi\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, note that </p>
 <div class="arithmatex">\[
 \phi \circ \sigma = \psi \circ \sigma 
@@ -3099,15 +3096,14 @@ However, note that </p>
 <p>Since <span class="arithmatex">\(e: \ker(\phi) \to G\)</span> is kernel, we note that its 
 universal property implies that because <span class="arithmatex">\((\phi - \psi)\circ \sigma = 0\)</span> 
 that there must exists a unique morphism <span class="arithmatex">\(u: K \to \ker(\phi)\)</span> such that 
-<span class="arithmatex">\(e \circ u = \sigma\)</span>. Thus we have shown the diagram below 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(e \circ u = \sigma\)</span>. Thus we have shown the diagram below </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must hold so that <span class="arithmatex">\((\ker(\phi), e: \ker(\phi) \to G)\)</span>, is actually an equalizer!
 </span></p>
 <p>Note that we've once more utilized the bilinearity of <span class="arithmatex">\(\circ\)</span> to construct the above proof, 
 which again reminds us that the assumptions we've made so far are necessary and useful. The above proof now motivates 
 the following definition.</p>
-<p>\begin{definition}
+<p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be an additive category. Then we say <span class="arithmatex">\(\cc\)</span> is <strong>preabelian</strong>
 if it has kernels and cokernels; or, equivalently, if it has all equalizers and coequalizers. 
 </span></p>
@@ -3133,9 +3129,8 @@ Then </p>
 \]</div>
 <p></span></p>
 <p><span style="display:block" class="proof">
-Recall the limit satisfies universal property 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Recall the limit satisfies universal property </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 for every object <span class="arithmatex">\(C\)</span> equipped with a family of morphisms <span class="arithmatex">\(f^i: C \to F(i)\)</span>. 
 Construct the family of morphisms </p>
 <div class="arithmatex">\[
@@ -3148,9 +3143,8 @@ f_i^j =
 <p>where <span class="arithmatex">\(\emptyset_i^j: F(i) \to F(j)\)</span> is the unique zero morphism
 from <span class="arithmatex">\(F(i)\)</span> to <span class="arithmatex">\(F(j)\)</span>.
 Then by the universal property of the limit, for each <span class="arithmatex">\(i \in J\)</span>, there 
-exists a unique morphism <span class="arithmatex">\(h_i: F(i) \to \Lim F\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+exists a unique morphism <span class="arithmatex">\(h_i: F(i) \to \Lim F\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 That is, we have <span class="arithmatex">\(u^j \circ h_i = f_i^j\)</span>. 
 We now argue that we have a colimit on our hands. Specifically, suppose <span class="arithmatex">\(D\)</span> is an 
 object of <span class="arithmatex">\(\cc\)</span> equipped with a family of morphisms <span class="arithmatex">\(g_j: F(j) \to D\)</span>. 
@@ -3159,9 +3153,8 @@ Then observe that we can supply a morphism </p>
 \sum_{k \in J}g_ku^k: \Lim F \to D
 \]</div>
 <p>where the addition operation is from the group structure of <span class="arithmatex">\(\hom(\Lim F, D)\)</span>, 
-such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 This diagram commutes since </p>
 <div class="arithmatex">\[\begin{align*}
 \left( \sum_{k \in J}g_ku^k \right) \circ h_j
@@ -3182,9 +3175,8 @@ the image of the map </p>
 <div class="arithmatex">\[
 h_i: F(i) \to \Lim F  
 \]</div>
-<p>under the contravariant hom functor to get an epic group homomorphism 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p>under the contravariant hom functor to get an epic group homomorphism </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_3_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 between abelian groups, as <span class="arithmatex">\(\circ\)</span> obeys bilinearity 
 properties. By the first isomorphism theorem we then have that </p>
 <div class="arithmatex">\[

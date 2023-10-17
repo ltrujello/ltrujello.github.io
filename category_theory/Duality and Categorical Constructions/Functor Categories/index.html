@@ -3025,16 +3025,15 @@ we can define a natural transformation </p>
 \]</div>
 <p>Visually, we can picture what we are doing as follows.
 For a given morphism <span class="arithmatex">\(f: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span>,
-we define the morphism <span class="arithmatex">\((\tau \cdot \sigma)_C\)</span> as
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+we define the morphism <span class="arithmatex">\((\tau \cdot \sigma)_C\)</span> as</p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thus, we see that natural transformations can be "composed,"
 and we can thus ask: If we view functors as objects, and view natural transformations 
 as morphisms, do we get a category? The answer is yes. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be small categories and consider set of
-all functors <span class="arithmatex">\(F: \cc \to \dd\)</span>. Then the \textbf{functor
-category}, denoted as <span class="arithmatex">\(\dd^\cc\)</span> or <span class="arithmatex">\(\fun(\cc, \dd)\)</span>, is the
+all functors <span class="arithmatex">\(F: \cc \to \dd\)</span>. Then the <strong>functor
+category</strong>, denoted as <span class="arithmatex">\(\dd^\cc\)</span> or <span class="arithmatex">\(\fun(\cc, \dd)\)</span>, is the
 category where 
 \begin{description}
 \item[Objects.] Functors <span class="arithmatex">\(F: \cc \to \dd\)</span>
@@ -3046,8 +3045,8 @@ they're the categorical version of representations. </p>
 <p>When we think of 
 representations, we usually think of a group homomorphism <span class="arithmatex">\(\rho: G \to \text{GL}_n(V)\)</span> 
 for some vector space <span class="arithmatex">\(V\)</span> over a field <span class="arithmatex">\(k\)</span>. However, suppose we wanted to be 
-a real smart-ass and say ``Well, can't we regard <span class="arithmatex">\(\rho\)</span> as actually a functor 
-between two one-object categories whose morphisms are all isomorphism?''
+a real smart-ass and say "Well, can't we regard <span class="arithmatex">\(\rho\)</span> as actually a functor 
+between two one-object categories whose morphisms are all isomorphism?"
 The answer is yes! </p>
 <p>What this then means is that the category of representations of a group <span class="arithmatex">\(G\)</span>
 is actually a functor category. Specifically, </p>
@@ -3073,9 +3072,8 @@ identity <span class="arithmatex">\(1_1: 1 \to 1\)</span> to the identity morphi
 <p><span style="display:block" class="example">
 Let <span class="arithmatex">\(\bm{2}\)</span> be the category consisting of two
 elements, containing the two identities and one nontrivial
-morphism between the objects. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+morphism between the objects. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now consider the functor category <span class="arithmatex">\(\cc^{\bm{2}}\)</span> where <span class="arithmatex">\(\cc\)</span> is
 any category. Each functor <span class="arithmatex">\(F:\bm{2} \to \cc\)</span> maps the pair of
 objects to objects <span class="arithmatex">\(F(1)\)</span> and <span class="arithmatex">\(F(2)\)</span> in <span class="arithmatex">\(\cc\)</span>. However, since
@@ -3142,9 +3140,8 @@ Now observe that <span class="arithmatex">\(\psi\)</span> induces another ring h
 \]</div>
 <p>As a result, we see that such a ring homomorphism induces a natural transformation.
 To show this, let <span class="arithmatex">\(\phi: G \to H\)</span> be a group homomorphism. Then observe that
-we get the diagram in the middle. 
-\
-<img src="../../../png/category_theory/chapter_2/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+we get the diagram in the middle. </p>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, we can follow the elements as in the diagram on the right, which shows 
 us that the diagram commutes. Hence we see that <span class="arithmatex">\(\psi^*\)</span> is a natural transformation 
 between functors <span class="arithmatex">\(R[-] \to S[-]\)</span>. Overall, this establishes that we do in fact have 

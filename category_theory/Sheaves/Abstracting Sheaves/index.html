@@ -3050,11 +3050,9 @@ q_{k, \ell}\Big((h_i)_{i \in \lambda}\Big) = h_\ell\big|_{U_k \cap U_\ell}.
 <li>The fact that the functions <span class="arithmatex">\(p_{k, \ell}, q_{k, \ell}\)</span> exist for all <span class="arithmatex">\(k, \ell \in \lambda\)</span> implies 
 the existence of <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> below which make the diagram commute. (This 
 is just applying the universal property of the product <span class="arithmatex">\(\prod_{i, j}F(U_i \cap U_j)\)</span>.)
-These two functions are rather important.
-\
-<img src="../../../png/category_theory/chapter_10/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{itemize}</li>
+These two functions are rather important.</li>
 </ul>
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Now consider the set of all <span class="arithmatex">\((h_i)_{i \in \lambda} \in \prod_{i \in \lambda}F(U_i)\)</span> 
 such that they agree on overlaps; i.e., such that <span class="arithmatex">\(h_i\big|_{U_i \cap U_j} = 
 h_j\big|_{U_i \cap U_j}\)</span> for all <span class="arithmatex">\(i, j \in \lambda\)</span>. We call this set <span class="arithmatex">\(\text{Eq}(p,  q)\)</span>:</p>
@@ -3069,10 +3067,9 @@ that </p>
 \]</div>
 <p>Okay, so that's just a slightly more complicated way of expressing <span class="arithmatex">\(C(U)\)</span>. 
 What's interesting about this, however, is that <span class="arithmatex">\(\text{Eq}(p, q)\)</span> is quite literally 
-the equalizer of <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> (hence the naming we chose for the set).
-\
-<img src="../../../png/category_theory/chapter_10/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-This is the motivation behind the following definition of a sheaf, which is exactly equivalent to 
+the equalizer of <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> (hence the naming we chose for the set).</p>
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>This is the motivation behind the following definition of a sheaf, which is exactly equivalent to 
 our previous one.</p>
 <p><span style="display:block" class="definition">
 A <strong>sheaf (of sets) on a topological space <span class="arithmatex">\(X\)</span></strong>
@@ -3083,12 +3080,10 @@ F: **Open**(X)\op \to **Set**
 <p>with the following property: If <span class="arithmatex">\(U\)</span> is an open set 
 and <span class="arithmatex">\(\mathcal{U} = \{U_i\}_{i \in \lambda}\)</span> an open cover of <span class="arithmatex">\(U\)</span>,
 then <span class="arithmatex">\(F(U)\)</span> is an equalizer of <span class="arithmatex">\(p\)</span>, <span class="arithmatex">\(q\)</span>, constructed using <span class="arithmatex">\(\mathcal{U}\)</span> 
-as above. The equalizer diagram is below:
-\
-<img src="../../../png/category_theory/chapter_10/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{definition}</p>
+as above. The equalizer diagram is below:</p>
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p>We remark two comments on this definition.</p>
-<p>\begin{itemize}</p>
 <ul>
 <li>
 <p>It is more important to understand the <em>philosophy</em> of the above 
@@ -3104,8 +3099,8 @@ offered above is very powerful because it allows us to quickly
 capture many useful situations and it is useful for proofs.</p>
 </li>
 </ul>
-<p>Now before we move on, we are going to briefly introduce a new concept. 
-\begin{definition}
+<p>Now before we move on, we are going to briefly introduce a new concept. </p>
+<p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category and <span class="arithmatex">\(C\)</span> an object of <span class="arithmatex">\(\cc\)</span>. 
 A <strong>sieve on <span class="arithmatex">\(C\)</span></strong>
 is a set <span class="arithmatex">\(S\)</span> which is a subset of all morphisms with codomain <span class="arithmatex">\(C\)</span>:</p>
@@ -3136,9 +3131,8 @@ of <span class="arithmatex">\(**Open**(X)\)</span>.</p>
 \end{description}
 Take note that this is a bit of subtle concept; it's a very versatile definition. 
 For example, considering <span class="arithmatex">\(\rr^2\)</span> with its standard topology, the following 
-(blue) open sets create sieves on the same open set (the open disk at the origin).
-\
-<img src="../../../png/category_theory/chapter_10/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+(blue) open sets create sieves on the same open set (the open disk at the origin).</p>
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 On the left, we consider the set of all open sets contained in <span class="arithmatex">\(V_1\)</span> and <span class="arithmatex">\(V_2\)</span>; this is a 
 sieve on the open disk (which we call <span class="arithmatex">\(U\)</span> to be consistent with our notation and discussion). 
 On the right, we consider the set of all open sets contained in the weirdly shaped <span class="arithmatex">\(V\)</span>; this is 
@@ -3173,10 +3167,9 @@ for some <span class="arithmatex">\(i\)</span>, and where <span class="arithmate
 the equalizer <span class="arithmatex">\(E\)</span> of <span class="arithmatex">\(p, q\)</span> categorically (i.e., without reference to its elements).
 Let <span class="arithmatex">\(P: \mathcal{O}(X)\op \to **Set**\)</span> be a presheaf. Given an open set 
 <span class="arithmatex">\(U\)</span> with open cover <span class="arithmatex">\(\mathcal{U} = \{U_i\}_{i \in \lambda}\)</span>, we may construct 
-<span class="arithmatex">\(p, q\)</span> using <span class="arithmatex">\(\mathcal{U}\)</span> as before, and take their equalizer <span class="arithmatex">\(E\)</span>:
-\
-<img src="../../../png/category_theory/chapter_10/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-We now prove the following result. </p>
+<span class="arithmatex">\(p, q\)</span> using <span class="arithmatex">\(\mathcal{U}\)</span> as before, and take their equalizer <span class="arithmatex">\(E\)</span>:</p>
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>We now prove the following result. </p>
 <p><span style="display:block" class="lemma">
 Let <span class="arithmatex">\(E\)</span> be the equalizer of <span class="arithmatex">\(p, q\)</span> constructed using an open cover <span class="arithmatex">\(\mathcal{U}\)</span> of <span class="arithmatex">\(U\)</span>. 
 Let <span class="arithmatex">\(\mathcal{S}\)</span> be the sieve functor induced by <span class="arithmatex">\(\mathcal{U}\)</span>. Then</p>
@@ -3203,8 +3196,7 @@ h_V = h_i|_{V}
 but it might not be the only index. Thus, a natural objection to this definition is the following 
 question: What if <span class="arithmatex">\(V\)</span> is contained in <span class="arithmatex">\(U_i\)</span> and <span class="arithmatex">\(U_j\)</span> for distinct <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(j\)</span>? 
 In this case, how do we define <span class="arithmatex">\(h_V\)</span>?</p>
-<p>\
-<img src="../../../png/category_theory/chapter_10/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 If <span class="arithmatex">\((h_i)_{i \in \lambda} \in E\)</span>, then we know that 
 agreement on the overlaps is guaranteed and so we may unambiguously 
 write <span class="arithmatex">\(h_i|_V = h_j|_V = h_V\)</span>. 

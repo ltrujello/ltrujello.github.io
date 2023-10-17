@@ -3024,55 +3024,43 @@ infinite exact sequences. </p>
 <p><span style="display:block" class="proposition">
 Let <span class="arithmatex">\(M_1, M_2\)</span> and <span class="arithmatex">\(M\)</span> be <span class="arithmatex">\(R\)</span>-modules. Then</p>
 <ul>
-<li>
-<p>[1.] The sequence
-\begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] &amp; M_1 \arrow[r, "f"] &amp; M   <br />
-\end{tikzcd}
-is exact if and only if <span class="arithmatex">\(f\)</span> is injective.</p>
-</li>
-<li>
-<p>[2.] The sequence
-\begin{tikzcd}[column sep = \smallish]
-M \arrow[r, "g"] &amp; M_2 \arrow[r] &amp; 0  <br />
-\end{tikzcd}
-is exact if and only if <span class="arithmatex">\(g\)</span> is surjective. </p>
-</li>
-<li>
-<p>[3.] 
-The sequence
-\begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] &amp; M_1 \arrow[r, "f"] &amp; M \arrow[r, "g"] &amp; M_2 \arrow[r] &amp; 0  <br />
-\end{tikzcd} is exact if and only if <span class="arithmatex">\(f\)</span> is injective
-and <span class="arithmatex">\(g\)</span> is injective.</p>
-</li>
+<li>[1.] The sequence</li>
 </ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_24.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is exact if and only if <span class="arithmatex">\(f\)</span> is injective.</p>
+<ul>
+<li>[2.] The sequence</li>
+</ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_25.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is exact if and only if <span class="arithmatex">\(g\)</span> is surjective. </p>
+<ul>
+<li>[3.] 
+The sequence</li>
+</ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_26.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is exact if and only if <span class="arithmatex">\(f\)</span> is injective
+and <span class="arithmatex">\(g\)</span> is injective.</p>
 <p></span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
 <li>[1.]<br />
-(<span class="arithmatex">\(\implies\)</span>) Suppose the sequence 
-\begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] &amp; M_1 \arrow[r, "f"] &amp; M   <br />
-\end{tikzcd}
-is exact. Then we have that <span class="arithmatex">\(\im(0) = \ker(f) \implies
-\ker(f) = \{0\}\)</span>. Therefore we see that <span class="arithmatex">\(f\)</span> is injective. </li>
+(<span class="arithmatex">\(\implies\)</span>) Suppose the sequence </li>
 </ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_27.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is exact. Then we have that <span class="arithmatex">\(\im(0) = \ker(f) \implies
+\ker(f) = \{0\}\)</span>. Therefore we see that <span class="arithmatex">\(f\)</span> is injective. </p>
 <p>(<span class="arithmatex">\(\impliedby\)</span>)Now suppose <span class="arithmatex">\(f\)</span> is injective. Then <span class="arithmatex">\(\ker(f) = 0\)</span>. Since
 <span class="arithmatex">\(\im(0) = \{0\}\)</span> we see <span class="arithmatex">\(\im(0) = \ker(f)\)</span>, so that the
-sequence             \begin{tikzcd}[column sep = \smallish]
-0 \arrow[r] &amp; M_1 \arrow[r, "f"] &amp; M   <br />
-\end{tikzcd}
-is exact.</p>
+sequence           <br />
+<img src="../../../png/algebra/chapter_3/tikz_code_5_28.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is exact.</p>
 <ul>
-<li>[2.] (<span class="arithmatex">\(\implies\)</span>) Suppose the sequence 
-\begin{tikzcd}[column sep = \smallish]
-M \arrow[r, "g"] &amp; M_2 \arrow[r] &amp; 0  <br />
-\end{tikzcd}
-is exact. Then we see that <span class="arithmatex">\(\im(g) = \ker(0) = M_2\)</span>, since
-the zero map simply takes all of <span class="arithmatex">\(M_2\)</span> and sends it to <span class="arithmatex">\(0\)</span>.
-Hence we see that <span class="arithmatex">\(g\)</span> is surjective. </li>
+<li>[2.] (<span class="arithmatex">\(\implies\)</span>) Suppose the sequence </li>
 </ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_29.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is exact. Then we see that <span class="arithmatex">\(\im(g) = \ker(0) = M_2\)</span>, since
+the zero map simply takes all of <span class="arithmatex">\(M_2\)</span> and sends it to <span class="arithmatex">\(0\)</span>.
+Hence we see that <span class="arithmatex">\(g\)</span> is surjective. </p>
 <p>(<span class="arithmatex">\(\impliedby\)</span>) Now suppose <span class="arithmatex">\(g\)</span> is surjective. Then <span class="arithmatex">\(\im(g)
 = M_2\)</span> and we also have that <span class="arithmatex">\(\ker(0) = M_2\)</span>. Therefore
 <span class="arithmatex">\(\im(g) = \ker(0)\)</span> so that we have an exact sequence. </p>
@@ -3082,16 +3070,15 @@ Hence we see that <span class="arithmatex">\(g\)</span> is surjective. </li>
 <p></span></p>
 <p>The above proposition offers the following definitions. </p>
 <p><span style="display:block" class="definition">
-Let <span class="arithmatex">\(M_1, M_2\)</span> and <span class="arithmatex">\(M\)</span> be <span class="arithmatex">\(R\)</span>-modules. If the sequence
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-is exact then we say it forms an \textbf{short exact
-sequence}. Furthermore, if there exists an <span class="arithmatex">\(R\)</span>-module <span class="arithmatex">\(N\)</span> such
+Let <span class="arithmatex">\(M_1, M_2\)</span> and <span class="arithmatex">\(M\)</span> be <span class="arithmatex">\(R\)</span>-modules. If the sequence</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is exact then we say it forms an <strong>short exact
+sequence</strong>. Furthermore, if there exists an <span class="arithmatex">\(R\)</span>-module <span class="arithmatex">\(N\)</span> such
 that <span class="arithmatex">\(M = N \oplus \im(f) = N \oplus \ker(g)\)</span> (since <span class="arithmatex">\(\im(f) =
-\ker(g)\)</span>) then we say the above sequence is \textbf{split
-exact}.</p>
-<p>In this case, we say <span class="arithmatex">\(N\)</span> or <span class="arithmatex">\(\im(f)\)</span> is a \textbf{direct <br />
-summand} of <span class="arithmatex">\(M\)</span>.
+\ker(g)\)</span>) then we say the above sequence is <strong>split
+exact</strong>.</p>
+<p>In this case, we say <span class="arithmatex">\(N\)</span> or <span class="arithmatex">\(\im(f)\)</span> is a <strong>direct <br />
+summand</strong> of <span class="arithmatex">\(M\)</span>.
 </span></p>
 <p>We can offer a few short exact sequences with some familiar
 objects. 
@@ -3101,13 +3088,12 @@ objects.
 <ul>
 <li>[1.] Let <span class="arithmatex">\(M\)</span> be an <span class="arithmatex">\(R\)</span>-module with a submodule <span class="arithmatex">\(N\)</span>. If
 <span class="arithmatex">\(i:N \to M\)</span> is the inclusion map and 
-<span class="arithmatex">\(\pi: M \to M/N\)</span> is the projection map, then the sequence 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-s exact. \
-<span class="arithmatex">\(\bm{\im(i) \subset \ker(\pi)}\)</span>. Observe
-that if <span class="arithmatex">\(n \in N\)</span> then </li>
+<span class="arithmatex">\(\pi: M \to M/N\)</span> is the projection map, then the sequence </li>
 </ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is exact. \
+<span class="arithmatex">\(\bm{\im(i) \subset \ker(\pi)}\)</span>. Observe
+that if <span class="arithmatex">\(n \in N\)</span> then </p>
 <div class="arithmatex">\[ 
 \pi(i(n)) = \pi(n) = n + N = N
 \]</div>
@@ -3121,27 +3107,23 @@ just <span class="arithmatex">\(m\)</span> itself). Hence <span class="arithmate
 <p>With both directions, we can conclude that <span class="arithmatex">\(\im(i) = \ker(\pi)\)</span> so
 so that the sequence is exact.</p>
 <ul>
-<li>
-<p>[2.] Let <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(P\)</span> be <span class="arithmatex">\(R\)</span>-modules. If we define <span class="arithmatex">\(i':N
+<li>[2.] Let <span class="arithmatex">\(N\)</span> and <span class="arithmatex">\(P\)</span> be <span class="arithmatex">\(R\)</span>-modules. If we define <span class="arithmatex">\(i':N
 \to N \oplus P\)</span> where <span class="arithmatex">\(i'(n) = (n, 0)\)</span> and <span class="arithmatex">\(\pi': N \oplus P
-\to P\)</span> where <span class="arithmatex">\(\pi'(n, p) = p\)</span>, we see that the sequence
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\to P\)</span> where <span class="arithmatex">\(\pi'(n, p) = p\)</span>, we see that the sequence</li>
+</ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is exact. We can realize this by simply observing that
 <span class="arithmatex">\(\ker(\pi')\)</span> is the set of all elements <span class="arithmatex">\((n, 0) \in N \oplus
 P\)</span>, which is exactly the image of <span class="arithmatex">\(i'\)</span>. Therefore <span class="arithmatex">\(\im(i') =
 \ker(\pi')\)</span>, so that the sequence is exact.</p>
-</li>
-<li>
-<p>[3.] The sequence
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<ul>
+<li>[3.] The sequence</li>
+</ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where <span class="arithmatex">\(f:\ZZ_p \to \ZZ_{pq}\)</span> is given by <span class="arithmatex">\(f(n) = qn\)</span> and
 <span class="arithmatex">\(g: \ZZ_{pq} \to \ZZ_q\)</span> is given by <span class="arithmatex">\(g(n) = n \mbox{ mod } q\)</span>,
 then this sequence is exact. In fact, it is a split exact sequence.
 From group theory, we know that </p>
-</li>
-</ul>
 <div class="arithmatex">\[
 \ZZ_{mn} \cong \ZZ_m \oplus \ZZ_n
 \]</div>
@@ -3150,15 +3132,14 @@ From group theory, we know that </p>
 that this will be sufficient to conclude that this is a split
 sequence.</p>
 <ul>
-<li>[4.] If instead we have the sequence
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<li>[4.] If instead we have the sequence</li>
+</ul>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where <span class="arithmatex">\(f:\ZZ_p \to \ZZ_{p^2}\)</span> is given by <span class="arithmatex">\(f(n) = pn\)</span> and
 <span class="arithmatex">\(g: \ZZ_{p^2} \to \ZZ_p\)</span> is given by <span class="arithmatex">\(g(n) = n \mbox{ mod }p\)</span>,
 then this becomes
 an exact sequence. However, this is not split exact as
-<span class="arithmatex">\(p\)</span> is obviously not comprime with itself, and hence </li>
-</ul>
+<span class="arithmatex">\(p\)</span> is obviously not comprime with itself, and hence </p>
 <div class="arithmatex">\[
 \ZZ_{p^2} \not\cong \ZZ_p \oplus \ZZ_p
 \]</div>
@@ -3167,10 +3148,9 @@ an exact sequence. However, this is not split exact as
 include other criterion for when a short exact sequence is split
 exact. </p>
 <p><span style="display:block" class="theorem">
-Let <span class="arithmatex">\(M_1, M_2\)</span> and <span class="arithmatex">\(M\)</span> be <span class="arithmatex">\(R\)</span>-modules such that 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-is exact. Then the following are equivalent:</p>
+Let <span class="arithmatex">\(M_1, M_2\)</span> and <span class="arithmatex">\(M\)</span> be <span class="arithmatex">\(R\)</span>-modules such that </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>is exact. Then the following are equivalent:</p>
 <ul>
 <li>
 <p>[1.] There exists a homomorphism <span class="arithmatex">\(\alpha : M \to M_1\)</span>
@@ -3206,8 +3186,7 @@ Let <span class="arithmatex">\(m \in M_1\)</span>. Then observe that </p>
 <p>where in the third step we used the fact that <span class="arithmatex">\(\alpha
 \circ f = 1_{M_1}\)</span>, and hence <span class="arithmatex">\(\alpha(f(m)) = m\)</span> for all
 <span class="arithmatex">\(m \in M_1\)</span>. Hence, <span class="arithmatex">\(m - f(\alpha(m)) \in \ker(\alpha)\)</span>. </p>
-<p>\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since <span class="arithmatex">\(f: M_1 \to M\)</span> is injective, we see that <span class="arithmatex">\(\alpha: M
 \to M_1\)</span> is surjective. To see this, let <span class="arithmatex">\(m' \in M_1\)</span>.
 Then there exists an <span class="arithmatex">\(m'' \in M\)</span> such that <span class="arithmatex">\(\alpha(m'') = m'\)</span>;
@@ -3228,9 +3207,8 @@ for some <span class="arithmatex">\(y \in M_1\)</span>, and <span class="arithma
 \alpha(f(y)) = \alpha(x) = 0.
 \]</div>
 <p>But <span class="arithmatex">\(\alpha \circ f = 0\)</span>, which implies that <span class="arithmatex">\(y = 0\)</span>.
-Therefore <span class="arithmatex">\(\ker(\alpha) \cap \im(f) = \{0\}\)</span>. 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Therefore <span class="arithmatex">\(\ker(\alpha) \cap \im(f) = \{0\}\)</span>. </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Theorem
 1.\ref{fin_module_sums}, we see that this implies that </p>
 <div class="arithmatex">\[
@@ -3248,8 +3226,7 @@ g[m - \beta(g(m))] &amp;=g(m) - g \circ \beta(g(m))\\
 <p>where in the second step we used the fact that <span class="arithmatex">\(g \circ
 \beta = 1_{M_2}\)</span>. Therefore, <span class="arithmatex">\(\textcolor{blue}{m -
 \beta(g(m)) \in \ker(g)}.\)</span></p>
-<p>\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Now note that </p>
 <div class="arithmatex">\[
 \{ \beta(g(m)) \mid m \in M\} = \{\beta(m_2) \mid m_2 \in M_2\} = \im(\beta)
@@ -3271,9 +3248,8 @@ Furthermore, since <span class="arithmatex">\(m' \in \ker(g)\)</span>, </p>
 \]</div>
 <p>since <span class="arithmatex">\(g \circ \beta = 1_{M_2}\)</span>. Hence, <span class="arithmatex">\(m_2 = 0\)</span>, so that
 <span class="arithmatex">\(\beta(m_2) = 0 = m\)</span>. Therefore <span class="arithmatex">\(m = 0\)</span>, so that
-<span class="arithmatex">\(\im(\beta) \cap \ker(g) = \{0\}\)</span>. 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<span class="arithmatex">\(\im(\beta) \cap \ker(g) = \{0\}\)</span>. </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>By Theorem
 1.\ref{fin_module_sums}, we have that </p>
 <div class="arithmatex">\[
@@ -3410,10 +3386,9 @@ Let <span class="arithmatex">\(M, N\)</span> and <span class="arithmatex">\(N'\)
 the diagram to the right commutes.</p>
 <p>\end{minipage}
 \hfill
-\begin{minipage}{0.4\textwidth}
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\begin{minipage}{0.4\textwidth}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}
 \vspace{0.5cm}</p>
 <p>\begin{minipage}{0.6\textwidth}
 However, suppose we feed the above diagram with arbitrary <span class="arithmatex">\(\phi: M
@@ -3425,10 +3400,9 @@ this with a red arrow, to remind the reader that this arrow
 "picks" <span class="arithmatex">\(\phi\)</span>. 
 \end{minipage}
 \hfill
-\begin{minipage}{0.4\textwidth}
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}</p>
+\begin{minipage}{0.4\textwidth}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}</p>
 <p>\begin{minipage}{0.6\textwidth}
 Note that we've described a well-defined system for assigning for each <span class="arithmatex">\(\phi
 \in \hom_R(M, N)\)</span> a function </p>
@@ -3442,10 +3416,9 @@ denote this with a blue arrow, to communicate that
 the set).
 \end{minipage}
 \hfill
-\begin{minipage}{0.4\textwidth}
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+\begin{minipage}{0.4\textwidth}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}
 \vspace{0.5cm}</p>
 <p>\begin{minipage}{0.6\textwidth}
 What we've just described is an <em>induced</em> function,
@@ -3456,10 +3429,9 @@ That is, if we fix <span class="arithmatex">\(f\)</span>, then we can create a h
 we assign it the function <span class="arithmatex">\(f \circ \phi \in \hom_R(M, N')\)</span>.
 \end{minipage}
 \hfill
-\begin{minipage}{0.4\textwidth}
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}</p>
+\begin{minipage}{0.4\textwidth}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}</p>
 <p>\noindent <span class="arithmatex">\(\hom_R(- , M)\)</span>.\
 The we restate our results. If <span class="arithmatex">\(N, N'\)</span> are <span class="arithmatex">\(R\)</span>-module homomorphisms and <span class="arithmatex">\(f: N \to N'\)</span> is an <span class="arithmatex">\(R\)</span>-module
 homomorphism, then for any <span class="arithmatex">\(R\)</span>-module <span class="arithmatex">\(M\)</span> we can create an induced
@@ -3494,18 +3466,15 @@ know that <span class="arithmatex">\(\hom_R\)</span> forms an <span class="arith
 \</p>
 <p>Now suppose a family of <span class="arithmatex">\(R\)</span>-modules <span class="arithmatex">\(\{M_i \mid i \in \mathbb{N}\}\)</span> associated with a
 set of homomorphisms <span class="arithmatex">\(\{f_i \mid f_i :M_{i-1} \to M_i, i
-\in \mathbb{N}\}\)</span> for a long sequence, not necessarily exact.
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-hen if we apply the <span class="arithmatex">\(\hom_R(M, -)\)</span> functor,
+\in \mathbb{N}\}\)</span> for a long sequence, not necessarily exact.</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Then if we apply the <span class="arithmatex">\(\hom_R(M, -)\)</span> functor,
 then we see that the above sequence implies a sequence between the
-<span class="arithmatex">\(\hom\)</span> groups:
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-nd applying the <span class="arithmatex">\(\hom_R(-, M)\)</span> functor we get 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Thus the long sequence of <span class="arithmatex">\(R\)</span>-modules implies the existence of two other long
+<span class="arithmatex">\(\hom\)</span> groups:</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and applying the <span class="arithmatex">\(\hom_R(-, M)\)</span> functor we get </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Thus the long sequence of <span class="arithmatex">\(R\)</span>-modules implies the existence of two other long
 sequences of abelian groups. The interesting thing is that the two sequences are
 similar but differ in the direction of the arrows (this is why we
 denote the functions separately with an asterik either in the
@@ -3516,53 +3485,21 @@ two sequences. </p>
 <p><span style="display:block" class="theorem">
 Let <span class="arithmatex">\(M_1, M\)</span> and <span class="arithmatex">\(M_2\)</span> be <span class="arithmatex">\(R\)</span>-modules, and suppose <span class="arithmatex">\(f:M_1 \to
 M\)</span> and <span class="arithmatex">\(g:M \to M_2\)</span> are <span class="arithmatex">\(R\)</span>-modules. Then the sequence
-\begin{equation}
-\begin{tikzcd}
-0 \arrow[r]
-&amp;
-M_{1} \arrow[r, "f"]
-&amp;
-M \arrow[r, "g"]
-&amp;
-M_{2}
-\end{tikzcd}
-\end{equation}
+\begin{equation}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_30.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{equation}
 is exact if and only if the sequence 
-\begin{equation} 
-\begin{tikzcd}
-0 \arrow[r]
-&amp;
-\hom_R(N,M_{1}) \arrow[r, "f_<em>"]
-&amp;
-\hom_R(N, M) \arrow[r, "g_</em>"]
-&amp;
-\hom_R(N,M_{2})
-\end{tikzcd}
-\end{equation}
+\begin{equation} </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_31.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{equation}
 is an exact sequence of abelian groups. Furthermore, the sequence 
-\begin{equation}
-\begin{tikzcd}
-M_{1} \arrow[r, "f"]
-&amp;
-M \arrow[r, "g"]
-&amp;
-M_{2} \arrow[r]
-&amp;
-0
-\end{tikzcd}
-\end{equation}
+\begin{equation}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_32.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{equation}
 is exact if and only if 
-\begin{equation}
-\begin{tikzcd}
-\hom_R(M_{1}, N)
-&amp;
-\hom_R(M, N) \arrow[l, swap, "f^<em>"]
-&amp;
-\hom_R(M_{2}, N)\arrow[l, swap, "g^</em>"]
-&amp; 
-0 \arrow[l]
-\end{tikzcd}
-\end{equation}
+\begin{equation}</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_33.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{equation}
 is an exact sequence of abelain groups.
 </span></p>
 <p><span style="display:block" class="proof">
@@ -3665,15 +3602,12 @@ that <span class="arithmatex">\(\im(f) \subset \ker(g)\)</span>. </p>
 <p>\end{description}
 </span></p>
 <p><span style="display:block" class="theorem">
-Let <span class="arithmatex">\(N\)</span> be an <span class="arithmatex">\(R\)</span>-module. If 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-is a split exact sequence of <span class="arithmatex">\(R\)</span>-modules, then 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Let <span class="arithmatex">\(N\)</span> be an <span class="arithmatex">\(R\)</span>-module. If </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+is a split exact sequence of <span class="arithmatex">\(R\)</span>-modules, then </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 are split exact sequences of abelian groups (<span class="arithmatex">\(R\)</span>-modules if
 <span class="arithmatex">\(R\)</span> is commutative).
 </span></p>
@@ -3725,18 +3659,15 @@ These are in general isomorphisms of abelian groups, but can
 be isomorphisms of <span class="arithmatex">\(R\)</span>-modules if <span class="arithmatex">\(R\)</span> is commutative.</p>
 <p><span style="display:block" class="proof">
 Consider one of our earlier examples of a split exact
-sequences:
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+sequences:</p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where <span class="arithmatex">\(i\)</span> defined as <span class="arithmatex">\(i(m_1) = (m_1, 0)\)</span> is the inclusion map
 and <span class="arithmatex">\(\pi\)</span> defined by <span class="arithmatex">\(\pi(m_1, m_2) = m_2\)</span> is the projection
 map. As this is split exact, we can apply the previous theorem
-to gaurantee the existence of sequences 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and 
-\
-<img src="../../../png/algebra/chapter_3/tikz_code_5_23.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+to gaurantee the existence of sequences </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and </p>
+<p><img src="../../../png/algebra/chapter_3/tikz_code_5_23.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which are both split exact. Then by applying Theorem
 1.\ref{split_exact_lemma} we have that </p>
 <div class="arithmatex">\[

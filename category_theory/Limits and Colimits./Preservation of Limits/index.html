@@ -3034,29 +3034,25 @@ the functor </p>
 Let <span class="arithmatex">\(F: J \to \mathcal{C}\)</span> be a diagram with a limiting object<br />
 <span class="arithmatex">\(\text{Lim } F\)</span> equipped with the morphisms <span class="arithmatex">\(\sigma_i: \text{Lim } F \to F_i\)</span>.
 Then applying the <span class="arithmatex">\(\text{Hom}_{\mathcal{C}}(C, -)\)</span> functor to <span class="arithmatex">\(\text{Lim } F\)</span> and to 
-each <span class="arithmatex">\(u_i\)</span>, we realize it forms a cone in <span class="arithmatex">\(**Set**\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+each <span class="arithmatex">\(u_i\)</span>, we realize it forms a cone in <span class="arithmatex">\(**Set**\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now we show that <span class="arithmatex">\(\text{Hom}_{\mathcal{C}}(C, \text{Lim } F)\)</span>, equipped with the morphisms 
 <span class="arithmatex">\(\sigma_{i*}\)</span>, is a universal cone; that is, it is a limit. 
 Suppose that <span class="arithmatex">\(X\)</span> is a set which forms a cone with the
-morphisms <span class="arithmatex">\(\tau_i: X \to \text{Hom}_{\mathcal{C}}(C, F_i)\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+morphisms <span class="arithmatex">\(\tau_i: X \to \text{Hom}_{\mathcal{C}}(C, F_i)\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Then for each <span class="arithmatex">\(x \in X\)</span>, 
 we see that <span class="arithmatex">\(\tau_i(x) : C \to F_i\)</span>.
 The diagram above tells us that <span class="arithmatex">\(u \circ \tau_i(x) = \tau_j(x)\)</span> for each <span class="arithmatex">\(x\)</span>.
 Hence each <span class="arithmatex">\(x \in X\)</span> induces a 
-cone with apex <span class="arithmatex">\(C\)</span> with morphisms <span class="arithmatex">\(\tau_i(x): C \to F_i\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+cone with apex <span class="arithmatex">\(C\)</span> with morphisms <span class="arithmatex">\(\tau_i(x): C \to F_i\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, <span class="arithmatex">\(\text{Lim } F\)</span> is the limit of <span class="arithmatex">\(F: J \to \mathcal{C}\)</span>. Therefore, there 
 exists a unique arrow <span class="arithmatex">\(h_x: C \to \text{Lim } F\)</span> such that 
 <span class="arithmatex">\(h_x \circ \sigma_i = \tau_i(x)\)</span>. Now we can uniquely
 define a function <span class="arithmatex">\(: X \to \text{Hom}_{\mathcal{C}}(C, \text{Lim } F)\)</span> where 
-<span class="arithmatex">\(h(x) = h_x: C \to \text{Lim } F\)</span>, in such a way that the diagram below commutes.<br />
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(h(x) = h_x: C \to \text{Lim } F\)</span>, in such a way that the diagram below commutes.  </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, <span class="arithmatex">\(\text{Hom}_{\mathcal{C}}(C, \text{Lim } F)\)</span> is a limit in <strong>Set</strong>.
 </span>
 At this point, you may be wondering: What is the difference between 

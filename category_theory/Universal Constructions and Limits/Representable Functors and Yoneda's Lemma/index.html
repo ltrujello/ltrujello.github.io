@@ -3035,13 +3035,11 @@ we have a bijective correspondence</p>
 \hom_{\dd}(R, C) \cong \hom_{\cc}(D, F(C)).
 \]</div>
 <p>Now to demonstrate naturality, we consider a morphism <span class="arithmatex">\(k: C \to C'\)</span>
-and we check that the diagram below commutes.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\begin{minipage}{0.5\textwidth}
-\hspace{-1cm}
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+and we check that the diagram below commutes.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\begin{minipage}{0.5\textwidth}
+\hspace{-1cm}</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \end{minipage}
 \hspace{-0.4cm}
 \begin{minipage}{0.5\textwidth}</p>
@@ -3080,9 +3078,8 @@ morphism as <span class="arithmatex">\(u: D \to F(R)\)</span>. </p>
 <p>Now for any <span class="arithmatex">\(f: R \to C\)</span>,
 the diagram on the bottom left commutes by naturality; 
 however, we are more interested in following the element 
-<span class="arithmatex">\(1_R \in \hom_{\dd}(R, R)\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(1_R \in \hom_{\dd}(R, R)\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We see that any such <span class="arithmatex">\(\phi\)</span> must act on <span class="arithmatex">\(\hom_{\dd}(R, C)\)</span> 
 by bijectively send <span class="arithmatex">\(f: R \to C\)</span> to <span class="arithmatex">\(F(f) \circ u\)</span>. What this 
 means is that any <span class="arithmatex">\(h \in \hom_{\cc}(D, F(C))\)</span> corresponds uniquely 
@@ -3231,9 +3228,8 @@ The forward direction is similar to Example \ref{example_affine_representable}, 
 the backwards direction is similar to the proof of Proposition \ref{prop_universality_bijection}.</p>
 <p>First let's interpret what it means for <span class="arithmatex">\(u: \{\bullet\} \to K(R)\)</span> to 
 be universal. This means that for any other <span class="arithmatex">\(f: \{\bullet\} \to K(C')\)</span>, there 
-exists a unique morphism <span class="arithmatex">\(h: R \to C'\)</span> such that the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+exists a unique morphism <span class="arithmatex">\(h: R \to C'\)</span> such that the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By Proposition \ref{prop_universality_bijection} we also have the natural 
 bijection </p>
 <div class="arithmatex">\[
@@ -3258,9 +3254,8 @@ bijections together</p>
 <p>Conversely, suppose that <span class="arithmatex">\(K: \cc \to **Set**\)</span> is representable. Specifically, suppose 
 <span class="arithmatex">\(\phi: \hom_{\cc}(R, -) \isomarrow K(-)\)</span> is our natural isomorphism between the functors. 
 Then in particular, for any <span class="arithmatex">\(h: R \to C\)</span>, naturality guarantees that the following 
-diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now take a step back; define the morphism <span class="arithmatex">\(u: \{\bullet\} \to K(R)\)</span> where 
 <span class="arithmatex">\(u(\bullet) = \phi(1_R)\)</span>, and suppose <span class="arithmatex">\(f: \{\bullet\} \to K(C)\)</span> is some morphism. Then 
 because <span class="arithmatex">\(\phi: \hom_{\cc}(R, C) \to K(C)\)</span> is a bijection, this means that 
@@ -3270,9 +3265,8 @@ above diagram tells us that </p>
 K(h)\big(\phi(1_R)\big) = \phi(h) \implies K(h)(u(\bullet)) = f(\bullet).
 \]</div>
 <p>In other words, we have that given any <span class="arithmatex">\(f:\{\bullet\} \to K(C)\)</span>, 
-there exists a unique <span class="arithmatex">\(h: R \to C\)</span> such that the diagram commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+there exists a unique <span class="arithmatex">\(h: R \to C\)</span> such that the diagram commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, the fact that <span class="arithmatex">\(K\)</span> is representable gives 
 rise to a <span class="arithmatex">\(u: \{\bullet\} \to K(R)\)</span> which is universal, which is what we set 
 out to show.
@@ -3298,9 +3292,8 @@ transformations between functors <span class="arithmatex">\(F, G\)</span>.
 To demonstrate bijectivity, we construct two maps from each set and 
 demonstrate that they are inverses. </p>
 <p>Suppose we have a natural transformation <span class="arithmatex">\(\eta: \hom_{\cc}(R, -) \to K\)</span>. 
-Then for every <span class="arithmatex">\(C \in \cc\)</span>, the diagram below on the left commutes.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Then for every <span class="arithmatex">\(C \in \cc\)</span>, the diagram below on the left commutes.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 With this diagram, we can follow what happens to the identity morphism <span class="arithmatex">\(1_R \in \hom_{\cc}(R, R)\)</span>.
 As above, denote <span class="arithmatex">\(\eta_R(1_R) = u \in K(R)\)</span>.
 The commutativity of the diagram above then tells us that </p>
@@ -3347,9 +3340,8 @@ For any category <span class="arithmatex">\(\cc\)</span>, consider the objects
 \hom(B,-): \cc \to **Set**\)</span>.
 What is a natural transformation <span class="arithmatex">\(\eta: \hom(A, -) \to \hom(B, -)\)</span>?
 It is a family of <em>functions</em>, indexed by all objects in  <span class="arithmatex">\(\cc\)</span>,
-such that for each <span class="arithmatex">\(f: C \to D\)</span> the diagram below commutes.
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+such that for each <span class="arithmatex">\(f: C \to D\)</span> the diagram below commutes.</p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>We see that these functions must satisfy the 
 property outlined in yellow for all <span class="arithmatex">\(C,D\)</span>. So 
 what functions do this?
@@ -3441,8 +3433,8 @@ C \circ \bm{y}: \cc \to **Set**
 <p>Finally, we end this section with a curious connection to group theory. 
 It turns out that Yoneda's Lemma can actually be used in the proof of Cayley's Theorem.
 Sometimes this statement is taken too literally by others 
-and they think ``Yoneda's Lemma is a <em>generalization</em> of 
-Cayley's Theorem'' but that is simply 
+and they think "Yoneda's Lemma is a <em>generalization</em> of 
+Cayley's Theorem" but that is simply 
 not true, so the reader is warned to not believe someone when they hear that.
 Put simply, Yoneda's Lemma offers a bijection on sets which, with a little extra <em>separate</em> 
 work, extends to an isomorphism of groups.</p>
@@ -3474,9 +3466,8 @@ Now what's a natural transformation <span class="arithmatex">\(\eta\)</span> bet
 \]</div>
 <p>Since there is only one object of <span class="arithmatex">\(\cc\)</span>, a natural transformation is <em>one</em> function 
 <span class="arithmatex">\(\eta: U(G) \to U(G)\)</span> such that for each <span class="arithmatex">\(g'\in G\)</span>, 
-the diagram below commutes. 
-\
-<img src="../../../png/category_theory/chapter_3/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the diagram below commutes. </p>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now, Yoneda's Lemma gives us the bijection below, which we may denote as 
 <span class="arithmatex">\(\psi\)</span>,</p>
 <div class="arithmatex">\[

@@ -3035,9 +3035,8 @@ the form </li>
 (D, f: C \to G(D))
 \]</div>
 <p>where morphisms between <span class="arithmatex">\((D, f: C \to G(D))\)</span> and <span class="arithmatex">\((D', f': C \to G(D'))\)</span> 
-will be induced by morphisms <span class="arithmatex">\(h: D \to D'\)</span> such that 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+will be induced by morphisms <span class="arithmatex">\(h: D \to D'\)</span> such that </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_6_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. First, observe that <span class="arithmatex">\((F(C), \eta_C: C \to G(F(C)))\)</span> 
 is an object of the comma category. Second, observe that the 
 bijection of homsets </p>
@@ -3047,9 +3046,8 @@ bijection of homsets </p>
 <p>(natural in <span class="arithmatex">\(C, D\)</span>) 
 guarantees that every object
 <span class="arithmatex">\((D, f: C \to G(D))\)</span> in the comma category corresponds uniquely to
-a morphism <span class="arithmatex">\(h: F(C) \to D\)</span>. Moreover, uniqueness guarantees that the diagram 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+a morphism <span class="arithmatex">\(h: F(C) \to D\)</span>. Moreover, uniqueness guarantees that the diagram </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence, <span class="arithmatex">\((F(C), \eta_C: C \to G(F(C)) )\)</span> is an 
 initial object <span class="arithmatex">\(C \downarrow G\)</span>. </p>
 <ul>
@@ -3064,16 +3062,14 @@ object can be written as </li>
 \]</div>
 <p>This defines a mapping on objects <span class="arithmatex">\(C \mapsto F(C)\)</span>. To show that this 
 is a functor, suppose we have a morphism <span class="arithmatex">\(f: C \to C'\)</span> in <span class="arithmatex">\(\cc\)</span>. Then 
-we have square 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+we have square </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Adding the final leg to this diagram would show that <span class="arithmatex">\(F\)</span> is a functor. But 
 since <span class="arithmatex">\((F(C), \eta_C: C \to G(F(C)))\)</span> is an initial object in <span class="arithmatex">\((C \downarrow G)\)</span>, 
 and <span class="arithmatex">\((F(C'), \eta_{C'}: C' \to G(F(C)))\)</span> is an object in this category, 
 there must be a <em>unique</em> morphism <span class="arithmatex">\(F(f):F(C) \to F(C')\)</span>. Uniqueness of 
-this morphism forces commutativity of the square 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+this morphism forces commutativity of the square </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and therefore <span class="arithmatex">\(F\)</span> is a functor. Simultaneously, this shows <span class="arithmatex">\(F\)</span> is left adjoint 
 to <span class="arithmatex">\(G\)</span>, as desired. </p>
 <p></span><br />
@@ -3088,15 +3084,16 @@ when a functor has a left or right adjoint, and hence when they preserve limits.
 We can investigate a little deeper into this. </p>
 <p><span style="display:block" class="lemma">(Initial Object Existence.)
 If <span class="arithmatex">\(\cc\)</span> is a complete category with small homsets, then <span class="arithmatex">\(\cc\)</span> 
-has an initial object if and only if it satisfies the \textbf{Solution 
-Set Condition}: 
+has an initial object if and only if it satisfies the <strong>Solution 
+Set Condition</strong>: 
 \begin{center}
 \begin{minipage}{0.9\textwidth}
 There exists
 objects <span class="arithmatex">\((C_i)_{i \in I} \in \cc\)</span> such that for every <span class="arithmatex">\(C \in \cc\)</span>, there is a 
 a morphism <span class="arithmatex">\(f_i: C_i \to C\)</span> for at least one <span class="arithmatex">\(i \in I\)</span>. 
 \end{minipage}
-\end{center}    </span></p>
+\end{center}
+</span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
 <li>
@@ -3131,9 +3128,8 @@ f_k \circ \pi_k\circ e: V \to C.
 \]</div>
 <p>We'll now show that all morphisms are equal. Suppose the contrary; 
 that there are two distinct morphisms <span class="arithmatex">\(f, g: V \to C\)</span>. Denote the equalizer 
-of this pair as <span class="arithmatex">\(e_1: u \to v\)</span>. Then we have that 
-\
-<img src="../../../png/category_theory/chapter_5/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+of this pair as <span class="arithmatex">\(e_1: u \to v\)</span>. Then we have that </p>
+<p><img src="../../../png/category_theory/chapter_5/tikz_code_6_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 commutes. The morphism <span class="arithmatex">\(s\)</span> is induced via the universality of 
 both <span class="arithmatex">\(U\)</span> and <span class="arithmatex">\(V\)</span>. Since <span class="arithmatex">\(e \circ e_1 \circ s : W \to W\)</span>, and 
 <span class="arithmatex">\(e\)</span> is the equalizer of endomorphisms of <span class="arithmatex">\(W\)</span>, we have that </p>
@@ -3169,14 +3165,14 @@ exists a <span class="arithmatex">\(j \in I\)</span> and a morphism <span class=
 h = G(t) \circ f_i.
 \]</div>
 <p>\end{minipage}<br />
-\end{center}   </span></p>
+\end{center}    </span></p>
 <p>\textcolor{Plum}{The above theorem helps us find out when we can get a 
 left adjoint. Prior to this theorem, we already know what happened if 
 we were given a functor who has a left adjoint. Namely, it must preserve 
 limits. This natural question one would then ask is if
 the converse holds. The above theorem tells us no, the converse doesn't hold 
-and in fact we need to make sure the functor satisfies the \textbf{solution 
-set condition}. In the next section, we'll give an example of a functor 
+and in fact we need to make sure the functor satisfies the <strong>solution 
+set condition</strong>. In the next section, we'll give an example of a functor 
 which preserves limits from a complete category, but still has no left adjoint.}</p>
 <p>As a converse to the above theorem, we have the following. </p>
 <p><span style="display:block" class="theorem">[ (Representability Theorem.)]
@@ -3192,7 +3188,7 @@ an element <span class="arithmatex">\(y \in K(s)\)</span> and an arrow </p>
 f: s \to C \text{ such that } K(f)(y) = x.
 \]</div>
 <p>\end{minipage}
-\end{center}   </span></p>
+\end{center}    </span></p>
 <script src="../../mathjax_helper.js"></script>
 
 

@@ -3020,9 +3020,8 @@ each braid is sent to the underlying permutation. The kernel of this map is the
 pure braid group, which doesn't change the permutation. However, recall that <span class="arithmatex">\(S_n\)</span> 
 is a symmetric operad, whose composition is given by a block permutation. 
 That is, given a permutation <span class="arithmatex">\(S_n\)</span>, and <span class="arithmatex">\(n\)</span>-many other permutations <span class="arithmatex">\(\sigma_1 \in S_{a_1}, \dots, 
-\sigma_n \in S_{a_n}\)</span>, we can form a permutation in <span class="arithmatex">\(S_{a_1 + \cdots + a_n}\)</span>.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+\sigma_n \in S_{a_n}\)</span>, we can form a permutation in <span class="arithmatex">\(S_{a_1 + \cdots + a_n}\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>This then suggests the idea that there exists an operadic composition for braids; and such 
 an observation checks out. Given a braid <span class="arithmatex">\(\beta \in B_n\)</span>, and <span class="arithmatex">\(n\)</span>-many other 
 braids <span class="arithmatex">\(\alpha_1 \in B_{a_i}, \dots, \alpha_n \in B_{a_n}\)</span>, we can form a 
@@ -3050,26 +3049,22 @@ consider the generator <span class="arithmatex">\(\sigma_1\)</span>, which simpl
 the second. Suppose we would like to substitute 4 parallel strands in the first strand 
 of <span class="arithmatex">\(\sigma_1\)</span>, and just one strand in the second strand of <span class="arithmatex">\(\sigma_1\)</span>. 
 How do we calculate this braid?</p>
-<p>\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-The blue line travels diagonally down, going <em>underneath</em> each red strand once.
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>The blue line travels diagonally down, going <em>underneath</em> each red strand once.
 The blue line crossing underneath the <span class="arithmatex">\(i\)</span>-th red strand can be represented as 
 <span class="arithmatex">\(\sigma_{i}\)</span>. We then multiply all of these together to get the braid.</p>
-<p>\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ence we see that the braid is simply <span class="arithmatex">\(\sigma_4\sigma_3\sigma_2\sigma_1\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Hence we see that the braid is simply <span class="arithmatex">\(\sigma_4\sigma_3\sigma_2\sigma_1\)</span>. </p>
 <p>Suppose now that we would like to substitute 2 parallel strands into 
 the first strand of <span class="arithmatex">\(\sigma_1\)</span>, and also substitute 3 parallel strands 
-in the second strand of <span class="arithmatex">\(\sigma_2\)</span>. Then this produces a braid of 5 strands. 
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-How do we calculate this braid? Observe that the <span class="arithmatex">\(\textcolor{Red}{i}\)</span>-th red strand 
+in the second strand of <span class="arithmatex">\(\sigma_2\)</span>. Then this produces a braid of 5 strands. </p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>How do we calculate this braid? Observe that the <span class="arithmatex">\(\textcolor{Red}{i}\)</span>-th red strand 
 crossing over the <span class="arithmatex">\(\textcolor{RoyalBlue}{j}\)</span>-th strand can be represented 
 as <span class="arithmatex">\(\sigma_{i + j - 1}\)</span>. In the previous situation, <span class="arithmatex">\(j\)</span> was equal to 1, so it 
 each crossing was just <span class="arithmatex">\(\sigma_{i}\)</span>.</p>
-<p>\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-verall, we can simply see that the braid is given by </p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Overall, we can simply see that the braid is given by </p>
 <div class="arithmatex">\[
 (\sigma_2\sigma_1)(\sigma_3\sigma_2)(\sigma_4\sigma_3).  
 \]</div>
@@ -3085,9 +3080,8 @@ crossings will be <span class="arithmatex">\(\sigma_{k_1}, \sigma_{k_1-1}, \dots
 \sigma_{1}\)</span>. Moving onto the second blue and again traveling down, the crossings 
 will be <span class="arithmatex">\(\sigma_{k_1+1}, \sigma_{k_1}, \dots, 
 \sigma_{2}\)</span>. If we have <span class="arithmatex">\(k_2\)</span>-many blue lines, this will be done <span class="arithmatex">\(k_2\)</span> many times.</p>
-<p>\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Hence we have that 
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Hence we have that 
 \begin{equation}
 \sigma_1(k_1, k_2)
 =
@@ -3146,9 +3140,8 @@ which we denote as </p>
 then we have <span class="arithmatex">\(\beta\)</span> below on the bottom left. On the bottom right, 
 we have <span class="arithmatex">\(\beta(k_1, k_2, k_3, k_4)\)</span>
 where <span class="arithmatex">\(k_1 = 3, k_2 = 2, k_3 = 1, k_4 = 3\)</span>.</p>
-<p>\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-taring at the diagram, we can see that it may be expressed as</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Staring at the diagram, we can see that it may be expressed as</p>
 <div class="arithmatex">\[\begin{gather*}
 (\sigma_3\sigma_2\sigma_1 \cdot \sigma_4\sigma_3\sigma_2) (\sigma_6\sigma_7\sigma_8) 
 (\sigma_5\sigma_4\sigma_3 \cdot \sigma_6\sigma_5\sigma_4 \cdot \sigma_7\sigma_6\sigma_5)\\
@@ -3161,13 +3154,11 @@ taring at the diagram, we can see that it may be expressed as</p>
 \]</div>
 <p>To draw the cabled braid <span class="arithmatex">\(\beta(k_1, k_2, \dots, k_n)\)</span>, we see that we have <span class="arithmatex">\(k\)</span>-crossings to focus on; 
 these are where the crossings will happen in our cabled braid. For example, in the braid we provided above, we 
-can highlight the crossings in yellow.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-t each crossing, we're going to have something like this: 
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-That is, at each crossing, there will be a number of red strands crossing over 
+can highlight the crossings in yellow.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+At each crossing, we're going to have something like this: </p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>That is, at each crossing, there will be a number of red strands crossing over 
 blue strands. If we can just describe each of these 
 crossings using generators <span class="arithmatex">\(\sigma_j\)</span> like we did before, 
 then we can describe the whole braid. </p>
@@ -3227,9 +3218,8 @@ Suppose we've applied <span class="arithmatex">\(\sigma_1\sigma_3\)</span>. Then
 they were initially positioned. For instance, after the application of these 
 generators, the green strand is now the first strand; the red strand is now 
 the second; the blue strand is the third; and the black strand is now the fourth. 
-Each color strand is now in a different position than which it started in.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Each color strand is now in a different position than which it started in.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, we can express this observation using our tool.
 Note that <span class="arithmatex">\(\pi(\sigma_1\sigma_3)\)</span> is the permutation <span class="arithmatex">\((1, 2, 3, 4) \mapsto 
 (2, 1, 4, 3)\)</span>. Hence we see that </p>
@@ -3244,10 +3234,9 @@ Hence we have that </p>
 \phi(\sigma_1\sigma_3\sigma_2, 1) = \textcolor{Green}{2} \quad \phi(\sigma_1\sigma_3\sigma_2, 2) = \textcolor{NavyBlue}{4} \quad
 \phi(\sigma_1\sigma_3\sigma_2, 3) = \textcolor{red}{1} \quad \phi(\sigma_1\sigma_3\sigma_2, 4) = \textcolor{Purple}{3}.
 \]</div>
-<p>which matches a simple hand-count that we can perform using the picture below.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{example}</p>
+<p>which matches a simple hand-count that we can perform using the picture below.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+</span></p>
 <p>This tool allows us to answer our second and third questions. For example, consider again 
 <span class="arithmatex">\(\beta(3, 2, 1, 3)\)</span> where <span class="arithmatex">\(\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3\)</span>. 
 How do we calculate, 
@@ -3255,9 +3244,8 @@ for example, the crossing \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_20.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 $},
 of 3 blue lines over 1 black line, as in the picture below?</p>
-<p>\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-his crossing is induced by <span class="arithmatex">\(\sigma_3\)</span>, the fifth generator of <span class="arithmatex">\(\beta\)</span>. 
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_12.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+This crossing is induced by <span class="arithmatex">\(\sigma_3\)</span>, the fifth generator of <span class="arithmatex">\(\beta\)</span>. 
 Hence <span class="arithmatex">\(\beta\)</span> tells us to cross the <span class="arithmatex">\(3\)</span>nd cable over the <span class="arithmatex">\(4\)</span>rd cable. But what 
 are these cables? From looking at the diagram, we definitely know. But in general we won't 
 be able to just look at the diagram. However, our tool can tell us: Since we've applied <span class="arithmatex">\(\sigma_1\sigma_3\sigma_2\sigma_2\)</span>, 
@@ -3364,14 +3352,13 @@ how many strands come before the cable <span class="arithmatex">\(i_j\)</span>, 
 <span class="arithmatex">\(r_j\)</span>.</p>
 </li>
 </ul>
-<p>\begin{example}
+<p><span style="display:block" class="example">
 We can apply this to our previous example. 
 Recall that <span class="arithmatex">\(\beta = \sigma_1\sigma_3\sigma_2\sigma_2\sigma_3\)</span>. 
 One way to interpret out braid diagram is as a sequence of permutations.
-In this case we see that we get five permutations because we have five generators.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-First we compute the table 
+In this case we see that we get five permutations because we have five generators.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>First we compute the table 
 \begin{center}</p>
 <table>
 <thead>
@@ -3428,7 +3415,7 @@ First we compute the table
 </tr>
 </tbody>
 </table>
-<p>\end{center}   This then gives us the product </p>
+<p>\end{center}    This then gives us the product </p>
 <div class="arithmatex">\[\begin{gather*}
 \left(\prod_{m = p_1}^{p_1 + (r_1-1)}
 \sigma_{q_1 + (m-1)}
@@ -3502,9 +3489,8 @@ First we compute the table
 We haven't looked at a braid with an under crossing. So, 
 consider the braid <span class="arithmatex">\(\beta = \sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\sigma_1 \in B_4\)</span>, 
 and let <span class="arithmatex">\(k_1 = 2, k_2 = 3, k_3 = 4, k_4 = 5\)</span>. We'll want to calculate 
-the braid <span class="arithmatex">\(\beta(2, 3, 4, 5)\)</span>. Below is <span class="arithmatex">\(\beta\)</span> and <span class="arithmatex">\(\beta(2,3,4,5)\)</span>.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+the braid <span class="arithmatex">\(\beta(2, 3, 4, 5)\)</span>. Below is <span class="arithmatex">\(\beta\)</span> and <span class="arithmatex">\(\beta(2,3,4,5)\)</span>.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 To calculate the resulting braid we need to create our table of values.
 This is more easily done by generating the permutation table on the left; it 
 tells us how our cables are swapped around. 
@@ -3603,7 +3589,7 @@ tells us how our cables are swapped around.
 </tr>
 </tbody>
 </table>
-<p>\end{center}   This then generates the products </p>
+<p>\end{center}    This then generates the products </p>
 <div class="arithmatex">\[\begin{gather*}
 \left(\prod_{m = 1}^{3}\sigma_{m + 2}^{-1}\sigma^{-1}_m\right)
 \left( \prod_{m = 4}^{7}\sigma^{-1}_{(m+2)-1}\sigma_m^{-1} \right)
@@ -3629,17 +3615,17 @@ tells us how our cables are swapped around.
 \begin{center}
 Given a braid <span class="arithmatex">\(\beta \in B_n\)</span>, and <span class="arithmatex">\(n\)</span> other braids <span class="arithmatex">\(\alpha_1 \in B_{a_1}, \dots, \alpha_n \in B_{a_n}\)</span>, 
 what is the formula for <span class="arithmatex">\(\beta(\alpha_1, \dots, \alpha_n)\)</span>? 
-\end{center}To answer this question, we build on our previous work by making the following observation. 
+\end{center}
+To answer this question, we build on our previous work by making the following observation. 
 Suppose we want to compute <span class="arithmatex">\(\sigma_1(\alpha_1, \alpha_2)\)</span> where <span class="arithmatex">\(\sigma_1, \alpha_1, \alpha_2\)</span>
-appear as below.
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Then we get the braid diagram as in \raisebox{-0.1cm}{$
+appear as below.</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Then we get the braid diagram as in \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_21.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-<span class="arithmatex">\(}.
-\\begin{center}
-\includegraphics[scale = 0.1]{braids_cabled.jpg}
-\end{center}owever, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{\)</span>
+$}.
+\begin{center}</p>
+<p><img src="../../../png/category_theory/chapter_9/braids_cabled.jpg" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>\end{center}However, we can all isotopies to stretch the braid to \raisebox{-0.1cm}{$
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 <span class="arithmatex">\(}, 
 then \raisebox{-0.1cm}{\)</span>
@@ -3653,18 +3639,14 @@ But note that \raisebox{-0.1cm}{\)</span>
 $}
 may be expressed in either of the equivalent ways:
 \</p>
-<p>\begin{minipage}{0.5\textwidth}
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
-\begin{minipage}{0.5\textwidth}
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\
-<img src="../../../png/category_theory/chapter_9/tikz_code_4_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-end{minipage}
+<p>\begin{minipage}{0.5\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}
+\begin{minipage}{0.5\textwidth}</p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_18.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_4_19.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+\end{minipage}
 \vspace{1cm}</p>
 <p>This then gives us the following idea. Suppose we want to calculate 
 <span class="arithmatex">\(\beta(\alpha_1, \dots, \alpha_n)\)</span> where <span class="arithmatex">\(\alpha_i \in B_{a_i}\)</span>.

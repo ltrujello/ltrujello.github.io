@@ -3067,7 +3067,7 @@ To discuss these categories, we will use the notation in the leftmost column.
 <td>Ring homomorphisms</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(R\rmod\)</span></td>
+<td><span class="arithmatex">\(R\mod\)</span></td>
 <td><span class="arithmatex">\(R\)</span>-modules <span class="arithmatex">\((M, +)\)</span></td>
 <td><span class="arithmatex">\(R\)</span>-module homomorphisms</td>
 </tr>
@@ -3135,7 +3135,7 @@ This category, while fairly trivial, is called a <strong>discrete category</stro
 </span></p>
 <p><span style="display:block" class="example">
 Consider any of the categories <span class="arithmatex">\(\mon\)</span>, <span class="arithmatex">\(\grp\)</span>, <span class="arithmatex">\(\ring\)</span>, or 
-<span class="arithmatex">\(R\rmod\)</span>. For any object of these categories, we can create 
+<span class="arithmatex">\(R\mod\)</span>. For any object of these categories, we can create 
 the notion of a <em>grading</em>. Such a concept is a useful algebraic construction which 
 appears in different areas of mathematics. For simplicity, we'll consider a grading 
 on a group.</p>
@@ -3199,12 +3199,10 @@ as one object categories.
 A category <span class="arithmatex">\(\mathcal{P}\)</span> is said to be <strong>thin</strong> or a <strong>preorder</strong>
 if there is <strong>at most</strong> one morphism <span class="arithmatex">\(f:  A \to B\)</span> for each <span class="arithmatex">\(A, B \in \mathcal{P}\)</span>. 
 </span>
-The simplest thin categories are of the form below 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-but they may also have more complex shapes such as the category below. 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+The simplest thin categories are of the form below </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+but they may also have more complex shapes such as the category below. </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Thin categories are very common since we often times only care about one single 
 type of relation between any two objects. An example of such a relation is a binary relation; 
 for any two real numbers <span class="arithmatex">\(x, y \in \rr\)</span>, we know that either <span class="arithmatex">\(x \le y\)</span> or <span class="arithmatex">\(y \le x\)</span>. </p>
@@ -3245,9 +3243,8 @@ Here we introduce some examples of thin categories.
 \begin{description}
 \item[Natural Numbers.] 
 The sets <span class="arithmatex">\(\{1, 2, \dots, n\}\)</span> for any <span class="arithmatex">\(n \in N\)</span> are
-linear orders, each of which forms a category as pictured below.
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+linear orders, each of which forms a category as pictured below.</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In this figure, the loops represent the trivial identity functions.</p>
 <p>This example can also be generalized to include <span class="arithmatex">\(\mathbb{N}, \mathbb{Z}, 
 \mathbb{Q},\)</span> and <span class="arithmatex">\(\mathbb{R}\)</span>. </p>
@@ -3292,14 +3289,12 @@ if we were to replace the strands with <em>real</em>, phyiscal
 ropes then they would behave the same way.</p>
 <p>Each generator <span class="arithmatex">\(\sigma_i\)</span> is interpreted as swapping the <span class="arithmatex">\(i\)</span>-th strand <em>over</em>
 the <span class="arithmatex">\((i+1)\)</span>-th strand, while <span class="arithmatex">\(\sigma_i\)</span> is swapping the <span class="arithmatex">\((i+1)\)</span>-th strand over the <span class="arithmatex">\(i\)</span>-th strand.
-Below are some example generators.
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Below are some example generators.</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The reason why we care about these generators is because every braid can be expressed 
 by over and under crossings (although such an expression may not be unique).
-Now, the group multiplication in this group is simply stacking of braids. For example, the braid
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+Now, the group multiplication in this group is simply stacking of braids. For example, the braid</p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 can be obtained by stacking <span class="arithmatex">\(\sigma_1, \sigma_2\)</span> and then <span class="arithmatex">\(\sigma_1\)</span> again. 
 Hence, the  braid <span class="arithmatex">\(\sigma_1\sigma_2\sigma_1\)</span>. </p>
 <p>Now with the family of braid groups <span class="arithmatex">\(B_1, B_2, \dots,\)</span> we can form a category <span class="arithmatex">\(\mathbb{B}\)</span>
@@ -3403,9 +3398,8 @@ Because this is a two-variable function on <span class="arithmatex">\(G\)</span>
 (-) \cdot g := f_g: G \to G \qquad 
 \]</div>
 <p>This then gives rise to a collection of maps <span class="arithmatex">\(f_g: G \to G\)</span> for each 
-<span class="arithmatex">\(g \in G\)</span>, which we can picture as below. 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(g \in G\)</span>, which we can picture as below. </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In particular, if <span class="arithmatex">\(e\in G\)</span> is the identity, then <span class="arithmatex">\(f_e = 1_G\)</span>. 
 Moreover, composition of these maps is associative.
 Thus we can think of this as a category, specifically 
@@ -3419,9 +3413,8 @@ suppose we have a group action <span class="arithmatex">\(\phi: X \times G \to X
 is a group action we have that <span class="arithmatex">\(\phi_g \circ \phi_{g'} = \phi_{g\cdot g'}\)</span> 
 and <span class="arithmatex">\(\phi_e = 1_X\)</span>. Hence composition is associative and we have a well-behaved
 identity morphism. Usually, when we draw group actions, we think of something 
-like this: 
-\
-<img src="../../../png/category_theory/chapter_1/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+like this: </p>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 What we're seeing is that group actions can be phrased as a category with one object, 
 with morphisms as isomorphisms. This generalizes our previous discussion, which makes 
 sense since groups are trivial examples of group actions by setting <span class="arithmatex">\(X = G\)</span>. 

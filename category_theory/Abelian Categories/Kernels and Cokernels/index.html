@@ -3018,10 +3018,9 @@ Now in the comma category <span class="arithmatex">\((\cc \downarrow A)\)</span>
 <span class="arithmatex">\((C, f: C \to A)\)</span> and <span class="arithmatex">\((D, g: D \to A)\)</span> is a morphism <span class="arithmatex">\(h: D \to C\)</span> in <span class="arithmatex">\(\cc\)</span> such that 
 <span class="arithmatex">\(f = g \circ h\)</span>. Similarly, a morphism in the comma category <span class="arithmatex">\((A \downarrow \cc)\)</span> 
 between two objects <span class="arithmatex">\((P, m: A \to P)\)</span> and <span class="arithmatex">\((Q, n: A \to Q)\)</span> is a morphism <span class="arithmatex">\(k: P \to Q\)</span> such that 
-<span class="arithmatex">\(n = h \circ m\)</span>. These relations give rise to the bow-tie diagram:
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-ith that said, we can actually turn these categories into partial orders. 
+<span class="arithmatex">\(n = h \circ m\)</span>. These relations give rise to the bow-tie diagram:</p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+With that said, we can actually turn these categories into partial orders. 
 In <span class="arithmatex">\((\cc \downarrow A)\)</span>, we say <span class="arithmatex">\(g \le f\)</span> if there exists an <span class="arithmatex">\(h\)</span> such that <span class="arithmatex">\(f \circ h = g\)</span>, 
 and in <span class="arithmatex">\((A \downarrow \cc)\)</span>, we say <span class="arithmatex">\(m \le n\)</span> if there exists a <span class="arithmatex">\(k\)</span> such that 
 <span class="arithmatex">\(n = k \circ m\)</span>. </p>
@@ -3053,18 +3052,16 @@ to act on objects as </p>
 Suppose we have two objects of our 
 comma category <span class="arithmatex">\((C, f: A \to C)\)</span> and <span class="arithmatex">\((D, g: A \to D)\)</span>, and that <span class="arithmatex">\(h: D \to C\)</span>
 is a morphism in <span class="arithmatex">\((A \downarrow \cc)\)</span> 
-from <span class="arithmatex">\((D, g: A \to D)\)</span> to <span class="arithmatex">\((C, f: A \to C)\)</span>. Then we have the diagram below.
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+from <span class="arithmatex">\((D, g: A \to D)\)</span> to <span class="arithmatex">\((C, f: A \to C)\)</span>. Then we have the diagram below.</p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now note that </p>
 <div class="arithmatex">\[
 f \circ e_2 = (h \circ g) \circ e_2 = h \circ (g \circ e_2) = 0.
 \]</div>
 <p>Thus, by the universal property of <span class="arithmatex">\(e_1: \ker(f) \to A\)</span>, we know there 
 exists a <em>unique</em> morphism <span class="arithmatex">\(h': \ker(g) \to \ker(f)\)</span> such that the diagram 
-below commutes.
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+below commutes.</p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_4_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>However, this is exactly what it means to have a morphism between the objects 
 <span class="arithmatex">\((\ker(g), e_2: \ker(g) \to A)\)</span> and <span class="arithmatex">\((\ker(f), e_1: \ker(f) \to A)\)</span>. 
 Thus we see that our functor maps on morphisms in <span class="arithmatex">\((A \downarrow \cc)\)</span> in a nice 
@@ -3082,18 +3079,16 @@ In addition, we can dualize our work above to also get the functor
 <span class="arithmatex">\(\coker: (\cc \downarrow A) \to (A \downarrow \cc)\)</span>. </p>
 <p>Now this creates a Galois correspondence by regarding the comma categories as 
 partially ordered sets. Suppose that <span class="arithmatex">\(g \le \ker(f)\)</span>. That is, there exists a <span class="arithmatex">\(h\)</span> such that 
-<span class="arithmatex">\(\ker(f) \circ h = g\)</span>. Then we can compare <span class="arithmatex">\(\coker(g)\)</span> and <span class="arithmatex">\(f\)</span> by considering the diagram below. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+<span class="arithmatex">\(\ker(f) \circ h = g\)</span>. Then we can compare <span class="arithmatex">\(\coker(g)\)</span> and <span class="arithmatex">\(f\)</span> by considering the diagram below. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now observe that </p>
 <div class="arithmatex">\[
 f \circ g = f \circ (e \circ h) = 0 \circ h = 0.
 \]</div>
 <p>Therefore, by the universal property of the cokernel, we know there 
 exists a unique morphism <span class="arithmatex">\(h': \coker(g) \to f\)</span> such that the diagram 
-below commutes. This then implies that <span class="arithmatex">\(f \le \coker(g)\)</span>. 
-\
-<img src="../../../png/category_theory/chapter_8/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+below commutes. This then implies that <span class="arithmatex">\(f \le \coker(g)\)</span>. </p>
+<p><img src="../../../png/category_theory/chapter_8/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 By a similar argument, we have that if <span class="arithmatex">\(f \le \coker(g)\)</span>, 
 then <span class="arithmatex">\(g \le \ker(f)\)</span>. Hence we have that </p>
 <div class="arithmatex">\[
