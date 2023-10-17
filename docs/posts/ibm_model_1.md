@@ -116,7 +116,7 @@ The parameters are the values $t(e | f)$ for all possible pairs of words $e, f$ 
 ## Chicken and Egg problem: Expectation Maximization
 
 So now that we have a conditional probabilistic model, suppose we are given a dataset in which we cant try to find the parameters that best
-fit the dataset given the model. In our case, our dataset will be a set of $n$ translation pairs $\{(\mathbf{f}_1, \mathbf{e}), \dots, (\mathbf{f}_nm \mathbf{e}_n)  \}$.
+fit the dataset given the model. In our case, our dataset will be a set of $n$ translation pairs $\{(\mathbf{f}_1, \mathbf{e}_1), \dots, (\mathbf{f}_k,  \mathbf{e}_k)  \}$.
 
 However, we actually can't learn the parameters of our probabilistic model $p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})$, because
 a parallel corpus of translations does not give use 
@@ -367,7 +367,7 @@ Thus, we have an answer to our question. We can estimate $t(e | f)$ using our pa
 counting how often $e$ and $f$ are aligned in sentence pairs, and by using 
 knowledge of how likely any given alignment is between a sentence pair. 
 
-# Alignment algorithm
+## Alignment algorithm
 
 To summarize at this point:
 
