@@ -55,18 +55,12 @@ and we check that the diagram below commutes.
 \hspace{-0.4cm}
 \begin{minipage}{0.5\textwidth}
 
-* [\textcolor{Red}{\textbullet}]
-Beginning with a morphism $f: R \to C$, we travel right 
+* **\textcolor{Red}{\textbullet}** Beginning with a morphism $f: R \to C$, we travel right 
 to obtain the morphism $F(f) \circ u$. Going down, we obtain 
-the morphism $F(k) \circ (F(f) \circ u)$.  
-
-
-* [\textcolor{Blue!80}{\textbullet}]
-Consider the same morphism $f: R \to C$. If we instead first traveled down, 
+the morphism $F(k) \circ (F(f) \circ u)$.
+* **\textcolor{Blue!80}{\textbullet}** Consider the same morphism $f: R \to C$. If we instead first traveled down, 
 we'd obtain the morphism $k \circ f$. Traveling right would then 
-send us to the morphism $F(k \circ f) \circ u$. 
-
-
+send us to the morphism $F(k \circ f) \circ u$.
 
 \end{minipage}
 However, it is certainly the case that 
@@ -214,7 +208,7 @@ isomorphism
 \cong 
 \hom_{**Set**}(X, U(R)).
 \]
-
+ 
 natural for all $R \in **Alg**_k$. 
 However, notice that if $X = \{x_1, \dots, x_n\}$, $\hom_{**Set**}(X, U(R))$ is nothing 
 more than the set of all functions which pick out $n$ elements of 
@@ -430,7 +424,7 @@ may conclude that
 \[
 \nat(\hom_{\cc}(R, -), K) \cong K(R)
 \]
-
+  
 as desired.
 </span>
 
@@ -589,12 +583,8 @@ and we have that $f_g \circ f_{g'} = f_{g'\cdot g}$.
 Now consider the functor $\hom_{\cc}(\bullet, -): \cc \to **Set**$. 
 Such a functor produces the following data:
 
-*  We have that $\hom_{\cc}(\bullet, \bullet) = U(G)$
-
-
-*  We also get a family of *bijections* $\phi_g: U(G) \to U(G)$ such that $\phi_g \circ \phi_{g'} = \phi_{g'\cdot g}$.
-
-
+* We have that $\hom_{\cc}(\bullet, \bullet) = U(G)$
+* We also get a family of *bijections* $\phi_g: U(G) \to U(G)$ such that $\phi_g \circ \phi_{g'} = \phi_{g'\cdot g}$.
 
 In other words, the functor imposes an action of $G$ on its 
 underlying set of elements $U(G)$ in **Set**.
@@ -621,13 +611,9 @@ $\psi$,
 
 If we now observe that 
 
-*  The collection of such natural transformations is a group under composition, with identity $1_{U(G)}: U(G) \to U(G)$,
+* The collection of such natural transformations is a group under composition, with identity $1_{U(G)}: U(G) \to U(G)$,
 which we may denote as $(P, \circ)$
-
-
-*  $(P,  \circ) \subset \text{Perm}(G)$ 
-
-
+* $(P,  \circ) \subset \text{Perm}(G)$
 
 then we can extend the isomorphism $\psi: P \to U(G)$ to a group isomorphism 
 
@@ -645,8 +631,7 @@ The first two exercises are very important. We (in fact you! The reader!) will
 use these results later on. 
 
 
-* [**1.**] 
-Prove the following dual counterpart to Proposition \ref{proposition:universality_bijection}: 
+* ****1.**** Prove the following dual counterpart to Proposition \ref{proposition:universality_bijection}: 
 Let $F: \cc \to \dd$ be a functor. Then a pair $(R, u: F(R) \to D)$ 
 is universal from \universalFToD{$F$ to $D$} if and only if for each $C \in \cc$, we have the 
 natural bijection 
@@ -654,12 +639,7 @@ natural bijection
 \[
 \hom_{\cc}(C, R) \cong \hom_{\dd}(F(C), D).
 \]
-
-
-
-
-* [**2.**] 
-Prove the following dual counterpart to Proposition \ref{proposition:representable_if_and_only_if}:
+* ****2.**** Prove the following dual counterpart to Proposition \ref{proposition:representable_if_and_only_if}:
 Let $\cc$ be a locally small category, and suppose $K: \cc \to **Set**$ 
 is a functor. Then $K$ is corepresentable, with representing object $R$, if and only if 
 $(R, u: K(R) \to \{\bullet\})$
@@ -668,8 +648,6 @@ is universal from \universalFToD{$K$ to $\{\bullet\}$} for some object $R$.
 *Hint:* Because $K$ is corepresentable, it is a contravariant functor. Thus, this 
 should be very similar to the proof of Proposition \ref{proposition:representable_if_and_only_if}, 
 except with one twist.
-
-
 
 
 

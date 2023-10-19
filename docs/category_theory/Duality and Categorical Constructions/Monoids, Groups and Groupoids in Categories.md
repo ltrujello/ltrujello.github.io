@@ -19,12 +19,8 @@ Now recall the definition of a monoid.
 A monoid $M$ is a set equipped with a binary operation $\cdot: M \times M \to M$ 
 and an identity element $e$ such that 
 
-* [1.] For any $x, y, z \in M$, we have that $x \cdot (y \cdot z) = (x \cdot y) \cdot z$ 
-
-
-* [2.] For any $x \in M$, $x \cdot e = x = e \cdot x$.  
-
-
+* **1.** For any $x, y, z \in M$, we have that $x \cdot (y \cdot z) = (x \cdot y) \cdot z$
+* **2.** For any $x \in M$, $x \cdot e = x = e \cdot x$.
 
 </span> 
 It turns out that we can abstract the above definition very easily if we just resist the 

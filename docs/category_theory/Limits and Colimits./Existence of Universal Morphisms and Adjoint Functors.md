@@ -30,8 +30,7 @@ has an initial object.
 
 <span style="display:block" class="proof">
 
-* [$\bm{\implies}$]
-Suppose $G$ has a left adjoint $F: \cc \to \dd$. Then 
+* **$\bm{\implies}$** Suppose $G$ has a left adjoint $F: \cc \to \dd$. Then 
 for each $C \in \cc$, there exists a universal morphism 
 $\eta_C: C \to G(F(C))$. 
 Now in the comma category, objects will be of 
@@ -60,11 +59,8 @@ a morphism $h: F(C) \to D$. Moreover, uniqueness guarantees that the diagram
 
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence, $(F(C), \eta_C: C \to G(F(C)) )$ is an 
-initial object $C \downarrow G$. 
-
-
-
-* [$\impliedby$] Now suppose that $C \downarrow G$ has an 
+initial object $C \downarrow G$.
+* **$\impliedby$** Now suppose that $C \downarrow G$ has an 
 initial object $(D, \eta_C: C \to G(D))$. Actually, denote 
 the object $D$ as $F(C)$. When we write $F(C)$, we're not denoting 
 a functor, because we'll show this is a functor. Anyways, our initial 
@@ -87,9 +83,7 @@ this morphism forces commutativity of the square
 
 <img src="../../../png/category_theory/chapter_5/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and therefore $F$ is a functor. Simultaneously, this shows $F$ is left adjoint 
-to $G$, as desired. 
-
-
+to $G$, as desired.
 
 </span>  
 We can repeat the proof to achieve the following result as well.
@@ -120,15 +114,10 @@ a morphism $f_i: C_i \to C$ for at least one $i \in I$.
 
 <span style="display:block" class="proof">
 
-* [$\implies$] 
-Suppose $\cc$ has an initial object $C'$. Then $I$ is the one-point 
+* **$\implies$** Suppose $\cc$ has an initial object $C'$. Then $I$ is the one-point 
 set since for each $C \in C$ there exists one unique morphism 
-$f: C' \to C$. 
-
-
-
-* [$\impliedby$] 
-On the other hand, assume the solution set condition. 
+$f: C' \to C$.
+* **$\impliedby$** On the other hand, assume the solution set condition. 
 Since $\cc$ is complete, it must have products, so we may 
 take the product
 
@@ -176,9 +165,7 @@ e_1 \circ s \circ e = 1_V.
 
 However, this implies that the right inverse of $e_1$ is $s \circ e$. 
 Since $e_1$ is already monic, it must be an isomorphism. Hence $f = g$, so that 
-$V$ is an initial object as desired. 
-
-
+$V$ is an initial object as desired.
 
 </span>
 
@@ -208,7 +195,7 @@ h = G(t) \circ f_i.
 \]
 
 \end{minipage}  
-\end{center}    </span>
+\end{center}</span>
 
 \textcolor{Plum}{The above theorem helps us find out when we can get a 
 left adjoint. Prior to this theorem, we already know what happened if 
@@ -237,7 +224,7 @@ f: s \to C \text{ such that } K(f)(y) = x.
 \]
 
 \end{minipage}
-\end{center}    </span>
+\end{center}</span>
 
 
 

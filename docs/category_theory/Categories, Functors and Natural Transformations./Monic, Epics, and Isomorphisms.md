@@ -25,7 +25,7 @@ elements in any objects. This leads to the concepts of monomorphisms and epimorp
 <span style="display:block" class="definition">
 Let $f: A \to B$ be a morphism. Then 
 
-* [1.] $f$ is a **monomorphism** (or is monic) if
+* **1.** $f$ is a **monomorphism** (or is monic) if
 
 \[ 
 f \circ g_1 = f \circ g_2 \implies g_1 = g_2
@@ -33,37 +33,27 @@ f \circ g_1 = f \circ g_2 \implies g_1 = g_2
 
 for all
 $g_1,g_2 : C \to A$, where $D$ is arbitrary.
-
-
-* [2.] $f$ is a **epimorphism** (or is epic) if 
+* **2.** $f$ is a **epimorphism** (or is epic) if 
 
 \[ 
 g_1 \circ f  = g_2 \circ f \implies g_1 = g_2
 \]
 
 for all $g_1, g_2 : B \to C$, where $C$ is an arbitrary
-object. 
-
-
-* [3.] $f $ is a **split monomorphism** (or retraction)
+object.
+* **3.** $f $ is a **split monomorphism** (or retraction)
 if, for some\\
 $g: B \to A$, 
 
 \[
 f  \circ g = 1_B.  
 \]
-
-
-
-* [4.] $f $ is a **split epimorphism** (or section) if, for some
+* **4.** $f $ is a **split epimorphism** (or section) if, for some
 $g: B \to A$, 
 
 \[
 g \circ f  = 1_A.
 \]
-
-
-
 
 </span>
 \end{minipage}
@@ -167,18 +157,12 @@ Next, we illustrate a few properties of these types of morphisms.
 Let $F: \cc \to \dd$ be a functor. Then 
 if $f: A \to B \in \cc$ 
 
-*  is an isomorphism, then 
-$F(f)$ is an isomorphism in $\dd$. 
-
-
-*  is a split monomorphism, then $F(f)$ 
-is a split monomorphism in $F(f)$  
-
-
-*  is a split epimorphism, then $F(f)$ is a split 
+* is an isomorphism, then 
+$F(f)$ is an isomorphism in $\dd$.
+* is a split monomorphism, then $F(f)$ 
+is a split monomorphism in $F(f)$
+* is a split epimorphism, then $F(f)$ is a split 
 epimorphism.
-
-
 
 That is, functors **preserve** isomorphisms, split monomorphism, 
 and split epimorphisms. 
@@ -212,7 +196,7 @@ nilradical elements), but the image of this map under $\spec$
 \[
 \spec(\phi): \spec(A/N) \isomarrow \spec(A)
 \]
-
+ 
 is always an isomorphism. In fact, if we impose the Zarisky topology on these prime spectrums, 
 the functor becomes one which goes to topological spaces
 
@@ -334,48 +318,34 @@ Note that despite the notation, this does *not* generally define a functor.
 Some examples of the above construction include familiar and useful examples 
 in mathematics.
 
-*   For any group $(G, \cdot)$ in $\grp$, we can formulate the automorphism 
+* For any group $(G, \cdot)$ in $\grp$, we can formulate the automorphism 
 group $\aut(G)$ which is the group of isomorphisms from $G$ to itself. 
 Depending on $G$, this can have all kinds of behavior. For example, if 
 $\aut(G)$ is cyclic, then 
 $G$ is abelian. If $G$ is an abelian group 
 of order $p^n$, then $\aut(G) = GL(n, F)$ where $F$ is the finite field of order $p$.
-
-
-
-*  For any set $X$ in $\Set$, the automorphism group $\aut(X)$ consists of the bijections 
+* For any set $X$ in $\Set$, the automorphism group $\aut(X)$ consists of the bijections 
 on $X$ to itself; by definition in set theory, these are just permutations. Hence the automorphism group 
-is the permutation group of the elements of $X$. 
-
-
-
-*  For any field $(k, \cdot, +)$ in $\fld$, the automorphism 
+is the permutation group of the elements of $X$.
+* For any field $(k, \cdot, +)$ in $\fld$, the automorphism 
 group $\aut(k)$ also consists of field isomorphisms to itself. 
 In this setting, what is often 
 of more interest is considering the subgroups of $\aut(k)$, often 
 denoted as $\aut(k/L)$, which are automorphisms that fix the subfield 
 $L$. These subgroups are key 
 to studying polynomial roots and hence are prevalent in Galois theory.
-
-
-
-*  For any graph $(G, E, V)$ in **Grph**, one can construct the automorphism group $\aut(G)$, 
+* For any graph $(G, E, V)$ in **Grph**, one can construct the automorphism group $\aut(G)$, 
 which tracks the symmetries of the graph. Interestingly, there is a theorem known as 
 Frucht's Theorem which states that every finite 
 group is the automorphism group of a finite (undirected) graph; this was later 
 extended and shown that every group is the automorphism group of a directed 
-graph [*Groups represented by homeomorphism groups*.]. 
-
-
-
-*  For any topological space $(X, \tau)$ in $\top$, 
+graph [*Groups represented by homeomorphism groups*.].
+* For any topological space $(X, \tau)$ in $\top$, 
 the autormorphism group $\aut(X)$ 
 consists of the homeomorphisms to itself. Geometrically, these record the possible 
 ways of continuously deforming a space back into itself. It is a theorem 
 that every group is the automorphism group of some complete, connected, 
-locally connected metric space $M$ of any dimension.         
-
-
+locally connected metric space $M$ of any dimension.
 
 </span>
 
@@ -389,7 +359,7 @@ $\sim$ on $\ob(\cc)$, the objects of $\cc$, where we say
 \[
 A \sim B \text{ if } A \cong B.
 \]
-
+  
 Such an equivalence relation divides the objects of $\cc$ into disjoint 
 *isomorphsm classes*, which reduces the structure of $\cc$. 
 
@@ -413,27 +383,26 @@ deal of information within the category.
 Let $\cc$ be a category, and assume the axiom of choice. Then we can construct 
 **a skeleton of a category $\cc$**, denoted $\text{sk}(\cc)$, as 
 the category where 
-\begin{description}
-\item[Objects.] For each $A \in \cc$, we select one 
+
+* **Objects.** For each $A \in \cc$, we select one 
 representative of each isomorphism class $\text{Isom}(A)$.
-\item[Morphisms.] For two representatives of isomorphism 
+* **Morphisms.** For two representatives of isomorphism 
 classes $A, B$, we take 
 
 \[
 \hom_{\text{sk}(\cc)}(A,B)= \hom_{\cc}(A,B)
 \]
 
-\end{description}
 </span>
 We note three things regarding this construction. 
-\begin{description}
-\item[(1)] We used the axiom of choice to build the objects of the 
+
+* **(1)** We used the axiom of choice to build the objects of the 
 category, since we needed to select one element from each isomorphism class.
-\item[(2)] The category $\text{sk}(\cc)$ is a full subcategory of $\cc$ by definition.
-\item[(3)] We note that this construction builds *a* skeleton. In general, 
+* **(2)** The category $\text{sk}(\cc)$ is a full subcategory of $\cc$ by definition.
+* **(3)** We note that this construction builds *a* skeleton. In general, 
 a category will have different skeletons because there are many ways to construct the 
-objects of such a skeleton. 
-\end{description}
+objects of such a skeleton.
+
 As noted, a category will have different skeletons. However, up to isomorphism, it does 
 not really matter which skeleton we build as we will see. 
 
@@ -461,10 +430,10 @@ examples.
 
 <span style="display:block" class="example">
 Consider the category $**FinCard**$ (read: "finite cardinals") which we describe as 
-\begin{description}
-\item[Objects.] The set $\varnothing$ and the sets $\{1, 2, ..., n\}$ for each $n \in \mathbb{N}$.
-\item[Morphisms.] All functions between these finite sets.  
-\end{description}
+
+* **Objects.** The set $\varnothing$ and the sets $\{1, 2, ..., n\}$ for each $n \in \mathbb{N}$.
+* **Morphisms.** All functions between these finite sets.
+
 Clearly this is a full subcategory of $\finset$. Moreover, it is skeletal; 
 no two sets are isomorphic because each object is of different size. Therefore, it 
 is skeletal. In fact, $**FinCard**$ is a skeleton 
@@ -482,10 +451,10 @@ is in general not possible unless we assume ZFC with the
 
 Assuming such an axiom, we can construct the category $**Card**$
 where 
-\begin{description}
-\item[Objects.] The sets $\varnothing, \{1, 2, \dots, n\}$ for each $n \in \mathbb{N}$, and $\omega_0, \omega_1, \omega_2, \dots$ 
-\item[Morphisms.] All functions between such sets. 
-\end{description}
+
+* **Objects.** The sets $\varnothing, \{1, 2, \dots, n\}$ for each $n \in \mathbb{N}$, and $\omega_0, \omega_1, \omega_2, \dots$
+* **Morphisms.** All functions between such sets.
+
 Here we see that this is again a skeleton $\Set$, since by our assumptions 
 (which is assuming a lot), any set is of some cardinality
 $1, 2, \dots, n, \dots, \aleph_0, \aleph_1, \dots$. However, for each such 
@@ -503,10 +472,10 @@ size (again, using the generalized continuum hypothesis).
 <span style="display:block" class="example">
 Consider the category $**Ecld**$ of Euclidean spaces, which we may
 describe as 
-\begin{description}
-\item[Objects.] The vector spaces $\rr^n$ for each $n = 0, 1, 2, \dots, $
-\item[Morphisms.] Linear transformations between vector spaces. 
-\end{description}
+
+* **Objects.** The vector spaces $\rr^n$ for each $n = 0, 1, 2, \dots, $
+* **Morphisms.** Linear transformations between vector spaces.
+
 Then we see that $**Ecld**$ is the skeleton of $**FinVect**_k$, 
 which is the category of finite-dimensional vector spaces. The reason why this 
 works is because every finite dimensional vector space is isomorphic to $\rr^n$ for 
@@ -516,38 +485,23 @@ some $n$.
 {\large **Exercises**
 \vspace{0.5cm}}
 
-* [**1.**] Prove Lemma \ref{lemma:composition_of_epis} for epimorphisms.
-
-
-
-* [**2.**] Prove Lemma \ref{lemma:skeletons_are_isomorphic}.
-
-
-* [**3.**] Describe the monomorphisms and epimorphisms 
+* ****1.**** Prove Lemma \ref{lemma:composition_of_epis} for epimorphisms.
+* ****2.**** Prove Lemma \ref{lemma:skeletons_are_isomorphic}.
+* ****3.**** Describe the monomorphisms and epimorphisms 
 in the category of $\cat$.\footnote{Classifying epimorphisms 
 in $\cat$ is actually nontrivial, although not impossible. 
 However, the task here is to just interpret 
 the definition of monics and epics $\cat$. }
-
-
-
-* [**4.**]
-In the category of $\ring$, give an example of a morphism 
+* ****4.**** In the category of $\ring$, give an example of a morphism 
 which is both a monomorphism and epimorphism, but not an isomorphism.
 \\
 (*Hint:* Consider the inclusion $i: \zz \to \qq$.)
-
-
-
-* [**5.**]
-Recall from Exercise ? that, in any category, if we have two commutative 
+* ****5.**** Recall from Exercise ? that, in any category, if we have two commutative 
 diagrams, we can always stack them together to obtain a larger commutative diagram. 
 We saw, however, that converse is not always true: subdividing a commutative 
 diagram does not produce smaller commutative diagrams. 
 
-Prove that the converse is true when all morphisms are isomorphisms.     
-
-
+Prove that the converse is true when all morphisms are isomorphisms.
 
 
 

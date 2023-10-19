@@ -19,7 +19,7 @@ and $\textcolor{Orange}{\bigcdot}:  H \times H \to H$. The
 \[
 (G \* H, \bigcdot) = \bigg\{ g_1h_1g_2h_2\cdots g_kh_k \;\bigg|\; g_i \in G, h_i \in H \bigg\}
 \]
-
+ 
 with the following operation. If $g_1h_1\cdots g_kh_k$ and $g'_1h'_1\cdots g'_{\ell}h'_{\ell}$
 are two elements of $G \* H$, then 
 
@@ -31,22 +31,16 @@ g_1h_1\cdots g_kh_k g'_1h'_1 \cdots g'_{\ell}h'_{\ell}.
 
 We require the group operation to obey the following two rules. Let $g_1h_1\cdots g_kh_k \in G \* H$.
 
-*  If $g \in G$, then 
+* If $g \in G$, then 
 
 \[
 g \mathbin{\bigcdot} (g_1h_1\cdots g_kh_k) = (g \mathbin{\textcolor{NavyBlue}{\bigcdot}} g_1)h_1\cdots g_kh_k.
 \]
-
-
-
-*  If $h \in H$, then 
+* If $h \in H$, then 
 
 \[
 (g_1h_1\cdots g_kh_k)\mathbin{\bigcdot} h = g_1h_1\cdots g_k(h_k \mathbin{\textcolor{Orange}{\bigcdot}} h).
 \]
-
-
-
 
 The free product of two groups arise frequently in algebraic topology.
 Despite that its definition is somewhat complicated, we will see later
@@ -173,12 +167,11 @@ That would be false in many cases.
 <span style="display:block" class="proposition">
 Suppose $\cc$ is a category with an initial object $I$ and a coproduct
 object $A \amalg B$ for every pair of objects $A$ and $B$. Then 
-\begin{description}
-\item[$\bm{(i)}$] $\cc$ has finite coproducts. 
-\item[$\bm{(ii)}$] There exists a bifunctor $\amalg: \cc \times \cc
-\to \cc$ where $(A, B) \mapsto A \amalg B$.
 
-\item[$\bm{(iii)}$] For any three objects, we have an
+* **$\bm{(i)}$** $\cc$ has finite coproducts.
+* **$\bm{(ii)}$** There exists a bifunctor $\amalg: \cc \times \cc
+\to \cc$ where $(A, B) \mapsto A \amalg B$.
+* **$\bm{(iii)}$** For any three objects, we have an
 isomorphism 
 
 \[
@@ -187,15 +180,14 @@ isomorphism
 \]
 
 which is natural in $A, B$ and $C$ .
-
-\item[$\bm{iv}$] For any object $A$, we have the isomorphism 
+* **$\bm{iv}$** For any object $A$, we have the isomorphism 
 
 \[
 I \amalg A \cong A \cong I \amalg A            
 \]
-
+ 
 natural in $A$, where $T$ is the initial object of the category.
-\end{description}
+
 </span>
 
 

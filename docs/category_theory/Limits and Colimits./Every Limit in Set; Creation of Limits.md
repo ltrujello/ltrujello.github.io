@@ -91,7 +91,7 @@ Now let $k \in K$.  Then we can form an element
 x = (\mu_0(k), \mu_1(k), \mu_2(k), \dots) \in 
 \prod_{i = 1}^{\infty}F_i
 \]
-
+  
 since each $\mu_n(k) \in F_n$. Now observe that 
 
 \[
@@ -138,20 +138,14 @@ Note that in the last example, we can
 actually think of each $x = (x_0, x_1, x_2, \dots)
 \in \Lim F$ as a cone. How so? 
 
-* [1.] For each $x = (x_0, x_1, x_2, \dots) \in \Lim F$, 
+* **1.** For each $x = (x_0, x_1, x_2, \dots) \in \Lim F$, 
 consider the one-point set $\{*\}$.
-
-
-
-* [2.] Associate $\{*\}$ with 
+* **2.** Associate $\{*\}$ with 
 the family of functions $\pi^*_n: \{*\} \to F_n$, defined as
 
 \[
 \pi^x_n(*) = x_n.
 \]
-
-
-
 
 Now since $x \in \Lim F$, we know that $f_n(x_{n+1}) = x_{n}$.
 But, note that this is equivalent to stating that $f_n \circ
@@ -271,18 +265,13 @@ U\circ F_i$.
 Now denote the set $\cone(*,U \circ F)$ as $L$. 
 Then we can endow $L$ with a group structure.
 
-*  For any $\sigma, \tau \in L$, we define $\sigma
+* For any $\sigma, \tau \in L$, we define $\sigma
 \times \tau$ to be the cone where $(\sigma \times \tau)_i =
 \sigma_i \cdot \tau_i$, where $\cdot$ is the product in
-$F_i$. 
-
-
-
-*  For $\sigma \in L$, we define the inverse to be   
+$F_i$.
+* For $\sigma \in L$, we define the inverse to be   
 the function $\sigma^{-1}$ where $(\sigma^{-1})_i =
-\sigma_i^{-1}$, with the inverse being taken in $F_i$. 
-
-
+\sigma_i^{-1}$, with the inverse being taken in $F_i$.
 
 All we're really doing here is taking advantage of the fact 
 that each $\sigma, \tau$ is really just a family of functions 
@@ -371,27 +360,15 @@ for the reader to show.
 {\large **Exercises**
 \vspace{0.2cm}}
 
-* [**1.**] 
-\begin{itemize}
+* ****1.****
+    * ***i.*** Let $J = \omega$, and let $F: J \to **Set**$ be a functor 
+    were $F(i) = A_i$. Show that $\Colim F$ exists and give an expicit 
+    description of it. 
+    \\
+    *Hint*: It will be a set endowed with an equivalence relation.
+    * ***ii.*** How does your answer chance when $F: J \to **Set**$ 
+    is contravariant?
 
-
-* [*i.*]
-Let $J = \omega$, and let $F: J \to **Set**$ be a functor 
-were $F(i) = A_i$. Show that $\Colim F$ exists and give an expicit 
-description of it. 
-\\
-*Hint*: It will be a set endowed with an equivalence relation.
-
-
-
-* [*ii.*] How does your answer chance when $F: J \to **Set**$ 
-is contravariant? 
-
-
-
-
-
-\end{itemize}
 
 
 

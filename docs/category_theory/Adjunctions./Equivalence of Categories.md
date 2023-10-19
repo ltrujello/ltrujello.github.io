@@ -79,8 +79,8 @@ and $f^{*}$ is an epimorphism if and only if $f$ is a split monomorphism
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[$\bm{\implies}$] Observe that $\hom_{\cc}(C, -) \to
+
+* **$\bm{\implies}$** Observe that $\hom_{\cc}(C, -) \to
 \cc \to **Set**$ is a functor. Then $f^*:
 \hom_{\cc}(C, -) \to \hom_{\cc}(C', -)$ is a natural transformation where
 $f: C' \to C$. Now suppose $\eta, \eta': F
@@ -108,16 +108,15 @@ But if $f$ is monic, then $f^* \circ \eta_A(x) = f^*
 \circ'_A(x)$ implies that $\eta_A = \eta'_A$. Hence
 we see that $\eta_A(x) \circ f = \eta'_A(x) \circ f
 \implies \eta_A(x) = \eta'_A(x).$
-
-\item[$\bm{\impliedby}$] Now suppose $f$ is epic. Then
+* **$\bm{\impliedby}$** Now suppose $f$ is epic. Then
 using the same notation as earlier, note that 
 
 \[
 f^* \circ \eta_A(x) = f^* \circ \eta'_A(x) \iff \eta_A(x) \circ f = \eta'_A(x) \circ f \implies \eta_{A} = \eta_{A}.
 \]
 
-Hence we see that $f^*$ is a monomorphism. 
-\end{description}
+Hence we see that $f^*$ is a monomorphism.
+
 </span>
 Taking the dual of what we proved, we prove the second part of the
 lemma. Now we'll use this lemma in the theorem below, one which will be very useful.
@@ -126,12 +125,12 @@ lemma. Now we'll use this lemma in the theorem below, one which will be very use
 <span style="display:block" class="proposition">
 Let $(F, G, \eta, \epsilon)$ be an adjunction between
 categories $\cc$ and $\dd$. Then 
-\begin{description}
-\item[$\bm{(i)}$] $G$ is faithful if and only if for each
-$D \in \dd$, $\epsilon_{D}$ is epic 
-\item[$\bm{(ii)}$] $G$ is full if and only if every
-$\epsilon_{D}$ is split monic. 
-\end{description}
+
+* **$\bm{(i)}$** $G$ is faithful if and only if for each
+$D \in \dd$, $\epsilon_{D}$ is epic
+* **$\bm{(ii)}$** $G$ is full if and only if every
+$\epsilon_{D}$ is split monic.
+
 Therefore, $G$ is full and faithful if and only if
 $\epsilon_D$ is an isomorphism between $F(G(D))$ and $D$. 
 </span>
@@ -194,26 +193,19 @@ D'$, we see that
 Thus, we see that this natural transformation is in
 disguise; it's actually just $\epsilon_D^*:
 \hom_{\dd}(D, -) \to \hom_{\dd}(F(G(D), -)$!
-\begin{description}
-\item[$\bm{(i)}$]
-\begin{description}
-\item[$\bm{\iff}$]
-If $G$ is faithful, then the natural
-transformation in equation (7) is one to one. This makes
-$\epsilon_D^*$ a monomorphism. By the previous lemma,
-this holds if and only if $\epsilon_D$ is epic for every $D$
-in $\dd$.
 
-\end{description} 
-\item[$\bm{(ii)}$]
-\begin{description}
-\item[$\bm{\iff}$]
-On the other hand, if $G$ is full, then this natural
-transformation in equation (7) surjective. This makes
-$\epsilon_{D}^*$ an epimorphism, and by the previous
-lemma, that holds if and only if $\epsilon_D$ is a split monomorphism. 
-\end{description}   
-\end{description}
+* **$\bm{(i)}$**
+    * **$\bm{\iff}$** If $G$ is faithful, then the natural
+    transformation in equation (7) is one to one. This makes
+    $\epsilon_D^*$ a monomorphism. By the previous lemma,
+    this holds if and only if $\epsilon_D$ is epic for every $D$
+    in $\dd$.
+* **$\bm{(ii)}$**
+    * **$\bm{\iff}$** On the other hand, if $G$ is full, then this natural
+    transformation in equation (7) surjective. This makes
+    $\epsilon_{D}^*$ an epimorphism, and by the previous
+    lemma, that holds if and only if $\epsilon_D$ is a split monomorphism.
+
 </span>
 
 
@@ -222,15 +214,15 @@ lemma, that holds if and only if $\epsilon_D$ is a split monomorphism.
 <span style="display:block" class="theorem">
 Let $F: \cc \to \dd$ be a functor. Then the following are
 equivalent. 
-\begin{description}
-\item[$\bm{(i)}$] $G$ is an equivalence of categories 
-\item[$\bm{(ii)}$] $G$ is part of an adjunction $(F, G,
+
+* **$\bm{(i)}$** $G$ is an equivalence of categories
+* **$\bm{(ii)}$** $G$ is part of an adjunction $(F, G,
 \eta, \epsilon)$ where $\eta, \epsilon$ are natural
-isomorphisms 
-\item[$\bm{(iii)}$] $F$ is full and faithful, and each
+isomorphisms
+* **$\bm{(iii)}$** $F$ is full and faithful, and each
 object $C$ is isomorphic to $G(D)$ for 
-some object $D$. 
-\end{description} 
+some object $D$.
+ 
 </span>
 Note that this theorem is symmetric; one could interchange $G$
 with $F$, and then obtain the same exact results. \textcolor{MidnightBlue}{Thus, one 
@@ -241,9 +233,8 @@ $F, G$ form an adjoint equivalence.}
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[$\bm{(i) \implies (iii)}$] 
-Suppose we have an equivalence of categories given by $F:
+
+* **$\bm{(i) \implies (iii)}$** Suppose we have an equivalence of categories given by $F:
 \cc \to \dd$ and $G: \dd \to \cc$, with natural
 isomorphisms 
 
@@ -293,10 +284,8 @@ where $D = F(C)$.
 Similarly, since $\psi: F \circ G \cong I_\dd$, we know
 that each object $D$ is assigned an isomorphism $\psi_D:
 F(G(D)) \to D$. Hence every object $D$ is isomorphic to
-some object $F(C)$ for $C = G(D)$. 
-
-\item[$\bm{(iii) \implies (ii)}$]
-Suppose $(iii)$ holds. For any  arbitrary object $C \in
+some object $F(C)$ for $C = G(D)$.
+* **$\bm{(iii) \implies (ii)}$** Suppose $(iii)$ holds. For any  arbitrary object $C \in
 \cc$, there exists an isomorphism $\eta_C: C \to G(D)$ for some
 object $D \in \dd$. Denote such an object as $F_0(C)$. 
 Now consider any other morphism $g: C
@@ -339,12 +328,11 @@ we have that $G(\epsilon_D) = \eta_{G(D)}^{-1}$. Sine $G$
 is full and faithful, we see that $\epsilon_D$ must be an isomorphism as well. 
 
 Thus, in total, we have an adjoint equivalence $(F, G, \eta,
-\epsilon)$, as desired. 
-
-\item[$\bm{(ii) \implies (i)}$] This direction is clear,
+\epsilon)$, as desired.
+* **$\bm{(ii) \implies (i)}$** This direction is clear,
 since an adjoint equivalence automatically establishes an
-equivalence of categories. 
-\end{description}
+equivalence of categories.
+
 With $(i) \implies (iii) \implies (ii) \implies (i)$, we see
 that all of the conditions are equivalent. 
 </span>
@@ -363,12 +351,12 @@ Next, we introduce some properties of equivalences.
 Let $F: \cc \to \dd$ be an equivalence of categories with the
 corresponding inverse functor $G: \dd \to \cc$. Let $f: C \to
 C'$ be a morphism in $\cc$. Then  
-\begin{description}
-\item[$(i)$] $f$ is a monomorphism (epimorphism)
+
+* **$(i)$** $f$ is a monomorphism (epimorphism)
 if and only if 
 $F(f)$ is a monomorphism (epimorphism)
-\item[$(ii)$] $C$ is initial (terminal) if and only if $F(C)$ is initial (terminal).
-\end{description}
+* **$(ii)$** $C$ is initial (terminal) if and only if $F(C)$ is initial (terminal).
+
 </span>
 
 Consequently, we have that $f$ is an isomorphism (a monomorphism and epimorphism) if and only
@@ -383,80 +371,71 @@ for morphisms and objects in $\dd$ governed by $G: \dd \to
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[$\bm{(i)}$] 
-\begin{description}
-\item[$\bm{\implies}$] Suppose $f: C \to C'$ is a
-monomorphism. Consider two morphisms $g,h: D \to F(C)$
-such that $F(f) \circ g = F(f) \circ h$. By the
-previous theorem, we know however that there exists an
-object $A$ of $\cc$ such that $D \cong F(A)$. Hence
-there exists an isomorphism $\theta: F(A) \to D$. We
-then have the diagram:
 
-<img src="../../../png/category_theory/chapter_4/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Note that $h \circ \theta, g \circ \theta: F(A) \to
-F(C)$. Since $F$ is full, we know that there exists 
-morphism $k, k': A \to C$ such that $g \circ \theta =
-F(k)$ and $h \circ \theta = F(k')$. 
-Now observe that 
+* **$\bm{(i)}$**
+    * **$\bm{\implies}$** Suppose $f: C \to C'$ is a
+    monomorphism. Consider two morphisms $g,h: D \to F(C)$
+    such that $F(f) \circ g = F(f) \circ h$. By the
+    previous theorem, we know however that there exists an
+    object $A$ of $\cc$ such that $D \cong F(A)$. Hence
+    there exists an isomorphism $\theta: F(A) \to D$. We
+    then have the diagram:
 
-\begin{align*}
-&F(f \circ k) = F(f) \circ F(k) = F(f) \circ h \circ \theta\\
-&F(f \circ k')= F(f) \circ F(k') = F(f) \circ g \circ \theta.
-\end{align*}
+    <img src="../../../png/category_theory/chapter_4/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+    Note that $h \circ \theta, g \circ \theta: F(A) \to
+    F(C)$. Since $F$ is full, we know that there exists 
+    morphism $k, k': A \to C$ such that $g \circ \theta =
+    F(k)$ and $h \circ \theta = F(k')$. 
+    Now observe that 
 
-However, since $F(f) \circ h = F(f) \circ g$, we see
-that $F(f \circ k) = F(f \circ k')$. However, since
-$F$ is faithful, we have that $f \circ k = f \circ
-k'$. But since $f$ is a monomorphism, we have that $k
-= k'$. Hence $F(k) = F(k') \implies g \circ \theta = k
-\circ \theta$, and since $\theta$ is an isomorphism,
-we have that $h = g$. Therefore, $F(f)$ is also monic.
+    \begin{align*}
+    &F(f \circ k) = F(f) \circ F(k) = F(f) \circ h \circ \theta\\
+    &F(f \circ k')= F(f) \circ F(k') = F(f) \circ g \circ \theta.
+    \end{align*}
 
-\item[$\bm{\impliedby}$] 
-Suppose $f: C \to C'$ and $F(f)$ is monic. Consider
-two morphism $g, h: A \to C'$ in $\cc$, and suppose
-that $f \circ g = f \circ k$. Then $F(f) \circ F(g) =
-F(f) \circ F(k) \implies F(g) = F(k)$, since $F(f)$ is
-monic. However, $F$ is faithful, so that $g = k$. Hence $f$ is monic as well.
-\end{description}  
+    However, since $F(f) \circ h = F(f) \circ g$, we see
+    that $F(f \circ k) = F(f \circ k')$. However, since
+    $F$ is faithful, we have that $f \circ k = f \circ
+    k'$. But since $f$ is a monomorphism, we have that $k
+    = k'$. Hence $F(k) = F(k') \implies g \circ \theta = k
+    \circ \theta$, and since $\theta$ is an isomorphism,
+    we have that $h = g$. Therefore, $F(f)$ is also monic.
+    * **$\bm{\impliedby}$** Suppose $f: C \to C'$ and $F(f)$ is monic. Consider
+    two morphism $g, h: A \to C'$ in $\cc$, and suppose
+    that $f \circ g = f \circ k$. Then $F(f) \circ F(g) =
+    F(f) \circ F(k) \implies F(g) = F(k)$, since $F(f)$ is
+    monic. However, $F$ is faithful, so that $g = k$. Hence $f$ is monic as well.
+* **$\bm{(ii)}$**
+    * **$\bm{\implies}$** Suppose $C$ is initial in
+    $\cc$. Let $D$ be an object in $\dd$. Then observe
+    that, since $\cc$ and $\dd$ are equivalent, there
+    exists an isomorphism $\theta: F(A) \to D$ for some
+    object $A$ of $\cc$. Since $C$ is initial, we know
+    that there exists a unique morphism $f_C: C \to A$.
+    Hence $F(f_C): F(C)\to F(A)$. We then have that $F(f_c)
+    \circ \theta : F(C) \to D$. Hence there exists a
+    morphism from $F(C)$ to $D$. 
 
-\item[$\bm{(ii)}$] 
-\begin{description}
-\item[$\bm{\implies}$] Suppose $C$ is initial in
-$\cc$. Let $D$ be an object in $\dd$. Then observe
-that, since $\cc$ and $\dd$ are equivalent, there
-exists an isomorphism $\theta: F(A) \to D$ for some
-object $A$ of $\cc$. Since $C$ is initial, we know
-that there exists a unique morphism $f_C: C \to A$.
-Hence $F(f_C): F(C)\to F(A)$. We then have that $F(f_c)
-\circ \theta : F(C) \to D$. Hence there exists a
-morphism from $F(C)$ to $D$. 
+    Now suppose $f_1, f_2; F(C) \to D$. Then $\theta^{-1}
+    \circ f_1, \theta^{-1}\circ f_2: F(C) \to F(A)$. Since
+    $F$ is full, we know that there exist morphism $k_1,
+    k_1: C \to A$ such that $F(k_1) = \theta^{-1}\circ
+    f_1$ and $F(k_2) = \theta^{-1}\circ f_2$. However,
+    since $C$ is initial, we see that $k_1 = k_2 = f_C$.
+    Hence $f_1 = f_2$, so that there is exactly one
+    morphism $f_1=f_2:F(C) \to D$. 
 
-Now suppose $f_1, f_2; F(C) \to D$. Then $\theta^{-1}
-\circ f_1, \theta^{-1}\circ f_2: F(C) \to F(A)$. Since
-$F$ is full, we know that there exist morphism $k_1,
-k_1: C \to A$ such that $F(k_1) = \theta^{-1}\circ
-f_1$ and $F(k_2) = \theta^{-1}\circ f_2$. However,
-since $C$ is initial, we see that $k_1 = k_2 = f_C$.
-Hence $f_1 = f_2$, so that there is exactly one
-morphism $f_1=f_2:F(C) \to D$. 
+    Since $D$ was an arbitrary object of $\dd$, we have
+    that $F(C)$ is initial.
+    * **$\bm{\impliedby}$** Suppose $F(C)$ is an initial object. Consider any
+    object $C'$ of $\cc$. Then since $F(C)$ is initial, there exists a unique
+    morphism $f: F(C) \to F(C')$. Since $F$ is full, we
+    know that this corresponds with a morphism $k: C \to
+    C'$ such that $F(k) = f$. Hence we have a unique
+    morphism $k: C \to C'$. And since $C'$ was an 
+    arbitrary object of $\cc$, we have that $C$ is
+    initial, as desired.
 
-Since $D$ was an arbitrary object of $\dd$, we have
-that $F(C)$ is initial. 
-
-\item[$\bm{\impliedby}$] 
-Suppose $F(C)$ is an initial object. Consider any
-object $C'$ of $\cc$. Then since $F(C)$ is initial, there exists a unique
-morphism $f: F(C) \to F(C')$. Since $F$ is full, we
-know that this corresponds with a morphism $k: C \to
-C'$ such that $F(k) = f$. Hence we have a unique
-morphism $k: C \to C'$. And since $C'$ was an 
-arbitrary object of $\cc$, we have that $C$ is
-initial, as desired. 
-\end{description}  
-\end{description}
 </span>
 The proofs in which we proved $f$ to be an epimorphism, and for $C$ 
 to be a terminal object, are very similar. This proposition will soon be

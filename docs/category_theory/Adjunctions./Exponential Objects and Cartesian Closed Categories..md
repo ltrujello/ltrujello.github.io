@@ -16,19 +16,16 @@ U: C \to **1** \qquad \Delta: \cc \to \cc \times \cc.
 \]
 
 where $**1**$ is the one object category.
-\begin{description}
-\item[$\bm{(i)}$] If $U$ has a left adjoint, then 
-$\cc$ has an initial object.   
 
-\item[$\bm{(ii)}$] If $\Delta$ has a left adjoint, then
+* **$\bm{(i)}$** If $U$ has a left adjoint, then 
+$\cc$ has an initial object.
+* **$\bm{(ii)}$** If $\Delta$ has a left adjoint, then
 $\cc$ has finite coproducts.
+* **$\bm{(iii)}$** If $U$ has a right adjoint, then $\cc$
+has a terminal object.
+* **$\bm{(iv)}$** If $\Delta$ has a right adjoint, then 
+$\cc$ has finite products.
 
-\item[$\bm{(iii)}$] If $U$ has a right adjoint, then $\cc$
-has a terminal object. 
-
-\item[$\bm{(iv)}$] If $\Delta$ has a right adjoint, then 
-$\cc$ has finite products.  
-\end{description}
 </span>
 The proof is a straightforward, although tedious, so we sketch it
 out as follows. 
@@ -165,7 +162,7 @@ Z$ as, who would've guessed, the evaluation:
 \[
 **eval**(f(y), y') = f(y').
 \]
-
+ 
 Now for each $a \in A$, we can define a function $g_a: X
 \times Y \to Z$ where for each $f: A \times Y \to Z$
 
@@ -180,7 +177,7 @@ Then for every such $g_a$, there exists a unique $h_a: X \to
 \[ 
 h_a(f) = f(a, y): Y \to Z.
 \]
-
+ 
 Thus we get the following commutative diagram:
 
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -242,11 +239,10 @@ functor? Yes,we can.
 Let $\cc$ have finite products and exponential objects for
 every pair of objects. Then for each $Y$ in $\cc$ we can create an 
 **exponential functor** $E^Y: \cc \to \cc$ as follows. 
-\begin{description}
-\item[Objects.] For each $Z \in \cc$, we define $E^Y(Z) =
-Z^Y$. 
 
-\item[Morphisms.] Let $f: A \to B$ be in $\cc$. Then we 
+* **Objects.** For each $Z \in \cc$, we define $E^Y(Z) =
+Z^Y$.
+* **Morphisms.** Let $f: A \to B$ be in $\cc$. Then we 
 note that we have the following diagrams. 
 
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -270,8 +266,7 @@ where $h'$ is the unique morphism such that
 f \circ \textcolor{Red}{**eval**_A}
 = \textcolor{RoyalBlue}{**eval**_A} \circ (h', \id_Y).
 \]
-
-\end{description}    
+    
 </span>
 Note that there's one more cool connection here. If we have a
 category 
@@ -336,16 +331,10 @@ P_Y = (-)\times Y: \cc \to \cc
 have right adjoints. In other words, $\cc$ is 
 **cartesian closed** if 
 
-* [1.] There exists a terminal object $T$ 
-
-
-* [2.] $\cc$ has finite products 
-
-
-* [3.] An exponential object $A^Y$ for every $A \in
-\cc$ for all $Y$.   
-
-
+* **1.** There exists a terminal object $T$
+* **2.** $\cc$ has finite products
+* **3.** An exponential object $A^Y$ for every $A \in
+\cc$ for all $Y$.
 
 </span>
 

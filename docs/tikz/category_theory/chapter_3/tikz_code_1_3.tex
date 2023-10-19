@@ -1,43 +1,43 @@
 \begin{center}
-            \begin{tikzpicture}[>=stealth]
-                \node at (-2.25, 2.7) {$\rr^3$};
-                \tdplotsetmaincoords{70}{120}
-                \begin{scope}[tdplot_main_coords]
-                    
-                    \pgfmathsetmacro{\scale}{5} 
-                    \coordinate (O) at (0, 0, 0);         
-                    \coordinate (Y) at (0, \scale-1, 0);    
-                    \coordinate (Z) at (0, 0, \scale-2);  
-                    \coordinate (X) at (\scale, 0, 0);    
-        
-        
-                    
-                    \draw[semithick, ->] (O) -- (Y) node[right] {$y$};
-                    \draw[semithick, ->] (O) -- (Z) node[above] {$z$};
-                    \draw[semithick, ->] (O) -- (X) node[below] {$x$};
-        
-        
-                    \draw[-stealth, thick, red] (0,0,0) -- (0, 0, 2);
-                    \draw[-stealth, thick, Green!80!black] (0, 0, 0) -- (2, 0, 0);
-                    \draw[-stealth, thick, blue] (0, 0, 0) -- (0, 2, 0);
-        
-                \end{scope}
-                \draw[->] (2,2) to[bend left] (5,2);
-                
-                \begin{scope}[xshift = 9cm, yshift = 1cm]
-                    \node at (-2.15, 1.8) {$P_n(x)$};
-                    \filldraw[rounded corners, ProcessBlue!10]
-                    (-3, -1.5) rectangle (3, 1.5);
-                    \node at (0,0) {$\textcolor{red}{1}$\quad $\textcolor{Green!80!black}{x}$\quad $\textcolor{blue}{x^2}$};
-                    \node at (-1.5, -0.8) {... $1 + x$ ...};
-                    \node at (1.2, 0.8) {... $2x^2 + 2x + 1$ ...};
-                    \node at (1.4, -1) {... $x^2 + 2x$ ...};
-                    \node at (-1.7, 1.1) {... $x^2 + 5$ ...};
-                \end{scope}
-            \end{tikzpicture}
-        
-            \emph{We can specify a linear transformation from $\mathbb{R}^3$ 
-            to the polynomial vector space $P_3(x)$ by specifying where we send the basis 
-            elements. Here, we color code where we send the basis. 
-            }
-        \end{center}
+\begin{tikzpicture}[>=stealth]
+\node at (-2.25, 2.7) {$\rr^3$};
+\tdplotsetmaincoords{70}{120}
+\begin{scope}[tdplot_main_coords]
+
+\pgfmathsetmacro{\scale}{5} 
+\coordinate (O) at (0, 0, 0);         
+\coordinate (Y) at (0, \scale-1, 0);    
+\coordinate (Z) at (0, 0, \scale-2);  
+\coordinate (X) at (\scale, 0, 0);    
+
+
+
+\draw[semithick, ->] (O) -- (Y) node[right] {$y$};
+\draw[semithick, ->] (O) -- (Z) node[above] {$z$};
+\draw[semithick, ->] (O) -- (X) node[below] {$x$};
+
+
+\draw[-stealth, thick, red] (0,0,0) -- (0, 0, 2);
+\draw[-stealth, thick, Green!80!black] (0, 0, 0) -- (2, 0, 0);
+\draw[-stealth, thick, blue] (0, 0, 0) -- (0, 2, 0);
+
+\end{scope}
+\draw[->] (2,2) to[bend left] (5,2);
+
+\begin{scope}[xshift = 9cm, yshift = 1cm]
+\node at (-2.15, 1.8) {$P_n(x)$};
+\filldraw[rounded corners, ProcessBlue!10]
+(-3, -1.5) rectangle (3, 1.5);
+\node at (0,0) {$\textcolor{red}{1}$\quad $\textcolor{Green!80!black}{x}$\quad $\textcolor{blue}{x^2}$};
+\node at (-1.5, -0.8) {... $1 + x$ ...};
+\node at (1.2, 0.8) {... $2x^2 + 2x + 1$ ...};
+\node at (1.4, -1) {... $x^2 + 2x$ ...};
+\node at (-1.7, 1.1) {... $x^2 + 5$ ...};
+\end{scope}
+\end{tikzpicture}
+
+\emph{We can specify a linear transformation from $\mathbb{R}^3$ 
+to the polynomial vector space $P_3(x)$ by specifying where we send the basis 
+elements. Here, we color code where we send the basis. 
+}
+\end{center}

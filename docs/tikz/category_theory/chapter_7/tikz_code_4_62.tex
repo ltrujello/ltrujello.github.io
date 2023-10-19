@@ -1,16 +1,16 @@
 \begin{center}
-    \begin{tikzcd}[column sep = 1.5cm, row sep = 1.8cm]
-        A\otimes (B\otimes (C \otimes D)) 
-        \arrow[r, "\alpha_{A, B, C\otimes D}"] 
-        \arrow[d, swap, "1_A\otimes \alpha_{B, C, D}"]
-        &
-        (A\otimes B)\otimes(C\otimes D) 
-        \arrow[r, "\alpha_{A\otimes B, C, D}"]
-        &
-        ((A\otimes B)\otimes C)\otimes D\\
-        A\otimes((B\otimes C)\otimes D)
-        \arrow[rr, swap, "\alpha_{A, B\otimes C, D}"]
-        &&
-        (A\otimes(B\otimes C))\otimes D \arrow[u, swap, "\alpha_{A, B,C}\otimes 1_D"]
-    \end{tikzcd}
+\begin{tikzcd}[column sep = 1.5cm, row sep = 1.8cm]
+A\otimes (B\otimes (C \otimes D)) 
+\arrow[r, "\alpha_{A, B, C\otimes D}"] 
+\arrow[d, swap, "1_A\otimes \alpha_{B, C, D}"]
+&
+(A\otimes B)\otimes(C\otimes D) 
+\arrow[r, "\alpha_{A\otimes B, C, D}"]
+&
+((A\otimes B)\otimes C)\otimes D\\
+A\otimes((B\otimes C)\otimes D)
+\arrow[rr, swap, "\alpha_{A, B\otimes C, D}"]
+&&
+(A\otimes(B\otimes C))\otimes D \arrow[u, swap, "\alpha_{A, B,C}\otimes 1_D"]
+\end{tikzcd}
 \end{center}

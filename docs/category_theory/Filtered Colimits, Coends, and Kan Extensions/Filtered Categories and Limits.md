@@ -31,14 +31,10 @@ Some of the first topological spaces that people worked with were metric spaces 
 and the properties of these spaces were worked out over time. People eventually figured out 
 that 
 
-*  A subset $F \subset X$ is closed if and only if $F$ contains 
+* A subset $F \subset X$ is closed if and only if $F$ contains 
 the limits of every sequence in $F$.
-
-
-*  A subset $U \subset X$ is open if and only if $U$ contains 
-does not contain the limit of any sequence in $X - U$. 
-
-
+* A subset $U \subset X$ is open if and only if $U$ contains 
+does not contain the limit of any sequence in $X - U$.
 
 This is a wonderful result! However, it does not generalize to arbitrary topological 
 spaces. There are weird counterexamples that we will not get into (cite An Introduction 
@@ -54,11 +50,11 @@ This is where a directed set comes in.
 <span style="display:block" class="definition">
 A **directed set** $D$ is a set equipped with a binary relation $\le$ such that 
 for all $a, b, c \in D$,
-\begin{description}
-\item[**1.**] $a \le a$ (Reflexive).
-\item[**2.**] if $a \le b$ and $b \le c$, then $a \le c$ (Transitive)
-\item[**3.**] For all $a,b \in D$, there exists a $c \in C$ such that $a \le c$ **and** $b \le c$ (Directed).
-\end{description}
+
+* ****1.**** $a \le a$ (Reflexive).
+* ****2.**** if $a \le b$ and $b \le c$, then $a \le c$ (Transitive)
+* ****3.**** For all $a,b \in D$, there exists a $c \in C$ such that $a \le c$ **and** $b \le c$ (Directed).
+
 The first two properties describe a preorder; only the last condition is new to us. 
 To summarize, the "directed" axiom grants us an upper bounded in $D$ for any finite 
 set of elements of $D$.  
@@ -74,14 +70,10 @@ Directed sets are then enough to give us the following theorem:
 <span style="display:block" class="theorem">
 Let $X$ be a topological space.
 
-*  A subset $F \subset X$ is closed if and only if every convergent 
+* A subset $F \subset X$ is closed if and only if every convergent 
 net $\lambda: D \to X$ has a limit in $F$
-
-
-*  A subset $U \subset X$ is open if and only if every convergent net 
+* A subset $U \subset X$ is open if and only if every convergent net 
 $\lambda: D \to X - U$ does not have a limit in $U$.
-
-
 
 </span>
 
@@ -94,16 +86,12 @@ simply taken over preorders. First, we introduce filtered categories.
 <span style="display:block" class="definition">
 We say that a category $J$ is **filtered** if 
 
-* [**1.**] For any pair of objects $j, j'$, 
-there exists an object $k$ and morphism $u:j \to k$ and $v: j' \to k$. 
-
-
-* [**2.**] For any pair of parallel morphism $u, v: i \to j$, 
+* ****1.**** For any pair of objects $j, j'$, 
+there exists an object $k$ and morphism $u:j \to k$ and $v: j' \to k$.
+* ****2.**** For any pair of parallel morphism $u, v: i \to j$, 
 there exists an object $k$ and a morphism $w: j \to k$ such that the diagram below 
-commutes. 
-
-
-
+commutes.
+    
 We do not say the empty category is filtered; this should be obvious, but 
 it also needs to be said.
 
@@ -124,7 +112,7 @@ there exists a $k$ such that $j, j' \le k$". Such a condition holds
 if and only if
 \begin{center}
 every finite subset $S \subset J$ has an upper bound *in* $J$.
-\end{center}    Thus, a thin category $J$ needs to have the above property in order to 
+\end{center}Thus, a thin category $J$ needs to have the above property in order to 
 be a filtered category.
 
 An example of this concerns the category $**Open**(X)$, where 

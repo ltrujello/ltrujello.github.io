@@ -21,23 +21,17 @@ Let $(\cc, \otimes, I)$ be a symmetric monoidal category. A (symmetric)
 **operad** $X$ over $\cc$ is a family of objects $\{X_n\}_{n \in \mathbb{N}}$, 
 in $\cc$, where each $X_n$ has a group action by $S_n$ and with
 
-* [1.] A unit morphism $\eta: I \to X_1$
-
-
-* [2.] For each $n \in \mathbb{N}$ and $a_i \in \mathbb{N}$ where 
+* **1.** A unit morphism $\eta: I \to X_1$
+* **2.** For each $n \in \mathbb{N}$ and $a_i \in \mathbb{N}$ where 
 $i = 1, 2, \dots, n$, a composition morphism 
 
 \[
 \mu: X_n \otimes X_{a_1} \otimes \cdots \otimes X_{a_n} \to X_{a_1 + \cdots + a_n}
 \]
 
-
-
-
 subject to the associativity, identity, and equivariance axioms outlined below.
-\begin{description}
-\item[(OP1) Associativity.]
-Let $n \ge 0$ and choose $a_i \ge 0$ for $i = 1,2, \dots, n$. 
+
+* **(OP1) Associativity.** Let $n \ge 0$ and choose $a_i \ge 0$ for $i = 1,2, \dots, n$. 
 Further, for each $a_i$, choose $k_{i,j} \ge 0$ for $j = 1, 2, \dots, a_i$. 
 Let $\gamma$ be the isomorphism which rearranges the factors of the tensor product 
 as below:
@@ -58,17 +52,12 @@ X_n\otimes(X_{a_1}\otimes X_{k_{1,1}} \otimes \cdots
 Then we demand that the diagram below commutes. 
 
 <img src="../../../png/category_theory/chapter_9/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-\item[(OP2) Identity.]
-Letting $A$ be an arbitrary object of $\cc$, let $\lambda: I \otimes A \isomarrow A$ and $\rho: A \otimes I \isomarrow A$ 
+* **(OP2) Identity.** Letting $A$ be an arbitrary object of $\cc$, let $\lambda: I \otimes A \isomarrow A$ and $\rho: A \otimes I \isomarrow A$ 
 as the left and right unitors in our symmetric monoidal category. Then 
 the diagrams below must hold for all $n \ge 0$. 
 
 <img src="../../../png/category_theory/chapter_9/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
-\item[(OP3) Equivariance 1.]
-Let $\tau \in S_n$, 
+* **(OP3) Equivariance 1.** Let $\tau \in S_n$, 
 and let $\tau^*$ be the isomorphism $\tau^*: X_{a_1} \otimes \cdots \otimes X_{a_n}
 \isomarrow X_{\tau(a_1)} \otimes \cdots \otimes X_{\tau(a_n)}$ and by abuse of notation 
 denote $\tau$ as the morphism $\tau: X_n \to X_n$ which is given by the group action. 
@@ -87,10 +76,7 @@ Here, $\tau'$ is the block permutation described below:
 ,  \overbrace{\textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+1, \dots, a_1 + \cdots + a_{n}}}^{\tau(n)\text{-th block}}, \dots
 ).
 \end{gather*}
-
-
-\item[(OP4) Equivariance 2.]
-Let $\sigma_i \in S_{a_i}$ for $i = 1, 2, \dots, n$. 
+* **(OP4) Equivariance 2.** Let $\sigma_i \in S_{a_i}$ for $i = 1, 2, \dots, n$. 
 By abuse of notation, denote $\sigma_i: X_{a_i} \to X_{a_i}$ to 
 be the map given by the group action.
 Then we have that 
@@ -119,7 +105,6 @@ defined as below.
 )
 \end{gather*}
 
-\end{description}
 </span>
 
 
@@ -142,7 +127,7 @@ when $\cc = **Set**$.
 </span>
 
 
-
+ 
 
 
 <script src="../../mathjax_helper.js"></script>

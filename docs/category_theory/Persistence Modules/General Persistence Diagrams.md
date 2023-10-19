@@ -86,7 +86,7 @@ Let $a \le b$. Recall that
 \[
 H\circ E(a \le b) = \phi_a^b.   
 \]
-
+ 
 Since we are interested in the *image* of these mappings, 
 which will be a group, we denote
 
@@ -117,7 +117,7 @@ and  $X$ is a sphere, the topology will not change until we get from
 one pole to the other. 
 
 <img src="../../../png/category_theory/chapter_11/tikz_code_4_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
+ 
 
 
 \textcolor{NavyBlue}{What does it mean for 

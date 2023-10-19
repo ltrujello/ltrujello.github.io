@@ -119,7 +119,7 @@ That nice word will turn out to be morphism, and you will see soon why.
 \[
 \eta: F \to G
 \]
-
+ 
 to be a
 **natural transformation** if it associates each $C \in
 \ob(\cc)$ with a morphism
@@ -188,7 +188,7 @@ To see that this morphism is a group homomorphism, we simply recall the determin
 \[
 \det(AB) = \det(A)\det(B).
 \]
-
+ 
 The claim is now that this family of morphisms assembles into a natural transformation. 
 Specifically, that $\det: GL_n(-) \to (-)^{\times}$.
 To see, this, let $f: K \to K'$ be a homomorphism between commutative rings. 
@@ -282,7 +282,7 @@ turns out that the projection
 \[ 
 T_G : G \to G/[G, G] \qquad g \mapsto g + [G, G]
 \]
-
+ 
 forms a natural transformation between
 the identity functor $1_{\grp}: \grp \to
 \grp$ on $\grp$ and the 
@@ -297,21 +297,19 @@ f^*(g + [G, G]) = f(g) + [H,H].
 \]
 
 Now let $g \in G$. 
-\begin{description}
-\item[$\bm{T_H\circ f(g)}$.] On one hand, observe that 
+
+* **$\bm{T_H\circ f(g)}$.** On one hand, observe that 
 
 \[
 T_H \circ (f(g)) =  f(g) + [H, H]. 
 \]
-
-\item[$\bm{f^*\circ (T_G(g))}$.] On the other hand,
+* **$\bm{f^*\circ (T_G(g))}$.** On the other hand,
 observe that 
 
 \[
 f^*\circ T_G(g) = f^*(g + [G, G]) = f(g) + [H, H].  
 \]
 
-\end{description}
 Hence, we see that 
 
 \[
@@ -419,53 +417,26 @@ Proving this is left as an exercise.
 {\large **Exercises**
 \vspace{0.5cm}}
 
-* [**1.**]
-In what follows, let $F,G: \cc \to \dd$ be a pair of functors.
-Interpret what a natural transformation $\eta: F \to G$ is in each case.  
-\begin{itemize}
-
-
-* [(*i*.)]
-Where $\cc$ is a discrete category, and $\dd$ is arbitrary. Separately, can we have a natural transformation when $\dd$ is discrete?
-
-
-* [(*ii*.)]
-Where $\cc$ and $\dd$ are preorders.
-
-
-
-* [(*iii*.)] 
-Where $\cc$ and $\dd$ are one-object categories whose morphisms are group. 
-
-
-* [(*iv*.)]
-Where $\cc$ is arbitrary and $\dd$ is $\cat$.
-
-
-
-
-\item[**2.**]
-Show that Definition \ref{definition:nat_trans_homotopy} and Definition \ref{definition:nat_trans}
+* ****1.**** In what follows, let $F,G: \cc \to \dd$ be a pair of functors.
+Interpret what a natural transformation $\eta: F \to G$ is in each case.
+    * **(*i*.)** Where $\cc$ is a discrete category, and $\dd$ is arbitrary. Separately, can we have a natural transformation when $\dd$ is discrete?
+    * **(*ii*.)** Where $\cc$ and $\dd$ are preorders.
+    * **(*iii*.)** Where $\cc$ and $\dd$ are one-object categories whose morphisms are group.
+    * **(*iv*.)** Where $\cc$ is arbitrary and $\dd$ is $\cat$.
+* ****2.**** Show that Definition \ref{definition:nat_trans_homotopy} and Definition \ref{definition:nat_trans}
 are equivalent.
-
-\item[**3.**]
-Consider the initial discussion of this section. Prove that for two functors 
+* ****3.**** Consider the initial discussion of this section. Prove that for two functors 
 $F, G : \cc \to \Set$ such that $F(A) \subset G(A)$ for all $A \in \cc$, 
 the inclusion morphisms $i_A: F(A) \to G(A)$ form a natural transformation 
 $i: F \to G$ if and only if, for each $f: A \to B$ in $\cc$, we have that  
-$F(f) = G(f)|_{F(A)}$. 
-
-\item[**4.**]
-Let $\cc$ be a category, and consider two objects $A,B$ 
+$F(f) = G(f)|_{F(A)}$.
+* ****4.**** Let $\cc$ be a category, and consider two objects $A,B$ 
 so that we  have the functors 
-
 \[
 \hom_{\cc}(A, -), \hom_{\cc}(B, -): \cc  \to \Set.
 \]
-
-
-* [(*i*.)] Let $\phi\in \hom_{\cc}(B,A)$. Show 
-that the family of functions 
+    * **(*i*.)** Let $\phi\in \hom_{\cc}(B,A)$. Show 
+    that the family of functions 
 
 \[
 \phi^*_C: \hom_{\cc}(A,C) \to \hom_{\cc}(B,C)
@@ -475,25 +446,13 @@ indexed by each object $C \in \cc$,
 where $\phi^*_C(f: A \to  C) = f \circ \phi: B \to C$,
 forms a natural transformation $\phi^*: \hom_{\cc}(A, -) \to \hom_{\cc}(B, -)$.
 
-
-
-* [(*ii*.)] Show that every natural transformation 
+* **(*ii*.)** Show that every natural transformation 
 $\eta:  \hom_{\cc}(A, -)\to \hom_{\cc}(B, -)$ is constructed 
-in this way. 
-
-
-
-
-
-
-
-\item[**5.**]
-Let $F: \cc \to \Set$ be any other functor. Interpret what a 
+in this way.
+* ****5.**** Let $F: \cc \to \Set$ be any other functor. Interpret what a 
 natural transformation $\eta: \bullet \to F$ is. 
-What about $\epsilon: F \to \bullet$? 
-
-\item[**6.**]
-For every ring $R$ there is a natural inclusion homomorphism $i_R: R \to R[x]$.
+What about $\epsilon: F \to \bullet$?
+* ****6.**** For every ring $R$ there is a natural inclusion homomorphism $i_R: R \to R[x]$.
 Thus, let $(-)[x]: \ring \to \ring$ be the functor that sends a ring 
 $R$ to its single-variable polynomial ring $R[x]$.
 Show that we have a natural transformation 
@@ -502,27 +461,13 @@ Show that we have a natural transformation
 i: I \to (-)[X]
 \]
 
-where $I: \ring \to \ring$ is the identity on $\ring$. 
+where $I: \ring \to \ring$ is the identity on $\ring$.
+* ****7.**** Recall the category of $G$-sets is the category where
+    * **Objects.** All $G$-sets $X$ (i.e., sets $X$ such that $G$ has a 
+    group action $\phi:X \times G \to X$)
+    * **Morphisms.** All $G$-equivariant morphisms (i.e., functions $f:X \to Y$
+    such that $f(g \cdot x) = g \cdot f(x)$).
 
-\item[**7.**]
-Recall the category of $G$-sets is the category where 
-\begin{description}
-\item[Objects.] All $G$-sets $X$ (i.e., sets $X$ such that $G$ has a 
-group action $\phi:X \times G \to X$)
-\item[Morphisms.] All $G$-equivariant morphisms (i.e., functions $f:X \to Y$
-such that $f(g \cdot x) = g \cdot f(x)$).
-\end{description}
-(Also see Exercise 1.3.6).
-Let $X$ be a $G$-set with action map $\phi: X \times G \to X$ 
-and fix an element $g \in G$. For such an $X$, define the map 
-$\phi_X^g: X \to X$ where $\phi_X^g(x) = \phi(g, x)$. 
-
-Show that for each $g$, the maps $\phi^g$ form a natural transformation 
-$I \to I$, where $I: **G****-sets** \to **G****-sets**$ 
-is the identity  functor on this category. (Note that this is a nontrivial example of a natural 
-transformation between a functor and itself!)
-
-\end{itemize}
 
 
 

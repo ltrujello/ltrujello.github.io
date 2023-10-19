@@ -11,12 +11,12 @@ op$ and Contravariance}
 Consider a category $\mathcal{C}$. Then we define the
 **opposite category of $\cc$**, denoted $\mathcal{C}\op$, 
 to be the category where 
-\begin{description}
-\item[Objects.] The same objects of $\cc$.
-\item[Morphisms.] If $f: A \to B$ is a
+
+* **Objects.** The same objects of $\cc$.
+* **Morphisms.** If $f: A \to B$ is a
 morphism of $\cc$, then we let 
 $f\op : B \to A$ be a morphism of $\cc\op$.
-\end{description}
+
 In this case, composition isn't exactly obvious, so we will explain how that 
 works. 
 
@@ -282,25 +282,19 @@ We now comment on the relationship between contravariant and covariant functors.
 <span style="display:block" class="proposition">
 Let $\cc$, $\dd$ be categories. 
 
-*  Let $F: \cc \to \dd$ be a contravariant functor. Then $F$ corresponds to a 
+* Let $F: \cc \to \dd$ be a contravariant functor. Then $F$ corresponds to a 
 contravariant functor $\overline{F}: \cc\op \to \dd$ where for a $f\op : B \to A \in \cc\op$, 
 
 \[
 \overline{F}(f\op : B \to A) = F(f: A \to B) = F(f): F(B) \to F(A).
 \]
-
-
-
-*  Conversely, let $F: \cc \to \dd$ be a covariant functor. Then $F$ 
+* Conversely, let $F: \cc \to \dd$ be a covariant functor. Then $F$ 
 corresponds to a contravariant functor $\overline{F}: \cc\op \to \dd$ 
 where 
 
 \[
 \overline{F}(f\op : B \to A) = F(f: A \to B) = F(f): F(A) \to F(B)
 \]
-
-
-
 
 </span>
 

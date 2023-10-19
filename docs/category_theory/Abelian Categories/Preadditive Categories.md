@@ -47,14 +47,14 @@ Then define the function
 \[
 F_H(\phi): \hom(G', H) \to \hom(G, H) 
 \]
-
+    
 where
 \begin{statement}{NavyBlue!10}
 
 \[
 F_H(\phi)(\psi: G' \to H) = \psi \circ \phi: G \to H.
 \]
-
+    
 \end{statement}
 To verify functoriality, we have to check that this function is actually a group 
 homomorphism. Towards that goal, consider $\psi, \sigma: G \to H$. Then 
@@ -300,7 +300,7 @@ G(f) \circ \eta_A + G(f) \circ \epsilon_A = \eta_B \circ F(f) + \epsilon_B \circ
 F(f) 
 \implies G(f) \circ (\eta_A + \epsilon_A) = (\eta_B + \epsilon_B) \circ F(f).
 \]
-
+  
 Hence the diagram below 
 
 <img src="../../../png/category_theory/chapter_8/tikz_code_1_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>

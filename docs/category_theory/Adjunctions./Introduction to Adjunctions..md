@@ -106,7 +106,7 @@ we have the following natural bijection
 \[
 \hom_{**Grp**}(G, (K)^{\times})\cong \hom_{**Ring**}(R[G], K).
 \]
-
+ 
 Specifically, the bijection is natural in $K$. However, we just saw this isomorphism before!
 This demonstrates our first example of an adjunction. 
 </span>
@@ -130,16 +130,12 @@ This definition is somewhat strange, so we comment a few remarks.
 
 <span style="display:block" class="remark">
 
-*  To define an adjunction between two functors, it suffices to specify which 
+* To define an adjunction between two functors, it suffices to specify which 
 functor is the left adjoint, or which functor is the right adjoint (since one specification determines the other). 
 Thus, the sentence "$F$ and $G$ form an adjunction" alone 
 does not make sense; namely, it is missing information of which 
-functor is the left or the right adjoint. 
-
-
-
-* 
-In an adjunction, we are always going to have some 
+functor is the left or the right adjoint.
+* In an adjunction, we are always going to have some 
 kind of bijection as above. But there are two different ways we could decide to write it:
 
 \[
@@ -156,9 +152,7 @@ the position of $F(C)$ and $G(D)$ in their hom-sets. In their hom-sets,
 the symbol $F(C)$ is always in the left position, while $G(D)$ is in the right.
 Hence we can determine if $F$ or $G$ is left or right based on glancing at the 
 bijection. Conversely, knowing the left and rightedness of our functors 
-tells us how to write down the bijection. 
-
-
+tells us how to write down the bijection.
 
 </span>
 
@@ -173,33 +167,22 @@ Let $\cc, \dd$ be categories and consider a pair of functors
 .
 The following are equivalent. 
 
-* [(*i*.)] The functors $F$, $G$ form an adjunction where
-$F$ is left adjoint to $G$ (and so $G$ is right adjoint to $G$). 
-
-
-* [(*ii*.)] There exist natural transformations 
+* **(*i*.)** The functors $F$, $G$ form an adjunction where
+$F$ is left adjoint to $G$ (and so $G$ is right adjoint to $G$).
+* **(*ii*.)** There exist natural transformations 
 
 \[
 \eta: I_{\cc} \to G \circ F \qquad \epsilon: F \circ G \to I_{\dd}
 \]
 
 such that
-\begin{itemize}
+    * For each $C \in \cc$, the morphism 
+    $\eta_C: C \to G(F(C))$ is universal from 
+    \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{$C$ to $G$}}
+    * For each $D \in \dd$, the morphism 
+    $\epsilon_D: F(G(D)) \to D$ is universal from 
+    \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$F$ to $D$}}
 
-
-*  For each $C \in \cc$, the morphism 
-$\eta_C: C \to G(F(C))$ is universal from 
-\hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{$C$ to $G$}}
-
-
-
-*  For each $D \in \dd$, the morphism 
-$\epsilon_D: F(G(D)) \to D$ is universal from 
-\hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$F$ to $D$}}
-
-
-
-\end{itemize}
 </span>
 
 
@@ -241,14 +224,10 @@ completes the proof.
 Let \adjunction{\cc}{F}{\dd}{G} be an adjunction. We establish the 
 following terminology.
 
-*  The natural transformation $\eta: I_{\cc} \to G \circ F$ is 
+* The natural transformation $\eta: I_{\cc} \to G \circ F$ is 
 the **unit of the adjunction**.
-
-
-*  The natural transformation $\epsilon: F \circ G \to I_{\dd}$ 
+* The natural transformation $\epsilon: F \circ G \to I_{\dd}$ 
 is the **counit of the adjunction**.
-
-
 
 </span>
 
@@ -258,7 +237,7 @@ We already saw this proposition in action in the introductory example.
 In that example, we found a pair functors 
 \begin{center}
 \adjunction{**Grp**}{{R[-]}}{**Ring**}{(-)^{\times}}
-\end{center}    that formed an adjunction with universal morphisms 
+\end{center}that formed an adjunction with universal morphisms 
 
 \[
 i_G: G \to (R[G])^{\times}
@@ -340,12 +319,8 @@ is right adjoint to $F$, and we have the natural bijection
 
 Moreover, we know exactly how this bijection works. 
 
-*  For $f: F(X) \to M$, we send $\phi(f)$ to $U(f) \circ i_X$. 
-
-
-*  For $g: X \to U(M)$, we send $\phi^{-1}(g)$ to $\epsilon_M \circ F(g)$. 
-
-
+* For $f: F(X) \to M$, we send $\phi(f)$ to $U(f) \circ i_X$.
+* For $g: X \to U(M)$, we send $\phi^{-1}(g)$ to $\epsilon_M \circ F(g)$.
 
 This data assembles into the commutative diagrams as below. 
 
@@ -600,7 +575,7 @@ $\epsilon'_D$, we get that
 \[
 \epsilon'_E \circ F'(\epsilon_{G'(E)}): F'(F(G(G'(E)))) \to E
 \]
-
+ 
 as desired. Now showing that these remain universal is not
 hard.
 </span>
@@ -609,13 +584,8 @@ hard.
 \vspace{0.5cm}}
 
 
-* [**1.**]
-Give a proof of Proposition \ref{proposition:adjunction_isomorphism_behavior}.  
-
-
-
-* [**2.**] 
-Let $U: **Ab** \to **Grp**$ be the
+* ****1.**** Give a proof of Proposition \ref{proposition:adjunction_isomorphism_behavior}.
+* ****2.**** Let $U: **Ab** \to **Grp**$ be the
 forgetful functor, and suppose $F: **Grp** \to **Ab**$ is 
 the abelianization functor. That is, if $G$ is a group and $\phi:
 G \to G'$ is a group homomorphism then 
@@ -627,9 +597,7 @@ F(G) = G/[G,G] \qquad F(\phi) : G/[G, G] \to G'/[G',G'].
 where $[G,G]$ is the commutator subgroup.
 
 Show that we have an adjunction \adjunction{**Grp**}{F}{**Ab**.}{U}
-Give a description of the unit and counits. 
-
-
+Give a description of the unit and counits.
 
 
 

@@ -1,19 +1,19 @@
 \begin{center}
-        \def\bottomYCoord{9.5}
-        \begin{tikzpicture}
-            \braid[number of strands= 6, thick, 
-            style strands={1}{Green},
-            style strands={2}{Green},
-            style strands={3}{Green},
-            style strands={4}{Red},
-            style strands={5}{Red},
-            style strands={6}{Red},
-            gap = 0.1,
-            control factor=.001,
-            nudge factor=.001,
-            ]
-            s_3 s_2 s_1 s_4 s_3 s_2 s_5 s_4 s_3;
-            \draw[thick] (0.8,0) -- (6.2,0);
-            \draw[thick] (0.8,-\bottomYCoord) -- (6.2,-\bottomYCoord);
-        \end{tikzpicture}
-    \end{center}
+\def\bottomYCoord{9.5}
+\begin{tikzpicture}
+\braid[number of strands= 6, thick, 
+style strands={1}{Green},
+style strands={2}{Green},
+style strands={3}{Green},
+style strands={4}{Red},
+style strands={5}{Red},
+style strands={6}{Red},
+gap = 0.1,
+control factor=.001,
+nudge factor=.001,
+]
+s_3 s_2 s_1 s_4 s_3 s_2 s_5 s_4 s_3;
+\draw[thick] (0.8,0) -- (6.2,0);
+\draw[thick] (0.8,-\bottomYCoord) -- (6.2,-\bottomYCoord);
+\end{tikzpicture}
+\end{center}

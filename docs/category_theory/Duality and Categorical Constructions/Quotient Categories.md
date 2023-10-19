@@ -25,11 +25,11 @@ Let $\cc$ be a locally small category. Suppose $R$ is a function which, for ever
 pair of objects $A, B$, assigns equivalence 
 relations $\sim_{A, B}$ on the hom set $\hom_{\cc}(A, B)$. Then we may define the 
 quotient category $\cc/R$ where 
-\begin{description}
-\item[Objects.] The same objects of $\cc$.
-\item[Morphisms.] For any objects $A,B$ of $\cc$, we 
+
+* **Objects.** The same objects of $\cc$.
+* **Morphisms.** For any objects $A,B$ of $\cc$, we 
 set $\hom_{\cc/R}(A, B) = \hom_{\cc}(A, B)/\sim_{A, B}$.
-\end{description}
+
 </span>    
 Thus we see that morphisms between $f: A \to B$ in $\cc$ becomes equivalence classes 
 $[f]$ in $\cc/R$. 

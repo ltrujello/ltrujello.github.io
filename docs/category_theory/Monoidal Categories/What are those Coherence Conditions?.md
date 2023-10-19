@@ -104,7 +104,7 @@ the two paths are equal. That is,
 =
 (\textcolor{Orange}{\alpha^{-1}\otimes 1})\circ \textcolor{Orange}{\alpha}.
 \]
-
+ 
 so that, in reality, I actually have *one* unique isomorphism (i.e., a canonical isomorphism)
 from my object to yours, and you can also canonically get from your object to mine by inverting 
 the unique isomorphism. 
@@ -115,12 +115,8 @@ that any choice of "parenthesizing" $A \otimes B \otimes C \otimes D$, the
 product of 4 objects in $\mm$, is **canonically** isomorphic 
 to any other possible choice. This brings up a few questions. 
 
-*  What do we mean by "parenthesizing?"
-
-
-*  What about a product with $n$-many objects $A$ for $n > 4$?
-
-
+* What do we mean by "parenthesizing?"
+* What about a product with $n$-many objects $A$ for $n > 4$?
 
 
 We will rigorously specify what we mean by parenthesizing in a bit. To answer 

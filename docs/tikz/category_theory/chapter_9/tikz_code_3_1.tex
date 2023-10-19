@@ -1,28 +1,28 @@
 \begin{center}
-    \adjustbox{scale=0.8}{
-    \begin{tikzcd}
-        X_n\otimes (\underbrace{X_1 \otimes \cdots \otimes\hspace{-0.3cm} \overbracket{X_r}^{k\text{-th spot}}\hspace{-0.3cm} \otimes \cdots \otimes X_1}_{n\text{ factors}})
-        \otimes (\underbrace{X_1 \otimes \cdots \otimes \hspace{-0.3cm} \overbracket{X_s}^{\ell\text{-th spot}} \hspace{-0.3cm}\otimes \cdots \otimes X_1}_{r\text{ factor}})
-        \arrow[d, swap, "\mu_{1, \dots, r, \dots, 1} \otimes (1_{X_1} \otimes \cdots \otimes 1_{X_r}\otimes \cdots \otimes 1_{X_1})"]
-        \arrow[rr, "\sim"]
-        &[-1.8cm]
-        &[-1.8cm]
-        X_n\otimes 
-        (\underbrace{X_1 \otimes \cdots \otimes \overbracket{(X_r \otimes (X_1 \otimes \cdots \otimes X_s \otimes \cdots \otimes X_1))}^{k\text{-th spot}}\otimes \cdots \otimes X_1}_{n \text{ factors}})
-        \arrow[d, "1_{X_n} \otimes 1_{X_1} \otimes \cdots \otimes \circ_{\ell} \otimes \cdots \otimes 1_{X_1}"]
-        \\[1cm]
-        X_{n + r - 1}
-        \otimes (X_1 \otimes \cdots \otimes X_s \otimes \cdots \otimes X_1)
-        \arrow[dr, swap, "\mu_{1, 1, \dots, s, \dots, 1}"]
-        &
-        &
-        X_n\otimes(X_1 \otimes \cdots \otimes X_{r + s - 1} \otimes \cdots \otimes X_1)
-        \arrow[dl, "\mu_{1, 1, \dots, r + s - 1, \dots, 1}"]
-        \\
-        &
-        X_{n + r + s - 2}
-        &
-    \end{tikzcd}
+\adjustbox{scale=0.8}{
+\begin{tikzcd}
+X_n\otimes (\underbrace{X_1 \otimes \cdots \otimes\hspace{-0.3cm} \overbracket{X_r}^{k\text{-th spot}}\hspace{-0.3cm} \otimes \cdots \otimes X_1}_{n\text{ factors}})
+\otimes (\underbrace{X_1 \otimes \cdots \otimes \hspace{-0.3cm} \overbracket{X_s}^{\ell\text{-th spot}} \hspace{-0.3cm}\otimes \cdots \otimes X_1}_{r\text{ factor}})
+\arrow[d, swap, "\mu_{1, \dots, r, \dots, 1} \otimes (1_{X_1} \otimes \cdots \otimes 1_{X_r}\otimes \cdots \otimes 1_{X_1})"]
+\arrow[rr, "\sim"]
+&[-1.8cm]
+&[-1.8cm]
+X_n\otimes 
+(\underbrace{X_1 \otimes \cdots \otimes \overbracket{(X_r \otimes (X_1 \otimes \cdots \otimes X_s \otimes \cdots \otimes X_1))}^{k\text{-th spot}}\otimes \cdots \otimes X_1}_{n \text{ factors}})
+\arrow[d, "1_{X_n} \otimes 1_{X_1} \otimes \cdots \otimes \circ_{\ell} \otimes \cdots \otimes 1_{X_1}"]
+\\[1cm]
+X_{n + r - 1}
+\otimes (X_1 \otimes \cdots \otimes X_s \otimes \cdots \otimes X_1)
+\arrow[dr, swap, "\mu_{1, 1, \dots, s, \dots, 1}"]
+&
+&
+X_n\otimes(X_1 \otimes \cdots \otimes X_{r + s - 1} \otimes \cdots \otimes X_1)
+\arrow[dl, "\mu_{1, 1, \dots, r + s - 1, \dots, 1}"]
+\\
+&
+X_{n + r + s - 2}
+&
+\end{tikzcd}
 }
 
 

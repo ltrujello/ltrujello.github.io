@@ -26,7 +26,7 @@ That is, given a permutation $S_n$, and $n$-many other permutations $\sigma_1 \i
 \sigma_n \in S_{a_n}$, we can form a permutation in $S_{a_1 + \cdots + a_n}$.
 
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
+ 
 
 This then suggests the idea that there exists an operadic composition for braids; and such 
 an observation checks out. Given a braid $\beta \in B_n$, and $n$-many other 
@@ -137,7 +137,7 @@ swap $k_1$ and $k_2$. This then gives us the expression
 \cdots 
 \sigma_{(k_1 - \textcolor{NavyBlue}{m})+ k_2}^{-1}
 \]
-
+ 
 
 
 Now it is easily to generalize this to the other generators; we simply 
@@ -230,15 +230,9 @@ we can repeat this process for each blue line.
 
 So to do this in general, we need to answer three questions:
 
-*  How far are all of our red strands from the left? 
-
-
-*  How many red strands are there?
-
-
-*  How many blue strands are there?
-
-
+* How far are all of our red strands from the left?
+* How many red strands are there?
+* How many blue strands are there?
 
 If we can answer those three questions, then we can describe exactly what happens 
 in terms of generators using formula (\ref{sigma_1_cabling}).
@@ -296,7 +290,7 @@ Note that $\pi(\sigma_1\sigma_3)$ is the permutation $(1, 2, 3, 4) \mapsto
 \phi(\sigma_1\sigma_3, 1) = \textcolor{Green}{2} \quad \phi(\sigma_1\sigma_3, 2) = \textcolor{Red}{1} \quad
 \phi(\sigma_1\sigma_3, 3) = \textcolor{RoyalBlue}{4} \quad \phi(\sigma_1\sigma_3, 4) = \textcolor{Purple}{3}.
 \]
-
+ 
 What about after the first three generators have been applied? We calculate 
 again: $\pi(\sigma_1\sigma_3\sigma_2)$ is the permutation $(1, 2, 3, 4) \mapsto (2, 4, 1, 3)$.
 Hence we have that 
@@ -385,7 +379,7 @@ generators. Let $k_1, \dots, k_n$ be positive integers. Then we have that
 = 
 \psi_1\psi_2\dots\psi_k
 \]
-
+  
 where, depending on if $\sigma_{i_j}$ is an instance of an inverse or not, 
 we have 
 \begin{statement}{ProcessBlue!10}
@@ -436,19 +430,12 @@ k_{\phi(\sigma_{i_1}\cdots\sigma_{i_{(j-1)}}, (i_j+1))}
 
 The three quantities are the three answers to our original questions: 
 
-*  After applying $\sigma_{i_1}\dots\sigma_{i_{j-1}}$,
+* After applying $\sigma_{i_1}\dots\sigma_{i_{j-1}}$,
 how many strands come before the cable $i_j$, relative to the left? $p_j$.
-
-
-*  
-How many strands are in the $i_j$-th cable after applying $\sigma_{i_1}\dots\sigma_{i_{j-1}}$? 
+* How many strands are in the $i_j$-th cable after applying $\sigma_{i_1}\dots\sigma_{i_{j-1}}$? 
 $q_j$.
-
-
-*  How many strands are in the $(i_j+1)$-th after applying $\sigma_{i_1}\dots\sigma_{i_{j-1}}$? 
+* How many strands are in the $(i_j+1)$-th after applying $\sigma_{i_1}\dots\sigma_{i_{j-1}}$? 
 $r_j$.
-
-
 
 
 
@@ -463,16 +450,16 @@ In this case we see that we get five permutations because we have five generator
 First we compute the table 
 \begin{center}
 
-|                           $j$ |$i_{j}$ |$p_j$ |$q_j$ |$r_j$ |
-|-------------------------------|--------|------|------|------|
-|[0.5ex]                           1 |1 |1 |k_1 = 3$ |$k_2 = 2$ |
-|                          2 |3 |$1 + k_1 + k_2 = 6$ |$k_3 = 1$ |$k_4 = 3$ |
-|                         3 |2 |$1 + k_2 = 3$ |$k_1 = 3$ |$k_4 = 3$ |
-|                         4 |2 |$1 + k_2 = 3$ |$k_4 = 3$ |$k_1 = 3$ |
-|                         5 |3 |$1 + k_1 + k_2 = 6$ |$k_4 = 3$ |$k_3 = 1$ |
+|   $j$ |$i_{j}$ |$p_j$ |$q_j$ |$r_j$ |
+|-------|--------|------|------|------|
+|[0.5ex]   1 |1 |1 |k_1 = 3$ |$k_2 = 2$ |
+|  2 |3 |$1 + k_1 + k_2 = 6$ |$k_3 = 1$ |$k_4 = 3$ |
+| 3 |2 |$1 + k_2 = 3$ |$k_1 = 3$ |$k_4 = 3$ |
+| 4 |2 |$1 + k_2 = 3$ |$k_4 = 3$ |$k_1 = 3$ |
+| 5 |3 |$1 + k_1 + k_2 = 6$ |$k_4 = 3$ |$k_3 = 1$ |
 ||
 
-\end{center}    This then gives us the product 
+\end{center}This then gives us the product 
 
 \begin{gather*}
 \left(\prod_{m = p_1}^{p_1 + (r_1-1)}
@@ -562,28 +549,28 @@ This is more easily done by generating the permutation table on the left; it
 tells us how our cables are swapped around. 
 \begin{center}
 
-|                          Generator |Permutation|
-|------------------------------------|-----------|
-|                         $\varnothing$ |$(\textcolor{Red}{1}, \textcolor{Green}{2}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4})$|
-|                         $\sigma_1^{-1}$ |$(\textcolor{Green}{2}, \textcolor{Red}{1}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4})$|
-|                         $\sigma_1^{-1}\sigma_2^{-1}$ |$(\textcolor{Green}{2}, \textcolor{Purple}{3}, 1, \textcolor{RoyalBlue}{4})$|
-|                         $\sigma_1^{-1}\sigma_2^{-1}\sigma_3$ |$(\textcolor{Green}{2}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4}, 1)$|
-|                         $\sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2$ |$(\textcolor{Green}{2}, \textcolor{RoyalBlue}{4}, \textcolor{Purple}{3}, 1)$|
-|                         $\sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\sigma_1$ |$(\textcolor{RoyalBlue}{4}, \textcolor{Green}{2}, \textcolor{Purple}{3}, 1)$|
+|  Generator |Permutation|
+|------------|-----------|
+| $\varnothing$ |$(\textcolor{Red}{1}, \textcolor{Green}{2}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4})$|
+| $\sigma_1^{-1}$ |$(\textcolor{Green}{2}, \textcolor{Red}{1}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4})$|
+| $\sigma_1^{-1}\sigma_2^{-1}$ |$(\textcolor{Green}{2}, \textcolor{Purple}{3}, 1, \textcolor{RoyalBlue}{4})$|
+| $\sigma_1^{-1}\sigma_2^{-1}\sigma_3$ |$(\textcolor{Green}{2}, \textcolor{Purple}{3}, \textcolor{RoyalBlue}{4}, 1)$|
+| $\sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2$ |$(\textcolor{Green}{2}, \textcolor{RoyalBlue}{4}, \textcolor{Purple}{3}, 1)$|
+| $\sigma_1^{-1}\sigma_2^{-1}\sigma_3\sigma_2\sigma_1$ |$(\textcolor{RoyalBlue}{4}, \textcolor{Green}{2}, \textcolor{Purple}{3}, 1)$|
 ||
 
 \hspace{1cm}
 
-|                           $j$ |$i_{j}$ |$p_j$ |$q_j$ |$r_j$ |
-|-------------------------------|--------|------|------|------|
-|[1ex]                           1 |1 |1 |$k_1 = 2$  |$k_2 = 3$  |
-|[.1ex]                           2 |2 |$1 + k_2 = 4$ |$k_1 =2$ |$k_3 = 4$ |
-|[.1ex]                           3 |3 |$1 + k_2 + k_3 = 8$ |$k_1 = 2$ |$k_4 = 5$ |
-|[.1ex]                           4 |2 |$1 + k_2 = 4$ |$k_3 =4$ |$k_4 = 5$ |
-|.1ex]                           5 |1 |$1$ |$k_2 = 3$ |$k_4 = 5$|
+|   $j$ |$i_{j}$ |$p_j$ |$q_j$ |$r_j$ |
+|-------|--------|------|------|------|
+|[1ex]   1 |1 |1 |$k_1 = 2$  |$k_2 = 3$  |
+|[.1ex]   2 |2 |$1 + k_2 = 4$ |$k_1 =2$ |$k_3 = 4$ |
+|[.1ex]   3 |3 |$1 + k_2 + k_3 = 8$ |$k_1 = 2$ |$k_4 = 5$ |
+|[.1ex]   4 |2 |$1 + k_2 = 4$ |$k_3 =4$ |$k_4 = 5$ |
+|.1ex]   5 |1 |$1$ |$k_2 = 3$ |$k_4 = 5$|
 ||
 
-\end{center}    This then generates the products 
+\end{center}This then generates the products 
 
 \begin{gather*}
 \left(\prod_{m = 1}^{3}\sigma_{m + 2}^{-1}\sigma^{-1}_m\right)

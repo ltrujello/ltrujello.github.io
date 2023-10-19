@@ -10,7 +10,7 @@ Let $(\cc, \otimes, I)$ and $(\dd, \odot, J)$ be monoidal categories.
 A **(lax) monoidal functor** is a functor $F: \cc \to \dd$ equipped with
 the following data.
 
-*  For each pair $A$, $B$ in $\cc$, we have 
+* For each pair $A$, $B$ in $\cc$, we have 
 a natural morphism 
 
 \[
@@ -21,16 +21,11 @@ such that for any third object $C$, the diagram below commutes. (Note that
 we suppress the subscripts for clarity.) 
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
-
-*  There exists a unique morphism $\epsilon: J \to F(I)$ such that, for any object $A$ of $\cc$, 
+* There exists a unique morphism $\epsilon: J \to F(I)$ such that, for any object $A$ of $\cc$, 
 the diagrams below commute. (Again, 
 we suppress the subscripts for clarity.)
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
 
 We say the $F$ is 
 **strong** if $\phi$ and $\epsilon$ are isomorphisms and
@@ -105,11 +100,11 @@ Hence, we cannot regard this functor as strong or strict monoidal.
 <span style="display:block" class="example">
 The category of pointed topological spaces $**Top**^*$ is the category 
 where 
-\begin{description}
-\item[Objects.] Pairs $(X, x_0)$ with $X$ a topological space and $x_0 \in X$ 
-\item[Morphisms.] A morphism $f:(X, x_0) \to (Y, y_0)$ is given by a continuous function 
-$f: X \to Y$ such that $f(x_0) = y_0$.  
-\end{description}
+
+* **Objects.** Pairs $(X, x_0)$ with $X$ a topological space and $x_0 \in X$
+* **Morphisms.** A morphism $f:(X, x_0) \to (Y, y_0)$ is given by a continuous function 
+$f: X \to Y$ such that $f(x_0) = y_0$.
+
 This category is what allows us to characterize the fundamental group of a topological 
 space as a functor 
 
@@ -181,15 +176,14 @@ so that the fundamental group functor $\pi_1$ is strong monoidal.
 <span style="display:block" class="example">
 Recall that a **Lie algebra** is a vector space $\mathfrak{g}$ over a field $k$ 
 with a bilinear function $[-,-]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}$ such that 
-\begin{description}
-\item[Antisymmetry.] For all $x, y \in \mathfrak{g}$, $[x, y] = -[y, x]$
-\item[Jacobi Identity.] For all $x, y, z \in \mathfrak{g}$ we have that 
+
+* **Antisymmetry.** For all $x, y \in \mathfrak{g}$, $[x, y] = -[y, x]$
+* **Jacobi Identity.** For all $x, y, z \in \mathfrak{g}$ we have that 
 
 \[
 [x, [y, z]] + [y, [z, x]] + [z, [x,y]] = 0.
 \]
 
-\end{description}
 For every Lie algebra $\mathfrak{g}$, we may create the **universal enveloping algebra** 
 $U(\mathfrak{g})$. This is the algebra constructed as 
 follows: If $T(\mathfrak{g})$ is the tensor algebra of $\mathfrak{g}$, i.e., 
@@ -229,7 +223,7 @@ U: (**LieAlg**, \oplus, \{\bullet\})
 \]
 
 
-*  By Corollary V.2.3 of \cite{quantumgroups}, we have that if 
+* By Corollary V.2.3 of \cite{quantumgroups}, we have that if 
 $\mathfrak{g_1}$ and $\mathfrak{g_2}$ are two Lie algebras 
 then $U(\mathfrak{g}_1 \oplus \mathfrak{g}_2) \cong U(\mathfrak{g}_1) \otimes U(\mathfrak{g}_2)$.
 One can use Corollary V.2.3(a) to show that this isomorphism is natural in both $\mathfrak{g}_1$ and 
@@ -239,14 +233,8 @@ $\mathfrak{g}_2$. We let this morphism be our required isomorphism
 \phi_{\mathfrak{g}_1, \mathfrak{g}_2}: U(\mathfrak{g}_1\oplus \mathfrak{g}_2)  
 \to U(\mathfrak{g}_1)\otimes U(\mathfrak{g}_2).
 \]
-
-
-
-
-*  Note that $U(\{\bullet\}) = k$. Therefore, we let 
-$\epsilon: k \to k$ be the identity. 
-
-
+* Note that $U(\{\bullet\}) = k$. Therefore, we let 
+$\epsilon: k \to k$ be the identity.
 
 As the associators and unitors are simple for monoidal categories with cartesian 
 and tensor products, it is not difficult to show that the required diagrams commute. 
@@ -255,7 +243,7 @@ taken care of (in a long proof) in Kassel's text.
 </span>
 
 
-
+ 
 
 
 <script src="../../mathjax_helper.js"></script>

@@ -61,9 +61,9 @@ S_n & \text{if } n = m\\
 <span style="display:block" class="definition">
 Let $\aa$ be a category and suppose suppose $\dd \in **Cat**/\mathbb{P}$. That is, $\dd$ is a category with an associated functor
 $\Gamma: \dd \to \mathbb{P}$. Then we define the category $\dd\int\aa$ where 
-\begin{description}
-\item[Objects.] Finite strings $[A_1, A_2, \dots, A_n]$ with $A_i \in \aa$
-\item[Morphisms.] For two strings $[A_1, \dots, A_n]$ and $[B_1, \dots, B_n]$, denoted as $[A_i]$ and $[B_i]$,
+
+* **Objects.** Finite strings $[A_1, A_2, \dots, A_n]$ with $A_i \in \aa$
+* **Morphisms.** For two strings $[A_1, \dots, A_n]$ and $[B_1, \dots, B_n]$, denoted as $[A_i]$ and $[B_i]$,
 
 \[
 \hom_{\dd\int\aa}\Big([A_i],[B_i]\Big)
@@ -73,7 +73,7 @@ $\Gamma: \dd \to \mathbb{P}$. Then we define the category $\dd\int\aa$ where
 
 Here $\alpha$ is a morphism of $\dd$ such that $\Gamma(\alpha) = \sigma \in S_n$.
 Finally, we allow no morphisms between two different strings of different length.
-\end{description}
+
 </span>
 For any category $\aa$, there exists a natural inclusion functor 
 
@@ -244,9 +244,8 @@ F(S: \mathbb{B}\int\aa \to \vv) = S \circ i_{\aa}: \aa \to \vv.
 \]
 
 We must demonstrate that this is fully faithful and essentially surjective.
-\begin{description}
-\item[Fully faithful.]
-Let $F, G: \mathbb{B}\int\aa \to \vv$ be strong $SB$-monoidal functors. Then define the function
+
+* **Fully faithful.** Let $F, G: \mathbb{B}\int\aa \to \vv$ be strong $SB$-monoidal functors. Then define the function
 
 \[
 \phi: \hom_{\mathbb{B}\text{Fun}(\mathbb{B}{\textstyle\int}\aa, \vv)}(F,G)
@@ -293,16 +292,14 @@ P_2 \circ \eta'_{[A_1]}\otimes \cdots \otimes \eta'_{[A_n]}\\
 \end{align*}
 
 As $P_1$ is an isomorphism, we have that $\eta_{[A_1, \dots, A_n]} = \eta'_{[A_1, \dots, A_n]}$, so that 
-$\phi(\eta) = \phi(\eta')$ implies that $\eta = \eta'$. Hence the functor is faithful. The functor is clearly full, since  by the above process we can always take a natural transformation $\eta: F\circ i_{\aa} \to G\circ i_{\aa}$ and build it into a natural transformation $\eta: F \to G$. 
-
-\item[Essentially Surjective.]
-Consider a functor $F: \aa \to \vv$. 
+$\phi(\eta) = \phi(\eta')$ implies that $\eta = \eta'$. Hence the functor is faithful. The functor is clearly full, since  by the above process we can always take a natural transformation $\eta: F\circ i_{\aa} \to G\circ i_{\aa}$ and build it into a natural transformation $\eta: F \to G$.
+* **Essentially Surjective.** Consider a functor $F: \aa \to \vv$. 
 By Proposition \ref{proposition:triangle_commutes}, we know there exists 
 a unique $S: \mathbb{B}\int\aa \to \vv$ such 
 that $S \circ i_{\aa} = F$. 
 Hence we have essential surjectivity; in fact, we have 
 a stronger version in the strict case.
-\end{description}
+
 \end{proof}
 
 

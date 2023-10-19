@@ -34,12 +34,8 @@ B_n =
 
 where $(1), (2)$ are generator relations described below. 
 
-* [1.] $\sigma_i\sigma_j = \sigma_j\sigma_i$ whenever $|i - j|>1$
-
-
-* [2.] $\sigma_{i+1}\sigma_i\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_i$.
-
-
+* **1.** $\sigma_i\sigma_j = \sigma_j\sigma_i$ whenever $|i - j|>1$
+* **2.** $\sigma_{i+1}\sigma_i\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_i$.
 
 </span>
 Relations (1) and (2) are imposed in order to reflect physical reality.
@@ -65,7 +61,7 @@ know as the "twist" morphism
 \[
 \sigma_{A,B}: A\otimes B \to B\otimes A\qquad **(Twist Morphism)**
 \]
-
+ 
 \end{statement} 
 such that the following diagrams commute for all objects $A, B, C$ of $\cc$. 
 \begin{statement}{ProcessBlue!10}
@@ -82,9 +78,9 @@ twice is not guaranteed to give you back the identity. This case is treated sepa
 <span style="display:block" class="example">
 The canonical example of a braided monoidal category is the braid category $\mathbb{B}$.
 This is the category where:
-\begin{description}
-\item[Objects.] All integers $n \ge 0$.
-\item[Morphisms.] For any two integers $m, n$, we have that 
+
+* **Objects.** All integers $n \ge 0$.
+* **Morphisms.** For any two integers $m, n$, we have that 
 
 \[
 \hom_{\mathbb{B}}(n,m)
@@ -94,8 +90,7 @@ B_n & \text{if } n = m\\
 \varnothing & \text{if } n \ne m
 \end{cases}
 \]
-
-\end{description} 
+ 
 Composition in this category is simply braid composition. We can introduce a tensor 
 product $\otimes$ on $\mathbb{B}$ where on objects $n \otimes m = n + m$ 
 while on morphisms $\alpha \otimes \beta$ is the direct sum braid. The direct 
@@ -141,7 +136,7 @@ of two graded $R$ modules $M =\{M_n\}_{n=1}^{\infty}$ and $P = \{P_n\}_{n= 1}^{\
 \[
 (M \otimes P)_n = \bigoplus_{i + j = n}M_i \otimes P_j.
 \]
-
+  
 We can additionally introduce a braiding on this category for each invertible elements $k \in R$; specifically, we define the braiding 
 $\sigma_{M,P}: M \otimes P \to P \otimes M$ to be the graded module homomorphism whose $n$-th degree is 
 
@@ -175,7 +170,7 @@ by defining, for two functors $F,G: \cc \to M$, the natural transformation
 \[
 \beta_{F,G}: F \otimes G \to G \otimes F 
 \]
-
+ 
 defined pointwise for each $A \in \cc$ as the morphism
 
 \[
@@ -195,7 +190,7 @@ such that, for the twist morphism,
 \[
 \sigma_{B,A}\circ\sigma_{A,B} = 1_{A\otimes B}.
 \]
-
+ 
 </span>
 
 Symmetric monoidal categories are basically monoidal categories which collapse the 
@@ -373,68 +368,60 @@ S_n\amalg(S_m \amalg S_p) \to (S_{n'}\amalg S_{m'})\amalg S_{p'}.
 \end{align*}
 
 and then show it is equivalent to the other path.
-\begin{description}
-\item[$\bm{i = 0}$]
-If the input is $(x, 0)$, we see that $\alpha_{n,m,p}(x, i) = ((x,0),0)$.
+
+* **$\bm{i = 0}$** If the input is $(x, 0)$, we see that $\alpha_{n,m,p}(x, i) = ((x,0),0)$.
 If this is fed into $(f + g) + h$, the output will be $(f + g)(x, 0)$, whose output 
 will be $((f(x), 0), 0)$. 
 
 However, suppose we first put $(x, 0)$ into $f+ (g + h)$. Then 
 we would have directly obtain $(f(x), 0)$. Feeding this into $\alpha_{n', m', p'}$, we would 
-get $((f(x), 0), 0)$. Hence we obtain naturality in this case. 
+get $((f(x), 0), 0)$. Hence we obtain naturality in this case.
+* **$\bm{i = 1}$.** Suppose now the input is $(x, 1)$. Then either $x = (y, 0)$ with $y \in S_m$ 
+or $(y, 1)$ where $y \in S_p$.
+    * **$\bm{y \in S_m}$.** Suppose $x = (y, 0)$. Then we see that 
+    $\alpha_{n,m,p}(x, 1) = ((y, 1), 0)$. Plugging this into $( f+ g) + h$, we 
+    get 
 
-\item[$\bm{i = 1}$.]
-Suppose now the input is $(x, 1)$. Then either $x = (y, 0)$ with $y \in S_m$ 
-or $(y, 1)$ where $y \in S_p$. 
+    \[
+    [ ( f+ g) + h]((y, 1), 0) = ([f + g](y, 1), 0) = ((g(y), 1), 0).
+    \]
 
-\begin{description}
-\item[$\bm{y \in S_m}$.] Suppose $x = (y, 0)$. Then we see that 
-$\alpha_{n,m,p}(x, 1) = ((y, 1), 0)$. Plugging this into $( f+ g) + h$, we 
-get 
+    However, we also could have obtained this value by first starting with  
+    $f + (g + h)$. In this case, 
 
-\[
-[ ( f+ g) + h]((y, 1), 0) = ([f + g](y, 1), 0) = ((g(y), 1), 0).
-\]
+    \[
+    [f + (g + h)]((y, 0), 1) = ([g + h](y, 0), 1) = ((g(y), 0), 1). 
+    \]
 
-However, we also could have obtained this value by first starting with  
-$f + (g + h)$. In this case, 
+    Plugging this into $\alpha_{n',m',p'}$, we then get that 
 
-\[
-[f + (g + h)]((y, 0), 1) = ([g + h](y, 0), 1) = ((g(y), 0), 1). 
-\]
+    \[
+    \alpha_{n',m',p'}((g(y), 0), 1) = ((g(y), 1), 0).
+    \]
 
-Plugging this into $\alpha_{n',m',p'}$, we then get that 
+    Hence the two paths are equivalent.
+    * **$\bm{y \in S_p}$.** Suppose $x = (y, 1)$, Then we have that 
+    $\alpha_{n, m, p}((y,1), 1) = (y, 1)$. Sending this into $(f + g)+ h$, we get 
 
-\[
-\alpha_{n',m',p'}((g(y), 0), 1) = ((g(y), 1), 0).
-\]
+    \[
+    [(f + g) + h](y, 1) = (h(y), 1).
+    \]
 
-Hence the two paths are equivalent. 
+    However, we could have achieved this value by first plugging $((y, 1),1)$ into 
+    $f + (g + h)$:
 
-\item[$\bm{y \in S_p}$.] Suppose $x = (y, 1)$, Then we have that 
-$\alpha_{n, m, p}((y,1), 1) = (y, 1)$. Sending this into $(f + g)+ h$, we get 
+    \[
+    [f + (g + h)]((y, 1), 1) = ([g + h](y, 1), 1) = ((h(y), 1), 1).
+    \]
+  
+    Then sending this into $\alpha_{n',m',p'}$, we get 
 
-\[
-[(f + g) + h](y, 1) = (h(y), 1).
-\]
+    \[
+    \alpha_{n',m',p'}((h(y), 1), 1) = (h(y), 1).
+    \]
 
-However, we could have achieved this value by first plugging $((y, 1),1)$ into 
-$f + (g + h)$:
+    Thus the two paths are equivalent.
 
-\[
-[f + (g + h)]((y, 1), 1) = ([g + h](y, 1), 1) = ((h(y), 1), 1).
-\]
-
-Then sending this into $\alpha_{n',m',p'}$, we get 
-
-\[
-\alpha_{n',m',p'}((h(y), 1), 1) = (h(y), 1).
-\]
-
-Thus the two paths are equivalent.
-\end{description}
-Hence we see that this diagram does commute, so that $\alpha$ is natural. 
-\end{description}
 [Show naturality works for $\lambda$ and $\rho$.]
 
 Now we show that these natural isomorphisms satisfy the monoidal properties. 
@@ -444,16 +431,14 @@ Specifically, we'll show that the diagram
 must commute. To do this, we consider how these functions are realized in **Set**. 
 If we consider $(x, i) \in S_n\amalg(\varnothing \amalg S_m)$, we see that 
 we have two cases to consider. 
-\begin{description}
-\item[$\bm{i = 0}$.]
-If $i = 0$, then we see that $\alpha_{n, 0, m}(x, 0) = ((x, 0), 0)$. Sending 
+
+* **$\bm{i = 0}$.** If $i = 0$, then we see that $\alpha_{n, 0, m}(x, 0) = ((x, 0), 0)$. Sending 
 this into $\rho_n + 1_m$, we get that $[\rho_m + 1_m]((x, 0), 0) = (\rho(x, 0), 0) = (x, 0)$. 
 
 On the other hand, we could obtain this value by directly sending $(x, 0)$ into 
 $1_n + \lambda_m$. Observe that $[1_n + \lambda_m](x, 0) = (1_n(x), 0) = (x, 0)$. 
-Hence the diagram commutes for this case. 
-
-\item[$\bm{i = 1}$.] If $i = 1$, then our element is of the form 
+Hence the diagram commutes for this case.
+* **$\bm{i = 1}$.** If $i = 1$, then our element is of the form 
 $(x, 1)$. However, we know that $x = ((x, 1), 0)$, since $(x, 1) \in 0 + m$. 
 Thus observe that $\alpha_{n, 0, m}((x, 1), 1) = (x, 1)$. Consequently, 
 we get that $[\rho_n + 1_m](x, 1) = (1_m(x), 1) = (x, 1)$. 
@@ -461,7 +446,7 @@ we get that $[\rho_n + 1_m](x, 1) = (1_m(x), 1) = (x, 1)$.
 On the other hand, we can start instead be evaluating 
 $[1_n + \lambda_m]((x, 1), 1) = (\lambda(x, 1), 1) = (x, 1)$. Hence the diagram commutes 
 in this case.
-\end{description}
+
 Thus we see that this diagram holds for all naturals $n, m$.
 </span>
 

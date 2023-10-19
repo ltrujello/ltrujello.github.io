@@ -139,14 +139,10 @@ passes through $z$ is a zero arrow).
 Now we define the **cokernel** a morphism $f: A \to B$ to
 be an arrow $u:B \to C$ where 
 
-* [1.] $u \circ f = 0: A \to C$ 
-
-
-* [2.] If $h: B \to D$ has the property that $h \circ f
+* **1.** $u \circ f = 0: A \to C$
+* **2.** If $h: B \to D$ has the property that $h \circ f
 = 0$, then $h = h' \circ u$ for a unique arrow $h': B \to
 D$.
-
-
 
 Visually, this becomes 
 
@@ -171,14 +167,10 @@ Let $\cc$ be a category and consider two morphisms $f, g: A \to
 B$ in $\cc$. The **coequalizer** of $(f, g)$ is a
 morphism $u: B \to D$ such that 
 
-* [1.] $u \circ f = u \circ h$
-
-
-* [2.] If $h: B \to C$ has the property that $h \circ f
+* **1.** $u \circ f = u \circ h$
+* **2.** If $h: B \to C$ has the property that $h \circ f
 = h \circ g$, then there exists a unique morphism $h':D \to C$ such that 
-$h = h' \circ u$.  
-
-
+$h = h' \circ u$.
 
 This may not always exist. 
 We can represent this with the following commutative diagram.\\ 
@@ -202,16 +194,11 @@ morphisms. Since there are only two objects, the two nontrivial
 morphisms have the same domain and codomain. Now consider the
 functor category $\cc^**2**$ where
 
-* [1.] Objects are functors $F: **2** \to \cc$, whose
+* **1.** Objects are functors $F: **2** \to \cc$, whose
 image is therefore a pair of morphism $f, g: A \to B$ in $\cc$
-
-
-
-* [2.] Morphisms are natural transformations, which are
+* **2.** Morphisms are natural transformations, which are
 therefore a pair of arrows $h : A \to A'$ and $k: B \to B'$ so
 that
-
-
 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_7_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -241,8 +228,8 @@ homomorphisms $\phi, \psi: G \to H$ is the homomorphism
 
 where $g' \in H$ maps to the coset $g' + \im(\phi - \psi)$. We
 show this as follows.
-\begin{description}
-\item[$\bm{\pi \circ \phi = \pi \circ \psi}$.] First let $g \in
+
+* **$\bm{\pi \circ \phi = \pi \circ \psi}$.** First let $g \in
 G$, and consider the elements 
 
 \begin{align*}
@@ -263,9 +250,8 @@ If we subtract these two quantities, we get that
 \end{align*}
 
 Since their difference is zero, we see that they're equal.
-Hence $\pi \circ \phi = \pi \circ \psi$. 
-
-\item[Universality.] Let $f: H \to H'$ be another group
+Hence $\pi \circ \phi = \pi \circ \psi$.
+* **Universality.** Let $f: H \to H'$ be another group
 homomorphism such that $f \circ \phi = f \circ \psi$. Then
 construct the morphism $f': H/\im(\phi - \psi) \to H'$
 where 
@@ -292,8 +278,8 @@ $f = f' \circ \pi$. To finally show that $f'$ is unique,
 we suppose there exists another group homomorphism
 $k:H/\im(\phi-\psi) \to H'$ such that $f = k\circ \pi$.
 Then we see that $f' \circ \pi = k \circ \pi$, which
-implies that $f' = k$. 
-\end{description}
+implies that $f' = k$.
+
 What we've shown is that for any $f: H \to H'$ such that
 $f \circ \phi = f \circ \psi$, there exists a unique
 morphism $f' : H/\im(\phi - \psi) \to H'$ such that $f = f' \circ

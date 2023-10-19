@@ -17,8 +17,7 @@ gives rise to a unique monoid homomorphism $\psi: F(X) \to M$.
 
 We will now observe that these functors exhibit nice behavior. 
 
-*  
-Recall that products in $**Mon**$ are simply products of monoids, while 
+* Recall that products in $**Mon**$ are simply products of monoids, while 
 products in **Set** are cartesian products. One can show that, for two monoids 
 $M$, $N$, we have the isomorphism 
 
@@ -27,21 +26,15 @@ U(M \times N) \cong U(M) \times U(N).
 \]
 
 Regarding this functor's behavior, 
-we say that the forgetful functor $U$ **preserves** products. 
-
-
-
-*  We may ask if the converse holds: Does the free functor preserve products? 
+we say that the forgetful functor $U$ **preserves** products.
+* We may ask if the converse holds: Does the free functor preserve products? 
 The answer is no: Given two sets $X, Y$, it is generally not true that 
 $F(X \times Y) \cong F(X) \times F(Y)$ (as monoids). 
 
 An easy way to see this is to let $X = Y = \{\bullet\}$, the one point set. Then 
 $F(\{\bullet\} \times \{\bullet\}) \cong F(\{\bullet\}) \cong \zz$, while 
-$F(\{\bullet\}) \times F(\{\bullet\}) \cong \zz \times \zz$. 
-
-
-
-*  What is interesting, however, is that the free functor *does* preserve 
+$F(\{\bullet\}) \times F(\{\bullet\}) \cong \zz \times \zz$.
+* What is interesting, however, is that the free functor *does* preserve 
 coproducts. Recall that the coproduct in **Set** is the disjoint union, while the 
 coproduct in **Mon** is the free product of monoids. Then it is true that, for two 
 sets $X, Y$, 
@@ -49,9 +42,6 @@ sets $X, Y$,
 \[
 F(X \amalg Y) \cong F(X) * F(Y).
 \]
-
-
-
 
 Thus we see that we have two functors that separately preserve 
 products and coproducts. This is actually very interesting; after all, a 
@@ -68,18 +58,12 @@ Then $G$ preserves limits and $F$ preserves colimits.
 
 Before a proof, we make some comments. 
 
-*  An easy way to remember this is **RAPL**: "**R**ight **A**djoints **P**reserve **L**imits." 
+* An easy way to remember this is **RAPL**: "**R**ight **A**djoints **P**reserve **L**imits." 
 (Speaking from experience, say it in your head a bunch of times or you'll forget.) 
 If you can remember **RAPL**, then you can 
-remember that, dually, left adjoints preserve colimits. 
-
-
-
-*  The converse of this theorem does not hold.
-
-
-
-*  Typically, this proof is shown in one of two forms: It is "blackboxed" with 
+remember that, dually, left adjoints preserve colimits.
+* The converse of this theorem does not hold.
+* Typically, this proof is shown in one of two forms: It is "blackboxed" with 
 a slick application of the Yoneda Lemma, which is not illuminating or useful for a new 
 reader. Or, it is more usefully spelled out by showing that right adjoints preserve limits, and 
 the second statement is obtained by "dualizing". For variety, we will
@@ -87,8 +71,6 @@ show that left adjoints preserve
 colimits. Then, the reader can 
 try proving themselves that right adjoints preserve 
 limits.
-
-
 
 
 
@@ -109,14 +91,10 @@ let $(C, \tau_i: F(H(i)) \to C)$
 be a cone over $F \circ H: J \to \dd$. 
 We must show that 
 
-* [1.] There exists a $\alpha: F(\Colim H) \to C$ such that 
+* **1.** There exists a $\alpha: F(\Colim H) \to C$ such that 
 $\alpha \circ F(\sigma_i) = \tau_i$ for all $i \in J$
-
-
-* [2.] $\alpha$ is the unique morphism from $F(\Colim H)$ to $C$ with 
-this property.  
-
-
+* **2.** $\alpha$ is the unique morphism from $F(\Colim H)$ to $C$ with 
+this property.
 
 We show existence. Observe that each 
 $\tau_i: F(H(i)) \to C$ induces a unique morphism 
@@ -154,18 +132,10 @@ F(X \amalg Y) \cong F(X) * F(Y).
 
 Moreover, the free monoid functor is part of a larger family of free functors: 
 
-*  Free group functor, $F: **Set** \to **Grp**$
-
-
-*  Free abelian group functor, $F: **Set** \to **Ab**$
-
-
-*  Free ring functor, $F: **Set** \to **Ring**$
-
-
-*  Free $R$-module functor, $F: **Set** \to R**-Mod**$
-
-
+* Free group functor, $F: **Set** \to **Grp**$
+* Free abelian group functor, $F: **Set** \to **Ab**$
+* Free ring functor, $F: **Set** \to **Ring**$
+* Free $R$-module functor, $F: **Set** \to R**-Mod**$
 
 who are the left adjoints to their respective forgetful functors. 
 However, the coproduct in some of these 
@@ -182,12 +152,11 @@ of our left adjoint is.
 Let **Meas** be the category of measure spaces with measure-preserving 
 morphisms. 
 More precisely, 
-\begin{description}
-\item[Objects.] The objects are triples $(X, \mathcal{A}, \mu_X)$ 
-where $X$ is a topological space, $\mathcal{A}$ is a sigma algebra 
-on $X$, and $\mu_X$ is a measure on $X$. 
 
-\item[Morphisms.] A morphism between two objects $(X, \mathcal{A}, \mu_X)$ 
+* **Objects.** The objects are triples $(X, \mathcal{A}, \mu_X)$ 
+where $X$ is a topological space, $\mathcal{A}$ is a sigma algebra 
+on $X$, and $\mu_X$ is a measure on $X$.
+* **Morphisms.** A morphism between two objects $(X, \mathcal{A}, \mu_X)$ 
 and $(Y, \mathcal{B}, \mu_Y)$ is a function $f: X \to Y$ such that 
 $f$ is measurable and preserves measure. That is, is $f$ is measurable 
 and 
@@ -195,9 +164,9 @@ and
 \[
 \mu_X(f^{-1}(B)) = \mu_Y(B)
 \]
+ 
+for every $B \in \mathcal{B}$.
 
-for every $B \in \mathcal{B}$. 
-\end{description}
 
 Let $U: **Meas** \to **Set**$ be the forgetful functor, forgetting 
 measure space properties and measurability of the morphisms. 
@@ -248,42 +217,28 @@ because it doesn't preserve products
 {\large **Exercises**
 \vspace{0.2cm}}
 
-* [**1.**] Denote the free monoid functor as $F$.
+* ****1.**** Denote the free monoid functor as $F$.
 Prove directly that for two sets $X$, $Y$, we have 
 the isomorphism of monoids $F(X \amalg Y) \cong F(X) * F(Y)$. (Doing this is actually very important; 
 The proof of Theorem \ref{theorem:RAPL} will become more intuitive.)
+* ****2.**** Finish the proof of Theorem \ref{theorem:RAPL}
+* ****3.**** Let $\cc, \dd$ be categories with finite products.
+    * ***i.*** Let $F: \cc \to \dd$ be a functor that preserves products, so that
+    for two objects $A$, $B$ of $\cc$, there exists an isomorphism 
 
+    \[
+    F(A \times B) \cong F(A) \times F(B).
+    \]
 
-* [**2.**] Finish the proof of Theorem \ref{theorem:RAPL}
-
-
-* [**3.**] 
-Let $\cc, \dd$ be categories with finite products. 
-\begin{itemize}
-
-
-* [*i.*] Let $F: \cc \to \dd$ be a functor that preserves products, so that
-for two objects $A$, $B$ of $\cc$, there exists an isomorphism 
-
-\[
-F(A \times B) \cong F(A) \times F(B).
-\]
-
-Does this isomorphism have to be natural in $A, B$?
-
-
-
-* [*ii.*] Suppose $F: \cc \to \dd$ is a right adjoint. Is the isomorphism 
-$F(A \times B) \cong F(A) \times F(B)$ natural now? 
-
-
-
-\end{itemize}
+    Does this isomorphism have to be natural in $A, B$?
+    * ***ii.*** Suppose $F: \cc \to \dd$ is a right adjoint. Is the isomorphism 
+    $F(A \times B) \cong F(A) \times F(B)$ natural now?
 
 
 
 
 
+ 
 
 
 <script src="../../mathjax_helper.js"></script>

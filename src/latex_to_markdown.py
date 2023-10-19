@@ -272,6 +272,7 @@ def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str
             if num_seen == 0: 
                 start = ind
             num_seen += 1
+            ind += len(start_delimeter)
 
         elif code[ind : ind + len(end_delimeter)] == end_delimeter:
             # only care about end delimieter if we've already seen a start delimeter
@@ -281,6 +282,7 @@ def find_balanced_delimeters(code: str, start_delimeter: str, end_delimeter: str
                     end = ind + len(end_delimeter) - 1
                     balanced_matches.append((start, end))
                 num_seen -= 1
+                ind += len(end_delimeter)
         ind += 1
     return balanced_matches
 
@@ -430,13 +432,145 @@ class Latex2Md:
 
         return new_code
 
+    def extract_itemize_items(self, code):
+        # look for nested itemize or description environments
+        begin_itemize = "\\begin{itemize}"
+        end_itemize = "\\end{itemize}"
+        begin_description = "\\begin{description}"
+        end_description = "\\end{description}"
+        
+        # chop off \begin{itemize}, \end{itemize}
+        code = code.strip()
+        if code.startswith(begin_itemize):
+            code = code[len(begin_itemize):]
+        elif code.startswith(begin_description):
+            code = code[len(begin_description):]
+
+        if code.endswith(end_itemize):
+            code = code[:len(code) - len(end_itemize)]
+        elif code.endswith(end_description):
+            code = code[:len(code) - len(end_description)]
+
+        print("running")
+        list_items = [] 
+        ind = 0
+        while ind < len(code):
+            # find the next \item and \begin{itemize} match; see which is first
+            next_item = re.search("\\\\item", code[ind:])
+            next_begin_itemize = re.search("\\\\begin{itemize}|\\\\begin{description}", code[ind:])
+
+            # if \begin{itemize} is sooner
+            if next_begin_itemize is not None and (next_begin_itemize.start() < next_item.start()):
+                if next_begin_itemize.group(0) == begin_itemize:
+                    balanced_itemize_envs = find_balanced_delimeters(code[ind:], begin_itemize, end_itemize)
+                else:
+                    balanced_itemize_envs = find_balanced_delimeters(code[ind:], begin_description, end_description)
+                print("XXXXX", code)
+                start, end = balanced_itemize_envs[0]
+                list_items.append(self.extract_itemize_items(code[ind + start: ind + end +1]))
+                ind += end + 1
+            # if \item is sooner
+            else:
+                if next_item is None:
+                    break
+                start = ind + next_item.end()
+                # check for \item[option] content
+                item_content = ""
+                if (text := re.match("\\[(.*?)\\]", code[start:])):
+                    item_content += f"**{text.group(1)}** " # terminal space is important
+                    start += text.end()
+
+                # determine how far ahead to look
+                next_item = re.search("\\\\item", code[start:])
+                next_begin_itemize = re.search("\\\\begin{itemize}|\\\\begin{description}", code[start:])
+                if next_item is None and next_begin_itemize is None:
+                    end = len(code)
+                elif next_begin_itemize is not None and (next_begin_itemize.start() < next_item.start()):
+                    end = start + next_begin_itemize.start()
+                else:
+                    end = start + next_item.start()
+
+                item_content += code[start:end].strip()
+                if len(item_content) > 0:
+                    LOGGER.debug(f"Adding item {item_content=} with {start=} {end=}")
+                    list_items.append(item_content.strip())
+                ind = end
+        return list_items
+            
+    def format_list_items_as_markdown(self,list_items):
+        output = ""
+        for item in list_items:
+            if isinstance(item, str):
+                output += f"* {item}\n"
+            else:
+                sublist = self.format_list_items_as_markdown(item)
+                output += textwrap.indent(sublist, prefix="    ")
+        return output
+
+    def repl_itemize_env(self, code):
+        items = self.extract_itemize_items(code)
+        markdown_list = self.format_list_items_as_markdown(items)
+        markdown_list = f"\n{markdown_list}"
+        return markdown_list
+
+    def repl_all_itemize_envs(self, code):
+        begin_itemize = "\\begin{itemize}"
+        end_itemize = "\\end{itemize}"
+        begin_description = "\\begin{description}"
+        end_description = "\\end{description}"
+
+        new_code = code
+        offset = 0
+        ind = 0
+        while True:
+            next_itemize_env = re.search("\\\\begin{itemize}", new_code[ind:])
+            next_description_env = re.search("\\\\begin{description}", new_code[ind:])
+            LOGGER.info(f"{next_itemize_env=} {next_description_env=}")
+            if next_itemize_env is not None and next_description_env is not None:
+                if next_itemize_env.start() < next_description_env.start():
+                    balanced_delimeters = find_balanced_delimeters(new_code[ind:], begin_itemize, end_itemize)
+                else:
+                    balanced_delimeters = find_balanced_delimeters(new_code[ind:], begin_description, end_description)
+
+            elif next_itemize_env is None and next_description_env is not None:
+                balanced_delimeters = find_balanced_delimeters(new_code[ind:], begin_description, end_description)
+                print(balanced_delimeters)
+
+            elif next_itemize_env is not None and next_description_env is None:
+                balanced_delimeters = find_balanced_delimeters(new_code[ind:], begin_itemize, end_itemize)
+
+            else:
+                break
+
+            start, end = balanced_delimeters[0] 
+            start += ind
+            end += ind
+            # Associate tikz_code on disk with img_url eventually holding png of tikz code 
+            itemize_code = new_code[start : end + 1]
+            print("YYY", itemize_code)
+            repl = self.repl_itemize_env(itemize_code)
+
+            # Replace itemize code 
+            new_code = new_code[:start] + repl + new_code[end + 1:]
+            # ind = end + 1 + offset
+            ind = end + 1 + offset
+            offset += len(repl) - (end - start + 1)
+
+        return new_code
 
     def clean_code(self, code: str, chapter:int, section: int) -> str:
         LOGGER.info(f"doing {chapter=} {section=}")
         # remove comments
         code = re.sub(tex_comment, "", code)
-
         new_code = code
+
+        # de indent everything
+        final_code = ""
+        for line in new_code.split("\n"):
+            final_code += re.sub(indent_space, "", line)
+            final_code += "\n"
+        new_code = final_code
+
         ind = 0
         center_env_match = re.search(center_env, new_code)
         while center_env_match is not None:
@@ -490,7 +624,8 @@ class Latex2Md:
         # set gather environments on newlines
         new_code = re.sub(gather_star_env, "\n\\1\n", new_code)
         # replace itemize environments
-        new_code = re.sub(itemize_env, repl_itemize_env, new_code)
+        # new_code = re.sub(itemize_env, repl_itemize_env, new_code)
+        new_code = self.repl_all_itemize_envs(new_code)
         # replace description environments
         # new_code = re.sub(description_env, repl_description_env, new_code)
         # remove \newpage
@@ -509,12 +644,7 @@ class Latex2Md:
             if env not in KNOWN_ENVS:
                 LOGGER.warning(f"Unrecognized environment {env_match.group(1)} remains in {chapter=} {section=}")
 
-        # de indent everything
-        final_code = ""
-        for line in new_code.split("\n"):
-            final_code += re.sub(indent_space, "", line)
-            final_code += "\n"
-        return final_code
+        return new_code
 
 
     def convert_pdf_to_png(self, pdf_file):

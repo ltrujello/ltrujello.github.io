@@ -31,19 +31,15 @@ Why is this the case?
 Let $\cc$ be a preadditive category with a zero object $z$. 
 Then for any objects $A, B \in \cc$, the following are equivalent
 
-* [$(i)$] $A \times B$ exists 
-
-
-* [$(ii)$] $A \amalg B$ exists 
-
-
+* **$(i)$** $A \times B$ exists
+* **$(ii)$** $A \amalg B$ exists
 
 Moreover, there exists an isomorphism 
 
 \[
 \prod_{i \in \lambda} A_i \isomarrow \coprod_{i \in \lambda}A_i
 \]
-
+ 
 for any objects $A_i \in \cc$. 
 </span>
 
@@ -101,19 +97,13 @@ therefore the existence of an isomorphism between the product and coproduct is i
 Moreover, there are three extremely important ingredients we utilized that demonstrate that 
 the assumptions we've made so far are actually necessary and useful.}
 
-*  This proof does not hold for a category without a zero object because 
+* This proof does not hold for a category without a zero object because 
 there is not, in general, an obviously conceivable morphism to go from any two objects 
-$A$ and $B$. 
-
-
-*  Notice that calculating $h$ was only possible because we had an abelian 
-group operation. 
-
-
-*   Finally, notice that we utilized bilinearity of the composition operator in order to 
+$A$ and $B$.
+* Notice that calculating $h$ was only possible because we had an abelian 
+group operation.
+* Finally, notice that we utilized bilinearity of the composition operator in order to 
 calculate $h \circ i_A$ and $h \circ i_B$ and thereby verify the universal property.
-
-
 
 
 Therefore, all of our assumptions so far have been necessary and useful. And all of 
@@ -135,15 +125,9 @@ equipped with morphisms
 
 such that 
 
-* [1.] $\pi_A \circ i_A = 1_A$
-
-
-* [2.] $\pi_B \circ i_B = 1_B$
-
-
-* [3.] $i_A \circ \pi_A + i_B \circ \pi_B = 1_{A\oplus B}$  
-
-
+* **1.** $\pi_A \circ i_A = 1_A$
+* **2.** $\pi_B \circ i_B = 1_B$
+* **3.** $i_A \circ \pi_A + i_B \circ \pi_B = 1_{A\oplus B}$
 
 </span>
 
@@ -160,7 +144,7 @@ Consider the category $**Grp**$.
 
 
 
-
+ 
 
 
 <script src="../../mathjax_helper.js"></script>

@@ -33,7 +33,7 @@ $R: \cc^{\rr} \to \cc^{S}$, which acts as a restriction (hence the naming $R$):
 \[
 R(F: \rr \to \cc) = F\big|_{S}: S \to \cc.
 \]
-
+  
 How can we write a functor going in the opposite direction? That is, given a
 persistence module which acts on $S$, 
 
@@ -101,7 +101,7 @@ a few ways to do this. We'll demonstrate that
 \[
 \hom_{\cc^{S}}(K, P_S) \cong \hom_{\cc^{\rr}}(\overline{K}, P)
 \]
-
+ 
 is natural, where $P_S = \text{R}(P)$ and $\overline{K} = E(K)$. Towards this 
 goal, consider a morphism $\eta: K \to P_S$. Then we have something like this 
 again 
@@ -151,7 +151,7 @@ where
 \[
 \phi(\eta: K \to P_S) = \eta': \overline{K} \to P.
 \]
-
+ 
 Consider the map $\psi: \hom_{\cc^{\rr}}(\overline{K}, P) \to \hom_{\cc^S}(K, P_S)$
 where 
 

@@ -25,7 +25,7 @@ Specifically, there isn't a universally agreed upon foundation for
 category theory, or for mathematics in general. 
 \begin{center}
 **What do we mean by foundations?**
-\end{center}    Well, consider a topological space $X$, or a group $G$, or a
+\end{center}Well, consider a topological space $X$, or a group $G$, or a
 domain $\mathbb{R}$. Then suppose I ask you
 "What is $X$?" or "What is $G$" or "What is $\mathbb{R}$?" 
 Well, you'll tell me it's a topological space, a
@@ -40,14 +40,14 @@ theory.**
 
 \begin{center}
 **What is set theory?**
-\end{center}    Suppose I ask you what is set theory. While we all know there are 
+\end{center}Suppose I ask you what is set theory. While we all know there are 
 different set theories, most people don't think about set theory axioms on a daily 
 and won't know (like myself). But answering
 this question requires answering the next. 
 
 \begin{center}
 **What is a set?**
-\end{center}    We usually never have to face this question. But in developing a
+\end{center}We usually never have to face this question. But in developing a
 theory that considers relationships between different sets, we
 have to. 
 
@@ -77,19 +77,14 @@ X = \{A \text{ is a set }\mid A \text{ is not a member of itself.}\}
 
 Now observe the following. 
 
-* [1.] If $X \in X$, then consequently $X$ is not a member
+* **1.** If $X \in X$, then consequently $X$ is not a member
 of itself. In other words, if $X \in X$, then $X \not\in X$.
 
 Clearly, this is a contradiction. Since $X \in X$ is nonsense,
-$X \not\in X$, right? 
-
-
-
-* [2.] Suppose $X \not\in X$. Then $X$ is not a member of
+$X \not\in X$, right?
+* **2.** Suppose $X \not\in X$. Then $X$ is not a member of
 itself, so $X \in X$ by the condition of member of $X$. In
 other words, $X \not\in X \implies X \in X$.
-
-
 
 See the problem here? **Not every collection of objects is a
 set.** So our previous notions of sets aren't correct.
@@ -103,7 +98,7 @@ Thus we need to go back and fix our definition of a set.
 
 \begin{center}
 **What do we do?**
-\end{center}    This is what many mathematicians asked in the early 1900s
+\end{center}This is what many mathematicians asked in the early 1900s
 when they identified the paradoxes that arise from our notion of
 a set. The result has been multiple different types of set theories, 
 and so there isn't a clear 

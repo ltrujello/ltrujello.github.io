@@ -35,13 +35,13 @@ an object (usually a set) equipped with some axioms. The next thing you learn
 are "mappings" between such objects, which can abstractly be called *morphisms*.
 The characteristics of these morphism
 are generally the following:
-\begin{description}
-\item[1.] There's an identity morphism.
-\item[2.] There's a notion of composition. 
-\item[3.] Composition is associative. 
-\item[4.] Composing identities in any order with a morphism 
-returns the same morphism. 
-\end{description}
+
+* **1.** There's an identity morphism.
+* **2.** There's a notion of composition.
+* **3.** Composition is associative.
+* **4.** Composing identities in any order with a morphism 
+returns the same morphism.
+
 
 What is it that I just described? It sounds just like 
 a *monoid*! In the most 
@@ -53,12 +53,12 @@ a multiplication map
 \]
 
 which is associative, and with a multiplicative identity $e$. With a monoid we see that 
-\begin{description}
-\item[1.] There's an identity $e$.
-\item[2.] There's a notion of multiplication.
-\item[3.] Multiplication is associative.
-\item[4.] Multiplying $e$ in any order with an element $x$ returns $x$.     
-\end{description}    
+
+* **1.** There's an identity $e$.
+* **2.** There's a notion of multiplication.
+* **3.** Multiplication is associative.
+* **4.** Multiplying $e$ in any order with an element $x$ returns $x$.
+    
 The concept 
 of a monoid is one of the most underrated yet powerful concepts of mathematics, 
 and for some reason it's usually ignored in algebra courses. It's an

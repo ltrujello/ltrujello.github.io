@@ -43,10 +43,10 @@ Let $\cc$ and $\dd$ be small categories and consider set of
 all functors $F: \cc \to \dd$. Then the **functor
 category**, denoted as $\dd^\cc$ or $\fun(\cc, \dd)$, is the
 category where 
-\begin{description}
-\item[Objects.] Functors $F: \cc \to \dd$
-\item[Morphisms.] Natural transformations $\eta: F \to G$   
-\end{description}
+
+* **Objects.** Functors $F: \cc \to \dd$
+* **Morphisms.** Natural transformations $\eta: F \to G$
+
 </span>
 Functor categories are extremely useful, as we shall see that 
 they're the categorical version of representations. 
@@ -154,7 +154,7 @@ a functor
 \[
 R[-]: **Grp** \to **Ring**.
 \]
-
+  
 However, we then noticed that the above functor establishes a process 
 where we send rings $R$ to functors $R[-]: **Grp** \to **Ring**$. 
 It turns out that this process is itself a functor, and we now 

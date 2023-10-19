@@ -81,7 +81,7 @@ useful one. To summarize, we have that our stalk is the set
 \[
 \Limto_{x \in U} F(U) = \Bigg\{ \,[(f, U)] \mid x \in U \text{ open}, f \in F(U), \Bigg\}
 \]
-
+ 
 where $(f, U)$ is a representative of its equivalence class $[(f, U)]$, 
 described explicitly as
 

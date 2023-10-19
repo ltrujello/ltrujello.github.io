@@ -40,7 +40,7 @@ we say $F, G$ are $\bm{\epsilon}$**-interleaved** with respect to $\omega$ if
 \[
 \omega_\Gamma, \omega_K \le \epsilon.
 \]
-
+    
 </span>
 
 Now we prove a small lemma. 
@@ -102,9 +102,8 @@ Let $\omega$ be a sublinear projection. Then $d^{\omega}= d^{\overline{\omega}}$
 <span style="display:block" class="proof">
 We will prove this by first showing that $d^{\omega} \ge d^{\overline{\omega}}$,
 and then demonstrating that $d^{\omega} - d^{\overline{\omega}} = 0$.
-\begin{description}
-\item[$\bm{d^{\omega} \ge d^{\overline{\omega}}}$]
-If a pair of persistence modules $F, G$ are $\epsilon$-interleaved by $(\Gamma, K)$ with respect to $\omega$,
+
+* **$\bm{d^{\omega} \ge d^{\overline{\omega}}}$** If a pair of persistence modules $F, G$ are $\epsilon$-interleaved by $(\Gamma, K)$ with respect to $\omega$,
 then we can observe that 
 
 \[
@@ -121,9 +120,7 @@ Therefore,
 \end{align*}
 
 If we take the infimum of the above relation, we get that $d^{\overline{\omega}} \le d^{\omega}$. \\
-
-\item[$\bm{d^{\omega} - d^{\overline{\omega}}} = 0$.]
-Let $\delta> 0$. We'll show that for any persistence modules $F,G$ that
+* **$\bm{d^{\omega} - d^{\overline{\omega}}} = 0$.** Let $\delta> 0$. We'll show that for any persistence modules $F,G$ that
 
 \[  
 d^\omega(F,G) - d^{\overline{\omega}}(F,G) \le \delta
@@ -170,8 +167,8 @@ d^{\omega}(F, G) \le  d^{\overline{\omega}}(F,G) + \delta \implies d^{\omega}(F,
 \end{align*}
 
 Since $\delta > 0$ was arbitrary, and because $d^{\omega} \ge d^{\overline{\omega}}$ 
-we have that they must be equal, as desired. 
-\end{description}
+we have that they must be equal, as desired.
+
 </span>
 
 We now introduce an important implication of these results. 
@@ -187,19 +184,14 @@ on $\dd^P$.
 <span style="display:block" class="proof">
 To show this, we must show that $d(F, F) = 0$ for any persistence 
 module $F$, $d$ is symmetric, and that $d$ obeys the triangle inequality. 
-\begin{description}
-\item[$\bm{d(F, F) = 0}$]
-Observe that $d(F, F) = 0$. This is because if we denote $I: P \to P$ to be the identity
+
+* **$\bm{d(F, F) = 0}$** Observe that $d(F, F) = 0$. This is because if we denote $I: P \to P$ to be the identity
 translation on $P$, then 
-$F$ is $(I, I)$ interleaved with itself. But recall that $\omega_I = 0$. 
-
-\item[$\bm{d(F, G) = d(G,F)}$]
-Now observe that $d(F, G) = d(G, F)$. This is because of the inherent
+$F$ is $(I, I)$ interleaved with itself. But recall that $\omega_I = 0$.
+* **$\bm{d(F, G) = d(G,F)}$** Now observe that $d(F, G) = d(G, F)$. This is because of the inherent
 symmetry present in the definition of an interleaving, which allows us to 
-swap $F$ and $G$. 
-
-\item[Triangle Inequality]
-Finally, we show that $d$ obeys the triangle inequality. Consider a triple of 
+swap $F$ and $G$.
+* **Triangle Inequality** Finally, we show that $d$ obeys the triangle inequality. Consider a triple of 
 persistence modules $F, G, H$. Suppose $F, G$ are $\epsilon$ interleaved, 
 while $G, H$ are $\epsilon'$ interleaved. Regardless of whether or not 
 $\epsilon \le \epsilon'$ or vice versa, we know that there exist translations 
@@ -227,7 +219,7 @@ d(F,H) \le d(F,G) + d(G, H)
 \]
 
 as desired.
-\end{description}
+
 </span>
 
 We'll now show that this isn't the only way to invent a metric for persistence modules 
@@ -298,16 +290,12 @@ The interleaving distance $d^{\Omega}$ is an extended pseudometric.
 To show this, we need to prove that for persistence modules $F, G$, 
 $d(F, F) = 0$, $d(F, G) = d(G, F) = 0$, and that the metric satisfies the triangle 
 inequality. 
-\begin{description}
-\item[$\bm{d(F, F) = 0}$.]
-Observe that the functors  $F, F$ are $(I, I)$-interleaved. Given that $I \le \Omega_0$ 
-since it is initial, we see that $d(F,  F) = 0$. 
 
-\item[$\bm{d(F, G) = d(G, F)}$.] Observe that the definition is purely symmetric 
-so that this result is instant. 
-
-\item[Triangle inequality.]
-Let $F, G, H$ be persistence modules and suppose $F, G$ are $\Omega_{\epsilon_1}$-interleaved 
+* **$\bm{d(F, F) = 0}$.** Observe that the functors  $F, F$ are $(I, I)$-interleaved. Given that $I \le \Omega_0$ 
+since it is initial, we see that $d(F,  F) = 0$.
+* **$\bm{d(F, G) = d(G, F)}$.** Observe that the definition is purely symmetric 
+so that this result is instant.
+* **Triangle inequality.** Let $F, G, H$ be persistence modules and suppose $F, G$ are $\Omega_{\epsilon_1}$-interleaved 
 while $G, H$ are $\Omega_{\epsilon_2}$-interleaved. Then by the triangle property of 
 translations, we know that $F, H$ are  $(\Omega_{\epsilon_2}\Omega_{\epsilon_1}, \Omega_{\epsilon_1}\Omega_{\epsilon_2})$-interleaved. 
 
@@ -331,8 +319,8 @@ Taking the infimum over $\epsilon_1, \epsilon_2$, we get that
 d^{\Omega}(F, H) \le d^{\Omega}(F, G) + d^{\Omega}(G, H)
 \]
 
-as desired. 
-\end{description}
+as desired.
+
 </span>
 
 

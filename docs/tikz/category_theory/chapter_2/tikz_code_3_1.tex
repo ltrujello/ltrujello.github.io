@@ -1,25 +1,25 @@
 \begin{center}
-        \begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
-            F(A)
-            \arrow[lddr, to path= {
-             -|  ([xshift=-3ex]\tikztotarget.west)node[near end,left]{$(\tau\cdot\sigma)_A$}
-              |- (\tikztotarget)}]
-            \arrow[d, swap, "\sigma_A"]
-            \arrow[r, "F(f)"] 
-          & F(B)
-            \arrow[d, "\sigma_{B}"]
-            \arrow[rddl, to path= {
-             -| ([xshift=3ex]\tikztotarget.east)node[near end,right]{$(\tau\cdot\sigma)_{B}$}
-             -- (\tikztotarget)}]
-          \\
-            G(A)
-            \arrow[d, swap, "\tau_A"] 
-            \arrow[r, "G(f)"] 
-          & G(B)
-            \arrow[d, "\tau_{B}"]
-          \\
-            H(A) 
-            \arrow[r, "H(f)"]
-          & H(B)
-        \end{tikzcd} 
-    \end{center}
+\begin{tikzcd}[row sep = 1.4cm, column sep = 1.4cm]
+F(A)
+\arrow[lddr, to path= {
+-|  ([xshift=-3ex]\tikztotarget.west)node[near end,left]{$(\tau\cdot\sigma)_A$}
+|- (\tikztotarget)}]
+\arrow[d, swap, "\sigma_A"]
+\arrow[r, "F(f)"] 
+& F(B)
+\arrow[d, "\sigma_{B}"]
+\arrow[rddl, to path= {
+-| ([xshift=3ex]\tikztotarget.east)node[near end,right]{$(\tau\cdot\sigma)_{B}$}
+-- (\tikztotarget)}]
+\\
+G(A)
+\arrow[d, swap, "\tau_A"] 
+\arrow[r, "G(f)"] 
+& G(B)
+\arrow[d, "\tau_{B}"]
+\\
+H(A) 
+\arrow[r, "H(f)"]
+& H(B)
+\end{tikzcd} 
+\end{center}

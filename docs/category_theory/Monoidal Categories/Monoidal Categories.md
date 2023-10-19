@@ -124,26 +124,18 @@ The observations we have made here continue to be true upon investigating many
 other categories $\cc$ in which we have some known, natural way of combining elements. In each case, the 
 story is the same. The key ingredients are:
 
-*  There is some product $\otimes: \cc \times \cc \to \cc$ (specifically, it is a bifunctor)
-
-
-*  For all $A, B, C \in \cc$, there is a natural isomorphism 
+* There is some product $\otimes: \cc \times \cc \to \cc$ (specifically, it is a bifunctor)
+* For all $A, B, C \in \cc$, there is a natural isomorphism 
 
 \[
 \alpha_{A,B,C}: A \otimes (B \otimes C) \isomarrow (A \otimes B) \otimes C
 \]
-
-
-
-*  There is a special object $I$ of $\cc$ such that, for any object $A$, we have 
+* There is a special object $I$ of $\cc$ such that, for any object $A$, we have 
 the natural isomorphisms 
 
 \[
 \lambda_{A}: I \otimes A \isomarrow A \qquad \rho_{A}: A \otimes I \isomarrow A     
 \]
-
-
-
 
 
 The fact that we keep seeing these patterns in many categories is what motivates the following definition.
@@ -181,16 +173,10 @@ such that the following **coherence conditions** hold.
 \end{statement}    
 We also define some terminology within this definition.
 
-*  We call the bifunctor $\otimes$ the **monoidal product** 
-
-
-*  We refer to $I$ as the **identity object**
-
-
-*  We refer to diagram \ref{triangle_diag_1} as the **unit diagram** and 
-diagram \ref{pentagonal_diag} as the **pentagon diagram**. 
-
-
+* We call the bifunctor $\otimes$ the **monoidal product**
+* We refer to $I$ as the **identity object**
+* We refer to diagram \ref{triangle_diag_1} as the **unit diagram** and 
+diagram \ref{pentagonal_diag} as the **pentagon diagram**.
 
 Further, we say a **strict monoidal category** is one in which the 
 associator, left unit and right unit are all identities.
@@ -202,13 +188,9 @@ make any logical sense. While that answer is very vague and unsatisfying,
 we are not quite yet ready to fully explain why those two diagrams are necessary.
 We will however say
 
-*  The reader is definitely not expected at this moment to 
+* The reader is definitely not expected at this moment to 
 understand why those diagrams are necessary.
-
-
-*  We will eventually explain why those diagrams are necessary. 
-
-
+* We will eventually explain why those diagrams are necessary.
 
 
 Before we explain why the diagrams are necessary, we develop further intuition regarding 
@@ -224,25 +206,15 @@ commute in **Set**.
 However, we can put another monoidal category structure on **Set** with the 
 following data:
 
-*  We let the disjoint union bifunctor $(-)\coprod (-): **Set**\times **Set** \to **Set**$
-be our monoidal product. 
-
-
-*  We let the empty set $\varnothing$ be our identity object.
-
-
+* We let the disjoint union bifunctor $(-)\coprod (-): **Set**\times **Set** \to **Set**$
+be our monoidal product.
+* We let the empty set $\varnothing$ be our identity object.
 
 With these settings, we can define natural isomorphisms for any three sets $X, Y, Z$ 
 
-*  $\alpha_{X, Y, Z}: X \amalg (Y \amalg Z) \isomarrow (X \amalg Y) \amalg Z$ 
-
-
-*  $\lambda_X: \varnothing \amalg X \isomarrow X$
-
-
-*  $\rho_X: X \amalg \varnothing \isomarrow X$
-
-
+* $\alpha_{X, Y, Z}: X \amalg (Y \amalg Z) \isomarrow (X \amalg Y) \amalg Z$
+* $\lambda_X: \varnothing \amalg X \isomarrow X$
+* $\rho_X: X \amalg \varnothing \isomarrow X$
 
 in the obvious way, and check that the required diagrams commute. In this way, we have that 
 $(**Set**, \amalg, \varnothing)$ is also a monoidal category. 
@@ -256,15 +228,9 @@ The previous example may also make us wonder if we can generalize our logic to c
 other categories in which finite products and coproducts exist. The answer is yes, 
 and this gives us many examples of monoidal categories: 
 
-*  $(**Top**, \times, \{\bullet\})$
-
-
-*  $(**Ab**, \oplus, \{e\})$
-
-
-*  $(\text{R}**-Mod**, \times, \{0\})$ 
-
-
+* $(**Top**, \times, \{\bullet\})$
+* $(**Ab**, \oplus, \{e\})$
+* $(\text{R}**-Mod**, \times, \{0\})$
 
 
 
@@ -481,9 +447,9 @@ One can then show that these together satisfy the pentagon and unit axioms.
 <span style="display:block" class="example">
 Consider the category $\mathbb{P}$ whose objects are the natural numbers 
 (with 0 included) and whose morphisms are the symmetric groups $S_n$. That is, 
-\begin{description}
-\item[Objects.] The objects are $n = 0, 1,2, \dots$.
-\item[Morphisms.] For any objects $n,m$ we have that 
+
+* **Objects.** The objects are $n = 0, 1,2, \dots$.
+* **Morphisms.** For any objects $n,m$ we have that 
 
 \[
 \hom_{\mathbb{P}}(n,m)=
@@ -493,7 +459,6 @@ S_n & \text{if } n = m\\
 \end{cases}
 \]
 
-\end{description}
 Note that there are many ways of constructing this category; we just present the 
 simplest. In general terms this is the countable disjoint union of the symmetric groups. 
 Even more generally, this can be done for any family of groups (or rings, monoids, semigroups). 

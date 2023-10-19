@@ -100,7 +100,7 @@ The Prüfer 2-Group is pictured below.
 
 <img src="../../../png/category_theory/chapter_5/prufer_2_group.pdf" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-\end{center}        
+\end{center}
 The Prüfer $p$-group is the set of all $p^n$ roots of unity,
 as $n$ ranges over all positive integers. Hence the points lie
 on the complex unit circle. Specifically, it is the group  
@@ -220,12 +220,8 @@ are given a partially ordered set of finite groups $G_i$, indexed by some
 set $I$, equipped with morphisms $\{f^j_i: G_j \to G_i \mid i,
 j \in I \quad i \le j\}$ such that 
 
-* [1.] $f_i^i: G_i \to G_i$ is the identity $\id_{G_i}$ 
-
-
-* [2.] $f_i^j \circ f_j^k = f_i^k$. 
-
-
+* **1.** $f_i^i: G_i \to G_i$ is the identity $\id_{G_i}$
+* **2.** $f_i^j \circ f_j^k = f_i^k$.
 
 Then we define the **profinite group** $G$ 
 of this system to be the inverse limit:

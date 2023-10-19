@@ -56,15 +56,11 @@ $A$ and $B$. A **path** $p$ in $\cc$
 of length $n$ from $A$ to $B$
 consists of 
 
-*   distinct objects 
+* distinct objects 
 $A_1, A_2, \dots, A_{n+1}$
 with $A_1=  A$ and $A_{n+1} = B$
-
-
-*  a chain of morphisms $f_1: A_1 \to A_2, \dots, 
+* a chain of morphisms $f_1: A_1 \to A_2, \dots, 
 f_{n}: A_{n} \to A_{n+1}$
-
-
 
 and we say $p = f_n \circ \cdots \circ f_1$. If two paths $p = f_n \circ \cdots f_1$ 
 and $q = g_m \circ g_{m-1} \circ \cdots \circ g_1$ start and end at the same objects 
@@ -147,12 +143,8 @@ And in those situations, we are generally asking: are all such paths equivalent?
 This is something high schoolers ask themselves all the time, and a mistake 
 they make all the time. Let $n \ge 2$. Consider the functions
 
-*  $e: \mathbb{N} \to \mathbb{N}$ where $f(a) = a^n$ ($e$ for exponent)
-
-
-*  $p: \mathbb{N}\times \mathbb{N} \to \mathbb{N}$ where  $f(a,b) = a + b$ ($p$ for plus)
-
-
+* $e: \mathbb{N} \to \mathbb{N}$ where $f(a) = a^n$ ($e$ for exponent)
+* $p: \mathbb{N}\times \mathbb{N} \to \mathbb{N}$ where  $f(a,b) = a + b$ ($p$ for plus)
 
 Often times, they get confused and think that the paths of the diagram below are equivalent.
 
@@ -187,7 +179,7 @@ diagrams.
 {\large **Exercises**
 \vspace{0.2cm}}
 
-* [1.] Consider a category $\cc$ with objects $A, A_0, \dots, A_n, B, B_0, B_1, \dots, B_m$.
+* **1.** Consider a category $\cc$ with objects $A, A_0, \dots, A_n, B, B_0, B_1, \dots, B_m$.
 Let $A_0 = B_0 = A$ and $A_n = B_m = B$, and suppose we have a family of  
 isomorphisms $f_i: A_{i-1} \isomarrow A_i$ and $g_i: B_{i-1} \isomarrow B_i$ as below. 
 
@@ -195,9 +187,7 @@ isomorphisms $f_i: A_{i-1} \isomarrow A_i$ and $g_i: B_{i-1} \isomarrow B_i$ as 
 Suppose we have another object $C$ and isomorphisms $\phi_i: A_i \isomarrow C$,
 $\psi_i: B_i \isomarrow C$ with $\psi_0 = \phi_0$ and $\phi_n = \psi_m$. 
 Prove that if $\phi_{i} \circ f_i = \phi_{i+1}$ 
-and $\psi_{i} \circ g_i = \psi_{i+1}$, then the above diagram is commutative in $\cc$. 
-
-
+and $\psi_{i} \circ g_i = \psi_{i+1}$, then the above diagram is commutative in $\cc$.
 
 
 

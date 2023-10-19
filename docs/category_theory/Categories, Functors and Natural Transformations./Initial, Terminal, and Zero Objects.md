@@ -11,21 +11,15 @@ objects of a given category $\cc$.
 <span style="display:block" class="definition">
 Let the following objects exist in some category $\cc$. 
 
-*  Let $T$ be an object. Then $T$
+* Let $T$ be an object. Then $T$
 is **terminal** if for each object $A$, there
 exists exactly one morphism $f_A$ such that $f_A:
-A \to T$. 
-
-
-
-*  Let $I$ be an object. Then $I$ is said to be
+A \to T$.
+* Let $I$ be an object. Then $I$ is said to be
 **initial** if for each object $A$ there exists
 exactly one 
-morphism $f_A : I \to A$. 
-
-
-
-*  An object $Z$ is said to be a **zero object**
+morphism $f_A : I \to A$.
+* An object $Z$ is said to be a **zero object**
 if it is both terminal and initial. Since terminal and initial objects 
 are unique, so is a zero object.
 
@@ -35,9 +29,7 @@ morphism $f: A \to Z$ and exactly one morphism $g: Z  \to
 B$. Hence, for any two objects there exists a morphism between them,
 namely given by
 by $g \circ f$, called the **zero morphism** from $A$ 
-to $B$. 
-
-
+to $B$.
 
 If an object $T$ is terminal, then there is one and only
 morphism to itself (namely, its identity). Therefore,
@@ -134,14 +126,10 @@ answer, we'll explain in detail.
 Recall that a function in $f: A \to X$ between two sets $A$ and 
 $X$ is a relation $R \subset A \times X$ which satisfies two properties. 
 
-* [1.] (Existence.) For each $a \in A$, there exists a
-$x \in X$ such that $(a, x) \in R$ 
-
-
-* [2.] (Uniqueness. Or, if you'd like, the vertical line test.) 
-If $(a, x) \in R$ and $(a, x') \in R$ then $x = x'$. 
-
-
+* **1.** (Existence.) For each $a \in A$, there exists a
+$x \in X$ such that $(a, x) \in R$
+* **2.** (Uniqueness. Or, if you'd like, the vertical line test.) 
+If $(a, x) \in R$ and $(a, x') \in R$ then $x = x'$.
 
 Now observe that if $A = \varnothing$, then $R \subset \varnothing \times X = \varnothing$. 
 Hence (1) and (2) are satisfied because each is trivially true. However, we don't get 
@@ -181,50 +169,37 @@ Hence, this category lacks initial and terminal objects.
 {\large **Exercises**
 \vspace{0.5cm}} 
 
-* [**1.**] 
-\begin{itemize}
+* ****1.****
+    * **(*i*.)** Let $\cc$ be a category with initial object $I$. 
+    For any two objects $A, B \in \cc$, define for each $f \in \hom_{\cc}(A, B)$
+    the functor
 
+    \[
+    P_f: **2** \to \cc
+    \]
+ 
+    such that $P(\textcolor{NavyBlue}{\bullet}) = A$, $P(\textcolor{Orange}{\bullet}) = B$, 
+    and $P_f(\textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}) = f: A \to B$. 
+    Show that for each $f: A \to B$ in $\cc$, we have a natural transformation 
 
-* [(*i*.)] Let $\cc$ be a category with initial object $I$. 
-For any two objects $A, B \in \cc$, define for each $f \in \hom_{\cc}(A, B)$
-the functor
+    \[
+    \eta: P_{1_I} \to P_f.
+    \]
 
-\[
-P_f: **2** \to \cc
-\]
+    Note that $1_I: I \to I$ is the identity on the initial object.
+    * **(*ii*.)** Suppose we don't know if $\cc$ has an initial object, 
+    but we have a distinguished object 
+    $I'$ with the property that for each $f \in \hom_{\cc}(A,B)$ there is a natural 
+    transformation 
 
-such that $P(\textcolor{NavyBlue}{\bullet}) = A$, $P(\textcolor{Orange}{\bullet}) = B$, 
-and $P_f(\textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}) = f: A \to B$. 
-Show that for each $f: A \to B$ in $\cc$, we have a natural transformation 
+    \[
+    \eta: P_{1_{I'}} \to P_f.
+    \]
 
-\[
-\eta: P_{1_I} \to P_f.
-\]
+    Is $I'$ an inital object?
+    * **(*iii*.)** Dualize your work for terminal objects.\\
+    (*Hint*: We now want a natural transformation $\eta': P_f \to P_{1_I})$.
 
-Note that $1_I: I \to I$ is the identity on the initial object.
-
-
-* [(*ii*.)]
-Suppose we don't know if $\cc$ has an initial object, 
-but we have a distinguished object 
-$I'$ with the property that for each $f \in \hom_{\cc}(A,B)$ there is a natural 
-transformation 
-
-\[
-\eta: P_{1_{I'}} \to P_f.
-\]
-
-Is $I'$ an inital object?
-
-
-
-* [(*iii*.)] Dualize your work for terminal objects.\\
-(*Hint*: We now want a natural transformation $\eta': P_f \to P_{1_I})$.  
-
-
-
-
-\end{itemize}
 
 
 

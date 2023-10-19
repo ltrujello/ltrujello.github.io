@@ -57,24 +57,18 @@ diagonal functor.
 <span style="display:block" class="proposition">
 Let $\cc$ and $J$ be categories. Suppose $F: J \to \cc$ is a functor, and let $A$ be an object of $\cc$. 
 
-*  A cone with $A$ over $F$ corresponds to a natural transformation 
+* A cone with $A$ over $F$ corresponds to a natural transformation 
 $\phi: \Delta(A) \to F$, and vice versa. In other words, 
 
 \[
 \text{Cone}(A, F) \cong \nat(\Delta(A), F).
 \]
-
-
-
-*  A cone with $F$ over $A$ corresponds to a natural transformation 
+* A cone with $F$ over $A$ corresponds to a natural transformation 
 $\phi: F \to \Delta(A)$, and vice versa. In other words, 
 
 \[
 \text{Cone}(F,A) \cong \nat(F, \Delta(A)).
 \]
-
-
-
 
 </span>
 
@@ -91,16 +85,13 @@ $u: \Delta(\Lim F) \to F$ such that
 \begin{center}
 $(\Lim F, u: \Delta(\Lim F) \to F)$ is universal from 
 \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$\Delta$ to $\Lim F$}}.
-\end{center}        
-*  This means that, for any other pair $(C, v: \Delta(C) \to F)$ with $v$ a natural transformation
+\end{center}
+* This means that, for any other pair $(C, v: \Delta(C) \to F)$ with $v$ a natural transformation
 and with $C \in \cc$, there exists a unique morphism $h: C \to \Lim F$ in $\cc$ such that 
 the diagram below commutes. 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
-
-*  By Proposition \ref{proposition:cones_are_natural_transformations}, 
+* By Proposition \ref{proposition:cones_are_natural_transformations}, 
 the morphism $u: \Delta(\Lim F) \to F$ forms a cone with $\Lim F$ over $F$ via 
 a family of morphisms $u_i: \Lim F \to F(i)$ for all $i \in J$. 
 
@@ -111,8 +102,6 @@ Thus, the universal property, states that there exists a unique $h: C \to \Lim F
 below commutes. 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_6_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
 
 </span>
 
@@ -133,7 +122,7 @@ such that
 \begin{center}
 $(\Colim F, u: F \to \Delta(\Colim F))$ is universal from 
 \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{$F$ to $\Delta$}}.
-\end{center}    </span>
+\end{center}</span>
 
 Now is a good time to use Proposition \ref{proposition:cones_are_natural_transformations} 
 and reinterpret the definition of a colimit as a family of morphisms 
@@ -143,12 +132,8 @@ like we did in the definition of a limit.
 <span style="display:block" class="remark">
 We comment on the notation of a limit. 
 
-*  Many people denote the limit of a functor as $\Limfrom F$. 
-
-
-*  Many people denote the colimit of a functor as $\Limto F$. 
-
-
+* Many people denote the limit of a functor as $\Limfrom F$.
+* Many people denote the colimit of a functor as $\Limto F$.
 
 The notation makes only sense if one understand the connection between limits and colimits and  
 universal morphisms. (Compare the direction of the arrow $h$ in the universal diagrams).
@@ -170,12 +155,8 @@ the notation anymore complicated than it needs to be.
 Let $J = \dd_n$, the discrete category with $n$-objects. Let $F: J \to \cc$ be 
 the functor where $F(\bullet_i) = A_i$. We then have that 
 
-*  The product $\prod_{i = 1}^{n}A_i$ is the limit of $F$. 
-
-
-*  The coproduct $\coprod_{i = 1}^{n}A_i$ is the colimit of $F$. 
-
-
+* The product $\prod_{i = 1}^{n}A_i$ is the limit of $F$.
+* The coproduct $\coprod_{i = 1}^{n}A_i$ is the colimit of $F$.
 
 When we set $J = \dd_{\lambda}$, with $\lambda$ an arbitrary indexing set, we similarly get 
 that the arbitrary product and coproduct definitions are simply instances of 
@@ -190,24 +171,18 @@ This is a genearlization of Proposition \ref{proposition:product_coproduct_natur
 <span style="display:block" class="proposition">
 Let $F: J \to \cc$ be a functor. 
 
-*  If $\Lim F$ exists, then for each object $C$ of $\cc$, we have the 
+* If $\Lim F$ exists, then for each object $C$ of $\cc$, we have the 
 natural bijection 
 
 \[
 \hom_{\cc}(C, \Lim F) \cong \text{Cone}(C, F)
 \]
-
-
-
-*  If $\Colim F$ exists, then for each object $C$ of $\cc$, 
+* If $\Colim F$ exists, then for each object $C$ of $\cc$, 
 we have the natural bijection 
 
 \[
 \hom_{\cc}(\Colim F, C) \cong \text{Cone}(F, C)
 \]
-
-
-
 
 </span>
 
@@ -247,14 +222,10 @@ Let $F: J \to \cc$ be a functor. Then we may define the functors
 
 We have the following two results.
 
-*  $\cone(-, F)$ is representable if and only if $\Lim F$ exists in $\cc$
+* $\cone(-, F)$ is representable if and only if $\Lim F$ exists in $\cc$
 (in which case, this is the representing object)
-
-
-*  $\cone(F, -)$ is representable if and only if $\Colim F$ exist in $\cc$
+* $\cone(F, -)$ is representable if and only if $\Colim F$ exist in $\cc$
 (in which case, this is the representing object)
-
-
 
 </span>
 
@@ -312,30 +283,15 @@ limit and colimit.
 \vspace{0.5cm}}
 
 
-* [**1.**]
-Let $F, G: J \to \cc$ be two functors, and suppose $F \cong G$ (i.e., there is a
+* ****1.**** Let $F, G: J \to \cc$ be two functors, and suppose $F \cong G$ (i.e., there is a
 natural isomorphism between them). 
-Show that 
-\begin{itemize}
-
-
-* [(*i*.)] If $\Lim F$ exists, then $\Lim G$ exists and $\Lim F \cong \Lim G$.
-
-
-* [(*ii*.)] If $\Colim F$ exists, then $\Colim G$ exists and $\Colim F \cong \Colim G$. 
-
-
-
-Thus, limits and colimits are invariant up to isomorphism.
-
-
-\item[**2.**]
-Prove Proposition \ref{proposition:cones_are_natural_transformations}.
-
-\item[**3.**] Expand Definition \ref{definition:colimit_of_a_functor}, the definition of a colimit,
+Show that
+    * **(*i*.)** If $\Lim F$ exists, then $\Lim G$ exists and $\Lim F \cong \Lim G$.
+    * **(*ii*.)** If $\Colim F$ exists, then $\Colim G$ exists and $\Colim F \cong \Colim G$.
+* ****2.**** Prove Proposition \ref{proposition:cones_are_natural_transformations}.
+* ****3.**** Expand Definition \ref{definition:colimit_of_a_functor}, the definition of a colimit,
 in a similar fashion to how we expanded Definition \ref{definition:limit_of_a_functor}, the definition of a limit.
-
-\item[**4.**] Use Proposition \ref{proposition:cones_are_natural_transformations}
+* ****4.**** Use Proposition \ref{proposition:cones_are_natural_transformations}
 and Proposition \ref{proposition:universality_bijection} to show that 
 if $\Colim F$ exists for a functor $F: J \to \cc$, then we have a natural bijection
 
@@ -344,45 +300,33 @@ if $\Colim F$ exists for a functor $F: J \to \cc$, then we have a natural biject
 \]
 
 This then completes the proof of Proposition \ref{proposition:limit_cone_set_natural_bijection}.
-
-\item[**5.**]
-Use Proposition \ref{proposition:limit_cone_set_natural_bijection}
+* ****5.**** Use Proposition \ref{proposition:limit_cone_set_natural_bijection}
 (the proof of which you just completed) to prove the first bullet point of 
 Proposition \ref{proposition:representable_if_and_only_if}:
 The functor $\cone(-, F): \cc \to **Set**$ is representable if and only if 
-$\Lim F$ exists. Use the following steps. 
+$\Lim F$ exists. Use the following steps.
+    * **(*i*.)** Let $\cc$ be a category, $F: J \to \cc$ a functor. Recall that we 
+    may define the functor 
 
+    \[
+    \overline{F}: J \to \cc\op
+    \]
 
-* [(*i*.)]
-Let $\cc$ be a category, $F: J \to \cc$ a functor. Recall that we 
-may define the functor 
+    which acts the same as $F$ on objects, but
+    if $f: i \to j$ is a morphism in $J$, then $\overline{F}(f) = F(f)\op$.
 
-\[
-\overline{F}: J \to \cc\op
-\]
+    Show that $\Lim F$ exists in $\cc$ if and only if
+    $\Colim \overline{F}$ exists in $\cc\op$.
+    * ***ii*.** Show that
 
-which acts the same as $F$ on objects, but
-if $f: i \to j$ is a morphism in $J$, then $\overline{F}(f) = F(f)\op$.
+    \[
+    \cone(-, F) \cong \cone(\overline{F}, -).
+    \]
 
-Show that $\Lim F$ exists in $\cc$ if and only if
-$\Colim \overline{F}$ exists in $\cc\op$.
+    Then use (*i*) and the second bullet point of 
+    Proposition \ref{proposition:representable_if_and_only_if}
+    to complete the proof.
 
-
-
-* [*ii*.]
-Show that
-
-\[
-\cone(-, F) \cong \cone(\overline{F}, -).
-\]
-
-Then use (*i*) and the second bullet point of 
-Proposition \ref{proposition:representable_if_and_only_if}
-to complete the proof.
-
-
-
-\end{itemize}
 
 
 

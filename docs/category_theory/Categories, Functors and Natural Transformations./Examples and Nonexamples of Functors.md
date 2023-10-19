@@ -54,7 +54,7 @@ $A^n(k)$ of a field $k$. Usually, $k$ is an algebraically closed field, but it d
 \[
 A^n(k) = \{(a_0, \dots, a_{n-1}) \mid a_i \in k \}.
 \]
-
+  
 For example, when $k = \rr$, we have that $A^n(k) = \rr^n$. 
 Moreover, we claim that we have a functor $A^n(-): \fld \to \Set$.
 To see this, we need to figure out where $A^n(-)$ sends objects and morphisms.
@@ -67,7 +67,7 @@ for each $(a_1, \dots, a_n) \in A^n(k)$ we have that
 \[
 A^n(\phi)(a_0, \dots, a_{n-1}) = (\phi(a_0), \dots,  \phi(a_{n-1})).
 \]
-
+ 
 The reader can show that this satisfies the rest of the axioms of a functor. Overall, 
 we can say that we have a functor 
 
@@ -86,7 +86,7 @@ define an equivalence relation on $A^{n+1}(k)$. We say
 \[
 (a_0, \dots,  a_n) \sim (b_0, \dots, b_n) \text{ if there is a nonnzero } \lambda \in k \text{ such that } a_i = \lambda b_i.
 \]
-
+  
 This defines an equivalence relation on the points of $A^n(k)$. Geometrically, this equivalence relation 
 says two points are equivalent whenever they lie on the same line passing through the origin.
 With this equivalence relation, we then define
@@ -160,7 +160,7 @@ realized from the **fundamental group**
 \[
 \pi_1(X, x_0) = \{[x] \mid x \in X\}
 \]
-
+ 
 with $x_0 \in X$, and 
 where $[x]$ is the equivalence class of loops based at $x_0$, subject 
 to the homotopy equivalence 
@@ -247,7 +247,7 @@ linear transformation between the vector spaces:
 \[
 d\phi_p: T: M^n_1 \to T_{\phi(p)}M^m_2.
 \]
-
+  
 Consider the category $**DMan**^*$
 whose objects are pairs $(M^n, p)$ with $M^n$ a differentiable manifold and 
 $p \in M^n$. The morphism are 
@@ -306,7 +306,7 @@ where
 TB(M^n) = TM\\
 TB(\phi: M_1^n \to M_2^m) = (\phi, d\phi): TM_1^{2n} \to TM_2^{2m}.
 \end{gather*}
-
+        
 To check this, we first observe that $TB(1_{M^n}) = 1_{TM^{2n}}$.
 Next, suppose $\phi: M_1^n \to M_2^m$ and $\psi: M_2^m \to M_3^p$, 
 and observe that 
@@ -395,12 +395,8 @@ $\mathfrak{g}$ (over a field $k$), equipped with a bilinear operation
 $[-, -]: \mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}$
 such that 
 
-* [1.] $[x, y] = -[y, x]$
-
-
-* [2.] $[x, [y, z]] + [y, [z, x]] + [z, [x,y]] = 0$. 
-
-
+* **1.** $[x, y] = -[y, x]$
+* **2.** $[x, [y, z]] + [y, [z, x]] + [z, [x,y]] = 0$.
 
 Condition (2) is referred to as the **Jacobi identity**, and many 
 familiar operations on vector spaces satisfy (1) and (2). For example, the cross 
@@ -458,7 +454,7 @@ as a functor
 \[
 **Spec**: \ring \to \top.
 \]
-
+ 
 Usually this is phrased more naturally as a functor 
 $**Spec**: \ring \to **Sch**$
 where $**Sch**$ is the category of schemes; this is simply 
@@ -556,8 +552,8 @@ P(f)(S) = \{f(x) \mid x \in S\}.
 which is clearly in $\mathcal{P}(Y)$.
 Now we must show that this function
 respects identity and composition properties.
-\begin{description}
-\item[Identity.] Consider the identity function 
+
+* **Identity.** Consider the identity function 
 $\id_X: X \to X$ on a set $X$. 
 Then observe that for any $S \in \mathcal{P}X$, we have that  
 
@@ -566,11 +562,10 @@ Then observe that for any $S \in \mathcal{P}X$, we have that
 =
 \{\id_X(x) \mid x \in X\} = S.
 \]
-
+ 
 Therefore, $\mathcal{P}(\id_X) = 1_{\mathcal{P}X}$ so
-that $\mathcal{P}$ respects identities. 
-
-\item[Composition.] Let $X, Y, Z$ be sets and $f: X \to Y$
+that $\mathcal{P}$ respects identities.
+* **Composition.** Let $X, Y, Z$ be sets and $f: X \to Y$
 and $g: Y \to Z$ be functions. Let $S \in \mathcal{P}(X)$.
 Observe that 
 
@@ -587,7 +582,7 @@ Observe that
 Therefore we see that $\mathcal{P}(g \circ f) =
 \mathcal{P}(g) \circ \mathcal{P}(f),$ so that
 $\mathcal{P}$ describes a functor from $\Set$ to $\Set$.
-\end{description}
+
 </span>
 
 As we just encountered a mass of different examples of functors from 
@@ -709,33 +704,17 @@ Hence this cannot define a functor $F: \Set \to \top$.
 {\large **Exercises**
 \vspace{0.5cm}}
 
-* [**1.**] 
-\begin{itemize}
-
-
-* [(*i*.)]
-Let $X$ and $Y$ be two sets. Regard each set as a discrete category. 
-Interpret what a functor $F: X \to Y$ means in this case.
-
-
-* [(*ii*.)] 
-Let $G$ and $H$ be two groups. Regard each group as a one-object 
-category whose morphisms sets correspond to their group elements, with composition 
-their group product.
-Interpret what a functor $F: G \to H$ means in this case.
-
-
-* [(*iii*.)] 
-Let $X$ and $Y$ be a pair of thin categories. Interpret 
-what a functor $F: X \to Y$ means in this case. (Use (*i*) 
-to get you started.) 
-
-
-
-\vspace{0.2cm}
-
-\item[**2.**]
-Let $G$ be a group. Then for any two elements $a, b \in G$, we
+* ****1.****
+    * **(*i*.)** Let $X$ and $Y$ be two sets. Regard each set as a discrete category. 
+    Interpret what a functor $F: X \to Y$ means in this case.
+    * **(*ii*.)** Let $G$ and $H$ be two groups. Regard each group as a one-object 
+    category whose morphisms sets correspond to their group elements, with composition 
+    their group product.
+    Interpret what a functor $F: G \to H$ means in this case.
+    * **(*iii*.)** Let $X$ and $Y$ be a pair of thin categories. Interpret 
+    what a functor $F: X \to Y$ means in this case. (Use (*i*) 
+    to get you started.)
+* ****2.**** Let $G$ be a group. Then for any two elements $a, b \in G$, we
 define the **commutator** of $a, b$ to be the element 
 
 \[
@@ -765,16 +744,14 @@ F(G) = G/[G,G]
 Deduce the action of $F$ on the morphism of $\grp$ 
 (i.e., the group homomorphisms.) and show that it is well-defined.
 \vspace{0.2cm}
-
-\item[**3.**]
-Let $R$ be a unital ring. Recall that $GL_n(R)$ is the group consisting of 
+* ****3.**** Let $R$ be a unital ring. Recall that $GL_n(R)$ is the group consisting of 
 $n \times n$ matrices with entries in $K$. Show that this construction more 
 generally is that of a functor
 
 \[
 **GL**_n: \ring \to \grp.
 \]
-
+ 
 In addition, with such a ring $R$, we may associate it with 
 its group of units $R^{\times}$, which you may recall is 
 
@@ -790,9 +767,7 @@ Show that this also defines a functor
 
 We will see in the next section that there is an interesting 
 relationship between these two functors.
-
-
-\item[**4.**] Recall the category $\Set_{FTO}$ 
+* ****4.**** Recall the category $\Set_{FTO}$ 
 is the category whose objects are sets and whose morphisms are functions 
 with the finite-to-one property (See Exercise 1.3.3). While we saw 
 that $\text{FinC}: \Set \to \top$ where 
@@ -805,75 +780,49 @@ does **not** define a functor, show that upon changing the domain
 category from $\Set$ to $\Set_{FTO}$, it **does** 
 define a functor $\text{FinC}: \Set_{FTO} \to \top$.
 \vspace{0.2cm}
+* ****5.****
+    * **(*i*.)** Let $X = \{x_1, x_2, \dots, x_n\}$ be a finite set. With such 
+    a finite set, we can
+    pick a field $k$ and build $X$ into a finite-dimensional 
+    vector space $V_X$ over $k$. Explicitly, we can create the vector  
+    space
 
-\item[**5.**]
+    \[
+    V_X= \{c_1x_1 + \cdots + c_nx_n \mid c_i \in k\}.
+    \]
 
-* [(*i*.)]
-Let $X = \{x_1, x_2, \dots, x_n\}$ be a finite set. With such 
-a finite set, we can
-pick a field $k$ and build $X$ into a finite-dimensional 
-vector space $V_X$ over $k$. Explicitly, we can create the vector  
-space
+    We define addition in the intuitive way of adding coefficients of the 
+    same basis, so this is truly a vector space. Note that when $k = \rr$, 
+    we get that $V_X \cong \rr^n$. 
 
-\[
-V_X= \{c_1x_1 + \cdots + c_nx_n \mid c_i \in k\}.
-\]
+    Prove that this process is functorial. That is, show that the functor 
 
-We define addition in the intuitive way of adding coefficients of the 
-same basis, so this is truly a vector space. Note that when $k = \rr$, 
-we get that $V_X \cong \rr^n$. 
+    \[
+    F: \finset \to \vect_k \qquad F(X) = V_X
+    \]
 
-Prove that this process is functorial. That is, show that the functor 
+    is a functor.
+    * **(*ii*).** From any set $X$, we may construct the **free group** $F(X)$ generated 
+    by $X$. The elements of $F(X)$ are (1) the elements of $X$, (2) a new 
+    element $e$, and (3) all elements $xy$ whenever $x, y \in X$. 
+    In this way, $F(X)$ is a group with the product being string concatenation, 
+    and we require that $xe = x = ex$. 
+    . Below, two words (elements of $F(X)$) are combined.        
 
-\[
-F: \finset \to \vect_k \qquad F(X) = V_X
-\]
+    \[
+    (x^2yz^{-1}) \cdot (zy^2x) = x^2y^2x.
+    \]
 
-is a functor. 
+    Show that we have a functor $F: \Set \to \grp$ where 
+    sets are mapped to their free groups, that is, $X \mapsto F(X)$.
+    * **(*iii*).** For any set $X$, we can build the **free ring** $(R\{X\}, +, \cdot)$ 
+    as follows. Let $(F(X), \cdot)$ be the free group with the added relation that 
+    $xy = yx$ for any $x, y  \in F(X)$. We can then define
 
-
-
-* [(*ii*).]
-From any set $X$, we may construct the **free group** $F(X)$ generated 
-by $X$. The elements of $F(X)$ are (1) the elements of $X$, (2) a new 
-element $e$, and (3) all elements $xy$ whenever $x, y \in X$. 
-In this way, $F(X)$ is a group with the product being string concatenation, 
-and we require that $xe = x = ex$. 
-. Below, two words (elements of $F(X)$) are combined.        
-
-\[
-(x^2yz^{-1}) \cdot (zy^2x) = x^2y^2x.
-\]
-
-Show that we have a functor $F: \Set \to \grp$ where 
-sets are mapped to their free groups, that is, $X \mapsto F(X)$.  
-
-
-
-* [(*iii*).]
-For any set $X$, we can build the **free ring** $(R\{X\}, +, \cdot)$ 
-as follows. Let $(F(X), \cdot)$ be the free group with the added relation that 
-$xy = yx$ for any $x, y  \in F(X)$. We can then define
-
-\[
-R\{X\} = \left\{ \sum_{x_i \in F(X)} x_i^{n_i} \mid \right\}
-\]
-
-
-
-
-
-
-
-**Note:** This example becomes particularly important later. 
-It can also be generalized to functors $F:  \Set \to \mon$, 
-$F: \Set \to \ring$, and other algebraic systems, 
-since sets can also be turned into free monoids, free rings, or other 
-free "objects."
-\vspace{0.2cm}
-
-\item[**6.**]
-Let $V$ be a vector space over a field $k$. 
+    \[
+    R\{X\} = \left\{ \sum_{x_i \in F(X)} x_i^{n_i} \mid \right\}
+    \]
+* ****6.**** Let $V$ be a vector space over a field $k$. 
 Recall that we can associate $V$ with its 
 **projective space** $P(V)$ which is defined as the set of equivalence 
 classes of element in $V$, subject to the relation $v \sim w$ if $v = \lambda w$ 
@@ -889,10 +838,7 @@ is functorial, so that we have a functor
 \[
 P: \vect_k \to \Set.
 \]
-
-
-\item[**7.**]
-Let $R$ be a ring with ideal $I$. Recall that we can construct the 
+* ****7.**** Let $R$ be a ring with ideal $I$. Recall that we can construct the 
 **radical of the ideal $I$** as the ideal 
 
 \[
@@ -906,10 +852,8 @@ Show that we have a functor
 \]
 
 where $**Ideals**(R)$ is the partial order of ideals on $R$, 
-whose ordering is given by subset containment. 
-
-\item[**8.**] 
-Let $X$ be a topological space, and denote $\open(X)$ as the category 
+whose ordering is given by subset containment.
+* ****8.**** Let $X$ be a topological space, and denote $\open(X)$ as the category 
 where the objects are open sets $U \subset X$ and morphisms are inclusion morphisms. 
 Create a functor 
 
@@ -919,9 +863,7 @@ F: \open(X) \to \Set
 
 where on objects $F(U) = \{f: U \to \rr \mid f \text{ is continuous}\}$. That is, how 
 should $F$ act on the morphisms for this to be a functor?
-
-\item[**9.**] 
-Let $k$ be a field. With each field, we may associate $k$ with the category 
+* ****9.**** Let $k$ be a field. With each field, we may associate $k$ with the category 
 $\vect_k$ which consists of finite dimensional vector spaces $V$ 
 over $k$. Is this process functorial? That is, do we have a functor 
 
@@ -931,7 +873,7 @@ over $k$. Is this process functorial? That is, do we have a functor
 
 where $\vect(k) = \vect_k$?\\
 *Hint: No. But explain why it breaks.*
-\end{itemize}
+
 
 
 

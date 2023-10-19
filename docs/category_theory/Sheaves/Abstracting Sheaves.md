@@ -23,13 +23,10 @@ of $U$. Let us make a few nontrivial observations.
 The reader is strongly encouraged to move forward with pen and paper in hand and to 
 draw lots of pictures.
 
-*  A family of continuous functions $h_i: U_i \to Y$ can be 
+* A family of continuous functions $h_i: U_i \to Y$ can be 
 viewed as an element $(h_i)_{i \in \lambda}$ of the 
 product $\prod_{i \in \lambda} C(U_i)$.
-
-
-
-*  Using our open cover $\mathcal{U}$, we can define
+* Using our open cover $\mathcal{U}$, we can define
 for each pair $k,\ell \in \lambda$ the functions 
 
 \[
@@ -53,17 +50,12 @@ q_{k, \ell}\Big((h_i)_{i \in \lambda}\Big) = h_\ell\big|_{U_k \cap U_\ell}.
 With a lot of notation, a picture may help.
 
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
-*   
-The fact that the functions $p_{k, \ell}, q_{k, \ell}$ exist for all $k, \ell \in \lambda$ implies 
+* The fact that the functions $p_{k, \ell}, q_{k, \ell}$ exist for all $k, \ell \in \lambda$ implies 
 the existence of $p$ and $q$ below which make the diagram commute. (This 
 is just applying the universal property of the product $\prod_{i, j}F(U_i \cap U_j)$.)
 These two functions are rather important.
 
 <img src="../../../png/category_theory/chapter_10/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
 
 
 Now consider the set of all $(h_i)_{i \in \lambda} \in \prod_{i \in \lambda}F(U_i)$ 
@@ -111,20 +103,15 @@ as above. The equalizer diagram is below:
 We remark two comments on this definition.
 
 
-*  It is more important to understand the *philosophy* of the above 
+* It is more important to understand the *philosophy* of the above 
 definition rather than the literal text of it (of course, that's necessary).
 For example, a topological 
 space does in fact speak of families of sets which are closed under 
 arbitrary union and finite intersection. But that's a *literal* definition, 
 and not the philosophy of a topological space.
-
-
-*  
-There are many ways to state the definition of a sheaf. The one 
+* There are many ways to state the definition of a sheaf. The one 
 offered above is very powerful because it allows us to quickly 
 capture many useful situations and it is useful for proofs.
-
-
 
 
 Now before we move on, we are going to briefly introduce a new concept. 
@@ -139,10 +126,10 @@ S \subset \{f \mid f: B \to C \text{ and } f \text{ is a morphism of }\cc \}
 \]
 
 with following property.
-\begin{description}
-\item[(SV1)] If $f$ is in $S$, then $f \circ h$ is in $S$ for any composable 
+
+* **(SV1)** If $f$ is in $S$, then $f \circ h$ is in $S$ for any composable 
 $h$.
-\end{description}
+
 </span>
 
 We will demonstrate an example of this concept, specifically to capture why we care 
@@ -163,9 +150,9 @@ This set may actually be treated as the object set of the full subcategory $**Op
 of $**Open**(X)$.
 
 So, what is a sieve in this case? It is any $S \subset \Omega_U$ such that 
-\begin{description}
-\item[(SV1)] If $V \in S$, $V'$ is open, and $V' \subset V$, them $V' \in S$. 
-\end{description}
+
+* **(SV1)** If $V \in S$, $V'$ is open, and $V' \subset V$, them $V' \in S$.
+
 Take note that this is a bit of subtle concept; it's a very versatile definition. 
 For example, considering $\rr^2$ with its standard topology, the following 
 (blue) open sets create sieves on the same open set (the open disk at the origin).
@@ -179,13 +166,10 @@ also a sieve on $U$.
 
 Some important facts about sieves on topological spaces that will be of interest to us.
 
-*  Every open set $V \subset U$ corresponds to a sieve, which we call a **principal sieve**. 
+* Every open set $V \subset U$ corresponds to a sieve, which we call a **principal sieve**. 
 This sieve is simply the set of all open $V'$ contained in $V$. In the previous example, 
 the weirdly shaped region inside the open disk at the origin is a principal sieve.
-
-
-
-*  Every open cover of $\mathcal{U} = \{U_i\}_{i \in \lambda}$
+* Every open cover of $\mathcal{U} = \{U_i\}_{i \in \lambda}$
 creates a **covering sieve** $S_{\mathcal{U}}$. This sieve is the set of all open $V$ such that $V \subset U_i$ 
 for some $i$, and where $V' \subset V$ implies $V'$ is also in the set. 
 
@@ -202,9 +186,6 @@ $\mathcal{S}$, where:
 \varnothing & \text{ otherwise.}
 \end{cases}
 \]
-
-
-
 
 
 We are now prepared to continue our discussion. Our goal now will be to express 
@@ -266,10 +247,8 @@ These facts allow us to create the following natural transformation
 $\theta: \mathcal{S} \to P$ using an element $(h_i)_{i \in \lambda}$ of $E$, 
 as follows. 
 
-*  If $V \in S_{\mathcal{U}}$, we write $\theta_V: \{\bullet\} \to P(V)$ 
-where $\theta_V(\bullet) = h_V$, the unique $h_V$ we already know exists. 
-
-
+* If $V \in S_{\mathcal{U}}$, we write $\theta_V: \{\bullet\} \to P(V)$ 
+where $\theta_V(\bullet) = h_V$, the unique $h_V$ we already know exists.
 
 This allows us to create the function 
 
@@ -286,9 +265,7 @@ The above result is key to the the following proposition, which is what allows u
 to speak of a sheaf more abstractly. Before we introduce the proposition, we make a few 
 comments.
 
-*  Let 
-
-
+* Let
 
 
 

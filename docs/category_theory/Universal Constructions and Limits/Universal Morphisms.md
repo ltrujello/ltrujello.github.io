@@ -24,7 +24,7 @@ Let $\phi, \psi: (G, \cdot)  \to (H, +)$ be a pair of abelian\footnote{The abeli
 group homomorphisms. We now ask the question:
 \begin{center}
 \textcolor{NavyBlue}{What is the set of all $g \in G$ such that $\phi(g) = \psi(g)$? Is it a subgroup of $G$?}
-\end{center}    To determine this, it is equivalent to asking when $\phi(g) - \psi(g) = 0 
+\end{center}To determine this, it is equivalent to asking when $\phi(g) - \psi(g) = 0 
 \implies (\phi - \psi)(g) = 0$. Hence every such $g \in G$ lies in the kernel of 
 $\phi - \psi: G \to H$, and every element in the kernel is such a desired element; so 
 we've answered the first question. The kernel is a subgroup of $G$, so we've answered the last question. 
@@ -47,7 +47,7 @@ So, there is **a unique** morphism $\tau: K \to \ker(\phi - \psi)$
 such that the diagram below commutes (Prove it is unique; it shouldn't be too bad).
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
+   
 What's really going on? This is an example of a universal construction. We have a 
 "supreme" morphism $i: \ker(\phi -\psi) \to G$ with the property that $\phi \circ i = \psi \circ i$.
 Any other morphism $\sigma: K \to G$ with the same property that $\phi\circ\sigma = \psi \circ \sigma$ 
@@ -103,7 +103,7 @@ bases as $\{v_1,  v_2, \dots, v_n\}$ and $\{w_1, w_2, \dots, w_m\}$.
 \begin{minipage}{0.8\textwidth}
 **Q:** What does it take for a function $T: V \to W$ to be a linear transformation? 
 \end{minipage}
-\end{center}        Well, suppose we have a linear transformation. Since each element of 
+\end{center}Well, suppose we have a linear transformation. Since each element of 
 $V$ may be written as $c_1v_1 + \cdots + c_nv_n$  for $c_i \in k$, we 
 see that 
 
@@ -117,7 +117,7 @@ Thus we have an answer.
 **A:** To define a linear transformation $T: V \to W$, it suffices to specify 
 where we want $T$ to send the basis elements $v_1, \dots, v_n$.
 \end{minipage}
-\end{center}        An illustration of this fact is below. 
+\end{center}An illustration of this fact is below. 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \noindent This observation helps us build our first example of universality.
@@ -297,13 +297,13 @@ translates to $(C, u: D \to F(C))$ being an initial object in some comma categor
 <span style="display:block" class="proof">
 Let $F: \cc \to \dd$ be a functor, and $D$ an object of $\dd$. Recall that 
 the category $(D \downarrow \dd)$ is the category where 
-\begin{description}
-\item[Objects.] Pairs $(C, f: D \to F(C))$ with $C \in \cc$ and $f: D \to \dd$ a morphism in $\dd$. 
-\item[Morphisms.] Morphisms between two objects $(C, f: D \to F(C))$ and $(C', f: D \to F(C'))$ 
+
+* **Objects.** Pairs $(C, f: D \to F(C))$ with $C \in \cc$ and $f: D \to \dd$ a morphism in $\dd$.
+* **Morphisms.** Morphisms between two objects $(C, f: D \to F(C))$ and $(C', f: D \to F(C'))$ 
 are given by morphisms $h: C \to C'$ such that the diagram below commutes. 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\end{description}
+
 Suppose $(\textcolor{NavyBlue}{A}, u: D \mathbin{\textcolor{Red}{\to}} F(\textcolor{NavyBlue}{A}))$ is an initial object in $(D \downarrow F)$. Then for every 
 other pair $(A, f: D \to F(A'))$, there exists a unique morphism $h: A \to A'$ 
 such that the diagram on the bottom left commutes. 
@@ -412,65 +412,38 @@ The direct proof is also an exercise.
 \vspace{0.5cm}}
 \def\exerciseCartesianProduct{4} 
 
-* [**1.**]
-Prove Theorem \ref{theorem:universal_elements_are_isomorphic} directly,
+* ****1.**** Prove Theorem \ref{theorem:universal_elements_are_isomorphic} directly,
 and dualize your proof to prove Theorem \ref{theorem:couniversal_elements_isomorphic}
-directly. 
-
-
-
-* [**2.**]
-Prove Proposition \ref{proposition:universal_elements_in_comma_cats}.
-
-
-
-* [**3.**]
-For each ring $R$, we may construct the single-variable 
+directly.
+* ****2.**** Prove Proposition \ref{proposition:universal_elements_in_comma_cats}.
+* ****3.**** For each ring $R$, we may construct the single-variable 
 polynomial ring $R[x]$. This process defines a functor
 $**Poly**: **Ring** \to **Ring**$.
 
 Show that for each ring $R$, the inclusion ring homomorphism $i: R \to R[X]$ 
-is a universal morphism from $R$ to **Poly**. 
-
-
-
-
-* [**4.**] 
-Let $X$ and $Y$ be two sets, and consider their product $X \times Y$. Recall that with 
+is a universal morphism from $R$ to **Poly**.
+* ****4.**** Let $X$ and $Y$ be two sets, and consider their product $X \times Y$. Recall that with 
 any product, we have "projection maps" $\pi_1: X \times Y \to X$ and $\pi_2: X \times Y \to Y$
-where $\pi_1(x,y) = x$ and $\pi_2(x,y) = y$. 
-\begin{itemize}
+where $\pi_1(x,y) = x$ and $\pi_2(x,y) = y$.
+    * **$i.$** Suppose we have functions $f: Z \to X$ and $g: Z \to Y$. 
+    Show how this gives us a map $h: Z \to X\times Y$, and show that 
+    this map is unique (to the pair $f$ and $g$).
+    * **$ii.$** Using your map $h: Z \to X \times Y$, show that the 
+    diagram on the left commutes, and that the diagram on the right is 
+    equivalent.  
 
+    <img src="../../../png/category_theory/chapter_3/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+    To be clear, the diagram on the right is in the category 
+    $**Set**\times **Set**$.
+    * **$iii.$** Let $\Delta: **Set**\to **Set**\times**Set**$ be 
+    the "copy functor" which sends $X \mapsto (X, X)$. Then the above diagram 
+    translates to 
 
-* [$i.$] Suppose we have functions $f: Z \to X$ and $g: Z \to Y$. 
-Show how this gives us a map $h: Z \to X\times Y$, and show that 
-this map is unique (to the pair $f$ and $g$). 
-
-
-* [$ii.$] Using your map $h: Z \to X \times Y$, show that the 
-diagram on the left commutes, and that the diagram on the right is 
-equivalent.  
-
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-To be clear, the diagram on the right is in the category 
-$**Set**\times **Set**$. 
-
-
-* [$iii.$]
-Let $\Delta: **Set**\to **Set**\times**Set**$ be 
-the "copy functor" which sends $X \mapsto (X, X)$. Then the above diagram 
-translates to 
-
-<img src="../../../png/category_theory/chapter_3/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Deduce how the product $(\pi_1, \pi_2): \Delta(X\times Y) \to (X,Y)$ is 
-universal from $(X,Y)$ to $\Delta$. 
-This is an important fact that we'll build upon later.
-
-
-
-
-\item[**4.**]
-Let $X$ and $Y$ be two sets, and consider the coproduct
+    <img src="../../../png/category_theory/chapter_3/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+    Deduce how the product $(\pi_1, \pi_2): \Delta(X\times Y) \to (X,Y)$ is 
+    universal from $(X,Y)$ to $\Delta$. 
+    This is an important fact that we'll build upon later.
+* ****4.**** Let $X$ and $Y$ be two sets, and consider the coproduct
 
 \[
 X \amalg Y = 
@@ -485,8 +458,8 @@ any coproduct, we'll have "injection maps" $i_1: X \to X \amalg Y$ and $i_2: Y \
 where  $i_1(x) = (x, 1)$ and $i_2(y) = (y, 2)$. Repeat ($i$-$iii$) 
 as in the previous exercise to demonstrate that 
 $(i_1,i_2): (X,Y) \to \Delta(X\amalg Y)$ is universal from 
-$\Delta$ to $(X,Y)$. 
-\end{itemize}
+$\Delta$ to $(X,Y)$.
+
 
 
 

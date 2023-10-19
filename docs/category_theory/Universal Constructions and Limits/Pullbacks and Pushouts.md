@@ -61,7 +61,7 @@ $g$ meeting at
 $C$ into a 90 degree angle, we get the following cone:
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
+   
 Note that we removed the morphism $u_2$ because it's redundant,
 unnecessary information; after all $u_2 = f \circ u_1 = g \circ
 u_3$; which is information already captured in both the original
@@ -75,7 +75,7 @@ morphisms $v_i: E \to F(i)$ for $i=1,2,3$, we have a commutative
 square! 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
+   
 
 So, how do we connect the universality of $(D, u: \Delta(D) \to F)$
 with the universality of the pullback? Well, since this object is
@@ -120,18 +120,13 @@ which contains 3 objects and two nontrivial morphisms.
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now construct the functor category $\cc^**3**$, where 
 
-* [1.] Objects are functors $F: **3** \to \cc$, which is
+* **1.** Objects are functors $F: **3** \to \cc$, which is
 equivalent to pairs of morphisms $(f, g)$ where $f: A \to B$
-and $g: A \to C$ in $\cc$ 
-
-
-
-* [2.] Morphisms are natural transformations, which in this
+and $g: A \to C$ in $\cc$
+* **2.** Morphisms are natural transformations, which in this
 case simply reduce to a triple of morphisms $(h, l, k)$ where 
 
 <img src="../../../png/category_theory/chapter_3/tikz_code_8_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
 
 Now construct the functor $\Delta: \cc \to \cc^**3**$ where
 $C \longmapsto (1_C, 1_C)$ where $1_C: C \to C$ is the identity

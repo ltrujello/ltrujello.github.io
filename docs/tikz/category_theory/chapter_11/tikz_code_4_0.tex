@@ -1,35 +1,35 @@
 \begin{center}
-    \begin{tikzpicture}
-        \filldraw[orange, opacity = 0.2] (0,0) circle (3) ;
-    
-        \draw[dashed] (3,0,0) arc (0:90:3);
-        \draw[dashed] (3,0,0) arc (0:360:3);
-        \filldraw[color=orange!10] (3,0) arc (0:-180:3cm and 15mm) arc (180:0:3cm and 3cm);
-    
-        \draw[thick] (0,0) circle (3) ;
-        \path[draw,dashed] (3,0) arc [start angle=0, end angle=180,
-        x radius=3cm,
-        y radius=1.4cm] ;
-        \path[draw] (-3,0) arc [start angle=180, end angle=360,
-            x radius=3cm,
-            y radius=1.5cm] ;
-        
-        
-        \draw[thick, {Triangle}-{Triangle}] (7,-3) -- (7,3);
-        \draw[thick, Orange] (7, -2) -- (7, -0.5);
+\begin{tikzpicture}
+\filldraw[orange, opacity = 0.2] (0,0) circle (3) ;
 
-        
-        \draw (6.75,2) -- (7.25,2);
-        \draw (6.75,-0.5) -- (7.25,-0.5);
-        \draw (6.75,-2) -- (7.25,-2);
+\draw[dashed] (3,0,0) arc (0:90:3);
+\draw[dashed] (3,0,0) arc (0:360:3);
+\filldraw[color=orange!10] (3,0) arc (0:-180:3cm and 15mm) arc (180:0:3cm and 3cm);
 
-        
-        \node at (7.7, -2) {0};
-        \node at (7.7, -0.5) {$a$};
-        \node at (7.7, 2) {1};
-        \node at (5, 0.8) {$f^{-1}((-\infty, a])$};
+\draw[thick] (0,0) circle (3) ;
+\path[draw,dashed] (3,0) arc [start angle=0, end angle=180,
+x radius=3cm,
+y radius=1.4cm] ;
+\path[draw] (-3,0) arc [start angle=180, end angle=360,
+x radius=3cm,
+y radius=1.5cm] ;
 
-        
-        \draw[-{Triangle}] (6.5, -0.2) to [bend right] (3.5, -0.2);
-    \end{tikzpicture}
+
+\draw[thick, {Triangle}-{Triangle}] (7,-3) -- (7,3);
+\draw[thick, Orange] (7, -2) -- (7, -0.5);
+
+
+\draw (6.75,2) -- (7.25,2);
+\draw (6.75,-0.5) -- (7.25,-0.5);
+\draw (6.75,-2) -- (7.25,-2);
+
+
+\node at (7.7, -2) {0};
+\node at (7.7, -0.5) {$a$};
+\node at (7.7, 2) {1};
+\node at (5, 0.8) {$f^{-1}((-\infty, a])$};
+
+
+\draw[-{Triangle}] (6.5, -0.2) to [bend right] (3.5, -0.2);
+\end{tikzpicture}
 \end{center}

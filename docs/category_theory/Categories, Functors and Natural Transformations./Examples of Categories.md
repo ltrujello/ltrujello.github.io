@@ -14,26 +14,26 @@ Without proof, we comment that the categories below truly form categories.
 To discuss these categories, we will use the notation in the leftmost column.
 \begin{center}
 
-|                          Category |Objects |Morphisms|
-|-----------------------------------|--------|---------|
-|                         $\finset$ |Finite sets $X$ |Functions $f: X \to Y$|
-|            $\vect_K$ |Vector spaces over $k$ |Linear transformations $T: V \to W$|
-|            $\mon$ |Monoids $(M, \cdot)$ |Monoid homomorphisms $\psi: M \to M'$|
-|            **FinGrp** |Finite Groups |Group homomorphisms $\phi: (G, \cdot) \to (H, \cdot)$|
-|            $\ab$ |Abelian Groups $(G, \cdot)$ |Group homomorphisms|
-|            **FinAb** |Finite Abelian Groups $(G, \cdot)$ |Group homomorphisms|
-|            **Ring** |Rings $(R, \cdot, +)$ |Ring homomorphisms $\phi: (R, \cdot, +) \to (S, \cdot, +)$|
-|            **CRing** |Commutative Rings $(R, \cdot, +)$ |Ring homomorphisms |
-|            $\ring$ |Rings $(R, \cdot, +)$ with identity $1 \ne 0$ |Ring homomorphisms|
-|            $R\mod$|$R$-modules $(M, +)$ |$R$-module homomorphisms|
-|            $\fld$ |Fields $k$ |Field homomorphisms|
-|            $\top^*$ |Topological spaces $(X, x_0)$ with basepoint $x_0 \in X$  |Continuous functions preserving basepoints|
-|            **Toph** |Topological spaces $(X, \tau)$ |Homotopy equivalence classes |
-|            **Haus** |Hausdorff topological spaces $(X, \tau)$ |Continuous functions|
-|            **CHaus** |Compact Hausdorff topological spaces $(X, \tau)$ |Continuous functions|
-|            **DMan** |Differentiable manifolds $M$ |Differentiable functions $\phi: M \to M'$|
-|            **LieAlg** |Lie algebras $\mathfrak{g}$ |Lie algebra homomorphisms|
-|            **Grph** |Graphs $(G, E, V)$ |Graph homomorphisms|
+|  Category |Objects |Morphisms|
+|-----------|--------|---------|
+| $\finset$ |Finite sets $X$ |Functions $f: X \to Y$|
+|$\vect_K$ |Vector spaces over $k$ |Linear transformations $T: V \to W$|
+|$\mon$ |Monoids $(M, \cdot)$ |Monoid homomorphisms $\psi: M \to M'$|
+|**FinGrp** |Finite Groups |Group homomorphisms $\phi: (G, \cdot) \to (H, \cdot)$|
+|$\ab$ |Abelian Groups $(G, \cdot)$ |Group homomorphisms|
+|**FinAb** |Finite Abelian Groups $(G, \cdot)$ |Group homomorphisms|
+|**Ring** |Rings $(R, \cdot, +)$ |Ring homomorphisms $\phi: (R, \cdot, +) \to (S, \cdot, +)$|
+|**CRing** |Commutative Rings $(R, \cdot, +)$ |Ring homomorphisms |
+|$\ring$ |Rings $(R, \cdot, +)$ with identity $1 \ne 0$ |Ring homomorphisms|
+|$R\mod$|$R$-modules $(M, +)$ |$R$-module homomorphisms|
+|$\fld$ |Fields $k$ |Field homomorphisms|
+|$\top^*$ |Topological spaces $(X, x_0)$ with basepoint $x_0 \in X$  |Continuous functions preserving basepoints|
+|**Toph** |Topological spaces $(X, \tau)$ |Homotopy equivalence classes |
+|**Haus** |Hausdorff topological spaces $(X, \tau)$ |Continuous functions|
+|**CHaus** |Compact Hausdorff topological spaces $(X, \tau)$ |Continuous functions|
+|**DMan** |Differentiable manifolds $M$ |Differentiable functions $\phi: M \to M'$|
+|**LieAlg** |Lie algebras $\mathfrak{g}$ |Lie algebra homomorphisms|
+|**Grph** |Graphs $(G, E, V)$ |Graph homomorphisms|
 ||
 
 \end{center}
@@ -47,11 +47,11 @@ to see how they form into categories.
 <span style="display:block" class="example">
 Let $X$ be a nonempty set. We can regard $X$ as a 
 category where 
-\begin{description}
-\item[Objects.] All elements of $X$.
-\item[Morphisms.] All morphisms are identity morphisms, and there are 
-no morphisms between any two distinct objects.  
-\end{description}
+
+* **Objects.** All elements of $X$.
+* **Morphisms.** All morphisms are identity morphisms, and there are 
+no morphisms between any two distinct objects.
+
 This category, while fairly trivial, is called a **discrete category**.
 </span>
 
@@ -90,11 +90,11 @@ then we say $\phi: G \to H$ is a **$\lambda$-graded homomorphism**.
 
 With that said, we can define the category of graded groups to be the category 
 **GrGrp**, (read as "graded groups") described as 
-\begin{description}
-\item[Objects.] $\lambda$-graded groups $G = \bigoplus_{i \in \lambda}$ 
-for some set $\lambda$ 
-\item[Morphisms.] Graded homomorphisms between graded groups.  
-\end{description}
+
+* **Objects.** $\lambda$-graded groups $G = \bigoplus_{i \in \lambda}$ 
+for some set $\lambda$
+* **Morphisms.** Graded homomorphisms between graded groups.
+
 As we said before, this produces many graded categories, including **GrMon**, 
 **GrRing**, $**GrMod**_R$ etc.
 </span>
@@ -160,19 +160,14 @@ A \le B \text{ if and only if there exists an morphism } A \to B.
 
 Some things are to be said about this relation:
 
-*  For each object $A$, 
+* For each object $A$, 
 there always
 exists a morphism $A \to A$ (namely, the identity). This implies
 that $A \le A$ for all objects $A$, so that $\le$ is reflexive.
-
-
-
-*  If $f: A \to B$ and $g: B \to C$, then we have that 
+* If $f: A \to B$ and $g: B \to C$, then we have that 
 $A \le B$ and $B \le C$. Since we may compose morphisms, we 
 have that $g \circ f: A \to C$. Therefore, $A \le C$, so that $\le$ 
 $\le$ is transitive.
-
-
 
 Hence, $\mathcal{P}$ is really just a set with a reflexive and transitive
 binary relation. However, this is exactly the definition of a **preorder**!
@@ -192,48 +187,39 @@ p'$ **or** $p' \le p$.
 
 <span style="display:block" class="example">
 Here we introduce some examples of thin categories.
-\begin{description}
-\item[Natural Numbers.] 
-The sets $\{1, 2, \dots, n\}$ for any $n \in N$ are
+
+* **Natural Numbers.** The sets $\{1, 2, \dots, n\}$ for any $n \in N$ are
 linear orders, each of which forms a category as pictured below.
 
 <img src="../../../png/category_theory/chapter_1/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In this figure, the loops represent the trivial identity functions.
 
 This example can also be generalized to include $\mathbb{N}, \mathbb{Z}, 
-\mathbb{Q},$ and $\mathbb{R}$. 
-
-\item[Subsets.] 
-Let $X$ be a set. Then one can form a category $\text{Subsets}(X)$ where the 
+\mathbb{Q},$ and $\mathbb{R}$.
+* **Subsets.** Let $X$ be a set. Then one can form a category $\text{Subsets}(X)$ where the 
 objects are subsets of $X$ and the morphisms are inclusion morphisms. Hence,
 there is at most one morphism between any two sets.
 
 Since there is at most one morphism between any two objects of the 
 category, we see that this forms a thin category, and hence a partial ordering. 
 What this then tells us is that subset containment determines an ordering, 
-specifically a partial ordering. 
-
-\item[Open Sets.]   
-Let $(X, \tau)$ be a topological space. Define the category 
+specifically a partial ordering.
+* **Open Sets.** Let $(X, \tau)$ be a topological space. Define the category 
 $\open(X)$ to be the category whose objects are the open sets of $X$ 
 and morphisms $U \to V$ are inclusion morphisms $i: U \to V$ whenever $U \subset V$.
 Hence, there is at most one morphism between any two open sets, so that this 
 also forms a preorder.
-
-\item[Subgroups.] 
-Let $G$ be a group. We can similarly define the category 
+* **Subgroups.** Let $G$ be a group. We can similarly define the category 
 $**SbGrp**(G)$ to be the category whose objects consists 
 of subgroups $H \le G$, and whose morphisms are inclusion homomorphisms.
 This is just like the last example; and, as in the last example, 
 there is at most one morphism between any two subgroups $H, K$ of $G$ 
 (either $i: H \to K$ or $i: K \to H$). Hence, we can place a partial ordering 
 on this, so that subgroup containment is a partial ordering.
-
-\item[Ideals.]
-Let $R$ be a ring. Then we can form a category $**Ideals**(R)$ 
+* **Ideals.** Let $R$ be a ring. Then we can form a category $**Ideals**(R)$ 
 whose objects are the ideals $I$ of $R$ and whose morphisms are inclusion 
-morphisms. As we've seen, this forms a thin category. 
-\end{description}
+morphisms. As we've seen, this forms a thin category.
+
 
 </span>
 
@@ -267,9 +253,9 @@ Hence, the  braid $\sigma_1\sigma_2\sigma_1$.
 
 Now with the family of braid groups $B_1, B_2, \dots,$ we can form a category $\mathbb{B}$
 as follows. 
-\begin{description}
-\item[Objects.] Positive integers $1,2, \dots,$
-\item[Morphisms.] For any pair of positive integers $n,m$, we have that 
+
+* **Objects.** Positive integers $1,2, \dots,$
+* **Morphisms.** For any pair of positive integers $n,m$, we have that 
 
 \[
 \hom_{\mathbb{B}}(n,m) = 
@@ -279,7 +265,6 @@ B_n & \text{if } n = m\\
 \end{cases}
 \]
 
-\end{description}
 Hence we only have morphisms $f: n \to m$ when $n = m$. Furthermore, each 
 morphism is a braid. Composition is then group multiplication. The identity for each 
 object $n$ is the identity braid of $n$ parallel strands. As group multiplication 
@@ -337,9 +322,9 @@ $B$ can be regarded a morphism from $n \to p$. This together implies that
 $AB$ is a morphism from $m \to p$. 
 This should feel strange, because we are used to thinking of a morphism as some kind 
 of function. But it works; we can form a category where  
-\begin{description}
-\item[Objects.] The objects are positive integers $m$.
-\item[Morphisms.] The morphisms are matrices. Specifically, for any pair of 
+
+* **Objects.** The objects are positive integers $m$.
+* **Morphisms.** The morphisms are matrices. Specifically, for any pair of 
 objects $m,n$, 
 
 \[
@@ -347,7 +332,7 @@ objects $m,n$,
 \]
 
 Here, composition is simply matrix multiplication.
-\end{description}
+
 Observe now that our initial observation regarding matrix multiplication
 translates to a statement regarding whenever two matrices $A$ and $B$ are 
 "composable" (i.e., whenever we can multiply them). That is, 
@@ -356,7 +341,7 @@ our mapping $M_{m,n}(R)\times M_{n,p}(R) \to M_{m, p}$ can be rephrased as compo
 \[
 \circ: \hom_{\cc}(m, n) \times \hom_{\cc}(n, p) \to \hom_{\cc}(m, p)
 \]
-
+ 
 Associativity of matrix multiplication translates to associativity of composition. 
 Finally, note that for each object (positive integer) $n$, the identity morphism is 
 simply the identity matrix. 
@@ -416,93 +401,42 @@ sense since groups are trivial examples of group actions by setting $X = G$.
 {\large **Exercises**
 \vspace{0.2cm}}
 
-* [**1.**] 
-Let $n$ be a positive integer, and consider a group $G$ such that 
+* ****1.**** Let $n$ be a positive integer, and consider a group $G$ such that 
 $g^n = 1$ for all elements $g \in G$. Show that if we take these groups to be 
 our objects, and group homomorphisms to be our morphisms, then 
 this forms a category $\grp_n$.
 \vspace{0.2cm}
-
-
-
-* [**2.**] 
-Consider an infinite family of groups $G_1, G_2, \dots, G_n, \dots$
+* ****2.**** Consider an infinite family of groups $G_1, G_2, \dots, G_n, \dots$
 Show that we have a category $**G**$ where
-\begin{description}
+    * **Objects.** The positive integers $1, 2, \dots, n, \dots$
+    * **Morphisms.** For any two positive integers $n,m$,  
+    we define 
 
-
-* [Objects.] The positive integers $1, 2, \dots, n, \dots$
-
-
-* [Morphisms.] For any two positive integers $n,m$,  
-we define 
-
-\[
-\hom_{**G**}(n,m) = 
-\begin{cases}
-G_n & \text{if } n = m\\
-\varnothing & \text{otherwise}.
-\end{cases}  
-\]
-
-\end{description}
-This example can be applied to many interesting families of groups, since they 
-often come graded (i.e., they often are indexed by the positive integers.)
-For instance, the braid groups $B_1, B_2, \dots,$ are such an example.
-\vspace{0.2cm}
-
-
-
-* [**3.**] 
-Let $f: X \to Y$ be a function between two sets. 
+    \[
+    \hom_{**G**}(n,m) = 
+    \begin{cases}
+    G_n & \text{if } n = m\\
+    \varnothing & \text{otherwise}.
+    \end{cases}  
+    \]
+* ****3.**** Let $f: X \to Y$ be a function between two sets. 
 We say $f$ has the "finite-to-one" property if $f^{-1}(y)$ is always a 
 finite set for all $y \in Y$. Show that we have a (large) category,  denoted 
-$\Set_{FTO}$, where 
-\begin{description}
-
-
-* [Objects.] All sets $X$.
-
-
-* [Morphisms.] functions $f$ with the finite-to-one property. 
-\end{description}
-\vspace{0.2cm}
-
-
-
-* [**4.**]
-Let $X$ and $Y$ be sets. A binary relation $R$ on $X$ and $Y$
+$\Set_{FTO}$, where
+    * **Objects.** All sets $X$.
+    * **Morphisms.** functions $f$ with the finite-to-one property.
+* ****4.**** Let $X$ and $Y$ be sets. A binary relation $R$ on $X$ and $Y$
 is any subset of $X \times Y$. For two elements 
 $x \in X, y \in Y$, we then write 
 $xRy$ if $(x,y) \in R$. Binary relations can be specialized to describe 
 functions and order relations in set theory.
 
-Show that we can form a category where 
-\begin{description}
-
-
-* [Objects.] All sets $X$. 
-
-
-* [Morphisms.] For any two sets $X,Y$, we write,
-by abuse of notation, $R: X \to Y$ as a morphism
-for each relation $R$ on $X$ and $Y$.
-\end{description}
-This category is called **Rel**, to indicate that it is the 
-category of relations.\\
-*Hint:*  Define composition in this category as follows. Suppose 
-$R:X\to Y$ is a relation on $X$ and $Y$ and $P: Y \to Z$ is a binary relation on $Y$ and $Z$.
-Then the composite relation $Q: X \to Z$ is given by 
-
-\[
-Q = \{(x, z) \mid \text{there exist } y \in Y \text{ such that } (x,y)\in R, (y,z) \in P \}.
-\]
-
-
-
-
-* [**5.**]
-Recall that for a two metric spaces $(M, d_M)$ and $(N, d_N)$, where 
+Show that we can form a category where
+    * **Objects.** All sets $X$.
+    * **Morphisms.** For any two sets $X,Y$, we write,
+    by abuse of notation, $R: X \to Y$ as a morphism
+    for each relation $R$ on $X$ and $Y$.
+* ****5.**** Recall that for a two metric spaces $(M, d_M)$ and $(N, d_N)$, where 
 $d_M: M \times M \to M$ and $d_N: N \times N \to N$ are the metrics, 
 we say a function $f: M \to N$ is a **Lipschitz-1** map 
 with **Lipschitz constant** 1 if 
@@ -512,43 +446,16 @@ d_N(f(x), f(y)) \le d_M(x, y)
 \]
 
 for all $x, y \in M$. Using this concept, show that we have a category 
-where 
-\begin{description}
+where
+    * **Objects.** Metric spaces $M$
+    * **Morphisms.** Lipschitz-1 maps with Lipschitz constant 1.
+* ****6.**** Let $G$ be a group. We say that $G$ acts on a set $X$ if we have a 
+function $\phi: G \times X \to X$ such that
+    * **$\bullet$** $e \cdot x = x$
+    * **$\bullet$** $h\cdot (g \cdot x) = (hg)\cdot x$
+    * **Objects.** All $G$-sets (i.e., sets with a group action by $G$)
+    * **Morphisms.** $G$ equivariant maps.
 
-
-* [Objects.] Metric spaces $M$ 
-
-
-* [Morphisms.] Lipschitz-1 maps with Lipschitz constant 1.   
-\end{description}
-This category is commonly denoted as **Met**.
-
-
-
-* [**6.**]
-Let $G$ be a group. We say that $G$ acts on a set $X$ if we have a 
-function $\phi: G \times X \to X$ such that 
-\begin{itemize}
-
-
-* [$\bullet$] $e \cdot x = x$
-
-
-* [$\bullet$] $h\cdot (g \cdot x) = (hg)\cdot x$
-
-
-
-Such an $X$ is sometimes called a **G-set**.
-Note here that we represent $\phi(g, x)$ as $g \cdot x$. Now suppose $X, Y$ are 
-two sets for which $G$ acts on. Then we define a morphism of $G$ sets to be a 
-function $f: X \to Y$ such that $f(g \cdot x) = g \cdot f(x)$. Such a map is called 
-$G$ equivariant. Show that we have 
-a category $G**-Sets**$ where 
-\begin{description}
-\item[Objects.] All $G$-sets (i.e., sets with a group action by $G$)
-\item[Morphisms.] $G$ equivariant maps. 
-\end{description}
-\end{itemize}
 
 
 

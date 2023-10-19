@@ -11,10 +11,10 @@ defined.
 <span style="display:block" class="definition">
 Let $\cc$ and $\dd$ be categories. Then the **product
 category** $\cc \times \dd$ is the category where 
-\begin{description}
-\item[Objects.] All pairs  $(C, D)$ with $C \in \ob(\cc)$ and $D \in \ob(\dd)$
-\item[Morphisms.] All pairs $(f, g)$ where $f \in \hom(\cc)$ and $g \in \hom(\dd)$.   
-\end{description}
+
+* **Objects.** All pairs  $(C, D)$ with $C \in \ob(\cc)$ and $D \in \ob(\dd)$
+* **Morphisms.** All pairs $(f, g)$ where $f \in \hom(\cc)$ and $g \in \hom(\dd)$.
+
 To define composition in this category, suppose we have composable morphisms in $\cc$ 
 and $\dd$ as below. 
 
@@ -60,11 +60,9 @@ Let $F: \cc \to \cc'$ and $G: \dd \to \dd'$ be two functors.
 Then we define the **product functor** to be the functor 
 $F \times G: \cc \times \dd \to \cc' \times \dd'$ for which 
 
-* [1.] If $(C, D)$ is an object of $\cc\times\dd$ then
-$(F\times G)(C, D) = (F(C), G(D))$ 
-
-
-* [2.] If $(f, g)$ is a morphism of $\cc\times\dd$
+* **1.** If $(C, D)$ is an object of $\cc\times\dd$ then
+$(F\times G)(C, D) = (F(C), G(D))$
+* **2.** If $(f, g)$ is a morphism of $\cc\times\dd$
 then $(F \times G)(f,g) = (F(f), G(g))$ 
 
 Additionally, we can compose the product of functors (of
@@ -76,9 +74,6 @@ are composable functors. Then observe that
 (G \times G') \circ (F \times F') = (G \circ F) \times (G' \circ F').
 \]
 
-
-
-
 </span>
 
 Note that in this formulation we have that 
@@ -86,7 +81,7 @@ Note that in this formulation we have that
 \[
 \pi_{\cc'}\circ (F\times G)  = F \circ \pi_\cc \quad \pi_{\cc'} \circ (F \times G) = G \circ \pi_{\dd}
 \]
-
+  
 Hence, we have the following commutative diagram.
 
 
@@ -160,7 +155,7 @@ bifunctor
 \[ 
 \hom: \cc\op \times \cc \to **Set**.
 \]
-
+ 
 This is
 because for any $h: A \to A'$ and $k: B \to B'$, the diagram,
 
@@ -242,8 +237,8 @@ in $C$ for each $B \in \bb$.
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[($\bm{\implies}$)] Suppose that $\eta: F \to G$ is a
+
+* **($\bm{\implies}$)** Suppose that $\eta: F \to G$ is a
 natural transformation. Then every object $(B, C)$ is
 associated with a morphism $\eta_{(B, C)}: F(B, C) \to
 G(B, C)$ in $\dd$, and this gives rise to the following diagram:
@@ -264,8 +259,7 @@ hand, for any $B \in \bb$,
 
 is a natural transformation for all $C$. Therefore, $\eta$
 is both natural in $B$ and $C$ for all objects $(B, C)$
-
-\item[($\bm{\impliedby}$)] Suppose on the other hand that
+* **($\bm{\impliedby}$)** Suppose on the other hand that
 $\eta$ is a function which assigns objects $(B, C)$ to a
 morphism $F(B, C) \to G(B, C)$ in $\dd$. Furthermore,
 suppose that $\eta(B, C)$ is natural in $B$ for all $C \in
@@ -286,7 +280,7 @@ natural for all $C \in \cc$ since for all $B \in \bb$
 \[
 \textcolor{blue}{\eta}_{(B, -)} : F(B, -) \to G(B, -)
 \]
-
+  
 is a natural transformation. Hence consider the natural
 transformation $\textcolor{red}{\eta}_{(-, C)}$ acting on
 $(B, C)$ and
@@ -325,7 +319,7 @@ side since
 G(1_{B'}, g)\circ G(f, 1_C) =
 G(1_{B'}\circ f, g \circ 1_C) = G(f, g).
 \]
-Therefore, we have that 
+ Therefore, we have that 
 
 \[
 G(f, g) \circ \textcolor{red}{\eta}_{(B, C)} = \textcolor{blue}{\eta}_{(B', C')} \circ F(f, g) 
@@ -336,7 +330,7 @@ transformation. Specifically, it implies the following
 diagram. 
 
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\end{description}
+
 </span>
 Note: A way to succinctly prove the
 reverse implication of the previous proof is as follows. Since we
@@ -370,18 +364,13 @@ the process.
 {\large **Exercises**
 \vspace{0.5cm}}
 
-* [**1.**]
-Let $\cc$ and $\dd$ be categories. Prove that 
-$(\cc \times \dd)\op \cong \cc\op\times\dd\op$. 
+* ****1.**** Let $\cc$ and $\dd$ be categories. Prove that 
+$(\cc \times \dd)\op \cong \cc\op\times\dd\op$.
 
 
 
 
-
-
-
-
-
+ 
 
 
 <script src="../../mathjax_helper.js"></script>

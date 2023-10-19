@@ -34,25 +34,17 @@ fix these to take back our original structure.
 Let $(\mathcal{V}, \otimes, I)$ be a monoidal category. A small category $\cc$ is a $\mathcal{V}$-category 
 or an **enriched category** over $\mathcal{V}$ if 
 
-* [1.] For each $A, B \in \cc$, we have that $\hom_{\cc}(A, B) \in \mathcal{V}$ 
-
-
-* [2.] There exists a "composition" operator 
+* **1.** For each $A, B \in \cc$, we have that $\hom_{\cc}(A, B) \in \mathcal{V}$
+* **2.** There exists a "composition" operator 
 
 \[
 \circ_{A, B, C} : \hom_{\cc}(A, B) \times \hom_{\cc}(B, C) \to \hom_{\cc}(A, C)
 \]
-
-
-
-* [3.] For each object $A \in \cc$, we have a "identity object" 
+* **3.** For each object $A \in \cc$, we have a "identity object" 
 
 \[
 i_A: I \to \hom_{\cc}(A, A)  
 \]
-
-
-
 
 such that our composition operator is associative: 
 
@@ -69,12 +61,8 @@ The following is a classic example due to F.W. Lawvere.
 A **Lawvere metric space** is a set $X$ 
 equipped with a distance function $d: X\times X \to \rr$ such that 
 
-* [1.] $d(x, x) = 0$ for all $x \in X$
-
-
-* [2.] $d(x, z) \le d(x, y) + d(y, z)$ for all $x, y, z \in X$.  
-
-
+* **1.** $d(x, x) = 0$ for all $x \in X$
+* **2.** $d(x, z) \le d(x, y) + d(y, z)$ for all $x, y, z \in X$.
 
 It turns out that, we may equivalently define such a space as a category enriched 
 over $([0, \infty), +, 0)$.
@@ -86,7 +74,7 @@ there exists exactly one morphism
 \[
 a \to b \text{ iff } b \le a.   
 \]
-
+ 
 Now what does it look like for a category $\cc$ to be $[0, \infty]$-category? 
 It means that for any pair of objects $A, B$, we have that $\hom_{\cc}(A, B) \in [0, \infty)$.
 If we denote $d(A, B) = \hom_{\cc}(A, B)$,
@@ -142,18 +130,12 @@ Moreover, we require that the interchange law be satisfied and that
 the morphisms form a category under the vertical composition given by $\circ$.
 However, we can rephrase this as saying a category $\cc$ is a 2-category if 
 
-* [1.] For each $A, B \in \cc$ we have that $(\hom_{\cc}(A, B), \circ)$ is a category
-
-
-* [2.] There exist a composition operator $\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)$
+* **1.** For each $A, B \in \cc$ we have that $(\hom_{\cc}(A, B), \circ)$ is a category
+* **2.** There exist a composition operator $\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)$
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
-* [3.] For each object $A$, we have a functor $i_A: 1 \to \hom(A, A)$, where $1$ 
-is the one object category with one morphism that is sent to $1_A$.  
-
-
+* **3.** For each object $A$, we have a functor $i_A: 1 \to \hom(A, A)$, where $1$ 
+is the one object category with one morphism that is sent to $1_A$.
 
 Above, (3) is stupidly simple; but the reason we're framing it this way is to demonstrate 
 that a strict 2-category $\cc$ is the same thing as a category $\cc$ enriched over the monoidal 

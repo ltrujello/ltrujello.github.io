@@ -23,11 +23,9 @@ But as we have defined categories, we move on to defining functors.
 Let $\cc$ and $\dd$ be categories. A **(covariant) functor** $F: \cc \to
 \dd$ is a "mapping" such that
 
-* [1.] Every $C \in \ob(\cc)$ is assigned uniquely to some
+* **1.** Every $C \in \ob(\cc)$ is assigned uniquely to some
 $F(C) \in \dd$
-
-
-* [2.] Every morphism
+* **2.** Every morphism
 $f: C \to C'$ in $\cc$ is assigned uniquely to some morphism $F(f):
 F(C) \to  F(C')$ in $\dd$ such that 
 \begin{statement}{ProcessBlue!10}
@@ -39,8 +37,6 @@ F(1_C) = 1_{F(C)} \quad\quad F(g \circ f) = F(g) \circ F(f)
 
 
 \end{statement}
-
-
 
 </span>
 

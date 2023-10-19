@@ -71,7 +71,7 @@ Now there are two ways to think about this function. There is
 \[
 [f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})
 \]
-
+  
 which first composes $f$ with the $g$-family, and then composes with the $h$-family, and then there is 
 
 \[
@@ -99,8 +99,8 @@ and a composition map
 
 which must exist for each $n = 1, 2, \dots$, and any $a_1, a_2, \dots, a_n \in \mathbb{N}$, 
 such that
-\begin{description}
-\item[(NS-OP1: Associativity.) ] Let $n \in \mathbb{N}$ and consider $f \in X_n$. 
+
+* **(NS-OP1: Associativity.) ** Let $n \in \mathbb{N}$ and consider $f \in X_n$. 
 Let $a_1, a_2 \dots, a_n \in \mathbb{N}$. Then  
 
 \begin{gather*}
@@ -109,14 +109,12 @@ Let $a_1, a_2 \dots, a_n \in \mathbb{N}$. Then
 f \circ_{(k_{1,1}+ \cdots + k_{1, a_1}), \dots, (k_{n, 1}+ \cdots + k_{n, a_n})}
 \big(g_1 \circ_{k_{1,1}, \dots, k_{1, a_1}}(h_{1,1}, \dots, h_{1, a_1}), \dots, g_n \circ_{k_{n, 1}, \dots, k_{n, a_n}}(h_{n,1}, \dots, h_{n, a_n})\big)
 \end{gather*}
-
-\item[(NS-OP2): Identity.] For every $f \in X_n$ we have that 
+* **(NS-OP2): Identity.** For every $f \in X_n$ we have that 
 
 \[
 f \circ_{1, 1, \dots, 1} (I, I, \dots, I) = f = I \circ_n (f).
 \]
 
-\end{description}
 </span>
 
 
@@ -125,9 +123,8 @@ A **symmetric operad** is a nonsymmetric operad $X$ with a
 right group action $\cdot_n: X_n \times S_n \to X_n$
 by the symmetric group $S_n$
 for each $n = 1, 2, \dots$, subject to the following axioms. 
-\begin{description}
-\item[(S-OP1: Equivariance 1)]
-Let $f \in X_n$ and pick $g_{1} \in X_{a_1}, \dots, g_n \in X_{a_n}$ for 
+
+* **(S-OP1: Equivariance 1)** Let $f \in X_n$ and pick $g_{1} \in X_{a_1}, \dots, g_n \in X_{a_n}$ for 
 some $a_1, a_2, \dots, a_n \in \mathbb{N}$. Then for a $\tau \in S_n$, we must 
 have 
 
@@ -157,10 +154,7 @@ then $\tau' \in S_{a_1 + a_2 + \cdots + a_n}$ acts as
 ,  \overbrace{\textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+1, \dots, a_1 + \cdots + a_{n}}}^{\tau(n)\text{-th block}}, \dots
 ).
 \end{gather*}
-
-
-\item[(S-OP2: Equivariance 2)]  
-Let $f, g_i$ is as above, and choose $\sigma_1 \in S_1, \dots, \sigma_{n} \in S_n$. 
+* **(S-OP2: Equivariance 2)** Let $f, g_i$ is as above, and choose $\sigma_1 \in S_1, \dots, \sigma_{n} \in S_n$. 
 Then we have that 
 
 \[
@@ -192,7 +186,6 @@ is the permutation described as below.
 )
 \end{gather*}
 
-\end{description}
 </span>
 
 
@@ -379,7 +372,7 @@ Now we will first want to calculate
 (\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n))\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, 1}, \dots, k_{n, a_n}}
 \circ(\rho_{1,1}, \dots, \rho_{n, a_n}).
 \]
-
+  
 The first step to computing this is to note that each $\rho_{i,j}$ permutes the numbers *within its block*. 
 
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_22.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -418,7 +411,7 @@ At this point we'll want to see that this is the same as
 \sigma_n \circ_{k_{n,1}, \dots, k_{n,a_n}}(\rho_{n,1}, \dots, \rho_{n,a_n}) 
 )
 \]
-
+  
 To do this we need to think about each $\sigma_i \circ_{k_{i, 1}, \dots, k_{i, a_i}}(\rho_{i,1}, \dots, \rho_{i, a_i})$
 which isn't too bad. Each is a permutation in $S_{k_{i,1} + \cdots + k_{i, a_i}}$, and 
 hence a permutation of the (ordered) tuple below. 
@@ -579,9 +572,9 @@ An **morphism of operads** $F: X \to Y$ between two
 (symmetric) operads $X, Y$ with units $I \in X_1$ and $J \in Y_1$ 
 and $S_n$ group actions $\cdot$ and $*$
 is a family of maps $F_n: X_n \to Y_n$ such that 
-\begin{description}
-\item[(M-OP1)] $F_1(I) = J$ 
-\item[(M-OP2)] If $f \in X_n$ and $g_1 \in X_{a_1}, \dots, g_n \in X_{a_n}$ 
+
+* **(M-OP1)** $F_1(I) = J$
+* **(M-OP2)** If $f \in X_n$ and $g_1 \in X_{a_1}, \dots, g_n \in X_{a_n}$ 
 for $a_i \in \mathbb{N}$, then 
 
 \[
@@ -589,14 +582,12 @@ F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
 =
 F_n(f)\circ_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n))
 \]
-
-\item[(M-OP3)] If $f \in X_n$ and $\tau \in S_n$, then 
+* **(M-OP3)** If $f \in X_n$ and $\tau \in S_n$, then 
 
 \[
 F_n(f \cdot \tau) = F_n(f) * \tau 
 \]
 
-\end{description}
 </span>
 Note: in the case where $X, Y$ are symmetric operads, we define a morphism between 
 $X$ and $Y$ to be a family of maps $F_n: X_n \to Y_n$ such that only **M-OP1**
@@ -615,26 +606,22 @@ f \mapsto F_n(f): A^n \to A
 so that we're mapping elements of our operad
 to $n$-ary operations over $A$. This mapping also requires that
 
-* [1.] $F_1(I) = \id_A: A \to A$
-
-
-* [2.] For $f \in X_n$, $g_i \in X_{a_i}$ for $i = 1,2, \dots, n$, 
+* **1.** $F_1(I) = \id_A: A \to A$
+* **2.** For $f \in X_n$, $g_i \in X_{a_i}$ for $i = 1,2, \dots, n$, 
 
 \[
 F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
 =
 F_n(f)\circ'_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n)).
 \]
-
+  
 Diagrammatically, this means the following diagrams commutes:
 
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Or, more visually, 
 
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-
-
-* [3.] Finally, we have that if $\tau \in S_n$, then for $f \in X_n$
+* **3.** Finally, we have that if $\tau \in S_n$, then for $f \in X_n$
 and $(a_1, \dots, a_n) \in A^n$, then
 
 \[
@@ -642,9 +629,6 @@ F_n(f \cdot \tau)(a_1, \dots, a_n)
 = (F_n(f) *\tau) (a_1, \dots, a_n) 
 = F_n(f)(a_{\tau(1)}, \dots, a_{\tau(n)}).
 \]
-
-
-
 
 
 </span>
@@ -674,7 +658,7 @@ three algebras
 \[
 F: X \to \aend_A \quad G: X \to \aend_B \quad H: X \to \aend_C
 \]
-
+ 
 such that $\Phi: F \to G$ 
 and $\Psi: G \to H$ are morphisms of algebras given by functions 
 $\phi: A \to B$ and $\psi: B \to C$. A natural question is whether 

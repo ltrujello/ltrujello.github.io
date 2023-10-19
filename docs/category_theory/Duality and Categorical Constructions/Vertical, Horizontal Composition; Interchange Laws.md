@@ -54,7 +54,7 @@ elements in $\cc$:
 \[
 \eta(B): F(B) \to G(B).
 \]
-
+     
 Hence, we have two objects in $\cc$ and a morphism in between
 them. Hence, we know that the natural transformation $\eta': F'
 \to G'$ implies the following diagram commutes. 

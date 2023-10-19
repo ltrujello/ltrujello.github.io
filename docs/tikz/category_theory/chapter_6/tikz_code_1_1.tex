@@ -1,42 +1,42 @@
 \begin{center}
-        \begin{tikzpicture}
-            \filldraw[rounded corners, Yellow!30]
-            (-2.25, -1.5) rectangle (2.25, 1.5);
-            \node at (0,0){
-                \begin{tikzcd}[column sep = 1.4cm, row sep = 0.3cm]
-                    j 
-                    \arrow[dr, "u"]& 
-                    \\
-                    &
-                    k
-                    \\
-                    j' \arrow[ur, swap, "v"]
-                \end{tikzcd}
-            };
-            \begin{scope}[xshift = 7cm]
-                \filldraw[rounded corners, Yellow!30]
-                (-2.25, -1.5) rectangle (2.25, 1.5);
-                \node at (0,0){
-                    \begin{tikzcd}[column sep = 1.4cm, row sep = 0.5cm]
-                        &
-                        j
-                        \arrow[dr, dashed, "w"]
-                        &
-                        \\
-                        i \arrow[ur, "u"] 
-                        \arrow[dr, dashed, swap, "v"]
-                        & 
-                        & 
-                        k
-                        \\
-                        &
-                        j 
-                        \arrow[ur, dashed, swap, "w"]
-                        &
-                    \end{tikzcd}
-                };
-            \end{scope}
-        \end{tikzpicture}
+\begin{tikzpicture}
+\filldraw[rounded corners, Yellow!30]
+(-2.25, -1.5) rectangle (2.25, 1.5);
+\node at (0,0){
+\begin{tikzcd}[column sep = 1.4cm, row sep = 0.3cm]
+j 
+\arrow[dr, "u"]& 
+\\
+&
+k
+\\
+j' \arrow[ur, swap, "v"]
+\end{tikzcd}
+};
+\begin{scope}[xshift = 7cm]
+\filldraw[rounded corners, Yellow!30]
+(-2.25, -1.5) rectangle (2.25, 1.5);
+\node at (0,0){
+\begin{tikzcd}[column sep = 1.4cm, row sep = 0.5cm]
+&
+j
+\arrow[dr, dashed, "w"]
+&
+\\
+i \arrow[ur, "u"] 
+\arrow[dr, dashed, swap, "v"]
+& 
+& 
+k
+\\
+&
+j 
+\arrow[ur, dashed, swap, "w"]
+&
+\end{tikzcd}
+};
+\end{scope}
+\end{tikzpicture}
 
-        \emph{Conditions (1) and (2) illustrated.}
-    \end{center}
+\emph{Conditions (1) and (2) illustrated.}
+\end{center}

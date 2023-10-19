@@ -1,27 +1,27 @@
 \begin{center}
-            \begin{tikzcd}
-                A^{a_1}\times A^{a_2} \times \cdots \times A^{a_n}
-                \arrow[d, swap, "{F(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))}"]
-                \\
-                A
-            \end{tikzcd}
-            $=$
-            \begin{tikzcd}
-                \hspace{0.3cm}
-                A^{a_1} \hspace{0.2cm}
-                A^{a_2} \hspace{0.4cm}
-                \cdots
-                \hspace{0.5cm}
-                A^{a_n} 
-                \arrow[d, swap, "F_{a_1}(g_1)", start anchor = {[xshift = -1.5cm]}, end anchor = {[xshift = -1.5cm, yshift=-0.4cm]}]
-                \arrow[d, start anchor = {[xshift = -0.6cm]}, end anchor = {[xshift = -0.6cm, yshift=-0.4cm]}]
-                \arrow[d,draw = none, start anchor = {[xshift = 0.5cm]}, end anchor = {[xshift=0.5cm]}, "\raisebox{+0.2ex}{\dots}" description]
-                \arrow[d, "F_{a_n}(g_n)", start anchor = {[xshift = 1.5cm]}, end anchor = {[xshift = 1.5cm, yshift=-0.4cm]}]
-                \\
-                A \times A \times \overbracket{\cdots}^{n\text{ times}}
-                \times A
-                \arrow[d, "F(f)"]
-                \\
-                A
-            \end{tikzcd}
-        \end{center}
+\begin{tikzcd}
+A^{a_1}\times A^{a_2} \times \cdots \times A^{a_n}
+\arrow[d, swap, "{F(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))}"]
+\\
+A
+\end{tikzcd}
+$=$
+\begin{tikzcd}
+\hspace{0.3cm}
+A^{a_1} \hspace{0.2cm}
+A^{a_2} \hspace{0.4cm}
+\cdots
+\hspace{0.5cm}
+A^{a_n} 
+\arrow[d, swap, "F_{a_1}(g_1)", start anchor = {[xshift = -1.5cm]}, end anchor = {[xshift = -1.5cm, yshift=-0.4cm]}]
+\arrow[d, start anchor = {[xshift = -0.6cm]}, end anchor = {[xshift = -0.6cm, yshift=-0.4cm]}]
+\arrow[d,draw = none, start anchor = {[xshift = 0.5cm]}, end anchor = {[xshift=0.5cm]}, "\raisebox{+0.2ex}{\dots}" description]
+\arrow[d, "F_{a_n}(g_n)", start anchor = {[xshift = 1.5cm]}, end anchor = {[xshift = 1.5cm, yshift=-0.4cm]}]
+\\
+A \times A \times \overbracket{\cdots}^{n\text{ times}}
+\times A
+\arrow[d, "F(f)"]
+\\
+A
+\end{tikzcd}
+\end{center}

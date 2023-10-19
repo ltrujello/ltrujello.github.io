@@ -86,19 +86,18 @@ better notation). Then we have a natural inclusion functor
 $I: **Ab**_{**TF**} \to **Ab**$.
 Now consider the functor $F : **Ab** \to
 **Ab**_{**TF**}$, which we define as follows:
-\begin{description}
-\item[Objects.] Let $G$ be an abelian group. Then 
+
+* **Objects.** Let $G$ be an abelian group. Then 
 $F(G) = G_{TF}$ where 
 
 \[
 G_{TF} = \{g \in G \mid g^n \ne e \text{ for } n = 1, 2, 3, \dots\}.
 \]
-
+ 
 That is, it sends $G$ to its underlying abelian group of
 torsion-free elements. It's not hard to show this is an
 abelian group.
-
-\item[Morphisms.] Suppose $\phi: G \to H$ is a morphism
+* **Morphisms.** Suppose $\phi: G \to H$ is a morphism
 between abelian groups. Then we set $F(\phi) = \phi_{TF}$
 where 
 
@@ -109,7 +108,7 @@ where
 Note that this definition will cause no issues, since
 $\text{ord}(g) = \text{ord}(\phi(g))$. Thus we simply
 obtain $\phi_{TF}$ by restricting $\phi$ to $G_{TF}$.
-\end{description} 
+ 
 To show that $F$ is left adjoint to $I$, we need to
 demonstrate that there exists a universal morphism $\eta_{G} :
 G \to I(F(G))$ for every $G \in **Ab**$. Hence we propose
@@ -131,8 +130,8 @@ Visually, that is,
 
 <img src="../../../png/category_theory/chapter_4/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Sure such a morphism exists, but why the equality? 
-\begin{description}
-\item[$\bm{g \in \ker(\eta_G)}$.] If $g \in \ker(\eta_G)$,
+
+* **$\bm{g \in \ker(\eta_G)}$.** If $g \in \ker(\eta_G)$,
 then $g$ has finite order. Hence we see that $\phi(g) =
 e$; this is because $\text{ord}(\phi(g)) =
 \text{ord}(g) < \infty$, but the only element in $I(H)$
@@ -144,19 +143,17 @@ I(\psi)\circ \eta_G(g) = I(\psi)(e) = e = \phi(g).
 \]
 
 Hence $I(\psi) \circ \eta_G = \phi$ if $g \in
-\ker(\eta_{G})$. 
-
-\item[$\bm{g \not\in \ker(\eta_G)}$.]
-if $g \not\in \ker(\eta_G)$, then we know that
+\ker(\eta_{G})$.
+* **$\bm{g \not\in \ker(\eta_G)}$.** if $g \not\in \ker(\eta_G)$, then we know that
 $\text{ord}(g) = \infty$. Therefore, we see that 
 
 \[
 I(\psi) \circ \eta_G(g) = I(\phi)(g) = \phi(g).
 \]
-
+ 
 Hence $I(\psi) \circ \eta_G = \phi$ for $g \not\in
-\ker(\eta_G)$. 
-\end{description}
+\ker(\eta_G)$.
+
 By our previous work, we then have that $I(\psi) \circ \eta_G
 = \phi$, as desired. Now $\psi$ is of course unique based on
 its construction, since its definition depends directly on
@@ -173,23 +170,18 @@ subcategory of $**Ab**$.
 \vspace{0.5cm}}
 
 
-* [**1.**] Is **FinSet** a reflective subcategory of **Set**?  
-
-
-* [**2.**]
-Let $G$ and $H$ be a groups. Prove that
+* ****1.**** Is **FinSet** a reflective subcategory of **Set**?
+* ****2.**** Let $G$ and $H$ be a groups. Prove that
 
 \[
 G*H/[G*H, G*H] \cong G/[G,G]\oplus H/[H,H]
 \]
-
+ 
 where $G*H$ denotes the \hyperref[example:free_product]{\textcolor{blue}{free product}} 
 of $G$ and $H$.
 (What this is saying is that $F: **Grp** \to **Ab**$, the abelianization 
 functor, preserves coproducts. Eventually, this fact will immediately 
-follow by our knowledge of the adjunction \adjunction{**Grp**}{F}{**Ab**.}{U}) 
-
-
+follow by our knowledge of the adjunction \adjunction{**Grp**}{F}{**Ab**.}{U})
 
 
 

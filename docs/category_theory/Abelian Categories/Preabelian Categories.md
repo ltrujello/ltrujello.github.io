@@ -31,14 +31,10 @@ Let $\cc$ be a category with a zero object as well as equalizers
 and coequalizers.
 Let $f: A \to B$ be a morphism between two objects in $\cc$. We define
 
-*  **kernel** 
+* **kernel** 
 to be the equalizer of $f$ and $\emptyset_A^B: A \to B$, the zero morphism,
-
-
-*   **cokernel** of $f$
-to be the coequalizer of $f$ and $\emptyset_A^B: A \to B$. 
-
-
+* **cokernel** of $f$
+to be the coequalizer of $f$ and $\emptyset_A^B: A \to B$.
 
 In diagrams, we have that 
 
@@ -79,12 +75,8 @@ It turns out that kernels and cokernels are extremely flexible in additive categ
 <span style="display:block" class="proposition">
 Suppose $\cc$ is an additive category. Then the following are equivalent. 
 
-* [$(i)$] $\cc$ has equalizers and coequalizers. 
-
-
-* [$(ii)$] $\cc$ has kernels and cokernels.
-
-
+* **$(i)$** $\cc$ has equalizers and coequalizers.
+* **$(ii)$** $\cc$ has kernels and cokernels.
 
 </span>
 

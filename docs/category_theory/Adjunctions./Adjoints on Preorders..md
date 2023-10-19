@@ -110,7 +110,7 @@ $f$ also induces a functor $f^*:
 \[
 f^*(Y) = \{x \mid f(x) \in Y\}.
 \]
-
+ 
 Note that this also preserves order. In addition, we have that if 
 $f_*(X) \le Y$, then this holds if  and only if $f(X) \subset
 Y$. We then have that this holds if and only if $X \subset

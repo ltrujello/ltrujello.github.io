@@ -25,10 +25,10 @@ a category, as well as the notion of a functor which acts as a map between
 categories. Moreover, every category $\cc$ is equipped with an identity functor 
 $1_{\cc}: \cc \to \cc$, functor composition is associative, and so we  may 
 form the **category of categories** **CAT** where 
-\begin{description}
-\item[Objects.] All categories (large and small)
-\item[Morphisms.] All functors between such categories.  
-\end{description}
+
+* **Objects.** All categories (large and small)
+* **Morphisms.** All functors between such categories.
+
 If we instead restrict our objects to all *small* categories, 
 we obtain the category $\cat$, which is usually what we'll work with.
 \textcolor{NavyBlue}{Overall, what we see is that  
@@ -97,7 +97,7 @@ F(\psi \circ \phi)(g) = \psi(\phi(g)) = F(\psi) \circ F(\phi)(g)
 \implies 
 F(\psi \circ \phi) = F(\psi) \circ F(\phi).
 \]
-
+  
 Hence, we see that we have a forgetful functor $F: \grp \to \Set$ which 
 leaves behind group operations, and moreover regards every group 
 homomorphism as a function.
@@ -135,15 +135,11 @@ Some things need to be said about a forgetful functors. You might have
 noticed that our definition of a forgetful functor was not at all mathematically 
 rigorous. This is because to define forgetful functors we have two main options:
 
-* [**1.**] Use very deep set theory and logic to characterize 
+* ****1.**** Use very deep set theory and logic to characterize 
 the data of a category; then define forgetfulness as forgetting some 
-of the data. 
-
-
-* [**2.**] Define a forgetful functor to be the left adjoint 
-of a free functor $F: \cc \to \dd$ (usually, $\cc = \Set$)   
-
-
+of the data.
+* ****2.**** Define a forgetful functor to be the left adjoint 
+of a free functor $F: \cc \to \dd$ (usually, $\cc = \Set$)
 
 Option **1.** sounds like a pain, and I don't know any logic. I'm sure 
 the reader is probably not interested in going on that kind of a ride anyways. 
@@ -217,12 +213,8 @@ definitions.
 Let $F: \cc\to \dd$ be a functor between locally small categories. 
 We say $F$ is 
 
-*  **Full** if $F_{A,B}$ is surjective
-
-
-*  **Faithful** if $F_{A,B}$ is injective.
-
-
+* **Full** if $F_{A,B}$ is surjective
+* **Faithful** if $F_{A,B}$ is injective.
 
 If $F_{A,B}$ is an isomorphism, we say $F$ is **fully faithful**.
 </span>
@@ -236,14 +228,10 @@ can still be described; it's just not as nice of a description as before.
 <span style="display:block" class="definition">
 Let $F: \cc \to \dd$ be a functor.
 
-*  **Full** if for all $A, B$, every morphism 
-$g: F(A) \to F(B)$ in $\dd$ is the image of some $f: A \to B$ in $\cc$ 
-
-
-*  **Faithful** if for all $A, B$, we have that
+* **Full** if for all $A, B$, every morphism 
+$g: F(A) \to F(B)$ in $\dd$ is the image of some $f: A \to B$ in $\cc$
+* **Faithful** if for all $A, B$, we have that
 if $f_1, f_2: A \to B$ with $F(f_1) = F(f_2)$, then$f_1 = f_2$.
-
-
 
 We then say $F$ is a **fully faithful** if it is both full and faithful.
 </span>
@@ -336,58 +324,23 @@ is  a concrete category.
 {\large **Exercises**
 \vspace{0.5cm}}
 
-* [**1.**] 
-In this exercise, you'll demonstrate that the image of a functor is generally 
-not a category, but that full functors remedy the situation. 
-\begin{itemize}
+* ****1.**** In this exercise, you'll demonstrate that the image of a functor is generally 
+not a category, but that full functors remedy the situation.
+    * **(*i*.)** Let $F: \cc \to \dd$. Define the **image of $F$** 
+    in $\dd$ to consist of
+        * **Objects.** All $F(A)$ with $A \in \cc$
+        * **Morphisms.** For any two objects $F(A)$ and $F(B)$, we have that 
 
+        \[
+        \hom_{\dd}(F(A),  F(B))=\{ F(f) \mid f: A \to B \}.
+        \]
+    * **(*ii*.)** Let $F: \cc \to \dd$ be a full functor. 
+    Show that the image of $\cc$ under $F$ forms a full subcategory of 
+    $\dd$.
+    * **(*iii*.)** By (*ii*), it is sufficient for $F$ to be full in order for the image
+    to be a category. Is this condition *necessary* for the image to form a category? 
+    In other words, suppose the image of a functor $F$ is a category. Is $F$ full?
 
-* [(*i*.)]
-Let $F: \cc \to \dd$. Define the **image of $F$** 
-in $\dd$ to consist of 
-\begin{description}
-
-
-* [Objects.] All $F(A)$ with $A \in \cc$ 
-
-
-* [Morphisms.] For any two objects $F(A)$ and $F(B)$, we have that 
-
-\[
-\hom_{\dd}(F(A),  F(B))=\{ F(f) \mid f: A \to B \}.
-\]
-
-\end{description}
-Show that this is not always a category. In general, the image of a functor 
-is not a category. 
-\\
-*Hint*:
-Picture two categories $\cc$ and $\dd$ below
-
-<img src="../../../png/category_theory/chapter_1/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and consider the functor $F(A) = X, F(B) = F(C) = Y$, and $F(D) = Z$. 
-Explain what goes wrong, and more generally why the image of a functor 
-is not a category.
-
-
-
-* [(*ii*.)]
-Let $F: \cc \to \dd$ be a full functor. 
-Show that the image of $\cc$ under $F$ forms a full subcategory of 
-$\dd$.  
-
-
-
-* [(*iii*.)]
-By (*ii*), it is sufficient for $F$ to be full in order for the image
-to be a category. Is this condition *necessary* for the image to form a category? 
-In other words, suppose the image of a functor $F$ is a category. Is $F$ full?
-
-
-
-
-
-\end{itemize}
 
 
 

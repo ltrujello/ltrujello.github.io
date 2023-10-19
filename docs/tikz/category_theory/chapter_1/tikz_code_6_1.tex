@@ -1,30 +1,30 @@
 \begin{center}
-            \begin{tikzpicture}
-                \begin{scope}
-                    \fill[draw, Yellow!30, rounded corners]
-                    (-2.5, -1.2) rectangle (2.5, 1.2);
-                    \node at (-2,0.7) {$\bm{1}$};
-                    \node at (0,0){
-                        \begin{tikzcd}
-                            \bullet
-                            \arrow[out=120,in=60,looseness=3,loop, "1_{\bullet}"]
-                        \end{tikzcd}
-                    };
-                \end{scope}
-                \begin{scope}[xshift=7cm]
-                    \node at (-2.5,0.7) {$\cc$};
-        
-                    \node at (0,-0.8) {$\vdots$};
-                    \node at (-0.8, -0.4) {$\cdots$};
-                    \node at (0.8, -0.4) {$\cdots$};
-                    \fill[draw, ProcessBlue!30, rounded corners, opacity = 0.3]
-                    (-3, -1.2) rectangle (3, 1.2);
-                    \node at (0,0.25){
-                        \begin{tikzcd}
-                            A
-                            \arrow[out=120,in=60,looseness=3,loop, "1_A"]
-                        \end{tikzcd}
-                    };
-                \end{scope}
-            \end{tikzpicture}
-        \end{center}
+\begin{tikzpicture}
+\begin{scope}
+\fill[draw, Yellow!30, rounded corners]
+(-2.5, -1.2) rectangle (2.5, 1.2);
+\node at (-2,0.7) {$\bm{1}$};
+\node at (0,0){
+\begin{tikzcd}
+\bullet
+\arrow[out=120,in=60,looseness=3,loop, "1_{\bullet}"]
+\end{tikzcd}
+};
+\end{scope}
+\begin{scope}[xshift=7cm]
+\node at (-2.5,0.7) {$\cc$};
+
+\node at (0,-0.8) {$\vdots$};
+\node at (-0.8, -0.4) {$\cdots$};
+\node at (0.8, -0.4) {$\cdots$};
+\fill[draw, ProcessBlue!30, rounded corners, opacity = 0.3]
+(-3, -1.2) rectangle (3, 1.2);
+\node at (0,0.25){
+\begin{tikzcd}
+A
+\arrow[out=120,in=60,looseness=3,loop, "1_A"]
+\end{tikzcd}
+};
+\end{scope}
+\end{tikzpicture}
+\end{center}

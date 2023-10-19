@@ -84,7 +84,7 @@ What
 is the bare minimum amount of logical data that perfectly characterizes 
 the above product $X \times Y$?  
 \end{minipage}
-\end{center}        Well, observe that for such a set, we have *two* **projection 
+\end{center}Well, observe that for such a set, we have *two* **projection 
 functions** 
 
 \begin{align*}
@@ -119,7 +119,7 @@ $p_1: X\times Y \to X, p_2: X \times Y \to Y$, such that for any
 pair of functions $f: Z \to X, g: Z \to Y$, there exists a **unique**
 third $h: Z \to X \times Y$ such that diagram \ref{diagram:cartesian_product} commutes.
 \end{minipage}
-\end{center}    </span>
+\end{center}</span>
 
 With the above example in mind, we now introduce our first definition of a product.
 
@@ -170,12 +170,8 @@ Then we may form the **product ring** of $R$ and $S$ to be the ring
 
 where for all pairs $(r_1, s_1)$ and $(r_2, s_2)$ in $R \times S$, we define the ring operations to behave as
 
-*  $(r_1, s_1) + (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{+}} r_2, s_1 \mathbin{\textcolor{Orange}{+}} s_2)$ 
-
-
-*  $(r_1, s_1)\mathbin{\bigcdot} (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{\bigcdot}} r_2, s_1 \mathbin{\textcolor{Orange}{\bigcdot}} s_2)$
-
-
+* $(r_1, s_1) + (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{+}} r_2, s_1 \mathbin{\textcolor{Orange}{+}} s_2)$
+* $(r_1, s_1)\mathbin{\bigcdot} (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{\bigcdot}} r_2, s_1 \mathbin{\textcolor{Orange}{\bigcdot}} s_2)$
 
 Note that with these requirements, the additive identity is $(0_R, 0_S)$ while the multiplicative identity 
 is $(1_R, 1_S)$. With this construction, one can show that this satisfies the universal property 
@@ -223,12 +219,8 @@ two projection field homomorphisms
 However, recall that two fields share a (nonzero) field homomorphism if and only if 
 they are of the same characteristic. Therefore, 
 
-*  $\pi_1$ can only exist if $P$ has characteristic 2. In fact, $P$ must be isomorphic to $\mathbb{F}_2$.
-
-
-*  $\pi_2$ can only exist if it has characteristic 3. In fact, $P$ must be isomorphic $\mathbb{F}_3$. 
-
-
+* $\pi_1$ can only exist if $P$ has characteristic 2. In fact, $P$ must be isomorphic to $\mathbb{F}_2$.
+* $\pi_2$ can only exist if it has characteristic 3. In fact, $P$ must be isomorphic $\mathbb{F}_3$.
 
 Clearly, we have a contradiction.
 Thus we simply cannot generally take products in $**Fld**$ in a logical way.
@@ -255,12 +247,11 @@ category to have finite products in the following proposition.
 <span style="display:block" class="proposition">
 Suppose $\cc$ is a category with a terminal object $T$ and a product
 object $A \times B$ for every pair of objects $A$ and $B$. Then 
-\begin{description}
-\item[$\bm{(i)}$] $\cc$ has finite products. 
-\item[$\bm{(ii)}$] There exists a bifunctor $\prod: \cc \times \cc
-\to \cc$ where $(A, B) \mapsto A \times B$.
 
-\item[$\bm{(iii)}$] For any three objects, we have an
+* **$\bm{(i)}$** $\cc$ has finite products.
+* **$\bm{(ii)}$** There exists a bifunctor $\prod: \cc \times \cc
+\to \cc$ where $(A, B) \mapsto A \times B$.
+* **$\bm{(iii)}$** For any three objects, we have an
 isomorphism 
 
 \[
@@ -268,15 +259,14 @@ isomorphism
 \]
 
 which is natural in $A, B$ and $C$ .
-
-\item[$\bm{iv}$] For any object $A$, we have the isomorphism 
+* **$\bm{iv}$** For any object $A$, we have the isomorphism 
 
 \[
 T \times A \cong A \cong T \times A            
 \]
-
+ 
 natural in $A$.
-\end{description}
+
 </span>
 
 
@@ -291,12 +281,11 @@ P(n) =
 \end{cases}
 \]
 
-\begin{description}
-\item[Base Case.] Observe that for $n = 0$,  the statement is
-automatically true since we are given that a terminal object
-$T$ exists. 
 
-\item[Inductive Step.] Suppose the statement holds for $n =
+* **Base Case.** Observe that for $n = 0$,  the statement is
+automatically true since we are given that a terminal object
+$T$ exists.
+* **Inductive Step.** Suppose the statement holds for $n =
 k$. Then for any objects $A_1, A_2, \cdots, A_k$, 
 we have the product diagram
 
@@ -365,21 +354,21 @@ diagram
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that the product $A_1 \times A_k \times A_{k+1}$ exists and
 is well-defined in $\cc$. Hence, $P(n)$ is true for $n = k+1$.
-\end{description}
+
 By mathematical induction, we see that all finite products must
 exist in $\cc$, as desired. 
 
 To demonstrate the existence of a bifunctor, we can directly
 define one. Let $\prod: \cc \times \cc \to \cc$ act as follows. 
-\begin{description}
-\item[Objects.] $\prod(A, B) = A \times B$.
-\item[Morphisms.] Let $f: A \to A'$ and $g: B \to B'$. Suppose
+
+* **Objects.** $\prod(A, B) = A \times B$.
+* **Morphisms.** Let $f: A \to A'$ and $g: B \to B'$. Suppose
 we have canonical projections 
 
 \[
 \pi_1: A \times B \to A \qquad  \pi_2: A \times B \to B  
 \]
-
+ 
 and 
 
 \[
@@ -484,8 +473,8 @@ can see that this diagram is equivalent  to
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we see that $A$ with the morphism $t_A, 1_A$ forms a
 universal cone. But so does $T \times A$; hence, uniqueness
-guarantees they are isomorphic. 
-\end{description}
+guarantees they are isomorphic.
+
 </span>
 
 Now that we have discussed examples of products in categories, offered a rigorous definition, 
@@ -500,11 +489,11 @@ Before doing so, we offer a simple definition.
 Let $\cc$ be a category.
 Define the **diagonal functor of $\cc$** as 
 $\Delta: \cc \to \cc \times \cc$ where 
-\begin{description}
-\item[On Objects.] For $C$ an object of $\cc$, we define $\Delta(C) = (C, C)$.
-\item[On Morphisms.] For a morphism $f: A \to B$, we define
+
+* **On Objects.** For $C$ an object of $\cc$, we define $\Delta(C) = (C, C)$.
+* **On Morphisms.** For a morphism $f: A \to B$, we define
 $\Delta(f) = (f, f): (A, A) \to (B, B)$.
-\end{description}
+
 </span>
 
 The above functor is a bit silly; it really doesn't do much. However, it necessary for us 

@@ -22,7 +22,7 @@ sub-"things": whenever $S$ is a sub-"thing" of $X$, there usually exists a monom
 \[
 m: S \to X.
 \]
-
+ 
 For example, in **Set**, $S \subset X$ implies that there's an injection $i: S \to X$; a monomorphism 
 is injective in **Set**, so this makes sense. In **Top**, if $S \subset X$ where $S$ is given the subspace 
 topology, then the inclusion function $i: S \to X$ is continuous, so there does exist 

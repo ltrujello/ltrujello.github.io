@@ -1,44 +1,44 @@
 \begin{center}
-            \begin{tikzpicture}
-                \filldraw[rounded corners, yellow!30]
-                (-3.75,0.25) rectangle (3.75,2.5);
-                \node at (-2.75, 2){$\cc$};
-                \node at (0,1.25){
-                    \begin{tikzcd}[column sep = 1.4cm, row sep =  1.4cm]
-                        \cdots
-                        &[-1.5cm] 
-                        C_1
-                        \arrow[r, "f"]
-                        \arrow[rr, bend left, "f' \circ f"]
-                        &
-                        C_2
-                        \arrow[r, "f'"]
-                        &
-                        C_3
-                        &[-1.5cm]
-                        \cdots
-                    \end{tikzcd}
-                };
-                \begin{scope}[xshift = 8cm]
-                    \filldraw[rounded corners, yellow!30]
-                    (-3.75,0.25) rectangle (3.75,2.5);
-                    \node at (-3, 2){$\dd$};
-                    \node at (0,1.25){
-                        \begin{tikzcd}[column sep = 1.4cm, row sep =  1.4cm]
-                            \cdots
-                            &[-1.5cm]
-                            D_1
-                            \arrow[r, "g"]
-                            \arrow[rr, bend left, "g' \circ g"]
-                            &
-                            D_2
-                            \arrow[r, "g'"]
-                            &
-                            D_3   
-                            &[-1.5cm]
-                            \cdots           
-                        \end{tikzcd}  
-                    };
-                \end{scope}
-            \end{tikzpicture}                
-        \end{center}
+\begin{tikzpicture}
+\filldraw[rounded corners, yellow!30]
+(-3.75,0.25) rectangle (3.75,2.5);
+\node at (-2.75, 2){$\cc$};
+\node at (0,1.25){
+\begin{tikzcd}[column sep = 1.4cm, row sep =  1.4cm]
+\cdots
+&[-1.5cm] 
+C_1
+\arrow[r, "f"]
+\arrow[rr, bend left, "f' \circ f"]
+&
+C_2
+\arrow[r, "f'"]
+&
+C_3
+&[-1.5cm]
+\cdots
+\end{tikzcd}
+};
+\begin{scope}[xshift = 8cm]
+\filldraw[rounded corners, yellow!30]
+(-3.75,0.25) rectangle (3.75,2.5);
+\node at (-3, 2){$\dd$};
+\node at (0,1.25){
+\begin{tikzcd}[column sep = 1.4cm, row sep =  1.4cm]
+\cdots
+&[-1.5cm]
+D_1
+\arrow[r, "g"]
+\arrow[rr, bend left, "g' \circ g"]
+&
+D_2
+\arrow[r, "g'"]
+&
+D_3   
+&[-1.5cm]
+\cdots           
+\end{tikzcd}  
+};
+\end{scope}
+\end{tikzpicture}                
+\end{center}
