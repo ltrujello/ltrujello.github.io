@@ -124,4 +124,63 @@ With the model itself introduce, the task at hand is to learn the parameters of 
 
 ## Word alignment for Phrase Extraction
 
+## Phase Based Decoder
+
+Using the translation model introduced, we can design a decoding algorithm 
+which employs a **beam search** that finds the best possible 
+translation of a sentence, so long as we have access to
+
+* a phrase translation table $\phi(\overline{e} | \overline{f})$
+* a language model $p_{LM}(\mathbf{e})$
+
+The beam search will first (1) construct a set of translation options of $\mathbf{f}$ into English by partitioning $\mathbf{f}$ into phrases and then (2) declare the most optimal translation to be whichever partition optimizes our probability model. This most optimal translation will then be our sentence $\mathbf{e}$. 
+
+
+The basic algorithm is introduced as follows. Suppose we are attempting to 
+translate a foreign sentence $\mathbf{f}$ into English. Since we have access to a phrase translation table $\phi(\overline{e} | \mathbf{f})$, and a language $p_{LM}$,
+we ought to first figure out how to partition $\mathbf{f}$ into phrases. 
+Taking a naive approach, this requires constructing all possible phrase partitions. 
+
+In order to construct such a set options and search for the most optimal translation in a way that is convenient for computer implementation, Koehn 
+et. al. introduced the concept of a **hypothesis**. A hypothesis of $\mathbf{f}$ 
+is a node in a linked list that translates one phrase $(f_{i}, f_{i+1}, \dots, f_{i + n})$ in $\mathbf{f}$ into an English phrase. It's called a hypothesis because, well, that's really what it is.
+
+This linked list we construct with this node data structure is done so that for a given hypothesis, it only attempts to 
+translate words in the foreign sentence that haven't already been translated by any of the previous hypotheses in the linked list.
+Therefore, each time we add a node to the list we have less words to translates, and so building such a linked list will always terminate. Once we finish building this linked list by running out of phrases of $\mathbf{f}$ to translate into English, 
+we traverse the linked list from the start node to the end node, collecting the English translations, to ultimately 
+come up with a translation of $\mathbf{f}$. 
+
+Thus, our goal is to (1) efficiently construct these linked lists and (2) efficiently search for the best possible translation candidate.  
+
+Let us given an example of the hypothesis data structure in a real linked list.
+Consider the French sentence `un comite de selection a ete constitue`, and suppose we are an all-knowing French-English translator attempting to translate this into English. Since we're all-knowing, we'd 
+know that `un` translates to the English word `a`. We'd write this down as a hypothesis like so. 
+<img src="/png/phase_based_models/a.png" style="margin: 0 auto; display: block; width: 50%;"/> 
+
+Next, we see `comite de selection`, which roughly translates to `committee of selection`. Because we're all-knowing, we know 
+that a better translation is actually `selection committee`. Thus, we'd know that it is better to first 
+translate the French phrase `selection` to the English phrase `selection`
+
+<img src="/png/phase_based_models/selection.png" style="margin: 0 auto; display: block; width: 50%;"/> 
+
+and then we translate the phrase `comite de` to the English word `committee`.
+
+<img src="/png/phase_based_models/committee.png" style="margin: 0 auto; display: block; width: 60%;"/> 
+
+At this point, we have 3 words left in the foreign sentence to translate, and we can see that the next the best thing to translate would be `a ete`, because that this phrase roughly translates to the English word `was`. We write this down as a hypothesis. 
+
+<img src="/png/phase_based_models/was.png" style="margin: 0 auto; display: block; width: 70%;"/> 
+
+Finally, we have one word left to translate; we see `constitute`, which from the context of the sentence we could translate to `formed`. This is our last hypothesis. 
+
+<img src="/png/phase_based_models/formed.png" style="margin: 0 auto; display: block; width: 80%;"/> 
+
+Traversing the linked list left from right gives us our English translation. We can view our ultimate 
+phrase translation decisions as a set of mappings between the source and target sentences as below.
+
+<img src="/png/phase_based_models/mapping.png" style="margin: 0 auto; display: block; width: 80%;"/> 
+
+## Reducing the search space: Recombination and Pruning
+
 
