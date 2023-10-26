@@ -120,11 +120,12 @@ which is actually really nice. The model is now a linear combination of several 
 is likely to occur because probability can often be very small numbers. And from this perspective, we can additionally tack on 
 other statistical features and weight them with different parameters to customize the model even further.
 
-With the model itself introduce, the task at hand is to learn the parameters of such a model given a parallel corpus. Really, the most important task is to learn phrase translation probabilities from a parallel corpus, which is nontrivial. 
+In order to use this model in an implementation context, one has to actually create the phrase translation table 
+$\phi(\overline{e},\overline{f})$. What is nice about this is that this table can be constructed 
+given a parallel corpus dataset, which is usually performed by using a word alignment model. 
+Once this phrase translation table is constructed, we can use the model to actually perform decoding. 
 
-## Word alignment for Phrase Extraction
-
-## Phase Based Decoder
+## Phase Based Decoding: Hypothesis
 
 Using the translation model introduced, we can design a decoding algorithm 
 which employs a **beam search** that finds the best possible 
@@ -133,30 +134,26 @@ translation of a sentence, so long as we have access to
 * a phrase translation table $\phi(\overline{e} | \overline{f})$
 * a language model $p_{LM}(\mathbf{e})$
 
-The beam search will first (1) construct a set of translation options of $\mathbf{f}$ into English by partitioning $\mathbf{f}$ into phrases and then (2) declare the most optimal translation to be whichever partition optimizes our probability model. This most optimal translation will then be our sentence $\mathbf{e}$. 
+The main idea of the beam search will be to (1) construct a set of translation options of $\mathbf{f}$ into English by partitioning $\mathbf{f}$ into phrases and then (2) declare the most optimal translation to be whichever partition optimizes our phrase-based probability model. 
+This most optimal translation will then be our sentence $\mathbf{e}$. 
 
+In order to easily construct a set of translation options of $\mathbf{f}$, we'll need to use a data structure known as a **hypothesis**. 
+A hypothesis of $\mathbf{f}$ is a node in a linked list that translates 
+one phrase $(f_{i}, f_{i+1}, \dots, f_{i + n})$ in $\mathbf{f}$ into an English phrase. Forming a linked list 
+of a set of hypotheses then allows us to propose one translation option of $\mathbf{f}$ into English.
 
-The basic algorithm is introduced as follows. Suppose we are attempting to 
-translate a foreign sentence $\mathbf{f}$ into English. Since we have access to a phrase translation table $\phi(\overline{e} | \mathbf{f})$, and a language $p_{LM}$,
-we ought to first figure out how to partition $\mathbf{f}$ into phrases. 
-Taking a naive approach, this requires constructing all possible phrase partitions. 
+To motivate the hypothesis data structure, let us given an example of such a linked list.
+Consider the French sentence `un comite de selection a ete constitue`, 
+and suppose we are an all-knowing French-English translator attempting to translate this into English.
+We could translate the sentence into English and map the phrases between the sentences like so.
 
-In order to construct such a set options and search for the most optimal translation in a way that is convenient for computer implementation, Koehn 
-et. al. introduced the concept of a **hypothesis**. A hypothesis of $\mathbf{f}$ 
-is a node in a linked list that translates one phrase $(f_{i}, f_{i+1}, \dots, f_{i + n})$ in $\mathbf{f}$ into an English phrase. It's called a hypothesis because, well, that's really what it is.
+<img src="/png/phase_based_models/mapping.png" style="margin: 0 auto; display: block; width: 80%;"/> 
 
-This linked list we construct with this node data structure is done so that for a given hypothesis, it only attempts to 
-translate words in the foreign sentence that haven't already been translated by any of the previous hypotheses in the linked list.
-Therefore, each time we add a node to the list we have less words to translates, and so building such a linked list will always terminate. Once we finish building this linked list by running out of phrases of $\mathbf{f}$ to translate into English, 
-we traverse the linked list from the start node to the end node, collecting the English translations, to ultimately 
-come up with a translation of $\mathbf{f}$. 
-
-Thus, our goal is to (1) efficiently construct these linked lists and (2) efficiently search for the best possible translation candidate.  
-
-Let us given an example of the hypothesis data structure in a real linked list.
-Consider the French sentence `un comite de selection a ete constitue`, and suppose we are an all-knowing French-English translator attempting to translate this into English. Since we're all-knowing, we'd 
-know that `un` translates to the English word `a`. We'd write this down as a hypothesis like so. 
+Since we are an all-knowing French-English translator, we know the first thing to translate 
+is `un` which translates to the English word `a`. We'd write this down as a hypothesis like so. 
 <img src="/png/phase_based_models/a.png" style="margin: 0 auto; display: block; width: 50%;"/> 
+
+We color in the first square to indicate that the first word in our foreign sentence has been translated.
 
 Next, we see `comite de selection`, which roughly translates to `committee of selection`. Because we're all-knowing, we know 
 that a better translation is actually `selection committee`. Thus, we'd know that it is better to first 
@@ -168,7 +165,7 @@ and then we translate the phrase `comite de` to the English word `committee`.
 
 <img src="/png/phase_based_models/committee.png" style="margin: 0 auto; display: block; width: 60%;"/> 
 
-At this point, we have 3 words left in the foreign sentence to translate, and we can see that the next the best thing to translate would be `a ete`, because that this phrase roughly translates to the English word `was`. We write this down as a hypothesis. 
+At this point, we have 3 words left in the foreign sentence to translate, and we can see that the next best thing to translate would be `a ete`, because this phrase roughly translates to the English word `was`. We write this down as a hypothesis. 
 
 <img src="/png/phase_based_models/was.png" style="margin: 0 auto; display: block; width: 70%;"/> 
 
@@ -176,11 +173,144 @@ Finally, we have one word left to translate; we see `constitute`, which from the
 
 <img src="/png/phase_based_models/formed.png" style="margin: 0 auto; display: block; width: 80%;"/> 
 
-Traversing the linked list left from right gives us our English translation. We can view our ultimate 
-phrase translation decisions as a set of mappings between the source and target sentences as below.
+Traversing the linked list left from right gives us our English translation. 
 
-<img src="/png/phase_based_models/mapping.png" style="margin: 0 auto; display: block; width: 80%;"/> 
+From this example, we can see that the point of the hypothesis data structure is to enable us to create 
+a linked list data structure that iteratively translates $\mathbf{f}$, one phrase at a time, into English.
+To summarize, this linked list data structure is constructed as follows. 
+
+* Each new hypothesis we append to the linked list will attempt to translate one phrase of $\mathbf{f}$ 
+only using words in $\mathbf{f}$ that haven't already been translated by any of the previous hypotheses.
+
+* Each time we add a node to the list we have less words to translate. Hence building such a linked list will always terminate. 
+
+In our example, we knew what the final translation was going to be. In general, what we will have to do is construct 
+all possible translation options, by building many, many hypotheses and linked lists, and then selecting whichever linked 
+list translation maximizes our probability model. 
+
+## Constructing translation options: Computational intractability
+
+Thus at this point, all we need to do is construct our set of possible phrase translations of the 
+sentence $\mathbf{f}$. It turns out that this is not realistic. 
+
+Doing this requires running a horribly expensive recursive algorithm, with beyond worse than exponential runtime with 
+respect to sentence length.
+To demonstrate this, let us count the number of translation options we would in theory need to construct. To do this, 
+we will need to leverage the following Python function.
+
+```python
+def all_remaining_subphrase(words_translated, sentence):
+    subphrases = []
+    for window_size in range(1, len(sentence) + 1):
+        i = 0
+        while i + window_size <= len(sentence):
+            subphrase = list(range(i, i + window_size))
+            add = True
+            # check if subphrase contains words we already translated.
+            for word in words_translated:
+                if word in subphrase:
+                    add = False
+                    break
+            if add:
+                subphrases.append(subphrase)
+            i += 1
+    return subphrases
+```
+
+One can understand what this function does by reading it, but it might be faster to see what it does by simply 
+looking at one sample run on it. 
+
+```python
+[ins] In [45]: all_remaining_subphrase([], [1, 2, 3, 4])
+Out[45]:
+[[0],
+ [1],
+ [2],
+ [3],
+ [0, 1],
+ [1, 2],
+ [2, 3],
+ [0, 1, 2],
+ [1, 2, 3],
+ [0, 1, 2, 3]]
+```
+That is, given a set of words that have already been translated, it constructs the set of remaining subphrases that need to be translated. 
+We can use it to count the number of translation options that we would need to sift through as below.
+
+```python
+def count_hypothesis_options(words_translated, sentence):
+    count = 0
+
+    if len(words_translated) == len(sentence):
+        return 1
+
+    for subphrase_inds in all_remaining_subphrase(words_translated, sentence):
+        count += count_hypothesis_options(words_translated + subphrase_inds, sentence)
+
+    return count
+```
+Using the above counter, we can determine the relationship between sentence length and the number of translation options
+we would obtain and have to sift through as below.
+```python
+[ins] In [40]: for i in range(1, 12):
+          ...:     print(count_hypothesis_options([], list(range(i))))
+          ...:
+1
+3
+11
+49
+261
+1631
+11743
+95901
+876809
+8877691
+```
+This sequence is actually known on [OEIS](https://oeis.org/A001339) and is given by the formula 
+
+\[
+	a(n) = \sum_{k=0}^{n} (k+1)! \binom{n}{k}
+\]
+
+Since the binomial coefficient itself involves factorials, we see that this algorithm would be at least 
+$O(n!)$ with respect to sentence length.
+One can see how fast this sequence grows by viewing this [precomputed table](https://oeis.org/A001339/b001339.txt) of the first 200 
+values of this sequence. 
+
+Fortunately, a lot of the translation options we'd construct in this fashion turn out to be unnecessary and redundant, 
+and there are a few strategies we can employ to throw away translation options that are weak or redundant. 
+Doing this reduces the number of translation options we have to sift through. 
 
 ## Reducing the search space: Recombination and Pruning
 
+There are two basic strategies we can implement to reduce our search space.
 
+* Recombination
+* Pruning
+
+**Recombination** involves throwing away duplicate translation options whenever possible. When we 
+find that we are working on two duplicate translation options, we simply throw away the weaker option 
+using the phrase-based model for scoring. 
+
+When are two translation options rendundant? We'll answer this with a few examples. 
+Suppose we are translating the Spanish sentence `Este es la verdad.` Then an example of two 
+redundant translation options would be as below. 
+
+<img src="/png/phase_based_models/recombination_1.png" style="margin: 0 auto; display: block; width: 85%;"/> 
+
+In this case, each translation option has so far translated the same exact foreign words, and
+their English translations are identical. 
+Thus we can safely drop whichever translation option has the worst score.
+
+However, recombination can be applied even when the English translations aren't exactly the same. 
+In this example, the two translation options translated the first word differently, but the last two words 
+translated are the same. 
+
+<img src="/png/phase_based_models/recombination_2.png" style="margin: 0 auto; display: block; width: 85%;"/> 
+
+Assuming a trigram language model (thus the language model cares about the last two words when performing scoring), 
+which we do in this case, the rule for recombination is as follows.
+
+* Both translation options must have the so far translated the same foreign words. 
+* The last two English translations in both translation options must match. 
+* The same last foreign word translated must be the same. 
