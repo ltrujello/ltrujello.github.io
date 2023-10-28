@@ -281,7 +281,7 @@ Fortunately, a lot of the translation options we'd construct in this fashion tur
 and there are a few strategies we can employ to throw away translation options that are weak or redundant. 
 Doing this reduces the number of translation options we have to sift through. 
 
-## Reducing the search space: Recombination and Pruning
+## Recombination
 
 There are two basic strategies we can implement to reduce our search space.
 
@@ -314,3 +314,70 @@ which we do in this case, the rule for recombination is as follows.
 * Both translation options must have the so far translated the same foreign words. 
 * The last two English translations in both translation options must match. 
 * The same last foreign word translated must be the same. 
+
+## Pruning
+
+Performing recombination reduces duplicates, but it turns out that there will still be too many translation options. 
+One way to address this issue is to assemble our translation options in a specific way, which involves placing our hypotheses 
+during decoding into **stacks**. 
+
+During decoding, we will create a number of stacks in the following way.
+
+* For decoding a sentence $\mathbf{f}$ with $n$-many words, we will create $(n + 1)$-many stacks.
+* Stack $i$ will contain all hypotheses that have translated $i$-many words. 
+
+Below is an illustration of how we would assemble our translation options into these stacks during decoding. 
+In this example, we are trying to translate the sentence 
+`ella no quiere comer antes de la fiesta`. In the picture we draw 4 stacks, although of course in this case there are actually more stacks. 
+
+<img src="/png/phase_based_models/stacks.png" style="margin: 0 auto; display: block; width: 100%;"/> 
+
+In the first column, we have translated exactly one word from the foreign sentence into English, in the second we have 
+translated two foreign words, etc. Note that when 
+building these stacks during decoding, you don't have to 
+translate in a monotone order (i.e. starting at the beginning of the foreign sentence). In fact, that is not desirable, as sometimes 
+translating phrases requires going out of order (e.g. think of our earlier example where we translated
+`comite de selection` -> `selection committee`).
+
+The purpose of putting our hypotheses into stacks is so that we can perform **pruning**. Pruning allows us to cap 
+the number of hypotheses allowed in each stack. This number can range from 10, 100, 1000, etc., and is known as the 
+`stack size` or `beam size`. This, in essence, is why we call this a beam search, since we are building a large search space 
+but we are limiting the number of search options we will allow ourselves to sift through.
+
+By pruning, we can implement a phrase-based decoder with the following pseudocode. 
+
+```python
+# initialize stacks
+stacks = []
+for _ in range(len(foreign_sentence) + 1):
+    stacks.append([])
+stack[0].append(inital_hypothesis)
+
+for stack in stacks:
+    for hypothesis in stack:
+        for phrase in all_phrase_options(hypothesis): # expand hypothesis
+            if phrase in language_model:
+                new_hypothesis = Hypothesis(phrase)
+                new_hypothesis.prev = hypothesis
+                # try to recombine, otherwise add to stack
+                if can_recombine:
+                    recombine(hypothesis, new_hypothesis)
+                else:
+                    # add new hypothesis, possibly prune stack
+                    stack[num_words_translated].append(new_hypothesis)
+                    if len(stack) > max_stack_size:
+                        prune_stack(stack)
+```
+
+What remains to be answered at this point is: how do we cap the stack size? There are many heuristics on how to prune the hypotheses stacks. The method employed in 
+the original Koehn et. al. paper was to cap the stack size by keeping the hypotheses that have the best **estimated future score**.
+That is, whenever a stack reaches a limit during decoding, and we want to add a new hypothesis to it, we 
+must either
+
+* replace an existing hypothesis in the stack with the new hypothesis if the existing has a smaller future cost
+* throw away the new hypothesis we're trying to add, and leave the stack alone
+
+The choice we make depends on the estimated future cost of all the hypotheses in the stack and the new hypothesis. 
+We keep whichever future cost is lower. 
+
+## Estimated Future Cost
