@@ -140,7 +140,7 @@ This most optimal translation will then be our sentence $\mathbf{e}$.
 In order to easily construct a set of translation options of $\mathbf{f}$, we'll need to use a data structure known as a **hypothesis**. 
 A hypothesis of $\mathbf{f}$ is a node in a linked list that translates 
 one phrase $(f_{i}, f_{i+1}, \dots, f_{i + n})$ in $\mathbf{f}$ into an English phrase. Forming a linked list 
-of a set of hypotheses then allows us to propose one translation option of $\mathbf{f}$ into English.
+of a set of hypotheses then allows us to propose one sentence translation option of $\mathbf{f}$ into English.
 
 To motivate the hypothesis data structure, let us given an example of such a linked list.
 Consider the French sentence `un comite de selection a ete constitue`, 
@@ -153,7 +153,12 @@ Since we are an all-knowing French-English translator, we know the first thing t
 is `un` which translates to the English word `a`. We'd write this down as a hypothesis like so. 
 <img src="/png/phase_based_models/a.png" style="margin: 0 auto; display: block; width: 50%;"/> 
 
-We color in the first square to indicate that the first word in our foreign sentence has been translated.
+Here we'll note a couple of things about the above diagram.
+
+* We initialize this linked list data structure with an **empty hypothesis**. 
+This is emphasized in the above diagram with the empty hypothesis on the left. 
+* We color in the first square to indicate the first word in our foreign sentence has been translated.
+Later, we'll use a different color to differentiate between the most recently translated words by a hypothesis.
 
 Next, we see `comite de selection`, which roughly translates to `committee of selection`. Because we're all-knowing, we know 
 that a better translation is actually `selection committee`. Thus, we'd know that it is better to first 
@@ -217,8 +222,8 @@ def all_remaining_subphrase(words_translated, sentence):
     return subphrases
 ```
 
-One can understand what this function does by reading it, but it might be faster to see what it does by simply 
-looking at one sample run on it. 
+For simplicity, this function simply works on integers, versus actual words and sentences, but the point 
+of this function is so that we can call it and obtain functionality as below. 
 
 ```python
 [ins] In [45]: all_remaining_subphrase([], [1, 2, 3, 4])
@@ -341,7 +346,7 @@ translating phrases requires going out of order (e.g. think of our earlier examp
 
 The purpose of putting our hypotheses into stacks is so that we can perform **pruning**. Pruning allows us to cap 
 the number of hypotheses allowed in each stack. This number can range from 10, 100, 1000, etc., and is known as the 
-`stack size` or `beam size`. This, in essence, is why we call this a beam search, since we are building a large search space 
+**stack size** or **beam size**. This, in essence, is why we call this a beam search, since we are building a large search space 
 but we are limiting the number of search options we will allow ourselves to sift through.
 
 By pruning, we can implement a phrase-based decoder with the following pseudocode. 
@@ -374,10 +379,38 @@ the original Koehn et. al. paper was to cap the stack size by keeping the hypoth
 That is, whenever a stack reaches a limit during decoding, and we want to add a new hypothesis to it, we 
 must either
 
-* replace an existing hypothesis in the stack with the new hypothesis if the existing has a smaller future cost
+* replace an existing hypothesis in the stack with the new hypothesis if the existing has a higher future cost than the new hypothesis
 * throw away the new hypothesis we're trying to add, and leave the stack alone
 
 The choice we make depends on the estimated future cost of all the hypotheses in the stack and the new hypothesis. 
 We keep whichever future cost is lower. 
 
-## Estimated Future Cost
+## Estimated Future Cost 
+
+To compute the future cost of a hypothesis, we need to look at what foreign words have not yet been translated by a
+hypothesis. For example, consider this hypothesis.
+
+<!-- show to eat hypothesis -->
+
+In this example, we see that the foreign words `antes de la fiesta` have yet to be translated by our hypothesis. 
+However, we can have slightly more complicated hypotheses that jump around the sentence. For example, consider 
+this hypothesis.
+
+<!-- to eat before -->
+
+We see that there are actually 2 phrases of foreign words that have yet to be translated. 
+
+In any case, what is clear is that for any hypothesis, there exist a certain number of phrases that have yet to be translated. 
+Therefore, the way we compute the future cost is as follows:
+For each remaining untranslated foreign phrase, we 
+
+* Find the cheapest English translation of the phrase (there could be many; choose the one which the phrase translation 
+  model scores the best).
+* Compute the language model cost of the English translation. 
+* Multiply these quantities (or add these quantities, if working in log-space). The result is the estimated future translation cost for this foreign phrase. 
+* If the hypothesis has multiple untranslated foreign phrases, perform this procedure on each foreign phrase and add up the cost. 
+
+This estimation of the future cost actually ignores the distortion cost, but experiments show that that's mostly okay to ignore.
+Additionally, ignoring the contribution of the distortion also allows us to precompute all of these values into a 
+**future cost table**. Then at decoding time, we can reference this table at any time to lookup 
+
