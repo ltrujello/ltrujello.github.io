@@ -3015,6 +3015,41 @@ specifically with regard to neural translation and computer vision. </p>
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2023-10-19 00:00:00">October 19, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              14 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="phrased-based-translation-model-and-decoder"><a class="toclink" href="2023/10/19/phrased-based-translation-model-and-decoder/">Phrased-Based Translation Model and Decoder</a></h2>
+<p>While IBM models were effective at word alignment, they don't produce the best translation models, since in order to use it for translation one must perform 
+a word-by-word approach. However, when it comes to translation, this isn't the best approach. </p>
+<p>For starters, a word-by-word approach does not take into the context that each word appears in. For example, suppose we are machine that has seen a translation of  "Tienes hambre?" and we are now given "Tienes tarea?" Following a naive maximum-likelihood, word-by-word approach, since we know that 
+"Tienes hambre?" -&gt; "Are you hungry?", we might end up with a translation "Tienes tarea?" -&gt; "Are you homework?" when it should be "Do you have homework?". Conversely, if we flipped our examples we might end up translating "Tienes hambre?" -&gt; "Do you have hungry?" </p>
+
+    <nav class="md-post__action">
+      <a href="2023/10/19/phrased-based-translation-model-and-decoder/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-10-03 00:00:00">October 3, 2023</time></li>
         
         

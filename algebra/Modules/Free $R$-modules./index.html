@@ -3043,17 +3043,15 @@ x = a_1x_1 + a_2x_2 + \dots a_nx_n
 </span></p>
 <p><strong>Examples</strong></p>
 <ul>
-<li>[1.] Consider the <span class="arithmatex">\(R\)</span>-module <span class="arithmatex">\(M_{m,n}(R).\)</span> Observe that
+<li><strong>1.</strong> Consider the <span class="arithmatex">\(R\)</span>-module <span class="arithmatex">\(M_{m,n}(R).\)</span> Observe that
 a basis for this module consists of </li>
 </ul>
-<div class="arithmatex">\[
-\{E_{ij} \mid 1 \le i \le m, 1 \le j \le n\}.
-\]</div>
-<ul>
-<li>[2.] Consider an abelian group <span class="arithmatex">\(G\)</span>. Then as we showed
+<p>$$
+{E_{ij} \mid 1 \le i \le m, 1 \le j \le n}.
+$$
+* <strong>2.</strong> Consider an abelian group <span class="arithmatex">\(G\)</span>. Then as we showed
 before, <span class="arithmatex">\(G\)</span> is technically a <span class="arithmatex">\(\mathbb{Z}\)</span>-module. However, if
-<span class="arithmatex">\(G\)</span> is finite, then it is not a free <span class="arithmatex">\(\ZZ\)</span>-module. </li>
-</ul>
+<span class="arithmatex">\(G\)</span> is finite, then it is not a free <span class="arithmatex">\(\ZZ\)</span>-module. </p>
 <p>Suppose to the contrary that it is, and that <span class="arithmatex">\(S
 = \{x_1, x_2, \dots, x_n\}\)</span> is a linearly independent set
 which forms a basis of <span class="arithmatex">\(G\)</span>. Then if <span class="arithmatex">\(\{o_1, o_2,
@@ -3063,20 +3061,16 @@ which forms a basis of <span class="arithmatex">\(G\)</span>. Then if <span clas
 o_1x_1 + o_2x_2 + \cdots + o_nx_n = 0.
 \]</div>
 <p>Hence, the set <span class="arithmatex">\(\{x_1, x_2, \dots, x_n\}\)</span> is not linearly
-independent, so <span class="arithmatex">\(G\)</span> is not a free <span class="arithmatex">\(\ZZ\)</span>-module.</p>
-<ul>
-<li>[3.] Consider the set <span class="arithmatex">\(R[X]\)</span>. Observe that a suitable
-generating basis is </li>
-</ul>
+independent, so <span class="arithmatex">\(G\)</span> is not a free <span class="arithmatex">\(\ZZ\)</span>-module.
+* <strong>3.</strong> Consider the set <span class="arithmatex">\(R[X]\)</span>. Observe that a suitable
+generating basis is </p>
 <div class="arithmatex">\[
 \{x^n \mid n \in \mathbb{N}\}
 \]</div>
-<p>which is probably something you already knew. </p>
-<ul>
-<li>[4.] Suppose <span class="arithmatex">\(M_1\)</span> and <span class="arithmatex">\(M_2\)</span> are free modules with bases
+<p>which is probably something you already knew.
+* <strong>4.</strong> Suppose <span class="arithmatex">\(M_1\)</span> and <span class="arithmatex">\(M_2\)</span> are free modules with bases
 <span class="arithmatex">\(S_1, S_2\)</span>. Then the set <span class="arithmatex">\(M_1 \oplus M_2\)</span> is a free module,
-since it has a basis </li>
-</ul>
+since it has a basis </p>
 <div class="arithmatex">\[
 \{(x, 0) \mid x \in S_1\} \cup \{(0, y) \mid y \in S_2\}.
 \]</div>
@@ -3158,13 +3152,13 @@ Then
 <span class="arithmatex">\(M/IM\)</span> is a <span class="arithmatex">\(R/I\)</span>-module and is free with basis <span class="arithmatex">\(\pi(S) = 
 \{ \pi(x_j)\}_{j \in J}\)</span>.
 </span></p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[<span class="arithmatex">\(\bm{M/IM}\)</span> is an <span class="arithmatex">\(\bm{R/I}\)</span>-module.]
-First recall that <span class="arithmatex">\(IM\)</span> is a submodule of <span class="arithmatex">\(M\)</span>. Therefore it
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{M/IM}\)</span> is an <span class="arithmatex">\(\bm{R/I}\)</span>-module.</strong> First recall that <span class="arithmatex">\(IM\)</span> is a submodule of <span class="arithmatex">\(M\)</span>. Therefore it
 makes sense to consider the quotient <span class="arithmatex">\(M/IM\)</span>. Then we can
-define a mapping <span class="arithmatex">\(\cdot: R/I \times M/IM \to M/IM\)</span> as follows. Let <span class="arithmatex">\(r
-+ I \in R/I\)</span> and <span class="arithmatex">\(m + IM \in M/IM\)</span>. Then define the mapping as</p>
+define a mapping <span class="arithmatex">\(\cdot: R/I \times M/IM \to M/IM\)</span> as follows. Let $r</li>
+<li>I \in R/I$ and <span class="arithmatex">\(m + IM \in M/IM\)</span>. Then define the mapping as</li>
+</ul>
 <div class="arithmatex">\[\begin{align*}
 (r + I)\cdot(m + IM) &amp;= r(m + IM)\\
 &amp;= rm + rIM\\
@@ -3172,9 +3166,8 @@ define a mapping <span class="arithmatex">\(\cdot: R/I \times M/IM \to M/IM\)</s
 \end{align*}\]</div>
 <p>Since <span class="arithmatex">\(M\)</span> is an <span class="arithmatex">\(R\)</span>-module, <span class="arithmatex">\(rm \in M\)</span> so that <span class="arithmatex">\(rm + IM\)</span> is in
 fact in <span class="arithmatex">\(M/IM\)</span>. The other module properties may be easily
-verified without difficulty by using this mapping. </p>
-<p>\item[<span class="arithmatex">\(\bm{M/IM}\)</span> is free.] 
-Suppose <span class="arithmatex">\(m+ IM\)</span> is an element of <span class="arithmatex">\(M/IM\)</span>. Since <span class="arithmatex">\(\pi: M \to
+verified without difficulty by using this mapping.
+* <strong><span class="arithmatex">\(\bm{M/IM}\)</span> is free.</strong> Suppose <span class="arithmatex">\(m+ IM\)</span> is an element of <span class="arithmatex">\(M/IM\)</span>. Since <span class="arithmatex">\(\pi: M \to
 M/I\)</span> is a surjective mapping, we see that there exists at
 least one <span class="arithmatex">\(m \in M\)</span> such that <span class="arithmatex">\(\pi(m) = m + IM\)</span>. Now since
 <span class="arithmatex">\(m\)</span> is free, there exists a unique representation of <span class="arithmatex">\(m\)</span>
@@ -3198,9 +3191,8 @@ J}a_j\pi(x_j)\)</span> is an element of <span class="arithmatex">\(IM\)</span>. 
 contradiction since none of the elements of
 <span class="arithmatex">\(\{\pi(x_j)\}_{j \in J}\)</span> is allowed to be in <span class="arithmatex">\(IM\)</span>. Hence
 this set generates <span class="arithmatex">\(M/IM\)</span> and is linearly independent, so
-it is a basis.
-\end{description}
-</span></p>
+it is a basis.</p>
+<p></span></p>
 <p>We can introduce an even more useful proposition regarding free
 modules, and more generally all modules. </p>
 <p><span style="display:block" class="proposition">

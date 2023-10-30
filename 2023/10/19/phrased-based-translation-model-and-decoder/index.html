@@ -1,0 +1,3488 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../03/ibm-model-1-statistical-machine-translation-and-alignment/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Phrased-Based Translation Model and Decoder - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phrased-based-translation-model-and-decoder" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Phrased-Based Translation Model and Decoder
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="mydarkscheme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../category_theory/" class="md-tabs__link">
+          
+  
+  Category Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algebra/" class="md-tabs__link">
+          
+  
+  Algebra Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../associahedron/" class="md-tabs__link">
+        
+  
+    
+  
+  Associahedron
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-tabs__link">
+        
+  
+    
+  
+  Tikz-Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-tabs__link">
+        
+  
+    
+  
+  Poly-Rust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Category Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Category Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories, Functors and Natural Transformations.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories, Functors and Natural Transformations.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Introduction%3A%20What%20are%20the%20Foundations%20of%20Math%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introduction: What are the Foundations of Math?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Motivation%20for%20Category%20Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Motivation for Category Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Category%20Theory%20Axioms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Category Theory Axioms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Examples of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Paths%20and%20Diagrams%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Paths and Diagrams in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20and%20Nonexamples%20of%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Examples and Nonexamples of Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Forgetful%2C%20Full%20and%20Faithful%20Functors./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Forgetful, Full and Faithful Functors.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Natural%20Transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Natural Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Monic%2C%20Epics%2C%20and%20Isomorphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Monic, Epics, and Isomorphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Initial%2C%20Terminal%2C%20and%20Zero%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Initial, Terminal, and Zero Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Duality and Categorical Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Duality and Categorical Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/%24%5Cmathcal%7BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 $\mathcal{C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Products%20of%20Categories%2C%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Products of Categories, Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Functor%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Functor Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Vertical%2C%20Horizontal%20Composition%3B%20Interchange%20Laws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Vertical, Horizontal Composition; Interchange Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Slice%20and%20Comma%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Slice and Comma Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Graphs%2C%20Quivers%20and%20Free%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Graphs, Quivers and Free Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Quotient%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Quotient Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Monoids%2C%20Groups%20and%20Groupoids%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Monoids, Groups and Groupoids in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Universal Constructions and Limits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Universal Constructions and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Universal%20Morphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Universal Morphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Representable%20Functors%20and%20Yoneda%27s%20Lemma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Representable Functors and Yoneda's Lemma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Finite Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Coproducts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Finite Coproducts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Arbitrary%20Products%20and%20Coproducts%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Arbitrary Products and Coproducts in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Introduction%20to%20Limits%20and%20Colimits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introduction to Limits and Colimits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Equalizers%20and%20Coequalizers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Equalizers and Coequalizers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Pullbacks%20and%20Pushouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Pullbacks and Pushouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adjunctions.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adjunctions.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Introduction%20to%20Adjunctions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introduction to Adjunctions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Reflective%20Subcategories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Reflective Subcategories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Equivalence%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Equivalence of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Adjoints%20on%20Preorders./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Adjoints on Preorders.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Exponential%20Objects%20and%20Cartesian%20Closed%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Exponential Objects and Cartesian Closed Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Limits and Colimits.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Limits and Colimits.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Every%20Limit%20in%20Set%3B%20Creation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Every Limit in Set; Creation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Inverse%20and%20Direct%20Limits./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Inverse and Direct Limits.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Limits%20from%20Products%2C%20Equalizers%2C%20and%20Pullbacks./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Limits from Products, Equalizers, and Pullbacks.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Preservation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Preservation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Adjoints%20on%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 Adjoints on Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Existence%20of%20Universal%20Morphisms%20and%20Adjoint%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 Existence of Universal Morphisms and Adjoint Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Subobjects%20and%20Quotient%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Subobjects and Quotient Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtered Colimits, Coends, and Kan Extensions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Filtered Colimits, Coends, and Kan Extensions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Filtered%20Colimits%2C%20Coends%2C%20and%20Kan%20Extensions/Filtered%20Categories%20and%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Filtered Categories and Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monoidal Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Monoidal Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoidal%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Monoidal Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/What%20are%20those%20Coherence%20Conditions%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 What are those Coherence Conditions?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Mac%20Lane%27s%20Coherence%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Mac Lane's Coherence Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Braided%20and%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Braided and Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Coherence%20for%20Braided%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Coherence for Braided Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoids%2C%20Groups%2C%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Monoids, Groups, in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Enriched%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.8 Enriched Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Abelian Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Abelian Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Preadditive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Preadditive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Additive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Additive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Preabelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Preabelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Kernels%20and%20Cokernels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Kernels and Cokernels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Abelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Abelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operads
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Operads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/Operads%20on%20Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Operads on Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/General%20Operads%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 General Operads in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/Partial%20Composition%3A%20Restructuring%20Operads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Partial Composition: Restructuring Operads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/The%20Braid%20Groups%20Form%20a%20%28nonsymmetric%29%20Operad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 The Braid Groups Form a (nonsymmetric) Operad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sheaves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Sheaves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Topological%20Presheaves%20and%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Topological Presheaves and Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Abstracting%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Abstracting Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Stalks%20and%20Germs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Stalks and Germs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Persistence Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Persistence Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Persistence%20modules%20on%20%24%5Crr%24./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Persistence modules on $\rr$.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Generalized%20Persistence%20Modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Generalized Persistence Modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Interleaving%20Distances%20via%20Sublinear%20Projections%20and%20Superlinear%20Families/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Interleaving Distances via Sublinear Projections and Superlinear Families
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/General%20Persistence%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 General Persistence Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Permutation%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Permutation Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Homomorphism%20and%20Isomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Homomorphism and Isomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Cyclic%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Cyclic Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Left%20and%20Right%20Cosets%2C%20Lagrange%27s%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Left and Right Cosets, Lagrange's Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Normal%20subgroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Normal subgroups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Quotient%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Quotient Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Isomorphism%20Theorems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Isomorphism Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Group%20Actions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Group Actions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Conjugation%2C%20The%20Class%20Equation%2C%20and%20Cauchy%27s%20Theorem./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Conjugation, The Class Equation, and Cauchy's Theorem.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Sylow%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Sylow Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Fundamental%20Theorem%20of%20Finite%20Abelian%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.12 Fundamental Theorem of Finite Abelian Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ring%20homomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Ring homomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ideals%20and%20Quotient%20Rings./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Ideals and Quotient Rings.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Principal%2C%20Maximal%20and%20Prime%20Ideals./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Principal, Maximal and Prime Ideals.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ring%20of%20Fractions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Ring of Fractions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/PIDs%20and%20Euclidean%20Domains./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 PIDs and Euclidean Domains.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Polynomial%20Rings%20%28for%20Galois%20Theory%29./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Polynomial Rings (for Galois Theory).
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Submodules%2C%20Quotient%20Modules%20and%20Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Submodules, Quotient Modules and Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Generating%20Modules%2C%20Torsions%2C%20Annihilators./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Generating Modules, Torsions, Annihilators.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Cartesian%20Products%20and%20Direct%20Sums.%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Cartesian Products and Direct Sums. 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Exact%20Sequences%20and%20the%20Hom%20Functor./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Exact Sequences and the Hom Functor.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Free%20%24R%24-modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Free $R$-modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../associahedron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associahedron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tikz-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poly-Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phrase-based-model" class="md-nav__link">
+    Phrase-Based Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-based-decoding-hypothesis" class="md-nav__link">
+    Phase Based Decoding: Hypothesis
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructing-translation-options-computational-intractability" class="md-nav__link">
+    Constructing translation options: Computational intractability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recombination" class="md-nav__link">
+    Recombination
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pruning" class="md-nav__link">
+    Pruning
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimated-future-cost" class="md-nav__link">
+    Estimated Future Cost
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../.." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-10-19 00:00:00" class="md-ellipsis">October 19, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              14 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="phrased-based-translation-model-and-decoder">Phrased-Based Translation Model and Decoder</h1>
+<p>While IBM models were effective at word alignment, they don't produce the best translation models, since in order to use it for translation one must perform 
+a word-by-word approach. However, when it comes to translation, this isn't the best approach. </p>
+<p>For starters, a word-by-word approach does not take into the context that each word appears in. For example, suppose we are machine that has seen a translation of  "Tienes hambre?" and we are now given "Tienes tarea?" Following a naive maximum-likelihood, word-by-word approach, since we know that 
+"Tienes hambre?" -&gt; "Are you hungry?", we might end up with a translation "Tienes tarea?" -&gt; "Are you homework?" when it should be "Do you have homework?". Conversely, if we flipped our examples we might end up translating "Tienes hambre?" -&gt; "Do you have hungry?" </p>
+<!-- more -->
+
+<p>It turns out that it is actually easier to translate from a source language to a target language if we perform translation by examining local groups of words--which we call phrases--based on how often we see them together and on what group of words in the target language they tend to be aligned to.</p>
+<p>In order to formulate this, consider more generally the fact that what we seek in terms of a translation model is a conditional probabilistic model <span class="arithmatex">\(p(\mathbf{e} | \mathbf{f})\)</span> where <span class="arithmatex">\(\mathbf{e}\)</span> represents a target language sentence and <span class="arithmatex">\(\mathbf{f}\)</span> represents our source language sentence. This is because if we can obtain such a model, we can compute </p>
+<div class="arithmatex">\[
+    \text{argmax}_{\mathbf{e}} p(\mathbf{e}| \mathbf{f}) 
+\]</div>
+<p>in order to find an optimal translation of a given source language sentence <span class="arithmatex">\(\mathbf{f}\)</span>. Note that by a simple application of Bayes theorem, we can write </p>
+<div class="arithmatex">\[
+\mathrm{argmax}_{\mathbf{e}} p(\mathbf{e}, \mathbf{f}) 
+= 
+\text{argmax}_{\mathbf{e}} \frac{p(\mathbf{f}| \mathbf{e})p(\mathbf{e}) }{p(\mathbf{f}) }
+= 
+\text{argmax}_{\mathbf{e}} p(\mathbf{f}| \mathbf{e})p(\mathbf{e}) 
+\]</div>
+<p>The last expression offers a nice interpretation to our task at hand. It means we must develop a translation model going into the reverse direction (target language to source) and a language model <span class="arithmatex">\(p(\mathbf{e})\)</span>, which from hereon we denote as <span class="arithmatex">\(p_{LM}\)</span>. As a side note, this formulation of <span class="arithmatex">\(p(\mathbf{e}| \mathbf{f})\)</span> is known as the <strong>Noisy Channel</strong> model, as it can be thought of more generally as attempting to decode a given message over a noisy channel. </p>
+<h2 id="phrase-based-model">Phrase-Based Model</h2>
+<p>At this point, we now introduce the phrased-based translation model 
+<span class="arithmatex">\(p(\mathbf{f}| \mathbf{e})\)</span>. Whereas before with IBM models we were partitioning our sentences word-by-word <span class="arithmatex">\(\mathbf{e} = (e_1, \dots, e_n)\)</span>, with the phrase-based approach we partition the sentence by 
+groups of words, known as phrases:</p>
+<div class="arithmatex">\[
+    \mathbf{e} = (\overline{e}_1, \dots, \overline{e}_I)
+\]</div>
+<p>where in the above expression <span class="arithmatex">\(I\)</span> is the number of phrases we divide our sentence into. Note that phrases are denoted with an overline bar, and that we will write <span class="arithmatex">\(\mathbf{e}^I\)</span> to emphasize via <span class="arithmatex">\(I\)</span> that <span class="arithmatex">\(\mathbf{e}\)</span> is a sentence that has some partition <span class="arithmatex">\((\overline{e}_1, \dots, \overline{e}_I)\)</span> relevant to the given context.</p>
+<p>With that said, the phrase-based translation model is given by the expression below.</p>
+<div class="arithmatex">\[ 
+    p(\mathbf{f}^I, \mathbf{e}^I) 
+    = 
+    \prod_{i = 1}^{I}
+    \phi(\overline{f}_i | \overline{e}_i)
+    d(\text{start}_i - \text{end}_{i-1} - 1)
+\]</div>
+<p>where </p>
+<ul>
+<li><span class="arithmatex">\(\phi(\overline{e} | \overline{f})\)</span> is a <strong>phrase translation model</strong> that models the probability a French phrase is translated by 
+an English phrase (Note that the phi symbol is used for "phrase")</li>
+<li><span class="arithmatex">\(\text{start}_i\)</span> denotes the index in the string <span class="arithmatex">\(\mathbf{f}\)</span> that phrase <span class="arithmatex">\(\overline{f}_i\)</span> <em>starts</em> at</li>
+<li><span class="arithmatex">\(\text{end}_i\)</span> denotes the index in the string <span class="arithmatex">\(\mathbf{f}\)</span> that phrase <span class="arithmatex">\(\overline{f}_i\)</span> <em>ends</em> at</li>
+<li><span class="arithmatex">\(d(\text{start}_i - \text{end}_{i-1} - 1)\)</span> is a <strong>distortion model</strong> that takes into account reordering that can occur when performing translation at the phrase level. </li>
+</ul>
+<p>For an initial approach, we can use a simple exponential model <span class="arithmatex">\(d(x) = \alpha^{|x|}\)</span> to model distortion. </p>
+<p>The above model then leads to our calculation that </p>
+<div class="arithmatex">\[\begin{align}
+\mathrm{argmax}_{\mathbf{e}} p(\mathbf{e}, \mathbf{f}) 
+&amp;= 
+\mathrm{argmax}_{\mathbf{e}}
+p(\mathbf{f}^I, \mathbf{e}^I)p_{LM}(\mathbf{e})\\
+&amp;= 
+\mathrm{argmax}_{\mathbf{e}}
+\prod_{i = 1}^{I}
+\phi(\overline{f}_i | \overline{e}_i)
+d(\text{start}_i - \text{end}_{i-1} - 1)
+\prod_{i = 1}^{|\mathbf{e}|}
+p_{LM}(e_i| e_1, \dots, e_{i})
+\end{align}\]</div>
+<p>The above model is how the first successful phrased-based translation model was proposed by Koehn, Och, and Marcu in their 2003 
+paper <em>Statistical Phrase-Based Translation</em>. In the paper, they also introduce the idea of weighting the language model, and setting this weight parameter close to 0.25, to achieve their desired performance. It turned out later that the model could be even further customized by weighting different parts of the function as well.</p>
+<p>To do this, one can specify parameters <span class="arithmatex">\(\lambda_{\phi}\)</span>, 
+<span class="arithmatex">\(\lambda_{d}\)</span>, and <span class="arithmatex">\(\lambda_{LM}\)</span> to control how the phase translation model, distrotion model, and language model contribute to the overall translation model, as follows.</p>
+<div class="arithmatex">\[
+p(\mathbf{f}^I, \mathbf{e}^I)
+=
+\prod_{i = 1}^{I}
+\phi^{\lambda_{\phi}}(\overline{f}_i | \overline{e}_i)
+d^{\lambda_{d}}(\text{start}_i - \text{end}_{i-1} - 1)
+\prod_{i = 1}^{I}
+p_{LM}^{\lambda_{LM}}(e_i| e_1, \dots, e_{i})
+\]</div>
+<p>This formulation of the translation model becomes useful once we additionally notice that 
+<span class="arithmatex">\(\mathrm{argmax}_{\mathbf{e}} p(\mathbf{e}, \mathbf{f})
+= \mathrm{argmax}_{\mathbf{e}} \log(p(\mathbf{e}, \mathbf{f}))\)</span>.
+Doing so, we can then see that we actually just need to maximize the expression below.</p>
+<div class="arithmatex">\[\begin{align}
+\log(p(\mathbf{f}^I, \mathbf{e}^I))
+&amp;=
+\lambda_{\phi}\sum_{i = 1}^{I}
+\phi(\overline{f}_i | \overline{e}_i)\\
+&amp; +
+\lambda_d
+\sum_{i = 1}^{I}
+d(\text{start}_i - \text{end}_{i-1} - 1)\\
+&amp; + 
+\lambda_{LM}
+\sum_{i = 1}^{|\mathbf{e}|}
+p_{LM}(e_i | e_1, \dots, e_{i-1})
+\end{align}\]</div>
+<p>which is actually really nice. The model is now a linear combination of several different features (phrase translation probability, distortion probability, language model). Further, in an implementation context, we can avoid numerical underflow by working in the logarithmic space, which 
+is likely to occur because probability can often be very small numbers. And from this perspective, we can additionally tack on 
+other statistical features and weight them with different parameters to customize the model even further.</p>
+<p>In order to use this model in an implementation context, one has to actually create the phrase translation table 
+<span class="arithmatex">\(\phi(\overline{e},\overline{f})\)</span>. What is nice about this is that this table can be constructed 
+given a parallel corpus dataset, which is usually performed by using a word alignment model. 
+Once this phrase translation table is constructed, we can use the model to actually perform decoding. </p>
+<h2 id="phase-based-decoding-hypothesis">Phase Based Decoding: Hypothesis</h2>
+<p>Using the translation model introduced, we can design a decoding algorithm 
+which employs a <strong>beam search</strong> that finds the best possible 
+translation of a sentence, so long as we have access to</p>
+<ul>
+<li>a phrase translation table <span class="arithmatex">\(\phi(\overline{e} | \overline{f})\)</span></li>
+<li>a language model <span class="arithmatex">\(p_{LM}(\mathbf{e})\)</span></li>
+</ul>
+<p>The main idea of the beam search will be to (1) construct a set of translation options of <span class="arithmatex">\(\mathbf{f}\)</span> into English by partitioning <span class="arithmatex">\(\mathbf{f}\)</span> into phrases and then (2) declare the most optimal translation to be whichever partition optimizes our phrase-based probability model. 
+This most optimal translation will then be our sentence <span class="arithmatex">\(\mathbf{e}\)</span>. </p>
+<p>In order to easily construct a set of translation options of <span class="arithmatex">\(\mathbf{f}\)</span>, we'll need to use a data structure known as a <strong>hypothesis</strong>. 
+A hypothesis of <span class="arithmatex">\(\mathbf{f}\)</span> is a node in a linked list that translates 
+one phrase <span class="arithmatex">\((f_{i}, f_{i+1}, \dots, f_{i + n})\)</span> in <span class="arithmatex">\(\mathbf{f}\)</span> into an English phrase. Forming a linked list 
+of a set of hypotheses then allows us to propose one sentence translation option of <span class="arithmatex">\(\mathbf{f}\)</span> into English.</p>
+<p>To motivate the hypothesis data structure, let us given an example of such a linked list.
+Consider the French sentence <code>un comite de selection a ete constitue</code>, 
+and suppose we are an all-knowing French-English translator attempting to translate this into English.
+We could translate the sentence into English and map the phrases between the sentences like so.</p>
+<p><img src="/png/phase_based_models/mapping.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
+<p>Since we are an all-knowing French-English translator, we know the first thing to translate 
+is <code>un</code> which translates to the English word <code>a</code>. We'd write this down as a hypothesis like so. 
+<img src="/png/phase_based_models/a.png" style="margin: 0 auto; display: block; width: 50%;"/> </p>
+<p>Here we'll note a couple of things about the above diagram.</p>
+<ul>
+<li>We initialize this linked list data structure with an <strong>empty hypothesis</strong>. 
+This is emphasized in the above diagram with the empty hypothesis on the left. </li>
+<li>We color in the first square to indicate the first word in our foreign sentence has been translated.
+Later, we'll use a different color to differentiate between the most recently translated words by a hypothesis.</li>
+</ul>
+<p>Next, we see <code>comite de selection</code>, which roughly translates to <code>committee of selection</code>. Because we're all-knowing, we know 
+that a better translation is actually <code>selection committee</code>. Thus, we'd know that it is better to first 
+translate the French phrase <code>selection</code> to the English phrase <code>selection</code></p>
+<p><img src="/png/phase_based_models/selection.png" style="margin: 0 auto; display: block; width: 50%;"/> </p>
+<p>and then we translate the phrase <code>comite de</code> to the English word <code>committee</code>.</p>
+<p><img src="/png/phase_based_models/committee.png" style="margin: 0 auto; display: block; width: 60%;"/> </p>
+<p>At this point, we have 3 words left in the foreign sentence to translate, and we can see that the next best thing to translate would be <code>a ete</code>, because this phrase roughly translates to the English word <code>was</code>. We write this down as a hypothesis. </p>
+<p><img src="/png/phase_based_models/was.png" style="margin: 0 auto; display: block; width: 70%;"/> </p>
+<p>Finally, we have one word left to translate; we see <code>constitute</code>, which from the context of the sentence we could translate to <code>formed</code>. This is our last hypothesis. </p>
+<p><img src="/png/phase_based_models/formed.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
+<p>Traversing the linked list left from right gives us our English translation. </p>
+<p>From this example, we can see that the point of the hypothesis data structure is to enable us to create 
+a linked list data structure that iteratively translates <span class="arithmatex">\(\mathbf{f}\)</span>, one phrase at a time, into English.
+To summarize, this linked list data structure is constructed as follows. </p>
+<ul>
+<li>
+<p>Each new hypothesis we append to the linked list will attempt to translate one phrase of <span class="arithmatex">\(\mathbf{f}\)</span> 
+only using words in <span class="arithmatex">\(\mathbf{f}\)</span> that haven't already been translated by any of the previous hypotheses.</p>
+</li>
+<li>
+<p>Each time we add a node to the list we have less words to translate. Hence building such a linked list will always terminate. </p>
+</li>
+</ul>
+<p>In our example, we knew what the final translation was going to be. In general, what we will have to do is construct 
+all possible translation options, by building many, many hypotheses and linked lists, and then selecting whichever linked 
+list translation maximizes our probability model. </p>
+<h2 id="constructing-translation-options-computational-intractability">Constructing translation options: Computational intractability</h2>
+<p>Thus at this point, all we need to do is construct our set of possible phrase translations of the 
+sentence <span class="arithmatex">\(\mathbf{f}\)</span>. It turns out that this is not realistic. </p>
+<p>Doing this requires running a horribly expensive recursive algorithm, with beyond worse than exponential runtime with 
+respect to sentence length.
+To demonstrate this, let us count the number of translation options we would in theory need to construct. To do this, 
+we will need to leverage the following Python function.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">all_remaining_subphrase</span><span class="p">(</span><span class="n">words_translated</span><span class="p">,</span> <span class="n">sentence</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">subphrases</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">for</span> <span class="n">window_size</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="k">while</span> <span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span> <span class="o">&lt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>            <span class="n">subphrase</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="p">))</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>            <span class="n">add</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>            <span class="c1"># check if subphrase contains words we already translated.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words_translated</span><span class="p">:</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">subphrase</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>                    <span class="n">add</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>                    <span class="k">break</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            <span class="k">if</span> <span class="n">add</span><span class="p">:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>                <span class="n">subphrases</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">subphrase</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">return</span> <span class="n">subphrases</span>
+</span></code></pre></div>
+<p>For simplicity, this function simply works on integers, versus actual words and sentences, but the point 
+of this function is so that we can call it and obtain functionality as below. </p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[</span><span class="n">ins</span><span class="p">]</span> <span class="n">In</span> <span class="p">[</span><span class="mi">45</span><span class="p">]:</span> <span class="n">all_remaining_subphrase</span><span class="p">([],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">45</span><span class="p">]:</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">[[</span><span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a> <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a> <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a> <span class="p">[</span><span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]</span>
+</span></code></pre></div>
+That is, given a set of words that have already been translated, it constructs the set of remaining subphrases that need to be translated. 
+We can use it to count the number of translation options that we would need to sift through as below.</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">count_hypothesis_options</span><span class="p">(</span><span class="n">words_translated</span><span class="p">,</span> <span class="n">sentence</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words_translated</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">sentence</span><span class="p">):</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="k">return</span> <span class="mi">1</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">for</span> <span class="n">subphrase_inds</span> <span class="ow">in</span> <span class="n">all_remaining_subphrase</span><span class="p">(</span><span class="n">words_translated</span><span class="p">,</span> <span class="n">sentence</span><span class="p">):</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="n">count</span> <span class="o">+=</span> <span class="n">count_hypothesis_options</span><span class="p">(</span><span class="n">words_translated</span> <span class="o">+</span> <span class="n">subphrase_inds</span><span class="p">,</span> <span class="n">sentence</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="k">return</span> <span class="n">count</span>
+</span></code></pre></div>
+Using the above counter, we can determine the relationship between sentence length and the number of translation options
+we would obtain and have to sift through as below.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span><span class="n">ins</span><span class="p">]</span> <span class="n">In</span> <span class="p">[</span><span class="mi">40</span><span class="p">]:</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>          <span class="o">...</span><span class="p">:</span>     <span class="nb">print</span><span class="p">(</span><span class="n">count_hypothesis_options</span><span class="p">([],</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">))))</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>          <span class="o">...</span><span class="p">:</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="mi">1</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="mi">3</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="mi">11</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="mi">49</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="mi">261</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="mi">1631</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="mi">11743</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="mi">95901</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="mi">876809</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="mi">8877691</span>
+</span></code></pre></div>
+This sequence is actually known on <a href="https://oeis.org/A001339">OEIS</a> and is given by the formula </p>
+<div class="arithmatex">\[
+    a(n) = \sum_{k=0}^{n} (k+1)! \binom{n}{k}
+\]</div>
+<p>Since the binomial coefficient itself involves factorials, we see that this algorithm would be at least 
+<span class="arithmatex">\(O(n!)\)</span> with respect to sentence length.
+One can see how fast this sequence grows by viewing this <a href="https://oeis.org/A001339/b001339.txt">precomputed table</a> of the first 200 
+values of this sequence. </p>
+<p>Fortunately, a lot of the translation options we'd construct in this fashion turn out to be unnecessary and redundant, 
+and there are a few strategies we can employ to throw away translation options that are weak or redundant. 
+Doing this reduces the number of translation options we have to sift through. </p>
+<h2 id="recombination">Recombination</h2>
+<p>There are two basic strategies we can implement to reduce our search space.</p>
+<ul>
+<li>Recombination</li>
+<li>Pruning</li>
+</ul>
+<p><strong>Recombination</strong> involves throwing away duplicate translation options whenever possible. When we 
+find that we are working on two duplicate translation options, we simply throw away the weaker option 
+using the phrase-based model for scoring. </p>
+<p>When are two translation options rendundant? We'll answer this with a few examples. 
+Suppose we are translating the Spanish sentence <code>Este es la verdad.</code> Then an example of two 
+redundant translation options would be as below. </p>
+<p><img src="/png/phase_based_models/recombination_1.png" style="margin: 0 auto; display: block; width: 85%;"/> </p>
+<p>In this case, each translation option has so far translated the same exact foreign words, and
+their English translations are identical. 
+Thus we can safely drop whichever translation option has the worst score.</p>
+<p>However, recombination can be applied even when the English translations aren't exactly the same. 
+In this example, the two translation options translated the first word differently, but the last two words 
+translated are the same. </p>
+<p><img src="/png/phase_based_models/recombination_2.png" style="margin: 0 auto; display: block; width: 85%;"/> </p>
+<p>Assuming a trigram language model (thus the language model cares about the last two words when performing scoring), 
+which we do in this case, the rule for recombination is as follows.</p>
+<ul>
+<li>Both translation options must have the so far translated the same foreign words. </li>
+<li>The last two English translations in both translation options must match. </li>
+<li>The same last foreign word translated must be the same. </li>
+</ul>
+<h2 id="pruning">Pruning</h2>
+<p>Performing recombination reduces duplicates, but it turns out that there will still be too many translation options. 
+One way to address this issue is to assemble our translation options in a specific way, which involves placing our hypotheses 
+during decoding into <strong>stacks</strong>. </p>
+<p>During decoding, we will create a number of stacks in the following way.</p>
+<ul>
+<li>For decoding a sentence <span class="arithmatex">\(\mathbf{f}\)</span> with <span class="arithmatex">\(n\)</span>-many words, we will create <span class="arithmatex">\((n + 1)\)</span>-many stacks.</li>
+<li>Stack <span class="arithmatex">\(i\)</span> will contain all hypotheses that have translated <span class="arithmatex">\(i\)</span>-many words. </li>
+</ul>
+<p>Below is an illustration of how we would assemble our translation options into these stacks during decoding. 
+In this example, we are trying to translate the sentence 
+<code>ella no quiere comer antes de la fiesta</code>. In the picture we draw 4 stacks, although of course in this case there are actually more stacks. </p>
+<p><img src="/png/phase_based_models/stacks.png" style="margin: 0 auto; display: block; width: 100%;"/> </p>
+<p>In the first column, we have translated exactly one word from the foreign sentence into English, in the second we have 
+translated two foreign words, etc. Note that when 
+building these stacks during decoding, you don't have to 
+translate in a monotone order (i.e. starting at the beginning of the foreign sentence). In fact, that is not desirable, as sometimes 
+translating phrases requires going out of order (e.g. think of our earlier example where we translated
+<code>comite de selection</code> -&gt; <code>selection committee</code>).</p>
+<p>The purpose of putting our hypotheses into stacks is so that we can perform <strong>pruning</strong>. Pruning allows us to cap 
+the number of hypotheses allowed in each stack. This number can range from 10, 100, 1000, etc., and is known as the 
+<strong>stack size</strong> or <strong>beam size</strong>. This, in essence, is why we call this a beam search, since we are building a large search space 
+but we are limiting the number of search options we will allow ourselves to sift through.</p>
+<p>By pruning, we can implement a phrase-based decoder with the following pseudocode. </p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># initialize stacks</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">stacks</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">foreign_sentence</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">stacks</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">stack</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inital_hypothesis</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">for</span> <span class="n">stack</span> <span class="ow">in</span> <span class="n">stacks</span><span class="p">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">for</span> <span class="n">hypothesis</span> <span class="ow">in</span> <span class="n">stack</span><span class="p">:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">for</span> <span class="n">phrase</span> <span class="ow">in</span> <span class="n">all_phrase_options</span><span class="p">(</span><span class="n">hypothesis</span><span class="p">):</span> <span class="c1"># expand hypothesis</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            <span class="k">if</span> <span class="n">phrase</span> <span class="ow">in</span> <span class="n">language_model</span><span class="p">:</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>                <span class="n">new_hypothesis</span> <span class="o">=</span> <span class="n">Hypothesis</span><span class="p">(</span><span class="n">phrase</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>                <span class="n">new_hypothesis</span><span class="o">.</span><span class="n">prev</span> <span class="o">=</span> <span class="n">hypothesis</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>                <span class="c1"># try to recombine, otherwise add to stack</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>                <span class="k">if</span> <span class="n">can_recombine</span><span class="p">:</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>                    <span class="n">recombine</span><span class="p">(</span><span class="n">hypothesis</span><span class="p">,</span> <span class="n">new_hypothesis</span><span class="p">)</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>                <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>                    <span class="c1"># add new hypothesis, possibly prune stack</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>                    <span class="n">stack</span><span class="p">[</span><span class="n">num_words_translated</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_hypothesis</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_stack_size</span><span class="p">:</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>                        <span class="n">prune_stack</span><span class="p">(</span><span class="n">stack</span><span class="p">)</span>
+</span></code></pre></div>
+<p>What remains to be answered at this point is: how do we cap the stack size? There are many heuristics on how to prune the hypotheses stacks. The method employed in 
+the original Koehn et. al. paper was to cap the stack size by keeping the hypotheses that have the best <strong>estimated future score</strong>.
+That is, whenever a stack reaches a limit during decoding, and we want to add a new hypothesis to it, we 
+must either</p>
+<ul>
+<li>replace an existing hypothesis in the stack with the new hypothesis if the existing has a higher future cost than the new hypothesis</li>
+<li>throw away the new hypothesis we're trying to add, and leave the stack alone</li>
+</ul>
+<p>The choice we make depends on the estimated future cost of all the hypotheses in the stack and the new hypothesis. 
+We keep whichever future cost is lower. </p>
+<h2 id="estimated-future-cost">Estimated Future Cost</h2>
+<p>To compute the future cost of a hypothesis, we need to look at what foreign words have not yet been translated by a
+hypothesis. For example, consider this hypothesis.</p>
+<p><img src="/png/phase_based_models/future_cost_hypo.png" style="margin: 0 auto; display: block; width: 85%;"/> </p>
+<p>In this example, we see that the foreign words <code>antes de la fiesta</code> have yet to be translated by our hypothesis. 
+However, we can have slightly more complicated hypotheses that jump around the sentence. For example, consider 
+this hypothesis.</p>
+<p><img src="/png/phase_based_models/future_cost_hypo_2.png" style="margin: 0 auto; display: block; width: 70%;"/> </p>
+<p>We see that there are actually 2 phrases of foreign words that have yet to be translated. </p>
+<p>In any case, what is clear is that for any hypothesis, there exist a certain number of untranslated phrases in the foreign 
+sentence that need to be translated via additional hypotheses. 
+Therefore, the way we compute the future cost is as follows:
+For each remaining untranslated foreign phrase, we </p>
+<ul>
+<li>Find the cheapest English translation of the phrase (there could be many; choose the one which the phrase translation 
+  model scores the best).</li>
+<li>Compute the language model cost of the English translation. </li>
+<li>Multiply these quantities (or add these quantities, if working in log-space). The result is the estimated future translation cost for this foreign phrase. </li>
+<li>If the hypothesis has multiple untranslated foreign phrases, perform this procedure on each foreign phrase and add up the cost. </li>
+</ul>
+<p>This estimation of the future cost actually ignores the distortion cost, but experiments show that that's mostly okay to ignore.
+Additionally, ignoring the contribution of the distortion also allows us to precompute all of these values into a 
+<strong>future cost table</strong>. Then at decoding time, we can reference this table at any time to estimate 
+the future cost translation for a hypothesis</p>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

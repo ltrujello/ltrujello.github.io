@@ -3046,13 +3046,11 @@ Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(J\)</
 <li>A cone with <span class="arithmatex">\(A\)</span> over <span class="arithmatex">\(F\)</span> corresponds to a natural transformation 
 <span class="arithmatex">\(\phi: \Delta(A) \to F\)</span>, and vice versa. In other words, </li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \text{Cone}(A, F) \cong \nat(\Delta(A), F).
-\]</div>
-<ul>
-<li>A cone with <span class="arithmatex">\(F\)</span> over <span class="arithmatex">\(A\)</span> corresponds to a natural transformation 
-<span class="arithmatex">\(\phi: F \to \Delta(A)\)</span>, and vice versa. In other words, </li>
-</ul>
+$$
+* A cone with <span class="arithmatex">\(F\)</span> over <span class="arithmatex">\(A\)</span> corresponds to a natural transformation 
+<span class="arithmatex">\(\phi: F \to \Delta(A)\)</span>, and vice versa. In other words, </p>
 <div class="arithmatex">\[
 \text{Cone}(F,A) \cong \nat(F, \Delta(A)).
 \]</div>
@@ -3067,16 +3065,14 @@ is an object <span class="arithmatex">\(\Lim F\)</span> equipped with a natural 
 \begin{center}
 <span class="arithmatex">\((\Lim F, u: \Delta(\Lim F) \to F)\)</span> is universal from 
 \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(\Delta\)</span> to <span class="arithmatex">\(\Lim F\)</span>}}.
-\end{center}      <br />
-*  This means that, for any other pair <span class="arithmatex">\((C, v: \Delta(C) \to F)\)</span> with <span class="arithmatex">\(v\)</span> a natural transformation
+\end{center}
+* This means that, for any other pair <span class="arithmatex">\((C, v: \Delta(C) \to F)\)</span> with <span class="arithmatex">\(v\)</span> a natural transformation
 and with <span class="arithmatex">\(C \in \cc\)</span>, there exists a unique morphism <span class="arithmatex">\(h: C \to \Lim F\)</span> in <span class="arithmatex">\(\cc\)</span> such that 
 the diagram below commutes. </p>
-<p><img src="../../../png/category_theory/chapter_3/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<ul>
-<li>By Proposition \ref{proposition:cones_are_natural_transformations}, 
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* By Proposition \ref{proposition:cones_are_natural_transformations}, 
 the morphism <span class="arithmatex">\(u: \Delta(\Lim F) \to F\)</span> forms a cone with <span class="arithmatex">\(\Lim F\)</span> over <span class="arithmatex">\(F\)</span> via 
-a family of morphisms <span class="arithmatex">\(u_i: \Lim F \to F(i)\)</span> for all <span class="arithmatex">\(i \in J\)</span>. </li>
-</ul>
+a family of morphisms <span class="arithmatex">\(u_i: \Lim F \to F(i)\)</span> for all <span class="arithmatex">\(i \in J\)</span>. </p>
 <p>Similarly, any other pair <span class="arithmatex">\((C, v: \Delta(C) \to F)\)</span> is also a cone with <span class="arithmatex">\(C\)</span> over <span class="arithmatex">\(F\)</span> 
 via a family of morphisms <span class="arithmatex">\(v_i: C \to F(i)\)</span> with <span class="arithmatex">\(i \in J\)</span>. </p>
 <p>Thus, the universal property, states that there exists a unique <span class="arithmatex">\(h: C \to \Lim F\)</span> such that the diagram 
@@ -3096,19 +3092,15 @@ such that
 \begin{center}
 <span class="arithmatex">\((\Colim F, u: F \to \Delta(\Colim F))\)</span> is universal from 
 \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{<span class="arithmatex">\(F\)</span> to <span class="arithmatex">\(\Delta\)</span>}}.
-\end{center}    </span></p>
+\end{center}</span></p>
 <p>Now is a good time to use Proposition \ref{proposition:cones_are_natural_transformations} 
 and reinterpret the definition of a colimit as a family of morphisms 
 like we did in the definition of a limit.</p>
 <p><span style="display:block" class="remark">
 We comment on the notation of a limit. </p>
 <ul>
-<li>
-<p>Many people denote the limit of a functor as <span class="arithmatex">\(\Limfrom F\)</span>. </p>
-</li>
-<li>
-<p>Many people denote the colimit of a functor as <span class="arithmatex">\(\Limto F\)</span>. </p>
-</li>
+<li>Many people denote the limit of a functor as <span class="arithmatex">\(\Limfrom F\)</span>.</li>
+<li>Many people denote the colimit of a functor as <span class="arithmatex">\(\Limto F\)</span>.</li>
 </ul>
 <p>The notation makes only sense if one understand the connection between limits and colimits and<br />
 universal morphisms. (Compare the direction of the arrow <span class="arithmatex">\(h\)</span> in the universal diagrams).</p>
@@ -3126,12 +3118,8 @@ the notation anymore complicated than it needs to be.
 Let <span class="arithmatex">\(J = \dd_n\)</span>, the discrete category with <span class="arithmatex">\(n\)</span>-objects. Let <span class="arithmatex">\(F: J \to \cc\)</span> be 
 the functor where <span class="arithmatex">\(F(\bullet_i) = A_i\)</span>. We then have that </p>
 <ul>
-<li>
-<p>The product <span class="arithmatex">\(\prod_{i = 1}^{n}A_i\)</span> is the limit of <span class="arithmatex">\(F\)</span>. </p>
-</li>
-<li>
-<p>The coproduct <span class="arithmatex">\(\coprod_{i = 1}^{n}A_i\)</span> is the colimit of <span class="arithmatex">\(F\)</span>. </p>
-</li>
+<li>The product <span class="arithmatex">\(\prod_{i = 1}^{n}A_i\)</span> is the limit of <span class="arithmatex">\(F\)</span>.</li>
+<li>The coproduct <span class="arithmatex">\(\coprod_{i = 1}^{n}A_i\)</span> is the colimit of <span class="arithmatex">\(F\)</span>.</li>
 </ul>
 <p>When we set <span class="arithmatex">\(J = \dd_{\lambda}\)</span>, with <span class="arithmatex">\(\lambda\)</span> an arbitrary indexing set, we similarly get 
 that the arbitrary product and coproduct definitions are simply instances of 
@@ -3146,13 +3134,11 @@ Let <span class="arithmatex">\(F: J \to \cc\)</span> be a functor. </p>
 <li>If <span class="arithmatex">\(\Lim F\)</span> exists, then for each object <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span>, we have the 
 natural bijection </li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \hom_{\cc}(C, \Lim F) \cong \text{Cone}(C, F)
-\]</div>
-<ul>
-<li>If <span class="arithmatex">\(\Colim F\)</span> exists, then for each object <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span>, 
-we have the natural bijection </li>
-</ul>
+$$
+* If <span class="arithmatex">\(\Colim F\)</span> exists, then for each object <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span>, 
+we have the natural bijection </p>
 <div class="arithmatex">\[
 \hom_{\cc}(\Colim F, C) \cong \text{Cone}(F, C)
 \]</div>
@@ -3183,14 +3169,10 @@ Let <span class="arithmatex">\(F: J \to \cc\)</span> be a functor. Then we may d
 \end{align*}\]</div>
 <p>We have the following two results.</p>
 <ul>
-<li>
-<p><span class="arithmatex">\(\cone(-, F)\)</span> is representable if and only if <span class="arithmatex">\(\Lim F\)</span> exists in <span class="arithmatex">\(\cc\)</span>
-(in which case, this is the representing object)</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\cone(F, -)\)</span> is representable if and only if <span class="arithmatex">\(\Colim F\)</span> exist in <span class="arithmatex">\(\cc\)</span>
-(in which case, this is the representing object)</p>
-</li>
+<li><span class="arithmatex">\(\cone(-, F)\)</span> is representable if and only if <span class="arithmatex">\(\Lim F\)</span> exists in <span class="arithmatex">\(\cc\)</span>
+(in which case, this is the representing object)</li>
+<li><span class="arithmatex">\(\cone(F, -)\)</span> is representable if and only if <span class="arithmatex">\(\Colim F\)</span> exist in <span class="arithmatex">\(\cc\)</span>
+(in which case, this is the representing object)</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof">
@@ -3233,61 +3215,50 @@ limit and colimit.
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>]
-Let <span class="arithmatex">\(F, G: J \to \cc\)</span> be two functors, and suppose <span class="arithmatex">\(F \cong G\)</span> (i.e., there is a
+<li><strong><em>*1.</em></strong>* Let <span class="arithmatex">\(F, G: J \to \cc\)</span> be two functors, and suppose <span class="arithmatex">\(F \cong G\)</span> (i.e., there is a
 natural isomorphism between them). 
-Show that 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[(<em>i</em>.)] If <span class="arithmatex">\(\Lim F\)</span> exists, then <span class="arithmatex">\(\Lim G\)</span> exists and <span class="arithmatex">\(\Lim F \cong \Lim G\)</span>.</p>
-</li>
-<li>
-<p>[(<em>ii</em>.)] If <span class="arithmatex">\(\Colim F\)</span> exists, then <span class="arithmatex">\(\Colim G\)</span> exists and <span class="arithmatex">\(\Colim F \cong \Colim G\)</span>. </p>
-</li>
+Show that<ul>
+<li><strong>(<em>i</em>.)</strong> If <span class="arithmatex">\(\Lim F\)</span> exists, then <span class="arithmatex">\(\Lim G\)</span> exists and <span class="arithmatex">\(\Lim F \cong \Lim G\)</span>.</li>
+<li><strong>(<em>ii</em>.)</strong> If <span class="arithmatex">\(\Colim F\)</span> exists, then <span class="arithmatex">\(\Colim G\)</span> exists and <span class="arithmatex">\(\Colim F \cong \Colim G\)</span>.</li>
 </ul>
-<p>Thus, limits and colimits are invariant up to isomorphism.</p>
-<p>\item[<strong>2.</strong>]
-Prove Proposition \ref{proposition:cones_are_natural_transformations}.</p>
-<p>\item[<strong>3.</strong>] Expand Definition \ref{definition:colimit_of_a_functor}, the definition of a colimit,
-in a similar fashion to how we expanded Definition \ref{definition:limit_of_a_functor}, the definition of a limit.</p>
-<p>\item[<strong>4.</strong>] Use Proposition \ref{proposition:cones_are_natural_transformations}
+</li>
+<li><strong><em>*2.</em></strong>* Prove Proposition \ref{proposition:cones_are_natural_transformations}.</li>
+<li><strong><em>*3.</em></strong>* Expand Definition \ref{definition:colimit_of_a_functor}, the definition of a colimit,
+in a similar fashion to how we expanded Definition \ref{definition:limit_of_a_functor}, the definition of a limit.</li>
+<li><strong><em>*4.</em></strong>* Use Proposition \ref{proposition:cones_are_natural_transformations}
 and Proposition \ref{proposition:universality_bijection} to show that 
-if <span class="arithmatex">\(\Colim F\)</span> exists for a functor <span class="arithmatex">\(F: J \to \cc\)</span>, then we have a natural bijection</p>
+if <span class="arithmatex">\(\Colim F\)</span> exists for a functor <span class="arithmatex">\(F: J \to \cc\)</span>, then we have a natural bijection</li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\cc}(\Colim F, C) \cong \cone(F, C).
 \]</div>
-<p>This then completes the proof of Proposition \ref{proposition:limit_cone_set_natural_bijection}.</p>
-<p>\item[<strong>5.</strong>]
-Use Proposition \ref{proposition:limit_cone_set_natural_bijection}
+<p>This then completes the proof of Proposition \ref{proposition:limit_cone_set_natural_bijection}.
+* <strong><em>*5.</em></strong><em> Use Proposition \ref{proposition:limit_cone_set_natural_bijection}
 (the proof of which you just completed) to prove the first bullet point of 
 Proposition \ref{proposition:representable_if_and_only_if}:
 The functor <span class="arithmatex">\(\cone(-, F): \cc \to **Set**\)</span> is representable if and only if 
-<span class="arithmatex">\(\Lim F\)</span> exists. Use the following steps. </p>
-<ul>
-<li>[(<em>i</em>.)]
-Let <span class="arithmatex">\(\cc\)</span> be a category, <span class="arithmatex">\(F: J \to \cc\)</span> a functor. Recall that we 
-may define the functor </li>
-</ul>
-<div class="arithmatex">\[
+<span class="arithmatex">\(\Lim F\)</span> exists. Use the following steps.
+    * </em><em>(</em>i<em>.)</em>* Let <span class="arithmatex">\(\cc\)</span> be a category, <span class="arithmatex">\(F: J \to \cc\)</span> a functor. Recall that we 
+    may define the functor </p>
+<div class="language-text highlight"><pre><span></span><code>$$
 \overline{F}: J \to \cc\op
-\]</div>
-<p>which acts the same as <span class="arithmatex">\(F\)</span> on objects, but
-if <span class="arithmatex">\(f: i \to j\)</span> is a morphism in <span class="arithmatex">\(J\)</span>, then <span class="arithmatex">\(\overline{F}(f) = F(f)\op\)</span>.</p>
-<p>Show that <span class="arithmatex">\(\Lim F\)</span> exists in <span class="arithmatex">\(\cc\)</span> if and only if
-<span class="arithmatex">\(\Colim \overline{F}\)</span> exists in <span class="arithmatex">\(\cc\op\)</span>.</p>
-<ul>
-<li>[<em>ii</em>.]
-Show that</li>
-</ul>
-<div class="arithmatex">\[
+$$
+
+which acts the same as $F$ on objects, but
+if $f: i \to j$ is a morphism in $J$, then $\overline{F}(f) = F(f)\op$.
+
+Show that $\Lim F$ exists in $\cc$ if and only if
+$\Colim \overline{F}$ exists in $\cc\op$.
+* ***ii*.** Show that
+
+$$
 \cone(-, F) \cong \cone(\overline{F}, -).
-\]</div>
-<p>Then use (<em>i</em>) and the second bullet point of 
+$$
+
+Then use (*i*) and the second bullet point of 
 Proposition \ref{proposition:representable_if_and_only_if}
-to complete the proof.</p>
-<p>\end{itemize}</p>
+to complete the proof.
+</code></pre></div>
 <script src="../../mathjax_helper.js"></script>
 
 

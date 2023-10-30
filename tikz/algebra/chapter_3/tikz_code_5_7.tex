@@ -1,42 +1,42 @@
 \begin{center}
-            \begin{tikzpicture}
-                \filldraw[gray!20] (-3, -1) ellipse (1.5cm and 2cm);
-                \draw (-3, -1) ellipse (1.5cm and 2cm);
-        
-                \filldraw[thick, red!30] (3,0) ellipse (2cm and 3cm);
-                \draw (3,0) ellipse (2cm and 3cm);
-                \filldraw[thick, blue!30] (3,-1) ellipse (1.5cm and 2cm);
-                \draw (3,-1) ellipse (1.5cm and 2cm);
-        
-                \filldraw (2.7, 1.5) circle (0.5mm); 
-                \node at (2.7, 1.8) {$m$};
+\begin{tikzpicture}
+\filldraw[gray!20] (-3, -1) ellipse (1.5cm and 2cm);
+\draw (-3, -1) ellipse (1.5cm and 2cm);
 
-                \filldraw (-2.8, -1) circle (0.5mm); 
-                \node at (-3, -1.5) {$\alpha(m)$};
+\filldraw[thick, red!30] (3,0) ellipse (2cm and 3cm);
+\draw (3,0) ellipse (2cm and 3cm);
+\filldraw[thick, blue!30] (3,-1) ellipse (1.5cm and 2cm);
+\draw (3,-1) ellipse (1.5cm and 2cm);
 
-                \filldraw (2.05, -1) circle (0.5mm); 
-                \node at (3, -1) {$f(\alpha(m))$};
+\filldraw (2.7, 1.5) circle (0.5mm); 
+\node at (2.7, 1.8) {$m$};
 
-                \filldraw (-3, -3) circle (0.5mm);
-                \filldraw (3, -3) circle (0.5mm);
-        
-                \draw[blue,-{Latex[length=3mm]}] (-2.8,-1) to [bend right] (2, -1);
-                \draw[red, -{Latex[length=3mm]}] (2, -1) to [bend right] (-2.8,-1);
-                \draw[red, -{Latex[length=3mm]}] (2.7, 1.5) to [bend
-                right = 55] (-2.8, -1);
+\filldraw (-2.8, -1) circle (0.5mm); 
+\node at (-3, -1.5) {$\alpha(m)$};
 
-                \node at (3, 0.3) {$\im(f)$};
-                \node at (-0.3, 0) {$\alpha$};
-                \node at (-0.3, 2) {$\alpha$};
-                \node at (0, -2.1) {$f$};
-                \node at (-3, 1.3) {$M_1$};
-                \node at (3, 3.3) {$M$};
-                \node at (3, -2.6) {0};
-                \node at (-3, -2.6) {0};
-            \end{tikzpicture}
+\filldraw (2.05, -1) circle (0.5mm); 
+\node at (3, -1) {$f(\alpha(m))$};
 
-            \textit{$\alpha(m)$ and $\alpha(f(\alpha(m)))$ are mapped to
-            the same element. Therefore, their difference is zero,
-            so that $m - f(\alpha(m)) \in \ker(\alpha)$. }
+\filldraw (-3, -3) circle (0.5mm);
+\filldraw (3, -3) circle (0.5mm);
 
-        \end{center}
+\draw[blue,-{Latex[length=3mm]}] (-2.8,-1) to [bend right] (2, -1);
+\draw[red, -{Latex[length=3mm]}] (2, -1) to [bend right] (-2.8,-1);
+\draw[red, -{Latex[length=3mm]}] (2.7, 1.5) to [bend
+right = 55] (-2.8, -1);
+
+\node at (3, 0.3) {$\im(f)$};
+\node at (-0.3, 0) {$\alpha$};
+\node at (-0.3, 2) {$\alpha$};
+\node at (0, -2.1) {$f$};
+\node at (-3, 1.3) {$M_1$};
+\node at (3, 3.3) {$M$};
+\node at (3, -2.6) {0};
+\node at (-3, -2.6) {0};
+\end{tikzpicture}
+
+\textit{$\alpha(m)$ and $\alpha(f(\alpha(m)))$ are mapped to
+the same element. Therefore, their difference is zero,
+so that $m - f(\alpha(m)) \in \ker(\alpha)$. }
+
+\end{center}

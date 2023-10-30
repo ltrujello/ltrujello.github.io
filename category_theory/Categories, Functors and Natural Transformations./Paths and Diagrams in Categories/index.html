@@ -3037,15 +3037,11 @@ Let <span class="arithmatex">\(\cc\)</span> be a category and consider two objec
 of length <span class="arithmatex">\(n\)</span> from <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(B\)</span>
 consists of </p>
 <ul>
-<li>
-<p>distinct objects 
+<li>distinct objects 
 <span class="arithmatex">\(A_1, A_2, \dots, A_{n+1}\)</span>
-with <span class="arithmatex">\(A_1=  A\)</span> and <span class="arithmatex">\(A_{n+1} = B\)</span></p>
-</li>
-<li>
-<p>a chain of morphisms <span class="arithmatex">\(f_1: A_1 \to A_2, \dots, 
-f_{n}: A_{n} \to A_{n+1}\)</span></p>
-</li>
+with <span class="arithmatex">\(A_1=  A\)</span> and <span class="arithmatex">\(A_{n+1} = B\)</span></li>
+<li>a chain of morphisms <span class="arithmatex">\(f_1: A_1 \to A_2, \dots, 
+f_{n}: A_{n} \to A_{n+1}\)</span></li>
 </ul>
 <p>and we say <span class="arithmatex">\(p = f_n \circ \cdots \circ f_1\)</span>. If two paths <span class="arithmatex">\(p = f_n \circ \cdots f_1\)</span> 
 and <span class="arithmatex">\(q = g_m \circ g_{m-1} \circ \cdots \circ g_1\)</span> start and end at the same objects 
@@ -3108,12 +3104,8 @@ And in those situations, we are generally asking: are all such paths equivalent?
 <p>This is something high schoolers ask themselves all the time, and a mistake 
 they make all the time. Let <span class="arithmatex">\(n \ge 2\)</span>. Consider the functions</p>
 <ul>
-<li>
-<p><span class="arithmatex">\(e: \mathbb{N} \to \mathbb{N}\)</span> where <span class="arithmatex">\(f(a) = a^n\)</span> (<span class="arithmatex">\(e\)</span> for exponent)</p>
-</li>
-<li>
-<p><span class="arithmatex">\(p: \mathbb{N}\times \mathbb{N} \to \mathbb{N}\)</span> where  <span class="arithmatex">\(f(a,b) = a + b\)</span> (<span class="arithmatex">\(p\)</span> for plus)</p>
-</li>
+<li><span class="arithmatex">\(e: \mathbb{N} \to \mathbb{N}\)</span> where <span class="arithmatex">\(f(a) = a^n\)</span> (<span class="arithmatex">\(e\)</span> for exponent)</li>
+<li><span class="arithmatex">\(p: \mathbb{N}\times \mathbb{N} \to \mathbb{N}\)</span> where  <span class="arithmatex">\(f(a,b) = a + b\)</span> (<span class="arithmatex">\(p\)</span> for plus)</li>
 </ul>
 <p>Often times, they get confused and think that the paths of the diagram below are equivalent.</p>
 <p><img src="../../../png/category_theory/chapter_1/tikz_code_5_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -3141,7 +3133,7 @@ diagrams.</p>
 <p>{\large <strong>Exercises</strong>
 \vspace{0.2cm}}</p>
 <ul>
-<li>[1.] Consider a category <span class="arithmatex">\(\cc\)</span> with objects <span class="arithmatex">\(A, A_0, \dots, A_n, B, B_0, B_1, \dots, B_m\)</span>.
+<li><strong>1.</strong> Consider a category <span class="arithmatex">\(\cc\)</span> with objects <span class="arithmatex">\(A, A_0, \dots, A_n, B, B_0, B_1, \dots, B_m\)</span>.
 Let <span class="arithmatex">\(A_0 = B_0 = A\)</span> and <span class="arithmatex">\(A_n = B_m = B\)</span>, and suppose we have a family of<br />
 isomorphisms <span class="arithmatex">\(f_i: A_{i-1} \isomarrow A_i\)</span> and <span class="arithmatex">\(g_i: B_{i-1} \isomarrow B_i\)</span> as below. </li>
 </ul>
@@ -3149,7 +3141,7 @@ isomorphisms <span class="arithmatex">\(f_i: A_{i-1} \isomarrow A_i\)</span> and
 Suppose we have another object <span class="arithmatex">\(C\)</span> and isomorphisms <span class="arithmatex">\(\phi_i: A_i \isomarrow C\)</span>,
 <span class="arithmatex">\(\psi_i: B_i \isomarrow C\)</span> with <span class="arithmatex">\(\psi_0 = \phi_0\)</span> and <span class="arithmatex">\(\phi_n = \psi_m\)</span>. 
 Prove that if <span class="arithmatex">\(\phi_{i} \circ f_i = \phi_{i+1}\)</span> 
-and <span class="arithmatex">\(\psi_{i} \circ g_i = \psi_{i+1}\)</span>, then the above diagram is commutative in <span class="arithmatex">\(\cc\)</span>. </p>
+and <span class="arithmatex">\(\psi_{i} \circ g_i = \psi_{i+1}\)</span>, then the above diagram is commutative in <span class="arithmatex">\(\cc\)</span>.</p>
 <script src="../../mathjax_helper.js"></script>
 
 

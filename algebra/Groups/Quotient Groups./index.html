@@ -3028,18 +3028,19 @@ equip this set with a product <span class="arithmatex">\(\cdot\)</span> such tha
 Let's review what this is saying. Basically, if we have a normal
 subgroup <span class="arithmatex">\(H\)</span> of <span class="arithmatex">\(G\)</span>, the set of cosets <span class="arithmatex">\(\{Hg_1, Hg_2, \dots \}\)</span>
 with the product <span class="arithmatex">\(Hg_1 \cdot Hg_2 = H(g_1g_2)\)</span> <strong>forms a group</strong>.</p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[Identity.] To show that this set is a group, we first define the identity
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong>Identity.</strong> To show that this set is a group, we first define the identity
 element to simply be <span class="arithmatex">\(H\)</span>. This is a "trivial" coset, and for
-any <span class="arithmatex">\(Ha\)</span>, where <span class="arithmatex">\(a \in G\)</span>, </p>
+any <span class="arithmatex">\(Ha\)</span>, where <span class="arithmatex">\(a \in G\)</span>, </li>
+</ul>
 <div class="arithmatex">\[\begin{align*}
 (Ha)(H) = Ha \\
 (H)(Ha) = Ha
 \end{align*}\]</div>
 <p>so <span class="arithmatex">\(H\)</span> is a natural and apporopriate choice for an identity as
-it has the property of an identity element.  </p>
-<p>\item[Associativity.] Associativity is derived from the
+it has the property of an identity element.
+* <strong>Associativity.</strong> Associativity is derived from the
 associativity of our group <span class="arithmatex">\(G\)</span> itself. Observe that for any
 <span class="arithmatex">\(a, b, c \in G\)</span> we have </p>
 <div class="arithmatex">\[\begin{align*}
@@ -3047,12 +3048,12 @@ associativity of our group <span class="arithmatex">\(G\)</span> itself. Observe
 [(Ha)(Hb)](Hc) = [H(ab)]Hc = H(abc).
 \end{align*}\]</div>
 <p>Therefore <span class="arithmatex">\((Ha)[ (Hb)(Hc)] = [(Ha)(Hb)](Hc)\)</span> for all <span class="arithmatex">\(a, b,
-c \in G\)</span>, so the product relation is associative.</p>
-<p>\item[Closedness.] The result of our proposed product is
+c \in G\)</span>, so the product relation is associative.
+* <strong>Closedness.</strong> The result of our proposed product is
 always a coset itself (<span class="arithmatex">\(Ha \cdot Hb = H(ab)\)</span>), and since 
 <span class="arithmatex">\(G/H\)</span> is a set of all <span class="arithmatex">\(H\)</span> cosets we see that this set is
-closed under <span class="arithmatex">\(\cdot\)</span>.</p>
-<p>\item[Inverses.] For any <span class="arithmatex">\(Ha \in G/H\)</span>, where <span class="arithmatex">\(a \in G\)</span>, we
+closed under <span class="arithmatex">\(\cdot\)</span>.
+* <strong>Inverses.</strong> For any <span class="arithmatex">\(Ha \in G/H\)</span>, where <span class="arithmatex">\(a \in G\)</span>, we
 see that the inverse element is <span class="arithmatex">\(Ha^{-1}\)</span>, since </p>
 <div class="arithmatex">\[\begin{align*}
 (Ha)(Ha^{-1}) = H(aa^{-1}) = H\\
@@ -3062,9 +3063,8 @@ see that the inverse element is <span class="arithmatex">\(Ha^{-1}\)</span>, sin
 our proposed inverse makes sense.
 Note that
 <span class="arithmatex">\(Ha^{-1} \in G/H\)</span> since <span class="arithmatex">\(a^{-1} \in G\)</span>, so an inverse
-element not only exists but it also exists in <span class="arithmatex">\(G/H\)</span>
-\end{description}
-All together, this allows us to observe that we have a group
+element not only exists but it also exists in <span class="arithmatex">\(G/H\)</span></p>
+<p>All together, this allows us to observe that we have a group
 structure, so long as <span class="arithmatex">\(H \normal G\)</span>.
 </span>
 {\color{purple}(Why do we need this
@@ -3128,18 +3128,18 @@ Thus observe that for <span class="arithmatex">\(aH, bH \in G/H\)</span>, we hav
 <p>Thus the set <span class="arithmatex">\(G/H\)</span> must be abelian.
 \
 \
-<strong>The answer to the second question is \textbf{no, not always}</strong>. If <span class="arithmatex">\(G/H\)</span> is abelian, 
+<strong>The answer to the second question is \textbf{no, not always}}. If <span class="arithmatex">\(G/H\)</span> is abelian, 
 we know that 
 $$
 (aH)(bH) = (bH)(aH) \implies (ab)H = (ba)H.
 $$ 
-for all <span class="arithmatex">\(a, b \in G\)</span>. However, this only guarantees <strong>set equality</strong>, 
+for all <span class="arithmatex">\(a, b \in G\)</span>. However, this only guarantees \textbf{set equality}, 
 not a term-by-term equality (in which case the group would be abelian). 
-An example of this is <span class="arithmatex">\(D_{6}\)</span> with the subgroup <span class="arithmatex">\(H = \{1, r, r^2\}.\)</span>
+An example of this is <span class="arithmatex">\(D_{6**\)</span> with the subgroup <span class="arithmatex">\(H = \{1, r, r^2\}.\)</span>
 In this case <span class="arithmatex">\(H \unlhd D_6\)</span> because all the left cosets are <span class="arithmatex">\(H, sH\)</span> and therefore 
 <span class="arithmatex">\([D_{2n}: H] = 2\)</span> (Hence <span class="arithmatex">\(H \normal G\)</span> by the previous proposition). In addition, 
 <span class="arithmatex">\(H(sH) = sH=  sH(H)\)</span>, <span class="arithmatex">\(sH(sH) = s^2H = (sH)sH\)</span>, so <span class="arithmatex">\(G/H\)</span> is abelian, but the set <span class="arithmatex">\(D_{2n}\)</span>
-is itself not an abelian group. Thus, <strong>it is possible for
+is itself not an abelian group. Thus, </strong>it is possible for
 <span class="arithmatex">\(G/H\)</span> to be ableian while <span class="arithmatex">\(G\)</span> itself is not abelian **
 \
 \
@@ -3147,7 +3147,7 @@ Another fun example for when the quotient group <span class="arithmatex">\(G/H\)
 even though the group <span class="arithmatex">\(G\)</span> is abelian, is the following.
 \
 \
-</strong>Example.**
+<strong>Example.</strong>
 Let </p>
 <div class="arithmatex">\[
 G = \left\{
@@ -3164,9 +3164,9 @@ a &amp; b \\
 \mid c \in \mathbb{R} 
 \right\}.   
 \]</div>
-<p><span class="arithmatex">\(G\)</span> is subset of <span class="arithmatex">\(GL_2(\mathbb{R})\)</span> and <span class="arithmatex">\(H\)</span> is a subgroup of <span class="arithmatex">\(G\)</span>.
-\begin{description}
-\item[<span class="arithmatex">\(\bm{H \normal G}\)</span>.] First we'll show that <span class="arithmatex">\(H\)</span> is normal
+<p><span class="arithmatex">\(G\)</span> is subset of <span class="arithmatex">\(GL_2(\mathbb{R})\)</span> and <span class="arithmatex">\(H\)</span> is a subgroup of <span class="arithmatex">\(G\)</span>.</p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{H \normal G}\)</span>.</strong> First we'll show that <span class="arithmatex">\(H\)</span> is normal
 to <span class="arithmatex">\(G\)</span>. Thus let <span class="arithmatex">\(x \in G\)</span>, so that 
 $
 x =         \begin{pmatrix}
@@ -3182,7 +3182,8 @@ h = \begin{pmatrix}
 0 &amp; 1  <br />
 \end{pmatrix}
 $
-for some <span class="arithmatex">\(c \in \mathbb{R}\)</span>. Then observe that </p>
+for some <span class="arithmatex">\(c \in \mathbb{R}\)</span>. Then observe that </li>
+</ul>
 <div class="arithmatex">\[\begin{align*}
 xhx^{-1} &amp;= 
 \begin{pmatrix}
@@ -3216,8 +3217,8 @@ a &amp; b \\
 \end{pmatrix} \in H.
 \end{align*}\]</div>
 <p>Therefore, we have that <span class="arithmatex">\(xhx^{-1} \in H\)</span> for all <span class="arithmatex">\(H\)</span>, which
-implies that <span class="arithmatex">\(H\)</span> is a normal subgroup of <span class="arithmatex">\(G\)</span>. </p>
-<p>\item[<span class="arithmatex">\(\bm{G/H}\)</span> is abelian.] Now we'll show that <span class="arithmatex">\(G/H\)</span> is an
+implies that <span class="arithmatex">\(H\)</span> is a normal subgroup of <span class="arithmatex">\(G\)</span>.
+* <strong><span class="arithmatex">\(\bm{G/H}\)</span> is abelian.</strong> Now we'll show that <span class="arithmatex">\(G/H\)</span> is an
 abelian group. Firstly, what does it mean for a quotient group to
 abelian? Well, it would mean that for any <span class="arithmatex">\(x, y \in G\)</span> we have
 that </p>
@@ -3354,8 +3355,7 @@ criteria for set memberships are identical; they just have
 different variables, but that of course does not change their
 members. Therefore we see that <span class="arithmatex">\(Hxy = Hyx\)</span> for all <span class="arithmatex">\(x, y \in G\)</span>,
 which proves that <span class="arithmatex">\(G/H\)</span> is an abelian group, even though <span class="arithmatex">\(G\)</span> nor
-<span class="arithmatex">\(H\)</span> are abelian. </p>
-<p>\end{description}</p>
+<span class="arithmatex">\(H\)</span> are abelian.</p>
 <script src="../../mathjax_helper.js"></script>
 
 

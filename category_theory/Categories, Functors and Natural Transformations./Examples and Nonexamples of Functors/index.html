@@ -3292,12 +3292,8 @@ Recall that a <strong>Lie Algebra</strong> <span class="arithmatex">\(\mathfrak{
 <span class="arithmatex">\([-, -]: \mathfrak{g}\times \mathfrak{g} \to \mathfrak{g}\)</span>
 such that </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\([x, y] = -[y, x]\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\([x, [y, z]] + [y, [z, x]] + [z, [x,y]] = 0\)</span>. </p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\([x, y] = -[y, x]\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\([x, [y, z]] + [y, [z, x]] + [z, [x,y]] = 0\)</span>.</li>
 </ul>
 <p>Condition (2) is referred to as the <strong>Jacobi identity</strong>, and many 
 familiar operations on vector spaces satisfy (1) and (2). For example, the cross 
@@ -3419,19 +3415,20 @@ P(f)(S) = \{f(x) \mid x \in S\}.
 \]</div>
 <p>which is clearly in <span class="arithmatex">\(\mathcal{P}(Y)\)</span>.
 Now we must show that this function
-respects identity and composition properties.
-\begin{description}
-\item[Identity.] Consider the identity function 
+respects identity and composition properties.</p>
+<ul>
+<li><strong>Identity.</strong> Consider the identity function 
 <span class="arithmatex">\(\id_X: X \to X\)</span> on a set <span class="arithmatex">\(X\)</span>. 
-Then observe that for any <span class="arithmatex">\(S \in \mathcal{P}X\)</span>, we have that  </p>
+Then observe that for any <span class="arithmatex">\(S \in \mathcal{P}X\)</span>, we have that  </li>
+</ul>
 <div class="arithmatex">\[
 \mathcal{P}(\id_X)(S) 
 =
 \{\id_X(x) \mid x \in X\} = S.
 \]</div>
 <p>Therefore, <span class="arithmatex">\(\mathcal{P}(\id_X) = 1_{\mathcal{P}X}\)</span> so
-that <span class="arithmatex">\(\mathcal{P}\)</span> respects identities. </p>
-<p>\item[Composition.] Let <span class="arithmatex">\(X, Y, Z\)</span> be sets and <span class="arithmatex">\(f: X \to Y\)</span>
+that <span class="arithmatex">\(\mathcal{P}\)</span> respects identities.
+* <strong>Composition.</strong> Let <span class="arithmatex">\(X, Y, Z\)</span> be sets and <span class="arithmatex">\(f: X \to Y\)</span>
 and <span class="arithmatex">\(g: Y \to Z\)</span> be functions. Let <span class="arithmatex">\(S \in \mathcal{P}(X)\)</span>.
 Observe that </p>
 <div class="arithmatex">\[\begin{align*}
@@ -3445,9 +3442,8 @@ Observe that </p>
 \end{align*}\]</div>
 <p>Therefore we see that <span class="arithmatex">\(\mathcal{P}(g \circ f) =
 \mathcal{P}(g) \circ \mathcal{P}(f),\)</span> so that
-<span class="arithmatex">\(\mathcal{P}\)</span> describes a functor from <span class="arithmatex">\(\Set\)</span> to <span class="arithmatex">\(\Set\)</span>.
-\end{description}
-</span></p>
+<span class="arithmatex">\(\mathcal{P}\)</span> describes a functor from <span class="arithmatex">\(\Set\)</span> to <span class="arithmatex">\(\Set\)</span>.</p>
+<p></span></p>
 <p>As we just encountered a mass of different examples of functors from 
 different fields, one might wonder: are there other mathematical constructions 
 which simply do not behave exactly as a functor? The answer is yes, although 
@@ -3546,33 +3542,21 @@ Hence this cannot define a functor <span class="arithmatex">\(F: \Set \to \top\)
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[(<em>i</em>.)]
-Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets. Regard each set as a discrete category. 
-Interpret what a functor <span class="arithmatex">\(F: X \to Y\)</span> means in this case.</p>
-</li>
-<li>
-<p>[(<em>ii</em>.)] 
-Let <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(H\)</span> be two groups. Regard each group as a one-object 
+<li><strong><em>*1.</em></strong>*<ul>
+<li><strong>(<em>i</em>.)</strong> Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets. Regard each set as a discrete category. 
+Interpret what a functor <span class="arithmatex">\(F: X \to Y\)</span> means in this case.</li>
+<li><strong>(<em>ii</em>.)</strong> Let <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(H\)</span> be two groups. Regard each group as a one-object 
 category whose morphisms sets correspond to their group elements, with composition 
 their group product.
-Interpret what a functor <span class="arithmatex">\(F: G \to H\)</span> means in this case.</p>
-</li>
-<li>
-<p>[(<em>iii</em>.)] 
-Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be a pair of thin categories. Interpret 
+Interpret what a functor <span class="arithmatex">\(F: G \to H\)</span> means in this case.</li>
+<li><strong>(<em>iii</em>.)</strong> Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be a pair of thin categories. Interpret 
 what a functor <span class="arithmatex">\(F: X \to Y\)</span> means in this case. (Use (<em>i</em>) 
-to get you started.) </p>
-</li>
+to get you started.)</li>
 </ul>
-<p>\vspace{0.2cm}</p>
-<p>\item[<strong>2.</strong>]
-Let <span class="arithmatex">\(G\)</span> be a group. Then for any two elements <span class="arithmatex">\(a, b \in G\)</span>, we
-define the <strong>commutator</strong> of <span class="arithmatex">\(a, b\)</span> to be the element </p>
+</li>
+<li><strong><em>*2.</em></strong><em> Let <span class="arithmatex">\(G\)</span> be a group. Then for any two elements <span class="arithmatex">\(a, b \in G\)</span>, we
+define the </em><em>commutator</em>* of <span class="arithmatex">\(a, b\)</span> to be the element </li>
+</ul>
 <div class="arithmatex">\[
 aba^{-1}b^{-1}.
 \]</div>
@@ -3593,9 +3577,8 @@ F(G) = G/[G,G]
 \]</div>
 <p>Deduce the action of <span class="arithmatex">\(F\)</span> on the morphism of <span class="arithmatex">\(\grp\)</span> 
 (i.e., the group homomorphisms.) and show that it is well-defined.
-\vspace{0.2cm}</p>
-<p>\item[<strong>3.</strong>]
-Let <span class="arithmatex">\(R\)</span> be a unital ring. Recall that <span class="arithmatex">\(GL_n(R)\)</span> is the group consisting of 
+\vspace{0.2cm}
+* <strong><em>*3.</em></strong>* Let <span class="arithmatex">\(R\)</span> be a unital ring. Recall that <span class="arithmatex">\(GL_n(R)\)</span> is the group consisting of 
 <span class="arithmatex">\(n \times n\)</span> matrices with entries in <span class="arithmatex">\(K\)</span>. Show that this construction more 
 generally is that of a functor</p>
 <div class="arithmatex">\[
@@ -3611,8 +3594,8 @@ R^{\times} =\{ u \in R \mid ur = ru = 1 \text{ for some } r\in R\}.
 (-)^{\times}: \ring \to \grp.
 \]</div>
 <p>We will see in the next section that there is an interesting 
-relationship between these two functors.</p>
-<p>\item[<strong>4.</strong>] Recall the category <span class="arithmatex">\(\Set_{FTO}\)</span> 
+relationship between these two functors.
+* <strong><em>*4.</em></strong>* Recall the category <span class="arithmatex">\(\Set_{FTO}\)</span> 
 is the category whose objects are sets and whose morphisms are functions 
 with the finite-to-one property (See Exercise 1.3.3). While we saw 
 that <span class="arithmatex">\(\text{FinC}: \Set \to \top\)</span> where </p>
@@ -3622,73 +3605,66 @@ X \mapsto (X, \tau^X_{FC})
 <p>does <strong>not</strong> define a functor, show that upon changing the domain<br />
 category from <span class="arithmatex">\(\Set\)</span> to <span class="arithmatex">\(\Set_{FTO}\)</span>, it <strong>does</strong> 
 define a functor <span class="arithmatex">\(\text{FinC}: \Set_{FTO} \to \top\)</span>.
-\vspace{0.2cm}</p>
-<p>\item[<strong>5.</strong>]</p>
-<ul>
-<li>[(<em>i</em>.)]
-Let <span class="arithmatex">\(X = \{x_1, x_2, \dots, x_n\}\)</span> be a finite set. With such 
-a finite set, we can
-pick a field <span class="arithmatex">\(k\)</span> and build <span class="arithmatex">\(X\)</span> into a finite-dimensional 
-vector space <span class="arithmatex">\(V_X\)</span> over <span class="arithmatex">\(k\)</span>. Explicitly, we can create the vector<br />
-space</li>
-</ul>
-<div class="arithmatex">\[
+\vspace{0.2cm}
+* <strong><em>*5.</em></strong><em>
+    * </em><em>(</em>i<em>.)</em>* Let <span class="arithmatex">\(X = \{x_1, x_2, \dots, x_n\}\)</span> be a finite set. With such 
+    a finite set, we can
+    pick a field <span class="arithmatex">\(k\)</span> and build <span class="arithmatex">\(X\)</span> into a finite-dimensional 
+    vector space <span class="arithmatex">\(V_X\)</span> over <span class="arithmatex">\(k\)</span>. Explicitly, we can create the vector<br />
+    space</p>
+<div class="language-text highlight"><pre><span></span><code>$$
 V_X= \{c_1x_1 + \cdots + c_nx_n \mid c_i \in k\}.
-\]</div>
-<p>We define addition in the intuitive way of adding coefficients of the 
-same basis, so this is truly a vector space. Note that when <span class="arithmatex">\(k = \rr\)</span>, 
-we get that <span class="arithmatex">\(V_X \cong \rr^n\)</span>. </p>
-<p>Prove that this process is functorial. That is, show that the functor </p>
-<div class="arithmatex">\[
+$$
+
+We define addition in the intuitive way of adding coefficients of the 
+same basis, so this is truly a vector space. Note that when $k = \rr$, 
+we get that $V_X \cong \rr^n$.
+
+Prove that this process is functorial. That is, show that the functor
+
+$$
 F: \finset \to \vect_k \qquad F(X) = V_X
-\]</div>
-<p>is a functor. </p>
-<ul>
-<li>[(<em>ii</em>).]
-From any set <span class="arithmatex">\(X\)</span>, we may construct the <strong>free group</strong> <span class="arithmatex">\(F(X)\)</span> generated 
-by <span class="arithmatex">\(X\)</span>. The elements of <span class="arithmatex">\(F(X)\)</span> are (1) the elements of <span class="arithmatex">\(X\)</span>, (2) a new 
-element <span class="arithmatex">\(e\)</span>, and (3) all elements <span class="arithmatex">\(xy\)</span> whenever <span class="arithmatex">\(x, y \in X\)</span>. 
-In this way, <span class="arithmatex">\(F(X)\)</span> is a group with the product being string concatenation, 
-and we require that <span class="arithmatex">\(xe = x = ex\)</span>. 
-. Below, two words (elements of <span class="arithmatex">\(F(X)\)</span>) are combined.        </li>
-</ul>
-<div class="arithmatex">\[
+$$
+
+is a functor.
+* **(*ii*).** From any set $X$, we may construct the **free group** $F(X)$ generated 
+by $X$. The elements of $F(X)$ are (1) the elements of $X$, (2) a new 
+element $e$, and (3) all elements $xy$ whenever $x, y \in X$. 
+In this way, $F(X)$ is a group with the product being string concatenation, 
+and we require that $xe = x = ex$. 
+. Below, two words (elements of $F(X)$) are combined.
+
+$$
 (x^2yz^{-1}) \cdot (zy^2x) = x^2y^2x.
-\]</div>
-<p>Show that we have a functor <span class="arithmatex">\(F: \Set \to \grp\)</span> where 
-sets are mapped to their free groups, that is, <span class="arithmatex">\(X \mapsto F(X)\)</span>.  </p>
-<ul>
-<li>[(<em>iii</em>).]
-For any set <span class="arithmatex">\(X\)</span>, we can build the <strong>free ring</strong> <span class="arithmatex">\((R\{X\}, +, \cdot)\)</span> 
-as follows. Let <span class="arithmatex">\((F(X), \cdot)\)</span> be the free group with the added relation that 
-<span class="arithmatex">\(xy = yx\)</span> for any <span class="arithmatex">\(x, y  \in F(X)\)</span>. We can then define</li>
-</ul>
-<div class="arithmatex">\[
+$$
+
+Show that we have a functor $F: \Set \to \grp$ where 
+sets are mapped to their free groups, that is, $X \mapsto F(X)$.
+* **(*iii*).** For any set $X$, we can build the **free ring** $(R\{X\}, +, \cdot)$ 
+as follows. Let $(F(X), \cdot)$ be the free group with the added relation that 
+$xy = yx$ for any $x, y  \in F(X)$. We can then define
+
+$$
 R\{X\} = \left\{ \sum_{x_i \in F(X)} x_i^{n_i} \mid \right\}
-\]</div>
-<p><strong>Note:</strong> This example becomes particularly important later. 
-It can also be generalized to functors <span class="arithmatex">\(F:  \Set \to \mon\)</span>, 
-<span class="arithmatex">\(F: \Set \to \ring\)</span>, and other algebraic systems, 
-since sets can also be turned into free monoids, free rings, or other 
-free "objects."
-\vspace{0.2cm}</p>
-<p>\item[<strong>6.</strong>]
-Let <span class="arithmatex">\(V\)</span> be a vector space over a field <span class="arithmatex">\(k\)</span>. 
+$$
+</code></pre></div>
+<ul>
+<li><strong><em>*6.</em></strong><em> Let <span class="arithmatex">\(V\)</span> be a vector space over a field <span class="arithmatex">\(k\)</span>. 
 Recall that we can associate <span class="arithmatex">\(V\)</span> with its 
-<strong>projective space</strong> <span class="arithmatex">\(P(V)\)</span> which is defined as the set of equivalence 
+</em><em>projective space</em>* <span class="arithmatex">\(P(V)\)</span> which is defined as the set of equivalence 
 classes of element in <span class="arithmatex">\(V\)</span>, subject to the relation <span class="arithmatex">\(v \sim w\)</span> if <span class="arithmatex">\(v = \lambda w\)</span> 
-for some nonzero <span class="arithmatex">\(\lambda \in k\)</span>. That is,</p>
+for some nonzero <span class="arithmatex">\(\lambda \in k\)</span>. That is,</li>
+</ul>
 <div class="arithmatex">\[
 P(V) =  \Big\{[v] \mid v \in V \Big\}
 \]</div>
 <p>where <span class="arithmatex">\([v]\)</span> denotes the equivalence class of <span class="arithmatex">\(v\)</span>. Show that this process 
 is functorial, so that we have a functor </p>
-<div class="arithmatex">\[
+<p>$$
 P: \vect_k \to \Set.
-\]</div>
-<p>\item[<strong>7.</strong>]
-Let <span class="arithmatex">\(R\)</span> be a ring with ideal <span class="arithmatex">\(I\)</span>. Recall that we can construct the 
-<strong>radical of the ideal <span class="arithmatex">\(I\)</span></strong> as the ideal </p>
+$$
+* <strong><em>*7.</em></strong><em> Let <span class="arithmatex">\(R\)</span> be a ring with ideal <span class="arithmatex">\(I\)</span>. Recall that we can construct the 
+</em><em>radical of the ideal <span class="arithmatex">\(I\)</span></em>* as the ideal </p>
 <div class="arithmatex">\[
 \sqrt{I} = \{r \in R \mid r^n \in I \text{ for some } n \ge 1  \}.
 \]</div>
@@ -3697,26 +3673,23 @@ Let <span class="arithmatex">\(R\)</span> be a ring with ideal <span class="arit
 \sqrt{-}: **Ideals**(R) \to **Ideals**(R)    
 \]</div>
 <p>where <span class="arithmatex">\(**Ideals**(R)\)</span> is the partial order of ideals on <span class="arithmatex">\(R\)</span>, 
-whose ordering is given by subset containment. </p>
-<p>\item[<strong>8.</strong>] 
-Let <span class="arithmatex">\(X\)</span> be a topological space, and denote <span class="arithmatex">\(\open(X)\)</span> as the category 
+whose ordering is given by subset containment.
+* <strong><em>*8.</em></strong>* Let <span class="arithmatex">\(X\)</span> be a topological space, and denote <span class="arithmatex">\(\open(X)\)</span> as the category 
 where the objects are open sets <span class="arithmatex">\(U \subset X\)</span> and morphisms are inclusion morphisms. 
 Create a functor </p>
 <div class="arithmatex">\[
 F: \open(X) \to \Set  
 \]</div>
 <p>where on objects <span class="arithmatex">\(F(U) = \{f: U \to \rr \mid f \text{ is continuous}\}\)</span>. That is, how 
-should <span class="arithmatex">\(F\)</span> act on the morphisms for this to be a functor?</p>
-<p>\item[<strong>9.</strong>] 
-Let <span class="arithmatex">\(k\)</span> be a field. With each field, we may associate <span class="arithmatex">\(k\)</span> with the category 
+should <span class="arithmatex">\(F\)</span> act on the morphisms for this to be a functor?
+* <strong><em>*9.</em></strong>* Let <span class="arithmatex">\(k\)</span> be a field. With each field, we may associate <span class="arithmatex">\(k\)</span> with the category 
 <span class="arithmatex">\(\vect_k\)</span> which consists of finite dimensional vector spaces <span class="arithmatex">\(V\)</span> 
 over <span class="arithmatex">\(k\)</span>. Is this process functorial? That is, do we have a functor </p>
 <div class="arithmatex">\[
 \vect: \fld \to \cat 
 \]</div>
 <p>where <span class="arithmatex">\(\vect(k) = \vect_k\)</span>?\
-<em>Hint: No. But explain why it breaks.</em>
-\end{itemize}</p>
+<em>Hint: No. But explain why it breaks.</em></p>
 <script src="../../mathjax_helper.js"></script>
 
 

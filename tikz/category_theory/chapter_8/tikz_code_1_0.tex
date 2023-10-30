@@ -1,27 +1,27 @@
 \begin{center}
-    \begin{tikzcd}[column sep = 1.5cm, row sep = 1.5cm]
-        F_{H}(G) \arrow[r, "F_H(\phi)"]
-        \arrow[d, swap, "F^{G}(\phi)"]
-        &
-        F_H(G)
-        \arrow[d, "F^{G'}(\psi)"]
-        \\
-        F^{G'}(H) \arrow[r, swap, "F_H(\psi)"]
-        &
-        F^{G'}(H)
-    \end{tikzcd}
-    $=$
-    \begin{tikzcd}[column sep = 1.5cm, row sep = 1.5cm]
-        \hom(G,H) 
-        \arrow[r, "(-) \circ \phi"]
-        \arrow[d, swap, "\psi \circ (-)"]
-        &
-        \hom(G', H)
-        \arrow[d, "\psi \circ (-)"]
-        \\
-        \hom(G, H') 
-        \arrow[r, swap, "(-) \circ \phi"]
-        &
-        \hom(G', H')
-    \end{tikzcd}
+\begin{tikzcd}[column sep = 1.5cm, row sep = 1.5cm]
+F_{H}(G) \arrow[r, "F_H(\phi)"]
+\arrow[d, swap, "F^{G}(\phi)"]
+&
+F_H(G)
+\arrow[d, "F^{G'}(\psi)"]
+\\
+F^{G'}(H) \arrow[r, swap, "F_H(\psi)"]
+&
+F^{G'}(H)
+\end{tikzcd}
+$=$
+\begin{tikzcd}[column sep = 1.5cm, row sep = 1.5cm]
+\hom(G,H) 
+\arrow[r, "(-) \circ \phi"]
+\arrow[d, swap, "\psi \circ (-)"]
+&
+\hom(G', H)
+\arrow[d, "\psi \circ (-)"]
+\\
+\hom(G, H') 
+\arrow[r, swap, "(-) \circ \phi"]
+&
+\hom(G', H')
+\end{tikzcd}
 \end{center}

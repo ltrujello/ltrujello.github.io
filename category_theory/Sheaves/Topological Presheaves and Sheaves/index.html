@@ -3047,39 +3047,33 @@ C: **Open**(X)\op \to **Set**
 <p><span style="display:block" class="definition">
 A <strong>presheaf (of sets on a topological space <span class="arithmatex">\(X\)</span>)</strong> 
 is a covariant functor <span class="arithmatex">\(F: **Open**(X)\op \to **Set**\)</span>. 
-We spell out the details: A presheaf consists of 
-\begin{description}
-\itemsep 0.25cm
-\item[(PS1)] an assignment of open sets <span class="arithmatex">\(U \subset X\)</span> to sets <span class="arithmatex">\(F(U)\)</span>
-\item[(PS2)] a function <span class="arithmatex">\(\rho_{U}^{V}: F(V) \to F(U)\)</span> whenever <span class="arithmatex">\(U \subset V\)</span>
+We spell out the details: A presheaf consists of </p>
+<ul>
+<li>sep 0.25cm</li>
+<li><strong>(PS1)</strong> an assignment of open sets <span class="arithmatex">\(U \subset X\)</span> to sets <span class="arithmatex">\(F(U)\)</span></li>
+<li><strong>(PS2)</strong> a function <span class="arithmatex">\(\rho_{U}^{V}: F(V) \to F(U)\)</span> whenever <span class="arithmatex">\(U \subset V\)</span>
 such that\
-[-0.3cm]
-\begin{description}
-\itemsep 0.25cm
-\item[(Identity)] <span class="arithmatex">\(\rho_{U}^{U}: F(U) \to F(U)\)</span> is the identity
-\item[(Composition)] <span class="arithmatex">\(\rho_V^W \circ \rho_U^V = \rho_U^W\)</span> whenever <span class="arithmatex">\(U \subset V \subset W\)</span>
-\end{description}
-\end{description}
-\noindent A <strong>morphism of presheaves</strong> is a natural transformation between presheaves.
+[-0.3cm]<ul>
+<li>sep 0.25cm</li>
+<li><strong>(Identity)</strong> <span class="arithmatex">\(\rho_{U}^{U}: F(U) \to F(U)\)</span> is the identity</li>
+<li><strong>(Composition)</strong> <span class="arithmatex">\(\rho_V^W \circ \rho_U^V = \rho_U^W\)</span> whenever <span class="arithmatex">\(U \subset V \subset W\)</span></li>
+</ul>
+</li>
+</ul>
+<p>\noindent A <strong>morphism of presheaves</strong> is a natural transformation between presheaves.
 </span></p>
 <p>A few comments are to be made about this definition. </p>
 <ul>
-<li>
-<p><em>About</em> <strong>Set</strong>. The codomain of a presheaf doesn't have to be <span class="arithmatex">\(**Set**\)</span>.
+<li><em>About</em> <strong>Set</strong>. The codomain of a presheaf doesn't have to be <span class="arithmatex">\(**Set**\)</span>.
 Usually, the value of our presheaves are sets of functions, but sometimes such sets have additional 
 structure. Therefore, the codomain could be <span class="arithmatex">\(**Ab**\)</span>, <span class="arithmatex">\(**Ring**\)</span>, or another category 
 where the objects are sets plus some mathematical structure. In these cases, we'd obtain a <strong>presheaf of abelian groups</strong>, a
-<strong>presheaf of rings</strong>, and so forth.</p>
-</li>
-<li>
-<p><em>About the naming.</em> The only reason this is called a presheaf is because, 
-as the reader may guess, this idea is a precursor to the concept of a sheaf. </p>
-</li>
-<li>
-<p>The fact that we can formulate morphisms between presheaves prompts us to 
+<strong>presheaf of rings</strong>, and so forth.</li>
+<li><em>About the naming.</em> The only reason this is called a presheaf is because, 
+as the reader may guess, this idea is a precursor to the concept of a sheaf.</li>
+<li>The fact that we can formulate morphisms between presheaves prompts us to 
 define the <strong>category of presheaves (of sets) on <span class="arithmatex">\(\cc\)</span></strong> which we denote as
-<span class="arithmatex">\(**Psh**(X, **Set**)\)</span>.</p>
-</li>
+<span class="arithmatex">\(**Psh**(X, **Set**)\)</span>.</li>
 </ul>
 <p>We now offer some examples of presheaves. The examples we offer will be topological presheaves, 
 i.e., presheaves on <span class="arithmatex">\(**Open**(X)\)</span> for some topological space <span class="arithmatex">\(X\)</span>. This is because 
@@ -3149,34 +3143,26 @@ Let <span class="arithmatex">\(X\)</span> be a topological space.
 A <strong>topological sheaf (of sets) on <span class="arithmatex">\(X\)</span></strong> is a presheaf 
 <span class="arithmatex">\(F: **Open**(X)\op \to **Set**\)</span> such that, for every open 
 set <span class="arithmatex">\(U\)</span> and any open cover <span class="arithmatex">\(\mathcal{U} = \{U_i\}_{i \in \lambda}\)</span> of <span class="arithmatex">\(U\)</span>, 
-the following two properties hold:
-\begin{description}
-\itemsep 0.25cm
-\item[<strong>(SH1)</strong>]
-If <span class="arithmatex">\(f\)</span>, <span class="arithmatex">\(g \in F(U)\)</span> are such that <span class="arithmatex">\(f|_{U_i} = g|_{U_i}\)</span> for all 
-<span class="arithmatex">\(i \in \lambda\)</span>, then <span class="arithmatex">\(f = g\)</span>. </p>
-<p>\item[<strong>(SH2)</strong>] 
-Suppose that for all <span class="arithmatex">\(i \in \lambda\)</span>, we have <span class="arithmatex">\(h_i \in F(U_i)\)</span> 
+the following two properties hold:</p>
+<ul>
+<li>sep 0.25cm</li>
+<li><strong><em>*(SH1)</em></strong>* If <span class="arithmatex">\(f\)</span>, <span class="arithmatex">\(g \in F(U)\)</span> are such that <span class="arithmatex">\(f|_{U_i} = g|_{U_i}\)</span> for all 
+<span class="arithmatex">\(i \in \lambda\)</span>, then <span class="arithmatex">\(f = g\)</span>.</li>
+<li><strong><em>*(SH2)</em></strong>* Suppose that for all <span class="arithmatex">\(i \in \lambda\)</span>, we have <span class="arithmatex">\(h_i \in F(U_i)\)</span> 
 such that <span class="arithmatex">\(h_i|_{U_i \cap U_j} = h_j|_{U_i \cap U_i}\)</span> (i.e., a family 
 of <span class="arithmatex">\(h_i\)</span> which agree on all possible overlaps). Then there exists a 
-<span class="arithmatex">\(h \in F(U)\)</span> such that <span class="arithmatex">\(h|_{U_i} = h_i\)</span> for all <span class="arithmatex">\(i \in \lambda\)</span>. </p>
-<p>\end{description}
-A few comments about this definition:</p>
+<span class="arithmatex">\(h \in F(U)\)</span> such that <span class="arithmatex">\(h|_{U_i} = h_i\)</span> for all <span class="arithmatex">\(i \in \lambda\)</span>.</li>
+</ul>
+<p>A few comments about this definition:</p>
 <ul>
-<li>
-<p>In our definition, <strong>SH2</strong> is our main axiom of focus. We add 
+<li>In our definition, <strong>SH2</strong> is our main axiom of focus. We add 
 <strong>SH1</strong> so that the given <span class="arithmatex">\(h \in F(U)\)</span> in <strong>SH2</strong> is necessarily 
-unique.</p>
-</li>
-<li>
-<p>Once again, the codomain of our sheaf does not have to <span class="arithmatex">\(**Set**\)</span>. 
-We will see this in a few examples. </p>
-</li>
-<li>
-<p>With the notion of a morphism of sheaves, we can define the <strong>category 
+unique.</li>
+<li>Once again, the codomain of our sheaf does not have to <span class="arithmatex">\(**Set**\)</span>. 
+We will see this in a few examples.</li>
+<li>With the notion of a morphism of sheaves, we can define the <strong>category 
 of topological sheaves (of \textbf{Sets})</strong>, denoted <span class="arithmatex">\(**Sh**(X, **Set**)\)</span>,
-to be the category with objects sheaves and morphisms with natural transformations.</p>
-</li>
+to be the category with objects sheaves and morphisms with natural transformations.</li>
 </ul>
 <p>We end this definition by defining a <strong>morphism of sheaves</strong>; it is simply 
 a natural transformation between sheaves. 
@@ -3186,23 +3172,21 @@ a natural transformation between sheaves.
 Consider again the introductory example <span class="arithmatex">\(C: **Open**(X)\op \to \rr**-Mod**\)</span>. 
 We show that this is a sheaf. Towards that goal, let <span class="arithmatex">\(U\)</span> be an open with open cover
 <span class="arithmatex">\(\mathcal{U} = \{U_i\}_{i \in \lambda}\)</span>.</p>
-<p>\begin{description}
-\itemsep 0.25cm
-\item[<strong>(SH1)</strong>]
-Suppose <span class="arithmatex">\(f, g: U \to \rr\)</span> are continuous functions which agree on the 
-overlaps of the open cover. Then in this case it's clear that <span class="arithmatex">\(f = g\)</span>. </p>
-<p>\item[<strong>(SH2)</strong>]
-Suppose <span class="arithmatex">\(f_i: U_i \to \rr\)</span> is a family of continuous functions such that 
+<ul>
+<li>sep 0.25cm</li>
+<li><strong><em>*(SH1)</em></strong>* Suppose <span class="arithmatex">\(f, g: U \to \rr\)</span> are continuous functions which agree on the 
+overlaps of the open cover. Then in this case it's clear that <span class="arithmatex">\(f = g\)</span>.</li>
+<li><strong><em>*(SH2)</em></strong>* Suppose <span class="arithmatex">\(f_i: U_i \to \rr\)</span> is a family of continuous functions such that 
 <span class="arithmatex">\(f_i|_{U_i \cap U_j} = f_j|_{U_i \cap U_j}\)</span> for all <span class="arithmatex">\(i, j \in \lambda\)</span>. 
 Construct a function <span class="arithmatex">\(\phi: U \to \rr\)</span> pointwise as follows: Given a <span class="arithmatex">\(p \in U\)</span>, 
 there exists some <span class="arithmatex">\(k \in \lambda\)</span> such that
 <span class="arithmatex">\(p \in U_k\)</span>. Therefore, let <span class="arithmatex">\(\phi(p) = f_k(p)\)</span>; agreement on overlaps 
-makes this well defined.</p>
+makes this well defined.</li>
+</ul>
 <p>We show that <span class="arithmatex">\(\phi\)</span> is continuous.
 For an open set <span class="arithmatex">\(V\)</span> of <span class="arithmatex">\(\rr\)</span>, define <span class="arithmatex">\(\phi^{-1}(V) = \bigcup_{i \in \lambda}f_i^{-1}(V)\)</span>.
-As this is a union of open sets, <span class="arithmatex">\(\phi^{-1}(V)\)</span> is open and hence <span class="arithmatex">\(\phi\)</span> is continuous.
-\end{description}
-As we've satisfied <strong>SH1</strong> and <strong>SH2</strong>, we see that this is a sheaf.
+As this is a union of open sets, <span class="arithmatex">\(\phi^{-1}(V)\)</span> is open and hence <span class="arithmatex">\(\phi\)</span> is continuous.</p>
+<p>As we've satisfied <strong>SH1</strong> and <strong>SH2</strong>, we see that this is a sheaf.
 </span></p>
 <p>A reader familiar with topology will note that our work towards the axiom 
 <strong>SH2</strong> in the last example is nothing more than the standard proof of the 
@@ -3212,20 +3196,19 @@ Consider the presheaf <span class="arithmatex">\(H: **Open**(\mathbb{C}) \to \ma
 which sends open sets of <span class="arithmatex">\(\mathbb{C}\)</span> to the <span class="arithmatex">\(\mathbb{C}\)</span>-module of holomorphic 
 functions defined on them.</p>
 <p>This is also a sheaf, which we verify. Let <span class="arithmatex">\(U\)</span> be an open set of <span class="arithmatex">\(\mathbb{C}\)</span> 
-and <span class="arithmatex">\(\mathcal{U}=\{U_i\}_{i\in\lambda}\)</span> an open cover.
-\begin{description}
-\itemsep 0.25cm
-\item[(SH1)] This is true in the same was as the last example. </p>
-<p>\item[(SH2)] 
-Let <span class="arithmatex">\(f_i: U_i \to \mathbb{C}\)</span> be a family of holomorphic functions
+and <span class="arithmatex">\(\mathcal{U}=\{U_i\}_{i\in\lambda}\)</span> an open cover.</p>
+<ul>
+<li>sep 0.25cm</li>
+<li><strong>(SH1)</strong> This is true in the same was as the last example.</li>
+<li><strong>(SH2)</strong> Let <span class="arithmatex">\(f_i: U_i \to \mathbb{C}\)</span> be a family of holomorphic functions
 such that each <span class="arithmatex">\(f_i\)</span> agree on all possible overlaps. Define <span class="arithmatex">\(f: U \to \mathbb{C}\)</span> in 
 the obvious way. To show that <span class="arithmatex">\(f\)</span> is holomorphic on <span class="arithmatex">\(U\)</span>,
 pick any <span class="arithmatex">\(p \in U\)</span>. Then <span class="arithmatex">\(p \in U_k\)</span> for some <span class="arithmatex">\(k\)</span>, and hence 
 there exists an open set <span class="arithmatex">\(D_k\)</span> of <span class="arithmatex">\(p\)</span> such that 
 <span class="arithmatex">\(f_k(z) = \sum_{n = 1}^{\infty}a_n(z - p)^n\)</span>, i.e., it has a power series 
 representation. This then gives us a well-defined power series representation 
-for <span class="arithmatex">\(f\)</span>, so that <span class="arithmatex">\(f\)</span> is holomorphic.
-\end{description}</p>
+for <span class="arithmatex">\(f\)</span>, so that <span class="arithmatex">\(f\)</span> is holomorphic.</li>
+</ul>
 <p></span></p>
 <p>We now offer an example of a presheaf which is not a sheaf.</p>
 <p><span style="display:block" class="example">

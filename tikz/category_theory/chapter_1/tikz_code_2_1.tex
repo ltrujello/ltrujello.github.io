@@ -1,234 +1,234 @@
 \begin{center}
-        
-        \tikzstyle{surface}=[left color=NavyBlue!30,right color=NavyBlue!60, 
-        opacity = 0.8
-        ]
-        
-        \tikzstyle{em_triangle}=[left color=Purple!30,right color=Purple!60,
-        opacity = 0.8
-        ]
-        
-        \tikzstyle{triangle}=[left color=Purple!30,right color=Purple!50,
-        opacity = 0.8
-        ]
-        
-        \tikzstyle{shadow}=[left color=gray!10,right color=gray!20, opacity = 0.8, rounded corners=0.5cm]
-    
-        \begin{tikzpicture}[>=stealth]
-            \pgfmathsetmacro{\scale}{4}
-            \pgfmathsetmacro{\zoffset}{-10}
-            \pgfmathsetmacro{\yoffset}{-3}
-            \pgfmathsetmacro{\xoffset}{-6}
-        
-            
-            \coordinate (origin) at (-\xoffset, -\yoffset, -\zoffset);
-        
-            
-            \coordinate (A) at (\scale -\xoffset, -\yoffset,-\zoffset);
-            \coordinate (B) at (-\xoffset, \scale-\yoffset,-\zoffset);
-            \coordinate (C) at (-\xoffset, -\yoffset,\scale-\zoffset);
-        
-            \draw[semithick, ->] (origin) --  (A);
-            \draw[semithick, ->] (origin) --  (B);
-            \draw[semithick, ->] (origin) --  (C);
-    
-            
-            \pgfmathsetmacro{\axesshift}{8}
-            \coordinate (a) at (\scale -\xoffset - \axesshift, -\yoffset,-\zoffset);
-            \coordinate (b) at (-\xoffset -  \axesshift, \scale-\yoffset,-\zoffset);
-            \coordinate (c) at (-\xoffset - \axesshift, -\yoffset,\scale-\zoffset);
-            
-            
-            \coordinate (left_origin) at (-\xoffset - \axesshift, -\yoffset, -\zoffset);
-            \draw[semithick, ->] (left_origin) --  (a);
-            \draw[semithick, ->] (left_origin) --  (b);
-            \draw[semithick, ->] (left_origin) --  (c);
-    
-            
-            \pgfmathsetmacro{\trianglelength}{2.5}
-    
-            
-            \draw (\trianglelength-\xoffset - \axesshift,-\yoffset,-\zoffset) 
-            -- 
-            (-\xoffset -\axesshift, \trianglelength-\yoffset, -\zoffset) 
-            -- 
-            (-\xoffset -\axesshift, -\yoffset, \trianglelength-\zoffset) -- cycle;
-    
-            
-            \shade[triangle]
-            (\trianglelength-\xoffset - \axesshift,-\yoffset,-\zoffset) 
-            -- 
-            (-\xoffset -\axesshift, \trianglelength-\yoffset, -\zoffset) 
-            -- 
-            (-\xoffset -\axesshift, -\yoffset, \trianglelength-\zoffset) -- cycle;
-    
-            
-            
-            \draw[->] ([xshift = -2cm, yshift = 1.5cm]a) 
-            to[bend left] 
-            ([xshift= 0.5cm, yshift = 4cm]C);
-            \node at ([xshift = 0.5cm, yshift = 3.1cm]a) {$f$};
-    
-            
-            \pgfmathsetmacro{\nlines}{22}
-            
-            \coordinate (A) at (0,0);
-            \path (A);\pgfgetlastxy{\ax}{\ay} 
-            \coordinate (B) at (3,-2);
-            \path (B);\pgfgetlastxy{\bx}{\by}
-            \coordinate (C) at (8,0);
-            \path (C);\pgfgetlastxy{\cx}{\cy}
-            \coordinate (D) at (5, 2);
-            \path (D);\pgfgetlastxy{\dx}{\dy}
-        
-            
-            \pgfmathsetmacro{\ABout}{-5}
-            \pgfmathsetmacro{\ABin}{150}
-            
-            \pgfmathsetmacro{\BCout}{-5}
-            \pgfmathsetmacro{\BCin}{150}
-        
-            \pgfmathsetmacro{\CDout}{150}
-            \pgfmathsetmacro{\CDin}{-10}
-            
-            \pgfmathsetmacro{\DAout}{150}
-            \pgfmathsetmacro{\DAin}{-10}
-        
-            
-            \shade[shadow]
-            ([xshift = 1cm, yshift = -2cm]A)
-            --
-            ([xshift = 0cm, yshift = -2cm]B) 
-            --
-            ([xshift = -1cm, yshift = -2cm]C)
-            --
-            ([xshift = 0cm, yshift = -2.7cm]D) 
-            --
-            
-            cycle;
-        
-            
-            \shade[surface] 
-            (A)
-            to[out=\ABout,in=\ABin] 
-            (B) 
-            to[out=\BCout,in=\BCin] 
-            (C)
-            to[out=\CDout,in=\CDin] 
-            (D) 
-            to[out=\DAout,in=\DAin]  cycle;
-        
-            
-            \draw[line width = 0.05mm]
-            (A)
-            to[out=\ABout,in=\ABin] 
-            (B) 
-            to[out=\BCout,in=\BCin] 
-            (C)
-            to[out=\CDout,in=\CDin] 
-            (D) to[out=155,in=\DAin] cycle;
-        
-            
-            \foreach \n in {1,2, ..., \nlines}{
-                \pgfmathsetmacro{\step}{\n/\nlines}
-                \path (A) to[out=\ABout,in=\ABin] coordinate[pos=\step] (A\n) (B);
-                \path (B) to[out=\BCout,in=\BCin] coordinate[pos=\step] (B\n) (C);
-                \path (D) to[in=\CDout,out=\CDin] coordinate[pos=\step] (C\n) (C);
-                \path (A) to[in=\DAout,out=\DAin] coordinate[pos=\step] (D\n) (D);
-            }
-        
-            
-            \foreach \n in {1,2,...,\nlines}{
-                \path (A\n); \pgfgetlastxy{\ax\n}{\ay\n} 
-                \path (B\n); \pgfgetlastxy{\bx\n}{\by\n} 
-                \path (C\n); \pgfgetlastxy{\cx\n}{\cy\n} 
-                \path (D\n); \pgfgetlastxy{\dx\n}{\dy\n} 
-                \draw[line width = 0.05mm]
-                (\bx\n,\by\n) to[out=\DAout,in=\DAin] (\dx\n,\dy\n);
-                \draw[line width = 0.05mm]
-                (\ax\n,\ay\n) to[out=\ABout,in=\ABin] (\cx\n,\cy\n);
-            }
-        
-            
-            \begin{scope}
-                
-                \clip ([xshift = 0.1cm]A5)
-                to[out=\ABout,in=\ABin] 
-                ([xshift = -0.5cm]B5) 
-                to[out=\BCout,in=\BCin] 
-                ([xshift = 0.1cm]C5)
-                to[out=\CDout,in=\CDin] 
-                cycle;
-    
-                
-                \pgfmathsetmacro{\nlines}{22}
-                
-                \coordinate (A) at (0,0);
-                \path (A);\pgfgetlastxy{\ax}{\ay} 
-                \coordinate (B) at (3,-2);
-                \path (B);\pgfgetlastxy{\bx}{\by}
-                \coordinate (C) at (8,0);
-                \path (C);\pgfgetlastxy{\cx}{\cy}
-                \coordinate (D) at (5, 2);
-                \path (D);\pgfgetlastxy{\dx}{\dy}
-            
-                
-                \pgfmathsetmacro{\ABout}{-5}
-                \pgfmathsetmacro{\ABin}{150}
-                
-                \pgfmathsetmacro{\BCout}{-5}
-                \pgfmathsetmacro{\BCin}{150}
-            
-                \pgfmathsetmacro{\CDout}{150}
-                \pgfmathsetmacro{\CDin}{-10}
-                
-                \pgfmathsetmacro{\DAout}{150}
-                \pgfmathsetmacro{\DAin}{-10}
-            
-                
-                \shade[em_triangle] 
-                (A)
-                to[out=\ABout,in=\ABin] 
-                (B) 
-                to[out=\BCout,in=\BCin] 
-                (C)
-                to[out=\CDout,in=\CDin] 
-                (D) 
-                to[out=\DAout,in=\DAin]  cycle;
-            
-                
-                \draw[line width = 0.05mm]
-                (A)
-                to[out=\ABout,in=\ABin] 
-                (B) 
-                to[out=\BCout,in=\BCin] 
-                (C)
-                to[out=\CDout,in=\CDin] 
-                (D) to[out=\DAout,in=\DAin] cycle;
-            
-                
-                \foreach \n in {1,2, ..., \nlines}{
-                    \pgfmathsetmacro{\step}{\n/\nlines}
-                    \path (A) to[out=\ABout,in=\ABin] coordinate[pos=\step] (A\n) (B);
-                    \path (B) to[out=\BCout,in=\BCin] coordinate[pos=\step] (B\n) (C);
-                    \path (D) to[in=\CDout,out=\CDin] coordinate[pos=\step] (C\n) (C);
-                    \path (A) to[in=\DAout,out=\DAin] coordinate[pos=\step] (D\n) (D);
-                }
-            
-                
-                \foreach \n in {1,2,...,\nlines}{
-                    \path (A\n); \pgfgetlastxy{\ax\n}{\ay\n} 
-                    \path (B\n); \pgfgetlastxy{\bx\n}{\by\n} 
-                    \path (C\n); \pgfgetlastxy{\cx\n}{\cy\n} 
-                    \path (D\n); \pgfgetlastxy{\dx\n}{\dy\n} 
-                    \draw[line width = 0.05mm]
-                    (\bx\n,\by\n) to[out=\DAout,in=\DAin] (\dx\n,\dy\n);
-                    \draw[line width = 0.05mm]
-                    (\ax\n,\ay\n) to[out=\ABout,in=\ABin] (\cx\n,\cy\n);
-                }
-        
-            \end{scope}
-        \end{tikzpicture}
 
-        \emph{A 2-simplex gets embedded into a manifold in $\rr^3$.}
-    \end{center}
+\tikzstyle{surface}=[left color=NavyBlue!30,right color=NavyBlue!60, 
+opacity = 0.8
+]
+
+\tikzstyle{em_triangle}=[left color=Purple!30,right color=Purple!60,
+opacity = 0.8
+]
+
+\tikzstyle{triangle}=[left color=Purple!30,right color=Purple!50,
+opacity = 0.8
+]
+
+\tikzstyle{shadow}=[left color=gray!10,right color=gray!20, opacity = 0.8, rounded corners=0.5cm]
+
+\begin{tikzpicture}[>=stealth]
+\pgfmathsetmacro{\scale}{4}
+\pgfmathsetmacro{\zoffset}{-10}
+\pgfmathsetmacro{\yoffset}{-3}
+\pgfmathsetmacro{\xoffset}{-6}
+
+
+\coordinate (origin) at (-\xoffset, -\yoffset, -\zoffset);
+
+
+\coordinate (A) at (\scale -\xoffset, -\yoffset,-\zoffset);
+\coordinate (B) at (-\xoffset, \scale-\yoffset,-\zoffset);
+\coordinate (C) at (-\xoffset, -\yoffset,\scale-\zoffset);
+
+\draw[semithick, ->] (origin) --  (A);
+\draw[semithick, ->] (origin) --  (B);
+\draw[semithick, ->] (origin) --  (C);
+
+
+\pgfmathsetmacro{\axesshift}{8}
+\coordinate (a) at (\scale -\xoffset - \axesshift, -\yoffset,-\zoffset);
+\coordinate (b) at (-\xoffset -  \axesshift, \scale-\yoffset,-\zoffset);
+\coordinate (c) at (-\xoffset - \axesshift, -\yoffset,\scale-\zoffset);
+
+
+\coordinate (left_origin) at (-\xoffset - \axesshift, -\yoffset, -\zoffset);
+\draw[semithick, ->] (left_origin) --  (a);
+\draw[semithick, ->] (left_origin) --  (b);
+\draw[semithick, ->] (left_origin) --  (c);
+
+
+\pgfmathsetmacro{\trianglelength}{2.5}
+
+
+\draw (\trianglelength-\xoffset - \axesshift,-\yoffset,-\zoffset) 
+-- 
+(-\xoffset -\axesshift, \trianglelength-\yoffset, -\zoffset) 
+-- 
+(-\xoffset -\axesshift, -\yoffset, \trianglelength-\zoffset) -- cycle;
+
+
+\shade[triangle]
+(\trianglelength-\xoffset - \axesshift,-\yoffset,-\zoffset) 
+-- 
+(-\xoffset -\axesshift, \trianglelength-\yoffset, -\zoffset) 
+-- 
+(-\xoffset -\axesshift, -\yoffset, \trianglelength-\zoffset) -- cycle;
+
+
+
+\draw[->] ([xshift = -2cm, yshift = 1.5cm]a) 
+to[bend left] 
+([xshift= 0.5cm, yshift = 4cm]C);
+\node at ([xshift = 0.5cm, yshift = 3.1cm]a) {$f$};
+
+
+\pgfmathsetmacro{\nlines}{22}
+
+\coordinate (A) at (0,0);
+\path (A);\pgfgetlastxy{\ax}{\ay} 
+\coordinate (B) at (3,-2);
+\path (B);\pgfgetlastxy{\bx}{\by}
+\coordinate (C) at (8,0);
+\path (C);\pgfgetlastxy{\cx}{\cy}
+\coordinate (D) at (5, 2);
+\path (D);\pgfgetlastxy{\dx}{\dy}
+
+
+\pgfmathsetmacro{\ABout}{-5}
+\pgfmathsetmacro{\ABin}{150}
+
+\pgfmathsetmacro{\BCout}{-5}
+\pgfmathsetmacro{\BCin}{150}
+
+\pgfmathsetmacro{\CDout}{150}
+\pgfmathsetmacro{\CDin}{-10}
+
+\pgfmathsetmacro{\DAout}{150}
+\pgfmathsetmacro{\DAin}{-10}
+
+
+\shade[shadow]
+([xshift = 1cm, yshift = -2cm]A)
+--
+([xshift = 0cm, yshift = -2cm]B) 
+--
+([xshift = -1cm, yshift = -2cm]C)
+--
+([xshift = 0cm, yshift = -2.7cm]D) 
+--
+
+cycle;
+
+
+\shade[surface] 
+(A)
+to[out=\ABout,in=\ABin] 
+(B) 
+to[out=\BCout,in=\BCin] 
+(C)
+to[out=\CDout,in=\CDin] 
+(D) 
+to[out=\DAout,in=\DAin]  cycle;
+
+
+\draw[line width = 0.05mm]
+(A)
+to[out=\ABout,in=\ABin] 
+(B) 
+to[out=\BCout,in=\BCin] 
+(C)
+to[out=\CDout,in=\CDin] 
+(D) to[out=155,in=\DAin] cycle;
+
+
+\foreach \n in {1,2, ..., \nlines}{
+\pgfmathsetmacro{\step}{\n/\nlines}
+\path (A) to[out=\ABout,in=\ABin] coordinate[pos=\step] (A\n) (B);
+\path (B) to[out=\BCout,in=\BCin] coordinate[pos=\step] (B\n) (C);
+\path (D) to[in=\CDout,out=\CDin] coordinate[pos=\step] (C\n) (C);
+\path (A) to[in=\DAout,out=\DAin] coordinate[pos=\step] (D\n) (D);
+}
+
+
+\foreach \n in {1,2,...,\nlines}{
+\path (A\n); \pgfgetlastxy{\ax\n}{\ay\n} 
+\path (B\n); \pgfgetlastxy{\bx\n}{\by\n} 
+\path (C\n); \pgfgetlastxy{\cx\n}{\cy\n} 
+\path (D\n); \pgfgetlastxy{\dx\n}{\dy\n} 
+\draw[line width = 0.05mm]
+(\bx\n,\by\n) to[out=\DAout,in=\DAin] (\dx\n,\dy\n);
+\draw[line width = 0.05mm]
+(\ax\n,\ay\n) to[out=\ABout,in=\ABin] (\cx\n,\cy\n);
+}
+
+
+\begin{scope}
+
+\clip ([xshift = 0.1cm]A5)
+to[out=\ABout,in=\ABin] 
+([xshift = -0.5cm]B5) 
+to[out=\BCout,in=\BCin] 
+([xshift = 0.1cm]C5)
+to[out=\CDout,in=\CDin] 
+cycle;
+
+
+\pgfmathsetmacro{\nlines}{22}
+
+\coordinate (A) at (0,0);
+\path (A);\pgfgetlastxy{\ax}{\ay} 
+\coordinate (B) at (3,-2);
+\path (B);\pgfgetlastxy{\bx}{\by}
+\coordinate (C) at (8,0);
+\path (C);\pgfgetlastxy{\cx}{\cy}
+\coordinate (D) at (5, 2);
+\path (D);\pgfgetlastxy{\dx}{\dy}
+
+
+\pgfmathsetmacro{\ABout}{-5}
+\pgfmathsetmacro{\ABin}{150}
+
+\pgfmathsetmacro{\BCout}{-5}
+\pgfmathsetmacro{\BCin}{150}
+
+\pgfmathsetmacro{\CDout}{150}
+\pgfmathsetmacro{\CDin}{-10}
+
+\pgfmathsetmacro{\DAout}{150}
+\pgfmathsetmacro{\DAin}{-10}
+
+
+\shade[em_triangle] 
+(A)
+to[out=\ABout,in=\ABin] 
+(B) 
+to[out=\BCout,in=\BCin] 
+(C)
+to[out=\CDout,in=\CDin] 
+(D) 
+to[out=\DAout,in=\DAin]  cycle;
+
+
+\draw[line width = 0.05mm]
+(A)
+to[out=\ABout,in=\ABin] 
+(B) 
+to[out=\BCout,in=\BCin] 
+(C)
+to[out=\CDout,in=\CDin] 
+(D) to[out=\DAout,in=\DAin] cycle;
+
+
+\foreach \n in {1,2, ..., \nlines}{
+\pgfmathsetmacro{\step}{\n/\nlines}
+\path (A) to[out=\ABout,in=\ABin] coordinate[pos=\step] (A\n) (B);
+\path (B) to[out=\BCout,in=\BCin] coordinate[pos=\step] (B\n) (C);
+\path (D) to[in=\CDout,out=\CDin] coordinate[pos=\step] (C\n) (C);
+\path (A) to[in=\DAout,out=\DAin] coordinate[pos=\step] (D\n) (D);
+}
+
+
+\foreach \n in {1,2,...,\nlines}{
+\path (A\n); \pgfgetlastxy{\ax\n}{\ay\n} 
+\path (B\n); \pgfgetlastxy{\bx\n}{\by\n} 
+\path (C\n); \pgfgetlastxy{\cx\n}{\cy\n} 
+\path (D\n); \pgfgetlastxy{\dx\n}{\dy\n} 
+\draw[line width = 0.05mm]
+(\bx\n,\by\n) to[out=\DAout,in=\DAin] (\dx\n,\dy\n);
+\draw[line width = 0.05mm]
+(\ax\n,\ay\n) to[out=\ABout,in=\ABin] (\cx\n,\cy\n);
+}
+
+\end{scope}
+\end{tikzpicture}
+
+\emph{A 2-simplex gets embedded into a manifold in $\rr^3$.}
+\end{center}

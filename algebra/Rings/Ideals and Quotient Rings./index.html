@@ -3039,15 +3039,9 @@ We are now ready to introduce the concept of an ideal. </p>
 Let <span class="arithmatex">\(R\)</span> be a ring and suppose <span class="arithmatex">\(I \subset R\)</span>. Then we
 define <span class="arithmatex">\(I\)</span> to be an <strong>ideal</strong> of <span class="arithmatex">\(R\)</span> if and only if </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(I\)</span> is an additive subgroup of <span class="arithmatex">\(R\)</span> </p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(rI \subset I\)</span> for all <span class="arithmatex">\(r \in R\)</span> </p>
-</li>
-<li>
-<p>[3.] <span class="arithmatex">\(Ir \subset I\)</span> for all <span class="arithmatex">\(r \in R\)</span></p>
-</li>
+<li>[1.] <span class="arithmatex">\(I\)</span> is an additive subgroup of <span class="arithmatex">\(R\)</span></li>
+<li>[2.] <span class="arithmatex">\(rI \subset I\)</span> for all <span class="arithmatex">\(r \in R\)</span></li>
+<li>[3.] <span class="arithmatex">\(Ir \subset I\)</span> for all <span class="arithmatex">\(r \in R\)</span></li>
 </ul>
 <p>\textcolor{Purple}{An ideal is simply an interesting
 subring <span class="arithmatex">\(R'\)</span> of a ring <span class="arithmatex">\(R\)</span> which sort of "sucks in"
@@ -3084,37 +3078,27 @@ ideal in a commutative ring.  </p>
 Suppose <span class="arithmatex">\(I \subset R\)</span> is a proper subring. Then the
 following are equivalent:</p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(I = \ker(f)\)</span> for some <span class="arithmatex">\(f: R \to S\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(r\cdot x = x \cdot r \in I\)</span> for any <span class="arithmatex">\(r \in
-R\)</span>, <span class="arithmatex">\(x \in I\)</span> </p>
-</li>
-<li>
-<p>[3.] <span class="arithmatex">\(R/I\)</span> is a ring with <span class="arithmatex">\(\overline{1} \ne \overline{0}\)</span>. </p>
-</li>
-<li>
-<p>[4.] <span class="arithmatex">\(I\)</span> is an ideal.  </p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(I = \ker(f)\)</span> for some <span class="arithmatex">\(f: R \to S\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(r\cdot x = x \cdot r \in I\)</span> for any <span class="arithmatex">\(r \in
+R\)</span>, <span class="arithmatex">\(x \in I\)</span></li>
+<li><strong>3.</strong> <span class="arithmatex">\(R/I\)</span> is a ring with <span class="arithmatex">\(\overline{1} \ne \overline{0}\)</span>.</li>
+<li><strong>4.</strong> <span class="arithmatex">\(I\)</span> is an ideal.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1.] We'll show <span class="arithmatex">\((i) \implies (ii)\)</span>. Assume <span class="arithmatex">\(I =
+<li><strong>1.</strong> We'll show <span class="arithmatex">\((i) \implies (ii)\)</span>. Assume <span class="arithmatex">\(I =
 \ker(f)\)</span>. Given <span class="arithmatex">\(r \in R\)</span> and <span class="arithmatex">\(i \in I\)</span>, </li>
 </ul>
 <div class="arithmatex">\[\begin{align*}
 \phi(r \cdot i) = \phi(r)\cdot\phi(i) = \phi(r)\cdot 0 = 0\\
 \phi(i \cdot r) = \phi(i)\cdot\phi(r) = 0 \cdot\phi(r) = 0
 \end{align*}\]</div>
-<p>This shows that <span class="arithmatex">\(r \cdot i, i \cdot r \in \ker(f)\)</span>. </p>
-<ul>
-<li>[ii.] We'll show that <span class="arithmatex">\((ii) \implies (iii)\)</span>.
+<p>This shows that <span class="arithmatex">\(r \cdot i, i \cdot r \in \ker(f)\)</span>.
+* <strong>ii.</strong> We'll show that <span class="arithmatex">\((ii) \implies (iii)\)</span>.
 Assume <span class="arithmatex">\(ri, ir \in I\)</span> for all <span class="arithmatex">\(r \in R, i \in I\)</span>.
 We'll show that this is a ring with <span class="arithmatex">\(\overline{1} \ne
-\overline{0}\)</span>. </li>
-</ul>
+\overline{0}\)</span>. </p>
 <p>First, we define that </p>
 <div class="arithmatex">\[\begin{align*}
 \overline{a} + \overline{b} = \overline{a + b}\\
@@ -3144,95 +3128,68 @@ a_1 \cdot b_1 &amp; = (a_2 + x) \cdot (b_2 + y)\\
 true, so <span class="arithmatex">\(a_2 \cdot y \in I\)</span> and <span class="arithmatex">\(x \cdot b_2 \in I\)</span>.
 Therefore, <span class="arithmatex">\(\overline{a_1\cdot b_1} = \overline{a_2
 \cdot b_2}\)</span>. </p>
-<p>Finally, we'll show that <span class="arithmatex">\((R/I, +, \cdot)\)</span> is a ring. 
-\begin{description}</p>
-<ul>
-<li>
-<p>[(R1: Addition)] Observe that <span class="arithmatex">\(\overline{0}
-\in R/I\)</span> is the identity and <span class="arithmatex">\(\overline{-a}\)</span> are
-inverses of <span class="arithmatex">\(\overline{a} \in R/I\)</span>. </p>
-</li>
-<li>
-<p>[(R2: Closure)] The set is closed by
-construction on <span class="arithmatex">\(\cdot\)</span>. </p>
-</li>
-<li>
-<p>[(R3: Assoc), (R5: Distributivity)] hold for
-<span class="arithmatex">\(R/I\)</span> because they hold for <span class="arithmatex">\(R\)</span>. </p>
-</li>
-<li>
-<p>[(R4: Identity)] The identitty holds for
-<span class="arithmatex">\(\overline{1} \in R/I\)</span>. One can check that
-<span class="arithmatex">\(\overline{1} \ne \overline{0}\)</span>. 
-\end{description}</p>
-</li>
-<li>
-<p>[iii] Now we can show that <span class="arithmatex">\((iii) \implies (i)\)</span>.
+<p>Finally, we'll show that <span class="arithmatex">\((R/I, +, \cdot)\)</span> is a ring.
+    * <strong>(R1: Addition)</strong> Observe that <span class="arithmatex">\(\overline{0}
+    \in R/I\)</span> is the identity and <span class="arithmatex">\(\overline{-a}\)</span> are
+    inverses of <span class="arithmatex">\(\overline{a} \in R/I\)</span>.
+    * <strong>(R2: Closure)</strong> The set is closed by
+    construction on <span class="arithmatex">\(\cdot\)</span>.
+    * <strong>(R3: Assoc), (R5: Distributivity)</strong> hold for
+    <span class="arithmatex">\(R/I\)</span> because they hold for <span class="arithmatex">\(R\)</span>.
+    * <strong>(R4: Identity)</strong> The identitty holds for
+    <span class="arithmatex">\(\overline{1} \in R/I\)</span>. One can check that
+    <span class="arithmatex">\(\overline{1} \ne \overline{0}\)</span>.
+* <strong>iii</strong> Now we can show that <span class="arithmatex">\((iii) \implies (i)\)</span>.
 Assume <span class="arithmatex">\(S = R/I\)</span> is a ring. Define </p>
-</li>
-</ul>
 <div class="arithmatex">\[
 \phi: R \to S \quad a \mapsto \overline{a} = a + I
 \]</div>
-<p>One checks that <span class="arithmatex">\(\ker(\phi) = I\)</span>. </p>
-<ul>
-<li>[iv.] Our work in the previous section has
+<p>One checks that <span class="arithmatex">\(\ker(\phi) = I\)</span>.
+* <strong>iv.</strong> Our work in the previous section has
 allowed us to prove <span class="arithmatex">\((i) \implies (iv)\)</span>. Now observe
 that we can prove <span class="arithmatex">\((iv) \implies (i)\)</span> by simply
-considering the map in <span class="arithmatex">\((iii)\)</span>.</li>
-</ul>
+considering the map in <span class="arithmatex">\((iii)\)</span>.</p>
 <p></span></p>
 <p><span style="display:block" class="theorem">[ (Properties of Ideals)]
 Let <span class="arithmatex">\(R\)</span> be a ring and <span class="arithmatex">\(I, J\)</span> ideals of <span class="arithmatex">\(R\)</span>. Then </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(I +J\)</span> is an ideal of <span class="arithmatex">\(R.\)</span> (Note we may
-extend this to larger, finit sums)</p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(IJ = \left\{\displaystyle \sum_{k=1}^ni_kj_k \mid \text{for all
+<li><strong>1.</strong> <span class="arithmatex">\(I +J\)</span> is an ideal of <span class="arithmatex">\(R.\)</span> (Note we may
+extend this to larger, finit sums)</li>
+<li><strong>2.</strong> <span class="arithmatex">\(IJ = \left\{\displaystyle \sum_{k=1}^ni_kj_k \mid \text{for all
 } n \in \mathbb{N}, i_k \in I, j_k \in J\right\}\)</span> is an
 ideal of <span class="arithmatex">\(R\)</span>. (Note we can extend this to larger,
-finite products.) </p>
-</li>
-<li>
-<p>[3.] <span class="arithmatex">\(I \cap J\)</span> is an ideal of <span class="arithmatex">\(R\)</span>. Morever, if
+finite products.)</li>
+<li><strong>3.</strong> <span class="arithmatex">\(I \cap J\)</span> is an ideal of <span class="arithmatex">\(R\)</span>. Morever, if
 <span class="arithmatex">\(\{I_\alpha\}_{\alpha \in \lambda}\)</span> is a family of
 ideals of <span class="arithmatex">\(R\)</span>, then <span class="arithmatex">\(\bigcap\limits_{\alpha \in
-\lambda} I_\alpha\)</span> is an ideal of <span class="arithmatex">\(R\)</span>. </p>
-</li>
+\lambda} I_\alpha\)</span> is an ideal of <span class="arithmatex">\(R\)</span>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1.] 
-By the Second Isomorphism Theorem we know that <span class="arithmatex">\(I + J\)</span>
+<li><strong>1.</strong> By the Second Isomorphism Theorem we know that <span class="arithmatex">\(I + J\)</span>
 is a subring of <span class="arithmatex">\(R\)</span>. Thus, we just need it to be
 closed under multiplication for it to be an ideal. </li>
 </ul>
 <p>Let <span class="arithmatex">\(i + j \in I + J\)</span> and let <span class="arithmatex">\(r \in R\)</span>.
 then <span class="arithmatex">\(r(i + j) = ri +rj \in I + J\)</span>, since <span class="arithmatex">\(ri \in I\)</span>
 and <span class="arithmatex">\(rj \in J\)</span>. Similarly, <span class="arithmatex">\((i + j)r \in I + J\)</span>, so
-that <span class="arithmatex">\(I + J\)</span> is an ideal of <span class="arithmatex">\(R\)</span>.</p>
-<ul>
-<li>[2.] In words, <span class="arithmatex">\(IJ\)</span> is the set of all finite sums
+that <span class="arithmatex">\(I + J\)</span> is an ideal of <span class="arithmatex">\(R\)</span>.
+* <strong>2.</strong> In words, <span class="arithmatex">\(IJ\)</span> is the set of all finite sums
 of elements of the form <span class="arithmatex">\(ij\)</span> where <span class="arithmatex">\(i \in I\)</span> and <span class="arithmatex">\(j
 \in J\)</span>. Thus is clearly an abelian group. To show it
 is closed under multiplication, let <span class="arithmatex">\(r \in R\)</span>. Then
 observe that <span class="arithmatex">\(r(\sum_{k=1}^{n}i_kj_k) =
 \sum_{k=1}ri_kj_k\)</span>. 
 Now <span class="arithmatex">\(ri_k \in I\)</span> for all <span class="arithmatex">\(k\)</span> since <span class="arithmatex">\(I\)</span> is an ideal.
-Therefore <span class="arithmatex">\(r(\sum_{k=1}^{n}i_kj_k) \in IJ\)</span>. </li>
-</ul>
+Therefore <span class="arithmatex">\(r(\sum_{k=1}^{n}i_kj_k) \in IJ\)</span>. </p>
 <p>For similar reasons <span class="arithmatex">\((\sum_{k=1}^{n}i_kj_k)r \in I\)</span>,
-so that <span class="arithmatex">\(IJ\)</span> is an ideal. </p>
-<ul>
-<li>[3.] By our knowledge of
+so that <span class="arithmatex">\(IJ\)</span> is an ideal.
+* <strong>3.</strong> By our knowledge of
 group theory we know that intersections of subgroups
 form a group, so that this is an abelian subgroup.
 To see it is an ideal we just need to check it is
-closed under scalar multiplication. </li>
-</ul>
+closed under scalar multiplication. </p>
 <p>Let <span class="arithmatex">\(i \in I \cap J\)</span>. Then <span class="arithmatex">\(i \in I\)</span> and <span class="arithmatex">\(i \in J\)</span>.
 Hence, <span class="arithmatex">\(ir \in I\)</span> and <span class="arithmatex">\(ri \in J\)</span>, and <span class="arithmatex">\(ri \in I\)</span> and
 <span class="arithmatex">\(rj \in J\)</span> as <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(J\)</span> are ideals. Hence <span class="arithmatex">\(ir \in I
@@ -3251,20 +3208,15 @@ Let <span class="arithmatex">\((R, +, \cdot)\)</span> be a ring with identity <s
 Consider a chain <span class="arithmatex">\(I_1 \subseteq I_2 \subseteq \cdots \subseteq
 I_n \subseteq \cdots \subseteq R\)</span> of proper ideals of <span class="arithmatex">\(R\)</span>.</p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(\displaystyle I = \bigcup_{n \ge 1}I_n\)</span> is a proper
-ideal of <span class="arithmatex">\(R\)</span>. </p>
-</li>
-<li>
-<p>[2.] Each proper ideal <span class="arithmatex">\(I\)</span> of <span class="arithmatex">\(R\)</span> is
-contained in a maximal ideal <span class="arithmatex">\(M\)</span> of <span class="arithmatex">\(R\)</span>.</p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(\displaystyle I = \bigcup_{n \ge 1}I_n\)</span> is a proper
+ideal of <span class="arithmatex">\(R\)</span>.</li>
+<li><strong>2.</strong> Each proper ideal <span class="arithmatex">\(I\)</span> of <span class="arithmatex">\(R\)</span> is
+contained in a maximal ideal <span class="arithmatex">\(M\)</span> of <span class="arithmatex">\(R\)</span>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1.]
-\underline{<span class="arithmatex">\(\bm{I}\)</span> <strong>is nonempty</strong>.}\
+<li><strong>1.</strong> \underline{<span class="arithmatex">\(\bm{I}\)</span> <strong>is nonempty</strong>.}\
 [1.2ex]
 Observe that <span class="arithmatex">\(I\)</span> is nonempty if at least one <span class="arithmatex">\(I_k\)</span> is
 nonempty. </li>
@@ -3289,17 +3241,15 @@ there is a <span class="arithmatex">\(k\)</span> such that <span class="arithmat
 \
 \
 However, this is a contradition, since each <span class="arithmatex">\(I_n\)</span> must be
-proper. Thus <span class="arithmatex">\(I\)</span> cannot be all of <span class="arithmatex">\(R\)</span>. </p>
-<ul>
-<li>[2.] Consider any proper ideal <span class="arithmatex">\(I_1\)</span> of <span class="arithmatex">\(R\)</span>. If <span class="arithmatex">\(I_1\)</span> is not maximal,
+proper. Thus <span class="arithmatex">\(I\)</span> cannot be all of <span class="arithmatex">\(R\)</span>.
+* <strong>2.</strong> Consider any proper ideal <span class="arithmatex">\(I_1\)</span> of <span class="arithmatex">\(R\)</span>. If <span class="arithmatex">\(I_1\)</span> is not maximal,
 then there exists an ideal <span class="arithmatex">\(I_2\)</span> such that <span class="arithmatex">\(I_1 \subset I_2\)</span>. If
 <span class="arithmatex">\(I_2\)</span> is not maximal, then there exists an ideal <span class="arithmatex">\(I_3\)</span> such
 that <span class="arithmatex">\(I_2 \subset I_3\)</span>.
 Now construct the set 
 [
 S = {I_n \text{ is proper } \mid I_{n} \subset I_{n+1}}.
-]</li>
-</ul>
+]</p>
 <p>where <span class="arithmatex">\(I_n \in S_j\)</span> whenever there exists a proper ideal
 <span class="arithmatex">\(I_{n+1}\)</span> where <span class="arithmatex">\(I_n \subset I_{n+1}\)</span>.</p>
 <p>If this set is finite, then we take the maximal element
@@ -3428,7 +3378,7 @@ if <span class="arithmatex">\(M\)</span> is maximal then <span class="arithmatex
 know from Hw 2 
 that we need to show two things.</p>
 <ul>
-<li>[1.] <span class="arithmatex">\(\bm{\phi(1) = 1}.\)</span> Observe that 
+<li><strong>1.</strong> <span class="arithmatex">\(\bm{\phi(1) = 1}.\)</span> Observe that 
 [
 \phi(1) = \dfrac{1}{1} + D^{-1}I <br />
 ]</li>
@@ -3436,77 +3386,67 @@ that we need to show two things.</p>
 <p>which is the identity element in <span class="arithmatex">\(D^{-1}R/D^{-1}I\)</span>. Hence,
 <span class="arithmatex">\(\phi(1) = 1\)</span>. 
 <span class="arithmatex">\(\phi^{-1}(P)\)</span> is a prime ideal. From problem 2, we know
-that this allows us to conclude the pull-back is well defined.</p>
-<ul>
-<li>
-<p>[2.] <span class="arithmatex">\(\bm{P = \phi^{-1}(M)}\)</span> <strong>is prime</strong>. (It
+that this allows us to conclude the pull-back is well defined.
+* <strong>2.</strong> <span class="arithmatex">\(\bm{P = \phi^{-1}(M)}\)</span> <strong>is prime</strong>. (It
 may help the reader for me to refer to <span class="arithmatex">\(P\)</span> explicitly as
 <span class="arithmatex">\(\phi^{-1}(M)\)</span>, in terms of clarity of the solution, so
 I'll follow that convention.)
-\begin{description}</p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(\bm{\phi^{-1}(M)}\)</span> is nonempty.]
-Observe that <span class="arithmatex">\(\phi(0) = \dfrac{0}{1} + D^{-1}I \in M\)</span>,
-as <span class="arithmatex">\(M\)</span> is an ideal of <span class="arithmatex">\(D^{-1}R/D^{-1}I\)</span> and hence
-contains the zero element. Therefore <span class="arithmatex">\(0 \in
-\phi^{-1}(M) = P\)</span> and so
-<span class="arithmatex">\(P\)</span> is nonempty. </p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(\bm{a, b \in \phi^{-1}(M)\implies a-b \in \phi^{-1}(M)}\)</span>.] 
-Let <span class="arithmatex">\(a, b \in \phi^{-1}(M)\)</span>. Then <span class="arithmatex">\(\phi(a), \phi(b) \in M\)</span>.
-Hence, we see that </p>
-</li>
-</ul>
-<div class="arithmatex">\[\begin{align*}
+    * <strong><span class="arithmatex">\(\bm{\phi^{-1}(M)}\)</span> is nonempty.</strong> Observe that <span class="arithmatex">\(\phi(0) = \dfrac{0}{1} + D^{-1}I \in M\)</span>,
+    as <span class="arithmatex">\(M\)</span> is an ideal of <span class="arithmatex">\(D^{-1}R/D^{-1}I\)</span> and hence
+    contains the zero element. Therefore <span class="arithmatex">\(0 \in
+    \phi^{-1}(M) = P\)</span> and so
+    <span class="arithmatex">\(P\)</span> is nonempty.
+    * <strong><span class="arithmatex">\(\bm{a, b \in \phi^{-1}(M)\implies a-b \in \phi^{-1}(M)}\)</span>.</strong> Let <span class="arithmatex">\(a, b \in \phi^{-1}(M)\)</span>. Then <span class="arithmatex">\(\phi(a), \phi(b) \in M\)</span>.
+    Hence, we see that </p>
+<div class="language-text highlight"><pre><span></span><code>\begin{align*}
 \phi(a), \phi(b) \in M &amp; \implies \phi(a) - \phi(b) \in M \text{ (since } M \text{ is a prime ideal)}\\
 &amp; \implies \phi(a - b) \in M \text{ (by homomorphism properties)}\\
 &amp; \implies a - b \in \phi^{-1}(M).
-\end{align*}\]</div>
-<p>Therefore, we see that <span class="arithmatex">\(a - b \in \phi^{-1}(M)\)</span> if <span class="arithmatex">\(a, b \in
-\phi^{-1}(M)\)</span>.  </p>
-<ul>
-<li>[<span class="arithmatex">\(\bm{ra \in \phi^{-1}(M)}\)</span> <strong>if</strong> <span class="arithmatex">\(\bm{r \in R, p \in \phi^{-1}(M)}\)</span>.] 
-We'll show that <span class="arithmatex">\(r \cdot a \in \phi^{-1}(M)\)</span> for all
-<span class="arithmatex">\(r \in R\)</span>. Observe that </li>
-</ul>
-<div class="arithmatex">\[\begin{align*}
+\end{align*}
+
+Therefore, we see that $a - b \in \phi^{-1}(M)$ if $a, b \in
+\phi^{-1}(M)$.
+* **$\bm{ra \in \phi^{-1}(M)}$ **if** $\bm{r \in R, p \in \phi^{-1}(M)}$.** We&#39;ll show that $r \cdot a \in \phi^{-1}(M)$ for all
+$r \in R$. Observe that
+
+\begin{align*}
 \phi(r\cdot a) = \phi(r)\phi(a).
-\end{align*}\]</div>
-<p>Since <span class="arithmatex">\(\phi(a) \in M\)</span>, and <span class="arithmatex">\(M\)</span> is a prime ideal, <span class="arithmatex">\(s\phi(a) \in M\)</span>
-for all <span class="arithmatex">\(s \in D^{-1}R/D^{-1}I\)</span>. In particular, since <span class="arithmatex">\(\phi(r) \in D^{-1}R/D^{-1}I\)</span>, we
-see that <span class="arithmatex">\(\phi(r)\phi(a) \in M\)</span>. Therefore, <span class="arithmatex">\(\phi(r \cdot a)
-\in M\)</span> so that <span class="arithmatex">\(r\cdot a \in \phi^{-1}(M)\)</span>.</p>
-<ul>
-<li>[<span class="arithmatex">\(\bm{ab \in \phi^{-1}(M) \implies a \in \phi^{-1}(M)}\)</span> <strong>or</strong> <span class="arithmatex">\(\bm{b \in \phi^{-1}(M)}\)</span>]
-Suppose <span class="arithmatex">\(ab \in \phi^{-1}(M)\)</span>. Then we see that </li>
-</ul>
-<div class="arithmatex">\[ 
+\end{align*}
+
+Since $\phi(a) \in M$, and $M$ is a prime ideal, $s\phi(a) \in M$
+for all $s \in D^{-1}R/D^{-1}I$. In particular, since $\phi(r) \in D^{-1}R/D^{-1}I$, we
+see that $\phi(r)\phi(a) \in M$. Therefore, $\phi(r \cdot a)
+\in M$ so that $r\cdot a \in \phi^{-1}(M)$.
+* **$\bm{ab \in \phi^{-1}(M) \implies a \in \phi^{-1}(M)}$ **or** $\bm{b \in \phi^{-1}(M)}$** Suppose $ab \in \phi^{-1}(M)$. Then we see that
+
+\[ 
 \phi(ab) \in M \implies \phi(a)\phi(b) \in M.
-\]</div>
-<p>Since <span class="arithmatex">\(M\)</span> is a maximal, and hence a prime ideal (as
-proven earlier), we see that either <span class="arithmatex">\(\phi(a)
-\in M\)</span> or <span class="arithmatex">\(\phi(b) \in M\)</span>. In either case, we see that
-either <span class="arithmatex">\(a \in \phi^{-1}(M)\)</span> or <span class="arithmatex">\(b \in \phi^{-1}(M)\)</span>, which
-is what we set out to show.</p>
-<ul>
-<li>[<span class="arithmatex">\(\bm{\phi^{-1}(M)}\)</span> <strong>is proper</strong>.] Finally, we show
-that <span class="arithmatex">\(\phi^{-1}(M)\)</span> is proper. Suppose that <span class="arithmatex">\(\phi^{-1}(M) = R\)</span>. Then </li>
-</ul>
-<div class="arithmatex">\[
+\]
+
+Since $M$ is a maximal, and hence a prime ideal (as
+proven earlier), we see that either $\phi(a)
+\in M$ or $\phi(b) \in M$. In either case, we see that
+either $a \in \phi^{-1}(M)$ or $b \in \phi^{-1}(M)$, which
+is what we set out to show.
+* **$\bm{\phi^{-1}(M)}$ **is proper**.** Finally, we show
+that $\phi^{-1}(M)$ is proper. Suppose that $\phi^{-1}(M) = R$. Then
+
+\[
 \phi^{-1}(M) = R \implies \phi(R) = M.   
-\]</div>
-<p>Thus we see that <span class="arithmatex">\(\phi(r) \in M\)</span> for all <span class="arithmatex">\(r \in R\)</span>.
-Let <span class="arithmatex">\(r = 1\)</span>. </p>
-<div class="arithmatex">\[
+\]
+
+Thus we see that $\phi(r) \in M$ for all $r \in R$.
+Let $r = 1$.
+
+\[
 \phi(r) \in M \implies \phi(1) \in M \implies 1 \in M
-\]</div>
-<p>since we have that <span class="arithmatex">\(\phi(1) = 1\)</span>.
-However, <span class="arithmatex">\(1 \not\in M\)</span> since <span class="arithmatex">\(M\)</span> is maximal and hence
-proper. As we've reached a contradiction, we see that
-the pullback <span class="arithmatex">\(P\)</span> must always be proper. 
-\end{description} </p>
+\]
+
+since we have that $\phi(1) = 1$.
+However, $1 \not\in M$ since $M$ is maximal and hence
+proper. As we&#39;ve reached a contradiction, we see that
+the pullback $P$ must always be proper.
+</code></pre></div>
 <p>Thus we see that the pullback is well-defined (i.e., if <span class="arithmatex">\(M\)</span> is
 prime, so is its pullback <span class="arithmatex">\(P\)</span>) in this case and
 that <span class="arithmatex">\(P\)</span> is prime. 
@@ -3672,20 +3612,19 @@ normal group to <span class="arithmatex">\(R\)</span>. Thus we make the followin
 Let <span class="arithmatex">\(R\)</span> be a ring and <span class="arithmatex">\(I\)</span> an ideal of <span class="arithmatex">\(R\)</span>. Then <span class="arithmatex">\(R/I\)</span>, the
 set of all elements <span class="arithmatex">\(r + I\)</span> where <span class="arithmatex">\(r \in R\)</span>, is
 defined to be a <strong>quotient ring</strong> whose operations
-are specified as follows. 
-\begin{description}
-\item[Addition.] For any <span class="arithmatex">\(r + I, s + I \in R/I\)</span> we have
-that </p>
-<div class="arithmatex">\[
+are specified as follows. </p>
+<ul>
+<li><strong>Addition.</strong> For any <span class="arithmatex">\(r + I, s + I \in R/I\)</span> we have
+that </li>
+</ul>
+<p>[
 (r + I) + (s + I) = (r + s) + I.
-\]</div>
-<p>\item[Multiplication.]
-For <span class="arithmatex">\(r + I, s + I \in R/I\)</span> we have that </p>
+]
+* <strong>Multiplication.</strong> For <span class="arithmatex">\(r + I, s + I \in R/I\)</span> we have that </p>
 <div class="arithmatex">\[
 (r + I)\cdot(s + I) = rs + I.
 \]</div>
-<p>\end{description}
-</span>
+<p></span>
 First, let's check that this is even sensical. Again, we know from
 our group theory intuition that <span class="arithmatex">\(R/I\)</span> definitely makes sense
 when looked at as an additive group. The identity is <span class="arithmatex">\(I\)</span>,

@@ -3074,32 +3074,32 @@ and a composition map </p>
 (f, g_1, g_2, \dots, g_n) \mapsto f\circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)
 \end{align*}\]</div>
 <p>which must exist for each <span class="arithmatex">\(n = 1, 2, \dots\)</span>, and any <span class="arithmatex">\(a_1, a_2, \dots, a_n \in \mathbb{N}\)</span>, 
-such that
-\begin{description}
-\item[(NS-OP1: Associativity.) ] Let <span class="arithmatex">\(n \in \mathbb{N}\)</span> and consider <span class="arithmatex">\(f \in X_n\)</span>. 
-Let <span class="arithmatex">\(a_1, a_2 \dots, a_n \in \mathbb{N}\)</span>. Then  </p>
-<div class="arithmatex">\[\begin{gather*}
-[f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})\\
-=\\
+such that</p>
+<ul>
+<li>**(NS-OP1: Associativity.) ** Let <span class="arithmatex">\(n \in \mathbb{N}\)</span> and consider <span class="arithmatex">\(f \in X_n\)</span>. 
+Let <span class="arithmatex">\(a_1, a_2 \dots, a_n \in \mathbb{N}\)</span>. Then  </li>
+</ul>
+<p>\begin{gather<em>}
+[f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})\
+=\
 f \circ_{(k_{1,1}+ \cdots + k_{1, a_1}), \dots, (k_{n, 1}+ \cdots + k_{n, a_n})}
 \big(g_1 \circ_{k_{1,1}, \dots, k_{1, a_1}}(h_{1,1}, \dots, h_{1, a_1}), \dots, g_n \circ_{k_{n, 1}, \dots, k_{n, a_n}}(h_{n,1}, \dots, h_{n, a_n})\big)
-\end{gather*}\]</div>
-<p>\item[(NS-OP2): Identity.] For every <span class="arithmatex">\(f \in X_n\)</span> we have that </p>
+\end{gather</em>}
+* <strong>(NS-OP2): Identity.</strong> For every <span class="arithmatex">\(f \in X_n\)</span> we have that </p>
 <div class="arithmatex">\[
 f \circ_{1, 1, \dots, 1} (I, I, \dots, I) = f = I \circ_n (f).
 \]</div>
-<p>\end{description}
-</span></p>
+<p></span></p>
 <p><span style="display:block" class="definition">
 A <strong>symmetric operad</strong> is a nonsymmetric operad <span class="arithmatex">\(X\)</span> with a 
 right group action <span class="arithmatex">\(\cdot_n: X_n \times S_n \to X_n\)</span>
 by the symmetric group <span class="arithmatex">\(S_n\)</span>
-for each <span class="arithmatex">\(n = 1, 2, \dots\)</span>, subject to the following axioms. 
-\begin{description}
-\item[(S-OP1: Equivariance 1)]
-Let <span class="arithmatex">\(f \in X_n\)</span> and pick <span class="arithmatex">\(g_{1} \in X_{a_1}, \dots, g_n \in X_{a_n}\)</span> for 
+for each <span class="arithmatex">\(n = 1, 2, \dots\)</span>, subject to the following axioms. </p>
+<ul>
+<li><strong>(S-OP1: Equivariance 1)</strong> Let <span class="arithmatex">\(f \in X_n\)</span> and pick <span class="arithmatex">\(g_{1} \in X_{a_1}, \dots, g_n \in X_{a_n}\)</span> for 
 some <span class="arithmatex">\(a_1, a_2, \dots, a_n \in \mathbb{N}\)</span>. Then for a <span class="arithmatex">\(\tau \in S_n\)</span>, we must 
-have </p>
+have </li>
+</ul>
 <div class="arithmatex">\[
 (f \cdot \tau)\circ_{a_1, \dots, a_n}(g_1, \dots, g_n)
 =
@@ -3112,18 +3112,17 @@ that swaps the <span class="arithmatex">\(i\)</span>-th block with the <span cla
 (1, 2, \dots, n) \mapsto (\tau(1), \tau(2), \dots, \tau(n))
 \]</div>
 <p>then <span class="arithmatex">\(\tau' \in S_{a_1 + a_2 + \cdots + a_n}\)</span> acts as </p>
-<div class="arithmatex">\[\begin{gather*}
+<p>\begin{gather<em>}
 (\overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\text{1st block}}, \dots, 
 \overbrace{\textcolor{Green}{a_1 + \cdots + a_i+1, \dots a_1 + \cdots + a_{i+1}}}^{i\text{-th block}}, \dots
-\overbrace{\textcolor{RoyalBlue}{a_1 + \cdots + a_{n-1}+ 1, \dots, a_1 + \cdots + a_n}}^{n\text{-th block}})\\
-\mapsto\\
+\overbrace{\textcolor{RoyalBlue}{a_1 + \cdots + a_{n-1}+ 1, \dots, a_1 + \cdots + a_n}}^{n\text{-th block}})\
+\mapsto\
 (\dots, \overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\tau(1)\text{-th block}}, \dots 
 ,  \overbrace{\textcolor{Green}{a_1 + \cdots + a_i+1, \dots, a_1 + \cdots + a_{i+1}}}^{\tau(i)\text{-th block}}, \dots
 ,  \overbrace{\textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+1, \dots, a_1 + \cdots + a_{n}}}^{\tau(n)\text{-th block}}, \dots
 ).
-\end{gather*}\]</div>
-<p>\item[(S-OP2: Equivariance 2)]<br />
-Let <span class="arithmatex">\(f, g_i\)</span> is as above, and choose <span class="arithmatex">\(\sigma_1 \in S_1, \dots, \sigma_{n} \in S_n\)</span>. 
+\end{gather</em>}
+* <strong>(S-OP2: Equivariance 2)</strong> Let <span class="arithmatex">\(f, g_i\)</span> is as above, and choose <span class="arithmatex">\(\sigma_1 \in S_1, \dots, \sigma_{n} \in S_n\)</span>. 
 Then we have that </p>
 <div class="arithmatex">\[
 f \circ_{a_1, \dots, a_n}(g_1 \cdot \sigma_1, \dots, g_n \cdot \sigma_n)
@@ -3146,8 +3145,7 @@ is the permutation described as below. </p>
 }_{n\text{-th block}}
 )
 \end{gather*}</p>
-<p>\end{description}
-</span></p>
+<p></span></p>
 <p><span style="display:block" class="example">
 We can continue with our previous construction concerning 
 the family of sets </p>
@@ -3457,22 +3455,22 @@ As we have that <strong>S-OP2</strong> is satisfied, we have that <span class="a
 An <strong>morphism of operads</strong> <span class="arithmatex">\(F: X \to Y\)</span> between two 
 (symmetric) operads <span class="arithmatex">\(X, Y\)</span> with units <span class="arithmatex">\(I \in X_1\)</span> and <span class="arithmatex">\(J \in Y_1\)</span> 
 and <span class="arithmatex">\(S_n\)</span> group actions <span class="arithmatex">\(\cdot\)</span> and <span class="arithmatex">\(*\)</span>
-is a family of maps <span class="arithmatex">\(F_n: X_n \to Y_n\)</span> such that 
-\begin{description}
-\item[(M-OP1)] <span class="arithmatex">\(F_1(I) = J\)</span> 
-\item[(M-OP2)] If <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\(g_1 \in X_{a_1}, \dots, g_n \in X_{a_n}\)</span> 
-for <span class="arithmatex">\(a_i \in \mathbb{N}\)</span>, then </p>
-<div class="arithmatex">\[
+is a family of maps <span class="arithmatex">\(F_n: X_n \to Y_n\)</span> such that </p>
+<ul>
+<li><strong>(M-OP1)</strong> <span class="arithmatex">\(F_1(I) = J\)</span></li>
+<li><strong>(M-OP2)</strong> If <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\(g_1 \in X_{a_1}, \dots, g_n \in X_{a_n}\)</span> 
+for <span class="arithmatex">\(a_i \in \mathbb{N}\)</span>, then </li>
+</ul>
+<p>$$
 F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
 =
 F_n(f)\circ_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n))
-\]</div>
-<p>\item[(M-OP3)] If <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\(\tau \in S_n\)</span>, then </p>
+$$
+* <strong>(M-OP3)</strong> If <span class="arithmatex">\(f \in X_n\)</span> and <span class="arithmatex">\(\tau \in S_n\)</span>, then </p>
 <div class="arithmatex">\[
 F_n(f \cdot \tau) = F_n(f) * \tau 
 \]</div>
-<p>\end{description}
-</span>
+<p></span>
 Note: in the case where <span class="arithmatex">\(X, Y\)</span> are symmetric operads, we define a morphism between 
 <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> to be a family of maps <span class="arithmatex">\(F_n: X_n \to Y_n\)</span> such that only <strong>M-OP1</strong>
 and <strong>M-OP2</strong> hold. </p>
@@ -3486,12 +3484,8 @@ f \mapsto F_n(f): A^n \to A
 <p>so that we're mapping elements of our operad
 to <span class="arithmatex">\(n\)</span>-ary operations over <span class="arithmatex">\(A\)</span>. This mapping also requires that</p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(F_1(I) = \id_A: A \to A\)</span></p>
-</li>
-<li>
-<p>[2.] For <span class="arithmatex">\(f \in X_n\)</span>, <span class="arithmatex">\(g_i \in X_{a_i}\)</span> for <span class="arithmatex">\(i = 1,2, \dots, n\)</span>, </p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(F_1(I) = \id_A: A \to A\)</span></li>
+<li><strong>2.</strong> For <span class="arithmatex">\(f \in X_n\)</span>, <span class="arithmatex">\(g_i \in X_{a_i}\)</span> for <span class="arithmatex">\(i = 1,2, \dots, n\)</span>, </li>
 </ul>
 <div class="arithmatex">\[
 F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
@@ -3501,11 +3495,9 @@ F_n(f)\circ'_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n)).
 <p>Diagrammatically, this means the following diagrams commutes:</p>
 <p><img src="../../../png/category_theory/chapter_9/tikz_code_1_16.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Or, more visually, </p>
-<p><img src="../../../png/category_theory/chapter_9/tikz_code_1_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<ul>
-<li>[3.] Finally, we have that if <span class="arithmatex">\(\tau \in S_n\)</span>, then for <span class="arithmatex">\(f \in X_n\)</span>
-and <span class="arithmatex">\((a_1, \dots, a_n) \in A^n\)</span>, then</li>
-</ul>
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_1_17.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* <strong>3.</strong> Finally, we have that if <span class="arithmatex">\(\tau \in S_n\)</span>, then for <span class="arithmatex">\(f \in X_n\)</span>
+and <span class="arithmatex">\((a_1, \dots, a_n) \in A^n\)</span>, then</p>
 <div class="arithmatex">\[
 F_n(f \cdot \tau)(a_1, \dots, a_n) 
 = (F_n(f) *\tau) (a_1, \dots, a_n) 

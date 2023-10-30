@@ -3009,14 +3009,14 @@
 <p><span style="display:block" class="definition">
 Consider a category <span class="arithmatex">\(\mathcal{C}\)</span>. Then we define the
 <strong>opposite category of <span class="arithmatex">\(\cc\)</span></strong>, denoted <span class="arithmatex">\(\mathcal{C}\op\)</span>, 
-to be the category where 
-\begin{description}
-\item[Objects.] The same objects of <span class="arithmatex">\(\cc\)</span>.
-\item[Morphisms.] If <span class="arithmatex">\(f: A \to B\)</span> is a
+to be the category where </p>
+<ul>
+<li><strong>Objects.</strong> The same objects of <span class="arithmatex">\(\cc\)</span>.</li>
+<li><strong>Morphisms.</strong> If <span class="arithmatex">\(f: A \to B\)</span> is a
 morphism of <span class="arithmatex">\(\cc\)</span>, then we let 
-<span class="arithmatex">\(f\op : B \to A\)</span> be a morphism of <span class="arithmatex">\(\cc\op\)</span>.
-\end{description}
-In this case, composition isn't exactly obvious, so we will explain how that 
+<span class="arithmatex">\(f\op : B \to A\)</span> be a morphism of <span class="arithmatex">\(\cc\op\)</span>.</li>
+</ul>
+<p>In this case, composition isn't exactly obvious, so we will explain how that 
 works. </p>
 <p>Let <span class="arithmatex">\(f: A \to B\)</span> and <span class="arithmatex">\(g: B \to C\)</span> be morphisms of <span class="arithmatex">\(\cc\)</span>. Then we obtain 
 morphisms <span class="arithmatex">\(f\op: B \to A\)</span> and <span class="arithmatex">\(g\op: C \to B\)</span>. In this case <span class="arithmatex">\(f\op, g\op\)</span> are composable, 
@@ -3205,14 +3205,12 @@ Let <span class="arithmatex">\(\cc\)</span>, <span class="arithmatex">\(\dd\)</s
 <li>Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a contravariant functor. Then <span class="arithmatex">\(F\)</span> corresponds to a 
 contravariant functor <span class="arithmatex">\(\overline{F}: \cc\op \to \dd\)</span> where for a <span class="arithmatex">\(f\op : B \to A \in \cc\op\)</span>, </li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \overline{F}(f\op : B \to A) = F(f: A \to B) = F(f): F(B) \to F(A).
-\]</div>
-<ul>
-<li>Conversely, let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a covariant functor. Then <span class="arithmatex">\(F\)</span> 
+$$
+* Conversely, let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a covariant functor. Then <span class="arithmatex">\(F\)</span> 
 corresponds to a contravariant functor <span class="arithmatex">\(\overline{F}: \cc\op \to \dd\)</span> 
-where </li>
-</ul>
+where </p>
 <div class="arithmatex">\[
 \overline{F}(f\op : B \to A) = F(f: A \to B) = F(f): F(A) \to F(B)
 \]</div>

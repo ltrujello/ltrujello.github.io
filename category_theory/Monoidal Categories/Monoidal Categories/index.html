@@ -3097,20 +3097,14 @@ and we additionally have that the diagrams below commute. </p>
 other categories <span class="arithmatex">\(\cc\)</span> in which we have some known, natural way of combining elements. In each case, the 
 story is the same. The key ingredients are:</p>
 <ul>
-<li>
-<p>There is some product <span class="arithmatex">\(\otimes: \cc \times \cc \to \cc\)</span> (specifically, it is a bifunctor)</p>
-</li>
-<li>
-<p>For all <span class="arithmatex">\(A, B, C \in \cc\)</span>, there is a natural isomorphism </p>
-</li>
+<li>There is some product <span class="arithmatex">\(\otimes: \cc \times \cc \to \cc\)</span> (specifically, it is a bifunctor)</li>
+<li>For all <span class="arithmatex">\(A, B, C \in \cc\)</span>, there is a natural isomorphism </li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \alpha_{A,B,C}: A \otimes (B \otimes C) \isomarrow (A \otimes B) \otimes C
-\]</div>
-<ul>
-<li>There is a special object <span class="arithmatex">\(I\)</span> of <span class="arithmatex">\(\cc\)</span> such that, for any object <span class="arithmatex">\(A\)</span>, we have 
-the natural isomorphisms </li>
-</ul>
+$$
+* There is a special object <span class="arithmatex">\(I\)</span> of <span class="arithmatex">\(\cc\)</span> such that, for any object <span class="arithmatex">\(A\)</span>, we have 
+the natural isomorphisms </p>
 <div class="arithmatex">\[
 \lambda_{A}: I \otimes A \isomarrow A \qquad \rho_{A}: A \otimes I \isomarrow A     
 \]</div>
@@ -3139,16 +3133,10 @@ such that the following <strong>coherence conditions</strong> hold.
 \end{statement}  <br />
 We also define some terminology within this definition.</p>
 <ul>
-<li>
-<p>We call the bifunctor <span class="arithmatex">\(\otimes\)</span> the <strong>monoidal product</strong> </p>
-</li>
-<li>
-<p>We refer to <span class="arithmatex">\(I\)</span> as the <strong>identity object</strong></p>
-</li>
-<li>
-<p>We refer to diagram \ref{triangle_diag_1} as the <strong>unit diagram</strong> and 
-diagram \ref{pentagonal_diag} as the <strong>pentagon diagram</strong>. </p>
-</li>
+<li>We call the bifunctor <span class="arithmatex">\(\otimes\)</span> the <strong>monoidal product</strong></li>
+<li>We refer to <span class="arithmatex">\(I\)</span> as the <strong>identity object</strong></li>
+<li>We refer to diagram \ref{triangle_diag_1} as the <strong>unit diagram</strong> and 
+diagram \ref{pentagonal_diag} as the <strong>pentagon diagram</strong>.</li>
 </ul>
 <p>Further, we say a <strong>strict monoidal category</strong> is one in which the 
 associator, left unit and right unit are all identities.
@@ -3159,13 +3147,9 @@ make any logical sense. While that answer is very vague and unsatisfying,
 we are not quite yet ready to fully explain why those two diagrams are necessary.
 We will however say</p>
 <ul>
-<li>
-<p>The reader is definitely not expected at this moment to 
-understand why those diagrams are necessary.</p>
-</li>
-<li>
-<p>We will eventually explain why those diagrams are necessary. </p>
-</li>
+<li>The reader is definitely not expected at this moment to 
+understand why those diagrams are necessary.</li>
+<li>We will eventually explain why those diagrams are necessary.</li>
 </ul>
 <p>Before we explain why the diagrams are necessary, we develop further intuition regarding 
 monoidal categories with some more examples. </p>
@@ -3177,25 +3161,15 @@ commute in <strong>Set</strong>.</p>
 <p>However, we can put another monoidal category structure on <strong>Set</strong> with the 
 following data:</p>
 <ul>
-<li>
-<p>We let the disjoint union bifunctor <span class="arithmatex">\((-)\coprod (-): **Set**\times **Set** \to **Set**\)</span>
-be our monoidal product. </p>
-</li>
-<li>
-<p>We let the empty set <span class="arithmatex">\(\varnothing\)</span> be our identity object.</p>
-</li>
+<li>We let the disjoint union bifunctor <span class="arithmatex">\((-)\coprod (-): **Set**\times **Set** \to **Set**\)</span>
+be our monoidal product.</li>
+<li>We let the empty set <span class="arithmatex">\(\varnothing\)</span> be our identity object.</li>
 </ul>
 <p>With these settings, we can define natural isomorphisms for any three sets <span class="arithmatex">\(X, Y, Z\)</span> </p>
 <ul>
-<li>
-<p><span class="arithmatex">\(\alpha_{X, Y, Z}: X \amalg (Y \amalg Z) \isomarrow (X \amalg Y) \amalg Z\)</span> </p>
-</li>
-<li>
-<p><span class="arithmatex">\(\lambda_X: \varnothing \amalg X \isomarrow X\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\rho_X: X \amalg \varnothing \isomarrow X\)</span></p>
-</li>
+<li><span class="arithmatex">\(\alpha_{X, Y, Z}: X \amalg (Y \amalg Z) \isomarrow (X \amalg Y) \amalg Z\)</span></li>
+<li><span class="arithmatex">\(\lambda_X: \varnothing \amalg X \isomarrow X\)</span></li>
+<li><span class="arithmatex">\(\rho_X: X \amalg \varnothing \isomarrow X\)</span></li>
 </ul>
 <p>in the obvious way, and check that the required diagrams commute. In this way, we have that 
 <span class="arithmatex">\((**Set**, \amalg, \varnothing)\)</span> is also a monoidal category. 
@@ -3207,15 +3181,9 @@ different group structures on an underlying set. </p>
 other categories in which finite products and coproducts exist. The answer is yes, 
 and this gives us many examples of monoidal categories: </p>
 <ul>
-<li>
-<p><span class="arithmatex">\((**Top**, \times, \{\bullet\})\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\((**Ab**, \oplus, \{e\})\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\((\text{R}**-Mod**, \times, \{0\})\)</span> </p>
-</li>
+<li><span class="arithmatex">\((**Top**, \times, \{\bullet\})\)</span></li>
+<li><span class="arithmatex">\((**Ab**, \oplus, \{e\})\)</span></li>
+<li><span class="arithmatex">\((\text{R}**-Mod**, \times, \{0\})\)</span></li>
 </ul>
 <p><span style="display:block" class="proposition">
 If <span class="arithmatex">\(\cc\)</span> is a category with finite products and a terminal object <span class="arithmatex">\(T\)</span>, then 
@@ -3341,9 +3309,9 @@ I(A) = I \text{ for all } A
 <p>as the identity element, and we can define a tensor product on this 
 category as follows: on objects <span class="arithmatex">\(F, G: \cc \to M\)</span>, we define <span class="arithmatex">\(F\boxtimes G\)</span> 
 as the composite</p>
-<p>[</p>
+<p>$$</p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<p>]</p>
+<p>$$</p>
 <p>which can be stated pointwise as <span class="arithmatex">\((F\boxtimes G)(C) = F(C)\otimes G(C)\)</span>. On morphisms, 
 we have that if <span class="arithmatex">\(\eta: F_1 \to F_2\)</span> and <span class="arithmatex">\(\eta': G_1 \to G_2\)</span> are natural 
 transformations, then we say <span class="arithmatex">\(\eta \boxtimes \eta': F_1\boxtimes G_1 \to F_2 \boxtimes G_2\)</span> 
@@ -3353,11 +3321,11 @@ is a natural transformation, where we define </p>
 \]</div>
 <p>Note that such a natural transformation is well-defined 
 as the diagram below commutes</p>
-<p>[</p>
+<p>$$</p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>\hspace{1cm}</p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_1_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<p>]</p>
+<p>$$</p>
 <p>since <span class="arithmatex">\(\otimes: M \times M \to M\)</span> is a bifunctor.
 Finally, for functors <span class="arithmatex">\(F, G, H: \cc \to M\)</span> define the associator 
 <span class="arithmatex">\(\alpha'_{F, G, H}: F\boxtimes(G\boxtimes H) \isomarrow (F\boxtimes (G \boxtimes H))\)</span> 
@@ -3377,10 +3345,11 @@ as the natural transformations where for each object <span class="arithmatex">\(
 </span></p>
 <p><span style="display:block" class="example">
 Consider the category <span class="arithmatex">\(\mathbb{P}\)</span> whose objects are the natural numbers 
-(with 0 included) and whose morphisms are the symmetric groups <span class="arithmatex">\(S_n\)</span>. That is, 
-\begin{description}
-\item[Objects.] The objects are <span class="arithmatex">\(n = 0, 1,2, \dots\)</span>.
-\item[Morphisms.] For any objects <span class="arithmatex">\(n,m\)</span> we have that </p>
+(with 0 included) and whose morphisms are the symmetric groups <span class="arithmatex">\(S_n\)</span>. That is, </p>
+<ul>
+<li><strong>Objects.</strong> The objects are <span class="arithmatex">\(n = 0, 1,2, \dots\)</span>.</li>
+<li><strong>Morphisms.</strong> For any objects <span class="arithmatex">\(n,m\)</span> we have that </li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\mathbb{P}}(n,m)=
 \begin{cases}
@@ -3388,8 +3357,7 @@ S_n &amp; \text{if } n = m\\
 \varnothing &amp; \text{if} n \ne m.
 \end{cases}
 \]</div>
-<p>\end{description}
-Note that there are many ways of constructing this category; we just present the 
+<p>Note that there are many ways of constructing this category; we just present the 
 simplest. In general terms this is the countable disjoint union of the symmetric groups. 
 Even more generally, this can be done for any family of groups (or rings, monoids, semigroups). </p>
 <p>What is interesting about this category is that it intuitively forms a strict monoidal 

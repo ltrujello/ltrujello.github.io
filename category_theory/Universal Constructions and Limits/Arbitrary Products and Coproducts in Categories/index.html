@@ -3026,39 +3026,35 @@ F(\bullet_n) = A_n.
 <p>\begin{definition}
 Let <span class="arithmatex">\(\cc\)</span> be a category.
 The <span class="arithmatex">\(n\)</span>-th <strong>diagonal functor</strong> <span class="arithmatex">\(\Delta_n: \cc \to \cc^{n}\)</span>,
-is the functor defined as follows. 
-\begin{description}
-\item[On Objects.] For an object <span class="arithmatex">\(C\)</span>, we have that <span class="arithmatex">\(\Delta_n(C) = (\overbrace{C, C, \dots, C}^{n\text{-many copies}})\)</span>.
-\item[On Morphisms.] For a morphism <span class="arithmatex">\(f: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span>, we have that  </p>
+is the functor defined as follows. </p>
+<ul>
+<li><strong>On Objects.</strong> For an object <span class="arithmatex">\(C\)</span>, we have that <span class="arithmatex">\(\Delta_n(C) = (\overbrace{C, C, \dots, C}^{n\text{-many copies}})\)</span>.</li>
+<li><strong>On Morphisms.</strong> For a morphism <span class="arithmatex">\(f: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span>, we have that  </li>
+</ul>
 <div class="arithmatex">\[
 \Delta_n(f: A \to B) = (f, f, \dots, f): \Delta_n(A) \to \Delta_n(B).
 \]</div>
-<p>\end{description}
-</span>
+<p></span>
 The diagonal  functor is also sometimes informally called the 
 "copy" functor, since it is literally just copying data. We now 
 make some observations. </p>
 <ul>
-<li>[(<strong>1</strong>)] For each object <span class="arithmatex">\(C \in \cc\)</span>, 
+<li><strong>(</strong>1<strong>)</strong> For each object <span class="arithmatex">\(C \in \cc\)</span>, 
 we can interpret the object <span class="arithmatex">\(\Delta_n(C) \in \cc^n\)</span> 
 <em>as a functor</em></li>
 </ul>
 <div class="arithmatex">\[
 \Delta_n(C): \mathcal{D}_n \to \cc
 \]</div>
-<p>where <span class="arithmatex">\(\Delta_n(C)\)</span> sends <span class="arithmatex">\(\bullet_i\)</span> to  <span class="arithmatex">\(C\)</span> for all <span class="arithmatex">\(i= 1, 2, \dots, n\)</span>.</p>
-<ul>
-<li>[(<strong>2</strong>)] Thus, we may also regard the <span class="arithmatex">\(n\)</span>-th diagonal functor as a functor as below.</li>
-</ul>
+<p>where <span class="arithmatex">\(\Delta_n(C)\)</span> sends <span class="arithmatex">\(\bullet_i\)</span> to  <span class="arithmatex">\(C\)</span> for all <span class="arithmatex">\(i= 1, 2, \dots, n\)</span>.
+* <strong>(</strong>2<strong>)</strong> Thus, we may also regard the <span class="arithmatex">\(n\)</span>-th diagonal functor as a functor as below.</p>
 <div class="arithmatex">\[
 \Delta_n: \cc \to \text{Fun}(\mathcal{D}_n, \cc) \qquad C \mapsto (\Delta_n(C) :\mathcal{D}_n \to \cc).
 \]</div>
 <p>In this interpretation, every morphism <span class="arithmatex">\(f:C \to C'\)</span> is interpreted as a natural 
-transformation <span class="arithmatex">\(\Delta_n(f): \Delta_n(C) \to \Delta_n(C')\)</span>. </p>
-<ul>
-<li>[(<strong>3</strong>)] Consider a functor <span class="arithmatex">\(F: \dd_n \to \cc\)</span> such that <span class="arithmatex">\(F(\bullet_i) = A_i \in \cc\)</span>. 
-For each <span class="arithmatex">\(C \in \cc\)</span>, a natural transformation </li>
-</ul>
+transformation <span class="arithmatex">\(\Delta_n(f): \Delta_n(C) \to \Delta_n(C')\)</span>.
+* <strong>(</strong>3<strong>)</strong> Consider a functor <span class="arithmatex">\(F: \dd_n \to \cc\)</span> such that <span class="arithmatex">\(F(\bullet_i) = A_i \in \cc\)</span>. 
+For each <span class="arithmatex">\(C \in \cc\)</span>, a natural transformation </p>
 <div class="arithmatex">\[
 \eta: \Delta_n(C) \to F
 \]</div>
@@ -3075,8 +3071,7 @@ With this notation clarified, we now can propose  our  definition of a  product.
 Let <span class="arithmatex">\(\cc\)</span> be a category. Let <span class="arithmatex">\(A_1\)</span>, <span class="arithmatex">\(A_2, \dots\)</span>, <span class="arithmatex">\(A_n\)</span> be objects of <span class="arithmatex">\(\cc\)</span>. Let 
 <span class="arithmatex">\(F: \mathcal{D}_n \to \cc\)</span> be the functor such that <span class="arithmatex">\(F(\bullet_i) = A_i\)</span>.</p>
 <ul>
-<li>
-<p>The <strong>product</strong> of <span class="arithmatex">\(A_1, A_2, \dots, A_n\)</span> 
+<li>The <strong>product</strong> of <span class="arithmatex">\(A_1, A_2, \dots, A_n\)</span> 
 is an object <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\(\cc\)</span> equipped with
 a (natural transformation) $ \displaystyle p: \Delta_n\left( P \right) \to F$ 
 such that 
@@ -3084,16 +3079,13 @@ such that
 <span class="arithmatex">\(\displaystyle \left( P, p: \Delta_n\left( P \right) \to F \right)\)</span>
 is universal from 
 \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{<span class="arithmatex">\(\Delta_n\)</span> to <span class="arithmatex">\(P\)</span>}.}
-\end{center}        In the case where the product <span class="arithmatex">\(P\)</span> exists, we write <span class="arithmatex">\(P = \prod_{i = 1}^{n} A_i\)</span>. </p>
-</li>
-<li>
-<p>The <strong>coproduct</strong> of <span class="arithmatex">\(A_1, A_2, \dots, A_n\)</span>
+\end{center}In the case where the product <span class="arithmatex">\(P\)</span> exists, we write <span class="arithmatex">\(P = \prod_{i = 1}^{n} A_i\)</span>.</li>
+<li>The <strong>coproduct</strong> of <span class="arithmatex">\(A_1, A_2, \dots, A_n\)</span>
 is an object <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span> equipped with 
 a (natural transformation) <span class="arithmatex">\(i: F \to \Delta_n(C)\)</span> such that 
 \begin{center}
 <span class="arithmatex">\((C, i: F \to \Delta_n(C))\)</span> is universal from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(\Delta_n\)</span>}}.
-\end{center}        In the case where the coproduct <span class="arithmatex">\(C\)</span> exists, we write <span class="arithmatex">\(C = \coprod_{i = 1}^{n} A_i\)</span> </p>
-</li>
+\end{center}In the case where the coproduct <span class="arithmatex">\(C\)</span> exists, we write <span class="arithmatex">\(C = \coprod_{i = 1}^{n} A_i\)</span></li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="remark">
@@ -3117,39 +3109,31 @@ infinite ones.
 We just need to specify some notation that we will use.
 Towards that goal, let <span class="arithmatex">\(\lambda\)</span> be some indexing set.  </p>
 <ul>
-<li>
-<p>Define <span class="arithmatex">\(\dd_{\lambda}\)</span> to be the discrete category consisting of one object <span class="arithmatex">\(\bullet_i\)</span> for each <span class="arithmatex">\(i \in 
-\lambda\)</span>. (In particular, <span class="arithmatex">\(\dd_{\lambda}\)</span> is now possibly infinite.)</p>
-</li>
-<li>
-<p>Define the <span class="arithmatex">\(\lambda\)</span>-diagonal functor to be the functor <span class="arithmatex">\(\Delta_{\lambda}: \cc \to \text{Fun}(\dd_{\lambda}, \cc)\)</span>
+<li>Define <span class="arithmatex">\(\dd_{\lambda}\)</span> to be the discrete category consisting of one object <span class="arithmatex">\(\bullet_i\)</span> for each <span class="arithmatex">\(i \in 
+\lambda\)</span>. (In particular, <span class="arithmatex">\(\dd_{\lambda}\)</span> is now possibly infinite.)</li>
+<li>Define the <span class="arithmatex">\(\lambda\)</span>-diagonal functor to be the functor <span class="arithmatex">\(\Delta_{\lambda}: \cc \to \text{Fun}(\dd_{\lambda}, \cc)\)</span>
 where <span class="arithmatex">\(\Delta_{\lambda}(C): \dd_{\lambda} \to \cc\)</span> 
-sends each <span class="arithmatex">\(\bullet_i\)</span> to <span class="arithmatex">\(C\)</span> for all <span class="arithmatex">\(i \in \lambda\)</span>.</p>
-</li>
+sends each <span class="arithmatex">\(\bullet_i\)</span> to <span class="arithmatex">\(C\)</span> for all <span class="arithmatex">\(i \in \lambda\)</span>.</li>
 </ul>
 <p><span style="display:block" class="definition">[Arbitrary Product and Coproduct Definition]
 Let <span class="arithmatex">\(\cc\)</span> be a category, and consider an arbitrary set of objects <span class="arithmatex">\(\{A_i\}_{i \in \lambda}\)</span> of <span class="arithmatex">\(\cc\)</span>, <span class="arithmatex">\(\lambda\)</span> some indexing set.
 Let <span class="arithmatex">\(F: \dd_{\lambda} \to \cc\)</span> be the functor such that <span class="arithmatex">\(F(\bullet_{i}) = A_i\)</span> for <span class="arithmatex">\(i \in \lambda\)</span>.</p>
 <ul>
-<li>
-<p>The <strong>product</strong> of <span class="arithmatex">\(\{A_i\}_{i \in \lambda}\)</span> is the object 
+<li>The <strong>product</strong> of <span class="arithmatex">\(\{A_i\}_{i \in \lambda}\)</span> is the object 
 <span class="arithmatex">\(P\)</span> of <span class="arithmatex">\(\cc\)</span>
 equipped with a (natural transformation) <span class="arithmatex">\(\displaystyle p: \Delta_{\lambda}\left( P\right) \to F\)</span> 
 such that 
 \begin{center}
 <span class="arithmatex">\(\left( P, \Delta_{\lambda}\left( P \right) \to F \right)\)</span> is universal from 
 \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(\Delta_{\lambda}\)</span> to <span class="arithmatex">\(P\)</span>}.}
-\end{center}            In the case where the product <span class="arithmatex">\(P\)</span> exists, we write <span class="arithmatex">\(P = \prod_{i \in \lambda}A_i.\)</span></p>
-</li>
-<li>
-<p>The <strong>coproduct</strong> of <span class="arithmatex">\(\{A_i\}_{i \in \lambda}\)</span> is the object 
+\end{center}In the case where the product <span class="arithmatex">\(P\)</span> exists, we write <span class="arithmatex">\(P = \prod_{i \in \lambda}A_i.\)</span></li>
+<li>The <strong>coproduct</strong> of <span class="arithmatex">\(\{A_i\}_{i \in \lambda}\)</span> is the object 
 <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span> equipped with a (natural transformation) <span class="arithmatex">\(i: F \to \Delta_{\lambda}(C)\)</span>
 such that 
 \begin{center}
 <span class="arithmatex">\((C, i:  F \to \Delta_{\lambda}(C))\)</span> is universal from 
 \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{<span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(\Delta_{\lambda}\)</span>}}.
-\end{center}        </p>
-</li>
+\end{center}</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="remark">
@@ -3185,13 +3169,11 @@ Denote <span class="arithmatex">\(F: \dd_{\lambda} \to \cc\)</span> where <span 
 exists in <span class="arithmatex">\(\cc\)</span>, then for each object 
 <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span>, we have the natural bijection</li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \prod_{i \in \lambda}\hom_{\cc}(C, A_i) \cong \hom_{\cc}\left(C,\, \prod_{i \in \lambda}A_i\right)
-\]</div>
-<ul>
-<li>If the coproduct <span class="arithmatex">\(\coprod_{i \in \lambda}A_i\)</span> exists 
-in <span class="arithmatex">\(\cc\)</span>, then for each object <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span>, we have the natural bijection </li>
-</ul>
+$$
+* If the coproduct <span class="arithmatex">\(\coprod_{i \in \lambda}A_i\)</span> exists 
+in <span class="arithmatex">\(\cc\)</span>, then for each object <span class="arithmatex">\(C\)</span> of <span class="arithmatex">\(\cc\)</span>, we have the natural bijection </p>
 <div class="arithmatex">\[
 \prod_{i \in \lambda}\hom(A_i, C)
 \cong 
@@ -3268,19 +3250,12 @@ more than "There exists an obvious morphism of a given form."
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
+<li><strong><em>*1.</em></strong>* Prove Lemma \ref{lemma:product_of_hom_sets}. (Note: the notation and statement may make 
+it look harder than it actually is.)</li>
 <li>
-<p>[<strong>1.</strong>] Prove Lemma \ref{lemma:product_of_hom_sets}. (Note: the notation and statement may make 
-it look harder than it actually is.)</p>
-</li>
-<li>
-<p>[<strong>2.</strong>]
-Complete the proof of Proposition \ref{proposition:product_coproduct_natural_bijection} as follows. 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[<em>i</em>.]
-Show that the functor </p>
-</li>
+<p><strong><em>*2.</em></strong>* Complete the proof of Proposition \ref{proposition:product_coproduct_natural_bijection} as follows.</p>
+<ul>
+<li><strong><em>i</em>.</strong> Show that the functor </li>
 </ul>
 <div class="arithmatex">\[
 \prod_{i \in \lambda} \hom_{\cc}(A_i, -): \cc \to **Set**
@@ -3290,8 +3265,7 @@ Show that the functor </p>
 \hom_{\text{Fun}(\dd_{\lambda}, \cc)}(F, \Delta_{\lambda}(-)): \cc \to **Set**
 \]</div>
 <ul>
-<li>[<em>ii</em>.]
-Using (<em>i</em>), Proposition \ref{proposition:universality_bijection}, and 
+<li><strong><em>ii</em>.</strong> Using (<em>i</em>), Proposition \ref{proposition:universality_bijection}, and 
 interpreting coproducts as universal objects, prove that </li>
 </ul>
 <div class="arithmatex">\[
@@ -3299,37 +3273,29 @@ interpreting coproducts as universal objects, prove that </li>
 \cong 
 \hom_{\cc}\left( \coprod_{i\in \lambda}A_i, \, C \right).
 \]</div>
-<ul>
-<li>
-<p>[<strong>3.</strong>]
-Let <span class="arithmatex">\(P\)</span> be a preorder with binary relation <span class="arithmatex">\(\le\)</span>. 
-Consider a subset <span class="arithmatex">\(A \subset P\)</span> where <span class="arithmatex">\(A = \{a_i \in P \mid i \in \lambda\}\)</span> 
-with <span class="arithmatex">\(\lambda\)</span> some indexing set.
-\begin{itemize}</p>
 </li>
 <li>
-<p>[(<em>i</em>.)]
-Regarding <span class="arithmatex">\(P\)</span> as a thin category, prove that the product <span class="arithmatex">\(p = \displaystyle \prod_{i \in \lambda}a_i\)</span>, when it exists, 
+<p><strong><em>*3.</em></strong>* Let <span class="arithmatex">\(P\)</span> be a preorder with binary relation <span class="arithmatex">\(\le\)</span>. 
+Consider a subset <span class="arithmatex">\(A \subset P\)</span> where <span class="arithmatex">\(A = \{a_i \in P \mid i \in \lambda\}\)</span> 
+with <span class="arithmatex">\(\lambda\)</span> some indexing set.</p>
+<ul>
+<li><strong>(<em>i</em>.)</strong> Regarding <span class="arithmatex">\(P\)</span> as a thin category, prove that the product <span class="arithmatex">\(p = \displaystyle \prod_{i \in \lambda}a_i\)</span>, when it exists, 
 is the supremum of <span class="arithmatex">\(A\)</span>. 
 \
 <em>Hint:</em> Recall that, if <span class="arithmatex">\(X\)</span> is a preorder, 
 the <strong>supremum</strong> of a set <span class="arithmatex">\(S \subset X\)</span> is the element <span class="arithmatex">\(s \in X\)</span> 
 such that if <span class="arithmatex">\(a_i \le s'\)</span> for all <span class="arithmatex">\(i \in \lambda\)</span>, then 
-<span class="arithmatex">\(s \le s'\)</span>.</p>
-</li>
-<li>
-<p>[(<em>ii</em>.)] 
-We know that the dual of the product is the coproduct. 
+<span class="arithmatex">\(s \le s'\)</span>.</li>
+<li><strong>(<em>ii</em>.)</strong> We know that the dual of the product is the coproduct. 
 Can you guess what the coproduct <span class="arithmatex">\(\displaystyle \coprod_{i \in \lambda}a_i\)</span> in <span class="arithmatex">\(P\)</span> is 
-in this case? Prove it. </p>
-</li>
+in this case? Prove it.</li>
 </ul>
-<p>\item[<strong>4.</strong>] Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. 
+</li>
+<li><strong><em>*4.</em></strong>* Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. 
 Consider the functor category <span class="arithmatex">\(**Fun**(\cc, \dd)\)</span>. What is a product in 
 this category? What conditions do we need to place on <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> for this 
-product to exist?
-\end{itemize}      <br />
-\end{itemize}</p>
+product to exist?</li>
+</ul>
 <script src="../../mathjax_helper.js"></script>
 
 

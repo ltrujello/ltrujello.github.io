@@ -3016,14 +3016,14 @@ extremely important concept of a <strong>coset</strong> of a group.</p>
 equivalence relation. </p>
 <p><span style="display:block" class="definition">
 An equivalence relation on a set <span class="arithmatex">\(G\)</span> is a binary relation
-<span class="arithmatex">\(\sim\)</span> that satisfies the following properties.
-\begin{description}
-\item[Reflexive.] For all <span class="arithmatex">\(a \in G\)</span>, <span class="arithmatex">\(a \sim a\)</span>.
-\item[Symmetric.] If <span class="arithmatex">\(a \sim b\)</span> then <span class="arithmatex">\(b \sim a\)</span>.
-\item[Transitive.] If <span class="arithmatex">\(a \sim b\)</span> and <span class="arithmatex">\(b \sim c\)</span> then <span class="arithmatex">\(a
-\sim c\)</span>. 
-\end{description}
-</span></p>
+<span class="arithmatex">\(\sim\)</span> that satisfies the following properties.</p>
+<ul>
+<li><strong>Reflexive.</strong> For all <span class="arithmatex">\(a \in G\)</span>, <span class="arithmatex">\(a \sim a\)</span>.</li>
+<li><strong>Symmetric.</strong> If <span class="arithmatex">\(a \sim b\)</span> then <span class="arithmatex">\(b \sim a\)</span>.</li>
+<li><strong>Transitive.</strong> If <span class="arithmatex">\(a \sim b\)</span> and <span class="arithmatex">\(b \sim c\)</span> then <span class="arithmatex">\(a
+\sim c\)</span>.</li>
+</ul>
+<p></span></p>
 <p>\textcolor{Plum}{Equivalence classes are a useful concept since they tend to break
 up a set of objects <span class="arithmatex">\(G\)</span> into distinct, disjoint sets <span class="arithmatex">\(A_i\)</span>. More
 specifically, they partition <span class="arithmatex">\(G\)</span>. These sets, <span class="arithmatex">\(A_i\)</span>, are
@@ -3040,25 +3040,25 @@ the following relation to do this.}
 <p>Let <span class="arithmatex">\(G\)</span> be a group and <span class="arithmatex">\(H\)</span> be a subgroup of <span class="arithmatex">\(G\)</span>. If <span class="arithmatex">\(a, b \in G\)</span>, then the
 relation <span class="arithmatex">\(\sim\)</span> on <span class="arithmatex">\(G\)</span> such that <span class="arithmatex">\(a \sim b\)</span> if and only if <span class="arithmatex">\(ab^{-1} \in H\)</span>
 is an equivalence relation.</p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[Reflexive.] Observe that <span class="arithmatex">\(a \sim a\)</span>, since <span class="arithmatex">\(aa^{-1} = e
-\in H\)</span>.</p>
-<p>\item[Symmetric.] First, if <span class="arithmatex">\(a \sim b\)</span> then <span class="arithmatex">\(ab^{-1} \in H\)</span>. Since <span class="arithmatex">\(H\)</span> is a
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong>Reflexive.</strong> Observe that <span class="arithmatex">\(a \sim a\)</span>, since <span class="arithmatex">\(aa^{-1} = e
+\in H\)</span>.</li>
+<li><strong>Symmetric.</strong> First, if <span class="arithmatex">\(a \sim b\)</span> then <span class="arithmatex">\(ab^{-1} \in H\)</span>. Since <span class="arithmatex">\(H\)</span> is a
 group, we know that <span class="arithmatex">\((ab^{-1})^{-1} = ba^{-1} \in H\)</span>.
 Thus by our definition we see that <span class="arithmatex">\(b \sim a\)</span>, so that our
-relation is also symmetric. </p>
-<p>\item[Transitive.] Now suppose <span class="arithmatex">\(a \sim b\)</span> and <span class="arithmatex">\(b \sim c\)</span> for
+relation is also symmetric.</li>
+<li><strong>Transitive.</strong> Now suppose <span class="arithmatex">\(a \sim b\)</span> and <span class="arithmatex">\(b \sim c\)</span> for
 <span class="arithmatex">\(a, b, c \in G\)</span>. Then by definition <span class="arithmatex">\(ab^{-1} \in H\)</span> and
 <span class="arithmatex">\(bc^{-1} \in H\)</span>. Since <span class="arithmatex">\(H\)</span> is a group, and it is closed under
-products of its elements. Therefore</p>
+products of its elements. Therefore</li>
+</ul>
 <div class="arithmatex">\[
 (ab^{-1})(bc^{-1}) = ab^{-1}bc^{-1} = ac^{-1} \in H.
 \]</div>
 <p>Thus we see that <span class="arithmatex">\(a \sim c\)</span>, which proves that our
-relation is transitive.
-\end{description}
-</span>
+relation is transitive.</p>
+<p></span>
 As our relation is reflexive, symmetric and transitive, we see
 that it is an equivalence relation. Note however that we could
 have defined our relation as <span class="arithmatex">\(a \sim b\)</span> if and only if <span class="arithmatex">\(a^{-1}b

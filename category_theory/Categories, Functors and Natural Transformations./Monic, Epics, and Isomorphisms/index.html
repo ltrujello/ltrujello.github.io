@@ -3022,33 +3022,27 @@ elements in any objects. This leads to the concepts of monomorphisms and epimorp
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(f: A \to B\)</span> be a morphism. Then </p>
 <ul>
-<li>[1.] <span class="arithmatex">\(f\)</span> is a <strong>monomorphism</strong> (or is monic) if</li>
+<li><strong>1.</strong> <span class="arithmatex">\(f\)</span> is a <strong>monomorphism</strong> (or is monic) if</li>
 </ul>
 <div class="arithmatex">\[ 
 f \circ g_1 = f \circ g_2 \implies g_1 = g_2
 \]</div>
 <p>for all
-<span class="arithmatex">\(g_1,g_2 : C \to A\)</span>, where <span class="arithmatex">\(D\)</span> is arbitrary.</p>
-<ul>
-<li>[2.] <span class="arithmatex">\(f\)</span> is a <strong>epimorphism</strong> (or is epic) if </li>
-</ul>
+<span class="arithmatex">\(g_1,g_2 : C \to A\)</span>, where <span class="arithmatex">\(D\)</span> is arbitrary.
+* <strong>2.</strong> <span class="arithmatex">\(f\)</span> is a <strong>epimorphism</strong> (or is epic) if </p>
 <div class="arithmatex">\[ 
 g_1 \circ f  = g_2 \circ f \implies g_1 = g_2
 \]</div>
 <p>for all <span class="arithmatex">\(g_1, g_2 : B \to C\)</span>, where <span class="arithmatex">\(C\)</span> is an arbitrary
-object. </p>
-<ul>
-<li>[3.] $f $ is a <strong>split monomorphism</strong> (or retraction)
+object.
+* <strong>3.</strong> $f $ is a <strong>split monomorphism</strong> (or retraction)
 if, for some\
-<span class="arithmatex">\(g: B \to A\)</span>, </li>
-</ul>
-<div class="arithmatex">\[
-f  \circ g = 1_B.  
-\]</div>
-<ul>
-<li>[4.] $f $ is a <strong>split epimorphism</strong> (or section) if, for some
-<span class="arithmatex">\(g: B \to A\)</span>, </li>
-</ul>
+<span class="arithmatex">\(g: B \to A\)</span>, </p>
+<p>$$
+f  \circ g = 1_B.<br />
+$$
+* <strong>4.</strong> $f $ is a <strong>split epimorphism</strong> (or section) if, for some
+<span class="arithmatex">\(g: B \to A\)</span>, </p>
 <div class="arithmatex">\[
 g \circ f  = 1_A.
 \]</div>
@@ -3126,18 +3120,12 @@ in abstract algebra and in set theory that one usually encounters. </p>
 Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor. Then 
 if <span class="arithmatex">\(f: A \to B \in \cc\)</span> </p>
 <ul>
-<li>
-<p>is an isomorphism, then 
-<span class="arithmatex">\(F(f)\)</span> is an isomorphism in <span class="arithmatex">\(\dd\)</span>. </p>
-</li>
-<li>
-<p>is a split monomorphism, then <span class="arithmatex">\(F(f)\)</span> 
-is a split monomorphism in <span class="arithmatex">\(F(f)\)</span>  </p>
-</li>
-<li>
-<p>is a split epimorphism, then <span class="arithmatex">\(F(f)\)</span> is a split 
-epimorphism.</p>
-</li>
+<li>is an isomorphism, then 
+<span class="arithmatex">\(F(f)\)</span> is an isomorphism in <span class="arithmatex">\(\dd\)</span>.</li>
+<li>is a split monomorphism, then <span class="arithmatex">\(F(f)\)</span> 
+is a split monomorphism in <span class="arithmatex">\(F(f)\)</span></li>
+<li>is a split epimorphism, then <span class="arithmatex">\(F(f)\)</span> is a split 
+epimorphism.</li>
 </ul>
 <p>That is, functors <strong>preserve</strong> isomorphisms, split monomorphism, 
 and split epimorphisms. 
@@ -3255,44 +3243,34 @@ Let <span class="arithmatex">\(\cc\)</span> be a locally small category. For eac
 Some examples of the above construction include familiar and useful examples 
 in mathematics.</p>
 <ul>
-<li>
-<p>For any group <span class="arithmatex">\((G, \cdot)\)</span> in <span class="arithmatex">\(\grp\)</span>, we can formulate the automorphism 
+<li>For any group <span class="arithmatex">\((G, \cdot)\)</span> in <span class="arithmatex">\(\grp\)</span>, we can formulate the automorphism 
 group <span class="arithmatex">\(\aut(G)\)</span> which is the group of isomorphisms from <span class="arithmatex">\(G\)</span> to itself. 
 Depending on <span class="arithmatex">\(G\)</span>, this can have all kinds of behavior. For example, if 
 <span class="arithmatex">\(\aut(G)\)</span> is cyclic, then 
 <span class="arithmatex">\(G\)</span> is abelian. If <span class="arithmatex">\(G\)</span> is an abelian group 
-of order <span class="arithmatex">\(p^n\)</span>, then <span class="arithmatex">\(\aut(G) = GL(n, F)\)</span> where <span class="arithmatex">\(F\)</span> is the finite field of order <span class="arithmatex">\(p\)</span>.</p>
-</li>
-<li>
-<p>For any set <span class="arithmatex">\(X\)</span> in <span class="arithmatex">\(\Set\)</span>, the automorphism group <span class="arithmatex">\(\aut(X)\)</span> consists of the bijections 
+of order <span class="arithmatex">\(p^n\)</span>, then <span class="arithmatex">\(\aut(G) = GL(n, F)\)</span> where <span class="arithmatex">\(F\)</span> is the finite field of order <span class="arithmatex">\(p\)</span>.</li>
+<li>For any set <span class="arithmatex">\(X\)</span> in <span class="arithmatex">\(\Set\)</span>, the automorphism group <span class="arithmatex">\(\aut(X)\)</span> consists of the bijections 
 on <span class="arithmatex">\(X\)</span> to itself; by definition in set theory, these are just permutations. Hence the automorphism group 
-is the permutation group of the elements of <span class="arithmatex">\(X\)</span>. </p>
-</li>
-<li>
-<p>For any field <span class="arithmatex">\((k, \cdot, +)\)</span> in <span class="arithmatex">\(\fld\)</span>, the automorphism 
+is the permutation group of the elements of <span class="arithmatex">\(X\)</span>.</li>
+<li>For any field <span class="arithmatex">\((k, \cdot, +)\)</span> in <span class="arithmatex">\(\fld\)</span>, the automorphism 
 group <span class="arithmatex">\(\aut(k)\)</span> also consists of field isomorphisms to itself. 
 In this setting, what is often 
 of more interest is considering the subgroups of <span class="arithmatex">\(\aut(k)\)</span>, often 
 denoted as <span class="arithmatex">\(\aut(k/L)\)</span>, which are automorphisms that fix the subfield 
 <span class="arithmatex">\(L\)</span>. These subgroups are key 
-to studying polynomial roots and hence are prevalent in Galois theory.</p>
-</li>
-<li>
-<p>For any graph <span class="arithmatex">\((G, E, V)\)</span> in <strong>Grph</strong>, one can construct the automorphism group <span class="arithmatex">\(\aut(G)\)</span>, 
+to studying polynomial roots and hence are prevalent in Galois theory.</li>
+<li>For any graph <span class="arithmatex">\((G, E, V)\)</span> in <strong>Grph</strong>, one can construct the automorphism group <span class="arithmatex">\(\aut(G)\)</span>, 
 which tracks the symmetries of the graph. Interestingly, there is a theorem known as 
 Frucht's Theorem which states that every finite 
 group is the automorphism group of a finite (undirected) graph; this was later 
 extended and shown that every group is the automorphism group of a directed 
-graph [<em>Groups represented by homeomorphism groups</em>.]. </p>
-</li>
-<li>
-<p>For any topological space <span class="arithmatex">\((X, \tau)\)</span> in <span class="arithmatex">\(\top\)</span>, 
+graph [<em>Groups represented by homeomorphism groups</em>.].</li>
+<li>For any topological space <span class="arithmatex">\((X, \tau)\)</span> in <span class="arithmatex">\(\top\)</span>, 
 the autormorphism group <span class="arithmatex">\(\aut(X)\)</span> 
 consists of the homeomorphisms to itself. Geometrically, these record the possible 
 ways of continuously deforming a space back into itself. It is a theorem 
 that every group is the automorphism group of some complete, connected, 
-locally connected metric space <span class="arithmatex">\(M\)</span> of any dimension.         </p>
-</li>
+locally connected metric space <span class="arithmatex">\(M\)</span> of any dimension.</li>
 </ul>
 <p></span></p>
 <p>With the automorphism group in mind, we might ask the same question on the object 
@@ -3318,27 +3296,27 @@ deal of information within the category.</p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category, and assume the axiom of choice. Then we can construct 
 <strong>a skeleton of a category <span class="arithmatex">\(\cc\)</span></strong>, denoted <span class="arithmatex">\(\text{sk}(\cc)\)</span>, as 
-the category where 
-\begin{description}
-\item[Objects.] For each <span class="arithmatex">\(A \in \cc\)</span>, we select one 
-representative of each isomorphism class <span class="arithmatex">\(\text{Isom}(A)\)</span>.
-\item[Morphisms.] For two representatives of isomorphism 
-classes <span class="arithmatex">\(A, B\)</span>, we take </p>
+the category where </p>
+<ul>
+<li><strong>Objects.</strong> For each <span class="arithmatex">\(A \in \cc\)</span>, we select one 
+representative of each isomorphism class <span class="arithmatex">\(\text{Isom}(A)\)</span>.</li>
+<li><strong>Morphisms.</strong> For two representatives of isomorphism 
+classes <span class="arithmatex">\(A, B\)</span>, we take </li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\text{sk}(\cc)}(A,B)= \hom_{\cc}(A,B)
 \]</div>
-<p>\end{description}
-</span>
-We note three things regarding this construction. 
-\begin{description}
-\item[(1)] We used the axiom of choice to build the objects of the 
-category, since we needed to select one element from each isomorphism class.
-\item[(2)] The category <span class="arithmatex">\(\text{sk}(\cc)\)</span> is a full subcategory of <span class="arithmatex">\(\cc\)</span> by definition.
-\item[(3)] We note that this construction builds <em>a</em> skeleton. In general, 
+<p></span>
+We note three things regarding this construction. </p>
+<ul>
+<li><strong>(1)</strong> We used the axiom of choice to build the objects of the 
+category, since we needed to select one element from each isomorphism class.</li>
+<li><strong>(2)</strong> The category <span class="arithmatex">\(\text{sk}(\cc)\)</span> is a full subcategory of <span class="arithmatex">\(\cc\)</span> by definition.</li>
+<li><strong>(3)</strong> We note that this construction builds <em>a</em> skeleton. In general, 
 a category will have different skeletons because there are many ways to construct the 
-objects of such a skeleton. 
-\end{description}
-As noted, a category will have different skeletons. However, up to isomorphism, it does 
+objects of such a skeleton.</li>
+</ul>
+<p>As noted, a category will have different skeletons. However, up to isomorphism, it does 
 not really matter which skeleton we build as we will see. </p>
 <p><span style="display:block" class="lemma">
 Let <span class="arithmatex">\(\cc\)</span> be a category, and let <span class="arithmatex">\(\text{sk}(\cc)\)</span> and <span class="arithmatex">\(\text{sk}'(\cc)\)</span> 
@@ -3356,12 +3334,12 @@ even of the cardinality of every set is the same thing as asking for the
 skeletons of <span class="arithmatex">\(\ab\)</span>, <span class="arithmatex">\(**DMan**\)</span>, and <span class="arithmatex">\(\Set\)</span>. We give a few 
 examples. </p>
 <p><span style="display:block" class="example">
-Consider the category <span class="arithmatex">\(**FinCard**\)</span> (read: "finite cardinals") which we describe as 
-\begin{description}
-\item[Objects.] The set <span class="arithmatex">\(\varnothing\)</span> and the sets <span class="arithmatex">\(\{1, 2, ..., n\}\)</span> for each <span class="arithmatex">\(n \in \mathbb{N}\)</span>.
-\item[Morphisms.] All functions between these finite sets.<br />
-\end{description}
-Clearly this is a full subcategory of <span class="arithmatex">\(\finset\)</span>. Moreover, it is skeletal; 
+Consider the category <span class="arithmatex">\(**FinCard**\)</span> (read: "finite cardinals") which we describe as </p>
+<ul>
+<li><strong>Objects.</strong> The set <span class="arithmatex">\(\varnothing\)</span> and the sets <span class="arithmatex">\(\{1, 2, ..., n\}\)</span> for each <span class="arithmatex">\(n \in \mathbb{N}\)</span>.</li>
+<li><strong>Morphisms.</strong> All functions between these finite sets.</li>
+</ul>
+<p>Clearly this is a full subcategory of <span class="arithmatex">\(\finset\)</span>. Moreover, it is skeletal; 
 no two sets are isomorphic because each object is of different size. Therefore, it 
 is skeletal. In fact, <span class="arithmatex">\(**FinCard**\)</span> is a skeleton 
 of <span class="arithmatex">\(\finset\)</span> because any finite set (in some universe <span class="arithmatex">\(U\)</span>) 
@@ -3374,12 +3352,12 @@ One can try to generalize the previous example to <span class="arithmatex">\(\Se
 is in general not possible unless we assume ZFC with the 
 <strong>generalized continuum hypothesis</strong>, as such a posulate is independent of ZFC. </p>
 <p>Assuming such an axiom, we can construct the category <span class="arithmatex">\(**Card**\)</span>
-where 
-\begin{description}
-\item[Objects.] The sets <span class="arithmatex">\(\varnothing, \{1, 2, \dots, n\}\)</span> for each <span class="arithmatex">\(n \in \mathbb{N}\)</span>, and <span class="arithmatex">\(\omega_0, \omega_1, \omega_2, \dots\)</span> 
-\item[Morphisms.] All functions between such sets. 
-\end{description}
-Here we see that this is again a skeleton <span class="arithmatex">\(\Set\)</span>, since by our assumptions 
+where </p>
+<ul>
+<li><strong>Objects.</strong> The sets <span class="arithmatex">\(\varnothing, \{1, 2, \dots, n\}\)</span> for each <span class="arithmatex">\(n \in \mathbb{N}\)</span>, and <span class="arithmatex">\(\omega_0, \omega_1, \omega_2, \dots\)</span></li>
+<li><strong>Morphisms.</strong> All functions between such sets.</li>
+</ul>
+<p>Here we see that this is again a skeleton <span class="arithmatex">\(\Set\)</span>, since by our assumptions 
 (which is assuming a lot), any set is of some cardinality
 <span class="arithmatex">\(1, 2, \dots, n, \dots, \aleph_0, \aleph_1, \dots\)</span>. However, for each such 
 cardinal we have a corresponding set with that cardinality. Hence each element 
@@ -3392,12 +3370,12 @@ can find a skeleton of <strong>Cycl</strong> by finding a family of cylic groups
 size (again, using the generalized continuum hypothesis).  </p>
 <p><span style="display:block" class="example">
 Consider the category <span class="arithmatex">\(**Ecld**\)</span> of Euclidean spaces, which we may
-describe as 
-\begin{description}
-\item[Objects.] The vector spaces <span class="arithmatex">\(\rr^n\)</span> for each $n = 0, 1, 2, \dots, $
-\item[Morphisms.] Linear transformations between vector spaces. 
-\end{description}
-Then we see that <span class="arithmatex">\(**Ecld**\)</span> is the skeleton of <span class="arithmatex">\(**FinVect**_k\)</span>, 
+describe as </p>
+<ul>
+<li><strong>Objects.</strong> The vector spaces <span class="arithmatex">\(\rr^n\)</span> for each $n = 0, 1, 2, \dots, $</li>
+<li><strong>Morphisms.</strong> Linear transformations between vector spaces.</li>
+</ul>
+<p>Then we see that <span class="arithmatex">\(**Ecld**\)</span> is the skeleton of <span class="arithmatex">\(**FinVect**_k\)</span>, 
 which is the category of finite-dimensional vector spaces. The reason why this 
 works is because every finite dimensional vector space is isomorphic to <span class="arithmatex">\(\rr^n\)</span> for 
 some <span class="arithmatex">\(n\)</span>. 
@@ -3405,35 +3383,23 @@ some <span class="arithmatex">\(n\)</span>.
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] Prove Lemma \ref{lemma:composition_of_epis} for epimorphisms.</p>
-</li>
-<li>
-<p>[<strong>2.</strong>] Prove Lemma \ref{lemma:skeletons_are_isomorphic}.</p>
-</li>
-<li>
-<p>[<strong>3.</strong>] Describe the monomorphisms and epimorphisms 
+<li><strong><em>*1.</em></strong>* Prove Lemma \ref{lemma:composition_of_epis} for epimorphisms.</li>
+<li><strong><em>*2.</em></strong>* Prove Lemma \ref{lemma:skeletons_are_isomorphic}.</li>
+<li><strong><em>*3.</em></strong>* Describe the monomorphisms and epimorphisms 
 in the category of <span class="arithmatex">\(\cat\)</span>.\footnote{Classifying epimorphisms 
 in <span class="arithmatex">\(\cat\)</span> is actually nontrivial, although not impossible. 
 However, the task here is to just interpret 
-the definition of monics and epics <span class="arithmatex">\(\cat\)</span>. }</p>
-</li>
-<li>
-<p>[<strong>4.</strong>]
-In the category of <span class="arithmatex">\(\ring\)</span>, give an example of a morphism 
+the definition of monics and epics <span class="arithmatex">\(\cat\)</span>. }</li>
+<li><strong><em>*4.</em></strong><em> In the category of <span class="arithmatex">\(\ring\)</span>, give an example of a morphism 
 which is both a monomorphism and epimorphism, but not an isomorphism.
 \
-(<em>Hint:</em> Consider the inclusion <span class="arithmatex">\(i: \zz \to \qq\)</span>.)</p>
-</li>
-<li>
-<p>[<strong>5.</strong>]
-Recall from Exercise ? that, in any category, if we have two commutative 
+(</em>Hint:* Consider the inclusion <span class="arithmatex">\(i: \zz \to \qq\)</span>.)</li>
+<li><strong><em>*5.</em></strong>* Recall from Exercise ? that, in any category, if we have two commutative 
 diagrams, we can always stack them together to obtain a larger commutative diagram. 
 We saw, however, that converse is not always true: subdividing a commutative 
-diagram does not produce smaller commutative diagrams. </p>
-</li>
+diagram does not produce smaller commutative diagrams. </li>
 </ul>
-<p>Prove that the converse is true when all morphisms are isomorphisms.     </p>
+<p>Prove that the converse is true when all morphisms are isomorphisms.</p>
 <script src="../../mathjax_helper.js"></script>
 
 

@@ -3062,14 +3062,15 @@ f^*: \hom_{\cc}(C, -) \to \hom_{\cc}(C', -)
 and <span class="arithmatex">\(f^{*}\)</span> is an epimorphism if and only if <span class="arithmatex">\(f\)</span> is a split monomorphism 
 (that is, if and only if <span class="arithmatex">\(f\)</span> has a left-inverse.)
 </span></p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[<span class="arithmatex">\(\bm{\implies}\)</span>] Observe that <span class="arithmatex">\(\hom_{\cc}(C, -) \to
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{\implies}\)</span></strong> Observe that <span class="arithmatex">\(\hom_{\cc}(C, -) \to
 \cc \to **Set**\)</span> is a functor. Then <span class="arithmatex">\(f^*:
 \hom_{\cc}(C, -) \to \hom_{\cc}(C', -)\)</span> is a natural transformation where
 <span class="arithmatex">\(f: C' \to C\)</span>. Now suppose <span class="arithmatex">\(\eta, \eta': F
 \to \hom_{\cc}(C, -)\)</span>, where <span class="arithmatex">\(F: \cc \to **Set**\)</span> is a functor, are
-natural transformations. Then if <span class="arithmatex">\(f^*\)</span> is monic, </p>
+natural transformations. Then if <span class="arithmatex">\(f^*\)</span> is monic, </li>
+</ul>
 <div class="arithmatex">\[  
 f^* \circ \eta = f^* \circ \eta' \implies \eta = \eta'.
 \]</div>
@@ -3086,27 +3087,26 @@ f^* \circ \eta_A(x) = f^* \circ \eta'_A(x) \iff \eta_A(x) \circ f = \eta'_A(x) \
 <p>But if <span class="arithmatex">\(f\)</span> is monic, then <span class="arithmatex">\(f^* \circ \eta_A(x) = f^*
 \circ'_A(x)\)</span> implies that <span class="arithmatex">\(\eta_A = \eta'_A\)</span>. Hence
 we see that <span class="arithmatex">\(\eta_A(x) \circ f = \eta'_A(x) \circ f
-\implies \eta_A(x) = \eta'_A(x).\)</span></p>
-<p>\item[<span class="arithmatex">\(\bm{\impliedby}\)</span>] Now suppose <span class="arithmatex">\(f\)</span> is epic. Then
+\implies \eta_A(x) = \eta'_A(x).\)</span>
+* <strong><span class="arithmatex">\(\bm{\impliedby}\)</span></strong> Now suppose <span class="arithmatex">\(f\)</span> is epic. Then
 using the same notation as earlier, note that </p>
 <div class="arithmatex">\[
 f^* \circ \eta_A(x) = f^* \circ \eta'_A(x) \iff \eta_A(x) \circ f = \eta'_A(x) \circ f \implies \eta_{A} = \eta_{A}.
 \]</div>
-<p>Hence we see that <span class="arithmatex">\(f^*\)</span> is a monomorphism. 
-\end{description}
-</span>
+<p>Hence we see that <span class="arithmatex">\(f^*\)</span> is a monomorphism.</p>
+<p></span>
 Taking the dual of what we proved, we prove the second part of the
 lemma. Now we'll use this lemma in the theorem below, one which will be very useful.</p>
 <p><span style="display:block" class="proposition">
 Let <span class="arithmatex">\((F, G, \eta, \epsilon)\)</span> be an adjunction between
-categories <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span>. Then 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i)}\)</span>] <span class="arithmatex">\(G\)</span> is faithful if and only if for each
-<span class="arithmatex">\(D \in \dd\)</span>, <span class="arithmatex">\(\epsilon_{D}\)</span> is epic 
-\item[<span class="arithmatex">\(\bm{(ii)}\)</span>] <span class="arithmatex">\(G\)</span> is full if and only if every
-<span class="arithmatex">\(\epsilon_{D}\)</span> is split monic. 
-\end{description}
-Therefore, <span class="arithmatex">\(G\)</span> is full and faithful if and only if
+categories <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span>. Then </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{(i)}\)</span></strong> <span class="arithmatex">\(G\)</span> is faithful if and only if for each
+<span class="arithmatex">\(D \in \dd\)</span>, <span class="arithmatex">\(\epsilon_{D}\)</span> is epic</li>
+<li><strong><span class="arithmatex">\(\bm{(ii)}\)</span></strong> <span class="arithmatex">\(G\)</span> is full if and only if every
+<span class="arithmatex">\(\epsilon_{D}\)</span> is split monic.</li>
+</ul>
+<p>Therefore, <span class="arithmatex">\(G\)</span> is full and faithful if and only if
 <span class="arithmatex">\(\epsilon_D\)</span> is an isomorphism between <span class="arithmatex">\(F(G(D))\)</span> and <span class="arithmatex">\(D\)</span>. 
 </span></p>
 <p><span style="display:block" class="proof">
@@ -3154,52 +3154,50 @@ D'\)</span>, we see that </p>
 \end{align}\]</div>
 <p>Thus, we see that this natural transformation is in
 disguise; it's actually just <span class="arithmatex">\(\epsilon_D^*:
-\hom_{\dd}(D, -) \to \hom_{\dd}(F(G(D), -)\)</span>!
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i)}\)</span>]
-\begin{description}
-\item[<span class="arithmatex">\(\bm{\iff}\)</span>]
-If <span class="arithmatex">\(G\)</span> is faithful, then the natural
+\hom_{\dd}(D, -) \to \hom_{\dd}(F(G(D), -)\)</span>!</p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{(i)}\)</span></strong><ul>
+<li><strong><span class="arithmatex">\(\bm{\iff}\)</span></strong> If <span class="arithmatex">\(G\)</span> is faithful, then the natural
 transformation in equation (7) is one to one. This makes
 <span class="arithmatex">\(\epsilon_D^*\)</span> a monomorphism. By the previous lemma,
 this holds if and only if <span class="arithmatex">\(\epsilon_D\)</span> is epic for every <span class="arithmatex">\(D\)</span>
-in <span class="arithmatex">\(\dd\)</span>.</p>
-<p>\end{description} 
-\item[<span class="arithmatex">\(\bm{(ii)}\)</span>]
-\begin{description}
-\item[<span class="arithmatex">\(\bm{\iff}\)</span>]
-On the other hand, if <span class="arithmatex">\(G\)</span> is full, then this natural
+in <span class="arithmatex">\(\dd\)</span>.</li>
+</ul>
+</li>
+<li><strong><span class="arithmatex">\(\bm{(ii)}\)</span></strong><ul>
+<li><strong><span class="arithmatex">\(\bm{\iff}\)</span></strong> On the other hand, if <span class="arithmatex">\(G\)</span> is full, then this natural
 transformation in equation (7) surjective. This makes
 <span class="arithmatex">\(\epsilon_{D}^*\)</span> an epimorphism, and by the previous
-lemma, that holds if and only if <span class="arithmatex">\(\epsilon_D\)</span> is a split monomorphism. 
-\end{description} <br />
-\end{description}
-</span></p>
+lemma, that holds if and only if <span class="arithmatex">\(\epsilon_D\)</span> is a split monomorphism.</li>
+</ul>
+</li>
+</ul>
+<p></span></p>
 <p><span style="display:block" class="theorem">
 Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor. Then the following are
-equivalent. 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i)}\)</span>] <span class="arithmatex">\(G\)</span> is an equivalence of categories 
-\item[<span class="arithmatex">\(\bm{(ii)}\)</span>] <span class="arithmatex">\(G\)</span> is part of an adjunction <span class="arithmatex">\((F, G,
+equivalent. </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{(i)}\)</span></strong> <span class="arithmatex">\(G\)</span> is an equivalence of categories</li>
+<li><strong><span class="arithmatex">\(\bm{(ii)}\)</span></strong> <span class="arithmatex">\(G\)</span> is part of an adjunction <span class="arithmatex">\((F, G,
 \eta, \epsilon)\)</span> where <span class="arithmatex">\(\eta, \epsilon\)</span> are natural
-isomorphisms 
-\item[<span class="arithmatex">\(\bm{(iii)}\)</span>] <span class="arithmatex">\(F\)</span> is full and faithful, and each
+isomorphisms</li>
+<li><strong><span class="arithmatex">\(\bm{(iii)}\)</span></strong> <span class="arithmatex">\(F\)</span> is full and faithful, and each
 object <span class="arithmatex">\(C\)</span> is isomorphic to <span class="arithmatex">\(G(D)\)</span> for 
-some object <span class="arithmatex">\(D\)</span>. 
-\end{description} 
-</span>
+some object <span class="arithmatex">\(D\)</span>.</li>
+</ul>
+<p></span>
 Note that this theorem is symmetric; one could interchange <span class="arithmatex">\(G\)</span>
 with <span class="arithmatex">\(F\)</span>, and then obtain the same exact results. \textcolor{MidnightBlue}{Thus, one 
 way of stating this theorem is that <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> are equivalent
 as categories if and only if there exits full and faithful
 functors <span class="arithmatex">\(F: \cc \to \dd\)</span> and <span class="arithmatex">\(G: \dd \to \cc\)</span>; or if and only if
 <span class="arithmatex">\(F, G\)</span> form an adjoint equivalence.}</p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i) \implies (iii)}\)</span>] 
-Suppose we have an equivalence of categories given by <span class="arithmatex">\(F:
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{(i) \implies (iii)}\)</span></strong> Suppose we have an equivalence of categories given by <span class="arithmatex">\(F:
 \cc \to \dd\)</span> and <span class="arithmatex">\(G: \dd \to \cc\)</span>, with natural
-isomorphisms </p>
+isomorphisms </li>
+</ul>
 <div class="arithmatex">\[
 \phi: F \circ G \cong I_\dd \qquad \psi: G \circ F \cong I_\cc.
 \]</div>
@@ -3238,9 +3236,8 @@ where <span class="arithmatex">\(D = F(C)\)</span>. </p>
 <p>Similarly, since <span class="arithmatex">\(\psi: F \circ G \cong I_\dd\)</span>, we know
 that each object <span class="arithmatex">\(D\)</span> is assigned an isomorphism <span class="arithmatex">\(\psi_D:
 F(G(D)) \to D\)</span>. Hence every object <span class="arithmatex">\(D\)</span> is isomorphic to
-some object <span class="arithmatex">\(F(C)\)</span> for <span class="arithmatex">\(C = G(D)\)</span>. </p>
-<p>\item[<span class="arithmatex">\(\bm{(iii) \implies (ii)}\)</span>]
-Suppose <span class="arithmatex">\((iii)\)</span> holds. For any  arbitrary object <span class="arithmatex">\(C \in
+some object <span class="arithmatex">\(F(C)\)</span> for <span class="arithmatex">\(C = G(D)\)</span>.
+* <strong><span class="arithmatex">\(\bm{(iii) \implies (ii)}\)</span></strong> Suppose <span class="arithmatex">\((iii)\)</span> holds. For any  arbitrary object <span class="arithmatex">\(C \in
 \cc\)</span>, there exists an isomorphism <span class="arithmatex">\(\eta_C: C \to G(D)\)</span> for some
 object <span class="arithmatex">\(D \in \dd\)</span>. Denote such an object as <span class="arithmatex">\(F_0(C)\)</span>. 
 Now consider any other morphism <span class="arithmatex">\(g: C
@@ -3275,12 +3272,11 @@ G(\epsilon_D) \circ \eta_{G(D)} = 1_{G(D)}
 we have that <span class="arithmatex">\(G(\epsilon_D) = \eta_{G(D)}^{-1}\)</span>. Sine <span class="arithmatex">\(G\)</span>
 is full and faithful, we see that <span class="arithmatex">\(\epsilon_D\)</span> must be an isomorphism as well. </p>
 <p>Thus, in total, we have an adjoint equivalence <span class="arithmatex">\((F, G, \eta,
-\epsilon)\)</span>, as desired. </p>
-<p>\item[<span class="arithmatex">\(\bm{(ii) \implies (i)}\)</span>] This direction is clear,
+\epsilon)\)</span>, as desired.
+* <strong><span class="arithmatex">\(\bm{(ii) \implies (i)}\)</span></strong> This direction is clear,
 since an adjoint equivalence automatically establishes an
-equivalence of categories. 
-\end{description}
-With <span class="arithmatex">\((i) \implies (iii) \implies (ii) \implies (i)\)</span>, we see
+equivalence of categories.</p>
+<p>With <span class="arithmatex">\((i) \implies (iii) \implies (ii) \implies (i)\)</span>, we see
 that all of the conditions are equivalent. 
 </span></p>
 <p><span style="display:block" class="example">
@@ -3293,14 +3289,14 @@ and <span class="arithmatex">\(R**-Mod**\times S**-Mod**\)</span>
 <p><span style="display:block" class="proposition">
 Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be an equivalence of categories with the
 corresponding inverse functor <span class="arithmatex">\(G: \dd \to \cc\)</span>. Let <span class="arithmatex">\(f: C \to
-C'\)</span> be a morphism in <span class="arithmatex">\(\cc\)</span>. Then<br />
-\begin{description}
-\item[<span class="arithmatex">\((i)\)</span>] <span class="arithmatex">\(f\)</span> is a monomorphism (epimorphism)
+C'\)</span> be a morphism in <span class="arithmatex">\(\cc\)</span>. Then  </p>
+<ul>
+<li><strong><span class="arithmatex">\((i)\)</span></strong> <span class="arithmatex">\(f\)</span> is a monomorphism (epimorphism)
 if and only if 
-<span class="arithmatex">\(F(f)\)</span> is a monomorphism (epimorphism)
-\item[<span class="arithmatex">\((ii)\)</span>] <span class="arithmatex">\(C\)</span> is initial (terminal) if and only if <span class="arithmatex">\(F(C)\)</span> is initial (terminal).
-\end{description}
-</span></p>
+<span class="arithmatex">\(F(f)\)</span> is a monomorphism (epimorphism)</li>
+<li><strong><span class="arithmatex">\((ii)\)</span></strong> <span class="arithmatex">\(C\)</span> is initial (terminal) if and only if <span class="arithmatex">\(F(C)\)</span> is initial (terminal).</li>
+</ul>
+<p></span></p>
 <p>Consequently, we have that <span class="arithmatex">\(f\)</span> is an isomorphism (a monomorphism and epimorphism) if and only
 if <span class="arithmatex">\(F(F)\)</span> is an isomorphism. 
 \textcolor{Red!90}{Note this is not generally true!}
@@ -3310,17 +3306,19 @@ Additionally, we also have that
 proposition is symmetric, so that the same conclusions hold
 for morphisms and objects in <span class="arithmatex">\(\dd\)</span> governed by <span class="arithmatex">\(G: \dd \to
 \cc\)</span>. </p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i)}\)</span>] 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{\implies}\)</span>] Suppose <span class="arithmatex">\(f: C \to C'\)</span> is a
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li>
+<p><strong><span class="arithmatex">\(\bm{(i)}\)</span></strong></p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{\implies}\)</span></strong> Suppose <span class="arithmatex">\(f: C \to C'\)</span> is a
 monomorphism. Consider two morphisms <span class="arithmatex">\(g,h: D \to F(C)\)</span>
 such that <span class="arithmatex">\(F(f) \circ g = F(f) \circ h\)</span>. By the
 previous theorem, we know however that there exists an
 object <span class="arithmatex">\(A\)</span> of <span class="arithmatex">\(\cc\)</span> such that <span class="arithmatex">\(D \cong F(A)\)</span>. Hence
 there exists an isomorphism <span class="arithmatex">\(\theta: F(A) \to D\)</span>. We
-then have the diagram:</p>
+then have the diagram:</li>
+</ul>
 <p><img src="../../../png/category_theory/chapter_4/tikz_code_3_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Note that <span class="arithmatex">\(h \circ \theta, g \circ \theta: F(A) \to
 F(C)\)</span>. Since <span class="arithmatex">\(F\)</span> is full, we know that there exists 
@@ -3337,17 +3335,14 @@ that <span class="arithmatex">\(F(f \circ k) = F(f \circ k')\)</span>. However, 
 k'\)</span>. But since <span class="arithmatex">\(f\)</span> is a monomorphism, we have that <span class="arithmatex">\(k
 = k'\)</span>. Hence <span class="arithmatex">\(F(k) = F(k') \implies g \circ \theta = k
 \circ \theta\)</span>, and since <span class="arithmatex">\(\theta\)</span> is an isomorphism,
-we have that <span class="arithmatex">\(h = g\)</span>. Therefore, <span class="arithmatex">\(F(f)\)</span> is also monic.</p>
-<p>\item[<span class="arithmatex">\(\bm{\impliedby}\)</span>] 
-Suppose <span class="arithmatex">\(f: C \to C'\)</span> and <span class="arithmatex">\(F(f)\)</span> is monic. Consider
+we have that <span class="arithmatex">\(h = g\)</span>. Therefore, <span class="arithmatex">\(F(f)\)</span> is also monic.
+* <strong><span class="arithmatex">\(\bm{\impliedby}\)</span></strong> Suppose <span class="arithmatex">\(f: C \to C'\)</span> and <span class="arithmatex">\(F(f)\)</span> is monic. Consider
 two morphism <span class="arithmatex">\(g, h: A \to C'\)</span> in <span class="arithmatex">\(\cc\)</span>, and suppose
 that <span class="arithmatex">\(f \circ g = f \circ k\)</span>. Then <span class="arithmatex">\(F(f) \circ F(g) =
 F(f) \circ F(k) \implies F(g) = F(k)\)</span>, since <span class="arithmatex">\(F(f)\)</span> is
 monic. However, <span class="arithmatex">\(F\)</span> is faithful, so that <span class="arithmatex">\(g = k\)</span>. Hence <span class="arithmatex">\(f\)</span> is monic as well.
-\end{description}  </p>
-<p>\item[<span class="arithmatex">\(\bm{(ii)}\)</span>] 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{\implies}\)</span>] Suppose <span class="arithmatex">\(C\)</span> is initial in
+* <strong><span class="arithmatex">\(\bm{(ii)}\)</span></strong>
+* <strong><span class="arithmatex">\(\bm{\implies}\)</span></strong> Suppose <span class="arithmatex">\(C\)</span> is initial in
 <span class="arithmatex">\(\cc\)</span>. Let <span class="arithmatex">\(D\)</span> be an object in <span class="arithmatex">\(\dd\)</span>. Then observe
 that, since <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> are equivalent, there
 exists an isomorphism <span class="arithmatex">\(\theta: F(A) \to D\)</span> for some
@@ -3365,19 +3360,18 @@ since <span class="arithmatex">\(C\)</span> is initial, we see that <span class=
 Hence <span class="arithmatex">\(f_1 = f_2\)</span>, so that there is exactly one
 morphism <span class="arithmatex">\(f_1=f_2:F(C) \to D\)</span>. </p>
 <p>Since <span class="arithmatex">\(D\)</span> was an arbitrary object of <span class="arithmatex">\(\dd\)</span>, we have
-that <span class="arithmatex">\(F(C)\)</span> is initial. </p>
-<p>\item[<span class="arithmatex">\(\bm{\impliedby}\)</span>] 
-Suppose <span class="arithmatex">\(F(C)\)</span> is an initial object. Consider any
+that <span class="arithmatex">\(F(C)\)</span> is initial.
+* <strong><span class="arithmatex">\(\bm{\impliedby}\)</span></strong> Suppose <span class="arithmatex">\(F(C)\)</span> is an initial object. Consider any
 object <span class="arithmatex">\(C'\)</span> of <span class="arithmatex">\(\cc\)</span>. Then since <span class="arithmatex">\(F(C)\)</span> is initial, there exists a unique
 morphism <span class="arithmatex">\(f: F(C) \to F(C')\)</span>. Since <span class="arithmatex">\(F\)</span> is full, we
 know that this corresponds with a morphism <span class="arithmatex">\(k: C \to
 C'\)</span> such that <span class="arithmatex">\(F(k) = f\)</span>. Hence we have a unique
 morphism <span class="arithmatex">\(k: C \to C'\)</span>. And since <span class="arithmatex">\(C'\)</span> was an 
 arbitrary object of <span class="arithmatex">\(\cc\)</span>, we have that <span class="arithmatex">\(C\)</span> is
-initial, as desired. 
-\end{description}<br />
-\end{description}
-</span>
+initial, as desired.</p>
+</li>
+</ul>
+<p></span>
 The proofs in which we proved <span class="arithmatex">\(f\)</span> to be an epimorphism, and for <span class="arithmatex">\(C\)</span> 
 to be a terminal object, are very similar. This proposition will soon be
 generalized, but this gives us insight into how useful the concept

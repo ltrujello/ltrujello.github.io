@@ -3100,17 +3100,13 @@ if, for all <span class="arithmatex">\(C \in \cc\)</span>, <span class="arithmat
 <p>This definition is somewhat strange, so we comment a few remarks. </p>
 <p><span style="display:block" class="remark"></p>
 <ul>
-<li>
-<p>To define an adjunction between two functors, it suffices to specify which 
+<li>To define an adjunction between two functors, it suffices to specify which 
 functor is the left adjoint, or which functor is the right adjoint (since one specification determines the other). 
 Thus, the sentence "<span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(G\)</span> form an adjunction" alone 
 does not make sense; namely, it is missing information of which 
-functor is the left or the right adjoint. </p>
-</li>
-<li>
-<p>In an adjunction, we are always going to have some 
-kind of bijection as above. But there are two different ways we could decide to write it:</p>
-</li>
+functor is the left or the right adjoint.</li>
+<li>In an adjunction, we are always going to have some 
+kind of bijection as above. But there are two different ways we could decide to write it:</li>
 </ul>
 <div class="arithmatex">\[
 \hom_{\dd}(F(C), D) \cong \hom_{\cc}(C, G(D)) 
@@ -3125,7 +3121,7 @@ the position of <span class="arithmatex">\(F(C)\)</span> and <span class="arithm
 the symbol <span class="arithmatex">\(F(C)\)</span> is always in the left position, while <span class="arithmatex">\(G(D)\)</span> is in the right.
 Hence we can determine if <span class="arithmatex">\(F\)</span> or <span class="arithmatex">\(G\)</span> is left or right based on glancing at the 
 bijection. Conversely, knowing the left and rightedness of our functors 
-tells us how to write down the bijection. </p>
+tells us how to write down the bijection.</p>
 <p></span></p>
 <p>We now observe that this definition is equivalent to the existence of universal morphisms; 
 this is something we already saw in our introductory example. </p>
@@ -3135,33 +3131,21 @@ Let <span class="arithmatex">\(\cc, \dd\)</span> be categories and consider a pa
 .
 The following are equivalent. </p>
 <ul>
-<li>
-<p>[(<em>i</em>.)] The functors <span class="arithmatex">\(F\)</span>, <span class="arithmatex">\(G\)</span> form an adjunction where
-<span class="arithmatex">\(F\)</span> is left adjoint to <span class="arithmatex">\(G\)</span> (and so <span class="arithmatex">\(G\)</span> is right adjoint to <span class="arithmatex">\(G\)</span>). </p>
-</li>
-<li>
-<p>[(<em>ii</em>.)] There exist natural transformations </p>
-</li>
+<li><strong>(<em>i</em>.)</strong> The functors <span class="arithmatex">\(F\)</span>, <span class="arithmatex">\(G\)</span> form an adjunction where
+<span class="arithmatex">\(F\)</span> is left adjoint to <span class="arithmatex">\(G\)</span> (and so <span class="arithmatex">\(G\)</span> is right adjoint to <span class="arithmatex">\(G\)</span>).</li>
+<li><strong>(<em>ii</em>.)</strong> There exist natural transformations </li>
 </ul>
 <div class="arithmatex">\[
 \eta: I_{\cc} \to G \circ F \qquad \epsilon: F \circ G \to I_{\dd}
 \]</div>
 <p>such that
-\begin{itemize}</p>
-<ul>
-<li>
-<p>For each <span class="arithmatex">\(C \in \cc\)</span>, the morphism 
-<span class="arithmatex">\(\eta_C: C \to G(F(C))\)</span> is universal from 
-\hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{<span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(G\)</span>}}</p>
-</li>
-<li>
-<p>For each <span class="arithmatex">\(D \in \dd\)</span>, the morphism 
-<span class="arithmatex">\(\epsilon_D: F(G(D)) \to D\)</span> is universal from 
-\hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(F\)</span> to <span class="arithmatex">\(D\)</span>}}</p>
-</li>
-</ul>
-<p>\end{itemize}
-</span></p>
+    * For each <span class="arithmatex">\(C \in \cc\)</span>, the morphism 
+    <span class="arithmatex">\(\eta_C: C \to G(F(C))\)</span> is universal from 
+    \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{<span class="arithmatex">\(C\)</span> to <span class="arithmatex">\(G\)</span>}}
+    * For each <span class="arithmatex">\(D \in \dd\)</span>, the morphism 
+    <span class="arithmatex">\(\epsilon_D: F(G(D)) \to D\)</span> is universal from 
+    \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{<span class="arithmatex">\(F\)</span> to <span class="arithmatex">\(D\)</span>}}</p>
+<p></span></p>
 <p><span style="display:block" class="proof">
 Since <span class="arithmatex">\(F\)</span> is left adjoint to <span class="arithmatex">\(G\)</span>, we have the natural bijection </p>
 <div class="arithmatex">\[
@@ -3191,14 +3175,10 @@ completes the proof.
 Let \adjunction{\cc}{F}{\dd}{G} be an adjunction. We establish the 
 following terminology.</p>
 <ul>
-<li>
-<p>The natural transformation <span class="arithmatex">\(\eta: I_{\cc} \to G \circ F\)</span> is 
-the <strong>unit of the adjunction</strong>.</p>
-</li>
-<li>
-<p>The natural transformation <span class="arithmatex">\(\epsilon: F \circ G \to I_{\dd}\)</span> 
-is the <strong>counit of the adjunction</strong>.</p>
-</li>
+<li>The natural transformation <span class="arithmatex">\(\eta: I_{\cc} \to G \circ F\)</span> is 
+the <strong>unit of the adjunction</strong>.</li>
+<li>The natural transformation <span class="arithmatex">\(\epsilon: F \circ G \to I_{\dd}\)</span> 
+is the <strong>counit of the adjunction</strong>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="example">
@@ -3206,7 +3186,7 @@ We already saw this proposition in action in the introductory example.
 In that example, we found a pair functors 
 \begin{center}
 \adjunction{<strong>Grp</strong>}{{R[-]}}{<strong>Ring</strong>}{(-)^{\times}}
-\end{center}    that formed an adjunction with universal morphisms </p>
+\end{center}that formed an adjunction with universal morphisms </p>
 <div class="arithmatex">\[
 i_G: G \to (R[G])^{\times}
 \qquad 
@@ -3262,12 +3242,8 @@ is right adjoint to <span class="arithmatex">\(F\)</span>, and we have the natur
 \]</div>
 <p>Moreover, we know exactly how this bijection works. </p>
 <ul>
-<li>
-<p>For <span class="arithmatex">\(f: F(X) \to M\)</span>, we send <span class="arithmatex">\(\phi(f)\)</span> to <span class="arithmatex">\(U(f) \circ i_X\)</span>. </p>
-</li>
-<li>
-<p>For <span class="arithmatex">\(g: X \to U(M)\)</span>, we send <span class="arithmatex">\(\phi^{-1}(g)\)</span> to <span class="arithmatex">\(\epsilon_M \circ F(g)\)</span>. </p>
-</li>
+<li>For <span class="arithmatex">\(f: F(X) \to M\)</span>, we send <span class="arithmatex">\(\phi(f)\)</span> to <span class="arithmatex">\(U(f) \circ i_X\)</span>.</li>
+<li>For <span class="arithmatex">\(g: X \to U(M)\)</span>, we send <span class="arithmatex">\(\phi^{-1}(g)\)</span> to <span class="arithmatex">\(\epsilon_M \circ F(g)\)</span>.</li>
 </ul>
 <p>This data assembles into the commutative diagrams as below. </p>
 <p><img src="../../../png/category_theory/chapter_4/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
@@ -3463,24 +3439,18 @@ hard.
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>]
-Give a proof of Proposition \ref{proposition:adjunction_isomorphism_behavior}.  </p>
-</li>
-<li>
-<p>[<strong>2.</strong>] 
-Let <span class="arithmatex">\(U: **Ab** \to **Grp**\)</span> be the
+<li><strong><em>*1.</em></strong>* Give a proof of Proposition \ref{proposition:adjunction_isomorphism_behavior}.</li>
+<li><strong><em>*2.</em></strong>* Let <span class="arithmatex">\(U: **Ab** \to **Grp**\)</span> be the
 forgetful functor, and suppose <span class="arithmatex">\(F: **Grp** \to **Ab**\)</span> is 
 the abelianization functor. That is, if <span class="arithmatex">\(G\)</span> is a group and <span class="arithmatex">\(\phi:
-G \to G'\)</span> is a group homomorphism then </p>
-</li>
+G \to G'\)</span> is a group homomorphism then </li>
 </ul>
 <div class="arithmatex">\[
 F(G) = G/[G,G] \qquad F(\phi) : G/[G, G] \to G'/[G',G'].
 \]</div>
 <p>where <span class="arithmatex">\([G,G]\)</span> is the commutator subgroup.</p>
 <p>Show that we have an adjunction \adjunction{<strong>Grp</strong>}{F}{<strong>Ab</strong>.}{U}
-Give a description of the unit and counits. </p>
+Give a description of the unit and counits.</p>
 <script src="../../mathjax_helper.js"></script>
 
 

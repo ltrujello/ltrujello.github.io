@@ -3023,21 +3023,17 @@ products in <strong>Set</strong> are cartesian products. One can show that, for 
 U(M \times N) \cong U(M) \times U(N).
 \]</div>
 <p>Regarding this functor's behavior, 
-we say that the forgetful functor <span class="arithmatex">\(U\)</span> <strong>preserves</strong> products. </p>
-<ul>
-<li>We may ask if the converse holds: Does the free functor preserve products? 
+we say that the forgetful functor <span class="arithmatex">\(U\)</span> <strong>preserves</strong> products.
+* We may ask if the converse holds: Does the free functor preserve products? 
 The answer is no: Given two sets <span class="arithmatex">\(X, Y\)</span>, it is generally not true that 
-<span class="arithmatex">\(F(X \times Y) \cong F(X) \times F(Y)\)</span> (as monoids). </li>
-</ul>
+<span class="arithmatex">\(F(X \times Y) \cong F(X) \times F(Y)\)</span> (as monoids). </p>
 <p>An easy way to see this is to let <span class="arithmatex">\(X = Y = \{\bullet\}\)</span>, the one point set. Then 
 <span class="arithmatex">\(F(\{\bullet\} \times \{\bullet\}) \cong F(\{\bullet\}) \cong \zz\)</span>, while 
-<span class="arithmatex">\(F(\{\bullet\}) \times F(\{\bullet\}) \cong \zz \times \zz\)</span>. </p>
-<ul>
-<li>What is interesting, however, is that the free functor <em>does</em> preserve 
+<span class="arithmatex">\(F(\{\bullet\}) \times F(\{\bullet\}) \cong \zz \times \zz\)</span>.
+* What is interesting, however, is that the free functor <em>does</em> preserve 
 coproducts. Recall that the coproduct in <strong>Set</strong> is the disjoint union, while the 
 coproduct in <strong>Mon</strong> is the free product of monoids. Then it is true that, for two 
-sets <span class="arithmatex">\(X, Y\)</span>, </li>
-</ul>
+sets <span class="arithmatex">\(X, Y\)</span>, </p>
 <div class="arithmatex">\[
 F(X \amalg Y) \cong F(X) * F(Y).
 \]</div>
@@ -3053,25 +3049,19 @@ Then <span class="arithmatex">\(G\)</span> preserves limits and <span class="ari
 </span></p>
 <p>Before a proof, we make some comments. </p>
 <ul>
-<li>
-<p>An easy way to remember this is <strong>RAPL</strong>: "<strong>R</strong>ight <strong>A</strong>djoints <strong>P</strong>reserve <strong>L</strong>imits." 
+<li>An easy way to remember this is <strong>RAPL</strong>: "<strong>R</strong>ight <strong>A</strong>djoints <strong>P</strong>reserve <strong>L</strong>imits." 
 (Speaking from experience, say it in your head a bunch of times or you'll forget.) 
 If you can remember <strong>RAPL</strong>, then you can 
-remember that, dually, left adjoints preserve colimits. </p>
-</li>
-<li>
-<p>The converse of this theorem does not hold.</p>
-</li>
-<li>
-<p>Typically, this proof is shown in one of two forms: It is "blackboxed" with 
+remember that, dually, left adjoints preserve colimits.</li>
+<li>The converse of this theorem does not hold.</li>
+<li>Typically, this proof is shown in one of two forms: It is "blackboxed" with 
 a slick application of the Yoneda Lemma, which is not illuminating or useful for a new 
 reader. Or, it is more usefully spelled out by showing that right adjoints preserve limits, and 
 the second statement is obtained by "dualizing". For variety, we will
 show that left adjoints preserve 
 colimits. Then, the reader can 
 try proving themselves that right adjoints preserve 
-limits.</p>
-</li>
+limits.</li>
 </ul>
 <p><span style="display:block" class="proof">
 Let <span class="arithmatex">\((\Colim H, \sigma_i: H(i) \to \Colim H)\)</span> be the colimit
@@ -3086,14 +3076,10 @@ let <span class="arithmatex">\((C, \tau_i: F(H(i)) \to C)\)</span>
 be a cone over <span class="arithmatex">\(F \circ H: J \to \dd\)</span>. 
 We must show that </p>
 <ul>
-<li>
-<p>[1.] There exists a <span class="arithmatex">\(\alpha: F(\Colim H) \to C\)</span> such that 
-<span class="arithmatex">\(\alpha \circ F(\sigma_i) = \tau_i\)</span> for all <span class="arithmatex">\(i \in J\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(\alpha\)</span> is the unique morphism from <span class="arithmatex">\(F(\Colim H)\)</span> to <span class="arithmatex">\(C\)</span> with 
-this property.  </p>
-</li>
+<li><strong>1.</strong> There exists a <span class="arithmatex">\(\alpha: F(\Colim H) \to C\)</span> such that 
+<span class="arithmatex">\(\alpha \circ F(\sigma_i) = \tau_i\)</span> for all <span class="arithmatex">\(i \in J\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(\alpha\)</span> is the unique morphism from <span class="arithmatex">\(F(\Colim H)\)</span> to <span class="arithmatex">\(C\)</span> with 
+this property.</li>
 </ul>
 <p>We show existence. Observe that each 
 <span class="arithmatex">\(\tau_i: F(H(i)) \to C\)</span> induces a unique morphism 
@@ -3122,18 +3108,10 @@ F(X \amalg Y) \cong F(X) * F(Y).
 \]</div>
 <p>Moreover, the free monoid functor is part of a larger family of free functors: </p>
 <ul>
-<li>
-<p>Free group functor, <span class="arithmatex">\(F: **Set** \to **Grp**\)</span></p>
-</li>
-<li>
-<p>Free abelian group functor, <span class="arithmatex">\(F: **Set** \to **Ab**\)</span></p>
-</li>
-<li>
-<p>Free ring functor, <span class="arithmatex">\(F: **Set** \to **Ring**\)</span></p>
-</li>
-<li>
-<p>Free <span class="arithmatex">\(R\)</span>-module functor, <span class="arithmatex">\(F: **Set** \to R**-Mod**\)</span></p>
-</li>
+<li>Free group functor, <span class="arithmatex">\(F: **Set** \to **Grp**\)</span></li>
+<li>Free abelian group functor, <span class="arithmatex">\(F: **Set** \to **Ab**\)</span></li>
+<li>Free ring functor, <span class="arithmatex">\(F: **Set** \to **Ring**\)</span></li>
+<li>Free <span class="arithmatex">\(R\)</span>-module functor, <span class="arithmatex">\(F: **Set** \to R**-Mod**\)</span></li>
 </ul>
 <p>who are the left adjoints to their respective forgetful functors. 
 However, the coproduct in some of these 
@@ -3146,20 +3124,20 @@ of our left adjoint is.
 <p><span style="display:block" class="example">
 Let <strong>Meas</strong> be the category of measure spaces with measure-preserving 
 morphisms. 
-More precisely, 
-\begin{description}
-\item[Objects.] The objects are triples <span class="arithmatex">\((X, \mathcal{A}, \mu_X)\)</span> 
+More precisely, </p>
+<ul>
+<li><strong>Objects.</strong> The objects are triples <span class="arithmatex">\((X, \mathcal{A}, \mu_X)\)</span> 
 where <span class="arithmatex">\(X\)</span> is a topological space, <span class="arithmatex">\(\mathcal{A}\)</span> is a sigma algebra 
-on <span class="arithmatex">\(X\)</span>, and <span class="arithmatex">\(\mu_X\)</span> is a measure on <span class="arithmatex">\(X\)</span>. </p>
-<p>\item[Morphisms.] A morphism between two objects <span class="arithmatex">\((X, \mathcal{A}, \mu_X)\)</span> 
+on <span class="arithmatex">\(X\)</span>, and <span class="arithmatex">\(\mu_X\)</span> is a measure on <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Morphisms.</strong> A morphism between two objects <span class="arithmatex">\((X, \mathcal{A}, \mu_X)\)</span> 
 and <span class="arithmatex">\((Y, \mathcal{B}, \mu_Y)\)</span> is a function <span class="arithmatex">\(f: X \to Y\)</span> such that 
 <span class="arithmatex">\(f\)</span> is measurable and preserves measure. That is, is <span class="arithmatex">\(f\)</span> is measurable 
-and </p>
+and </li>
+</ul>
 <div class="arithmatex">\[
 \mu_X(f^{-1}(B)) = \mu_Y(B)
 \]</div>
-<p>for every <span class="arithmatex">\(B \in \mathcal{B}\)</span>. 
-\end{description}</p>
+<p>for every <span class="arithmatex">\(B \in \mathcal{B}\)</span>.</p>
 <p>Let <span class="arithmatex">\(U: **Meas** \to **Set**\)</span> be the forgetful functor, forgetting 
 measure space properties and measurability of the morphisms. 
 This functor can't have a left-adjoint, since it does not preserve 
@@ -3197,34 +3175,25 @@ because it doesn't preserve products
 <p>{\large <strong>Exercises</strong>
 \vspace{0.2cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] Denote the free monoid functor as <span class="arithmatex">\(F\)</span>.
+<li><strong><em>*1.</em></strong>* Denote the free monoid functor as <span class="arithmatex">\(F\)</span>.
 Prove directly that for two sets <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span>, we have 
 the isomorphism of monoids <span class="arithmatex">\(F(X \amalg Y) \cong F(X) * F(Y)\)</span>. (Doing this is actually very important; 
-The proof of Theorem \ref{theorem:RAPL} will become more intuitive.)</p>
-</li>
+The proof of Theorem \ref{theorem:RAPL} will become more intuitive.)</li>
+<li><strong><em>*2.</em></strong>* Finish the proof of Theorem \ref{theorem:RAPL}</li>
 <li>
-<p>[<strong>2.</strong>] Finish the proof of Theorem \ref{theorem:RAPL}</p>
-</li>
-<li>
-<p>[<strong>3.</strong>] 
-Let <span class="arithmatex">\(\cc, \dd\)</span> be categories with finite products. 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[<em>i.</em>] Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor that preserves products, so that
-for two objects <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> of <span class="arithmatex">\(\cc\)</span>, there exists an isomorphism </p>
-</li>
+<p><strong><em>*3.</em></strong>* Let <span class="arithmatex">\(\cc, \dd\)</span> be categories with finite products.</p>
+<ul>
+<li><strong><em>i.</em></strong> Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor that preserves products, so that
+for two objects <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span> of <span class="arithmatex">\(\cc\)</span>, there exists an isomorphism </li>
 </ul>
 <div class="arithmatex">\[
 F(A \times B) \cong F(A) \times F(B).
 \]</div>
-<p>Does this isomorphism have to be natural in <span class="arithmatex">\(A, B\)</span>?</p>
-<ul>
-<li>[<em>ii.</em>] Suppose <span class="arithmatex">\(F: \cc \to \dd\)</span> is a right adjoint. Is the isomorphism 
-<span class="arithmatex">\(F(A \times B) \cong F(A) \times F(B)\)</span> natural now? </li>
+<p>Does this isomorphism have to be natural in <span class="arithmatex">\(A, B\)</span>?
+* <strong><em>ii.</em></strong> Suppose <span class="arithmatex">\(F: \cc \to \dd\)</span> is a right adjoint. Is the isomorphism 
+<span class="arithmatex">\(F(A \times B) \cong F(A) \times F(B)\)</span> natural now?</p>
+</li>
 </ul>
-<p>\end{itemize}</p>
 <script src="../../mathjax_helper.js"></script>
 
 

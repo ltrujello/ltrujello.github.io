@@ -3103,14 +3103,10 @@ passes through <span class="arithmatex">\(z\)</span> is a zero arrow).</p>
 <p>Now we define the <strong>cokernel</strong> a morphism <span class="arithmatex">\(f: A \to B\)</span> to
 be an arrow <span class="arithmatex">\(u:B \to C\)</span> where </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(u \circ f = 0: A \to C\)</span> </p>
-</li>
-<li>
-<p>[2.] If <span class="arithmatex">\(h: B \to D\)</span> has the property that <span class="arithmatex">\(h \circ f
+<li><strong>1.</strong> <span class="arithmatex">\(u \circ f = 0: A \to C\)</span></li>
+<li><strong>2.</strong> If <span class="arithmatex">\(h: B \to D\)</span> has the property that <span class="arithmatex">\(h \circ f
 = 0\)</span>, then <span class="arithmatex">\(h = h' \circ u\)</span> for a unique arrow <span class="arithmatex">\(h': B \to
-D\)</span>.</p>
-</li>
+D\)</span>.</li>
 </ul>
 <p>Visually, this becomes </p>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_7_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
@@ -3129,14 +3125,10 @@ Let <span class="arithmatex">\(\cc\)</span> be a category and consider two morph
 B\)</span> in <span class="arithmatex">\(\cc\)</span>. The <strong>coequalizer</strong> of <span class="arithmatex">\((f, g)\)</span> is a
 morphism <span class="arithmatex">\(u: B \to D\)</span> such that </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(u \circ f = u \circ h\)</span></p>
-</li>
-<li>
-<p>[2.] If <span class="arithmatex">\(h: B \to C\)</span> has the property that <span class="arithmatex">\(h \circ f
+<li><strong>1.</strong> <span class="arithmatex">\(u \circ f = u \circ h\)</span></li>
+<li><strong>2.</strong> If <span class="arithmatex">\(h: B \to C\)</span> has the property that <span class="arithmatex">\(h \circ f
 = h \circ g\)</span>, then there exists a unique morphism <span class="arithmatex">\(h':D \to C\)</span> such that 
-<span class="arithmatex">\(h = h' \circ u\)</span>.  </p>
-</li>
+<span class="arithmatex">\(h = h' \circ u\)</span>.</li>
 </ul>
 <p>This may not always exist. 
 We can represent this with the following commutative diagram.\ 
@@ -3156,15 +3148,11 @@ morphisms. Since there are only two objects, the two nontrivial
 morphisms have the same domain and codomain. Now consider the
 functor category <span class="arithmatex">\(\cc^**2**\)</span> where</p>
 <ul>
-<li>
-<p>[1.] Objects are functors <span class="arithmatex">\(F: **2** \to \cc\)</span>, whose
-image is therefore a pair of morphism <span class="arithmatex">\(f, g: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span></p>
-</li>
-<li>
-<p>[2.] Morphisms are natural transformations, which are
+<li><strong>1.</strong> Objects are functors <span class="arithmatex">\(F: **2** \to \cc\)</span>, whose
+image is therefore a pair of morphism <span class="arithmatex">\(f, g: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span></li>
+<li><strong>2.</strong> Morphisms are natural transformations, which are
 therefore a pair of arrows <span class="arithmatex">\(h : A \to A'\)</span> and <span class="arithmatex">\(k: B \to B'\)</span> so
-that</p>
-</li>
+that</li>
 </ul>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_7_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 is a commutative diagram. Finally consider the diagonal
@@ -3186,10 +3174,11 @@ homomorphisms <span class="arithmatex">\(\phi, \psi: G \to H\)</span> is the hom
 \pi: H \to H/\im(\phi - \psi).
 \]</div>
 <p>where <span class="arithmatex">\(g' \in H\)</span> maps to the coset <span class="arithmatex">\(g' + \im(\phi - \psi)\)</span>. We
-show this as follows.
-\begin{description}
-\item[<span class="arithmatex">\(\bm{\pi \circ \phi = \pi \circ \psi}\)</span>.] First let <span class="arithmatex">\(g \in
-G\)</span>, and consider the elements </p>
+show this as follows.</p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{\pi \circ \phi = \pi \circ \psi}\)</span>.</strong> First let <span class="arithmatex">\(g \in
+G\)</span>, and consider the elements </li>
+</ul>
 <div class="arithmatex">\[\begin{align*}
 \pi\circ \phi(g) &amp;= \phi(g) + \im(\phi - \psi)\\
 \pi\circ \psi(g) &amp;= \psi(g) + \im(\phi - \psi).
@@ -3205,8 +3194,8 @@ G\)</span>, and consider the elements </p>
 &amp;= 0 + \im(\phi - \psi).
 \end{align*}\]</div>
 <p>Since their difference is zero, we see that they're equal.
-Hence <span class="arithmatex">\(\pi \circ \phi = \pi \circ \psi\)</span>. </p>
-<p>\item[Universality.] Let <span class="arithmatex">\(f: H \to H'\)</span> be another group
+Hence <span class="arithmatex">\(\pi \circ \phi = \pi \circ \psi\)</span>.
+* <strong>Universality.</strong> Let <span class="arithmatex">\(f: H \to H'\)</span> be another group
 homomorphism such that <span class="arithmatex">\(f \circ \phi = f \circ \psi\)</span>. Then
 construct the morphism <span class="arithmatex">\(f': H/\im(\phi - \psi) \to H'\)</span>
 where </p>
@@ -3229,9 +3218,8 @@ well-defined group homomorphism. Furthermore, note that
 we suppose there exists another group homomorphism
 <span class="arithmatex">\(k:H/\im(\phi-\psi) \to H'\)</span> such that <span class="arithmatex">\(f = k\circ \pi\)</span>.
 Then we see that <span class="arithmatex">\(f' \circ \pi = k \circ \pi\)</span>, which
-implies that <span class="arithmatex">\(f' = k\)</span>. 
-\end{description}
-What we've shown is that for any <span class="arithmatex">\(f: H \to H'\)</span> such that
+implies that <span class="arithmatex">\(f' = k\)</span>.</p>
+<p>What we've shown is that for any <span class="arithmatex">\(f: H \to H'\)</span> such that
 <span class="arithmatex">\(f \circ \phi = f \circ \psi\)</span>, there exists a unique
 morphism <span class="arithmatex">\(f' : H/\im(\phi - \psi) \to H'\)</span> such that <span class="arithmatex">\(f = f' \circ
 \pi\)</span>. Thus we see that <span class="arithmatex">\(\pi\)</span> has the universal property of

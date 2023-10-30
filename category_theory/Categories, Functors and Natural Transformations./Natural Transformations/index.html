@@ -3227,19 +3227,19 @@ G/[G, G] \to H/[H, H]\)</span> defined as </p>
 <div class="arithmatex">\[
 f^*(g + [G, G]) = f(g) + [H,H].
 \]</div>
-<p>Now let <span class="arithmatex">\(g \in G\)</span>. 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{T_H\circ f(g)}\)</span>.] On one hand, observe that </p>
-<div class="arithmatex">\[
+<p>Now let <span class="arithmatex">\(g \in G\)</span>. </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{T_H\circ f(g)}\)</span>.</strong> On one hand, observe that </li>
+</ul>
+<p>$$
 T_H \circ (f(g)) =  f(g) + [H, H]. 
-\]</div>
-<p>\item[<span class="arithmatex">\(\bm{f^*\circ (T_G(g))}\)</span>.] On the other hand,
+$$
+* <strong><span class="arithmatex">\(\bm{f^*\circ (T_G(g))}\)</span>.</strong> On the other hand,
 observe that </p>
 <div class="arithmatex">\[
 f^*\circ T_G(g) = f^*(g + [G, G]) = f(g) + [H, H].  
 \]</div>
-<p>\end{description}
-Hence, we see that </p>
+<p>Hence, we see that </p>
 <div class="arithmatex">\[
 T_H\circ f = f^*\circ T_G
 \]</div>
@@ -3322,89 +3322,58 @@ and <span class="arithmatex">\(\eta(-, 1)= G\)</span>.
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>]
-In what follows, let <span class="arithmatex">\(F,G: \cc \to \dd\)</span> be a pair of functors.
-Interpret what a natural transformation <span class="arithmatex">\(\eta: F \to G\)</span> is in each case.<br />
-\begin{itemize}</p>
-</li>
-<li>
-<p>[(<em>i</em>.)]
-Where <span class="arithmatex">\(\cc\)</span> is a discrete category, and <span class="arithmatex">\(\dd\)</span> is arbitrary. Separately, can we have a natural transformation when <span class="arithmatex">\(\dd\)</span> is discrete?</p>
-</li>
-<li>
-<p>[(<em>ii</em>.)]
-Where <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> are preorders.</p>
-</li>
-<li>
-<p>[(<em>iii</em>.)] 
-Where <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> are one-object categories whose morphisms are group. </p>
-</li>
-<li>
-<p>[(<em>iv</em>.)]
-Where <span class="arithmatex">\(\cc\)</span> is arbitrary and <span class="arithmatex">\(\dd\)</span> is <span class="arithmatex">\(\cat\)</span>.</p>
-</li>
+<li><strong><em>*1.</em></strong>* In what follows, let <span class="arithmatex">\(F,G: \cc \to \dd\)</span> be a pair of functors.
+Interpret what a natural transformation <span class="arithmatex">\(\eta: F \to G\)</span> is in each case.<ul>
+<li><strong>(<em>i</em>.)</strong> Where <span class="arithmatex">\(\cc\)</span> is a discrete category, and <span class="arithmatex">\(\dd\)</span> is arbitrary. Separately, can we have a natural transformation when <span class="arithmatex">\(\dd\)</span> is discrete?</li>
+<li><strong>(<em>ii</em>.)</strong> Where <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> are preorders.</li>
+<li><strong>(<em>iii</em>.)</strong> Where <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> are one-object categories whose morphisms are group.</li>
+<li><strong>(<em>iv</em>.)</strong> Where <span class="arithmatex">\(\cc\)</span> is arbitrary and <span class="arithmatex">\(\dd\)</span> is <span class="arithmatex">\(\cat\)</span>.</li>
 </ul>
-<p>\item[<strong>2.</strong>]
-Show that Definition \ref{definition:nat_trans_homotopy} and Definition \ref{definition:nat_trans}
-are equivalent.</p>
-<p>\item[<strong>3.</strong>]
-Consider the initial discussion of this section. Prove that for two functors 
+</li>
+<li><strong><em>*2.</em></strong>* Show that Definition \ref{definition:nat_trans_homotopy} and Definition \ref{definition:nat_trans}
+are equivalent.</li>
+<li><strong><em>*3.</em></strong>* Consider the initial discussion of this section. Prove that for two functors 
 <span class="arithmatex">\(F, G : \cc \to \Set\)</span> such that <span class="arithmatex">\(F(A) \subset G(A)\)</span> for all <span class="arithmatex">\(A \in \cc\)</span>, 
 the inclusion morphisms <span class="arithmatex">\(i_A: F(A) \to G(A)\)</span> form a natural transformation 
 <span class="arithmatex">\(i: F \to G\)</span> if and only if, for each <span class="arithmatex">\(f: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span>, we have that<br />
-<span class="arithmatex">\(F(f) = G(f)|_{F(A)}\)</span>. </p>
-<p>\item[<strong>4.</strong>]
-Let <span class="arithmatex">\(\cc\)</span> be a category, and consider two objects <span class="arithmatex">\(A,B\)</span> 
-so that we  have the functors </p>
-<div class="arithmatex">\[
+<span class="arithmatex">\(F(f) = G(f)|_{F(A)}\)</span>.</li>
+<li><strong><em>*4.</em></strong>* Let <span class="arithmatex">\(\cc\)</span> be a category, and consider two objects <span class="arithmatex">\(A,B\)</span> 
+so that we  have the functors </li>
+</ul>
+<p>$$
 \hom_{\cc}(A, -), \hom_{\cc}(B, -): \cc  \to \Set.
-\]</div>
-<ul>
-<li>[(<em>i</em>.)] Let <span class="arithmatex">\(\phi\in \hom_{\cc}(B,A)\)</span>. Show 
-that the family of functions </li>
-</ul>
-<div class="arithmatex">\[
+$$
+    * <strong>(<em>i</em>.)</strong> Let <span class="arithmatex">\(\phi\in \hom_{\cc}(B,A)\)</span>. Show 
+    that the family of functions </p>
+<div class="language-text highlight"><pre><span></span><code>$$
 \phi^*_C: \hom_{\cc}(A,C) \to \hom_{\cc}(B,C)
-\]</div>
-<p>indexed by each object <span class="arithmatex">\(C \in \cc\)</span>,
-where <span class="arithmatex">\(\phi^*_C(f: A \to  C) = f \circ \phi: B \to C\)</span>,
-forms a natural transformation <span class="arithmatex">\(\phi^*: \hom_{\cc}(A, -) \to \hom_{\cc}(B, -)\)</span>.</p>
+$$
+
+indexed by each object $C \in \cc$,
+where $\phi^*_C(f: A \to  C) = f \circ \phi: B \to C$,
+forms a natural transformation $\phi^*: \hom_{\cc}(A, -) \to \hom_{\cc}(B, -)$.
+* **(*ii*.)** Show that every natural transformation 
+$\eta:  \hom_{\cc}(A, -)\to \hom_{\cc}(B, -)$ is constructed 
+in this way.
+</code></pre></div>
 <ul>
-<li>[(<em>ii</em>.)] Show that every natural transformation 
-<span class="arithmatex">\(\eta:  \hom_{\cc}(A, -)\to \hom_{\cc}(B, -)\)</span> is constructed 
-in this way. </li>
-</ul>
-<p>\item[<strong>5.</strong>]
-Let <span class="arithmatex">\(F: \cc \to \Set\)</span> be any other functor. Interpret what a 
+<li><strong><em>*5.</em></strong>* Let <span class="arithmatex">\(F: \cc \to \Set\)</span> be any other functor. Interpret what a 
 natural transformation <span class="arithmatex">\(\eta: \bullet \to F\)</span> is. 
-What about <span class="arithmatex">\(\epsilon: F \to \bullet\)</span>? </p>
-<p>\item[<strong>6.</strong>]
-For every ring <span class="arithmatex">\(R\)</span> there is a natural inclusion homomorphism <span class="arithmatex">\(i_R: R \to R[x]\)</span>.
+What about <span class="arithmatex">\(\epsilon: F \to \bullet\)</span>?</li>
+<li><strong><em>*6.</em></strong>* For every ring <span class="arithmatex">\(R\)</span> there is a natural inclusion homomorphism <span class="arithmatex">\(i_R: R \to R[x]\)</span>.
 Thus, let <span class="arithmatex">\((-)[x]: \ring \to \ring\)</span> be the functor that sends a ring 
 <span class="arithmatex">\(R\)</span> to its single-variable polynomial ring <span class="arithmatex">\(R[x]\)</span>.
-Show that we have a natural transformation </p>
+Show that we have a natural transformation </li>
+</ul>
 <div class="arithmatex">\[
 i: I \to (-)[X]
 \]</div>
-<p>where <span class="arithmatex">\(I: \ring \to \ring\)</span> is the identity on <span class="arithmatex">\(\ring\)</span>. </p>
-<p>\item[<strong>7.</strong>]
-Recall the category of <span class="arithmatex">\(G\)</span>-sets is the category where 
-\begin{description}
-\item[Objects.] All <span class="arithmatex">\(G\)</span>-sets <span class="arithmatex">\(X\)</span> (i.e., sets <span class="arithmatex">\(X\)</span> such that <span class="arithmatex">\(G\)</span> has a 
-group action <span class="arithmatex">\(\phi:X \times G \to X\)</span>)
-\item[Morphisms.] All <span class="arithmatex">\(G\)</span>-equivariant morphisms (i.e., functions <span class="arithmatex">\(f:X \to Y\)</span>
-such that <span class="arithmatex">\(f(g \cdot x) = g \cdot f(x)\)</span>).
-\end{description}
-(Also see Exercise 1.3.6).
-Let <span class="arithmatex">\(X\)</span> be a <span class="arithmatex">\(G\)</span>-set with action map <span class="arithmatex">\(\phi: X \times G \to X\)</span> 
-and fix an element <span class="arithmatex">\(g \in G\)</span>. For such an <span class="arithmatex">\(X\)</span>, define the map 
-<span class="arithmatex">\(\phi_X^g: X \to X\)</span> where <span class="arithmatex">\(\phi_X^g(x) = \phi(g, x)\)</span>. </p>
-<p>Show that for each <span class="arithmatex">\(g\)</span>, the maps <span class="arithmatex">\(\phi^g\)</span> form a natural transformation 
-<span class="arithmatex">\(I \to I\)</span>, where <span class="arithmatex">\(I: **G****-sets** \to **G****-sets**\)</span> 
-is the identity  functor on this category. (Note that this is a nontrivial example of a natural 
-transformation between a functor and itself!)</p>
-<p>\end{itemize}</p>
+<p>where <span class="arithmatex">\(I: \ring \to \ring\)</span> is the identity on <span class="arithmatex">\(\ring\)</span>.
+* <strong><em>*7.</em></strong><em> Recall the category of <span class="arithmatex">\(G\)</span>-sets is the category where
+    * </em><em>Objects.</em><em> All <span class="arithmatex">\(G\)</span>-sets <span class="arithmatex">\(X\)</span> (i.e., sets <span class="arithmatex">\(X\)</span> such that <span class="arithmatex">\(G\)</span> has a 
+    group action <span class="arithmatex">\(\phi:X \times G \to X\)</span>)
+    * </em><em>Morphisms.</em>* All <span class="arithmatex">\(G\)</span>-equivariant morphisms (i.e., functions <span class="arithmatex">\(f:X \to Y\)</span>
+    such that <span class="arithmatex">\(f(g \cdot x) = g \cdot f(x)\)</span>).</p>
 <script src="../../mathjax_helper.js"></script>
 
 

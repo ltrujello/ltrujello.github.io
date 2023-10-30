@@ -3024,8 +3024,7 @@ has an initial object.
 </span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[<span class="arithmatex">\(\bm{\implies}\)</span>]
-Suppose <span class="arithmatex">\(G\)</span> has a left adjoint <span class="arithmatex">\(F: \cc \to \dd\)</span>. Then 
+<li><strong><span class="arithmatex">\(\bm{\implies}\)</span></strong> Suppose <span class="arithmatex">\(G\)</span> has a left adjoint <span class="arithmatex">\(F: \cc \to \dd\)</span>. Then 
 for each <span class="arithmatex">\(C \in \cc\)</span>, there exists a universal morphism 
 <span class="arithmatex">\(\eta_C: C \to G(F(C))\)</span>. 
 Now in the comma category, objects will be of 
@@ -3049,14 +3048,12 @@ guarantees that every object
 a morphism <span class="arithmatex">\(h: F(C) \to D\)</span>. Moreover, uniqueness guarantees that the diagram </p>
 <p><img src="../../../png/category_theory/chapter_5/tikz_code_6_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence, <span class="arithmatex">\((F(C), \eta_C: C \to G(F(C)) )\)</span> is an 
-initial object <span class="arithmatex">\(C \downarrow G\)</span>. </p>
-<ul>
-<li>[<span class="arithmatex">\(\impliedby\)</span>] Now suppose that <span class="arithmatex">\(C \downarrow G\)</span> has an 
+initial object <span class="arithmatex">\(C \downarrow G\)</span>.
+* <strong><span class="arithmatex">\(\impliedby\)</span></strong> Now suppose that <span class="arithmatex">\(C \downarrow G\)</span> has an 
 initial object <span class="arithmatex">\((D, \eta_C: C \to G(D))\)</span>. Actually, denote 
 the object <span class="arithmatex">\(D\)</span> as <span class="arithmatex">\(F(C)\)</span>. When we write <span class="arithmatex">\(F(C)\)</span>, we're not denoting 
 a functor, because we'll show this is a functor. Anyways, our initial 
-object can be written as </li>
-</ul>
+object can be written as </p>
 <div class="arithmatex">\[
 (F(C), \eta_C: C \to G(F(C))).
 \]</div>
@@ -3071,7 +3068,7 @@ there must be a <em>unique</em> morphism <span class="arithmatex">\(F(f):F(C) \t
 this morphism forces commutativity of the square </p>
 <p><img src="../../../png/category_theory/chapter_5/tikz_code_6_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and therefore <span class="arithmatex">\(F\)</span> is a functor. Simultaneously, this shows <span class="arithmatex">\(F\)</span> is left adjoint 
-to <span class="arithmatex">\(G\)</span>, as desired. </p>
+to <span class="arithmatex">\(G\)</span>, as desired.</p>
 <p></span><br />
 We can repeat the proof to achieve the following result as well.</p>
 <p><span style="display:block" class="corollary">
@@ -3096,18 +3093,12 @@ a morphism <span class="arithmatex">\(f_i: C_i \to C\)</span> for at least one <
 </span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>
-<p>[<span class="arithmatex">\(\implies\)</span>] 
-Suppose <span class="arithmatex">\(\cc\)</span> has an initial object <span class="arithmatex">\(C'\)</span>. Then <span class="arithmatex">\(I\)</span> is the one-point 
+<li><strong><span class="arithmatex">\(\implies\)</span></strong> Suppose <span class="arithmatex">\(\cc\)</span> has an initial object <span class="arithmatex">\(C'\)</span>. Then <span class="arithmatex">\(I\)</span> is the one-point 
 set since for each <span class="arithmatex">\(C \in C\)</span> there exists one unique morphism 
-<span class="arithmatex">\(f: C' \to C\)</span>. </p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(\impliedby\)</span>] 
-On the other hand, assume the solution set condition. 
+<span class="arithmatex">\(f: C' \to C\)</span>.</li>
+<li><strong><span class="arithmatex">\(\impliedby\)</span></strong> On the other hand, assume the solution set condition. 
 Since <span class="arithmatex">\(\cc\)</span> is complete, it must have products, so we may 
-take the product</p>
-</li>
+take the product</li>
 </ul>
 <div class="arithmatex">\[
 W = \prod_{i \in J}C_i.
@@ -3143,7 +3134,7 @@ e_1 \circ s \circ e = 1_V.
 \]</div>
 <p>However, this implies that the right inverse of <span class="arithmatex">\(e_1\)</span> is <span class="arithmatex">\(s \circ e\)</span>. 
 Since <span class="arithmatex">\(e_1\)</span> is already monic, it must be an isomorphism. Hence <span class="arithmatex">\(f = g\)</span>, so that 
-<span class="arithmatex">\(V\)</span> is an initial object as desired. </p>
+<span class="arithmatex">\(V\)</span> is an initial object as desired.</p>
 <p></span></p>
 <p>We can now combine all of our propositions and theorems into the following 
 one, which is the main adjoint functor theorem of interest. </p>
@@ -3165,7 +3156,7 @@ exists a <span class="arithmatex">\(j \in I\)</span> and a morphism <span class=
 h = G(t) \circ f_i.
 \]</div>
 <p>\end{minipage}<br />
-\end{center}    </span></p>
+\end{center}</span></p>
 <p>\textcolor{Plum}{The above theorem helps us find out when we can get a 
 left adjoint. Prior to this theorem, we already know what happened if 
 we were given a functor who has a left adjoint. Namely, it must preserve 
@@ -3188,7 +3179,7 @@ an element <span class="arithmatex">\(y \in K(s)\)</span> and an arrow </p>
 f: s \to C \text{ such that } K(f)(y) = x.
 \]</div>
 <p>\end{minipage}
-\end{center}    </span></p>
+\end{center}</span></p>
 <script src="../../mathjax_helper.js"></script>
 
 

@@ -3071,11 +3071,11 @@ Let <span class="arithmatex">\(\omega\)</span> be a sublinear projection. Then <
 </span></p>
 <p><span style="display:block" class="proof">
 We will prove this by first showing that <span class="arithmatex">\(d^{\omega} \ge d^{\overline{\omega}}\)</span>,
-and then demonstrating that <span class="arithmatex">\(d^{\omega} - d^{\overline{\omega}} = 0\)</span>.
-\begin{description}
-\item[<span class="arithmatex">\(\bm{d^{\omega} \ge d^{\overline{\omega}}}\)</span>]
-If a pair of persistence modules <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\(\epsilon\)</span>-interleaved by <span class="arithmatex">\((\Gamma, K)\)</span> with respect to <span class="arithmatex">\(\omega\)</span>,
-then we can observe that </p>
+and then demonstrating that <span class="arithmatex">\(d^{\omega} - d^{\overline{\omega}} = 0\)</span>.</p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{d^{\omega} \ge d^{\overline{\omega}}}\)</span></strong> If a pair of persistence modules <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\(\epsilon\)</span>-interleaved by <span class="arithmatex">\((\Gamma, K)\)</span> with respect to <span class="arithmatex">\(\omega\)</span>,
+then we can observe that </li>
+</ul>
 <div class="arithmatex">\[
 \overline{\omega}_\Gamma  \le \omega_\Gamma \le \epsilon \qquad \overline{\omega}_K \le \omega_K \le \epsilon
 \]</div>
@@ -3086,9 +3086,8 @@ Therefore,</p>
 \subset 
 \{ \epsilon \in [0, \infty) \mid F, G \text{ are } \epsilon \text{-interleaved w.r.t. } \overline{\omega}  \}.
 \end{align*}\]</div>
-<p>If we take the infimum of the above relation, we get that <span class="arithmatex">\(d^{\overline{\omega}} \le d^{\omega}\)</span>. \</p>
-<p>\item[<span class="arithmatex">\(\bm{d^{\omega} - d^{\overline{\omega}}} = 0\)</span>.]
-Let <span class="arithmatex">\(\delta&gt; 0\)</span>. We'll show that for any persistence modules <span class="arithmatex">\(F,G\)</span> that</p>
+<p>If we take the infimum of the above relation, we get that <span class="arithmatex">\(d^{\overline{\omega}} \le d^{\omega}\)</span>. \
+* <strong><span class="arithmatex">\(\bm{d^{\omega} - d^{\overline{\omega}}} = 0\)</span>.</strong> Let <span class="arithmatex">\(\delta&gt; 0\)</span>. We'll show that for any persistence modules <span class="arithmatex">\(F,G\)</span> that</p>
 <div class="arithmatex">\[  
 d^\omega(F,G) - d^{\overline{\omega}}(F,G) \le \delta
 \]</div>
@@ -3118,9 +3117,8 @@ by <span class="arithmatex">\((\Gamma, K)\)</span>, we know that <span class="ar
 d^{\omega}(F, G) \le  d^{\overline{\omega}}(F,G) + \delta \implies d^{\omega}(F, G) - d^{\overline{\omega}}(F,G) \le \delta.
 \end{align*}\]</div>
 <p>Since <span class="arithmatex">\(\delta &gt; 0\)</span> was arbitrary, and because <span class="arithmatex">\(d^{\omega} \ge d^{\overline{\omega}}\)</span> 
-we have that they must be equal, as desired. 
-\end{description}
-</span></p>
+we have that they must be equal, as desired.</p>
+<p></span></p>
 <p>We now introduce an important implication of these results. </p>
 <p><span style="display:block" class="theorem">
 For any sublinear translation <span class="arithmatex">\(\omega: **Trans**_P \to [0, \infty]\)</span>, 
@@ -3129,24 +3127,22 @@ on <span class="arithmatex">\(\dd^P\)</span>.
 </span></p>
 <p><span style="display:block" class="proof">
 To show this, we must show that <span class="arithmatex">\(d(F, F) = 0\)</span> for any persistence 
-module <span class="arithmatex">\(F\)</span>, <span class="arithmatex">\(d\)</span> is symmetric, and that <span class="arithmatex">\(d\)</span> obeys the triangle inequality. 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{d(F, F) = 0}\)</span>]
-Observe that <span class="arithmatex">\(d(F, F) = 0\)</span>. This is because if we denote <span class="arithmatex">\(I: P \to P\)</span> to be the identity
+module <span class="arithmatex">\(F\)</span>, <span class="arithmatex">\(d\)</span> is symmetric, and that <span class="arithmatex">\(d\)</span> obeys the triangle inequality. </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{d(F, F) = 0}\)</span></strong> Observe that <span class="arithmatex">\(d(F, F) = 0\)</span>. This is because if we denote <span class="arithmatex">\(I: P \to P\)</span> to be the identity
 translation on <span class="arithmatex">\(P\)</span>, then 
-<span class="arithmatex">\(F\)</span> is <span class="arithmatex">\((I, I)\)</span> interleaved with itself. But recall that <span class="arithmatex">\(\omega_I = 0\)</span>. </p>
-<p>\item[<span class="arithmatex">\(\bm{d(F, G) = d(G,F)}\)</span>]
-Now observe that <span class="arithmatex">\(d(F, G) = d(G, F)\)</span>. This is because of the inherent
+<span class="arithmatex">\(F\)</span> is <span class="arithmatex">\((I, I)\)</span> interleaved with itself. But recall that <span class="arithmatex">\(\omega_I = 0\)</span>.</li>
+<li><strong><span class="arithmatex">\(\bm{d(F, G) = d(G,F)}\)</span></strong> Now observe that <span class="arithmatex">\(d(F, G) = d(G, F)\)</span>. This is because of the inherent
 symmetry present in the definition of an interleaving, which allows us to 
-swap <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(G\)</span>. </p>
-<p>\item[Triangle Inequality]
-Finally, we show that <span class="arithmatex">\(d\)</span> obeys the triangle inequality. Consider a triple of 
+swap <span class="arithmatex">\(F\)</span> and <span class="arithmatex">\(G\)</span>.</li>
+<li><strong>Triangle Inequality</strong> Finally, we show that <span class="arithmatex">\(d\)</span> obeys the triangle inequality. Consider a triple of 
 persistence modules <span class="arithmatex">\(F, G, H\)</span>. Suppose <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\(\epsilon\)</span> interleaved, 
 while <span class="arithmatex">\(G, H\)</span> are <span class="arithmatex">\(\epsilon'\)</span> interleaved. Regardless of whether or not 
 <span class="arithmatex">\(\epsilon \le \epsilon'\)</span> or vice versa, we know that there exist translations 
 <span class="arithmatex">\(\epsilon\)</span>-translations <span class="arithmatex">\((\Gamma, K)\)</span> which interleaved <span class="arithmatex">\(F, G\)</span> and <span class="arithmatex">\(\epsilon'\)</span>-translations 
 <span class="arithmatex">\((\Gamma', K')\)</span> which interleave <span class="arithmatex">\(G,H\)</span>. By the triangle inequality of translations, 
-we know that this implies that <span class="arithmatex">\(F, H\)</span> are <span class="arithmatex">\((\Gamma'\circ \Gamma, K \circ K')\)</span>-interleaved </p>
+we know that this implies that <span class="arithmatex">\(F, H\)</span> are <span class="arithmatex">\((\Gamma'\circ \Gamma, K \circ K')\)</span>-interleaved </li>
+</ul>
 <p>Note that by sublinearity we have that </p>
 <div class="arithmatex">\[\begin{align*}
 \omega_{\Gamma'\Gamma} &amp;\le \omega_{\Gamma'} + \omega_{\Gamma} \le \epsilon' + \epsilon\\
@@ -3160,9 +3156,8 @@ d(F, H) \le \epsilon' + \epsilon.
 <div class="arithmatex">\[
 d(F,H) \le d(F,G) + d(G, H)
 \]</div>
-<p>as desired.
-\end{description}
-</span></p>
+<p>as desired.</p>
+<p></span></p>
 <p>We'll now show that this isn't the only way to invent a metric for persistence modules 
 in their functor category.</p>
 <p><span style="display:block" class="definition">
@@ -3208,17 +3203,16 @@ The interleaving distance <span class="arithmatex">\(d^{\Omega}\)</span> is an e
 <p><span style="display:block" class="proof">
 To show this, we need to prove that for persistence modules <span class="arithmatex">\(F, G\)</span>, 
 <span class="arithmatex">\(d(F, F) = 0\)</span>, <span class="arithmatex">\(d(F, G) = d(G, F) = 0\)</span>, and that the metric satisfies the triangle 
-inequality. 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{d(F, F) = 0}\)</span>.]
-Observe that the functors  <span class="arithmatex">\(F, F\)</span> are <span class="arithmatex">\((I, I)\)</span>-interleaved. Given that <span class="arithmatex">\(I \le \Omega_0\)</span> 
-since it is initial, we see that <span class="arithmatex">\(d(F,  F) = 0\)</span>. </p>
-<p>\item[<span class="arithmatex">\(\bm{d(F, G) = d(G, F)}\)</span>.] Observe that the definition is purely symmetric 
-so that this result is instant. </p>
-<p>\item[Triangle inequality.]
-Let <span class="arithmatex">\(F, G, H\)</span> be persistence modules and suppose <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\(\Omega_{\epsilon_1}\)</span>-interleaved 
+inequality. </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{d(F, F) = 0}\)</span>.</strong> Observe that the functors  <span class="arithmatex">\(F, F\)</span> are <span class="arithmatex">\((I, I)\)</span>-interleaved. Given that <span class="arithmatex">\(I \le \Omega_0\)</span> 
+since it is initial, we see that <span class="arithmatex">\(d(F,  F) = 0\)</span>.</li>
+<li><strong><span class="arithmatex">\(\bm{d(F, G) = d(G, F)}\)</span>.</strong> Observe that the definition is purely symmetric 
+so that this result is instant.</li>
+<li><strong>Triangle inequality.</strong> Let <span class="arithmatex">\(F, G, H\)</span> be persistence modules and suppose <span class="arithmatex">\(F, G\)</span> are <span class="arithmatex">\(\Omega_{\epsilon_1}\)</span>-interleaved 
 while <span class="arithmatex">\(G, H\)</span> are <span class="arithmatex">\(\Omega_{\epsilon_2}\)</span>-interleaved. Then by the triangle property of 
-translations, we know that <span class="arithmatex">\(F, H\)</span> are  <span class="arithmatex">\((\Omega_{\epsilon_2}\Omega_{\epsilon_1}, \Omega_{\epsilon_1}\Omega_{\epsilon_2})\)</span>-interleaved. </p>
+translations, we know that <span class="arithmatex">\(F, H\)</span> are  <span class="arithmatex">\((\Omega_{\epsilon_2}\Omega_{\epsilon_1}, \Omega_{\epsilon_1}\Omega_{\epsilon_2})\)</span>-interleaved. </li>
+</ul>
 <p>Observe that </p>
 <div class="arithmatex">\[\begin{align*}
 &amp;\Omega_{\epsilon_2}\Omega_{\epsilon_1} \le \Omega_{\epsilon_1 + \epsilon_2}\\
@@ -3233,9 +3227,8 @@ d^{\Omega}(F, H) \le \epsilon_1 + \epsilon_2.
 <div class="arithmatex">\[
 d^{\Omega}(F, H) \le d^{\Omega}(F, G) + d^{\Omega}(G, H)
 \]</div>
-<p>as desired. 
-\end{description}
-</span></p>
+<p>as desired.</p>
+<p></span></p>
 <script src="../../mathjax_helper.js"></script>
 
 

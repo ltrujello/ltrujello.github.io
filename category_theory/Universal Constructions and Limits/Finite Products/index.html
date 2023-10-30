@@ -3065,7 +3065,7 @@ What
 is the bare minimum amount of logical data that perfectly characterizes 
 the above product <span class="arithmatex">\(X \times Y\)</span>?<br />
 \end{minipage}
-\end{center}        Well, observe that for such a set, we have <em>two</em> <strong>projection 
+\end{center}Well, observe that for such a set, we have <em>two</em> <strong>projection 
 functions</strong> </p>
 <div class="arithmatex">\[\begin{align*}
 &amp;p_1: X \times Y \to X \qquad p_1(x, y) = x\\
@@ -3091,7 +3091,7 @@ characterized by the following data: two projection functions
 pair of functions <span class="arithmatex">\(f: Z \to X, g: Z \to Y\)</span>, there exists a <strong>unique</strong>
 third <span class="arithmatex">\(h: Z \to X \times Y\)</span> such that diagram \ref{diagram:cartesian_product} commutes.
 \end{minipage}
-\end{center}    </span></p>
+\end{center}</span></p>
 <p>With the above example in mind, we now introduce our first definition of a product.</p>
 <p><span style="display:block" class="definition">[Nice Product Definition.]
 Let <span class="arithmatex">\(\cc\)</span> be a category with objects <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. 
@@ -3129,12 +3129,8 @@ Then we may form the <strong>product ring</strong> of <span class="arithmatex">\
 \]</div>
 <p>where for all pairs <span class="arithmatex">\((r_1, s_1)\)</span> and <span class="arithmatex">\((r_2, s_2)\)</span> in <span class="arithmatex">\(R \times S\)</span>, we define the ring operations to behave as</p>
 <ul>
-<li>
-<p><span class="arithmatex">\((r_1, s_1) + (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{+}} r_2, s_1 \mathbin{\textcolor{Orange}{+}} s_2)\)</span> </p>
-</li>
-<li>
-<p><span class="arithmatex">\((r_1, s_1)\mathbin{\bigcdot} (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{\bigcdot}} r_2, s_1 \mathbin{\textcolor{Orange}{\bigcdot}} s_2)\)</span></p>
-</li>
+<li><span class="arithmatex">\((r_1, s_1) + (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{+}} r_2, s_1 \mathbin{\textcolor{Orange}{+}} s_2)\)</span></li>
+<li><span class="arithmatex">\((r_1, s_1)\mathbin{\bigcdot} (r_2, s_2) = (r_1 \mathbin{\textcolor{NavyBlue}{\bigcdot}} r_2, s_1 \mathbin{\textcolor{Orange}{\bigcdot}} s_2)\)</span></li>
 </ul>
 <p>Note that with these requirements, the additive identity is <span class="arithmatex">\((0_R, 0_S)\)</span> while the multiplicative identity 
 is <span class="arithmatex">\((1_R, 1_S)\)</span>. With this construction, one can show that this satisfies the universal property 
@@ -3171,12 +3167,8 @@ two projection field homomorphisms</p>
 <p>However, recall that two fields share a (nonzero) field homomorphism if and only if 
 they are of the same characteristic. Therefore, </p>
 <ul>
-<li>
-<p><span class="arithmatex">\(\pi_1\)</span> can only exist if <span class="arithmatex">\(P\)</span> has characteristic 2. In fact, <span class="arithmatex">\(P\)</span> must be isomorphic to <span class="arithmatex">\(\mathbb{F}_2\)</span>.</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\pi_2\)</span> can only exist if it has characteristic 3. In fact, <span class="arithmatex">\(P\)</span> must be isomorphic <span class="arithmatex">\(\mathbb{F}_3\)</span>. </p>
-</li>
+<li><span class="arithmatex">\(\pi_1\)</span> can only exist if <span class="arithmatex">\(P\)</span> has characteristic 2. In fact, <span class="arithmatex">\(P\)</span> must be isomorphic to <span class="arithmatex">\(\mathbb{F}_2\)</span>.</li>
+<li><span class="arithmatex">\(\pi_2\)</span> can only exist if it has characteristic 3. In fact, <span class="arithmatex">\(P\)</span> must be isomorphic <span class="arithmatex">\(\mathbb{F}_3\)</span>.</li>
 </ul>
 <p>Clearly, we have a contradiction.
 Thus we simply cannot generally take products in <span class="arithmatex">\(**Fld**\)</span> in a logical way.
@@ -3194,24 +3186,24 @@ in our category.</p>
 category to have finite products in the following proposition. </p>
 <p><span style="display:block" class="proposition">
 Suppose <span class="arithmatex">\(\cc\)</span> is a category with a terminal object <span class="arithmatex">\(T\)</span> and a product
-object <span class="arithmatex">\(A \times B\)</span> for every pair of objects <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. Then 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i)}\)</span>] <span class="arithmatex">\(\cc\)</span> has finite products. 
-\item[<span class="arithmatex">\(\bm{(ii)}\)</span>] There exists a bifunctor <span class="arithmatex">\(\prod: \cc \times \cc
-\to \cc\)</span> where <span class="arithmatex">\((A, B) \mapsto A \times B\)</span>.</p>
-<p>\item[<span class="arithmatex">\(\bm{(iii)}\)</span>] For any three objects, we have an
-isomorphism </p>
+object <span class="arithmatex">\(A \times B\)</span> for every pair of objects <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span>. Then </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{(i)}\)</span></strong> <span class="arithmatex">\(\cc\)</span> has finite products.</li>
+<li><strong><span class="arithmatex">\(\bm{(ii)}\)</span></strong> There exists a bifunctor <span class="arithmatex">\(\prod: \cc \times \cc
+\to \cc\)</span> where <span class="arithmatex">\((A, B) \mapsto A \times B\)</span>.</li>
+<li><strong><span class="arithmatex">\(\bm{(iii)}\)</span></strong> For any three objects, we have an
+isomorphism </li>
+</ul>
 <div class="arithmatex">\[
 (A \times B) \times C \cong A \times (B \times C)
 \]</div>
-<p>which is natural in <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> .</p>
-<p>\item[<span class="arithmatex">\(\bm{iv}\)</span>] For any object <span class="arithmatex">\(A\)</span>, we have the isomorphism </p>
+<p>which is natural in <span class="arithmatex">\(A, B\)</span> and <span class="arithmatex">\(C\)</span> .
+* <strong><span class="arithmatex">\(\bm{iv}\)</span></strong> For any object <span class="arithmatex">\(A\)</span>, we have the isomorphism </p>
 <div class="arithmatex">\[
 T \times A \cong A \cong T \times A            
 \]</div>
-<p>natural in <span class="arithmatex">\(A\)</span>.
-\end{description}
-</span></p>
+<p>natural in <span class="arithmatex">\(A\)</span>.</p>
+<p></span></p>
 <p><span style="display:block" class="proof">
 To prove the first part, let <span class="arithmatex">\(P(n)\)</span> be the following statement: </p>
 <div class="arithmatex">\[
@@ -3221,13 +3213,14 @@ P(n) =
 \text{ their product diagram in }\cc.
 \end{cases}
 \]</div>
-<p>\begin{description}
-\item[Base Case.] Observe that for <span class="arithmatex">\(n = 0\)</span>,  the statement is
+<ul>
+<li><strong>Base Case.</strong> Observe that for <span class="arithmatex">\(n = 0\)</span>,  the statement is
 automatically true since we are given that a terminal object
-<span class="arithmatex">\(T\)</span> exists. </p>
-<p>\item[Inductive Step.] Suppose the statement holds for <span class="arithmatex">\(n =
+<span class="arithmatex">\(T\)</span> exists.</li>
+<li><strong>Inductive Step.</strong> Suppose the statement holds for <span class="arithmatex">\(n =
 k\)</span>. Then for any objects <span class="arithmatex">\(A_1, A_2, \cdots, A_k\)</span>, 
-we have the product diagram</p>
+we have the product diagram</li>
+</ul>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 and a unique, induced arrow <span class="arithmatex">\(u\)</span> whenever such a <span class="arithmatex">\(D \in \cc\)</span> with
 morphisms <span class="arithmatex">\(f_i: D \to A_i\)</span> exists.</p>
@@ -3278,16 +3271,16 @@ A_1 \times \cdots \times A_{k+1}\)</span> such that </p>
 diagram </p>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 so that the product <span class="arithmatex">\(A_1 \times A_k \times A_{k+1}\)</span> exists and
-is well-defined in <span class="arithmatex">\(\cc\)</span>. Hence, <span class="arithmatex">\(P(n)\)</span> is true for <span class="arithmatex">\(n = k+1\)</span>.
-\end{description}
-By mathematical induction, we see that all finite products must
+is well-defined in <span class="arithmatex">\(\cc\)</span>. Hence, <span class="arithmatex">\(P(n)\)</span> is true for <span class="arithmatex">\(n = k+1\)</span>.</p>
+<p>By mathematical induction, we see that all finite products must
 exist in <span class="arithmatex">\(\cc\)</span>, as desired. </p>
 <p>To demonstrate the existence of a bifunctor, we can directly
-define one. Let <span class="arithmatex">\(\prod: \cc \times \cc \to \cc\)</span> act as follows. 
-\begin{description}
-\item[Objects.] <span class="arithmatex">\(\prod(A, B) = A \times B\)</span>.
-\item[Morphisms.] Let <span class="arithmatex">\(f: A \to A'\)</span> and <span class="arithmatex">\(g: B \to B'\)</span>. Suppose
-we have canonical projections </p>
+define one. Let <span class="arithmatex">\(\prod: \cc \times \cc \to \cc\)</span> act as follows. </p>
+<ul>
+<li><strong>Objects.</strong> <span class="arithmatex">\(\prod(A, B) = A \times B\)</span>.</li>
+<li><strong>Morphisms.</strong> Let <span class="arithmatex">\(f: A \to A'\)</span> and <span class="arithmatex">\(g: B \to B'\)</span>. Suppose
+we have canonical projections </li>
+</ul>
 <div class="arithmatex">\[
 \pi_1: A \times B \to A \qquad  \pi_2: A \times B \to B  
 \]</div>
@@ -3376,9 +3369,8 @@ can see that this diagram is equivalent  to </p>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_3_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Hence we see that <span class="arithmatex">\(A\)</span> with the morphism <span class="arithmatex">\(t_A, 1_A\)</span> forms a
 universal cone. But so does <span class="arithmatex">\(T \times A\)</span>; hence, uniqueness
-guarantees they are isomorphic. 
-\end{description}
-</span></p>
+guarantees they are isomorphic.</p>
+<p></span></p>
 <p>Now that we have discussed examples of products in categories, offered a rigorous definition, 
 and we observed an example when they do not exist, we would naturally want to generalize 
 this concept since it is often the case that we would like to take arbitrary products, or even 
@@ -3388,13 +3380,13 @@ Before doing so, we offer a simple definition.</p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category.
 Define the <strong>diagonal functor of <span class="arithmatex">\(\cc\)</span></strong> as 
-<span class="arithmatex">\(\Delta: \cc \to \cc \times \cc\)</span> where 
-\begin{description}
-\item[On Objects.] For <span class="arithmatex">\(C\)</span> an object of <span class="arithmatex">\(\cc\)</span>, we define <span class="arithmatex">\(\Delta(C) = (C, C)\)</span>.
-\item[On Morphisms.] For a morphism <span class="arithmatex">\(f: A \to B\)</span>, we define
-<span class="arithmatex">\(\Delta(f) = (f, f): (A, A) \to (B, B)\)</span>.
-\end{description}
-</span></p>
+<span class="arithmatex">\(\Delta: \cc \to \cc \times \cc\)</span> where </p>
+<ul>
+<li><strong>On Objects.</strong> For <span class="arithmatex">\(C\)</span> an object of <span class="arithmatex">\(\cc\)</span>, we define <span class="arithmatex">\(\Delta(C) = (C, C)\)</span>.</li>
+<li><strong>On Morphisms.</strong> For a morphism <span class="arithmatex">\(f: A \to B\)</span>, we define
+<span class="arithmatex">\(\Delta(f) = (f, f): (A, A) \to (B, B)\)</span>.</li>
+</ul>
+<p></span></p>
 <p>The above functor is a bit silly; it really doesn't do much. However, it necessary for us 
 to really understand what exactly a product is. It helps us realize that a product in 
 a category is actually a universal morphism. </p>

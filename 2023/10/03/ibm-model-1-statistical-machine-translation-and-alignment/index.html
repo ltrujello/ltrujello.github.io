@@ -12,6 +12,8 @@
         <link rel="prev" href="../../../01/31/des/">
       
       
+        <link rel="next" href="../../19/phrased-based-translation-model-and-decoder/">
+      
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
@@ -3199,7 +3201,7 @@ For IBM model 1, this is also uniform and is equal to <span class="arithmatex">\
 The parameters are the values <span class="arithmatex">\(t(e | f)\)</span> for all possible pairs of words <span class="arithmatex">\(e, f\)</span> in our dataset. If we have this, then we can compute <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span> and go on with our day.</p>
 <h2 id="chicken-and-egg-problem-expectation-maximization">Chicken and Egg problem: Expectation Maximization</h2>
 <p>So now that we have a conditional probabilistic model, suppose we are given a dataset in which we cant try to find the parameters that best
-fit the dataset given the model. In our case, our dataset will be a set of <span class="arithmatex">\(n\)</span> translation pairs <span class="arithmatex">\(\{(\mathbf{f}_1, \mathbf{e}_1), \dots, (\mathbf{f}_k,  \mathbf{e}_k)  \}\)</span>.</p>
+fit the dataset given the model. In our case, our dataset will be a set of <span class="arithmatex">\(k\)</span> translation pairs <span class="arithmatex">\(\{(\mathbf{f}_1, \mathbf{e}_1), \dots, (\mathbf{f}_k,  \mathbf{e}_k)  \}\)</span>.</p>
 <p>However, we actually can't learn the parameters of our probabilistic model <span class="arithmatex">\(p(\mathbf{e}, a_1, \dots, a_n | \mathbf{f})\)</span>, because
 a parallel corpus of translations does not give use 
 the alignments on the lexical level. In fact, not only do we not have the explicit alignment data, we don't know 

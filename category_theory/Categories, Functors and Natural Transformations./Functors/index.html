@@ -3016,16 +3016,12 @@ But as we have defined categories, we move on to defining functors. </p>
 Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. A <strong>(covariant) functor</strong> <span class="arithmatex">\(F: \cc \to
 \dd\)</span> is a "mapping" such that</p>
 <ul>
-<li>
-<p>[1.] Every <span class="arithmatex">\(C \in \ob(\cc)\)</span> is assigned uniquely to some
-<span class="arithmatex">\(F(C) \in \dd\)</span></p>
-</li>
-<li>
-<p>[2.] Every morphism
+<li><strong>1.</strong> Every <span class="arithmatex">\(C \in \ob(\cc)\)</span> is assigned uniquely to some
+<span class="arithmatex">\(F(C) \in \dd\)</span></li>
+<li><strong>2.</strong> Every morphism
 <span class="arithmatex">\(f: C \to C'\)</span> in <span class="arithmatex">\(\cc\)</span> is assigned uniquely to some morphism <span class="arithmatex">\(F(f):
 F(C) \to  F(C')\)</span> in <span class="arithmatex">\(\dd\)</span> such that 
-\begin{statement}{ProcessBlue!10}</p>
-</li>
+\begin{statement}{ProcessBlue!10}</li>
 </ul>
 <div class="arithmatex">\[\begin{align}
 F(1_C) = 1_{F(C)} \quad\quad F(g \circ f) = F(g) \circ F(f)

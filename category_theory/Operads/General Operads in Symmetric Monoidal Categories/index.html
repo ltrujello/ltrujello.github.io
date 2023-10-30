@@ -3019,24 +3019,20 @@ Let <span class="arithmatex">\((\cc, \otimes, I)\)</span> be a symmetric monoida
 <strong>operad</strong> <span class="arithmatex">\(X\)</span> over <span class="arithmatex">\(\cc\)</span> is a family of objects <span class="arithmatex">\(\{X_n\}_{n \in \mathbb{N}}\)</span>, 
 in <span class="arithmatex">\(\cc\)</span>, where each <span class="arithmatex">\(X_n\)</span> has a group action by <span class="arithmatex">\(S_n\)</span> and with</p>
 <ul>
-<li>
-<p>[1.] A unit morphism <span class="arithmatex">\(\eta: I \to X_1\)</span></p>
-</li>
-<li>
-<p>[2.] For each <span class="arithmatex">\(n \in \mathbb{N}\)</span> and <span class="arithmatex">\(a_i \in \mathbb{N}\)</span> where 
-<span class="arithmatex">\(i = 1, 2, \dots, n\)</span>, a composition morphism </p>
-</li>
+<li><strong>1.</strong> A unit morphism <span class="arithmatex">\(\eta: I \to X_1\)</span></li>
+<li><strong>2.</strong> For each <span class="arithmatex">\(n \in \mathbb{N}\)</span> and <span class="arithmatex">\(a_i \in \mathbb{N}\)</span> where 
+<span class="arithmatex">\(i = 1, 2, \dots, n\)</span>, a composition morphism </li>
 </ul>
 <div class="arithmatex">\[
 \mu: X_n \otimes X_{a_1} \otimes \cdots \otimes X_{a_n} \to X_{a_1 + \cdots + a_n}
 \]</div>
-<p>subject to the associativity, identity, and equivariance axioms outlined below.
-\begin{description}
-\item[(OP1) Associativity.]
-Let <span class="arithmatex">\(n \ge 0\)</span> and choose <span class="arithmatex">\(a_i \ge 0\)</span> for <span class="arithmatex">\(i = 1,2, \dots, n\)</span>. 
+<p>subject to the associativity, identity, and equivariance axioms outlined below.</p>
+<ul>
+<li><strong>(OP1) Associativity.</strong> Let <span class="arithmatex">\(n \ge 0\)</span> and choose <span class="arithmatex">\(a_i \ge 0\)</span> for <span class="arithmatex">\(i = 1,2, \dots, n\)</span>. 
 Further, for each <span class="arithmatex">\(a_i\)</span>, choose <span class="arithmatex">\(k_{i,j} \ge 0\)</span> for <span class="arithmatex">\(j = 1, 2, \dots, a_i\)</span>. 
 Let <span class="arithmatex">\(\gamma\)</span> be the isomorphism which rearranges the factors of the tensor product 
-as below:</p>
+as below:</li>
+</ul>
 <div class="arithmatex">\[\begin{gather*}
 \gamma:
 (X_n \otimes X_{a_1} \otimes \cdots \otimes X_{a_n})
@@ -3050,32 +3046,29 @@ X_n\otimes(X_{a_1}\otimes X_{k_{1,1}} \otimes \cdots
 \otimes X_{k_{n, a_n}})
 \end{gather*}\]</div>
 <p>Then we demand that the diagram below commutes. </p>
-<p><img src="../../../png/category_theory/chapter_9/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<p>\item[(OP2) Identity.]
-Letting <span class="arithmatex">\(A\)</span> be an arbitrary object of <span class="arithmatex">\(\cc\)</span>, let <span class="arithmatex">\(\lambda: I \otimes A \isomarrow A\)</span> and <span class="arithmatex">\(\rho: A \otimes I \isomarrow A\)</span> 
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* <strong>(OP2) Identity.</strong> Letting <span class="arithmatex">\(A\)</span> be an arbitrary object of <span class="arithmatex">\(\cc\)</span>, let <span class="arithmatex">\(\lambda: I \otimes A \isomarrow A\)</span> and <span class="arithmatex">\(\rho: A \otimes I \isomarrow A\)</span> 
 as the left and right unitors in our symmetric monoidal category. Then 
 the diagrams below must hold for all <span class="arithmatex">\(n \ge 0\)</span>. </p>
-<p><img src="../../../png/category_theory/chapter_9/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<p>\item[(OP3) Equivariance 1.]
-Let <span class="arithmatex">\(\tau \in S_n\)</span>, 
+<p><img src="../../../png/category_theory/chapter_9/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* <strong>(OP3) Equivariance 1.</strong> Let <span class="arithmatex">\(\tau \in S_n\)</span>, 
 and let <span class="arithmatex">\(\tau^*\)</span> be the isomorphism <span class="arithmatex">\(\tau^*: X_{a_1} \otimes \cdots \otimes X_{a_n}
 \isomarrow X_{\tau(a_1)} \otimes \cdots \otimes X_{\tau(a_n)}\)</span> and by abuse of notation 
 denote <span class="arithmatex">\(\tau\)</span> as the morphism <span class="arithmatex">\(\tau: X_n \to X_n\)</span> which is given by the group action. 
 Then the diagram below must commute.</p>
 <p><img src="../../../png/category_theory/chapter_9/tikz_code_2_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Here, <span class="arithmatex">\(\tau'\)</span> is the block permutation described below:</p>
-<div class="arithmatex">\[\begin{gather*}
+<p>\begin{gather<em>}
 (\overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\text{1st block}}, \dots, 
 \overbrace{\textcolor{Green}{a_1 + \cdots + a_i+1, \dots a_1 + \cdots + a_{i+1}}}^{i\text{-th block}}, \dots
-\overbrace{\textcolor{RoyalBlue}{a_1 + \cdots + a_{n-1}+ 1, \dots, a_1 + \cdots + a_n}}^{n\text{-th block}})\\
-\mapsto\\
+\overbrace{\textcolor{RoyalBlue}{a_1 + \cdots + a_{n-1}+ 1, \dots, a_1 + \cdots + a_n}}^{n\text{-th block}})\
+\mapsto\
 (\dots, \overbrace{\textcolor{Red}{1, 2, \dots, a_1}}^{\tau(1)\text{-th block}}, \dots 
 ,  \overbrace{\textcolor{Green}{a_1 + \cdots + a_i+1, \dots, a_1 + \cdots + a_{i+1}}}^{\tau(i)\text{-th block}}, \dots
 ,  \overbrace{\textcolor{RoyalBlue}{a_1 + \cdots +  a_{n-1}+1, \dots, a_1 + \cdots + a_{n}}}^{\tau(n)\text{-th block}}, \dots
 ).
-\end{gather*}\]</div>
-<p>\item[(OP4) Equivariance 2.]
-Let <span class="arithmatex">\(\sigma_i \in S_{a_i}\)</span> for <span class="arithmatex">\(i = 1, 2, \dots, n\)</span>. 
+\end{gather</em>}
+* <strong>(OP4) Equivariance 2.</strong> Let <span class="arithmatex">\(\sigma_i \in S_{a_i}\)</span> for <span class="arithmatex">\(i = 1, 2, \dots, n\)</span>. 
 By abuse of notation, denote <span class="arithmatex">\(\sigma_i: X_{a_i} \to X_{a_i}\)</span> to 
 be the map given by the group action.
 Then we have that </p>
@@ -3096,8 +3089,7 @@ defined as below.</p>
 }_{n\text{-th block}}
 )
 \end{gather*}</p>
-<p>\end{description}
-</span></p>
+<p></span></p>
 <p><span style="display:block" class="example">
 As before, we can create an endomorphism operad. That is, if we let <span class="arithmatex">\(\cc\)</span> 
 be a symmetric monoidal category, then we can let <span class="arithmatex">\(\aend_A(n) = \hom_{\cc}(A^{\otimes n}, A)\)</span>. 

@@ -1,32 +1,32 @@
 \begin{center}
-    \def\bottomYCoord{3.5}
-    \begin{tikzpicture}
-        \braid[number of strands= 2, thick,  height = 3cm]
-        s_1;
-        \draw[thick] (0.8,0) -- (2.2,0);
-        \draw[thick] (0.8,-\bottomYCoord) -- (2.2,-\bottomYCoord);
-    \end{tikzpicture}
-    \hspace{1cm}
-    \begin{tikzpicture}
-        \braid[number of strands= 3, thick, 
-        style strands={1}{Green},
-        style strands={2}{Green},
-        style strands={3}{Green}]
-        s_2 s_1 s_2;
-        \draw[thick] (0.8,0) -- (3.2,0);
-        \draw[thick] (0.8,-\bottomYCoord) -- (3.2,-\bottomYCoord);
-    \end{tikzpicture}
-    \hspace{1cm}
-    \begin{tikzpicture}
-        \braid[number of strands= 3, thick, height = 1.5cm,
-        style strands={1}{Red},
-        style strands={2}{Red},
-        style strands={3}{Red}]
-        s_2 s_1;
-        \draw[thick] (0.8,0) -- (3.2,0);
-        \draw[thick] (0.8,-\bottomYCoord) -- (3.2,-\bottomYCoord);
-    \end{tikzpicture}
+\def\bottomYCoord{3.5}
+\begin{tikzpicture}
+\braid[number of strands= 2, thick,  height = 3cm]
+s_1;
+\draw[thick] (0.8,0) -- (2.2,0);
+\draw[thick] (0.8,-\bottomYCoord) -- (2.2,-\bottomYCoord);
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\braid[number of strands= 3, thick, 
+style strands={1}{Green},
+style strands={2}{Green},
+style strands={3}{Green}]
+s_2 s_1 s_2;
+\draw[thick] (0.8,0) -- (3.2,0);
+\draw[thick] (0.8,-\bottomYCoord) -- (3.2,-\bottomYCoord);
+\end{tikzpicture}
+\hspace{1cm}
+\begin{tikzpicture}
+\braid[number of strands= 3, thick, height = 1.5cm,
+style strands={1}{Red},
+style strands={2}{Red},
+style strands={3}{Red}]
+s_2 s_1;
+\draw[thick] (0.8,0) -- (3.2,0);
+\draw[thick] (0.8,-\bottomYCoord) -- (3.2,-\bottomYCoord);
+\end{tikzpicture}
 
-    \emph{Here we have $\sigma_1$, $\alpha_1= \sigma_2\sigma_1\sigma_2$ 
-    and $\alpha_2 = \sigma_2\sigma_1$.}
+\emph{Here we have $\sigma_1$, $\alpha_1= \sigma_2\sigma_1\sigma_2$ 
+and $\alpha_2 = \sigma_2\sigma_1$.}
 \end{center}

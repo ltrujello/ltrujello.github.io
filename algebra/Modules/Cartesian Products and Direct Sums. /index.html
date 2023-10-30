@@ -3085,15 +3085,16 @@ If <span class="arithmatex">\(\{M_\alpha\}_{\alpha \in \lambda}\)</span> is a fa
 <span class="arithmatex">\(R\)</span>-modules, then <span class="arithmatex">\(\displaystyle \prod_{\alpha \in 
 \lambda}M_{\alpha}\)</span> is an <span class="arithmatex">\(R\)</span>-module.
 </span></p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[Abelian Group.] First observe that <span class="arithmatex">\(\displaystyle
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong>Abelian Group.</strong> First observe that <span class="arithmatex">\(\displaystyle
 \prod_{\alpha \in \lambda} M_\alpha\)</span> is an abelian group
 if we realize the identity is the zero map <span class="arithmatex">\(f\)</span> (i.e., the
 "tuple" of all zeros) and endow an operation of addition as follows. For
 <span class="arithmatex">\(f_1,
 f_2 \in \displaystyle \prod_{\alpha \in \lambda} M_\alpha\)</span>
-we have that </p>
+we have that </li>
+</ul>
 <div class="arithmatex">\[
 (f_1 + f_2)(\alpha) = f_1(\alpha) + f_2(\alpha)
 \]</div>
@@ -3103,8 +3104,8 @@ sum will be an element in <span class="arithmatex">\(M_\alpha\)</span>. Also, if
 \displaystyle \prod_{\alpha \in \lambda} M_\alpha\)</span>, we
 define the inverse to be <span class="arithmatex">\(f^{-1}\)</span> where <span class="arithmatex">\(f^{-1}(\alpha) =
 -f(\alpha)\)</span>. Commutativity is inherited from commutativity
-of all <span class="arithmatex">\(M_\alpha\)</span>, and so we have an abelian group.</p>
-<p>\item[Ring Multiplication.] Let <span class="arithmatex">\(a \in R\)</span>. Then define </p>
+of all <span class="arithmatex">\(M_\alpha\)</span>, and so we have an abelian group.
+* <strong>Ring Multiplication.</strong> Let <span class="arithmatex">\(a \in R\)</span>. Then define </p>
 <div class="arithmatex">\[
 (af)(\alpha) = a(f(\alpha))  
 \]</div>
@@ -3112,27 +3113,24 @@ of all <span class="arithmatex">\(M_\alpha\)</span>, and so we have an abelian g
 <span class="arithmatex">\(M_\alpha\)</span> is an <span class="arithmatex">\(R\)</span>-module, we have that <span class="arithmatex">\(f(\alpha) \in
 M_\alpha \implies af(\alpha) \in M_\alpha\)</span> for all <span class="arithmatex">\(\alpha
 \in \lambda\)</span>. Thus our multiplcation is well-defined. It is then a simple exercise to check that
-the axioms of an <span class="arithmatex">\(R\)</span>-module are satisfied via our operations.
-\end{description}
-</span></p>
+the axioms of an <span class="arithmatex">\(R\)</span>-module are satisfied via our operations.</p>
+<p></span></p>
 <p>Since our above argument was a bit abstract, we reintroduce
 it in the language of finite products.
 Again, we can turn a finite cartesian product of
 <span class="arithmatex">\(R\)</span>-modules into an <span class="arithmatex">\(R\)</span>-module with the following operations.</p>
 <ul>
-<li>[1.] Let <span class="arithmatex">\((m_1, m_2, \dots, m_n), (p_1, p_2 ,\dots,
+<li><strong>1.</strong> Let <span class="arithmatex">\((m_1, m_2, \dots, m_n), (p_1, p_2 ,\dots,
 p_n) \in M_1 \times M_2 \times \cdots \times M_n\)</span>. Then let us define
 addition of elements as</li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 (m_1, m_2, \dots, m_n) + (p_1, p_2 ,\dots, p_n)
 = (m_1 + p_1, m_2 + p_2, \dots, m_n + p_n).
-\]</div>
-<ul>
-<li>[2.] For any <span class="arithmatex">\(a \in R\)</span> and <span class="arithmatex">\((m_1, m_2, \dots, m_n) \in
+$$
+* <strong>2.</strong> For any <span class="arithmatex">\(a \in R\)</span> and <span class="arithmatex">\((m_1, m_2, \dots, m_n) \in
 M_1 \times M_2 \times \cdots \times M_n\)</span> we define scalar
-multiplication as </li>
-</ul>
+multiplication as </p>
 <div class="arithmatex">\[
 a(m_1, m_2, \dots, m_n) = (am_1, am_2, \dots, am_n).
 \]</div>
@@ -3234,14 +3232,10 @@ direct sum.</p>
 Let <span class="arithmatex">\(M\)</span> be an <span class="arithmatex">\(R\)</span>-module and suppose <span class="arithmatex">\(M_1, M_2, \dots, M_n\)</span>
 are submodules such that </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(M = M_1 + M_2 + \cdots + M_n\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(M_j \cap (M_1 + M_2 + \cdots + M_{j-1} + M_{j +
+<li><strong>1.</strong> <span class="arithmatex">\(M = M_1 + M_2 + \cdots + M_n\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(M_j \cap (M_1 + M_2 + \cdots + M_{j-1} + M_{j +
 1} + \cdots + M_n) = \{0\}\)</span> for all <span class="arithmatex">\(j \in \{1, 2, \dots,
-n\}\)</span>. </p>
-</li>
+n\}\)</span>.</li>
 </ul>
 <p>Then </p>
 <div class="arithmatex">\[
@@ -3272,15 +3266,11 @@ generalize the above theorem to arbitrary direct sums. </p>
 Let <span class="arithmatex">\(M\)</span> be an <span class="arithmatex">\(R\)</span>-module and suppose <span class="arithmatex">\(\{M_\alpha\}_{\alpha \in
 \lambda}\)</span> is a family of <span class="arithmatex">\(R\)</span>-modules such that </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(\displaystyle M = \sum_{\alpha \in \lambda}
-M_\alpha\)</span> </p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(M_\beta \bigcap \displaystyle  \sum_{\alpha \in
+<li><strong>1.</strong> <span class="arithmatex">\(\displaystyle M = \sum_{\alpha \in \lambda}
+M_\alpha\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(M_\beta \bigcap \displaystyle  \sum_{\alpha \in
 \lambda\setminus\{\beta\}}M_\alpha = \{0\}\)</span> for all <span class="arithmatex">\(\beta
-\in \lambda\)</span></p>
-</li>
+\in \lambda\)</span></li>
 </ul>
 <p>then </p>
 <div class="arithmatex">\[

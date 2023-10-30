@@ -1,75 +1,75 @@
 \begin{center}
-        \begin{tikzpicture}
-            
-            \def\shapeone{
-            plot[smooth, tension=.5, closed hobby] coordinates {
-                
-                (5.1, 9) (3.9, 8.3) (2.5, 8.5) (2.0, 7.4) (2.4, 5.1) (2.4, 2.7) (5.0, 3.1) (7.4, 2.4) (8.0, 4.5) (7.4, 6.9) (7.2, 9.5)
-            };}
-            
-            \def\shapetwo{
-            plot[smooth, tension=.7, closed hobby] coordinates {
-                
-                (3.37, 4.1) (4.42, 8.405) (6.73, 7.775) (5.995, 6.41) (6.1, 3.785)
-            };}
-            
-            \def\shapethree{
-            plot[smooth, tension = 0.5, closed hobby] coordinates {
-                (5.68, 3.7) (6.76, 2.62) (7.6, 4.54) (7.24, 6.58) (6.28, 8.26) (4.48, 7.9) (4.24, 6.46) (5.68, 5.62)
-            };}
-    
-            \fill[purp] \shapeone;
-            \fill[blue!20] \shapetwo;
-            \fill[orange!20] \shapethree;
-    
-            \begin{scope}
-                \clip \shapeone;
-                \fill[purple!30] \shapetwo;
-            \end{scope}
-    
-            \begin{scope}
-                \clip \shapeone;
-                \fill[yellow!20] \shapethree;
-            \end{scope}
-    
-            \begin{scope}
-                \clip \shapetwo;
-                \fill[green!20] \shapethree;
-            \end{scope}
-            
-            \begin{scope}
-                \clip \shapeone;
-                \clip \shapetwo;
-                \fill[ProcessBlue!20] \shapethree;
-            \end{scope}
-    
-            \draw \shapeone;
-            \draw \shapetwo;
-            \draw \shapethree;
-            \begin{scope}
-                \fill[green!20] plot[smooth, tension=.5, closed hobby] coordinates {
-                    (14.4, 3.2) (16.0, 3.6) (16.8, 4.8) (16.0, 6.8) (16.4, 8.8) (13.6, 8.8) (12.4, 7.6) (12.8, 5.6) (12.4, 3.6)
-                };
-                \draw plot[smooth, tension=.5, closed hobby] coordinates {
-                    (14.4, 3.2) (16.0, 3.6) (16.8, 4.8) (16.0, 6.8) (16.4, 8.8) (13.6, 8.8) (12.4, 7.6) (12.8, 5.6) (12.4, 3.6)
-                };
-            \end{scope}
-            
-    
-            \draw[->] (4.5, 8.125) to[bend left=40] (13.75, 7.5);
-            \draw[->] (5.375, 7.5) to[bend left] (13.75, 6.25);
-            \draw[->] (5.375, 6.25) to[bend left] (13.75, 5.0);
-            \draw[->] (6.625, 4.375) to[bend left] (13.75, 3.75);
-    
-            \node at (4.2, 3.75) {$U_k$};
-            \node at (6.625, 3.3) {$U_{\ell}$};
-            \node at (5.0,6.75) {$U_k \cap U_{\ell}$};
-    
-            \node at (2.75,7.8) {$X$};
-            \node at (10,5.4) {$h_{\ell}$};
-            \node at (10,7.2) {$h_{\ell}|_{U_k \cap U_{\ell}}$};
-            \node at (10,8.4) {$h_{k}|_{U_k \cap U_{\ell}}$};
-            \node at (10,9.75) {$h_{k}$};
-            \node at (15.5, 8.5) {$Y$};
-        \end{tikzpicture}
-    \end{center}
+\begin{tikzpicture}
+
+\def\shapeone{
+plot[smooth, tension=.5, closed hobby] coordinates {
+
+(5.1, 9) (3.9, 8.3) (2.5, 8.5) (2.0, 7.4) (2.4, 5.1) (2.4, 2.7) (5.0, 3.1) (7.4, 2.4) (8.0, 4.5) (7.4, 6.9) (7.2, 9.5)
+};}
+
+\def\shapetwo{
+plot[smooth, tension=.7, closed hobby] coordinates {
+
+(3.37, 4.1) (4.42, 8.405) (6.73, 7.775) (5.995, 6.41) (6.1, 3.785)
+};}
+
+\def\shapethree{
+plot[smooth, tension = 0.5, closed hobby] coordinates {
+(5.68, 3.7) (6.76, 2.62) (7.6, 4.54) (7.24, 6.58) (6.28, 8.26) (4.48, 7.9) (4.24, 6.46) (5.68, 5.62)
+};}
+
+\fill[purp] \shapeone;
+\fill[blue!20] \shapetwo;
+\fill[orange!20] \shapethree;
+
+\begin{scope}
+\clip \shapeone;
+\fill[purple!30] \shapetwo;
+\end{scope}
+
+\begin{scope}
+\clip \shapeone;
+\fill[yellow!20] \shapethree;
+\end{scope}
+
+\begin{scope}
+\clip \shapetwo;
+\fill[green!20] \shapethree;
+\end{scope}
+
+\begin{scope}
+\clip \shapeone;
+\clip \shapetwo;
+\fill[ProcessBlue!20] \shapethree;
+\end{scope}
+
+\draw \shapeone;
+\draw \shapetwo;
+\draw \shapethree;
+\begin{scope}
+\fill[green!20] plot[smooth, tension=.5, closed hobby] coordinates {
+(14.4, 3.2) (16.0, 3.6) (16.8, 4.8) (16.0, 6.8) (16.4, 8.8) (13.6, 8.8) (12.4, 7.6) (12.8, 5.6) (12.4, 3.6)
+};
+\draw plot[smooth, tension=.5, closed hobby] coordinates {
+(14.4, 3.2) (16.0, 3.6) (16.8, 4.8) (16.0, 6.8) (16.4, 8.8) (13.6, 8.8) (12.4, 7.6) (12.8, 5.6) (12.4, 3.6)
+};
+\end{scope}
+
+
+\draw[->] (4.5, 8.125) to[bend left=40] (13.75, 7.5);
+\draw[->] (5.375, 7.5) to[bend left] (13.75, 6.25);
+\draw[->] (5.375, 6.25) to[bend left] (13.75, 5.0);
+\draw[->] (6.625, 4.375) to[bend left] (13.75, 3.75);
+
+\node at (4.2, 3.75) {$U_k$};
+\node at (6.625, 3.3) {$U_{\ell}$};
+\node at (5.0,6.75) {$U_k \cap U_{\ell}$};
+
+\node at (2.75,7.8) {$X$};
+\node at (10,5.4) {$h_{\ell}$};
+\node at (10,7.2) {$h_{\ell}|_{U_k \cap U_{\ell}}$};
+\node at (10,8.4) {$h_{k}|_{U_k \cap U_{\ell}}$};
+\node at (10,9.75) {$h_{k}$};
+\node at (15.5, 8.5) {$Y$};
+\end{tikzpicture}
+\end{center}

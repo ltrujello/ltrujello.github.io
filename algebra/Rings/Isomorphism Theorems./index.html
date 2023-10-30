@@ -3088,18 +3088,10 @@ the equivalence class of polynomials which are not divisble by
 Let <span class="arithmatex">\(R\)</span> be a ring, <span class="arithmatex">\(I\)</span> an ideal of <span class="arithmatex">\(R\)</span>, and <span class="arithmatex">\(S\)</span> a subring
 of <span class="arithmatex">\(R\)</span>. Then </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(S + I\)</span> is a subring of <span class="arithmatex">\(R\)</span> </p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(I\)</span> is an ideal of <span class="arithmatex">\(S + I\)</span></p>
-</li>
-<li>
-<p>[3.] <span class="arithmatex">\(S \cap I\)</span> is an ideal of <span class="arithmatex">\(S\)</span></p>
-</li>
-<li>
-<p>[4.] <span class="arithmatex">\((S + I)/I \cong S/(S \cap I)\)</span>.</p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(S + I\)</span> is a subring of <span class="arithmatex">\(R\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(I\)</span> is an ideal of <span class="arithmatex">\(S + I\)</span></li>
+<li><strong>3.</strong> <span class="arithmatex">\(S \cap I\)</span> is an ideal of <span class="arithmatex">\(S\)</span></li>
+<li><strong>4.</strong> <span class="arithmatex">\((S + I)/I \cong S/(S \cap I)\)</span>.</li>
 </ul>
 <p></span></p>
 <p>\begin{minipage}{0.25 \textwidth}
@@ -3118,7 +3110,7 @@ important to remmeber that <span class="arithmatex">\((S + I)/I \cong S/(S\cap I
 \end{minipage}  </p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1.] To prove the first statement we first make
+<li><strong>1.</strong> To prove the first statement we first make
 the following connection. From the Second Isomorphism
 Theorem for groups, we know that <span class="arithmatex">\(S + I\)</span> is an abelian
 group. We just need to show it is closed under
@@ -3130,36 +3122,30 @@ I\)</span>. Then </li>
 \]</div>
 <p>Therefore, we see that <span class="arithmatex">\((s + i)(s' + i') \in I\)</span>, so
 that <span class="arithmatex">\(S + I\)</span> is closed under multiplication. Therefore
-it is a subring of <span class="arithmatex">\(R\)</span>. </p>
-<ul>
-<li>[2.] Let <span class="arithmatex">\(s + i \in S + I\)</span>, and let <span class="arithmatex">\(j \in I\)</span>. Then observe that </li>
-</ul>
+it is a subring of <span class="arithmatex">\(R\)</span>.
+* <strong>2.</strong> Let <span class="arithmatex">\(s + i \in S + I\)</span>, and let <span class="arithmatex">\(j \in I\)</span>. Then observe that </p>
 <div class="arithmatex">\[
 (s + i)j = sj + ij \hspace{0.2cm}\text{ and }\hspace{0.2cm} j(s + i) = js + ji.
 \]</div>
 <p>However, since <span class="arithmatex">\(I\)</span> is an ideal, <span class="arithmatex">\(sj, js \in I\)</span>, and
 clearly <span class="arithmatex">\(ij, ji \in I\)</span>. Therefore, <span class="arithmatex">\((s + i)I \subset
 I\)</span> and <span class="arithmatex">\(I(s + j) \subset I\)</span> for any <span class="arithmatex">\((s + j) \in S +
-I\)</span>, which shows that <span class="arithmatex">\(I\)</span> is an ideal of this set.</p>
-<ul>
-<li>[3.] From our study of groups, we know that <span class="arithmatex">\(S
+I\)</span>, which shows that <span class="arithmatex">\(I\)</span> is an ideal of this set.
+* <strong>3.</strong> From our study of groups, we know that <span class="arithmatex">\(S
 \cap I\)</span> is an abelain group. We just need to check
 that it is closed under multiplication. Thus for any
 <span class="arithmatex">\(i \in S \cap I\)</span> and <span class="arithmatex">\(s \in S\)</span>, we see that <span class="arithmatex">\(is \in I\)</span>
-since <span class="arithmatex">\(I\)</span> is an ideal. </li>
-</ul>
+since <span class="arithmatex">\(I\)</span> is an ideal. </p>
 <p>But <span class="arithmatex">\(i \in S \cap I \implies i
 \in S\)</span>. Therfore <span class="arithmatex">\(is\)</span> is also a product of two
 elements in <span class="arithmatex">\(S\)</span>.</p>
 <p>Since <span class="arithmatex">\(is \in I\)</span> and <span class="arithmatex">\(is \in S\)</span>, we see that <span class="arithmatex">\(is \in S
-\cap I\)</span>, proving that it is an ideal of <span class="arithmatex">\(S\)</span>.</p>
-<ul>
-<li>[4.] Consider the projection map <span class="arithmatex">\(\pi: R \to R/I\)</span>
+\cap I\)</span>, proving that it is an ideal of <span class="arithmatex">\(S\)</span>.
+* <strong>4.</strong> Consider the projection map <span class="arithmatex">\(\pi: R \to R/I\)</span>
 restircted to <span class="arithmatex">\(S\)</span>, which we'll define as <span class="arithmatex">\(\pi|_S : S
 \to R/I\)</span>. (What we mean by "restricted" is that, we
 let <span class="arithmatex">\(\pi\)</span> do its job, but we only let it act on
-elements in <span class="arithmatex">\(S \subset R\)</span>.)</li>
-</ul>
+elements in <span class="arithmatex">\(S \subset R\)</span>.)</p>
 <p>Note that <span class="arithmatex">\(\ker(\pi|_S) = S \cap I\)</span>, while
 <span class="arithmatex">\(\im(\pi|_S) = (S + I)/I\)</span> (namely, all the elements of
 the form <span class="arithmatex">\(s + I\)</span> where <span class="arithmatex">\(s \not\in I\)</span>.) Thus by the
@@ -3174,12 +3160,8 @@ S/\ker(\pi|_S) \cong \im(\pi|_S)
 Let <span class="arithmatex">\(R\)</span> be a ring and <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(J\)</span> ideals of <span class="arithmatex">\(R\)</span> such
 that <span class="arithmatex">\(I \subset J\)</span>. Then </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(J/I\)</span> is an ideal of <span class="arithmatex">\(R/J\)</span> </p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(R/J \cong (R/I)/(J/I)\)</span>. </p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(J/I\)</span> is an ideal of <span class="arithmatex">\(R/J\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(R/J \cong (R/I)/(J/I)\)</span>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof">

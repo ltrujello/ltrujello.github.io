@@ -3029,12 +3029,8 @@ B_n =
 \]</div>
 <p>where <span class="arithmatex">\((1), (2)\)</span> are generator relations described below. </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(\sigma_i\sigma_j = \sigma_j\sigma_i\)</span> whenever <span class="arithmatex">\(|i - j|&gt;1\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(\sigma_{i+1}\sigma_i\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_i\)</span>.</p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(\sigma_i\sigma_j = \sigma_j\sigma_i\)</span> whenever <span class="arithmatex">\(|i - j|&gt;1\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(\sigma_{i+1}\sigma_i\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_i\)</span>.</li>
 </ul>
 <p></span>
 Relations (1) and (2) are imposed in order to reflect physical reality.
@@ -3065,10 +3061,11 @@ that <span class="arithmatex">\(\sigma_{B,A}\circ\sigma_{A,B} = 1_{A\otimes B}\)
 twice is not guaranteed to give you back the identity. This case is treated separately.  </p>
 <p><span style="display:block" class="example">
 The canonical example of a braided monoidal category is the braid category <span class="arithmatex">\(\mathbb{B}\)</span>.
-This is the category where:
-\begin{description}
-\item[Objects.] All integers <span class="arithmatex">\(n \ge 0\)</span>.
-\item[Morphisms.] For any two integers <span class="arithmatex">\(m, n\)</span>, we have that </p>
+This is the category where:</p>
+<ul>
+<li><strong>Objects.</strong> All integers <span class="arithmatex">\(n \ge 0\)</span>.</li>
+<li><strong>Morphisms.</strong> For any two integers <span class="arithmatex">\(m, n\)</span>, we have that </li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\mathbb{B}}(n,m)
 =
@@ -3077,8 +3074,7 @@ B_n &amp; \text{if } n = m\\
 \varnothing &amp; \text{if } n \ne m
 \end{cases}
 \]</div>
-<p>\end{description} 
-Composition in this category is simply braid composition. We can introduce a tensor 
+<p>Composition in this category is simply braid composition. We can introduce a tensor 
 product <span class="arithmatex">\(\otimes\)</span> on <span class="arithmatex">\(\mathbb{B}\)</span> where on objects <span class="arithmatex">\(n \otimes m = n + m\)</span> 
 while on morphisms <span class="arithmatex">\(\alpha \otimes \beta\)</span> is the direct sum braid. The direct 
 sum braid is simply the braid obtained by placing two braids side-by-side.</p>
@@ -3287,76 +3283,82 @@ First we follow the path</p>
 [(f + g) + h] \circ \alpha_{n, m, p}: 
 S_n\amalg(S_m \amalg S_p) \to (S_{n'}\amalg S_{m'})\amalg S_{p'}.
 \end{align*}\]</div>
-<p>and then show it is equivalent to the other path.
-\begin{description}
-\item[<span class="arithmatex">\(\bm{i = 0}\)</span>]
-If the input is <span class="arithmatex">\((x, 0)\)</span>, we see that <span class="arithmatex">\(\alpha_{n,m,p}(x, i) = ((x,0),0)\)</span>.
+<p>and then show it is equivalent to the other path.</p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{i = 0}\)</span></strong> If the input is <span class="arithmatex">\((x, 0)\)</span>, we see that <span class="arithmatex">\(\alpha_{n,m,p}(x, i) = ((x,0),0)\)</span>.
 If this is fed into <span class="arithmatex">\((f + g) + h\)</span>, the output will be <span class="arithmatex">\((f + g)(x, 0)\)</span>, whose output 
-will be <span class="arithmatex">\(((f(x), 0), 0)\)</span>. </p>
+will be <span class="arithmatex">\(((f(x), 0), 0)\)</span>. </li>
+</ul>
 <p>However, suppose we first put <span class="arithmatex">\((x, 0)\)</span> into <span class="arithmatex">\(f+ (g + h)\)</span>. Then 
 we would have directly obtain <span class="arithmatex">\((f(x), 0)\)</span>. Feeding this into <span class="arithmatex">\(\alpha_{n', m', p'}\)</span>, we would 
-get <span class="arithmatex">\(((f(x), 0), 0)\)</span>. Hence we obtain naturality in this case. </p>
-<p>\item[<span class="arithmatex">\(\bm{i = 1}\)</span>.]
-Suppose now the input is <span class="arithmatex">\((x, 1)\)</span>. Then either <span class="arithmatex">\(x = (y, 0)\)</span> with <span class="arithmatex">\(y \in S_m\)</span> 
-or <span class="arithmatex">\((y, 1)\)</span> where <span class="arithmatex">\(y \in S_p\)</span>. </p>
-<p>\begin{description}
-\item[<span class="arithmatex">\(\bm{y \in S_m}\)</span>.] Suppose <span class="arithmatex">\(x = (y, 0)\)</span>. Then we see that 
-<span class="arithmatex">\(\alpha_{n,m,p}(x, 1) = ((y, 1), 0)\)</span>. Plugging this into <span class="arithmatex">\(( f+ g) + h\)</span>, we 
-get </p>
-<div class="arithmatex">\[
+get <span class="arithmatex">\(((f(x), 0), 0)\)</span>. Hence we obtain naturality in this case.
+* <strong><span class="arithmatex">\(\bm{i = 1}\)</span>.</strong> Suppose now the input is <span class="arithmatex">\((x, 1)\)</span>. Then either <span class="arithmatex">\(x = (y, 0)\)</span> with <span class="arithmatex">\(y \in S_m\)</span> 
+or <span class="arithmatex">\((y, 1)\)</span> where <span class="arithmatex">\(y \in S_p\)</span>.
+    * <strong><span class="arithmatex">\(\bm{y \in S_m}\)</span>.</strong> Suppose <span class="arithmatex">\(x = (y, 0)\)</span>. Then we see that 
+    <span class="arithmatex">\(\alpha_{n,m,p}(x, 1) = ((y, 1), 0)\)</span>. Plugging this into <span class="arithmatex">\(( f+ g) + h\)</span>, we 
+    get </p>
+<div class="language-text highlight"><pre><span></span><code>$$
 [ ( f+ g) + h]((y, 1), 0) = ([f + g](y, 1), 0) = ((g(y), 1), 0).
-\]</div>
-<p>However, we also could have obtained this value by first starting with<br />
-<span class="arithmatex">\(f + (g + h)\)</span>. In this case, </p>
-<div class="arithmatex">\[
+$$
+
+However, we also could have obtained this value by first starting with  
+$f + (g + h)$. In this case,
+
+$$
 [f + (g + h)]((y, 0), 1) = ([g + h](y, 0), 1) = ((g(y), 0), 1). 
-\]</div>
-<p>Plugging this into <span class="arithmatex">\(\alpha_{n',m',p'}\)</span>, we then get that </p>
-<div class="arithmatex">\[
-\alpha_{n',m',p'}((g(y), 0), 1) = ((g(y), 1), 0).
-\]</div>
-<p>Hence the two paths are equivalent. </p>
-<p>\item[<span class="arithmatex">\(\bm{y \in S_p}\)</span>.] Suppose <span class="arithmatex">\(x = (y, 1)\)</span>, Then we have that 
-<span class="arithmatex">\(\alpha_{n, m, p}((y,1), 1) = (y, 1)\)</span>. Sending this into <span class="arithmatex">\((f + g)+ h\)</span>, we get </p>
-<div class="arithmatex">\[
+$$
+
+Plugging this into $\alpha_{n&#39;,m&#39;,p&#39;}$, we then get that
+
+$$
+\alpha_{n&#39;,m&#39;,p&#39;}((g(y), 0), 1) = ((g(y), 1), 0).
+$$
+
+Hence the two paths are equivalent.
+* **$\bm{y \in S_p}$.** Suppose $x = (y, 1)$, Then we have that 
+$\alpha_{n, m, p}((y,1), 1) = (y, 1)$. Sending this into $(f + g)+ h$, we get
+
+$$
 [(f + g) + h](y, 1) = (h(y), 1).
-\]</div>
-<p>However, we could have achieved this value by first plugging <span class="arithmatex">\(((y, 1),1)\)</span> into 
-<span class="arithmatex">\(f + (g + h)\)</span>:</p>
-<div class="arithmatex">\[
+$$
+
+However, we could have achieved this value by first plugging $((y, 1),1)$ into 
+$f + (g + h)$:
+
+$$
 [f + (g + h)]((y, 1), 1) = ([g + h](y, 1), 1) = ((h(y), 1), 1).
-\]</div>
-<p>Then sending this into <span class="arithmatex">\(\alpha_{n',m',p'}\)</span>, we get </p>
-<div class="arithmatex">\[
-\alpha_{n',m',p'}((h(y), 1), 1) = (h(y), 1).
-\]</div>
-<p>Thus the two paths are equivalent.
-\end{description}
-Hence we see that this diagram does commute, so that <span class="arithmatex">\(\alpha\)</span> is natural. 
-\end{description}
-[Show naturality works for <span class="arithmatex">\(\lambda\)</span> and <span class="arithmatex">\(\rho\)</span>.]</p>
+$$
+
+Then sending this into $\alpha_{n&#39;,m&#39;,p&#39;}$, we get
+
+$$
+\alpha_{n&#39;,m&#39;,p&#39;}((h(y), 1), 1) = (h(y), 1).
+$$
+
+Thus the two paths are equivalent.
+</code></pre></div>
+<p>[Show naturality works for <span class="arithmatex">\(\lambda\)</span> and <span class="arithmatex">\(\rho\)</span>.]</p>
 <p>Now we show that these natural isomorphisms satisfy the monoidal properties. 
 Specifically, we'll show that the diagram </p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. To do this, we consider how these functions are realized in <strong>Set</strong>. 
 If we consider <span class="arithmatex">\((x, i) \in S_n\amalg(\varnothing \amalg S_m)\)</span>, we see that 
-we have two cases to consider. 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{i = 0}\)</span>.]
-If <span class="arithmatex">\(i = 0\)</span>, then we see that <span class="arithmatex">\(\alpha_{n, 0, m}(x, 0) = ((x, 0), 0)\)</span>. Sending 
-this into <span class="arithmatex">\(\rho_n + 1_m\)</span>, we get that <span class="arithmatex">\([\rho_m + 1_m]((x, 0), 0) = (\rho(x, 0), 0) = (x, 0)\)</span>. </p>
+we have two cases to consider. </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{i = 0}\)</span>.</strong> If <span class="arithmatex">\(i = 0\)</span>, then we see that <span class="arithmatex">\(\alpha_{n, 0, m}(x, 0) = ((x, 0), 0)\)</span>. Sending 
+this into <span class="arithmatex">\(\rho_n + 1_m\)</span>, we get that <span class="arithmatex">\([\rho_m + 1_m]((x, 0), 0) = (\rho(x, 0), 0) = (x, 0)\)</span>. </li>
+</ul>
 <p>On the other hand, we could obtain this value by directly sending <span class="arithmatex">\((x, 0)\)</span> into 
 <span class="arithmatex">\(1_n + \lambda_m\)</span>. Observe that <span class="arithmatex">\([1_n + \lambda_m](x, 0) = (1_n(x), 0) = (x, 0)\)</span>. 
-Hence the diagram commutes for this case. </p>
-<p>\item[<span class="arithmatex">\(\bm{i = 1}\)</span>.] If <span class="arithmatex">\(i = 1\)</span>, then our element is of the form 
+Hence the diagram commutes for this case.
+* <strong><span class="arithmatex">\(\bm{i = 1}\)</span>.</strong> If <span class="arithmatex">\(i = 1\)</span>, then our element is of the form 
 <span class="arithmatex">\((x, 1)\)</span>. However, we know that <span class="arithmatex">\(x = ((x, 1), 0)\)</span>, since <span class="arithmatex">\((x, 1) \in 0 + m\)</span>. 
 Thus observe that <span class="arithmatex">\(\alpha_{n, 0, m}((x, 1), 1) = (x, 1)\)</span>. Consequently, 
 we get that <span class="arithmatex">\([\rho_n + 1_m](x, 1) = (1_m(x), 1) = (x, 1)\)</span>. </p>
 <p>On the other hand, we can start instead be evaluating 
 <span class="arithmatex">\([1_n + \lambda_m]((x, 1), 1) = (\lambda(x, 1), 1) = (x, 1)\)</span>. Hence the diagram commutes 
-in this case.
-\end{description}
-Thus we see that this diagram holds for all naturals <span class="arithmatex">\(n, m\)</span>.
+in this case.</p>
+<p>Thus we see that this diagram holds for all naturals <span class="arithmatex">\(n, m\)</span>.
 </span></p>
 <script src="../../mathjax_helper.js"></script>
 

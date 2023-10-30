@@ -1,23 +1,23 @@
 \begin{center}
-    \begin{tikzcd}[column sep = 1.2cm, row sep = 2cm]
-        A\otimes (B\otimes (C \otimes D)) 
-        
-        \arrow[<-, r, NavyBlue, "\alpha^{-1}"]
-        \arrow[d, NavyBlue, swap, "1\otimes \alpha"]
-        
-        &
-        (A\otimes B)\otimes(C\otimes D) 
-        \arrow[r, Orange, "\alpha"]
-        
-        &
-        ((A\otimes B)\otimes C)\otimes D
-        \\
-        A\otimes((B\otimes C)\otimes D)
-        \arrow[rr, NavyBlue, swap, "\alpha"]
-        
-        &&
-        (A\otimes(B\otimes C))\otimes D
-        
-        \arrow[<-, u, Orange, swap, "\alpha^{-1}\otimes 1"]
-        \end{tikzcd}
+\begin{tikzcd}[column sep = 1.2cm, row sep = 2cm]
+A\otimes (B\otimes (C \otimes D)) 
+
+\arrow[<-, r, NavyBlue, "\alpha^{-1}"]
+\arrow[d, NavyBlue, swap, "1\otimes \alpha"]
+
+&
+(A\otimes B)\otimes(C\otimes D) 
+\arrow[r, Orange, "\alpha"]
+
+&
+((A\otimes B)\otimes C)\otimes D
+\\
+A\otimes((B\otimes C)\otimes D)
+\arrow[rr, NavyBlue, swap, "\alpha"]
+
+&&
+(A\otimes(B\otimes C))\otimes D
+
+\arrow[<-, u, Orange, swap, "\alpha^{-1}\otimes 1"]
+\end{tikzcd}
 \end{center}

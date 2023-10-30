@@ -3012,18 +3012,18 @@ Suppose <span class="arithmatex">\(\cc\)</span> is a category, and consider the 
 <div class="arithmatex">\[
 U: C \to **1** \qquad \Delta: \cc \to \cc \times \cc.
 \]</div>
-<p>where <span class="arithmatex">\(**1**\)</span> is the one object category.
-\begin{description}
-\item[<span class="arithmatex">\(\bm{(i)}\)</span>] If <span class="arithmatex">\(U\)</span> has a left adjoint, then 
-<span class="arithmatex">\(\cc\)</span> has an initial object.   </p>
-<p>\item[<span class="arithmatex">\(\bm{(ii)}\)</span>] If <span class="arithmatex">\(\Delta\)</span> has a left adjoint, then
-<span class="arithmatex">\(\cc\)</span> has finite coproducts.</p>
-<p>\item[<span class="arithmatex">\(\bm{(iii)}\)</span>] If <span class="arithmatex">\(U\)</span> has a right adjoint, then <span class="arithmatex">\(\cc\)</span>
-has a terminal object. </p>
-<p>\item[<span class="arithmatex">\(\bm{(iv)}\)</span>] If <span class="arithmatex">\(\Delta\)</span> has a right adjoint, then 
-<span class="arithmatex">\(\cc\)</span> has finite products.<br />
-\end{description}
-</span>
+<p>where <span class="arithmatex">\(**1**\)</span> is the one object category.</p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{(i)}\)</span></strong> If <span class="arithmatex">\(U\)</span> has a left adjoint, then 
+<span class="arithmatex">\(\cc\)</span> has an initial object.</li>
+<li><strong><span class="arithmatex">\(\bm{(ii)}\)</span></strong> If <span class="arithmatex">\(\Delta\)</span> has a left adjoint, then
+<span class="arithmatex">\(\cc\)</span> has finite coproducts.</li>
+<li><strong><span class="arithmatex">\(\bm{(iii)}\)</span></strong> If <span class="arithmatex">\(U\)</span> has a right adjoint, then <span class="arithmatex">\(\cc\)</span>
+has a terminal object.</li>
+<li><strong><span class="arithmatex">\(\bm{(iv)}\)</span></strong> If <span class="arithmatex">\(\Delta\)</span> has a right adjoint, then 
+<span class="arithmatex">\(\cc\)</span> has finite products.</li>
+</ul>
+<p></span>
 The proof is a straightforward, although tedious, so we sketch it
 out as follows. </p>
 <p><span style="display:block" class="proof"></p>
@@ -3187,12 +3187,13 @@ functor? Yes,we can. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> have finite products and exponential objects for
 every pair of objects. Then for each <span class="arithmatex">\(Y\)</span> in <span class="arithmatex">\(\cc\)</span> we can create an 
-<strong>exponential functor</strong> <span class="arithmatex">\(E^Y: \cc \to \cc\)</span> as follows. 
-\begin{description}
-\item[Objects.] For each <span class="arithmatex">\(Z \in \cc\)</span>, we define <span class="arithmatex">\(E^Y(Z) =
-Z^Y\)</span>. </p>
-<p>\item[Morphisms.] Let <span class="arithmatex">\(f: A \to B\)</span> be in <span class="arithmatex">\(\cc\)</span>. Then we 
-note that we have the following diagrams. </p>
+<strong>exponential functor</strong> <span class="arithmatex">\(E^Y: \cc \to \cc\)</span> as follows. </p>
+<ul>
+<li><strong>Objects.</strong> For each <span class="arithmatex">\(Z \in \cc\)</span>, we define <span class="arithmatex">\(E^Y(Z) =
+Z^Y\)</span>.</li>
+<li><strong>Morphisms.</strong> Let <span class="arithmatex">\(f: A \to B\)</span> be in <span class="arithmatex">\(\cc\)</span>. Then we 
+note that we have the following diagrams. </li>
+</ul>
 <p><img src="../../../png/category_theory/chapter_4/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now observe that we can form the morphism <span class="arithmatex">\(f \circ
 \textcolor{Red}{**eval**_A} : A^Y \times Y \to B\)</span>. 
@@ -3210,8 +3211,7 @@ E^Y(f: A \to B) = h': A^Y \to B^Y
 f \circ \textcolor{Red}{**eval**_A}
 = \textcolor{RoyalBlue}{**eval**_A} \circ (h', \id_Y).
 \]</div>
-<p>\end{description}  <br />
-</span>
+<p></span>
 Note that there's one more cool connection here. If we have a
 category 
 with finite products, and one in which exponential objects exist,
@@ -3261,16 +3261,10 @@ P_Y = (-)\times Y: \cc \to \cc
 <p>have right adjoints. In other words, <span class="arithmatex">\(\cc\)</span> is 
 <strong>cartesian closed</strong> if </p>
 <ul>
-<li>
-<p>[1.] There exists a terminal object <span class="arithmatex">\(T\)</span> </p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(\cc\)</span> has finite products </p>
-</li>
-<li>
-<p>[3.] An exponential object <span class="arithmatex">\(A^Y\)</span> for every <span class="arithmatex">\(A \in
-\cc\)</span> for all <span class="arithmatex">\(Y\)</span>.   </p>
-</li>
+<li><strong>1.</strong> There exists a terminal object <span class="arithmatex">\(T\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(\cc\)</span> has finite products</li>
+<li><strong>3.</strong> An exponential object <span class="arithmatex">\(A^Y\)</span> for every <span class="arithmatex">\(A \in
+\cc\)</span> for all <span class="arithmatex">\(Y\)</span>.</li>
 </ul>
 <p></span></p>
 <p>Thus the work we just did was used in showing that our

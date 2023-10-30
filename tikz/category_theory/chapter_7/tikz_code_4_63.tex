@@ -1,200 +1,200 @@
 \begin{center}
-    \makebox[0pt]{
-        \begin{tikzpicture}
-            \node at (-4, 5.3) {Front.  (Note that the product $\otimes$ in $\ww$ has been suppressed).};
-            \node at (-9, -5.2) {Back.};
-            \node at (-3,-0.5){
-                \begin{tikzcd}[ampersand replacement=\Z]
-                \Z[-2cm]
-                \Z[-2.5cm]
-                \Z[-1cm]
-                    x_1 ((x_1  x_1)  (x_1  x_1))
-                    \arrow[dll, swap, "1_{x_1}\otimes \alpha_{x_1 x_1,x_1,x_1}"]
-                    \arrow[drr, "\alpha_{x_1,x_1 x_1,x_1 x_1}"]
-                \Z[-1cm]
-                \Z[-2.5cm]
-                \Z[-2cm]
-                    \\[0.2cm] 
-                \Z
-                    x_1((( x_1  x_1 ) x_1)  x_1)
-                    \arrow[dddr, "\alpha_{x_1, x_1 (x_1 x_1), x_1}"]
-                \Z
-                \Z
-                    \textcolor{Black!30!White}{\bullet}
-                    \arrow[<-,Black!30!White, dashed,u]
-                \Z
-                \Z
-                    (x_1 (x_1  x_1))  (x_1  x_1)
-                    \arrow[dr, "\alpha_{x_1,x_1,x_1}\otimes (1_{x_1} \otimes 1_{x_1})"]
-                    \arrow[dddl, swap, "\alpha_{x_1 (x_1 x_1), x_1, x_1}"]
-                \Z
-                    \\[0.4cm] 
-                    x_1 ((x_1  (x_1  x_1)) x_1)
-                    \arrow[ur, "(1_{x_1} \otimes \alpha_{x_1,x_1,x_1})\otimes 1_{x_1}"]
-                    \arrow[ddddr, swap, "\alpha_{x_1,x_1 x_1 x_1, x_1}"]
-                    \arrow[<-, drr, dashed, Black!30!White]
-                \Z
-                \Z
-                \Z
-                \Z
-                \Z
-                \Z
-                    ((x_1 x_1)  x_1)  (x_1  x_1)
-                    \arrow[<-, Black!30!White, dashed, dll]
-                    \arrow[ddddl, "\alpha_{(x_1 x_1) x_1, x_1, x_1}"]
-                    \\[-0.7cm] 
-                \Z
-                \Z
-                    \textcolor{Black!30!White}{\bullet}
-                    \arrow[<-, Black!30!White, dashed, uur]
-                \Z
-                \Z
-                    \textcolor{Black!30!White}{\bullet}
-                    \arrow[<-, Black!30!White, dashed, uul]
-                \Z
-                \Z
-                    \\[0.2cm] 
-                \Z
-                \Z
-                    (x_1 ((x_1  x_1)  x_1))  x_1
-                    \arrow[rr, "\alpha_{x_1, x_1 x_1, x_1}\otimes 1_{x_1}"]
-                \Z
-                \Z
-                    ((x_1 (x_1  x_1)) x_1)  x_1
-                    \arrow[ddr, swap, "(\alpha_{x_1,x_1,x_1}\otimes 1_{x_1})\otimes 1_{x_1}"]
-                \Z
-                \Z
-                    \\[-0.7cm] 
-                \Z
-                \Z
-                \Z
-                    \textcolor{Black!30!White}{\bullet}
-                    \arrow[<-, Black!30!White, dashed, uur]
-                    \arrow[<-, Black!30!White, dashed, uul]
-                \Z
-                \Z
-                \Z
-                    \\[0.4cm] 
-                \Z
-                    (x_1 (x_1  (x_1  x_1)))  x_1
-                    \arrow[uur, swap, "(1_{x_1} \otimes \alpha_{x_1,x_1,x_1}) \otimes 1_{x_1}"]
-                    \arrow[drr, swap, "\alpha_{x_1, x_1, x_1 x_1} \otimes 1_{x_1}"]
-                \Z
-                \Z
-                \Z
-                \Z
-                    (((x_1 x_1)  x_1)  x_1)  x_1
-                \Z
-                    \\[0.2cm] 
-                \Z
-                \Z
-                \Z
-                    ((x_1 x_1)  (x_1  x_1))  x_1
-                    \arrow[urr, swap, "\alpha_{x_1 x_1, x_1, x_1}\otimes 1_{x_1}"]
-                    \arrow[<-, uu, dashed, Black!30!White]
-                \Z
-                \Z
-                \Z
-               \end{tikzcd}
-            };
-        \node at (-3,-12){
-            \begin{tikzcd}[ampersand replacement=\Z]
-                \Z[-2cm]
-                \Z[-2.5cm]
-                \Z[-1cm]
-                 x_1 ((x_1  x_1)  (x_1  x_1))
-                 \arrow[drr, "1_{x_1}\otimes \alpha_{x_1 x_1,x_1,x_1}"]
-                 \arrow[dll, swap, "\alpha_{x_1,x_1 x_1,x_1 x_1}"]
-                \Z[-1cm]
-                \Z[-2.5cm]
-                \Z[-2cm]
-                 \\[0.2cm] 
-                \Z
-                 (x_1 (x_1  x_1))  (x_1  x_1)
-                 \arrow[dl, swap, "\alpha_{x_1,x_1,x_1}\otimes (1_{x_1} \otimes 1_{x_1})"]
-                 \arrow[dddr, Black!30!White, dashed]
-                \Z
-                \Z 
-                 x_1 (x_1 (x_1 (x_1 x_1)))
-                 \arrow[u, "1_{x_1}\otimes \alpha_{x_1,x_1,x_1 x_1}"]
-                 \arrow[ddl, swap, "\alpha_{x_1,x_1, x_1 (x_1 x_1)}"]
-                 \arrow[ddr, "1_{x_1}\otimes(1_{x_1}\otimes \alpha_{x_1,x_1,x_1})"]
-                \Z
-                \Z
-                 x_1((( x_1  x_1 ) x_1)  x_1)
-                 \arrow[dddl,dashed, Black!30!White]
-                \Z
-                 \\[0.4cm] 
-                 ((x_1 x_1)  x_1)  (x_1  x_1)
-                 \arrow[ddddr, swap, "\alpha_{(x_1 x_1)x_1, x_1, x_1}"]
-                \Z
-                \Z
-                \Z
-                \Z
-                \Z
-                \Z
-                 x_1 ((x_1  (x_1  x_1)) x_1)
-                 \arrow[swap, ul, "(1_{x_1} \otimes \alpha_{x_1,x_1,x_1})\otimes 1_{x_1}"]
-                 \arrow[swap, ddddl, swap, "\alpha_{x_1,x_1 x_1 x_1, x_1}"]
-                 \\[-0.7cm] 
-                \Z
-                \Z
-                 (x_1 x_1)(x_1 (x_1 x_1))
-                 \arrow[ull, swap, "\alpha_{x_1 x_1, x_1, x_1 x_1}", 
-                 start anchor = {[yshift=-0.25cm]},
-                 end anchor = {[xshift=-0.5cm]} ]
-                 \arrow[ddr,swap,"(1_{x_1}\otimes 1_{x_1}) \otimes \alpha_{x_1,x_1,x_1}"]
-                \Z
-                \Z
-                 x_1 (x_1 ((x_1 x_1)x_1 )
-                 \arrow[urr, swap, "1_{x_1}\otimes \alpha_{x_1, x_1 x_1, x_1}",
-                 start anchor = {[yshift=-0.25cm]},
-                 end anchor = {[xshift=1cm]}]
-                 \arrow[ddl, "\alpha_{x_1,x_1,(x_1 x_1) x_1}"]
-                \Z
-                \Z
-                 \\[1cm] 
-                \Z
-                \Z
-                 \textcolor{Black!30!White}{\bullet}
-                 \arrow[Black!30!White, dashed, ddl]
-                \Z
-                \Z
-                 \textcolor{Black!30!White}{\bullet}
-                 \arrow[swap, ll, dashed, Black!30!White]
-                \Z
-                \Z
-                 \\[-0.7cm] 
-                \Z
-                \Z
-                \Z
-                 (x_1 x_1)((x_1 x_1)x_1)
-                 \arrow[dd, "\alpha_{x_1 x_1, x_1 x_1, x_1}"]
-                \Z
-                \Z
-                \Z
-                 \\[0.4cm] 
-                \Z
-                 (((x_1 x_1)  x_1)  x_1)  x_1
-                \Z
-                \Z
-                \Z
-                \Z
-                 (x_1 (x_1  (x_1  x_1)))  x_1
-                 \arrow[Black!30!White, dashed, uul]
-                 \arrow[swap, dll, swap, "\alpha_{x_1, x_1, x_1 x_1} \otimes 1_{x_1}"]
-                \Z
-                 \\[0.2cm] 
-                \Z
-                \Z
-                \Z
-                 ((x_1 x_1)  (x_1  x_1))  x_1
-                 \arrow[swap, ull, swap, "\alpha_{x_1 x_1, x_1, x_1}\otimes 1_{x_1}"]
-                \Z
-                \Z
-                \Z
-            \end{tikzcd}
-            };
-        \end{tikzpicture}
-    }
+\makebox[0pt]{
+\begin{tikzpicture}
+\node at (-4, 5.3) {Front.  (Note that the product $\otimes$ in $\ww$ has been suppressed).};
+\node at (-9, -5.2) {Back.};
+\node at (-3,-0.5){
+\begin{tikzcd}[ampersand replacement=\Z]
+\Z[-2cm]
+\Z[-2.5cm]
+\Z[-1cm]
+x_1 ((x_1  x_1)  (x_1  x_1))
+\arrow[dll, swap, "1_{x_1}\otimes \alpha_{x_1 x_1,x_1,x_1}"]
+\arrow[drr, "\alpha_{x_1,x_1 x_1,x_1 x_1}"]
+\Z[-1cm]
+\Z[-2.5cm]
+\Z[-2cm]
+\\[0.2cm] 
+\Z
+x_1((( x_1  x_1 ) x_1)  x_1)
+\arrow[dddr, "\alpha_{x_1, x_1 (x_1 x_1), x_1}"]
+\Z
+\Z
+\textcolor{Black!30!White}{\bullet}
+\arrow[<-,Black!30!White, dashed,u]
+\Z
+\Z
+(x_1 (x_1  x_1))  (x_1  x_1)
+\arrow[dr, "\alpha_{x_1,x_1,x_1}\otimes (1_{x_1} \otimes 1_{x_1})"]
+\arrow[dddl, swap, "\alpha_{x_1 (x_1 x_1), x_1, x_1}"]
+\Z
+\\[0.4cm] 
+x_1 ((x_1  (x_1  x_1)) x_1)
+\arrow[ur, "(1_{x_1} \otimes \alpha_{x_1,x_1,x_1})\otimes 1_{x_1}"]
+\arrow[ddddr, swap, "\alpha_{x_1,x_1 x_1 x_1, x_1}"]
+\arrow[<-, drr, dashed, Black!30!White]
+\Z
+\Z
+\Z
+\Z
+\Z
+\Z
+((x_1 x_1)  x_1)  (x_1  x_1)
+\arrow[<-, Black!30!White, dashed, dll]
+\arrow[ddddl, "\alpha_{(x_1 x_1) x_1, x_1, x_1}"]
+\\[-0.7cm] 
+\Z
+\Z
+\textcolor{Black!30!White}{\bullet}
+\arrow[<-, Black!30!White, dashed, uur]
+\Z
+\Z
+\textcolor{Black!30!White}{\bullet}
+\arrow[<-, Black!30!White, dashed, uul]
+\Z
+\Z
+\\[0.2cm] 
+\Z
+\Z
+(x_1 ((x_1  x_1)  x_1))  x_1
+\arrow[rr, "\alpha_{x_1, x_1 x_1, x_1}\otimes 1_{x_1}"]
+\Z
+\Z
+((x_1 (x_1  x_1)) x_1)  x_1
+\arrow[ddr, swap, "(\alpha_{x_1,x_1,x_1}\otimes 1_{x_1})\otimes 1_{x_1}"]
+\Z
+\Z
+\\[-0.7cm] 
+\Z
+\Z
+\Z
+\textcolor{Black!30!White}{\bullet}
+\arrow[<-, Black!30!White, dashed, uur]
+\arrow[<-, Black!30!White, dashed, uul]
+\Z
+\Z
+\Z
+\\[0.4cm] 
+\Z
+(x_1 (x_1  (x_1  x_1)))  x_1
+\arrow[uur, swap, "(1_{x_1} \otimes \alpha_{x_1,x_1,x_1}) \otimes 1_{x_1}"]
+\arrow[drr, swap, "\alpha_{x_1, x_1, x_1 x_1} \otimes 1_{x_1}"]
+\Z
+\Z
+\Z
+\Z
+(((x_1 x_1)  x_1)  x_1)  x_1
+\Z
+\\[0.2cm] 
+\Z
+\Z
+\Z
+((x_1 x_1)  (x_1  x_1))  x_1
+\arrow[urr, swap, "\alpha_{x_1 x_1, x_1, x_1}\otimes 1_{x_1}"]
+\arrow[<-, uu, dashed, Black!30!White]
+\Z
+\Z
+\Z
+\end{tikzcd}
+};
+\node at (-3,-12){
+\begin{tikzcd}[ampersand replacement=\Z]
+\Z[-2cm]
+\Z[-2.5cm]
+\Z[-1cm]
+x_1 ((x_1  x_1)  (x_1  x_1))
+\arrow[drr, "1_{x_1}\otimes \alpha_{x_1 x_1,x_1,x_1}"]
+\arrow[dll, swap, "\alpha_{x_1,x_1 x_1,x_1 x_1}"]
+\Z[-1cm]
+\Z[-2.5cm]
+\Z[-2cm]
+\\[0.2cm] 
+\Z
+(x_1 (x_1  x_1))  (x_1  x_1)
+\arrow[dl, swap, "\alpha_{x_1,x_1,x_1}\otimes (1_{x_1} \otimes 1_{x_1})"]
+\arrow[dddr, Black!30!White, dashed]
+\Z
+\Z 
+x_1 (x_1 (x_1 (x_1 x_1)))
+\arrow[u, "1_{x_1}\otimes \alpha_{x_1,x_1,x_1 x_1}"]
+\arrow[ddl, swap, "\alpha_{x_1,x_1, x_1 (x_1 x_1)}"]
+\arrow[ddr, "1_{x_1}\otimes(1_{x_1}\otimes \alpha_{x_1,x_1,x_1})"]
+\Z
+\Z
+x_1((( x_1  x_1 ) x_1)  x_1)
+\arrow[dddl,dashed, Black!30!White]
+\Z
+\\[0.4cm] 
+((x_1 x_1)  x_1)  (x_1  x_1)
+\arrow[ddddr, swap, "\alpha_{(x_1 x_1)x_1, x_1, x_1}"]
+\Z
+\Z
+\Z
+\Z
+\Z
+\Z
+x_1 ((x_1  (x_1  x_1)) x_1)
+\arrow[swap, ul, "(1_{x_1} \otimes \alpha_{x_1,x_1,x_1})\otimes 1_{x_1}"]
+\arrow[swap, ddddl, swap, "\alpha_{x_1,x_1 x_1 x_1, x_1}"]
+\\[-0.7cm] 
+\Z
+\Z
+(x_1 x_1)(x_1 (x_1 x_1))
+\arrow[ull, swap, "\alpha_{x_1 x_1, x_1, x_1 x_1}", 
+start anchor = {[yshift=-0.25cm]},
+end anchor = {[xshift=-0.5cm]} ]
+\arrow[ddr,swap,"(1_{x_1}\otimes 1_{x_1}) \otimes \alpha_{x_1,x_1,x_1}"]
+\Z
+\Z
+x_1 (x_1 ((x_1 x_1)x_1 )
+\arrow[urr, swap, "1_{x_1}\otimes \alpha_{x_1, x_1 x_1, x_1}",
+start anchor = {[yshift=-0.25cm]},
+end anchor = {[xshift=1cm]}]
+\arrow[ddl, "\alpha_{x_1,x_1,(x_1 x_1) x_1}"]
+\Z
+\Z
+\\[1cm] 
+\Z
+\Z
+\textcolor{Black!30!White}{\bullet}
+\arrow[Black!30!White, dashed, ddl]
+\Z
+\Z
+\textcolor{Black!30!White}{\bullet}
+\arrow[swap, ll, dashed, Black!30!White]
+\Z
+\Z
+\\[-0.7cm] 
+\Z
+\Z
+\Z
+(x_1 x_1)((x_1 x_1)x_1)
+\arrow[dd, "\alpha_{x_1 x_1, x_1 x_1, x_1}"]
+\Z
+\Z
+\Z
+\\[0.4cm] 
+\Z
+(((x_1 x_1)  x_1)  x_1)  x_1
+\Z
+\Z
+\Z
+\Z
+(x_1 (x_1  (x_1  x_1)))  x_1
+\arrow[Black!30!White, dashed, uul]
+\arrow[swap, dll, swap, "\alpha_{x_1, x_1, x_1 x_1} \otimes 1_{x_1}"]
+\Z
+\\[0.2cm] 
+\Z
+\Z
+\Z
+((x_1 x_1)  (x_1  x_1))  x_1
+\arrow[swap, ull, swap, "\alpha_{x_1 x_1, x_1, x_1}\otimes 1_{x_1}"]
+\Z
+\Z
+\Z
+\end{tikzcd}
+};
+\end{tikzpicture}
+}
 \end{center}

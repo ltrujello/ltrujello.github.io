@@ -3009,12 +3009,12 @@
 defined.</p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. Then the <strong>product
-category</strong> <span class="arithmatex">\(\cc \times \dd\)</span> is the category where 
-\begin{description}
-\item[Objects.] All pairs  <span class="arithmatex">\((C, D)\)</span> with <span class="arithmatex">\(C \in \ob(\cc)\)</span> and <span class="arithmatex">\(D \in \ob(\dd)\)</span>
-\item[Morphisms.] All pairs <span class="arithmatex">\((f, g)\)</span> where <span class="arithmatex">\(f \in \hom(\cc)\)</span> and <span class="arithmatex">\(g \in \hom(\dd)\)</span>. <br />
-\end{description}
-To define composition in this category, suppose we have composable morphisms in <span class="arithmatex">\(\cc\)</span> 
+category</strong> <span class="arithmatex">\(\cc \times \dd\)</span> is the category where </p>
+<ul>
+<li><strong>Objects.</strong> All pairs  <span class="arithmatex">\((C, D)\)</span> with <span class="arithmatex">\(C \in \ob(\cc)\)</span> and <span class="arithmatex">\(D \in \ob(\dd)\)</span></li>
+<li><strong>Morphisms.</strong> All pairs <span class="arithmatex">\((f, g)\)</span> where <span class="arithmatex">\(f \in \hom(\cc)\)</span> and <span class="arithmatex">\(g \in \hom(\dd)\)</span>.</li>
+</ul>
+<p>To define composition in this category, suppose we have composable morphisms in <span class="arithmatex">\(\cc\)</span> 
 and <span class="arithmatex">\(\dd\)</span> as below. </p>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the morphisms <span class="arithmatex">\((f, g)\)</span> and <span class="arithmatex">\((f', g')\)</span> in <span class="arithmatex">\(\cc \times \dd\)</span> 
@@ -3047,14 +3047,10 @@ Let <span class="arithmatex">\(F: \cc \to \cc'\)</span> and <span class="arithma
 Then we define the <strong>product functor</strong> to be the functor 
 <span class="arithmatex">\(F \times G: \cc \times \dd \to \cc' \times \dd'\)</span> for which </p>
 <ul>
-<li>
-<p>[1.] If <span class="arithmatex">\((C, D)\)</span> is an object of <span class="arithmatex">\(\cc\times\dd\)</span> then
-<span class="arithmatex">\((F\times G)(C, D) = (F(C), G(D))\)</span> </p>
-</li>
-<li>
-<p>[2.] If <span class="arithmatex">\((f, g)\)</span> is a morphism of <span class="arithmatex">\(\cc\times\dd\)</span>
-then <span class="arithmatex">\((F \times G)(f,g) = (F(f), G(g))\)</span> </p>
-</li>
+<li><strong>1.</strong> If <span class="arithmatex">\((C, D)\)</span> is an object of <span class="arithmatex">\(\cc\times\dd\)</span> then
+<span class="arithmatex">\((F\times G)(C, D) = (F(C), G(D))\)</span></li>
+<li><strong>2.</strong> If <span class="arithmatex">\((f, g)\)</span> is a morphism of <span class="arithmatex">\(\cc\times\dd\)</span>
+then <span class="arithmatex">\((F \times G)(f,g) = (F(f), G(g))\)</span> </li>
 </ul>
 <p>Additionally, we can compose the product of functors (of
 course, so
@@ -3177,12 +3173,13 @@ exists a natural transformation <span class="arithmatex">\(\eta: F \to G\)</span
 <span class="arithmatex">\(\eta(B, C)\)</span> is natural in <span class="arithmatex">\(B\)</span> for each <span class="arithmatex">\(C \in C\)</span>, and natural
 in <span class="arithmatex">\(C\)</span> for each <span class="arithmatex">\(B \in \bb\)</span>.
 </span></p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[(<span class="arithmatex">\(\bm{\implies}\)</span>)] Suppose that <span class="arithmatex">\(\eta: F \to G\)</span> is a
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong>(<span class="arithmatex">\(\bm{\implies}\)</span>)</strong> Suppose that <span class="arithmatex">\(\eta: F \to G\)</span> is a
 natural transformation. Then every object <span class="arithmatex">\((B, C)\)</span> is
 associated with a morphism <span class="arithmatex">\(\eta_{(B, C)}: F(B, C) \to
-G(B, C)\)</span> in <span class="arithmatex">\(\dd\)</span>, and this gives rise to the following diagram:</p>
+G(B, C)\)</span> in <span class="arithmatex">\(\dd\)</span>, and this gives rise to the following diagram:</li>
+</ul>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now let <span class="arithmatex">\(C \in \cc\)</span> and observe that </p>
 <div class="arithmatex">\[
@@ -3194,8 +3191,8 @@ hand, for any <span class="arithmatex">\(B \in \bb\)</span>, </p>
 \eta_{(B, -)}: F(B, -) \to G(B, -)
 \]</div>
 <p>is a natural transformation for all <span class="arithmatex">\(C\)</span>. Therefore, <span class="arithmatex">\(\eta\)</span>
-is both natural in <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> for all objects <span class="arithmatex">\((B, C)\)</span></p>
-<p>\item[(<span class="arithmatex">\(\bm{\impliedby}\)</span>)] Suppose on the other hand that
+is both natural in <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(C\)</span> for all objects <span class="arithmatex">\((B, C)\)</span>
+* <strong>(<span class="arithmatex">\(\bm{\impliedby}\)</span>)</strong> Suppose on the other hand that
 <span class="arithmatex">\(\eta\)</span> is a function which assigns objects <span class="arithmatex">\((B, C)\)</span> to a
 morphism <span class="arithmatex">\(F(B, C) \to G(B, C)\)</span> in <span class="arithmatex">\(\dd\)</span>. Furthermore,
 suppose that <span class="arithmatex">\(\eta(B, C)\)</span> is natural in <span class="arithmatex">\(B\)</span> for all <span class="arithmatex">\(C \in
@@ -3239,20 +3236,19 @@ G(1_{B'}, g)\circ G(f, 1_C) \circ \textcolor{red}{\eta}_{(B, C)} &amp;= \overbra
 (\ref{eq2_prop_2_2}), and in the third step we composed
 the morphisms. Also note that we can simplify the left-hand
 side since </p>
-<p>[ 
+<p>$$ 
 G(1_{B'}, g)\circ G(f, 1_C) =
 G(1_{B'}\circ f, g \circ 1_C) = G(f, g).
-]
-Therefore, we have that </p>
+$$
+ Therefore, we have that </p>
 <div class="arithmatex">\[
 G(f, g) \circ \textcolor{red}{\eta}_{(B, C)} = \textcolor{blue}{\eta}_{(B', C')} \circ F(f, g) 
 \]</div>
 <p>which implies that <span class="arithmatex">\(eta\)</span> itself is a natural
 transformation. Specifically, it implies the following
 diagram. </p>
-<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\end{description}
-</span>
+<p><img src="../../../png/category_theory/chapter_2/tikz_code_2_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p></span>
 Note: A way to succinctly prove the
 reverse implication of the previous proof is as follows. Since we
 know the diagrams on the left are commutative, just "\textcolor{Green}{stack}" them
@@ -3277,9 +3273,8 @@ the process. </p>
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>[<strong>1.</strong>]
-Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. Prove that 
-<span class="arithmatex">\((\cc \times \dd)\op \cong \cc\op\times\dd\op\)</span>. </li>
+<li><strong><em>*1.</em></strong>* Let <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> be categories. Prove that 
+<span class="arithmatex">\((\cc \times \dd)\op \cong \cc\op\times\dd\op\)</span>.</li>
 </ul>
 <script src="../../mathjax_helper.js"></script>
 

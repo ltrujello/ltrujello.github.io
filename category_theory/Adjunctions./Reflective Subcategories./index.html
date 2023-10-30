@@ -3066,17 +3066,18 @@ abelian groups with torsion free elements (for a lack of
 better notation). Then we have a natural inclusion functor 
 <span class="arithmatex">\(I: **Ab**_{**TF**} \to **Ab**\)</span>.
 Now consider the functor <span class="arithmatex">\(F : **Ab** \to
-**Ab**_{**TF**}\)</span>, which we define as follows:
-\begin{description}
-\item[Objects.] Let <span class="arithmatex">\(G\)</span> be an abelian group. Then 
-<span class="arithmatex">\(F(G) = G_{TF}\)</span> where </p>
+**Ab**_{**TF**}\)</span>, which we define as follows:</p>
+<ul>
+<li><strong>Objects.</strong> Let <span class="arithmatex">\(G\)</span> be an abelian group. Then 
+<span class="arithmatex">\(F(G) = G_{TF}\)</span> where </li>
+</ul>
 <div class="arithmatex">\[
 G_{TF} = \{g \in G \mid g^n \ne e \text{ for } n = 1, 2, 3, \dots\}.
 \]</div>
 <p>That is, it sends <span class="arithmatex">\(G\)</span> to its underlying abelian group of
 torsion-free elements. It's not hard to show this is an
-abelian group.</p>
-<p>\item[Morphisms.] Suppose <span class="arithmatex">\(\phi: G \to H\)</span> is a morphism
+abelian group.
+* <strong>Morphisms.</strong> Suppose <span class="arithmatex">\(\phi: G \to H\)</span> is a morphism
 between abelian groups. Then we set <span class="arithmatex">\(F(\phi) = \phi_{TF}\)</span>
 where </p>
 <div class="arithmatex">\[
@@ -3084,9 +3085,8 @@ where </p>
 \]</div>
 <p>Note that this definition will cause no issues, since
 <span class="arithmatex">\(\text{ord}(g) = \text{ord}(\phi(g))\)</span>. Thus we simply
-obtain <span class="arithmatex">\(\phi_{TF}\)</span> by restricting <span class="arithmatex">\(\phi\)</span> to <span class="arithmatex">\(G_{TF}\)</span>.
-\end{description} 
-To show that <span class="arithmatex">\(F\)</span> is left adjoint to <span class="arithmatex">\(I\)</span>, we need to
+obtain <span class="arithmatex">\(\phi_{TF}\)</span> by restricting <span class="arithmatex">\(\phi\)</span> to <span class="arithmatex">\(G_{TF}\)</span>.</p>
+<p>To show that <span class="arithmatex">\(F\)</span> is left adjoint to <span class="arithmatex">\(I\)</span>, we need to
 demonstrate that there exists a universal morphism <span class="arithmatex">\(\eta_{G} :
 G \to I(F(G))\)</span> for every <span class="arithmatex">\(G \in **Ab**\)</span>. Hence we propose
 <span class="arithmatex">\(\eta_{G}\)</span> takes on the form </p>
@@ -3103,29 +3103,28 @@ morphism <span class="arithmatex">\(\phi: G \to I(H)\)</span>, where <span class
 <span class="arithmatex">\(\psi: F(G) \to H\)</span> such that <span class="arithmatex">\(I(\phi) \circ \eta_{G} = \phi\)</span>.
 Visually, that is, </p>
 <p><img src="../../../png/category_theory/chapter_4/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Sure such a morphism exists, but why the equality? 
-\begin{description}
-\item[<span class="arithmatex">\(\bm{g \in \ker(\eta_G)}\)</span>.] If <span class="arithmatex">\(g \in \ker(\eta_G)\)</span>,
+Sure such a morphism exists, but why the equality? </p>
+<ul>
+<li><strong><span class="arithmatex">\(\bm{g \in \ker(\eta_G)}\)</span>.</strong> If <span class="arithmatex">\(g \in \ker(\eta_G)\)</span>,
 then <span class="arithmatex">\(g\)</span> has finite order. Hence we see that <span class="arithmatex">\(\phi(g) =
 e\)</span>; this is because <span class="arithmatex">\(\text{ord}(\phi(g)) =
 \text{ord}(g) &lt; \infty\)</span>, but the only element in <span class="arithmatex">\(I(H)\)</span>
 with finite order is <span class="arithmatex">\(e\)</span>. We then have that <span class="arithmatex">\(g \in
-\ker(\phi)\)</span>. Therefore, </p>
+\ker(\phi)\)</span>. Therefore, </li>
+</ul>
 <div class="arithmatex">\[
 I(\psi)\circ \eta_G(g) = I(\psi)(e) = e = \phi(g).
 \]</div>
 <p>Hence <span class="arithmatex">\(I(\psi) \circ \eta_G = \phi\)</span> if <span class="arithmatex">\(g \in
-\ker(\eta_{G})\)</span>. </p>
-<p>\item[<span class="arithmatex">\(\bm{g \not\in \ker(\eta_G)}\)</span>.]
-if <span class="arithmatex">\(g \not\in \ker(\eta_G)\)</span>, then we know that
+\ker(\eta_{G})\)</span>.
+* <strong><span class="arithmatex">\(\bm{g \not\in \ker(\eta_G)}\)</span>.</strong> if <span class="arithmatex">\(g \not\in \ker(\eta_G)\)</span>, then we know that
 <span class="arithmatex">\(\text{ord}(g) = \infty\)</span>. Therefore, we see that </p>
 <div class="arithmatex">\[
 I(\psi) \circ \eta_G(g) = I(\phi)(g) = \phi(g).
 \]</div>
 <p>Hence <span class="arithmatex">\(I(\psi) \circ \eta_G = \phi\)</span> for <span class="arithmatex">\(g \not\in
-\ker(\eta_G)\)</span>. 
-\end{description}
-By our previous work, we then have that <span class="arithmatex">\(I(\psi) \circ \eta_G
+\ker(\eta_G)\)</span>.</p>
+<p>By our previous work, we then have that <span class="arithmatex">\(I(\psi) \circ \eta_G
 = \phi\)</span>, as desired. Now <span class="arithmatex">\(\psi\)</span> is of course unique based on
 its construction, since its definition depends directly on
 <span class="arithmatex">\(\phi\)</span>. We then have that <span class="arithmatex">\(\eta_G: G \to I(F(G))\)</span> is universal
@@ -3138,13 +3137,8 @@ subcategory of <span class="arithmatex">\(**Ab**\)</span>.
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] Is <strong>FinSet</strong> a reflective subcategory of <strong>Set</strong>?  </p>
-</li>
-<li>
-<p>[<strong>2.</strong>]
-Let <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(H\)</span> be a groups. Prove that</p>
-</li>
+<li><strong><em>*1.</em></strong><em> Is </em><em>FinSet</em><em> a reflective subcategory of </em><em>Set</em>*?</li>
+<li><strong><em>*2.</em></strong>* Let <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(H\)</span> be a groups. Prove that</li>
 </ul>
 <div class="arithmatex">\[
 G*H/[G*H, G*H] \cong G/[G,G]\oplus H/[H,H]
@@ -3153,7 +3147,7 @@ G*H/[G*H, G*H] \cong G/[G,G]\oplus H/[H,H]
 of <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(H\)</span>.
 (What this is saying is that <span class="arithmatex">\(F: **Grp** \to **Ab**\)</span>, the abelianization 
 functor, preserves coproducts. Eventually, this fact will immediately 
-follow by our knowledge of the adjunction \adjunction{<strong>Grp</strong>}{F}{<strong>Ab</strong>.}{U}) </p>
+follow by our knowledge of the adjunction \adjunction{<strong>Grp</strong>}{F}{<strong>Ab</strong>.}{U})</p>
 <script src="../../mathjax_helper.js"></script>
 
 

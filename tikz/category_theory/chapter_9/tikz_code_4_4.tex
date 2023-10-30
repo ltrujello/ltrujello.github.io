@@ -1,23 +1,23 @@
 \begin{center}
-    \begin{tikzpicture}
-        \braid[number of strands= 2, thick, height = 6cm,
-        style strands={1}{red},
-        style strands={2}{RoyalBlue}]
-        (braid) s_1;
-    \end{tikzpicture}
-    \hspace{1cm}
-    \raisebox{2cm}{$\mapsto$}
-    \hspace{1cm}
-    \begin{tikzpicture}
-        \braid[number of strands= 5, thick,
-        style strands={1}{red},
-        style strands={2}{red},
-        style strands={3}{RoyalBlue},
-        style strands={4}{RoyalBlue},
-        style strands={5}{RoyalBlue}] 
-        (braid) 
-        s_2 s_1 s_3 s_2 s_4 s_3;
-    \end{tikzpicture}
+\begin{tikzpicture}
+\braid[number of strands= 2, thick, height = 6cm,
+style strands={1}{red},
+style strands={2}{RoyalBlue}]
+(braid) s_1;
+\end{tikzpicture}
+\hspace{1cm}
+\raisebox{2cm}{$\mapsto$}
+\hspace{1cm}
+\begin{tikzpicture}
+\braid[number of strands= 5, thick,
+style strands={1}{red},
+style strands={2}{red},
+style strands={3}{RoyalBlue},
+style strands={4}{RoyalBlue},
+style strands={5}{RoyalBlue}] 
+(braid) 
+s_2 s_1 s_3 s_2 s_4 s_3;
+\end{tikzpicture}
 
-    \emph{Above is the output of $\sigma_1(2, 3)$, i.e. when $k_1 = 2$ and $k_3 = 3$.}
+\emph{Above is the output of $\sigma_1(2, 3)$, i.e. when $k_1 = 2$ and $k_3 = 3$.}
 \end{center}

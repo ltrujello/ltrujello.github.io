@@ -1,19 +1,19 @@
 \begin{center}
-        \begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
-            \hom(A, B) \otimes (\hom(B, C) \otimes \hom(C, D))
-            \arrow[d, swap, "1 \otimes \circ_{B, C, D}"]
-            \arrow[rr, "\alpha"]
-            &
-            &
-            (\hom(A, B) \otimes \hom(B, C))\otimes \hom(C, D)
-            \arrow[d, "\circ_{A, B, C} \otimes 1"]
-            \\
-            \hom(A, B) \otimes \hom(B, D)
-            \arrow[r, swap, "\circ_{A, B, D}"]
-            &
-            \hom(A, D)
-            &
-            \hom(A, C) \otimes \hom(C, D)
-            \arrow[l, "\circ_{B, C, D}"]
-        \end{tikzcd}
-    \end{center}
+\begin{tikzcd}[row sep = 1.4cm, column sep = 0.5cm]
+\hom(A, B) \otimes (\hom(B, C) \otimes \hom(C, D))
+\arrow[d, swap, "1 \otimes \circ_{B, C, D}"]
+\arrow[rr, "\alpha"]
+&
+&
+(\hom(A, B) \otimes \hom(B, C))\otimes \hom(C, D)
+\arrow[d, "\circ_{A, B, C} \otimes 1"]
+\\
+\hom(A, B) \otimes \hom(B, D)
+\arrow[r, swap, "\circ_{A, B, D}"]
+&
+\hom(A, D)
+&
+\hom(A, C) \otimes \hom(C, D)
+\arrow[l, "\circ_{B, C, D}"]
+\end{tikzcd}
+\end{center}

@@ -3043,31 +3043,27 @@ always enumerate objects with natural numbers) as <span class="arithmatex">\(S_n
 then the 
 <strong>set of permutations
 of <span class="arithmatex">\(X\)</span> form a group</strong> which we show as follows.}</p>
-<p>Let <span class="arithmatex">\(X = \{1, 2, \dots, n\}\)</span>. 
-\begin{description}
-\item[Closed.]
-For any <span class="arithmatex">\(\sigma_1, \sigma_2 \in S_n\)</span>, we see that <span class="arithmatex">\(\sigma_2
+<p>Let <span class="arithmatex">\(X = \{1, 2, \dots, n\}\)</span>. </p>
+<ul>
+<li><strong>Closed.</strong> For any <span class="arithmatex">\(\sigma_1, \sigma_2 \in S_n\)</span>, we see that <span class="arithmatex">\(\sigma_2
 \circ \sigma_1\)</span> is (1) a composition of bijective functions
 and therefore is bijective and (2) a permutation of <span class="arithmatex">\(X\)</span>. One
 way to think about the composition is that <span class="arithmatex">\(\sigma_1\)</span>
 rearranges <span class="arithmatex">\(X\)</span>, and
 <span class="arithmatex">\(\sigma_2\)</span> rearranges <span class="arithmatex">\(X\)</span> again. Thus <span class="arithmatex">\(\sigma_2 \circ \sigma_1
-\in S_n\)</span>. </p>
-<p>\item[Associativity.]
-Associativity is obvious since function composition is
-associative. </p>
-<p>\item[Identity.]
-Observe that the permutation <span class="arithmatex">\(\sigma_e: X \to X\)</span> for which 
+\in S_n\)</span>.</li>
+<li><strong>Associativity.</strong> Associativity is obvious since function composition is
+associative.</li>
+<li><strong>Identity.</strong> Observe that the permutation <span class="arithmatex">\(\sigma_e: X \to X\)</span> for which 
 <span class="arithmatex">\(\sigma_e(i) = i\)</span> is technically a permutation of <span class="arithmatex">\(X\)</span>.
-Therefore <span class="arithmatex">\(\sigma_e\)</span> acts as the identity element in <span class="arithmatex">\(S_n\)</span>. </p>
-<p>\item[Inverse.]
-Consider a permutation <span class="arithmatex">\(\sigma \in S_n\)</span>. Define <span class="arithmatex">\(\sigma^{-1}\)</span>
+Therefore <span class="arithmatex">\(\sigma_e\)</span> acts as the identity element in <span class="arithmatex">\(S_n\)</span>.</li>
+<li><strong>Inverse.</strong> Consider a permutation <span class="arithmatex">\(\sigma \in S_n\)</span>. Define <span class="arithmatex">\(\sigma^{-1}\)</span>
 to be the function where if <span class="arithmatex">\(\sigma(i) = j\)</span>, then
 <span class="arithmatex">\(\sigma^{-1}(j) = i\)</span>. Then by construction, (1) <span class="arithmatex">\(\sigma^{-1}\)</span> is a permutation
 of <span class="arithmatex">\(X\)</span> and (2) <span class="arithmatex">\(\sigma \circ \sigma^{-1} = \sigma^{-1} \circ
 \sigma = \sigma_e\)</span>. Thus <span class="arithmatex">\(S_n\)</span> contains inverses and
-composition of the inverses returns <span class="arithmatex">\(\sigma_e\)</span>, the identity.
-\end{description}</p>
+composition of the inverses returns <span class="arithmatex">\(\sigma_e\)</span>, the identity.</li>
+</ul>
 <p><span style="display:block" class="proposition">
 For all <span class="arithmatex">\(n \ge 1\)</span>, <span class="arithmatex">\(|S_n| = n!\)</span> 
 </span></p>

@@ -3020,7 +3020,7 @@ to discuss these concepts. </p>
 group homomorphisms. We now ask the question:
 \begin{center}
 \textcolor{NavyBlue}{What is the set of all <span class="arithmatex">\(g \in G\)</span> such that <span class="arithmatex">\(\phi(g) = \psi(g)\)</span>? Is it a subgroup of <span class="arithmatex">\(G\)</span>?}
-\end{center}    To determine this, it is equivalent to asking when <span class="arithmatex">\(\phi(g) - \psi(g) = 0 
+\end{center}To determine this, it is equivalent to asking when <span class="arithmatex">\(\phi(g) - \psi(g) = 0 
 \implies (\phi - \psi)(g) = 0\)</span>. Hence every such <span class="arithmatex">\(g \in G\)</span> lies in the kernel of 
 <span class="arithmatex">\(\phi - \psi: G \to H\)</span>, and every element in the kernel is such a desired element; so 
 we've answered the first question. The kernel is a subgroup of <span class="arithmatex">\(G\)</span>, so we've answered the last question. 
@@ -3082,7 +3082,7 @@ bases as <span class="arithmatex">\(\{v_1,  v_2, \dots, v_n\}\)</span> and <span
 \begin{minipage}{0.8\textwidth}
 <strong>Q:</strong> What does it take for a function <span class="arithmatex">\(T: V \to W\)</span> to be a linear transformation? 
 \end{minipage}
-\end{center}        Well, suppose we have a linear transformation. Since each element of 
+\end{center}Well, suppose we have a linear transformation. Since each element of 
 <span class="arithmatex">\(V\)</span> may be written as <span class="arithmatex">\(c_1v_1 + \cdots + c_nv_n\)</span>  for <span class="arithmatex">\(c_i \in k\)</span>, we 
 see that </p>
 <div class="arithmatex">\[
@@ -3094,7 +3094,7 @@ T(c_1v_1 + \cdots + c_nv_n) = c_1T(v_1) + \cdots + c_nT(v_n).
 <strong>A:</strong> To define a linear transformation <span class="arithmatex">\(T: V \to W\)</span>, it suffices to specify 
 where we want <span class="arithmatex">\(T\)</span> to send the basis elements <span class="arithmatex">\(v_1, \dots, v_n\)</span>.
 \end{minipage}
-\end{center}        An illustration of this fact is below. </p>
+\end{center}An illustration of this fact is below. </p>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_1_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 \noindent This observation helps us build our first example of universality.</p>
 <p>Let <span class="arithmatex">\(X\)</span> be a (possibly infinite) set. For a field <span class="arithmatex">\(k\)</span>, we can generate a vector space <span class="arithmatex">\(\textcolor{NavyBlue}{V_x}\)</span> (Note 
@@ -3234,14 +3234,14 @@ comma category <span class="arithmatex">\((D \downarrow F)\)</span>
 translates to <span class="arithmatex">\((C, u: D \to F(C))\)</span> being an initial object in some comma category.</p>
 <p><span style="display:block" class="proof">
 Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor, and <span class="arithmatex">\(D\)</span> an object of <span class="arithmatex">\(\dd\)</span>. Recall that 
-the category <span class="arithmatex">\((D \downarrow \dd)\)</span> is the category where 
-\begin{description}
-\item[Objects.] Pairs <span class="arithmatex">\((C, f: D \to F(C))\)</span> with <span class="arithmatex">\(C \in \cc\)</span> and <span class="arithmatex">\(f: D \to \dd\)</span> a morphism in <span class="arithmatex">\(\dd\)</span>. 
-\item[Morphisms.] Morphisms between two objects <span class="arithmatex">\((C, f: D \to F(C))\)</span> and <span class="arithmatex">\((C', f: D \to F(C'))\)</span> 
-are given by morphisms <span class="arithmatex">\(h: C \to C'\)</span> such that the diagram below commutes. </p>
-<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-\end{description}
-Suppose <span class="arithmatex">\((\textcolor{NavyBlue}{A}, u: D \mathbin{\textcolor{Red}{\to}} F(\textcolor{NavyBlue}{A}))\)</span> is an initial object in <span class="arithmatex">\((D \downarrow F)\)</span>. Then for every 
+the category <span class="arithmatex">\((D \downarrow \dd)\)</span> is the category where </p>
+<ul>
+<li><strong>Objects.</strong> Pairs <span class="arithmatex">\((C, f: D \to F(C))\)</span> with <span class="arithmatex">\(C \in \cc\)</span> and <span class="arithmatex">\(f: D \to \dd\)</span> a morphism in <span class="arithmatex">\(\dd\)</span>.</li>
+<li><strong>Morphisms.</strong> Morphisms between two objects <span class="arithmatex">\((C, f: D \to F(C))\)</span> and <span class="arithmatex">\((C', f: D \to F(C'))\)</span> 
+are given by morphisms <span class="arithmatex">\(h: C \to C'\)</span> such that the diagram below commutes. </li>
+</ul>
+<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_10.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
+<p>Suppose <span class="arithmatex">\((\textcolor{NavyBlue}{A}, u: D \mathbin{\textcolor{Red}{\to}} F(\textcolor{NavyBlue}{A}))\)</span> is an initial object in <span class="arithmatex">\((D \downarrow F)\)</span>. Then for every 
 other pair <span class="arithmatex">\((A, f: D \to F(A'))\)</span>, there exists a unique morphism <span class="arithmatex">\(h: A \to A'\)</span> 
 such that the diagram on the bottom left commutes. </p>
 <p><img src="../../../png/category_theory/chapter_3/tikz_code_1_11.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -3323,59 +3323,40 @@ objects are always unique up to isomorphism.
 \vspace{0.5cm}}
 \def\exerciseCartesianProduct{4} </p>
 <ul>
-<li>
-<p>[<strong>1.</strong>]
-Prove Theorem \ref{theorem:universal_elements_are_isomorphic} directly,
+<li><strong><em>*1.</em></strong>* Prove Theorem \ref{theorem:universal_elements_are_isomorphic} directly,
 and dualize your proof to prove Theorem \ref{theorem:couniversal_elements_isomorphic}
-directly. </p>
-</li>
-<li>
-<p>[<strong>2.</strong>]
-Prove Proposition \ref{proposition:universal_elements_in_comma_cats}.</p>
-</li>
-<li>
-<p>[<strong>3.</strong>]
-For each ring <span class="arithmatex">\(R\)</span>, we may construct the single-variable 
+directly.</li>
+<li><strong><em>*2.</em></strong>* Prove Proposition \ref{proposition:universal_elements_in_comma_cats}.</li>
+<li><strong><em>*3.</em></strong>* For each ring <span class="arithmatex">\(R\)</span>, we may construct the single-variable 
 polynomial ring <span class="arithmatex">\(R[x]\)</span>. This process defines a functor
-<span class="arithmatex">\(**Poly**: **Ring** \to **Ring**\)</span>.</p>
-</li>
+<span class="arithmatex">\(**Poly**: **Ring** \to **Ring**\)</span>.</li>
 </ul>
 <p>Show that for each ring <span class="arithmatex">\(R\)</span>, the inclusion ring homomorphism <span class="arithmatex">\(i: R \to R[X]\)</span> 
-is a universal morphism from <span class="arithmatex">\(R\)</span> to <strong>Poly</strong>. </p>
-<ul>
-<li>
-<p>[<strong>4.</strong>] 
-Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets, and consider their product <span class="arithmatex">\(X \times Y\)</span>. Recall that with 
+is a universal morphism from <span class="arithmatex">\(R\)</span> to <strong>Poly</strong>.
+* <strong><em>*4.</em></strong><em> Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets, and consider their product <span class="arithmatex">\(X \times Y\)</span>. Recall that with 
 any product, we have "projection maps" <span class="arithmatex">\(\pi_1: X \times Y \to X\)</span> and <span class="arithmatex">\(\pi_2: X \times Y \to Y\)</span>
-where <span class="arithmatex">\(\pi_1(x,y) = x\)</span> and <span class="arithmatex">\(\pi_2(x,y) = y\)</span>. 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(i.\)</span>] Suppose we have functions <span class="arithmatex">\(f: Z \to X\)</span> and <span class="arithmatex">\(g: Z \to Y\)</span>. 
-Show how this gives us a map <span class="arithmatex">\(h: Z \to X\times Y\)</span>, and show that 
-this map is unique (to the pair <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>). </p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(ii.\)</span>] Using your map <span class="arithmatex">\(h: Z \to X \times Y\)</span>, show that the 
-diagram on the left commutes, and that the diagram on the right is 
-equivalent.  </p>
-</li>
-</ul>
-<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+where <span class="arithmatex">\(\pi_1(x,y) = x\)</span> and <span class="arithmatex">\(\pi_2(x,y) = y\)</span>.
+    * </em><em><span class="arithmatex">\(i.\)</span></em><em> Suppose we have functions <span class="arithmatex">\(f: Z \to X\)</span> and <span class="arithmatex">\(g: Z \to Y\)</span>. 
+    Show how this gives us a map <span class="arithmatex">\(h: Z \to X\times Y\)</span>, and show that 
+    this map is unique (to the pair <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span>).
+    * </em><em><span class="arithmatex">\(ii.\)</span></em>* Using your map <span class="arithmatex">\(h: Z \to X \times Y\)</span>, show that the 
+    diagram on the left commutes, and that the diagram on the right is 
+    equivalent.  </p>
+<div class="language-text highlight"><pre><span></span><code>&lt;img src=&quot;../../../png/category_theory/chapter_3/tikz_code_1_13.png&quot; width=&quot;99%&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;/&gt;
 To be clear, the diagram on the right is in the category 
-<span class="arithmatex">\(**Set**\times **Set**\)</span>. </p>
+$**Set**\times **Set**$.
+* **$iii.$** Let $\Delta: **Set**\to **Set**\times**Set**$ be 
+the &quot;copy functor&quot; which sends $X \mapsto (X, X)$. Then the above diagram 
+translates to
+
+&lt;img src=&quot;../../../png/category_theory/chapter_3/tikz_code_1_14.png&quot; width=&quot;99%&quot; style=&quot;display: block; margin-left: auto; margin-right: auto;&quot;/&gt;
+Deduce how the product $(\pi_1, \pi_2): \Delta(X\times Y) \to (X,Y)$ is 
+universal from $(X,Y)$ to $\Delta$. 
+This is an important fact that we&#39;ll build upon later.
+</code></pre></div>
 <ul>
-<li>[<span class="arithmatex">\(iii.\)</span>]
-Let <span class="arithmatex">\(\Delta: **Set**\to **Set**\times**Set**\)</span> be 
-the "copy functor" which sends <span class="arithmatex">\(X \mapsto (X, X)\)</span>. Then the above diagram 
-translates to </li>
+<li><strong><em>*4.</em></strong>* Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets, and consider the coproduct</li>
 </ul>
-<p><img src="../../../png/category_theory/chapter_3/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-Deduce how the product <span class="arithmatex">\((\pi_1, \pi_2): \Delta(X\times Y) \to (X,Y)\)</span> is 
-universal from <span class="arithmatex">\((X,Y)\)</span> to <span class="arithmatex">\(\Delta\)</span>. 
-This is an important fact that we'll build upon later.</p>
-<p>\item[<strong>4.</strong>]
-Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be two sets, and consider the coproduct</p>
 <div class="arithmatex">\[
 X \amalg Y = 
 \{(x, 1), (y, 2) \mid x \in X, y \in Y\}\footnote{Note that I 
@@ -3388,8 +3369,7 @@ any coproduct, we'll have "injection maps" <span class="arithmatex">\(i_1: X \to
 where  <span class="arithmatex">\(i_1(x) = (x, 1)\)</span> and <span class="arithmatex">\(i_2(y) = (y, 2)\)</span>. Repeat (<span class="arithmatex">\(i\)</span>-<span class="arithmatex">\(iii\)</span>) 
 as in the previous exercise to demonstrate that 
 <span class="arithmatex">\((i_1,i_2): (X,Y) \to \Delta(X\amalg Y)\)</span> is universal from 
-<span class="arithmatex">\(\Delta\)</span> to <span class="arithmatex">\((X,Y)\)</span>. 
-\end{itemize}</p>
+<span class="arithmatex">\(\Delta\)</span> to <span class="arithmatex">\((X,Y)\)</span>.</p>
 <script src="../../mathjax_helper.js"></script>
 
 

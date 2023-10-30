@@ -3020,12 +3020,12 @@ We've now reached something quite important. We have the notion of
 a category, as well as the notion of a functor which acts as a map between 
 categories. Moreover, every category <span class="arithmatex">\(\cc\)</span> is equipped with an identity functor 
 <span class="arithmatex">\(1_{\cc}: \cc \to \cc\)</span>, functor composition is associative, and so we  may 
-form the <strong>category of categories</strong> <strong>CAT</strong> where 
-\begin{description}
-\item[Objects.] All categories (large and small)
-\item[Morphisms.] All functors between such categories.<br />
-\end{description}
-If we instead restrict our objects to all <em>small</em> categories, 
+form the <strong>category of categories</strong> <strong>CAT</strong> where </p>
+<ul>
+<li><strong>Objects.</strong> All categories (large and small)</li>
+<li><strong>Morphisms.</strong> All functors between such categories.</li>
+</ul>
+<p>If we instead restrict our objects to all <em>small</em> categories, 
 we obtain the category <span class="arithmatex">\(\cat\)</span>, which is usually what we'll work with.
 \textcolor{NavyBlue}{Overall, what we see is that<br />
 functors are the rightful "morphisms" between categories.}</p>
@@ -3108,15 +3108,11 @@ also functorial:</p>
 noticed that our definition of a forgetful functor was not at all mathematically 
 rigorous. This is because to define forgetful functors we have two main options:</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] Use very deep set theory and logic to characterize 
+<li><strong><em>*1.</em></strong>* Use very deep set theory and logic to characterize 
 the data of a category; then define forgetfulness as forgetting some 
-of the data. </p>
-</li>
-<li>
-<p>[<strong>2.</strong>] Define a forgetful functor to be the left adjoint 
-of a free functor <span class="arithmatex">\(F: \cc \to \dd\)</span> (usually, <span class="arithmatex">\(\cc = \Set\)</span>)   </p>
-</li>
+of the data.</li>
+<li><strong><em>*2.</em></strong>* Define a forgetful functor to be the left adjoint 
+of a free functor <span class="arithmatex">\(F: \cc \to \dd\)</span> (usually, <span class="arithmatex">\(\cc = \Set\)</span>)</li>
 </ul>
 <p>Option <strong>1.</strong> sounds like a pain, and I don't know any logic. I'm sure 
 the reader is probably not interested in going on that kind of a ride anyways. 
@@ -3175,12 +3171,8 @@ definitions. </p>
 Let <span class="arithmatex">\(F: \cc\to \dd\)</span> be a functor between locally small categories. 
 We say <span class="arithmatex">\(F\)</span> is </p>
 <ul>
-<li>
-<p><strong>Full</strong> if <span class="arithmatex">\(F_{A,B}\)</span> is surjective</p>
-</li>
-<li>
-<p><strong>Faithful</strong> if <span class="arithmatex">\(F_{A,B}\)</span> is injective.</p>
-</li>
+<li><strong>Full</strong> if <span class="arithmatex">\(F_{A,B}\)</span> is surjective</li>
+<li><strong>Faithful</strong> if <span class="arithmatex">\(F_{A,B}\)</span> is injective.</li>
 </ul>
 <p>If <span class="arithmatex">\(F_{A,B}\)</span> is an isomorphism, we say <span class="arithmatex">\(F\)</span> is <strong>fully faithful</strong>.
 </span></p>
@@ -3191,14 +3183,10 @@ can still be described; it's just not as nice of a description as before.</p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor.</p>
 <ul>
-<li>
-<p><strong>Full</strong> if for all <span class="arithmatex">\(A, B\)</span>, every morphism 
-<span class="arithmatex">\(g: F(A) \to F(B)\)</span> in <span class="arithmatex">\(\dd\)</span> is the image of some <span class="arithmatex">\(f: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span> </p>
-</li>
-<li>
-<p><strong>Faithful</strong> if for all <span class="arithmatex">\(A, B\)</span>, we have that
-if <span class="arithmatex">\(f_1, f_2: A \to B\)</span> with <span class="arithmatex">\(F(f_1) = F(f_2)\)</span>, then<span class="arithmatex">\(f_1 = f_2\)</span>.</p>
-</li>
+<li><strong>Full</strong> if for all <span class="arithmatex">\(A, B\)</span>, every morphism 
+<span class="arithmatex">\(g: F(A) \to F(B)\)</span> in <span class="arithmatex">\(\dd\)</span> is the image of some <span class="arithmatex">\(f: A \to B\)</span> in <span class="arithmatex">\(\cc\)</span></li>
+<li><strong>Faithful</strong> if for all <span class="arithmatex">\(A, B\)</span>, we have that
+if <span class="arithmatex">\(f_1, f_2: A \to B\)</span> with <span class="arithmatex">\(F(f_1) = F(f_2)\)</span>, then<span class="arithmatex">\(f_1 = f_2\)</span>.</li>
 </ul>
 <p>We then say <span class="arithmatex">\(F\)</span> is a <strong>fully faithful</strong> if it is both full and faithful.
 </span></p>
@@ -3271,53 +3259,28 @@ is  a concrete category. </p>
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
+<li><strong><em>*1.</em></strong>* In this exercise, you'll demonstrate that the image of a functor is generally 
+not a category, but that full functors remedy the situation.<ul>
 <li>
-<p>[<strong>1.</strong>] 
-In this exercise, you'll demonstrate that the image of a functor is generally 
-not a category, but that full functors remedy the situation. 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[(<em>i</em>.)]
-Let <span class="arithmatex">\(F: \cc \to \dd\)</span>. Define the <strong>image of <span class="arithmatex">\(F\)</span></strong> 
-in <span class="arithmatex">\(\dd\)</span> to consist of 
-\begin{description}</p>
-</li>
-<li>
-<p>[Objects.] All <span class="arithmatex">\(F(A)\)</span> with <span class="arithmatex">\(A \in \cc\)</span> </p>
-</li>
-<li>
-<p>[Morphisms.] For any two objects <span class="arithmatex">\(F(A)\)</span> and <span class="arithmatex">\(F(B)\)</span>, we have that </p>
-</li>
-</ul>
-<div class="arithmatex">\[
-\hom_{\dd}(F(A),  F(B))=\{ F(f) \mid f: A \to B \}.
-\]</div>
-<p>\end{description}
-Show that this is not always a category. In general, the image of a functor 
-is not a category. 
-\
-<em>Hint</em>:
-Picture two categories <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span> below</p>
-<p><img src="../../../png/category_theory/chapter_1/tikz_code_8_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
-and consider the functor <span class="arithmatex">\(F(A) = X, F(B) = F(C) = Y\)</span>, and <span class="arithmatex">\(F(D) = Z\)</span>. 
-Explain what goes wrong, and more generally why the image of a functor 
-is not a category.</p>
+<p><strong>(<em>i</em>.)</strong> Let <span class="arithmatex">\(F: \cc \to \dd\)</span>. Define the <strong>image of <span class="arithmatex">\(F\)</span></strong> 
+in <span class="arithmatex">\(\dd\)</span> to consist of</p>
 <ul>
-<li>
-<p>[(<em>ii</em>.)]
-Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a full functor. 
-Show that the image of <span class="arithmatex">\(\cc\)</span> under <span class="arithmatex">\(F\)</span> forms a full subcategory of 
-<span class="arithmatex">\(\dd\)</span>.  </p>
-</li>
-<li>
-<p>[(<em>iii</em>.)]
-By (<em>ii</em>), it is sufficient for <span class="arithmatex">\(F\)</span> to be full in order for the image
-to be a category. Is this condition <em>necessary</em> for the image to form a category? 
-In other words, suppose the image of a functor <span class="arithmatex">\(F\)</span> is a category. Is <span class="arithmatex">\(F\)</span> full?</p>
+<li><strong>Objects.</strong> All <span class="arithmatex">\(F(A)\)</span> with <span class="arithmatex">\(A \in \cc\)</span></li>
+<li><strong>Morphisms.</strong> For any two objects <span class="arithmatex">\(F(A)\)</span> and <span class="arithmatex">\(F(B)\)</span>, we have that </li>
+</ul>
+<p>$$
+\hom_{\dd}(F(A),  F(B))={ F(f) \mid f: A \to B }.
+$$
+    * <strong>(<em>ii</em>.)</strong> Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a full functor. 
+    Show that the image of <span class="arithmatex">\(\cc\)</span> under <span class="arithmatex">\(F\)</span> forms a full subcategory of 
+    <span class="arithmatex">\(\dd\)</span>.
+    * <strong>(<em>iii</em>.)</strong> By (<em>ii</em>), it is sufficient for <span class="arithmatex">\(F\)</span> to be full in order for the image
+    to be a category. Is this condition <em>necessary</em> for the image to form a category? 
+    In other words, suppose the image of a functor <span class="arithmatex">\(F\)</span> is a category. Is <span class="arithmatex">\(F\)</span> full?</p>
 </li>
 </ul>
-<p>\end{itemize}</p>
+</li>
+</ul>
 <script src="../../mathjax_helper.js"></script>
 
 

@@ -3044,18 +3044,12 @@ and we check that the diagram below commutes.</p>
 \hspace{-0.4cm}
 \begin{minipage}{0.5\textwidth}</p>
 <ul>
-<li>
-<p>[\textcolor{Red}{\textbullet}]
-Beginning with a morphism <span class="arithmatex">\(f: R \to C\)</span>, we travel right 
+<li><strong>\textcolor{Red}{\textbullet}</strong> Beginning with a morphism <span class="arithmatex">\(f: R \to C\)</span>, we travel right 
 to obtain the morphism <span class="arithmatex">\(F(f) \circ u\)</span>. Going down, we obtain 
-the morphism <span class="arithmatex">\(F(k) \circ (F(f) \circ u)\)</span>.  </p>
-</li>
-<li>
-<p>[\textcolor{Blue!80}{\textbullet}]
-Consider the same morphism <span class="arithmatex">\(f: R \to C\)</span>. If we instead first traveled down, 
+the morphism <span class="arithmatex">\(F(k) \circ (F(f) \circ u)\)</span>.</li>
+<li><strong>\textcolor{Blue!80}{\textbullet}</strong> Consider the same morphism <span class="arithmatex">\(f: R \to C\)</span>. If we instead first traveled down, 
 we'd obtain the morphism <span class="arithmatex">\(k \circ f\)</span>. Traveling right would then 
-send us to the morphism <span class="arithmatex">\(F(k \circ f) \circ u\)</span>. </p>
-</li>
+send us to the morphism <span class="arithmatex">\(F(k \circ f) \circ u\)</span>.</li>
 </ul>
 <p>\end{minipage}
 However, it is certainly the case that </p>
@@ -3450,12 +3444,8 @@ and we have that <span class="arithmatex">\(f_g \circ f_{g'} = f_{g'\cdot g}\)</
 <p>Now consider the functor <span class="arithmatex">\(\hom_{\cc}(\bullet, -): \cc \to **Set**\)</span>. 
 Such a functor produces the following data:</p>
 <ul>
-<li>
-<p>We have that <span class="arithmatex">\(\hom_{\cc}(\bullet, \bullet) = U(G)\)</span></p>
-</li>
-<li>
-<p>We also get a family of <em>bijections</em> <span class="arithmatex">\(\phi_g: U(G) \to U(G)\)</span> such that <span class="arithmatex">\(\phi_g \circ \phi_{g'} = \phi_{g'\cdot g}\)</span>.</p>
-</li>
+<li>We have that <span class="arithmatex">\(\hom_{\cc}(\bullet, \bullet) = U(G)\)</span></li>
+<li>We also get a family of <em>bijections</em> <span class="arithmatex">\(\phi_g: U(G) \to U(G)\)</span> such that <span class="arithmatex">\(\phi_g \circ \phi_{g'} = \phi_{g'\cdot g}\)</span>.</li>
 </ul>
 <p>In other words, the functor imposes an action of <span class="arithmatex">\(G\)</span> on its 
 underlying set of elements <span class="arithmatex">\(U(G)\)</span> in <strong>Set</strong>.
@@ -3477,13 +3467,9 @@ Now, Yoneda's Lemma gives us the bijection below, which we may denote as
 \]</div>
 <p>If we now observe that </p>
 <ul>
-<li>
-<p>The collection of such natural transformations is a group under composition, with identity <span class="arithmatex">\(1_{U(G)}: U(G) \to U(G)\)</span>,
-which we may denote as <span class="arithmatex">\((P, \circ)\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\((P,  \circ) \subset \text{Perm}(G)\)</span> </p>
-</li>
+<li>The collection of such natural transformations is a group under composition, with identity <span class="arithmatex">\(1_{U(G)}: U(G) \to U(G)\)</span>,
+which we may denote as <span class="arithmatex">\((P, \circ)\)</span></li>
+<li><span class="arithmatex">\((P,  \circ) \subset \text{Perm}(G)\)</span></li>
 </ul>
 <p>then we can extend the isomorphism <span class="arithmatex">\(\psi: P \to U(G)\)</span> to a group isomorphism </p>
 <div class="arithmatex">\[
@@ -3496,23 +3482,19 @@ which we may denote as <span class="arithmatex">\((P, \circ)\)</span></p>
 <p>The first two exercises are very important. We (in fact you! The reader!) will 
 use these results later on. </p>
 <ul>
-<li>[<strong>1.</strong>] 
-Prove the following dual counterpart to Proposition \ref{proposition:universality_bijection}: 
+<li><strong><em>*1.</em></strong>* Prove the following dual counterpart to Proposition \ref{proposition:universality_bijection}: 
 Let <span class="arithmatex">\(F: \cc \to \dd\)</span> be a functor. Then a pair <span class="arithmatex">\((R, u: F(R) \to D)\)</span> 
 is universal from \universalFToD{<span class="arithmatex">\(F\)</span> to <span class="arithmatex">\(D\)</span>} if and only if for each <span class="arithmatex">\(C \in \cc\)</span>, we have the 
 natural bijection </li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \hom_{\cc}(C, R) \cong \hom_{\dd}(F(C), D).
-\]</div>
-<ul>
-<li>[<strong>2.</strong>] 
-Prove the following dual counterpart to Proposition \ref{proposition:representable_if_and_only_if}:
+$$
+* <strong><em>*2.</em></strong>* Prove the following dual counterpart to Proposition \ref{proposition:representable_if_and_only_if}:
 Let <span class="arithmatex">\(\cc\)</span> be a locally small category, and suppose <span class="arithmatex">\(K: \cc \to **Set**\)</span> 
 is a functor. Then <span class="arithmatex">\(K\)</span> is corepresentable, with representing object <span class="arithmatex">\(R\)</span>, if and only if 
 <span class="arithmatex">\((R, u: K(R) \to \{\bullet\})\)</span>
-is universal from \universalFToD{<span class="arithmatex">\(K\)</span> to <span class="arithmatex">\(\{\bullet\}\)</span>} for some object <span class="arithmatex">\(R\)</span>. </li>
-</ul>
+is universal from \universalFToD{<span class="arithmatex">\(K\)</span> to <span class="arithmatex">\(\{\bullet\}\)</span>} for some object <span class="arithmatex">\(R\)</span>. </p>
 <p><em>Hint:</em> Because <span class="arithmatex">\(K\)</span> is corepresentable, it is a contravariant functor. Thus, this 
 should be very similar to the proof of Proposition \ref{proposition:representable_if_and_only_if}, 
 except with one twist.</p>

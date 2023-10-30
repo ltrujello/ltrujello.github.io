@@ -3009,39 +3009,29 @@
 Say <span class="arithmatex">\((R, +, \cdot)\)</span> is a ring with identity <span class="arithmatex">\(1 \ne 0\)</span>. We will
 always assume <span class="arithmatex">\(R\)</span> is of this form. </p>
 <ul>
-<li>[1.] If <span class="arithmatex">\(x\)</span>  is indeterminate (i.e. a variable) a
+<li><strong>1.</strong> If <span class="arithmatex">\(x\)</span>  is indeterminate (i.e. a variable) a
 <strong>polynomial</strong> in <span class="arithmatex">\(x\)</span> is a formal sum </li>
 </ul>
 <div class="arithmatex">\[
 a_dx^d + \cdots + a_1x + a_0.
 \]</div>
-<p>with <span class="arithmatex">\(a_k \in R\)</span>.</p>
-<ul>
-<li>
-<p>[2.] We say the <strong>degree</strong> <span class="arithmatex">\(\deg(p) = d\)</span> if <span class="arithmatex">\(a_d\)</span>.
+<p>with <span class="arithmatex">\(a_k \in R\)</span>.
+* <strong>2.</strong> We say the <strong>degree</strong> <span class="arithmatex">\(\deg(p) = d\)</span> if <span class="arithmatex">\(a_d\)</span>.
 Otherwise, set  <span class="arithmatex">\(\deg(p) = -\infty\)</span> if <span class="arithmatex">\(a_d = \cdots = a_0
-= 0\)</span>.</p>
-</li>
-<li>
-<p>[3.] Let <span class="arithmatex">\(R[x]\)</span> be the collectionn of all such
-<span class="arithmatex">\(p(x)\)</span>. This is the <strong>polynomial ring</strong> over <span class="arithmatex">\(R\)</span>.</p>
-</li>
-<li>
-<p>[4.] More generally, say <span class="arithmatex">\(\{x_1, x_2, \dots, x_n\}\)</span>
+= 0\)</span>.
+* <strong>3.</strong> Let <span class="arithmatex">\(R[x]\)</span> be the collectionn of all such
+<span class="arithmatex">\(p(x)\)</span>. This is the <strong>polynomial ring</strong> over <span class="arithmatex">\(R\)</span>.
+* <strong>4.</strong> More generally, say <span class="arithmatex">\(\{x_1, x_2, \dots, x_n\}\)</span>
 is a collection of <span class="arithmatex">\(n\)</span> indeterminates. Inductively define
 <span class="arithmatex">\(R[x_1, x_2, \dots, x_n] = S[x_n]\)</span> where <span class="arithmatex">\(S = R[x_1, x_2,
 \dots, x_{n-1}]\)</span>. A typical element is in the form </p>
-</li>
-</ul>
 <div class="arithmatex">\[
 p(x_1, \cdots, x_n) = \sum_{i_1 =  1}^{d_1}\cdots\sum_{i_n = 1}^{d_n}a(i_1, \cdots, i_n)x_1^{i_1}\cdots x_n^{i_n}.
 \]</div>
 <p>We then say that this <span class="arithmatex">\(p(x_1, \dots, x_n)\)</span> is a polynomial
-in <span class="arithmatex">\(n\)</span> variables. </p>
-<ul>
-<li>[5.] Assuming that the highest coefficient
-\    <span class="arithmatex">\(a(d_1, \dots, d_n) \ne 0\)</span>, we then say the degree is</li>
-</ul>
+in <span class="arithmatex">\(n\)</span> variables.
+* <strong>5.</strong> Assuming that the highest coefficient
+\    <span class="arithmatex">\(a(d_1, \dots, d_n) \ne 0\)</span>, we then say the degree is</p>
 <div class="arithmatex">\[
 \deg(p) = \max\{i_1  + \cdots + i_n\} \text{ (fix here)}.                
 \]</div>
@@ -3072,25 +3062,19 @@ we have that <span class="arithmatex">\((S[x_n], \cdot, +)\)</span> is also a ri
 <p><span style="display:block" class="proposition">
 Assume <span class="arithmatex">\(R\)</span> is an integral domain. </p>
 <ul>
-<li>[1.] Suppose <span class="arithmatex">\(p, q \in R[x_1, \cdots x_n]\)</span>. Then </li>
+<li><strong>1.</strong> Suppose <span class="arithmatex">\(p, q \in R[x_1, \cdots x_n]\)</span>. Then </li>
 </ul>
-<div class="arithmatex">\[
-\deg(p \cdot q) = \deg(p) + \deg(q).   
-\]</div>
-<ul>
-<li>
-<p>[2.] <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> is also an integral
-domain. </p>
-</li>
-<li>
-<p>[3.] The units of <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> is
-<span class="arithmatex">\(R^{\times}\)</span>.  </p>
-</li>
-</ul>
+<p>$$
+\deg(p \cdot q) = \deg(p) + \deg(q). <br />
+$$
+* <strong>2.</strong> <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> is also an integral
+domain.
+* <strong>3.</strong> The units of <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> is
+<span class="arithmatex">\(R^{\times}\)</span>.</p>
 <p></span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1.] If either <span class="arithmatex">\(p = 0\)</span> or <span class="arithmatex">\(q = 0\)</span>, then <span class="arithmatex">\(p \cdot q =
+<li><strong>1.</strong> If either <span class="arithmatex">\(p = 0\)</span> or <span class="arithmatex">\(q = 0\)</span>, then <span class="arithmatex">\(p \cdot q =
 0\)</span>. Then observe that </li>
 </ul>
 <div class="arithmatex">\[
@@ -3129,11 +3113,9 @@ leading term is also nonzero, so the degree must be </p>
 d_1 + e_1 +  \dots + d_n + e_n = \deg(p) + \deg(q).  
 \]</div>
 <p>There are actually many ways to define the degree of a
-polynomial in <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> when<span class="arithmatex">\(n \ge 2\)</span>. </p>
-<ul>
-<li>[2., 3.] We can show both (2)  and (3) at the same
-time via induction. Let </li>
-</ul>
+polynomial in <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> when<span class="arithmatex">\(n \ge 2\)</span>.
+* <strong>2., 3.</strong> We can show both (2)  and (3) at the same
+time via induction. Let </p>
 <div class="arithmatex">\[
 P(n) = "R[x_1, \dots, x_n] \text{ is an integral domain and } R[x_1, \dots, x_n]^{\times} = R^{\times}."
 \]</div>
@@ -3156,22 +3138,16 @@ Say <span class="arithmatex">\((R, +, \cdots)\)</span> is a ring with <span clas
 \subsetneqq R\)</span> is a ideal. Denote <span class="arithmatex">\(S
 = R[x_1, \dots, x_n]\)</span>.</p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(J = I[x_1, \dots, x_n]\)</span> is a proper ideal of <span class="arithmatex">\(S\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(S/J = (R/J)[x_1, \dots, x_n]\)</span> </p>
-</li>
-<li>
-<p>[3.] Moreover, say <span class="arithmatex">\(R\)</span> is commutative. If <span class="arithmatex">\(I \subset
+<li><strong>1.</strong> <span class="arithmatex">\(J = I[x_1, \dots, x_n]\)</span> is a proper ideal of <span class="arithmatex">\(S\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(S/J = (R/J)[x_1, \dots, x_n]\)</span></li>
+<li><strong>3.</strong> Moreover, say <span class="arithmatex">\(R\)</span> is commutative. If <span class="arithmatex">\(I \subset
 R\)</span> is a prime ideal of <span class="arithmatex">\(R\)</span>, then <span class="arithmatex">\(J\)</span> is a prime ideal of
-<span class="arithmatex">\(S\)</span>. </p>
-</li>
+<span class="arithmatex">\(S\)</span>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1., 2.] Denote <span class="arithmatex">\(\overline{R} = R/I\)</span> as a ring  with
+<li><strong>1., 2.</strong> Denote <span class="arithmatex">\(\overline{R} = R/I\)</span> as a ring  with
 identity <span class="arithmatex">\(1 \ne 0\)</span>, which holds since  we are working with
 a proper ideal. We know both <span class="arithmatex">\(S\)</span> and <span class="arithmatex">\(\overline{R}[x_1,
 \dots, x_n]\)</span> is also a ring with <span class="arithmatex">\(1 \ne 0\)</span>. </li>
@@ -3212,7 +3188,7 @@ integral domain. Hence we  see that <span class="arithmatex">\((R/I)[x_1, \dots,
 x_n]\)</span> is an integral domain. Since <span class="arithmatex">\(S/J \cong (R/I)[x_1, \dots,
 x_n]\)</span>, and  we know that <span class="arithmatex">\(R[x_1, \dots, x_n]\)</span> is also a
 commutative ring, we see  that <span class="arithmatex">\(J \subset S\)</span> must be a
-prime ideal as well. </p>
+prime ideal as well.</p>
 <p></span>   </p>
 <script src="../../mathjax_helper.js"></script>
 

@@ -3046,19 +3046,19 @@ S_n &amp; \text{if } n = m\\
 \]</div>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\aa\)</span> be a category and suppose suppose <span class="arithmatex">\(\dd \in **Cat**/\mathbb{P}\)</span>. That is, <span class="arithmatex">\(\dd\)</span> is a category with an associated functor
-<span class="arithmatex">\(\Gamma: \dd \to \mathbb{P}\)</span>. Then we define the category <span class="arithmatex">\(\dd\int\aa\)</span> where 
-\begin{description}
-\item[Objects.] Finite strings <span class="arithmatex">\([A_1, A_2, \dots, A_n]\)</span> with <span class="arithmatex">\(A_i \in \aa\)</span>
-\item[Morphisms.] For two strings <span class="arithmatex">\([A_1, \dots, A_n]\)</span> and <span class="arithmatex">\([B_1, \dots, B_n]\)</span>, denoted as <span class="arithmatex">\([A_i]\)</span> and <span class="arithmatex">\([B_i]\)</span>,</p>
+<span class="arithmatex">\(\Gamma: \dd \to \mathbb{P}\)</span>. Then we define the category <span class="arithmatex">\(\dd\int\aa\)</span> where </p>
+<ul>
+<li><strong>Objects.</strong> Finite strings <span class="arithmatex">\([A_1, A_2, \dots, A_n]\)</span> with <span class="arithmatex">\(A_i \in \aa\)</span></li>
+<li><strong>Morphisms.</strong> For two strings <span class="arithmatex">\([A_1, \dots, A_n]\)</span> and <span class="arithmatex">\([B_1, \dots, B_n]\)</span>, denoted as <span class="arithmatex">\([A_i]\)</span> and <span class="arithmatex">\([B_i]\)</span>,</li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\dd\int\aa}\Big([A_i],[B_i]\Big)
 =
 \Big\{(\alpha, f_1, \dots, f_n) \mid f_i \in \hom_{\aa}(A_i, B_{\sigma(i)})  \Big\}
 \]</div>
 <p>Here <span class="arithmatex">\(\alpha\)</span> is a morphism of <span class="arithmatex">\(\dd\)</span> such that <span class="arithmatex">\(\Gamma(\alpha) = \sigma \in S_n\)</span>.
-Finally, we allow no morphisms between two different strings of different length.
-\end{description}
-</span>
+Finally, we allow no morphisms between two different strings of different length.</p>
+<p></span>
 For any category <span class="arithmatex">\(\aa\)</span>, there exists a natural inclusion functor </p>
 <div class="arithmatex">\[\begin{gather*}
 i_{\aa}: \aa \to \dd\int\aa\\
@@ -3184,10 +3184,10 @@ Now, the proposed functor <span class="arithmatex">\(F\)</span> behaves as </p>
 <div class="arithmatex">\[
 F(S: \mathbb{B}\int\aa \to \vv) = S \circ i_{\aa}: \aa \to \vv.
 \]</div>
-<p>We must demonstrate that this is fully faithful and essentially surjective.
-\begin{description}
-\item[Fully faithful.]
-Let <span class="arithmatex">\(F, G: \mathbb{B}\int\aa \to \vv\)</span> be strong <span class="arithmatex">\(SB\)</span>-monoidal functors. Then define the function</p>
+<p>We must demonstrate that this is fully faithful and essentially surjective.</p>
+<ul>
+<li><strong>Fully faithful.</strong> Let <span class="arithmatex">\(F, G: \mathbb{B}\int\aa \to \vv\)</span> be strong <span class="arithmatex">\(SB\)</span>-monoidal functors. Then define the function</li>
+</ul>
 <div class="arithmatex">\[
 \phi: \hom_{\mathbb{B}\text{Fun}(\mathbb{B}{\textstyle\int}\aa, \vv)}(F,G)
 \to 
@@ -3222,16 +3222,14 @@ P_2 \circ \eta'_{[A_1]}\otimes \cdots \otimes \eta'_{[A_n]}\\
 \eta'_{[A_1, \dots, A_n]} \circ P_1.
 \end{align*}\]</div>
 <p>As <span class="arithmatex">\(P_1\)</span> is an isomorphism, we have that <span class="arithmatex">\(\eta_{[A_1, \dots, A_n]} = \eta'_{[A_1, \dots, A_n]}\)</span>, so that 
-<span class="arithmatex">\(\phi(\eta) = \phi(\eta')\)</span> implies that <span class="arithmatex">\(\eta = \eta'\)</span>. Hence the functor is faithful. The functor is clearly full, since  by the above process we can always take a natural transformation <span class="arithmatex">\(\eta: F\circ i_{\aa} \to G\circ i_{\aa}\)</span> and build it into a natural transformation <span class="arithmatex">\(\eta: F \to G\)</span>. </p>
-<p>\item[Essentially Surjective.]
-Consider a functor <span class="arithmatex">\(F: \aa \to \vv\)</span>. 
+<span class="arithmatex">\(\phi(\eta) = \phi(\eta')\)</span> implies that <span class="arithmatex">\(\eta = \eta'\)</span>. Hence the functor is faithful. The functor is clearly full, since  by the above process we can always take a natural transformation <span class="arithmatex">\(\eta: F\circ i_{\aa} \to G\circ i_{\aa}\)</span> and build it into a natural transformation <span class="arithmatex">\(\eta: F \to G\)</span>.
+* <strong>Essentially Surjective.</strong> Consider a functor <span class="arithmatex">\(F: \aa \to \vv\)</span>. 
 By Proposition \ref{proposition:triangle_commutes}, we know there exists 
 a unique <span class="arithmatex">\(S: \mathbb{B}\int\aa \to \vv\)</span> such 
 that <span class="arithmatex">\(S \circ i_{\aa} = F\)</span>. 
 Hence we have essential surjectivity; in fact, we have 
-a stronger version in the strict case.
-\end{description}
-\end{proof}</p>
+a stronger version in the strict case.</p>
+<p>\end{proof}</p>
 <script src="../../mathjax_helper.js"></script>
 
 

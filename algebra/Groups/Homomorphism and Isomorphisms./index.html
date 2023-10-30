@@ -3046,27 +3046,21 @@ the condition to be a homomorphism.</p>
 Let <span class="arithmatex">\(\phi: G \to G'\)</span> be a homomorphism. Then all of the
 following hold.</p>
 <ul>
-<li>
-<p>[1.] If <span class="arithmatex">\(e_G\)</span> is the identity of <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(e_{G'}\)</span> is
-the identity of <span class="arithmatex">\(G'\)</span>, then <span class="arithmatex">\(\phi(e_G) = e_{G'}\)</span>.</p>
-</li>
-<li>
-<p>[2.] For all <span class="arithmatex">\(g \in G\)</span>, <span class="arithmatex">\(\phi(g^{-1}) =
-\phi(g)^{-1}\)</span>. </p>
-</li>
-<li>
-<p>[3.] For <span class="arithmatex">\(g_1, g_2, \dots, g_n \in G\)</span>, then <span class="arithmatex">\(\phi(g_1
+<li><strong>1.</strong> If <span class="arithmatex">\(e_G\)</span> is the identity of <span class="arithmatex">\(G\)</span> and <span class="arithmatex">\(e_{G'}\)</span> is
+the identity of <span class="arithmatex">\(G'\)</span>, then <span class="arithmatex">\(\phi(e_G) = e_{G'}\)</span>.</li>
+<li><strong>2.</strong> For all <span class="arithmatex">\(g \in G\)</span>, <span class="arithmatex">\(\phi(g^{-1}) =
+\phi(g)^{-1}\)</span>.</li>
+<li><strong>3.</strong> For <span class="arithmatex">\(g_1, g_2, \dots, g_n \in G\)</span>, then <span class="arithmatex">\(\phi(g_1
 \cdot g_2 \cdot \dots \cdot g_n) =
 \phi(g_1)\phi(g_2)\cdots\phi(g_n)\)</span>. Consequently, if <span class="arithmatex">\(g = g_1 =
-g_2 = \cdots = g_n\)</span>, then <span class="arithmatex">\(\phi(g^n) = \phi(g)^{n}\)</span>.</p>
-</li>
+g_2 = \cdots = g_n\)</span>, then <span class="arithmatex">\(\phi(g^n) = \phi(g)^{n}\)</span>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="proof">
 Let <span class="arithmatex">\(g \in G\)</span>, and suppose <span class="arithmatex">\(\phi: G \to G'\)</span> is a
 homomorphism. </p>
 <ul>
-<li>[1.] Since <span class="arithmatex">\(e_G = e_G \cdot e_G\)</span>, we have that </li>
+<li><strong>1.</strong> Since <span class="arithmatex">\(e_G = e_G \cdot e_G\)</span>, we have that </li>
 </ul>
 <div class="arithmatex">\[
 \phi(e_G) = \phi(e_G \cdot e_G) = \phi(e_G)\phi(e_G).
@@ -3078,11 +3072,9 @@ yields</p>
 <div class="arithmatex">\[
 e_{G'} = \phi(e_G)  
 \]</div>
-<p>as desired.</p>
-<ul>
-<li>[2.] Since <span class="arithmatex">\(gg^{-1} = e_G\)</span>, and by (1.) we know that
-<span class="arithmatex">\(\phi(e_G) = e_{G'}\)</span>. Hence </li>
-</ul>
+<p>as desired.
+* <strong>2.</strong> Since <span class="arithmatex">\(gg^{-1} = e_G\)</span>, and by (1.) we know that
+<span class="arithmatex">\(\phi(e_G) = e_{G'}\)</span>. Hence </p>
 <div class="arithmatex">\[
 \phi(e_G) = e_{G'} \implies \phi(gg^{-1}) = e_{G'} 
 \implies \phi(g)\phi(g^{-1}) = e_{G'}.
@@ -3093,16 +3085,14 @@ Multiplying on the left by this inverse, we get </p>
 <div class="arithmatex">\[
 \phi(g)\phi(g^{-1}) = e_{G'} \implies \phi(g^{-1}) = \phi(g)^{-1}
 \]</div>
-<p>as desired.</p>
-<ul>
-<li>[3.] This is just repeated application of the
+<p>as desired.
+* <strong>3.</strong> This is just repeated application of the
 homomorphism property. 
 For <span class="arithmatex">\(g_1, g_2, \dots g_n \in G\)</span>, <span class="arithmatex">\(g_1 \cdot
 g_2 \cdot \hspace{0.01mm} \dots \hspace{0.01mm} \cdot g_n = g_1 \cdot (g')\)</span> 
 where <span class="arithmatex">\(g' = g_2
 \cdot g_3 \cdot \hspace{0.01mm} \dots \hspace{0.01mm} \cdot g_n\)</span>. Applying the
-homomorphism property, </li>
-</ul>
+homomorphism property, </p>
 <div class="arithmatex">\[
 \phi(g_1 \cdot g_2 \cdot \hspace{0.01mm} \dots \hspace{0.01mm} \cdot g_n) = \phi(g_1 \cdot g') = \phi(g_1) \phi(g').
 \]</div>
@@ -3166,21 +3156,17 @@ to evaluate if a homomorphism is one-to-one and/or onto. </p>
 Let <span class="arithmatex">\(\phi: G \to G'\)</span> be a homomorphism.
 Then </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(\phi\)</span> is one-to-one if and only if
+<li><strong>1.</strong> <span class="arithmatex">\(\phi\)</span> is one-to-one if and only if
 <span class="arithmatex">\(\mbox{ker}(\phi)\)</span> is trivial. That is, <span class="arithmatex">\(\mbox{ker}(\phi) = \{e_G\}\)</span>, where <span class="arithmatex">\(e_G\)</span> is
-the identity of <span class="arithmatex">\(G\)</span>.</p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(\phi\)</span> is onto if and only if <span class="arithmatex">\(\mbox{im}(\phi) = G'\)</span>. </p>
-</li>
+the identity of <span class="arithmatex">\(G\)</span>.</li>
+<li><strong>2.</strong> <span class="arithmatex">\(\phi\)</span> is onto if and only if <span class="arithmatex">\(\mbox{im}(\phi) = G'\)</span>.</li>
 </ul>
 <p>Therefore, <span class="arithmatex">\(\phi\)</span> is an <strong>isomorphism</strong> if and only if
 (1) and (2) hold.
 </span></p>
 <p><span style="display:block" class="proof"></p>
 <ul>
-<li>[1.] Suppose <span class="arithmatex">\(\phi\)</span> is one-to-one. By proposition
+<li><strong>1.</strong> Suppose <span class="arithmatex">\(\phi\)</span> is one-to-one. By proposition
 1.1.1, we know that <span class="arithmatex">\(\phi(e_G) = e_{G'}\)</span>. But since <span class="arithmatex">\(\phi\)</span>
 is injective we know <span class="arithmatex">\(e_G\)</span> is the only element in <span class="arithmatex">\(G\)</span>
 which is mapped to <span class="arithmatex">\(e_{G'}\)</span>. Therefore <span class="arithmatex">\(\mbox{ker}(\phi) =
@@ -3206,11 +3192,9 @@ combine the terms to get </p>
 <div class="arithmatex">\[
 gh^{-1} = e_G \implies g = h.                
 \]</div>
-<p>Therefore <span class="arithmatex">\(\phi\)</span> is one to one.</p>
-<ul>
-<li>[2.] Suppose <span class="arithmatex">\(\phi\)</span> is onto. Then <span class="arithmatex">\(\mbox{im}(\phi) = G'\)</span>
-is just another way of stating this fact. </li>
-</ul>
+<p>Therefore <span class="arithmatex">\(\phi\)</span> is one to one.
+* <strong>2.</strong> Suppose <span class="arithmatex">\(\phi\)</span> is onto. Then <span class="arithmatex">\(\mbox{im}(\phi) = G'\)</span>
+is just another way of stating this fact. </p>
 <p>Suppose <span class="arithmatex">\(\mbox{im}(\phi) = G'\)</span>. Then for every element <span class="arithmatex">\(g'
 \in G'\)</span>, there exists <span class="arithmatex">\(g \in G\)</span> such that <span class="arithmatex">\(\phi(g) = g'\)</span>.
 That is, <span class="arithmatex">\(\phi\)</span> covers every value in <span class="arithmatex">\(G'\)</span> so that it is
@@ -3223,14 +3207,10 @@ is one to one and onto. Hence, it is isomorphic if and only if
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(G\)</span> be a group.</p>
 <ul>
-<li>
-<p>[1.] If <span class="arithmatex">\(\phi: G \to G\)</span> is a group homomorphism, then
-we say that <span class="arithmatex">\(\phi\)</span> is a <strong>endomorphism</strong>.</p>
-</li>
-<li>
-<p>[2.] If <span class="arithmatex">\(\phi\)</span> is a bijective endomorphism (an
-isomophic endomorphism) then we say that <span class="arithmatex">\(\phi\)</span> is an <strong>automorphism</strong>.</p>
-</li>
+<li><strong>1.</strong> If <span class="arithmatex">\(\phi: G \to G\)</span> is a group homomorphism, then
+we say that <span class="arithmatex">\(\phi\)</span> is a <strong>endomorphism</strong>.</li>
+<li><strong>2.</strong> If <span class="arithmatex">\(\phi\)</span> is a bijective endomorphism (an
+isomophic endomorphism) then we say that <span class="arithmatex">\(\phi\)</span> is an <strong>automorphism</strong>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="theorem">
@@ -3239,23 +3219,24 @@ The set of all automorphisms of a group <span class="arithmatex">\(G\)</span>, d
 function composition.
 </span></p>
 <p><span style="display:block" class="proof">
-We can prove this directly. 
-\begin{description}
-\item[Closure.] Let <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\psi\)</span> be automorphisms.
+We can prove this directly. </p>
+<ul>
+<li><strong>Closure.</strong> Let <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\psi\)</span> be automorphisms.
 Then <span class="arithmatex">\(\phi \circ \psi\)</span> is (1) a homomorphism from <span class="arithmatex">\(G \to
 G\)</span> and (2) a bijection (as the composition of bijections
-is a bijetion).</p>
-<p>\item[Associativity.] In general, function composition is
-associative. </p>
-<p>\item[Identity.] Let <span class="arithmatex">\(i:G \to G\)</span> be the identity map. The
+is a bijetion).</li>
+<li><strong>Associativity.</strong> In general, function composition is
+associative.</li>
+<li><strong>Identity.</strong> Let <span class="arithmatex">\(i:G \to G\)</span> be the identity map. The
 (1) <span class="arithmatex">\(i\)</span> is a group homomorphism and (2) a bijection.
 Therefore <span class="arithmatex">\(i \in \text{Aut}(G)\)</span> and we can set <span class="arithmatex">\(i\)</span> as the
-identity of the group. Note that </p>
+identity of the group. Note that </li>
+</ul>
 <div class="arithmatex">\[
 i \circ \phi = \phi = \phi \circ i   
 \]</div>
-<p>for any <span class="arithmatex">\(\phi \in \text{Aut}(G)\)</span>. </p>
-<p>\item[Inverse.] Let <span class="arithmatex">\(\phi \in \text{Aut}(G)\)</span>. Construct
+<p>for any <span class="arithmatex">\(\phi \in \text{Aut}(G)\)</span>.
+* <strong>Inverse.</strong> Let <span class="arithmatex">\(\phi \in \text{Aut}(G)\)</span>. Construct
 the function <span class="arithmatex">\(\phi^{-1}\)</span> as follows. If <span class="arithmatex">\(\phi(g) = g'\)</span> for
 some <span class="arithmatex">\(g, g' \in G\)</span>, then write <span class="arithmatex">\(\phi^{-1}(g') = g\)</span>. Such
 an assignment is well-defined since  <span class="arithmatex">\(\phi\)</span> is a
@@ -3265,9 +3246,8 @@ bijection. Hence we see that </p>
 \]</div>
 <p>Finally, observe that <span class="arithmatex">\(\phi^{-1}\)</span> is (1) a homomorphism
 and (2) a bijection, so we see that <span class="arithmatex">\(\phi^{-1} \in
-\text{Aut}(G)\)</span>. Therefore this forms a group.
-\end{description}
-</span></p>
+\text{Aut}(G)\)</span>. Therefore this forms a group.</p>
+<p></span></p>
 <script src="../../mathjax_helper.js"></script>
 
 

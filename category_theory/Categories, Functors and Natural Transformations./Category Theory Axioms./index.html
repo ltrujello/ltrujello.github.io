@@ -3015,45 +3015,39 @@ category theory. </p>
 <p><span style="display:block" class="definition">
 A <strong>category</strong> <span class="arithmatex">\(\mathcal{C}\)</span> consists of </p>
 <ul>
-<li>
-<p>a collection of <strong>objects</strong> <span class="arithmatex">\(\ob(\cc)\)</span></p>
-</li>
-<li>
-<p>a collection of <strong>morphisms</strong> between objects; for any objects <span class="arithmatex">\(A, B\)</span>, 
-we denote the morphisms <span class="arithmatex">\(f: A \to B\)</span> from <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(B\)</span> as <span class="arithmatex">\(\hom_{\cc}(A, B)\)</span></p>
-</li>
-<li>
-<p>a binary operator <span class="arithmatex">\(\circ\)</span> known as <strong>composition</strong>, such that for
-any objects <span class="arithmatex">\(A,  B, C\)</span>, </p>
-</li>
+<li>a collection of <strong>objects</strong> <span class="arithmatex">\(\ob(\cc)\)</span></li>
+<li>a collection of <strong>morphisms</strong> between objects; for any objects <span class="arithmatex">\(A, B\)</span>, 
+we denote the morphisms <span class="arithmatex">\(f: A \to B\)</span> from <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(B\)</span> as <span class="arithmatex">\(\hom_{\cc}(A, B)\)</span></li>
+<li>a binary operator <span class="arithmatex">\(\circ\)</span> known as <strong>composition</strong>, such that for
+any objects <span class="arithmatex">\(A,  B, C\)</span>, </li>
 </ul>
 <div class="arithmatex">\[\begin{align*}
 \circ &amp;: \hom(A, B) \times \hom(B, C) \to \hom(A, C)\\
 &amp;(f, g) \mapsto (g \circ f)
 \end{align*}\]</div>
 <p>Furthermore, the following
-laws must be obeyed.
-\begin{description}
-\item[(1) <strong>Identity.</strong>] For each <span class="arithmatex">\(A \in \ob(\cc)\)</span>, there exists a distinguished
-morphism, called the <strong>identity</strong> <span class="arithmatex">\(\id_A: A \to A\)</span> in <span class="arithmatex">\(\hom(\cc)\)</span>.
-\item[(2) <strong>Closed under Composition.</strong>] If <span class="arithmatex">\(A, B, C\)</span> are objects, then for any 
+laws must be obeyed.</p>
+<ul>
+<li><strong>(1) </strong>Identity.<strong><em>* For each <span class="arithmatex">\(A \in \ob(\cc)\)</span>, there exists a distinguished
+morphism, called the </em>*identity</strong> <span class="arithmatex">\(\id_A: A \to A\)</span> in <span class="arithmatex">\(\hom(\cc)\)</span>.</li>
+<li><strong>(2) </strong>Closed under Composition.**** If <span class="arithmatex">\(A, B, C\)</span> are objects, then for any 
 <span class="arithmatex">\(f \in \hom(A,B)\)</span>, <span class="arithmatex">\(g \in \hom(B,C)\)</span>, there exists a
-morphism <span class="arithmatex">\(h \in \hom(A, C)\)</span> such that <span class="arithmatex">\(h = g \circ f\)</span>.</p>
-<p><img src="../../../png/category_theory/chapter_1/tikz_code_3_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<p>\item[(3) <strong>Associativity under Composition.</strong>] For
+morphism <span class="arithmatex">\(h \in \hom(A, C)\)</span> such that <span class="arithmatex">\(h = g \circ f\)</span>.</li>
+</ul>
+<p><img src="../../../png/category_theory/chapter_1/tikz_code_3_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* <strong>(3) </strong>Associativity under Composition.**** For
 objects <span class="arithmatex">\(A, B, C\)</span> and <span class="arithmatex">\(D\)</span> such that  </p>
 <p><img src="../../../png/category_theory/chapter_1/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 we have the equality </p>
-<div class="arithmatex">\[
+<p>$$
 h \circ (g \circ f) = (h \circ g) \circ f.
-\]</div>
-<p>\item[(4) <strong>Identity action.</strong>] For any <span class="arithmatex">\(f \in
+$$
+* <strong>(4) </strong>Identity action.**** For any <span class="arithmatex">\(f \in
 \hom(\cc)\)</span> where <span class="arithmatex">\(f:A \to B\)</span> we have that</p>
 <div class="arithmatex">\[
 1_B \circ f = f = f \circ 1_A.
 \]</div>
-<p>\end{description}
-</span></p>
+<p></span></p>
 <p>At this point, the reader is assumed to have never seen a category or has at least 
 some vague idea. Therefore, any reasonable person would next introduce examples 
 to clarify the above abstract nonsense.
@@ -3075,12 +3069,12 @@ This is simply to avoid a lot of unnecessary
 words to describe a category (e.g. ''the objects of this category are... the morphisms of this category are...'').</p>
 <p><span style="display:block" class="example">
 The canonical example of a category is the <strong>category of sets</strong>, denoted 
-as <span class="arithmatex">\(\Set\)</span>, which we can describe as 
-\begin{description}
-\item[Objects.] All sets <span class="arithmatex">\(X\)</span>.\footnote{There's a minor issue with saying this. We will address it, but not for now.} 
-\item[Morphisms.] All functions between sets <span class="arithmatex">\(f: X \to Y\)</span>. 
-\end{description}
-Because most of mathematics is based in set theory, we shall see that while this is a fairly 
+as <span class="arithmatex">\(\Set\)</span>, which we can describe as </p>
+<ul>
+<li><strong>Objects.</strong> All sets <span class="arithmatex">\(X\)</span>.\footnote{There's a minor issue with saying this. We will address it, but not for now.}</li>
+<li><strong>Morphisms.</strong> All functions between sets <span class="arithmatex">\(f: X \to Y\)</span>.</li>
+</ul>
+<p>Because most of mathematics is based in set theory, we shall see that while this is a fairly 
 simple category, it is one of the most useful. 
 </span></p>
 <p><strong>A tip moving forward:</strong> When dealing with any abstract construction, it is a common 
@@ -3100,40 +3094,40 @@ and the morphisms are not functions. }
 \end{center}</p>
 <p><span style="display:block" class="example">
 The second canonical example is the <strong>category of groups</strong>, denoted 
-as <span class="arithmatex">\(\grp\)</span>. This can be described as 
-\begin{description}
-\item[Objects.] All groups <span class="arithmatex">\((G, \cdot)\)</span>. Here, <span class="arithmatex">\(\cdot: G \times G \to G\)</span> is the group operation. 
-\item[Morphisms.] All group homomorphisms <span class="arithmatex">\(\phi: (G, \cdot) \to (H, \cdot)\)</span>. 
-Specifically, set functions <span class="arithmatex">\(\phi: G \to H\)</span> where <span class="arithmatex">\(\phi(g \cdot g') = \phi(g)\cdot \phi(g')\)</span>. 
-\end{description}      <br />
-We again check this satisfies the axioms of a category. 
-\begin{description}
-\item[(1)] Each group <span class="arithmatex">\((G, \cdot)\)</span> has a identity group homomorphism <span class="arithmatex">\(\id_G: (G, \cdot) \to (G, \cdot)\)</span> where 
-<span class="arithmatex">\(\id_G(g) = g\)</span>. 
-\item[(2)] The function composition of two group homomorphisms <span class="arithmatex">\(\phi: (G, \cdot) \to (H, \cdot)\)</span> and <span class="arithmatex">\(\psi: (H, \cdot) \to (K, \cdot)\)</span> 
-is again a group homomorphism where <span class="arithmatex">\((\psi \circ \phi)(g) = \psi(\phi(g))\)</span>. This is because </p>
-<div class="arithmatex">\[\begin{align*}
+as <span class="arithmatex">\(\grp\)</span>. This can be described as </p>
+<ul>
+<li><strong>Objects.</strong> All groups <span class="arithmatex">\((G, \cdot)\)</span>. Here, <span class="arithmatex">\(\cdot: G \times G \to G\)</span> is the group operation.</li>
+<li><strong>Morphisms.</strong> All group homomorphisms <span class="arithmatex">\(\phi: (G, \cdot) \to (H, \cdot)\)</span>. 
+Specifically, set functions <span class="arithmatex">\(\phi: G \to H\)</span> where <span class="arithmatex">\(\phi(g \cdot g') = \phi(g)\cdot \phi(g')\)</span>.</li>
+</ul>
+<p>We again check this satisfies the axioms of a category. </p>
+<ul>
+<li><strong>(1)</strong> Each group <span class="arithmatex">\((G, \cdot)\)</span> has a identity group homomorphism <span class="arithmatex">\(\id_G: (G, \cdot) \to (G, \cdot)\)</span> where 
+<span class="arithmatex">\(\id_G(g) = g\)</span>.</li>
+<li><strong>(2)</strong> The function composition of two group homomorphisms <span class="arithmatex">\(\phi: (G, \cdot) \to (H, \cdot)\)</span> and <span class="arithmatex">\(\psi: (H, \cdot) \to (K, \cdot)\)</span> 
+is again a group homomorphism where <span class="arithmatex">\((\psi \circ \phi)(g) = \psi(\phi(g))\)</span>. This is because </li>
+</ul>
+<p>\begin{align<em>}
 (\psi \circ \phi)(g \cdot g')&amp;=
-\psi(\phi(g \cdot g'))\\ 
-&amp;= \psi(\phi(g)\cdot \phi(g')) \\
-&amp;= \psi(\phi(g)) \cdot \psi(\phi(g'))\\
+\psi(\phi(g \cdot g'))\ 
+&amp;= \psi(\phi(g)\cdot \phi(g')) \
+&amp;= \psi(\phi(g)) \cdot \psi(\phi(g'))\
 &amp;= (\psi \circ \phi)(g) \cdot (\psi \circ \phi)(g).
-\end{align*}\]</div>
-<p>\item[(3)] Function composition is associative; therefore, composition of group homomorphisms is associative.
-\item[(4)] If <span class="arithmatex">\(\phi: (G, \cdot) \to (H, \cdot)\)</span> is a group homomorphism, then 
-<span class="arithmatex">\(\id_H \circ \phi = \phi \circ \id_G = \phi\)</span>.
-\end{description}
-Therefore we see that this is a category. We will later see that this category possesses 
+\end{align</em>}
+* <strong>(3)</strong> Function composition is associative; therefore, composition of group homomorphisms is associative.
+* <strong>(4)</strong> If <span class="arithmatex">\(\phi: (G, \cdot) \to (H, \cdot)\)</span> is a group homomorphism, then 
+<span class="arithmatex">\(\id_H \circ \phi = \phi \circ \id_G = \phi\)</span>.</p>
+<p>Therefore we see that this is a category. We will later see that this category possesses 
 many convenient and interesting properties. 
 </span></p>
 <p><span style="display:block" class="example">
 The third canonical example is the <strong>category of topological spaces</strong>, 
-denoted <span class="arithmatex">\(\top\)</span>. We describe this as 
-\begin{description}
-\item[Objects.] All topological spaces <span class="arithmatex">\((X, \tau)\)</span> where <span class="arithmatex">\(\tau\)</span> is a topology on the set <span class="arithmatex">\(X\)</span>. 
-\item[Morphisms.] All continuous functions <span class="arithmatex">\(f: (X, \tau) \to (Y, \tau')\)</span>. <br />
-\end{description}
-The reader can show that this too satisfies the axioms of a category.
+denoted <span class="arithmatex">\(\top\)</span>. We describe this as </p>
+<ul>
+<li><strong>Objects.</strong> All topological spaces <span class="arithmatex">\((X, \tau)\)</span> where <span class="arithmatex">\(\tau\)</span> is a topology on the set <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Morphisms.</strong> All continuous functions <span class="arithmatex">\(f: (X, \tau) \to (Y, \tau')\)</span>.</li>
+</ul>
+<p>The reader can show that this too satisfies the axioms of a category.
 </span></p>
 <p>We now consider some abstract examples. While abstract, they are nevertheless important 
 examples in their own right. They also illustrate that categories can be finite, 
@@ -3141,34 +3135,34 @@ which may counter the intuition the reader might have of categories being "infin
 <p><span style="display:block" class="example">
 In this example we introduce the three most basic categorical structures. 
 The first, and most important of the three, is the <strong>single object</strong> or <strong>initial category</strong>
-<span class="arithmatex">\(\bm{1}\)</span>, which is the category where: 
-\begin{description}
-\item[Objects.] A single object, abstractly denoted as <span class="arithmatex">\(\bullet\)</span>.
-\item[Morphisms.] A single identity morphism <span class="arithmatex">\(\id_{\bullet}: \bullet \to \bullet\)</span>. 
-\end{description}
-The identity of <span class="arithmatex">\(\bullet\)</span> does not matter; it is an abstract object. This is similar to how 
+<span class="arithmatex">\(\bm{1}\)</span>, which is the category where: </p>
+<ul>
+<li><strong>Objects.</strong> A single object, abstractly denoted as <span class="arithmatex">\(\bullet\)</span>.</li>
+<li><strong>Morphisms.</strong> A single identity morphism <span class="arithmatex">\(\id_{\bullet}: \bullet \to \bullet\)</span>.</li>
+</ul>
+<p>The identity of <span class="arithmatex">\(\bullet\)</span> does not matter; it is an abstract object. This is similar to how 
 a one point set is denoted as <span class="arithmatex">\(\{*\}\)</span> and we don't really care what <span class="arithmatex">\(*\)</span> is. 
 \</p>
 <p>The second category is the <strong>arrow category</strong>, denoted as <span class="arithmatex">\(\bm{2}\)</span>, which we can 
-describe as 
-\begin{description}
-\item[Objects.] Two objects <span class="arithmatex">\(\textcolor{NavyBlue}{\bullet}\)</span>
-and <span class="arithmatex">\(\textcolor{Orange}{\bullet}\)</span>
-\item[Morphisms.] Two identity morphisms $\id_{\textcolor{NavyBlue}{\bullet}}: \textcolor{NavyBlue}{\bullet}  \to \textcolor{NavyBlue}{\bullet} $ 
+describe as </p>
+<ul>
+<li><strong>Objects.</strong> Two objects <span class="arithmatex">\(\textcolor{NavyBlue}{\bullet}\)</span>
+and <span class="arithmatex">\(\textcolor{Orange}{\bullet}\)</span></li>
+<li><strong>Morphisms.</strong> Two identity morphisms $\id_{\textcolor{NavyBlue}{\bullet}}: \textcolor{NavyBlue}{\bullet}  \to \textcolor{NavyBlue}{\bullet} $ 
 and <span class="arithmatex">\(\id_{\textcolor{Orange}{\bullet} }: \textcolor{Orange}{\bullet}  \to \textcolor{Orange}{\bullet}\)</span> and one 
-nontrivial morphism <span class="arithmatex">\(f: \textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}\)</span>. 
-\end{description}
-Here we color our abstract objects to clarify that these objects are distinct.
+nontrivial morphism <span class="arithmatex">\(f: \textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}\)</span>.</li>
+</ul>
+<p>Here we color our abstract objects to clarify that these objects are distinct.
 \ 
 Finally, we have the category <strong>triangle category</strong>, denoted as <span class="arithmatex">\(\bm{3}\)</span>, which 
-can be describe as 
-\begin{description}
-\item[Objects.] Three distinct objects <span class="arithmatex">\(\textcolor{NavyBlue}{\bullet}, \textcolor{Orange}{\bullet}, \textcolor{Purple}{\bullet}\)</span> 
-\item[Morphisms.] Three identity morphisms, and three nontrivial morphisms: 
+can be describe as </p>
+<ul>
+<li><strong>Objects.</strong> Three distinct objects <span class="arithmatex">\(\textcolor{NavyBlue}{\bullet}, \textcolor{Orange}{\bullet}, \textcolor{Purple}{\bullet}\)</span></li>
+<li><strong>Morphisms.</strong> Three identity morphisms, and three nontrivial morphisms: 
 <span class="arithmatex">\(f: \textcolor{NavyBlue}{\bullet} \to \textcolor{Purple}{\bullet}\)</span>, 
-<span class="arithmatex">\(g: \textcolor{Purple}{\bullet} \to \textcolor{Orange}{\bullet}\)</span> and <span class="arithmatex">\(h: \textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}\)</span>.
-\end{description}
-In this category, we define <span class="arithmatex">\(h = g \circ f\)</span> so that this is closed under composition. Note that 
+<span class="arithmatex">\(g: \textcolor{Purple}{\bullet} \to \textcolor{Orange}{\bullet}\)</span> and <span class="arithmatex">\(h: \textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}\)</span>.</li>
+</ul>
+<p>In this category, we define <span class="arithmatex">\(h = g \circ f\)</span> so that this is closed under composition. Note that 
 if we did not include the existence of <span class="arithmatex">\(h\)</span>, then this would not be closed under composition, 
 and hence it would not even be a category.</p>
 <p>We can picture all three categories as below. </p>
@@ -3180,26 +3174,16 @@ concepts of category theory by making a few comments about categories. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category. We say that <span class="arithmatex">\(\cc\)</span> is </p>
 <ul>
-<li>
-<p><strong>Finite</strong> if there are only finitely many objects 
-and finitely many morphisms. </p>
-</li>
-<li>
-<p><strong>Locally Finite</strong> if, for every pair of objects 
-<span class="arithmatex">\(A, B\)</span>, the set <span class="arithmatex">\(\hom_{\cc}(A, B)\)</span> is finite. </p>
-</li>
-<li>
-<p><strong>Small</strong> if the collection of objects and collections of morphisms 
-assemble into a set. </p>
-</li>
-<li>
-<p><strong>Locally Small</strong> if <span class="arithmatex">\(\hom_{\cc}(A, B)\)</span> is a set for every 
-pair of objects <span class="arithmatex">\(A, B\)</span>. </p>
-</li>
-<li>
-<p><strong>Large</strong> if <span class="arithmatex">\(\cc\)</span> is not locally small. That is, the objects and 
-morphisms do not form a set. </p>
-</li>
+<li><strong>Finite</strong> if there are only finitely many objects 
+and finitely many morphisms.</li>
+<li><strong>Locally Finite</strong> if, for every pair of objects 
+<span class="arithmatex">\(A, B\)</span>, the set <span class="arithmatex">\(\hom_{\cc}(A, B)\)</span> is finite.</li>
+<li><strong>Small</strong> if the collection of objects and collections of morphisms 
+assemble into a set.</li>
+<li><strong>Locally Small</strong> if <span class="arithmatex">\(\hom_{\cc}(A, B)\)</span> is a set for every 
+pair of objects <span class="arithmatex">\(A, B\)</span>.</li>
+<li><strong>Large</strong> if <span class="arithmatex">\(\cc\)</span> is not locally small. That is, the objects and 
+morphisms do not form a set.</li>
 </ul>
 <p></span></p>
 <p>Such terminology proves to be useful, since we have seen that categories come in different sizes. 
@@ -3209,36 +3193,30 @@ Therefore, <span class="arithmatex">\(\Set\)</span> is a large category.</p>
 <p>We now introduce the concept of a <em>subcategory</em>, which is also extremely useful to include in our vocabularly. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category. We say a category <span class="arithmatex">\(\mathcal{S}\)</span> is a <strong>subcategory of <span class="arithmatex">\(\cc\)</span></strong>
-if
-\begin{description}
-\item[(1)] <span class="arithmatex">\(\ss\)</span> is a category, with composition the same as <span class="arithmatex">\(\cc\)</span>
-\item[(2)] The objects and morphisms of <span class="arithmatex">\(\ss\)</span> are contained in the collection of objects 
-and morphisms of <span class="arithmatex">\(\cc\)</span>. 
-\end{description}
-Furthermore, we say <span class="arithmatex">\(\ss\)</span> is a <strong>full subcategory</strong> if we additionally have that 
-\begin{description}
-\item[(3)] For each pair of objects <span class="arithmatex">\(A, B \in \ss\)</span>, we have that <span class="arithmatex">\(\hom_{\ss}(A, B) = \hom_{\cc}(A, B)\)</span>.<br />
-\end{description}
-More informally, <span class="arithmatex">\(\ss\)</span> is full if it "contains all of its morphisms."
+if</p>
+<ul>
+<li><strong>(1)</strong> <span class="arithmatex">\(\ss\)</span> is a category, with composition the same as <span class="arithmatex">\(\cc\)</span></li>
+<li><strong>(2)</strong> The objects and morphisms of <span class="arithmatex">\(\ss\)</span> are contained in the collection of objects 
+and morphisms of <span class="arithmatex">\(\cc\)</span>.</li>
+</ul>
+<p>Furthermore, we say <span class="arithmatex">\(\ss\)</span> is a <strong>full subcategory</strong> if we additionally have that </p>
+<ul>
+<li><strong>(3)</strong> For each pair of objects <span class="arithmatex">\(A, B \in \ss\)</span>, we have that <span class="arithmatex">\(\hom_{\ss}(A, B) = \hom_{\cc}(A, B)\)</span>.</li>
+</ul>
+<p>More informally, <span class="arithmatex">\(\ss\)</span> is full if it "contains all of its morphisms."
 </span></p>
 <p><span style="display:block" class="example">
-Let <span class="arithmatex">\(\ab\)</span> be the category described as 
-\begin{description}
-\item[Objects.] All abelian groups <span class="arithmatex">\((G, \cdot)\)</span>
-\item[Morphisms.] Group homomorphisms.<br />
-\end{description}
-Then <span class="arithmatex">\(\ab\)</span> is a subcategory of <span class="arithmatex">\(\grp\)</span>. Futhermore, <span class="arithmatex">\(\ab\)</span> 
+Let <span class="arithmatex">\(\ab\)</span> be the category described as </p>
+<ul>
+<li><strong>Objects.</strong> All abelian groups <span class="arithmatex">\((G, \cdot)\)</span></li>
+<li><strong>Morphisms.</strong> Group homomorphisms.</li>
+</ul>
+<p>Then <span class="arithmatex">\(\ab\)</span> is a subcategory of <span class="arithmatex">\(\grp\)</span>. Futhermore, <span class="arithmatex">\(\ab\)</span> 
 is a full subcategory of <span class="arithmatex">\(\grp\)</span>. This observation also applies to </p>
 <ul>
-<li>
-<p><strong>FinGrp</strong>, the category of finite groups </p>
-</li>
-<li>
-<p><strong>FindAb</strong>, the category finite abelian groups</p>
-</li>
-<li>
-<p><span class="arithmatex">\(\ab_{\text{TF}}\)</span>, the category of torsion-free abelian groups </p>
-</li>
+<li><strong>FinGrp</strong>, the category of finite groups</li>
+<li><strong>FindAb</strong>, the category finite abelian groups</li>
+<li><span class="arithmatex">\(\ab_{\text{TF}}\)</span>, the category of torsion-free abelian groups</li>
 </ul>
 <p>However, none of these categories are subcategories of <span class="arithmatex">\(\Set\)</span>. In fact, 
 many categories which are based in set theory are not actually subcategories 
@@ -3246,25 +3224,19 @@ of <span class="arithmatex">\(\Set\)</span>. This is because the objects of cate
 are not just sets, but are sets with extra data (such as a binary operation or a topology).  </p>
 <p></span></p>
 <p><span style="display:block" class="example">
-Let <span class="arithmatex">\(\ring\)</span> be the category described as 
-\begin{description}
-\item[Objects.] Unital rings <span class="arithmatex">\((R, +, \cdot)\)</span>. That is, rings <span class="arithmatex">\(R\)</span> with a multiplicative identity 1 that is not 
-equal to its additive identity 0. 
-\item[Morphisms.] (Unit preserving) Ring homomorphisms <span class="arithmatex">\(\phi: R \to R'\)</span>. 
-That is, functions <span class="arithmatex">\(\phi: R \to R'\)</span> such that </p>
+Let <span class="arithmatex">\(\ring\)</span> be the category described as </p>
 <ul>
-<li>
-<p><span class="arithmatex">\(\phi(a + b) = \phi(a) + \phi(b)\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(\phi(a \cdot b) \phi(a) \cdot \phi(b)\)</span> </p>
-</li>
-<li>
-<p><span class="arithmatex">\(\phi(0_R) = 0_{R'}\)</span> and <span class="arithmatex">\(\phi(1_R) = 1_{R'}\)</span>.</p>
+<li><strong>Objects.</strong> Unital rings <span class="arithmatex">\((R, +, \cdot)\)</span>. That is, rings <span class="arithmatex">\(R\)</span> with a multiplicative identity 1 that is not 
+equal to its additive identity 0.</li>
+<li><strong>Morphisms.</strong> (Unit preserving) Ring homomorphisms <span class="arithmatex">\(\phi: R \to R'\)</span>. 
+That is, functions <span class="arithmatex">\(\phi: R \to R'\)</span> such that<ul>
+<li><span class="arithmatex">\(\phi(a + b) = \phi(a) + \phi(b)\)</span></li>
+<li><span class="arithmatex">\(\phi(a \cdot b) \phi(a) \cdot \phi(b)\)</span></li>
+<li><span class="arithmatex">\(\phi(0_R) = 0_{R'}\)</span> and <span class="arithmatex">\(\phi(1_R) = 1_{R'}\)</span>.</li>
+</ul>
 </li>
 </ul>
-<p>\end{description}
-For a ring <span class="arithmatex">\(R\)</span> we know that <span class="arithmatex">\((R, +)\)</span> is an abelian group, and we know that 
+<p>For a ring <span class="arithmatex">\(R\)</span> we know that <span class="arithmatex">\((R, +)\)</span> is an abelian group, and we know that 
 every ring homomorphism is technically a group homomorphism between abelian groups.
 However, it is not 
 the case that <span class="arithmatex">\(\ab\)</span> is a subcategory of <span class="arithmatex">\(\ring\)</span>. This is because while 
@@ -3274,12 +3246,12 @@ every ring is technically an abelian group, abelian groups on their own are not 
 from here on out. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc, \dd\)</span> be categories. Then we can form the <strong>product category</strong> where 
-we have that 
-\begin{description}
-\item[Objects.] Pairs <span class="arithmatex">\((C, D)\)</span> with <span class="arithmatex">\(C \in \cc\)</span> and <span class="arithmatex">\(D \in \dd\)</span>.
-\item[Morphisms.] Pairs <span class="arithmatex">\((f, g)\)</span> where <span class="arithmatex">\(f: C \to C'\)</span> and <span class="arithmatex">\(g: D \to D'\)</span> are morphisms in <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span>.  <br />
-\end{description}
-To define composition in this category, suppose we have composable morphisms in <span class="arithmatex">\(\cc\)</span> 
+we have that </p>
+<ul>
+<li><strong>Objects.</strong> Pairs <span class="arithmatex">\((C, D)\)</span> with <span class="arithmatex">\(C \in \cc\)</span> and <span class="arithmatex">\(D \in \dd\)</span>.</li>
+<li><strong>Morphisms.</strong> Pairs <span class="arithmatex">\((f, g)\)</span> where <span class="arithmatex">\(f: C \to C'\)</span> and <span class="arithmatex">\(g: D \to D'\)</span> are morphisms in <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(\dd\)</span>.</li>
+</ul>
+<p>To define composition in this category, suppose we have composable morphisms in <span class="arithmatex">\(\cc\)</span> 
 and <span class="arithmatex">\(\dd\)</span> as below. </p>
 <p><img src="../../../png/category_theory/chapter_1/tikz_code_3_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then the morphisms <span class="arithmatex">\((f, g)\)</span> and <span class="arithmatex">\((f', g')\)</span> in <span class="arithmatex">\(\cc \times \dd\)</span> 
@@ -3292,12 +3264,12 @@ new tool because it allows us to be build new categories from the old ones that 
 know. </p>
 <p><span style="display:block" class="example">
 A useful example of a product involves the category <span class="arithmatex">\(\Set\times\Set\)</span> which 
-we can describe as 
-\begin{description}
-\item[Objects.] Pairs of sets <span class="arithmatex">\((X, Y)\)</span>.
-\item[Morphisms.] Pairs of functions <span class="arithmatex">\((f, g)\)</span>. 
-\end{description}
-Such product constructions are useful because in general, algebraic operations of any kind 
+we can describe as </p>
+<ul>
+<li><strong>Objects.</strong> Pairs of sets <span class="arithmatex">\((X, Y)\)</span>.</li>
+<li><strong>Morphisms.</strong> Pairs of functions <span class="arithmatex">\((f, g)\)</span>.</li>
+</ul>
+<p>Such product constructions are useful because in general, algebraic operations of any kind 
 require a product. For example, to talk about a group <span class="arithmatex">\((G, \cdot)\)</span>, 
 one needs a binary operator, i.e. a function <span class="arithmatex">\(\cdot: G \times G \to G\)</span>.
 Hence to talk to generalize operations on categories, we need to talk about products. 

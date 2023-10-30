@@ -1,5 +1,9 @@
 window.MathJax = {
   tex: {
+    displayMath: [             // start/end delimiter pairs for display math
+      ['$$', '$$'],
+      ['\\[', '\\]']
+    ],
     macros: {
         im: ["\\rm{Im}"],
         id: ["\\mathrm{id}"],
@@ -73,9 +77,3 @@ window.MathJax = {
     }
   }
 };
-
-
-// MathJax.config.tex['macros'] = {
-//         cc:["\\mathcal{C}"]
-// }
-

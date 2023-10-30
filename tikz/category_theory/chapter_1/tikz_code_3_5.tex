@@ -1,23 +1,23 @@
 \begin{center}
-            \begin{tikzpicture}
-                \filldraw[rounded corners, yellow!30]
-                (-5,-2.25) rectangle (5,0.25);
-                \node at (-3.5, -0.25){$\cc \times \dd$};
-                \node at (0,-1){
-                    \begin{tikzcd}[column sep = 1.4cm, row sep =  1.4cm]
-                        \cdots
-                        &[-1.5cm]
-                        (C_1,D_1) 
-                        \arrow[r, "{(f,g)}"]
-                        \arrow[rr, bend left, "{(f', g') \circ (f, g) = (f' \circ f, g' \circ g)}"]
-                        &
-                        (C_2, D_2)
-                        \arrow[r, "{(f',g')}"]
-                        &
-                        (C_3, D_3)
-                        &[-1.5cm]
-                        \cdots
-                    \end{tikzcd}  
-                };
-            \end{tikzpicture}
-        \end{center}
+\begin{tikzpicture}
+\filldraw[rounded corners, yellow!30]
+(-5,-2.25) rectangle (5,0.25);
+\node at (-3.5, -0.25){$\cc \times \dd$};
+\node at (0,-1){
+\begin{tikzcd}[column sep = 1.4cm, row sep =  1.4cm]
+\cdots
+&[-1.5cm]
+(C_1,D_1) 
+\arrow[r, "{(f,g)}"]
+\arrow[rr, bend left, "{(f', g') \circ (f, g) = (f' \circ f, g' \circ g)}"]
+&
+(C_2, D_2)
+\arrow[r, "{(f',g')}"]
+&
+(C_3, D_3)
+&[-1.5cm]
+\cdots
+\end{tikzcd}  
+};
+\end{tikzpicture}
+\end{center}

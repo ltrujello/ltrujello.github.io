@@ -3026,14 +3026,10 @@ The picture in mind should be:</p>
 and the properties of these spaces were worked out over time. People eventually figured out 
 that </p>
 <ul>
-<li>
-<p>A subset <span class="arithmatex">\(F \subset X\)</span> is closed if and only if <span class="arithmatex">\(F\)</span> contains 
-the limits of every sequence in <span class="arithmatex">\(F\)</span>.</p>
-</li>
-<li>
-<p>A subset <span class="arithmatex">\(U \subset X\)</span> is open if and only if <span class="arithmatex">\(U\)</span> contains 
-does not contain the limit of any sequence in <span class="arithmatex">\(X - U\)</span>. </p>
-</li>
+<li>A subset <span class="arithmatex">\(F \subset X\)</span> is closed if and only if <span class="arithmatex">\(F\)</span> contains 
+the limits of every sequence in <span class="arithmatex">\(F\)</span>.</li>
+<li>A subset <span class="arithmatex">\(U \subset X\)</span> is open if and only if <span class="arithmatex">\(U\)</span> contains 
+does not contain the limit of any sequence in <span class="arithmatex">\(X - U\)</span>.</li>
 </ul>
 <p>This is a wonderful result! However, it does not generalize to arbitrary topological 
 spaces. There are weird counterexamples that we will not get into (cite An Introduction 
@@ -3045,13 +3041,13 @@ topological spaces. We need more if we want it to work over arbitrary spaces. </
 <p>This is where a directed set comes in. </p>
 <p><span style="display:block" class="definition">
 A <strong>directed set</strong> <span class="arithmatex">\(D\)</span> is a set equipped with a binary relation <span class="arithmatex">\(\le\)</span> such that 
-for all <span class="arithmatex">\(a, b, c \in D\)</span>,
-\begin{description}
-\item[<strong>1.</strong>] <span class="arithmatex">\(a \le a\)</span> (Reflexive).
-\item[<strong>2.</strong>] if <span class="arithmatex">\(a \le b\)</span> and <span class="arithmatex">\(b \le c\)</span>, then <span class="arithmatex">\(a \le c\)</span> (Transitive)
-\item[<strong>3.</strong>] For all <span class="arithmatex">\(a,b \in D\)</span>, there exists a <span class="arithmatex">\(c \in C\)</span> such that <span class="arithmatex">\(a \le c\)</span> <strong>and</strong> <span class="arithmatex">\(b \le c\)</span> (Directed).
-\end{description}
-The first two properties describe a preorder; only the last condition is new to us. 
+for all <span class="arithmatex">\(a, b, c \in D\)</span>,</p>
+<ul>
+<li><strong><em>*1.</em></strong>* <span class="arithmatex">\(a \le a\)</span> (Reflexive).</li>
+<li><strong><em>*2.</em></strong>* if <span class="arithmatex">\(a \le b\)</span> and <span class="arithmatex">\(b \le c\)</span>, then <span class="arithmatex">\(a \le c\)</span> (Transitive)</li>
+<li><strong><em>*3.</em></strong><em> For all <span class="arithmatex">\(a,b \in D\)</span>, there exists a <span class="arithmatex">\(c \in C\)</span> such that <span class="arithmatex">\(a \le c\)</span> </em><em>and</em>* <span class="arithmatex">\(b \le c\)</span> (Directed).</li>
+</ul>
+<p>The first two properties describe a preorder; only the last condition is new to us. 
 To summarize, the "directed" axiom grants us an upper bounded in <span class="arithmatex">\(D\)</span> for any finite 
 set of elements of <span class="arithmatex">\(D\)</span>.  </p>
 <p>Let <span class="arithmatex">\(D\)</span> be a directed set. Define a <strong>net</strong>, or <strong>Moore-Smtih Sequence</strong>, 
@@ -3063,14 +3059,10 @@ if for every open set <span class="arithmatex">\(U\)</span> containing <span cla
 <p><span style="display:block" class="theorem">
 Let <span class="arithmatex">\(X\)</span> be a topological space.</p>
 <ul>
-<li>
-<p>A subset <span class="arithmatex">\(F \subset X\)</span> is closed if and only if every convergent 
-net <span class="arithmatex">\(\lambda: D \to X\)</span> has a limit in <span class="arithmatex">\(F\)</span></p>
-</li>
-<li>
-<p>A subset <span class="arithmatex">\(U \subset X\)</span> is open if and only if every convergent net 
-<span class="arithmatex">\(\lambda: D \to X - U\)</span> does not have a limit in <span class="arithmatex">\(U\)</span>.</p>
-</li>
+<li>A subset <span class="arithmatex">\(F \subset X\)</span> is closed if and only if every convergent 
+net <span class="arithmatex">\(\lambda: D \to X\)</span> has a limit in <span class="arithmatex">\(F\)</span></li>
+<li>A subset <span class="arithmatex">\(U \subset X\)</span> is open if and only if every convergent net 
+<span class="arithmatex">\(\lambda: D \to X - U\)</span> does not have a limit in <span class="arithmatex">\(U\)</span>.</li>
 </ul>
 <p></span></p>
 <p>Hence we see that limits taken over preorders have substantial benefits than when 
@@ -3080,15 +3072,11 @@ simply taken over preorders. First, we introduce filtered categories.</p>
 <p><span style="display:block" class="definition">
 We say that a category <span class="arithmatex">\(J\)</span> is <strong>filtered</strong> if </p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] For any pair of objects <span class="arithmatex">\(j, j'\)</span>, 
-there exists an object <span class="arithmatex">\(k\)</span> and morphism <span class="arithmatex">\(u:j \to k\)</span> and <span class="arithmatex">\(v: j' \to k\)</span>. </p>
-</li>
-<li>
-<p>[<strong>2.</strong>] For any pair of parallel morphism <span class="arithmatex">\(u, v: i \to j\)</span>, 
+<li><strong><em>*1.</em></strong>* For any pair of objects <span class="arithmatex">\(j, j'\)</span>, 
+there exists an object <span class="arithmatex">\(k\)</span> and morphism <span class="arithmatex">\(u:j \to k\)</span> and <span class="arithmatex">\(v: j' \to k\)</span>.</li>
+<li><strong><em>*2.</em></strong>* For any pair of parallel morphism <span class="arithmatex">\(u, v: i \to j\)</span>, 
 there exists an object <span class="arithmatex">\(k\)</span> and a morphism <span class="arithmatex">\(w: j \to k\)</span> such that the diagram below 
-commutes. </p>
-</li>
+commutes.</li>
 </ul>
 <p>We do not say the empty category is filtered; this should be obvious, but 
 it also needs to be said.</p>
@@ -3104,7 +3092,7 @@ there exists a <span class="arithmatex">\(k\)</span> such that <span class="arit
 if and only if
 \begin{center}
 every finite subset <span class="arithmatex">\(S \subset J\)</span> has an upper bound <em>in</em> <span class="arithmatex">\(J\)</span>.
-\end{center}    Thus, a thin category <span class="arithmatex">\(J\)</span> needs to have the above property in order to 
+\end{center}Thus, a thin category <span class="arithmatex">\(J\)</span> needs to have the above property in order to 
 be a filtered category.</p>
 <p>An example of this concerns the category <span class="arithmatex">\(**Open**(X)\)</span>, where 
 <span class="arithmatex">\(X\)</span> is a topological space. The objects are open sets, while morphisms are 

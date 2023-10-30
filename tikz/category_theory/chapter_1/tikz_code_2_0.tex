@@ -1,88 +1,88 @@
 \begin{center}
-    \adjustbox{scale = 0.85}{
-        \tikzstyle{A} = [fill=ProcessBlue!20]
-        \tikzstyle{B} = [fill=ProcessBlue!30]
-        \tikzstyle{C} = [fill=ProcessBlue!40]
-        \begin{tikzpicture}[>=stealth]
-            \pgfmathsetmacro{\height}{2.5}
-            \pgfmathsetmacro{\heightstep}{0.5}
-            \pgfmathsetmacro{\width}{2}
-            \pgfmathsetmacro{\widthstep}{0.5}
-            
-            \pgfmathsetmacro{\Ax}{\height}
-            \pgfmathsetmacro{\Ay}{\width}
-            \pgfmathsetmacro{\Bx}{\height - \heightstep}
-            \pgfmathsetmacro{\By}{\width - \widthstep}
-            \pgfmathsetmacro{\Cx}{\height - \heightstep -\heightstep}
-            \pgfmathsetmacro{\Cy}{\width - \widthstep - \widthstep}
-    
-            \begin{scope}
-                
-                \filldraw[A] (0,0) ellipse (\Ay cm and \Ax cm);
-                \draw (0,0) ellipse (\Ay cm and \Ax cm);
-    
-                \filldraw[B] (0,-\heightstep) ellipse (\By cm and \Bx cm);
-                \draw (0,-\heightstep) ellipse (\By cm and \Bx cm);
-    
-                \filldraw[C] (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
-                \draw (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
-    
-                
-                \node at (0, \height - 0.3) {$C_n$};
-                \node at (0, \height - 1.3) {$Z_n$};
-                \node at (0, \height - 2.4) {$B_n$};
-            \end{scope}
-    
-            \begin{scope}[xshift = 5cm]
-                
-                \filldraw[A] (0,0) ellipse (\Ay cm and \Ax cm);
-                \draw (0,0) ellipse (\Ay cm and \Ax cm);
-        
-                \filldraw[B] (0,-\heightstep) ellipse (\By cm and \Bx cm);
-                \draw (0,-\heightstep) ellipse (\By cm and \Bx cm);
-        
-                \filldraw[C] (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
-                \draw (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
-    
-                
-                \node at (0, \height - 0.3) {$C_{n-1}$};
-                \node at (0, \height - 1.3) {$Z_{n-1}$};
-                \node at (0, \height - 2.4) {$B_{n-1}$};
-            \end{scope}
-    
-            \begin{scope}[xshift = 10cm]
-                
-                \filldraw[A] (0,0) ellipse (\Ay cm and \Ax cm);
-                \draw (0,0) ellipse (\Ay cm and \Ax cm);
-        
-                \filldraw[B] (0,-\heightstep) ellipse (\By cm and \Bx cm);
-                \draw (0,-\heightstep) ellipse (\By cm and \Bx cm);
-        
-                \filldraw[C] (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
-                \draw (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
-    
-                
-                \node at (0, \height - 0.3) {$C_{n-2}$};
-                \node at (0, \height - 1.3) {$Z_{n-2}$};
-                \node at (0, \height - 2.4) {$B_{n-2}$};
-            \end{scope}
-    
-            
-            \draw[->] (0.5, \height-0.5) -- (4.2cm, \height-2.5) node[midway, above] {$\partial_n$};
-            \draw[->] (0.5+5.5cm, \height-0.5) -- (4.2cm+5cm, \height-2.5) node[midway, above] {$\partial_{n-1}$};
-    
-            \draw[->] (0.2, \height-1.6) -- (4.8, -2.3)node[midway, below] {$\partial_n$};
-            \draw[->] (0.2+5.5cm, \height-1.6) -- (9.7cm, -2.3)node[midway, below] {$\partial_{n-1}$};
-    
-            \filldraw (0,-2.5) circle (0.5mm) node[below] {$0$};
-            \filldraw (5cm,-2.5) circle (0.5mm) node[below] {$0$};
-            \filldraw (10cm,-2.5) circle (0.5mm) node[below] {$0$};
-    
-            \node at (-3cm, 0cm) {$\cdots$};
-            \node at (13cm, 0cm) {$\cdots$};
-        \end{tikzpicture}
-    }
+\adjustbox{scale = 0.85}{
+\tikzstyle{A} = [fill=ProcessBlue!20]
+\tikzstyle{B} = [fill=ProcessBlue!30]
+\tikzstyle{C} = [fill=ProcessBlue!40]
+\begin{tikzpicture}[>=stealth]
+\pgfmathsetmacro{\height}{2.5}
+\pgfmathsetmacro{\heightstep}{0.5}
+\pgfmathsetmacro{\width}{2}
+\pgfmathsetmacro{\widthstep}{0.5}
 
-    \emph{A chain complex; the image of $\partial_n$ is $B_{n-1}$, while the kernel 
-    of $\partial_n$ is $Z_{n}$.}
-    \end{center}
+\pgfmathsetmacro{\Ax}{\height}
+\pgfmathsetmacro{\Ay}{\width}
+\pgfmathsetmacro{\Bx}{\height - \heightstep}
+\pgfmathsetmacro{\By}{\width - \widthstep}
+\pgfmathsetmacro{\Cx}{\height - \heightstep -\heightstep}
+\pgfmathsetmacro{\Cy}{\width - \widthstep - \widthstep}
+
+\begin{scope}
+
+\filldraw[A] (0,0) ellipse (\Ay cm and \Ax cm);
+\draw (0,0) ellipse (\Ay cm and \Ax cm);
+
+\filldraw[B] (0,-\heightstep) ellipse (\By cm and \Bx cm);
+\draw (0,-\heightstep) ellipse (\By cm and \Bx cm);
+
+\filldraw[C] (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
+\draw (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
+
+
+\node at (0, \height - 0.3) {$C_n$};
+\node at (0, \height - 1.3) {$Z_n$};
+\node at (0, \height - 2.4) {$B_n$};
+\end{scope}
+
+\begin{scope}[xshift = 5cm]
+
+\filldraw[A] (0,0) ellipse (\Ay cm and \Ax cm);
+\draw (0,0) ellipse (\Ay cm and \Ax cm);
+
+\filldraw[B] (0,-\heightstep) ellipse (\By cm and \Bx cm);
+\draw (0,-\heightstep) ellipse (\By cm and \Bx cm);
+
+\filldraw[C] (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
+\draw (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
+
+
+\node at (0, \height - 0.3) {$C_{n-1}$};
+\node at (0, \height - 1.3) {$Z_{n-1}$};
+\node at (0, \height - 2.4) {$B_{n-1}$};
+\end{scope}
+
+\begin{scope}[xshift = 10cm]
+
+\filldraw[A] (0,0) ellipse (\Ay cm and \Ax cm);
+\draw (0,0) ellipse (\Ay cm and \Ax cm);
+
+\filldraw[B] (0,-\heightstep) ellipse (\By cm and \Bx cm);
+\draw (0,-\heightstep) ellipse (\By cm and \Bx cm);
+
+\filldraw[C] (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
+\draw (0,-\heightstep - \heightstep) ellipse (\Cy cm and \Cx cm);
+
+
+\node at (0, \height - 0.3) {$C_{n-2}$};
+\node at (0, \height - 1.3) {$Z_{n-2}$};
+\node at (0, \height - 2.4) {$B_{n-2}$};
+\end{scope}
+
+
+\draw[->] (0.5, \height-0.5) -- (4.2cm, \height-2.5) node[midway, above] {$\partial_n$};
+\draw[->] (0.5+5.5cm, \height-0.5) -- (4.2cm+5cm, \height-2.5) node[midway, above] {$\partial_{n-1}$};
+
+\draw[->] (0.2, \height-1.6) -- (4.8, -2.3)node[midway, below] {$\partial_n$};
+\draw[->] (0.2+5.5cm, \height-1.6) -- (9.7cm, -2.3)node[midway, below] {$\partial_{n-1}$};
+
+\filldraw (0,-2.5) circle (0.5mm) node[below] {$0$};
+\filldraw (5cm,-2.5) circle (0.5mm) node[below] {$0$};
+\filldraw (10cm,-2.5) circle (0.5mm) node[below] {$0$};
+
+\node at (-3cm, 0cm) {$\cdots$};
+\node at (13cm, 0cm) {$\cdots$};
+\end{tikzpicture}
+}
+
+\emph{A chain complex; the image of $\partial_n$ is $B_{n-1}$, while the kernel 
+of $\partial_n$ is $Z_{n}$.}
+\end{center}

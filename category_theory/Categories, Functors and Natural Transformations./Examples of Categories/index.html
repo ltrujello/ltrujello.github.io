@@ -3125,13 +3125,13 @@ these categories are less trivial than the ones above, i.e it takes a bit of wor
 to see how they form into categories. </p>
 <p><span style="display:block" class="example">
 Let <span class="arithmatex">\(X\)</span> be a nonempty set. We can regard <span class="arithmatex">\(X\)</span> as a 
-category where 
-\begin{description}
-\item[Objects.] All elements of <span class="arithmatex">\(X\)</span>.
-\item[Morphisms.] All morphisms are identity morphisms, and there are 
-no morphisms between any two distinct objects.<br />
-\end{description}
-This category, while fairly trivial, is called a <strong>discrete category</strong>.
+category where </p>
+<ul>
+<li><strong>Objects.</strong> All elements of <span class="arithmatex">\(X\)</span>.</li>
+<li><strong>Morphisms.</strong> All morphisms are identity morphisms, and there are 
+no morphisms between any two distinct objects.</li>
+</ul>
+<p>This category, while fairly trivial, is called a <strong>discrete category</strong>.
 </span></p>
 <p><span style="display:block" class="example">
 Consider any of the categories <span class="arithmatex">\(\mon\)</span>, <span class="arithmatex">\(\grp\)</span>, <span class="arithmatex">\(\ring\)</span>, or 
@@ -3159,13 +3159,13 @@ In addition, if <span class="arithmatex">\(G = \bigoplus_{i \in \lambda}G_i\)</s
 are two graded groups such that <span class="arithmatex">\(\phi_i:G_i \to H_i\)</span> is a group homomorphism, 
 then we say <span class="arithmatex">\(\phi: G \to H\)</span> is a <strong><span class="arithmatex">\(\lambda\)</span>-graded homomorphism</strong>.</p>
 <p>With that said, we can define the category of graded groups to be the category 
-<strong>GrGrp</strong>, (read as "graded groups") described as 
-\begin{description}
-\item[Objects.] <span class="arithmatex">\(\lambda\)</span>-graded groups <span class="arithmatex">\(G = \bigoplus_{i \in \lambda}\)</span> 
-for some set <span class="arithmatex">\(\lambda\)</span> 
-\item[Morphisms.] Graded homomorphisms between graded groups.<br />
-\end{description}
-As we said before, this produces many graded categories, including <strong>GrMon</strong>, 
+<strong>GrGrp</strong>, (read as "graded groups") described as </p>
+<ul>
+<li><strong>Objects.</strong> <span class="arithmatex">\(\lambda\)</span>-graded groups <span class="arithmatex">\(G = \bigoplus_{i \in \lambda}\)</span> 
+for some set <span class="arithmatex">\(\lambda\)</span></li>
+<li><strong>Morphisms.</strong> Graded homomorphisms between graded groups.</li>
+</ul>
+<p>As we said before, this produces many graded categories, including <strong>GrMon</strong>, 
 <strong>GrRing</strong>, <span class="arithmatex">\(**GrMod**_R\)</span> etc.
 </span></p>
 <p><span style="display:block" class="example">
@@ -3214,18 +3214,14 @@ A \le B \text{ if and only if there exists an morphism } A \to B.
 \]</div>
 <p>Some things are to be said about this relation:</p>
 <ul>
-<li>
-<p>For each object <span class="arithmatex">\(A\)</span>, 
+<li>For each object <span class="arithmatex">\(A\)</span>, 
 there always
 exists a morphism <span class="arithmatex">\(A \to A\)</span> (namely, the identity). This implies
-that <span class="arithmatex">\(A \le A\)</span> for all objects <span class="arithmatex">\(A\)</span>, so that <span class="arithmatex">\(\le\)</span> is reflexive.</p>
-</li>
-<li>
-<p>If <span class="arithmatex">\(f: A \to B\)</span> and <span class="arithmatex">\(g: B \to C\)</span>, then we have that 
+that <span class="arithmatex">\(A \le A\)</span> for all objects <span class="arithmatex">\(A\)</span>, so that <span class="arithmatex">\(\le\)</span> is reflexive.</li>
+<li>If <span class="arithmatex">\(f: A \to B\)</span> and <span class="arithmatex">\(g: B \to C\)</span>, then we have that 
 <span class="arithmatex">\(A \le B\)</span> and <span class="arithmatex">\(B \le C\)</span>. Since we may compose morphisms, we 
 have that <span class="arithmatex">\(g \circ f: A \to C\)</span>. Therefore, <span class="arithmatex">\(A \le C\)</span>, so that <span class="arithmatex">\(\le\)</span> 
-<span class="arithmatex">\(\le\)</span> is transitive.</p>
-</li>
+<span class="arithmatex">\(\le\)</span> is transitive.</li>
 </ul>
 <p>Hence, <span class="arithmatex">\(\mathcal{P}\)</span> is really just a set with a reflexive and transitive
 binary relation. However, this is exactly the definition of a <strong>preorder</strong>!
@@ -3239,42 +3235,37 @@ have the axiom that </p>
 <p>or <strong>linear orders</strong>, where for any <span class="arithmatex">\(p,  p'\)</span> we have that <span class="arithmatex">\(p \le
 p'\)</span> <strong>or</strong> <span class="arithmatex">\(p' \le p\)</span>.</p>
 <p><span style="display:block" class="example">
-Here we introduce some examples of thin categories.
-\begin{description}
-\item[Natural Numbers.] 
-The sets <span class="arithmatex">\(\{1, 2, \dots, n\}\)</span> for any <span class="arithmatex">\(n \in N\)</span> are
-linear orders, each of which forms a category as pictured below.</p>
+Here we introduce some examples of thin categories.</p>
+<ul>
+<li><strong>Natural Numbers.</strong> The sets <span class="arithmatex">\(\{1, 2, \dots, n\}\)</span> for any <span class="arithmatex">\(n \in N\)</span> are
+linear orders, each of which forms a category as pictured below.</li>
+</ul>
 <p><img src="../../../png/category_theory/chapter_1/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 In this figure, the loops represent the trivial identity functions.</p>
 <p>This example can also be generalized to include <span class="arithmatex">\(\mathbb{N}, \mathbb{Z}, 
-\mathbb{Q},\)</span> and <span class="arithmatex">\(\mathbb{R}\)</span>. </p>
-<p>\item[Subsets.] 
-Let <span class="arithmatex">\(X\)</span> be a set. Then one can form a category <span class="arithmatex">\(\text{Subsets}(X)\)</span> where the 
+\mathbb{Q},\)</span> and <span class="arithmatex">\(\mathbb{R}\)</span>.
+* <strong>Subsets.</strong> Let <span class="arithmatex">\(X\)</span> be a set. Then one can form a category <span class="arithmatex">\(\text{Subsets}(X)\)</span> where the 
 objects are subsets of <span class="arithmatex">\(X\)</span> and the morphisms are inclusion morphisms. Hence,
 there is at most one morphism between any two sets.</p>
 <p>Since there is at most one morphism between any two objects of the 
 category, we see that this forms a thin category, and hence a partial ordering. 
 What this then tells us is that subset containment determines an ordering, 
-specifically a partial ordering. </p>
-<p>\item[Open Sets.] <br />
-Let <span class="arithmatex">\((X, \tau)\)</span> be a topological space. Define the category 
+specifically a partial ordering.
+* <strong>Open Sets.</strong> Let <span class="arithmatex">\((X, \tau)\)</span> be a topological space. Define the category 
 <span class="arithmatex">\(\open(X)\)</span> to be the category whose objects are the open sets of <span class="arithmatex">\(X\)</span> 
 and morphisms <span class="arithmatex">\(U \to V\)</span> are inclusion morphisms <span class="arithmatex">\(i: U \to V\)</span> whenever <span class="arithmatex">\(U \subset V\)</span>.
 Hence, there is at most one morphism between any two open sets, so that this 
-also forms a preorder.</p>
-<p>\item[Subgroups.] 
-Let <span class="arithmatex">\(G\)</span> be a group. We can similarly define the category 
+also forms a preorder.
+* <strong>Subgroups.</strong> Let <span class="arithmatex">\(G\)</span> be a group. We can similarly define the category 
 <span class="arithmatex">\(**SbGrp**(G)\)</span> to be the category whose objects consists 
 of subgroups <span class="arithmatex">\(H \le G\)</span>, and whose morphisms are inclusion homomorphisms.
 This is just like the last example; and, as in the last example, 
 there is at most one morphism between any two subgroups <span class="arithmatex">\(H, K\)</span> of <span class="arithmatex">\(G\)</span> 
 (either <span class="arithmatex">\(i: H \to K\)</span> or <span class="arithmatex">\(i: K \to H\)</span>). Hence, we can place a partial ordering 
-on this, so that subgroup containment is a partial ordering.</p>
-<p>\item[Ideals.]
-Let <span class="arithmatex">\(R\)</span> be a ring. Then we can form a category <span class="arithmatex">\(**Ideals**(R)\)</span> 
+on this, so that subgroup containment is a partial ordering.
+* <strong>Ideals.</strong> Let <span class="arithmatex">\(R\)</span> be a ring. Then we can form a category <span class="arithmatex">\(**Ideals**(R)\)</span> 
 whose objects are the ideals <span class="arithmatex">\(I\)</span> of <span class="arithmatex">\(R\)</span> and whose morphisms are inclusion 
-morphisms. As we've seen, this forms a thin category. 
-\end{description}</p>
+morphisms. As we've seen, this forms a thin category.</p>
 <p></span></p>
 <p><span style="display:block" class="example">
 Let <span class="arithmatex">\(B_n\)</span> be the set of braids on <span class="arithmatex">\(n\)</span> strands. Recall that 
@@ -3298,10 +3289,11 @@ Now, the group multiplication in this group is simply stacking of braids. For ex
 can be obtained by stacking <span class="arithmatex">\(\sigma_1, \sigma_2\)</span> and then <span class="arithmatex">\(\sigma_1\)</span> again. 
 Hence, the  braid <span class="arithmatex">\(\sigma_1\sigma_2\sigma_1\)</span>. </p>
 <p>Now with the family of braid groups <span class="arithmatex">\(B_1, B_2, \dots,\)</span> we can form a category <span class="arithmatex">\(\mathbb{B}\)</span>
-as follows. 
-\begin{description}
-\item[Objects.] Positive integers <span class="arithmatex">\(1,2, \dots,\)</span>
-\item[Morphisms.] For any pair of positive integers <span class="arithmatex">\(n,m\)</span>, we have that </p>
+as follows. </p>
+<ul>
+<li><strong>Objects.</strong> Positive integers <span class="arithmatex">\(1,2, \dots,\)</span></li>
+<li><strong>Morphisms.</strong> For any pair of positive integers <span class="arithmatex">\(n,m\)</span>, we have that </li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\mathbb{B}}(n,m) = 
 \begin{cases}
@@ -3309,8 +3301,7 @@ B_n &amp; \text{if } n = m\\
 \varnothing &amp; n \ne m
 \end{cases}
 \]</div>
-<p>\end{description}
-Hence we only have morphisms <span class="arithmatex">\(f: n \to m\)</span> when <span class="arithmatex">\(n = m\)</span>. Furthermore, each 
+<p>Hence we only have morphisms <span class="arithmatex">\(f: n \to m\)</span> when <span class="arithmatex">\(n = m\)</span>. Furthermore, each 
 morphism is a braid. Composition is then group multiplication. The identity for each 
 object <span class="arithmatex">\(n\)</span> is the identity braid of <span class="arithmatex">\(n\)</span> parallel strands. As group multiplication 
 is associative, the composition in this category is associative, so we see that this truly 
@@ -3358,17 +3349,17 @@ of shape <span class="arithmatex">\(m \times n\)</span> as a morphism from <span
 <span class="arithmatex">\(B\)</span> can be regarded a morphism from <span class="arithmatex">\(n \to p\)</span>. This together implies that 
 <span class="arithmatex">\(AB\)</span> is a morphism from <span class="arithmatex">\(m \to p\)</span>. 
 This should feel strange, because we are used to thinking of a morphism as some kind 
-of function. But it works; we can form a category where<br />
-\begin{description}
-\item[Objects.] The objects are positive integers <span class="arithmatex">\(m\)</span>.
-\item[Morphisms.] The morphisms are matrices. Specifically, for any pair of 
-objects <span class="arithmatex">\(m,n\)</span>, </p>
+of function. But it works; we can form a category where  </p>
+<ul>
+<li><strong>Objects.</strong> The objects are positive integers <span class="arithmatex">\(m\)</span>.</li>
+<li><strong>Morphisms.</strong> The morphisms are matrices. Specifically, for any pair of 
+objects <span class="arithmatex">\(m,n\)</span>, </li>
+</ul>
 <div class="arithmatex">\[
 \hom_{\cc}(m, n) = M_{m, n}(R).
 \]</div>
-<p>Here, composition is simply matrix multiplication.
-\end{description}
-Observe now that our initial observation regarding matrix multiplication
+<p>Here, composition is simply matrix multiplication.</p>
+<p>Observe now that our initial observation regarding matrix multiplication
 translates to a statement regarding whenever two matrices <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> are 
 "composable" (i.e., whenever we can multiply them). That is, 
 our mapping <span class="arithmatex">\(M_{m,n}(R)\times M_{n,p}(R) \to M_{m, p}\)</span> can be rephrased as composition</p>
@@ -3422,133 +3413,61 @@ sense since groups are trivial examples of group actions by setting <span class=
 <p>{\large <strong>Exercises</strong>
 \vspace{0.2cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>] 
-Let <span class="arithmatex">\(n\)</span> be a positive integer, and consider a group <span class="arithmatex">\(G\)</span> such that 
+<li><strong><em>*1.</em></strong>* Let <span class="arithmatex">\(n\)</span> be a positive integer, and consider a group <span class="arithmatex">\(G\)</span> such that 
 <span class="arithmatex">\(g^n = 1\)</span> for all elements <span class="arithmatex">\(g \in G\)</span>. Show that if we take these groups to be 
 our objects, and group homomorphisms to be our morphisms, then 
 this forms a category <span class="arithmatex">\(\grp_n\)</span>.
-\vspace{0.2cm}</p>
-</li>
+\vspace{0.2cm}</li>
 <li>
-<p>[<strong>2.</strong>] 
-Consider an infinite family of groups <span class="arithmatex">\(G_1, G_2, \dots, G_n, \dots\)</span>
-Show that we have a category <span class="arithmatex">\(**G**\)</span> where
-\begin{description}</p>
-</li>
-<li>
-<p>[Objects.] The positive integers <span class="arithmatex">\(1, 2, \dots, n, \dots\)</span></p>
-</li>
-<li>
-<p>[Morphisms.] For any two positive integers <span class="arithmatex">\(n,m\)</span>,<br />
-we define </p>
-</li>
-</ul>
-<div class="arithmatex">\[
-\hom_{**G**}(n,m) = 
-\begin{cases}
-G_n &amp; \text{if } n = m\\
-\varnothing &amp; \text{otherwise}.
-\end{cases}  
-\]</div>
-<p>\end{description}
-This example can be applied to many interesting families of groups, since they 
-often come graded (i.e., they often are indexed by the positive integers.)
-For instance, the braid groups <span class="arithmatex">\(B_1, B_2, \dots,\)</span> are such an example.
-\vspace{0.2cm}</p>
+<p><strong><em>*2.</em></strong>* Consider an infinite family of groups <span class="arithmatex">\(G_1, G_2, \dots, G_n, \dots\)</span>
+Show that we have a category <span class="arithmatex">\(**G**\)</span> where</p>
 <ul>
-<li>
-<p>[<strong>3.</strong>] 
-Let <span class="arithmatex">\(f: X \to Y\)</span> be a function between two sets. 
+<li><strong>Objects.</strong> The positive integers <span class="arithmatex">\(1, 2, \dots, n, \dots\)</span></li>
+<li><strong>Morphisms.</strong> For any two positive integers <span class="arithmatex">\(n,m\)</span>,<br />
+we define </li>
+</ul>
+<p>$$
+\hom_{<strong>G</strong>}(n,m) = 
+\begin{cases}
+G_n &amp; \text{if } n = m\
+\varnothing &amp; \text{otherwise}.
+\end{cases}<br />
+$$
+* <strong><em>*3.</em></strong><em> Let <span class="arithmatex">\(f: X \to Y\)</span> be a function between two sets. 
 We say <span class="arithmatex">\(f\)</span> has the "finite-to-one" property if <span class="arithmatex">\(f^{-1}(y)\)</span> is always a 
 finite set for all <span class="arithmatex">\(y \in Y\)</span>. Show that we have a (large) category,  denoted 
-<span class="arithmatex">\(\Set_{FTO}\)</span>, where 
-\begin{description}</p>
-</li>
-<li>
-<p>[Objects.] All sets <span class="arithmatex">\(X\)</span>.</p>
-</li>
-<li>
-<p>[Morphisms.] functions <span class="arithmatex">\(f\)</span> with the finite-to-one property. 
-\end{description}
-\vspace{0.2cm}</p>
-</li>
-<li>
-<p>[<strong>4.</strong>]
-Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be sets. A binary relation <span class="arithmatex">\(R\)</span> on <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>
+<span class="arithmatex">\(\Set_{FTO}\)</span>, where
+* </em><em>Objects.</em><em> All sets <span class="arithmatex">\(X\)</span>.
+* </em><em>Morphisms.</em><em> functions <span class="arithmatex">\(f\)</span> with the finite-to-one property.
+* </em><strong><em>4.</em></strong>* Let <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> be sets. A binary relation <span class="arithmatex">\(R\)</span> on <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>
 is any subset of <span class="arithmatex">\(X \times Y\)</span>. For two elements 
 <span class="arithmatex">\(x \in X, y \in Y\)</span>, we then write 
 <span class="arithmatex">\(xRy\)</span> if <span class="arithmatex">\((x,y) \in R\)</span>. Binary relations can be specialized to describe 
 functions and order relations in set theory.</p>
 </li>
 </ul>
-<p>Show that we can form a category where 
-\begin{description}</p>
-<ul>
-<li>
-<p>[Objects.] All sets <span class="arithmatex">\(X\)</span>. </p>
-</li>
-<li>
-<p>[Morphisms.] For any two sets <span class="arithmatex">\(X,Y\)</span>, we write,
-by abuse of notation, <span class="arithmatex">\(R: X \to Y\)</span> as a morphism
-for each relation <span class="arithmatex">\(R\)</span> on <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>.
-\end{description}
-This category is called <strong>Rel</strong>, to indicate that it is the 
-category of relations.\
-<em>Hint:</em>  Define composition in this category as follows. Suppose 
-<span class="arithmatex">\(R:X\to Y\)</span> is a relation on <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(P: Y \to Z\)</span> is a binary relation on <span class="arithmatex">\(Y\)</span> and <span class="arithmatex">\(Z\)</span>.
-Then the composite relation <span class="arithmatex">\(Q: X \to Z\)</span> is given by </p>
-</li>
-</ul>
-<div class="arithmatex">\[
-Q = \{(x, z) \mid \text{there exist } y \in Y \text{ such that } (x,y)\in R, (y,z) \in P \}.
-\]</div>
-<ul>
-<li>[<strong>5.</strong>]
-Recall that for a two metric spaces <span class="arithmatex">\((M, d_M)\)</span> and <span class="arithmatex">\((N, d_N)\)</span>, where 
+<p>Show that we can form a category where
+    * <strong>Objects.</strong> All sets <span class="arithmatex">\(X\)</span>.
+    * <strong>Morphisms.</strong> For any two sets <span class="arithmatex">\(X,Y\)</span>, we write,
+    by abuse of notation, <span class="arithmatex">\(R: X \to Y\)</span> as a morphism
+    for each relation <span class="arithmatex">\(R\)</span> on <span class="arithmatex">\(X\)</span> and <span class="arithmatex">\(Y\)</span>.
+* <strong><em>*5.</em></strong><em> Recall that for a two metric spaces <span class="arithmatex">\((M, d_M)\)</span> and <span class="arithmatex">\((N, d_N)\)</span>, where 
 <span class="arithmatex">\(d_M: M \times M \to M\)</span> and <span class="arithmatex">\(d_N: N \times N \to N\)</span> are the metrics, 
-we say a function <span class="arithmatex">\(f: M \to N\)</span> is a <strong>Lipschitz-1</strong> map 
-with <strong>Lipschitz constant</strong> 1 if </li>
-</ul>
+we say a function <span class="arithmatex">\(f: M \to N\)</span> is a </em><em>Lipschitz-1</em><em> map 
+with </em><em>Lipschitz constant</em>* 1 if </p>
 <div class="arithmatex">\[
 d_N(f(x), f(y)) \le d_M(x, y)  
 \]</div>
 <p>for all <span class="arithmatex">\(x, y \in M\)</span>. Using this concept, show that we have a category 
-where 
-\begin{description}</p>
-<ul>
-<li>
-<p>[Objects.] Metric spaces <span class="arithmatex">\(M\)</span> </p>
-</li>
-<li>
-<p>[Morphisms.] Lipschitz-1 maps with Lipschitz constant 1. <br />
-\end{description}
-This category is commonly denoted as <strong>Met</strong>.</p>
-</li>
-<li>
-<p>[<strong>6.</strong>]
-Let <span class="arithmatex">\(G\)</span> be a group. We say that <span class="arithmatex">\(G\)</span> acts on a set <span class="arithmatex">\(X\)</span> if we have a 
-function <span class="arithmatex">\(\phi: G \times X \to X\)</span> such that 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(\bullet\)</span>] <span class="arithmatex">\(e \cdot x = x\)</span></p>
-</li>
-<li>
-<p>[<span class="arithmatex">\(\bullet\)</span>] <span class="arithmatex">\(h\cdot (g \cdot x) = (hg)\cdot x\)</span></p>
-</li>
-</ul>
-<p>Such an <span class="arithmatex">\(X\)</span> is sometimes called a <strong>G-set</strong>.
-Note here that we represent <span class="arithmatex">\(\phi(g, x)\)</span> as <span class="arithmatex">\(g \cdot x\)</span>. Now suppose <span class="arithmatex">\(X, Y\)</span> are 
-two sets for which <span class="arithmatex">\(G\)</span> acts on. Then we define a morphism of <span class="arithmatex">\(G\)</span> sets to be a 
-function <span class="arithmatex">\(f: X \to Y\)</span> such that <span class="arithmatex">\(f(g \cdot x) = g \cdot f(x)\)</span>. Such a map is called 
-<span class="arithmatex">\(G\)</span> equivariant. Show that we have 
-a category <span class="arithmatex">\(G**-Sets**\)</span> where 
-\begin{description}
-\item[Objects.] All <span class="arithmatex">\(G\)</span>-sets (i.e., sets with a group action by <span class="arithmatex">\(G\)</span>)
-\item[Morphisms.] <span class="arithmatex">\(G\)</span> equivariant maps. 
-\end{description}
-\end{itemize}</p>
+where
+    * <strong>Objects.</strong> Metric spaces <span class="arithmatex">\(M\)</span>
+    * <strong>Morphisms.</strong> Lipschitz-1 maps with Lipschitz constant 1.
+* <strong><em>*6.</em></strong><em> Let <span class="arithmatex">\(G\)</span> be a group. We say that <span class="arithmatex">\(G\)</span> acts on a set <span class="arithmatex">\(X\)</span> if we have a 
+function <span class="arithmatex">\(\phi: G \times X \to X\)</span> such that
+    * </em><em><span class="arithmatex">\(\bullet\)</span></em><em> <span class="arithmatex">\(e \cdot x = x\)</span>
+    * </em><em><span class="arithmatex">\(\bullet\)</span></em><em> <span class="arithmatex">\(h\cdot (g \cdot x) = (hg)\cdot x\)</span>
+    * </em><em>Objects.</em><em> All <span class="arithmatex">\(G\)</span>-sets (i.e., sets with a group action by <span class="arithmatex">\(G\)</span>)
+    * </em><em>Morphisms.</em>* <span class="arithmatex">\(G\)</span> equivariant maps.</p>
 <script src="../../mathjax_helper.js"></script>
 
 

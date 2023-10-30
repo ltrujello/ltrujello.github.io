@@ -3029,19 +3029,13 @@ fix these to take back our original structure. </p>
 Let <span class="arithmatex">\((\mathcal{V}, \otimes, I)\)</span> be a monoidal category. A small category <span class="arithmatex">\(\cc\)</span> is a <span class="arithmatex">\(\mathcal{V}\)</span>-category 
 or an <strong>enriched category</strong> over <span class="arithmatex">\(\mathcal{V}\)</span> if </p>
 <ul>
-<li>
-<p>[1.] For each <span class="arithmatex">\(A, B \in \cc\)</span>, we have that <span class="arithmatex">\(\hom_{\cc}(A, B) \in \mathcal{V}\)</span> </p>
-</li>
-<li>
-<p>[2.] There exists a "composition" operator </p>
-</li>
+<li><strong>1.</strong> For each <span class="arithmatex">\(A, B \in \cc\)</span>, we have that <span class="arithmatex">\(\hom_{\cc}(A, B) \in \mathcal{V}\)</span></li>
+<li><strong>2.</strong> There exists a "composition" operator </li>
 </ul>
-<div class="arithmatex">\[
+<p>$$
 \circ_{A, B, C} : \hom_{\cc}(A, B) \times \hom_{\cc}(B, C) \to \hom_{\cc}(A, C)
-\]</div>
-<ul>
-<li>[3.] For each object <span class="arithmatex">\(A \in \cc\)</span>, we have a "identity object" </li>
-</ul>
+$$
+* <strong>3.</strong> For each object <span class="arithmatex">\(A \in \cc\)</span>, we have a "identity object" </p>
 <div class="arithmatex">\[
 i_A: I \to \hom_{\cc}(A, A)  
 \]</div>
@@ -3056,12 +3050,8 @@ The following is a classic example due to F.W. Lawvere.
 A <strong>Lawvere metric space</strong> is a set <span class="arithmatex">\(X\)</span> 
 equipped with a distance function <span class="arithmatex">\(d: X\times X \to \rr\)</span> such that </p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(d(x, x) = 0\)</span> for all <span class="arithmatex">\(x \in X\)</span></p>
-</li>
-<li>
-<p>[2.] <span class="arithmatex">\(d(x, z) \le d(x, y) + d(y, z)\)</span> for all <span class="arithmatex">\(x, y, z \in X\)</span>.  </p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(d(x, x) = 0\)</span> for all <span class="arithmatex">\(x \in X\)</span></li>
+<li><strong>2.</strong> <span class="arithmatex">\(d(x, z) \le d(x, y) + d(y, z)\)</span> for all <span class="arithmatex">\(x, y, z \in X\)</span>.</li>
 </ul>
 <p>It turns out that, we may equivalently define such a space as a category enriched 
 over <span class="arithmatex">\(([0, \infty), +, 0)\)</span>.</p>
@@ -3113,18 +3103,12 @@ Moreover, we require that the interchange law be satisfied and that
 the morphisms form a category under the vertical composition given by <span class="arithmatex">\(\circ\)</span>.
 However, we can rephrase this as saying a category <span class="arithmatex">\(\cc\)</span> is a 2-category if </p>
 <ul>
-<li>
-<p>[1.] For each <span class="arithmatex">\(A, B \in \cc\)</span> we have that <span class="arithmatex">\((\hom_{\cc}(A, B), \circ)\)</span> is a category</p>
-</li>
-<li>
-<p>[2.] There exist a composition operator <span class="arithmatex">\(\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)\)</span></p>
-</li>
+<li><strong>1.</strong> For each <span class="arithmatex">\(A, B \in \cc\)</span> we have that <span class="arithmatex">\((\hom_{\cc}(A, B), \circ)\)</span> is a category</li>
+<li><strong>2.</strong> There exist a composition operator <span class="arithmatex">\(\circ : \hom(A, B) \times \hom(B, C) \to \hom(A, C)\)</span></li>
 </ul>
-<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<ul>
-<li>[3.] For each object <span class="arithmatex">\(A\)</span>, we have a functor <span class="arithmatex">\(i_A: 1 \to \hom(A, A)\)</span>, where <span class="arithmatex">\(1\)</span> 
-is the one object category with one morphism that is sent to <span class="arithmatex">\(1_A\)</span>.  </li>
-</ul>
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_8_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* <strong>3.</strong> For each object <span class="arithmatex">\(A\)</span>, we have a functor <span class="arithmatex">\(i_A: 1 \to \hom(A, A)\)</span>, where <span class="arithmatex">\(1\)</span> 
+is the one object category with one morphism that is sent to <span class="arithmatex">\(1_A\)</span>.</p>
 <p>Above, (3) is stupidly simple; but the reason we're framing it this way is to demonstrate 
 that a strict 2-category <span class="arithmatex">\(\cc\)</span> is the same thing as a category <span class="arithmatex">\(\cc\)</span> enriched over the monoidal 
 category <span class="arithmatex">\((**Cat**, \times, 1)\)</span>; the category of small categories whose 

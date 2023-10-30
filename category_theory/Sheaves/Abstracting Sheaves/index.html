@@ -3019,15 +3019,11 @@ of <span class="arithmatex">\(U\)</span>. Let us make a few nontrivial observati
 The reader is strongly encouraged to move forward with pen and paper in hand and to 
 draw lots of pictures.</p>
 <ul>
-<li>
-<p>A family of continuous functions <span class="arithmatex">\(h_i: U_i \to Y\)</span> can be 
+<li>A family of continuous functions <span class="arithmatex">\(h_i: U_i \to Y\)</span> can be 
 viewed as an element <span class="arithmatex">\((h_i)_{i \in \lambda}\)</span> of the 
-product <span class="arithmatex">\(\prod_{i \in \lambda} C(U_i)\)</span>.</p>
-</li>
-<li>
-<p>Using our open cover <span class="arithmatex">\(\mathcal{U}\)</span>, we can define
-for each pair <span class="arithmatex">\(k,\ell \in \lambda\)</span> the functions </p>
-</li>
+product <span class="arithmatex">\(\prod_{i \in \lambda} C(U_i)\)</span>.</li>
+<li>Using our open cover <span class="arithmatex">\(\mathcal{U}\)</span>, we can define
+for each pair <span class="arithmatex">\(k,\ell \in \lambda\)</span> the functions </li>
 </ul>
 <div class="arithmatex">\[
 p_{k,\ell}, 
@@ -3045,13 +3041,11 @@ p_{k, \ell}\Big((h_i)_{i \in \lambda}\Big)
 q_{k, \ell}\Big((h_i)_{i \in \lambda}\Big) = h_\ell\big|_{U_k \cap U_\ell}.
 \]</div>
 <p>With a lot of notation, a picture may help.</p>
-<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<ul>
-<li>The fact that the functions <span class="arithmatex">\(p_{k, \ell}, q_{k, \ell}\)</span> exist for all <span class="arithmatex">\(k, \ell \in \lambda\)</span> implies 
+<p><img src="../../../png/category_theory/chapter_10/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* The fact that the functions <span class="arithmatex">\(p_{k, \ell}, q_{k, \ell}\)</span> exist for all <span class="arithmatex">\(k, \ell \in \lambda\)</span> implies 
 the existence of <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> below which make the diagram commute. (This 
 is just applying the universal property of the product <span class="arithmatex">\(\prod_{i, j}F(U_i \cap U_j)\)</span>.)
-These two functions are rather important.</li>
-</ul>
+These two functions are rather important.</p>
 <p><img src="../../../png/category_theory/chapter_10/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>Now consider the set of all <span class="arithmatex">\((h_i)_{i \in \lambda} \in \prod_{i \in \lambda}F(U_i)\)</span> 
 such that they agree on overlaps; i.e., such that <span class="arithmatex">\(h_i\big|_{U_i \cap U_j} = 
@@ -3085,19 +3079,15 @@ as above. The equalizer diagram is below:</p>
 </span></p>
 <p>We remark two comments on this definition.</p>
 <ul>
-<li>
-<p>It is more important to understand the <em>philosophy</em> of the above 
+<li>It is more important to understand the <em>philosophy</em> of the above 
 definition rather than the literal text of it (of course, that's necessary).
 For example, a topological 
 space does in fact speak of families of sets which are closed under 
 arbitrary union and finite intersection. But that's a <em>literal</em> definition, 
-and not the philosophy of a topological space.</p>
-</li>
-<li>
-<p>There are many ways to state the definition of a sheaf. The one 
+and not the philosophy of a topological space.</li>
+<li>There are many ways to state the definition of a sheaf. The one 
 offered above is very powerful because it allows us to quickly 
-capture many useful situations and it is useful for proofs.</p>
-</li>
+capture many useful situations and it is useful for proofs.</li>
 </ul>
 <p>Now before we move on, we are going to briefly introduce a new concept. </p>
 <p><span style="display:block" class="definition">
@@ -3107,12 +3097,12 @@ is a set <span class="arithmatex">\(S\)</span> which is a subset of all morphism
 <div class="arithmatex">\[
 S \subset \{f \mid f: B \to C \text{ and } f \text{ is a morphism of }\cc \}
 \]</div>
-<p>with following property.
-\begin{description}
-\item[(SV1)] If <span class="arithmatex">\(f\)</span> is in <span class="arithmatex">\(S\)</span>, then <span class="arithmatex">\(f \circ h\)</span> is in <span class="arithmatex">\(S\)</span> for any composable 
-<span class="arithmatex">\(h\)</span>.
-\end{description}
-</span></p>
+<p>with following property.</p>
+<ul>
+<li><strong>(SV1)</strong> If <span class="arithmatex">\(f\)</span> is in <span class="arithmatex">\(S\)</span>, then <span class="arithmatex">\(f \circ h\)</span> is in <span class="arithmatex">\(S\)</span> for any composable 
+<span class="arithmatex">\(h\)</span>.</li>
+</ul>
+<p></span></p>
 <p>We will demonstrate an example of this concept, specifically to capture why we care 
 about it. </p>
 <p><span style="display:block" class="example">
@@ -3125,11 +3115,11 @@ simply the set </p>
 \]</div>
 <p>This set may actually be treated as the object set of the full subcategory <span class="arithmatex">\(**Open**(U)\)</span> 
 of <span class="arithmatex">\(**Open**(X)\)</span>.</p>
-<p>So, what is a sieve in this case? It is any <span class="arithmatex">\(S \subset \Omega_U\)</span> such that 
-\begin{description}
-\item[(SV1)] If <span class="arithmatex">\(V \in S\)</span>, <span class="arithmatex">\(V'\)</span> is open, and <span class="arithmatex">\(V' \subset V\)</span>, them <span class="arithmatex">\(V' \in S\)</span>. 
-\end{description}
-Take note that this is a bit of subtle concept; it's a very versatile definition. 
+<p>So, what is a sieve in this case? It is any <span class="arithmatex">\(S \subset \Omega_U\)</span> such that </p>
+<ul>
+<li><strong>(SV1)</strong> If <span class="arithmatex">\(V \in S\)</span>, <span class="arithmatex">\(V'\)</span> is open, and <span class="arithmatex">\(V' \subset V\)</span>, them <span class="arithmatex">\(V' \in S\)</span>.</li>
+</ul>
+<p>Take note that this is a bit of subtle concept; it's a very versatile definition. 
 For example, considering <span class="arithmatex">\(\rr^2\)</span> with its standard topology, the following 
 (blue) open sets create sieves on the same open set (the open disk at the origin).</p>
 <p><img src="../../../png/category_theory/chapter_10/tikz_code_2_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
@@ -3140,16 +3130,12 @@ also a sieve on <span class="arithmatex">\(U\)</span>.
 </span></p>
 <p>Some important facts about sieves on topological spaces that will be of interest to us.</p>
 <ul>
-<li>
-<p>Every open set <span class="arithmatex">\(V \subset U\)</span> corresponds to a sieve, which we call a <strong>principal sieve</strong>. 
+<li>Every open set <span class="arithmatex">\(V \subset U\)</span> corresponds to a sieve, which we call a <strong>principal sieve</strong>. 
 This sieve is simply the set of all open <span class="arithmatex">\(V'\)</span> contained in <span class="arithmatex">\(V\)</span>. In the previous example, 
-the weirdly shaped region inside the open disk at the origin is a principal sieve.</p>
-</li>
-<li>
-<p>Every open cover of <span class="arithmatex">\(\mathcal{U} = \{U_i\}_{i \in \lambda}\)</span>
+the weirdly shaped region inside the open disk at the origin is a principal sieve.</li>
+<li>Every open cover of <span class="arithmatex">\(\mathcal{U} = \{U_i\}_{i \in \lambda}\)</span>
 creates a <strong>covering sieve</strong> <span class="arithmatex">\(S_{\mathcal{U}}\)</span>. This sieve is the set of all open <span class="arithmatex">\(V\)</span> such that <span class="arithmatex">\(V \subset U_i\)</span> 
-for some <span class="arithmatex">\(i\)</span>, and where <span class="arithmatex">\(V' \subset V\)</span> implies <span class="arithmatex">\(V'\)</span> is also in the set. </p>
-</li>
+for some <span class="arithmatex">\(i\)</span>, and where <span class="arithmatex">\(V' \subset V\)</span> implies <span class="arithmatex">\(V'\)</span> is also in the set. </li>
 </ul>
 <p>Additionally, a covering sieve induces a (fairly stupid) functor
 <span class="arithmatex">\(\mathcal{S}\)</span>, where:</p>
@@ -3208,7 +3194,7 @@ we know that if <span class="arithmatex">\(V' \subset V\)</span>, then <span cla
 as follows. </p>
 <ul>
 <li>If <span class="arithmatex">\(V \in S_{\mathcal{U}}\)</span>, we write <span class="arithmatex">\(\theta_V: \{\bullet\} \to P(V)\)</span> 
-where <span class="arithmatex">\(\theta_V(\bullet) = h_V\)</span>, the unique <span class="arithmatex">\(h_V\)</span> we already know exists. </li>
+where <span class="arithmatex">\(\theta_V(\bullet) = h_V\)</span>, the unique <span class="arithmatex">\(h_V\)</span> we already know exists.</li>
 </ul>
 <p>This allows us to create the function </p>
 <div class="arithmatex">\[
@@ -3222,7 +3208,7 @@ our result.
 to speak of a sheaf more abstractly. Before we introduce the proposition, we make a few 
 comments.</p>
 <ul>
-<li>Let </li>
+<li>Let</li>
 </ul>
 <p><span style="display:block" class="proposition">
 Let <span class="arithmatex">\(P: **Open**(X)\op \to **Set**\)</span> be a presheaf. 

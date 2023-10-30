@@ -1,22 +1,22 @@
 \begin{center}
-            \def\nstrands{4}
-            \def\xcoord{0}
-            \begin{tikzpicture}
-                \pic[local bounding box=my braid,braid/.cd, 
-                number of strands = 3, 
-                thick,
-                name prefix=braid]
-                {braid={ s_1 s_2 s_1}}; 
-                \draw[thick] 
-                ([xshift=-1ex]my braid.north west) --  ([xshift=1ex]my braid.north east)
-                ([xshift=-1ex]my braid.south west) --  ([xshift=1ex]my braid.south east);
-                
-                \foreach \n in {1,...,3}{
-                    \node at (braid-\n-s)[yshift = 0.3cm] {\n};
-                } 
-                
-                \foreach \n in {1,...,3}{
-                    \node at (braid-\n-e)[yshift = -0.3cm] {\n};
-                } 
-            \end{tikzpicture}
-        \end{center}
+\def\nstrands{4}
+\def\xcoord{0}
+\begin{tikzpicture}
+\pic[local bounding box=my braid,braid/.cd, 
+number of strands = 3, 
+thick,
+name prefix=braid]
+{braid={ s_1 s_2 s_1}}; 
+\draw[thick] 
+([xshift=-1ex]my braid.north west) --  ([xshift=1ex]my braid.north east)
+([xshift=-1ex]my braid.south west) --  ([xshift=1ex]my braid.south east);
+
+\foreach \n in {1,...,3}{
+\node at (braid-\n-s)[yshift = 0.3cm] {\n};
+} 
+
+\foreach \n in {1,...,3}{
+\node at (braid-\n-e)[yshift = -0.3cm] {\n};
+} 
+\end{tikzpicture}
+\end{center}

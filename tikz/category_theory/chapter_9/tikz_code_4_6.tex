@@ -1,67 +1,67 @@
 \begin{center}
-    \def\bottomYCoord{8.5}
-    \begin{tikzpicture}
-        \draw[thick] (0.8,0) -- (8.2,0);
-        \draw[thick] (0.8,-\bottomYCoord) -- (8.2,-\bottomYCoord);
-        \node at (5, -4.2) {
-            \begin{tikzpicture}
-                \draw[RoyalBlue, thick] plot[smooth,domain=-1.45:1] (\x, {2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (5.2, -4.3) {
-            \begin{tikzpicture}
-                \draw[RoyalBlue, thick] plot[smooth,domain=-1.45:1] (\x, {2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (5.5, -4.4) {
-            \begin{tikzpicture}
-                \draw[RoyalBlue, thick] plot[smooth,domain=-1.35:1.1] (\x, {2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        
-        \node at (4.7, -3.9) {
-            \begin{tikzpicture}
-                \draw[line width = 2mm, white] plot[smooth,domain=-1:1.4] (\x, {-2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (4.5, -4) {
-            \begin{tikzpicture}
-                \draw[line width = 2mm, white] plot[smooth,domain=-1.05:1.4] (\x, {-2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (4.1, -4.6) {
-            \begin{tikzpicture}
-                \draw[line width = 2mm, white] plot[smooth,domain=-1.12:1.32] (\x, {-2*\x*\x*\x});
-            \end{tikzpicture}
-        };
+\def\bottomYCoord{8.5}
+\begin{tikzpicture}
+\draw[thick] (0.8,0) -- (8.2,0);
+\draw[thick] (0.8,-\bottomYCoord) -- (8.2,-\bottomYCoord);
+\node at (5, -4.2) {
+\begin{tikzpicture}
+\draw[RoyalBlue, thick] plot[smooth,domain=-1.45:1] (\x, {2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (5.2, -4.3) {
+\begin{tikzpicture}
+\draw[RoyalBlue, thick] plot[smooth,domain=-1.45:1] (\x, {2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (5.5, -4.4) {
+\begin{tikzpicture}
+\draw[RoyalBlue, thick] plot[smooth,domain=-1.35:1.1] (\x, {2*\x*\x*\x});
+\end{tikzpicture}
+};
 
-        
-        \node at (4.7, -3.9) {
-            \begin{tikzpicture}
-                \draw[Red, thick] plot[smooth,domain=-1:1.4] (\x, {-2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (4.5, -4) {
-            \begin{tikzpicture}
-                \draw[Red, thick] plot[smooth,domain=-1.05:1.4] (\x, {-2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (4.1, -4.6) {
-            \begin{tikzpicture}
-                \draw[Red, thick] plot[smooth,domain=-1.12:1.32] (\x, {-2*\x*\x*\x});
-            \end{tikzpicture}
-        };
-        \node at (5,-0.5){
-            \begin{tikzpicture}
-                \filldraw[white] (0,0) rectangle (9,0.8);
-            \end{tikzpicture}
-        };
-        \node at (5,-8){
-            \begin{tikzpicture}
-                \filldraw[white] (0,0) rectangle (9,0.8);
-            \end{tikzpicture}
-        };
-        \node at (4, -2.7) {$\vdots$};
-        \node at (5.7, -2.7) {$\vdots$};
-    \end{tikzpicture}
+\node at (4.7, -3.9) {
+\begin{tikzpicture}
+\draw[line width = 2mm, white] plot[smooth,domain=-1:1.4] (\x, {-2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (4.5, -4) {
+\begin{tikzpicture}
+\draw[line width = 2mm, white] plot[smooth,domain=-1.05:1.4] (\x, {-2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (4.1, -4.6) {
+\begin{tikzpicture}
+\draw[line width = 2mm, white] plot[smooth,domain=-1.12:1.32] (\x, {-2*\x*\x*\x});
+\end{tikzpicture}
+};
+
+
+\node at (4.7, -3.9) {
+\begin{tikzpicture}
+\draw[Red, thick] plot[smooth,domain=-1:1.4] (\x, {-2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (4.5, -4) {
+\begin{tikzpicture}
+\draw[Red, thick] plot[smooth,domain=-1.05:1.4] (\x, {-2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (4.1, -4.6) {
+\begin{tikzpicture}
+\draw[Red, thick] plot[smooth,domain=-1.12:1.32] (\x, {-2*\x*\x*\x});
+\end{tikzpicture}
+};
+\node at (5,-0.5){
+\begin{tikzpicture}
+\filldraw[white] (0,0) rectangle (9,0.8);
+\end{tikzpicture}
+};
+\node at (5,-8){
+\begin{tikzpicture}
+\filldraw[white] (0,0) rectangle (9,0.8);
+\end{tikzpicture}
+};
+\node at (4, -2.7) {$\vdots$};
+\node at (5.7, -2.7) {$\vdots$};
+\end{tikzpicture}
 \end{center}

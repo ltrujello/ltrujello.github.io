@@ -3023,19 +3023,15 @@ this  as <span class="arithmatex">\((G, \cdot)\)</span>.
 </span></p>
 <p><span style="display:block" class="remark"></p>
 <ul>
-<li>
-<p>Note that in order to have a group, we require a set <span class="arithmatex">\(G\)</span>, and
+<li>Note that in order to have a group, we require a set <span class="arithmatex">\(G\)</span>, and
 a binary operation. Hence we cannot say "the set <span class="arithmatex">\(X\)</span> is a group." This
 makes no sense, although as we will see, sometimes this is written
-when the operation is obvious or stated.</p>
-</li>
-<li>
-<p>It goes without really explicitly stating that 
+when the operation is obvious or stated.</li>
+<li>It goes without really explicitly stating that 
 <span class="arithmatex">\(\cdot\)</span> must also be <strong>closed</strong>; that is, it
 cannot map elements anywhere outside of <span class="arithmatex">\(G\)</span>. This is due to our 
 definition that <span class="arithmatex">\(\cdot : G \times G \to G\)</span>. That is, the
-codomain, or range, is always within <span class="arithmatex">\(G\)</span>.</p>
-</li>
+codomain, or range, is always within <span class="arithmatex">\(G\)</span>.</li>
 </ul>
 <p></span></p>
 <p><span style="display:block" class="definition">
@@ -3065,32 +3061,32 @@ clear about our operator. Buts for the most part we'll just write <span class="a
 on the elements of <span class="arithmatex">\(\mathbb{Z}\)</span> simply be standard addition. This is a
 group, which we'll demonstrate by showing that this set equipped with
 the addition operator
-satisfy the three axioms.
-\begin{description}
-\item[(1) Closed.] From elementary mathematics, we know that if
+satisfy the three axioms.</p>
+<ul>
+<li><strong>(1) Closed.</strong> From elementary mathematics, we know that if
 <span class="arithmatex">\(m, n \in \mathbb{Z}\)</span> then <span class="arithmatex">\(m + n \in \mathbb{Z}\)</span>. Thus this set
-is closed under addition.</p>
-<p>\item[(2) Associativity.] Observe that for any integers $n, m $
-and <span class="arithmatex">\(p\)</span>, </p>
+is closed under addition.</li>
+<li><strong>(2) Associativity.</strong> Observe that for any integers $n, m $
+and <span class="arithmatex">\(p\)</span>, </li>
+</ul>
 <div class="arithmatex">\[
 n + (m + p) = (n + m) + p.
 \]</div>
-<p>This is just a basic fact of elementary arithmetic.</p>
-<p>\item[(3) Identity.] Observe that for any <span class="arithmatex">\(n \in \mathbb{Z}\)</span>, </p>
+<p>This is just a basic fact of elementary arithmetic.
+* <strong>(3) Identity.</strong> Observe that for any <span class="arithmatex">\(n \in \mathbb{Z}\)</span>, </p>
 <div class="arithmatex">\[
 n + 0 = 0 + n = n.        
 \]</div>
-<p>Thus 0 is an appropriate choice of an identity. </p>
-<p>\item[(4) Inverse.] Consider any <span class="arithmatex">\(n \in \mathbb{N}\)</span>. Observe that 
+<p>Thus 0 is an appropriate choice of an identity.
+* <strong>(4) Inverse.</strong> Consider any <span class="arithmatex">\(n \in \mathbb{N}\)</span>. Observe that 
 (1) <span class="arithmatex">\(-n \in \mathbb{Z}\)</span> and (2) </p>
 <div class="arithmatex">\[
 n + (-n) = (-n) + n = 0.
 \]</div>
 <p>Thus every element has an inverse. Note we specified that <span class="arithmatex">\(-n \in
 \mathbb{Z}\)</span>, as we wanted to emphasize that not only <span class="arithmatex">\(-n\)</span> exists,
-but <span class="arithmatex">\(-n\)</span> is <em>in</em> our set <span class="arithmatex">\(\mathbb{Z}\)</span>.    </p>
-<p>\end{description}
-With all three properties satisfied, we have that <span class="arithmatex">\(\mathbb{Z}\)</span> is a
+but <span class="arithmatex">\(-n\)</span> is <em>in</em> our set <span class="arithmatex">\(\mathbb{Z}\)</span>.</p>
+<p>With all three properties satisfied, we have that <span class="arithmatex">\(\mathbb{Z}\)</span> is a
 group with addition. More generally, we'd say that <span class="arithmatex">\(\mathbb{Z}\)</span> is a
 group under addition, and denote it as <span class="arithmatex">\((\mathbb{Z}, +)\)</span>.
 \
@@ -3125,11 +3121,12 @@ versatile the definition of a group really is. </p>
 Consider the set of <span class="arithmatex">\(n \times n\)</span> matrices with determinant 1 and entries in <span class="arithmatex">\(\mathbb{R}\)</span>, where
 the multiplication is standard matrix multiplication. This is
 known as the <strong>Special Linear Group</strong> and is denoted
-<span class="arithmatex">\(SL_n(\mathbb{R})\)</span>. We'll show that this set is a group.
-\begin{description}
-\item[(1) Closed.] First we need to check if this operation is
+<span class="arithmatex">\(SL_n(\mathbb{R})\)</span>. We'll show that this set is a group.</p>
+<ul>
+<li><strong>(1) Closed.</strong> First we need to check if this operation is
 closed. That is, for <span class="arithmatex">\(A, B \in SL_n(\mathbb{R})\)</span>, is it true that
-<span class="arithmatex">\(AB \in SL_n(\mathbb{R})\)</span>?</p>
+<span class="arithmatex">\(AB \in SL_n(\mathbb{R})\)</span>?</li>
+</ul>
 <p>We know products of <span class="arithmatex">\(n \times n\)</span> matrices give
 back <span class="arithmatex">\(n \times n\)</span> matrices. So the real question is, 
 if two matrices both have
@@ -3144,17 +3141,17 @@ The answer is yes. From linear algebra, we know that </p>
 \det(AB) = \det(A)\det(B) = 1 \cdot 1 = 1.   
 \]</div>
 <p>Therefore, <span class="arithmatex">\(AB \in SL_n(\mathbb{R})\)</span>, since <span class="arithmatex">\(AB\)</span> is <span class="arithmatex">\(n \times n\)</span>
-and it has determinant 1.</p>
-<p>\item[(2) Associativity.] For matricies <span class="arithmatex">\(A, B, C \in
+and it has determinant 1.
+* <strong>(2) Associativity.</strong> For matricies <span class="arithmatex">\(A, B, C \in
 SL_n(\mathbb{R})\)</span>, we know from linear algebra that </p>
 <div class="arithmatex">\[
 (AB)C = A(BC).
 \]</div>
-<p>That is, matrix multiplication is associative.</p>
-<p>\item[(3) Identity.] Naturally, the identity matrix <span class="arithmatex">\(I\)</span> serves as
+<p>That is, matrix multiplication is associative.
+* <strong>(3) Identity.</strong> Naturally, the identity matrix <span class="arithmatex">\(I\)</span> serves as
 our group identity. This is because for any <span class="arithmatex">\(A \in
-SL_n(\mathbb{R})\)</span>, <span class="arithmatex">\(AI = IA = A\)</span>.</p>
-<p>\item[(4) Inverses.] For any <span class="arithmatex">\(A \in SL_n(\mathbb{R})\)</span>, <span class="arithmatex">\(\det(A) =
+SL_n(\mathbb{R})\)</span>, <span class="arithmatex">\(AI = IA = A\)</span>.
+* <strong>(4) Inverses.</strong> For any <span class="arithmatex">\(A \in SL_n(\mathbb{R})\)</span>, <span class="arithmatex">\(\det(A) =
 1\)</span>. Specifically observe that <span class="arithmatex">\(\det(A) \ne 0\)</span>. Therefore by the 
 invertible matrix theorem, <span class="arithmatex">\(A\)</span>
 has an inverse element <span class="arithmatex">\(A^{-1}\)</span> such that <span class="arithmatex">\(AA^{-1} = A^{-1}A = I\)</span>.
@@ -3169,9 +3166,8 @@ and that <span class="arithmatex">\(\det(I) = 1\)</span>. Thus </p>
 \det(AA^{-1}) = 1 \implies \det(A)\det(A^{-1}) = 1.
 \]</div>
 <p>But <span class="arithmatex">\(A \in SL_n(\mathbb{R})\)</span>, so <span class="arithmatex">\(\det(A) = 1\)</span>. Therefore,
-<span class="arithmatex">\(\det(A)^{-1} = 1\)</span>, so that <span class="arithmatex">\(A^{-1} \in SL_n(\mathbb{R})\)</span>. 
-\end{description}
-Thus <span class="arithmatex">\(SL_n(\mathbb{R})\)</span> does form a group. </p>
+<span class="arithmatex">\(\det(A)^{-1} = 1\)</span>, so that <span class="arithmatex">\(A^{-1} \in SL_n(\mathbb{R})\)</span>.</p>
+<p>Thus <span class="arithmatex">\(SL_n(\mathbb{R})\)</span> does form a group. </p>
 <p>\textcolor{MidnightBlue}{
 You may be wondeirng: Why did we focus on matrices with determinat
 1? Why not consider all matrices in general? 
@@ -3202,8 +3198,9 @@ multiplication. However, we can still form a group out of this!</p>
 \end{pmatrix}\)</span>, since this is the natural identity when it comes
 to matrix multiplication. However, this isn't in the above set,
 which may make you wonder if this really is a group.</p>
-<p>\begin{description}
-\item[(1) Closed.] First we show that this is closed. Let </p>
+<ul>
+<li><strong>(1) Closed.</strong> First we show that this is closed. Let </li>
+</ul>
 <div class="arithmatex">\[
 A = \begin{pmatrix}
 a &amp; a\\
@@ -3233,10 +3230,10 @@ b &amp; b
 \end{pmatrix}.
 \]</div>
 <p>Since <span class="arithmatex">\(2ab \in \mathbb{R}-\{0\}\)</span>, we see that <span class="arithmatex">\(AB \in G\)</span>.
-Hence, the set is closed.</p>
-<p>\item[(2) Associativity.] Again, from linear algebra, we
-already know that matrix multiplication is associative.</p>
-<p>\item[(3) Identity.] What should we make our identity? One can
+Hence, the set is closed.
+* <strong>(2) Associativity.</strong> Again, from linear algebra, we
+already know that matrix multiplication is associative.
+* <strong>(3) Identity.</strong> What should we make our identity? One can
 realize that </p>
 <div class="arithmatex">\[
 e= \begin{pmatrix}
@@ -3274,8 +3271,8 @@ eA =
 \end{pmatrix}
 = A.
 \]</div>
-<p>Hence <span class="arithmatex">\(Ae = A = eA\)</span>, so that it works correctly as an identity.</p>
-<p>\item[(4) Inverses.] For any <span class="arithmatex">\(A = 
+<p>Hence <span class="arithmatex">\(Ae = A = eA\)</span>, so that it works correctly as an identity.
+* <strong>(4) Inverses.</strong> For any <span class="arithmatex">\(A = 
 \begin{pmatrix}
 a &amp; a\\
 a &amp; a
@@ -3321,9 +3318,8 @@ a &amp; a
 \end{pmatrix}.
 \]</div>
 <p>Thus we see that for every <span class="arithmatex">\(A \in G\)</span>, there exists an element
-<span class="arithmatex">\(A^{-1} \in G\)</span> such that <span class="arithmatex">\(AA^{-1} = e = A^{-1}A\)</span>.
-\end{description}
-With all four axioms satisfied, we see that <span class="arithmatex">\(G\)</span> forms a group.</p>
+<span class="arithmatex">\(A^{-1} \in G\)</span> such that <span class="arithmatex">\(AA^{-1} = e = A^{-1}A\)</span>.</p>
+<p>With all four axioms satisfied, we see that <span class="arithmatex">\(G\)</span> forms a group.</p>
 <p><strong>Example.</strong> Consider an equilateral triangle. The set of rigid transformations
 which preserve symmetry form a group. This is actually just a
 special case of the more general <strong>Dihedral Group</strong> <span class="arithmatex">\(D_{2n}\)</span>.</p>
@@ -3345,48 +3341,37 @@ with are </p>
 <p><span style="display:block" class="theorem">
 Let <span class="arithmatex">\((G, \cdot)\)</span> be a group. Then the following hold:</p>
 <ul>
-<li>
-<p>[1.] The identity <span class="arithmatex">\(e \in G\)</span> is unique</p>
-</li>
-<li>
-<p>[2.] The inverse <span class="arithmatex">\(g^{-1} \in G\)</span> is unique for every <span class="arithmatex">\(g
-\in G\)</span>.</p>
-</li>
-<li>
-<p>[3.] For any <span class="arithmatex">\(g \in G\)</span>, <span class="arithmatex">\((g^{-1})^{-1} = g\)</span>. </p>
-</li>
-<li>
-<p>[4.] Let <span class="arithmatex">\(g, h \in G\)</span>. Then <span class="arithmatex">\((g \cdot h)^{-1} = h^{-1} \cdot g^{-1}\)</span>.   </p>
-</li>
-<li>
-<p>[5.] Let <span class="arithmatex">\(g_1, g_2, \dots, g_n \in G\)</span>. The product <span class="arithmatex">\(g_1
+<li><strong>1.</strong> The identity <span class="arithmatex">\(e \in G\)</span> is unique</li>
+<li><strong>2.</strong> The inverse <span class="arithmatex">\(g^{-1} \in G\)</span> is unique for every <span class="arithmatex">\(g
+\in G\)</span>.</li>
+<li><strong>3.</strong> For any <span class="arithmatex">\(g \in G\)</span>, <span class="arithmatex">\((g^{-1})^{-1} = g\)</span>.</li>
+<li><strong>4.</strong> Let <span class="arithmatex">\(g, h \in G\)</span>. Then <span class="arithmatex">\((g \cdot h)^{-1} = h^{-1} \cdot g^{-1}\)</span>.</li>
+<li><strong>5.</strong> Let <span class="arithmatex">\(g_1, g_2, \dots, g_n \in G\)</span>. The product <span class="arithmatex">\(g_1
 \cdot g_2 \cdot \vspace{0.01mm} \dots \vspace{0.01mm} \cdot
-g_n\)</span> is independent of its bracketing. </p>
-</li>
-<li>
-<p>[6.] Let <span class="arithmatex">\(g, h \in G\)</span>. There always exist <span class="arithmatex">\(x, y\)</span> such
-that <span class="arithmatex">\(g \cdot x = h\)</span> and <span class="arithmatex">\(h \cdot y = g\)</span>.</p>
-</li>
+g_n\)</span> is independent of its bracketing.</li>
+<li><strong>6.</strong> Let <span class="arithmatex">\(g, h \in G\)</span>. There always exist <span class="arithmatex">\(x, y\)</span> such
+that <span class="arithmatex">\(g \cdot x = h\)</span> and <span class="arithmatex">\(h \cdot y = g\)</span>.</li>
 </ul>
 <p></span></p>
-<p><span style="display:block" class="proof">
-\begin{description}
-\item[1.] Suppose there exists another identity 
+<p><span style="display:block" class="proof"></p>
+<ul>
+<li><strong>1.</strong> Suppose there exists another identity 
 element <span class="arithmatex">\(f\)</span>, different from <span class="arithmatex">\(e\)</span>, such that
-<span class="arithmatex">\(g \cdot f = f \cdot g = g\)</span> for all <span class="arithmatex">\(g \in G\)</span>. Then </p>
+<span class="arithmatex">\(g \cdot f = f \cdot g = g\)</span> for all <span class="arithmatex">\(g \in G\)</span>. Then </li>
+</ul>
 <div class="arithmatex">\[
 e = e \cdot f = f
 \]</div>
-<p>so that <span class="arithmatex">\(e = f\)</span>. Therefore, the identity element is unique.</p>
-<p>\item[2.] Suppose <span class="arithmatex">\(h_1\)</span> and <span class="arithmatex">\(h_2\)</span> are both inverses of <span class="arithmatex">\(g \in
+<p>so that <span class="arithmatex">\(e = f\)</span>. Therefore, the identity element is unique.
+* <strong>2.</strong> Suppose <span class="arithmatex">\(h_1\)</span> and <span class="arithmatex">\(h_2\)</span> are both inverses of <span class="arithmatex">\(g \in
 G\)</span>. Then by definition, <span class="arithmatex">\(h_2 \cdot g = e = g \cdot h_2\)</span> and <span class="arithmatex">\(h_1 \cdot g = e
 = g \cdot h_1\)</span>. Therefore, </p>
 <div class="arithmatex">\[
 h_1 = (h_2 \cdot g) \cdot h_1 = \underbrace{h_2 \cdot (g \cdot h_2)}_{\text{by associativity of G}}
 = h_2 \cdot e = h_2.
 \]</div>
-<p>Thus <span class="arithmatex">\(h_1 = h_2\)</span>, so that the inverse of <span class="arithmatex">\(g\)</span> os unique. </p>
-<p>\item[3.] Observe that for any <span class="arithmatex">\(g \in G\)</span>,</p>
+<p>Thus <span class="arithmatex">\(h_1 = h_2\)</span>, so that the inverse of <span class="arithmatex">\(g\)</span> os unique.
+* <strong>3.</strong> Observe that for any <span class="arithmatex">\(g \in G\)</span>,</p>
 <div class="arithmatex">\[
 g^{-1}\cdot (g^{-1})^{-1} = e
 \]</div>
@@ -3400,51 +3385,53 @@ g \cdot (g^{-1} \cdot (g^{-1})^{-1}) = g \cdot e
 <div class="arithmatex">\[\begin{align*}
 e \cdot (g^{-1})^{-1} = g \implies (g^{-1})^{-1} = g
 \end{align*}\]</div>
-<p>as desired.</p>
-<p>\item[4.] Note that <span class="arithmatex">\((g \cdot h)^{-1} \cdot (g \cdot h) = e.\)</span>
+<p>as desired.
+* <strong>4.</strong> Note that <span class="arithmatex">\((g \cdot h)^{-1} \cdot (g \cdot h) = e.\)</span>
 Therefore,</p>
 <div class="arithmatex">\[
 (g \cdot h)^{-1} \cdot (g \cdot h) = e \implies (g \cdot h)^{-1} \cdot g = h^{-1}
 \implies (g \cdot h)^{-1} = h^{-1} \cdot g^{-1}
 \]</div>
 <p>by first multiplying on the right by <span class="arithmatex">\(g^{-1}\)</span> and then by
-<span class="arithmatex">\(h^{-1}\)</span>, which proves the formula.</p>
-<p>\item[5.] We can demonstrate this by induction. First write
+<span class="arithmatex">\(h^{-1}\)</span>, which proves the formula.
+* <strong>5.</strong> We can demonstrate this by induction. First write
 our proposition as</p>
-<div class="arithmatex">\[
+<p>$$
 P(n)
 =
 \begin{cases}
-\text{For any } g_1, g_2, \dots, g_n \in G\text{ we have that }\\
+\text{For any } g_1, g_2, \dots, g_n \in G\text{ we have that }\
 g_1\cdot g_2 \cdots g_n \text{ is independent of its bracketing. }
 \end{cases}
-\]</div>
-<p>\begin{description}
-\item[Base Case.]
-For the base case <span class="arithmatex">\(n = 1\)</span>, there is nothing to check.
-\item[Inductive Step.]
-Now suppose that <span class="arithmatex">\(P(n)\)</span> is true for all positive integers
-<span class="arithmatex">\(n \le n_0\)</span>. Then let <span class="arithmatex">\(g_1, g_2, \dots g_{n+1}
-\in G\)</span> and consider </p>
-<div class="arithmatex">\[
+$$
+    * <strong>Base Case.</strong> For the base case <span class="arithmatex">\(n = 1\)</span>, there is nothing to check.
+    * <strong>Inductive Step.</strong> Now suppose that <span class="arithmatex">\(P(n)\)</span> is true for all positive integers
+    <span class="arithmatex">\(n \le n_0\)</span>. Then let <span class="arithmatex">\(g_1, g_2, \dots g_{n+1}
+    \in G\)</span> and consider </p>
+<div class="language-text highlight"><pre><span></span><code>$$
 g_1\cdot g_2 \cdots \cdot g_{n+1}.
-\]</div>
-<p>Observe that we clearly have that </p>
-<div class="arithmatex">\[
+$$
+
+Observe that we clearly have that
+
+$$
 g_1\cdot g_2 \cdots \cdot g_{n+1}. = (g_1\cdot g_2 \cdots \cdot g_{i})\cdot(g_{i+1} \cdots \cdot g_{n+1}).
-\]</div>
-<p>for all <span class="arithmatex">\(1 \le i le n + 1\)</span>. Hence we can apply the
-inductive hyptohesis to each of the subproducts <span class="arithmatex">\((g_1\cdot
-g_2 \cdots \cdot g_{i})\)</span> and <span class="arithmatex">\((g_{i+1} \cdots \cdot
-g_{n+1})\)</span> generated
+$$
+
+for all $1 \le i le n + 1$. Hence we can apply the
+inductive hyptohesis to each of the subproducts $(g_1\cdot
+g_2 \cdots \cdot g_{i})$ and $(g_{i+1} \cdots \cdot
+g_{n+1})$ generated
 in each case. Since this exhausts all possible
 subproducts, and the values do not change by our inductive
-hypothesis, we see that <span class="arithmatex">\(P(n + 1)\)</span> is true. Hence <span class="arithmatex">\(P(n)\)</span>
-holds for all <span class="arithmatex">\(n \in \mathbb{N}\)</span>. 
-\end{description}</p>
-<p>\item[6.] Observe that if we have the equation <span class="arithmatex">\(g \cdot x =
+hypothesis, we see that $P(n + 1)$ is true. Hence $P(n)$
+holds for all $n \in \mathbb{N}$.
+</code></pre></div>
+<ul>
+<li><strong>6.</strong> Observe that if we have the equation <span class="arithmatex">\(g \cdot x =
 h\)</span>, then we can multiply both sides on the right by <span class="arithmatex">\(g^{-1}\)</span>
-to observe that </p>
+to observe that </li>
+</ul>
 <div class="arithmatex">\[
 (g^{-1} \cdot g) \cdot x = g^{-1} \cdot h \implies x = g^{-1} \cdot h.
 \]</div>
@@ -3452,9 +3439,8 @@ to observe that </p>
 \cdot h\)</span>) and because <span class="arithmatex">\(G\)</span> is closed under <span class="arithmatex">\(\cdot\)</span>, we have
 that <span class="arithmatex">\(x \in G\)</span>. Thus a solution exists in <span class="arithmatex">\(G\)</span>. The proof for
 the existence of <span class="arithmatex">\(y \in G\)</span> such that <span class="arithmatex">\(h \cdot y = g\)</span> is
-exactly the same.
-\end{description}
-</span></p>
+exactly the same.</p>
+<p></span></p>
 <p>In our study of group theory, many of the groups we'll deal with will
 actually turn out to be finite. We'll also be interested in breaking
 down the structures of finite groups (a lot of things can happen). 
@@ -3510,17 +3496,17 @@ an associative, binary operation on <span class="arithmatex">\(G\)</span>, so it
 associative on elements of <span class="arithmatex">\(H\)</span>. Thus we only need to prove
 closedness, existence of identity and inverses.</p>
 <p>By the definition of <span class="arithmatex">\(H\)</span>, for all <span class="arithmatex">\(x, y \in H\)</span>, <span class="arithmatex">\(xy^{-1} \in
-H\)</span>. 
-\begin{description}
-\item[Identity.] Let <span class="arithmatex">\(x \in H\)</span>. Then clearly <span class="arithmatex">\(xx^{-1} = e \in H\)</span>. Thus <span class="arithmatex">\(H\)</span>
-has the identity.
-\item[Inverses.] Since <span class="arithmatex">\(x, e \in H\)</span>, we see that <span class="arithmatex">\(ex^{-1} =
-x^{-1} \in H\)</span>. Thus for all <span class="arithmatex">\(x \in H\)</span>, <span class="arithmatex">\(x^{-1} \in H\)</span>.
-\item[Closedness.] Now let <span class="arithmatex">\(y \in H\)</span>; hence, <span class="arithmatex">\(y^{-1} \in H\)</span>, as just proven. Then
+H\)</span>. </p>
+<ul>
+<li><strong>Identity.</strong> Let <span class="arithmatex">\(x \in H\)</span>. Then clearly <span class="arithmatex">\(xx^{-1} = e \in H\)</span>. Thus <span class="arithmatex">\(H\)</span>
+has the identity.</li>
+<li><strong>Inverses.</strong> Since <span class="arithmatex">\(x, e \in H\)</span>, we see that <span class="arithmatex">\(ex^{-1} =
+x^{-1} \in H\)</span>. Thus for all <span class="arithmatex">\(x \in H\)</span>, <span class="arithmatex">\(x^{-1} \in H\)</span>.</li>
+<li><strong>Closedness.</strong> Now let <span class="arithmatex">\(y \in H\)</span>; hence, <span class="arithmatex">\(y^{-1} \in H\)</span>, as just proven. Then
 <span class="arithmatex">\(x(y^{-1})^{-1} = xy\in H\)</span>, so that <span class="arithmatex">\(H\)</span> is closed under
-multiplication of its elements.
-\end{description} 
-Therefore <span class="arithmatex">\(H\)</span> is (1) a group
+multiplication of its elements.</li>
+</ul>
+<p>Therefore <span class="arithmatex">\(H\)</span> is (1) a group
 and (2) a subset of <span class="arithmatex">\(G\)</span> so that <span class="arithmatex">\(H \le G\)</span>, as desired.
 </span></p>
 <p>It turns out the intersection of two subgroups is still a
@@ -3599,16 +3585,17 @@ Therefore, an immediate corollay of this theorem is that <span class="arithmatex
 also a subgroup of <span class="arithmatex">\(G\)</span>!}</p>
 <p><span style="display:block" class="proof">
 Let <span class="arithmatex">\(G\)</span> be a group and <span class="arithmatex">\(S \subset G\)</span>. To show that <span class="arithmatex">\(C_G(S) \le
-G\)</span>, we can use the subgroup test. 
-\begin{description}
-\item[Nonempty.] First we have to show the set is
+G\)</span>, we can use the subgroup test. </p>
+<ul>
+<li><strong>Nonempty.</strong> First we have to show the set is
 nonempty. But note that for any <span class="arithmatex">\(S\)</span>, <span class="arithmatex">\(e \in C_G(S)\)</span> 
-since <span class="arithmatex">\(gs = sg\)</span> for any <span class="arithmatex">\(s \in S\)</span>.</p>
-<p>\item[Inverses.] We now show that if <span class="arithmatex">\(x, y \in C_G(S)\)</span>
+since <span class="arithmatex">\(gs = sg\)</span> for any <span class="arithmatex">\(s \in S\)</span>.</li>
+<li><strong>Inverses.</strong> We now show that if <span class="arithmatex">\(x, y \in C_G(S)\)</span>
 then so is <span class="arithmatex">\(xy^{-1}\)</span>. We know that for all <span class="arithmatex">\(s \in S\)</span>, <span class="arithmatex">\(xs
 = sx\)</span> and <span class="arithmatex">\(ys = sy\)</span>. Therefore <span class="arithmatex">\(s = y^{-1}sy\)</span> and <span class="arithmatex">\(s =
 ysy^{-1}\)</span> by solving for <span class="arithmatex">\(s\)</span> in the last equation.
-Plugging this into the first equation with <span class="arithmatex">\(x\)</span>, we get </p>
+Plugging this into the first equation with <span class="arithmatex">\(x\)</span>, we get </li>
+</ul>
 <div class="arithmatex">\[
 xs = sx \implies x(y^{-1}sy) = (ysy^{-1})x 
 \implies xy^{-1}sy = ysy^{-1}x.
@@ -3621,8 +3608,7 @@ xy^{-1}s = ysy^{-1}xy^{-1}
 \]</div>
 <p>where in the second step we used the fact that <span class="arithmatex">\(ys = sy\)</span>.
 Thus <span class="arithmatex">\(xy^{-1} \in C_G(S)\)</span>, so by subgroup test we have
-that <span class="arithmatex">\(C_G(S) \le G\)</span>. 
-\end{description}</p>
+that <span class="arithmatex">\(C_G(S) \le G\)</span>.</p>
 <p>The proof for <span class="arithmatex">\(N_G(S)\)</span> is the exact same; simply replace <span class="arithmatex">\(s\)</span>
 with <span class="arithmatex">\(S\)</span>.
 </span></p>

@@ -1,24 +1,24 @@
 \begin{center}
-            \begin{tikzcd}[row sep = 1.4cm]
-                \displaystyle{\left(X_n \otimes \bigotimes_{i=1}^{n}X_{a_i} \right)
-                \otimes\left( \bigotimes_{i=1}^{n}\bigotimes_{j=1}^{a_i}X_{k_{i,j}} \right)}
-                \arrow[rr, "\gamma"]
-                \arrow[d, swap, "\mu_{a_1, \dots, a_n}\otimes 1"]
-                &[-2cm]
-                &[-2cm]
-                \displaystyle{X_n \otimes \bigotimes_{i=1}^{n}\left( X_{a_i}\bigotimes_{j=1}^{a_i}X_{k_{i,j}} \right)}
-                \arrow[d, "1_{X_n}\otimes \mu \otimes \cdots \otimes \mu"]
-                \\
-                \displaystyle{X_{a_1 + \cdots + a_n}\otimes\left( \bigotimes_{i = 1}^{n}\bigotimes_{j=1}^{a_i}X_{k_{i,j}} \right)}
-                \arrow[dr, swap, "\mu_{(k_{1,1} + \cdots + k_{1, a_1}), \dots, (k_{n,1} + \cdots + k_{n, a_n})}"]
-                &
-                &
-                \displaystyle{X_n \otimes X_{k_{1,1} + \cdots + k_{1, a_1}}\otimes 
-                \cdots \otimes X_{k_{n,1} + \cdots + k_{n, a_n}}}
-                \arrow[dl, "\mu_{(k_{1,1} + \cdots + k_{1,a_1}) + \cdots + (k_{n,1} + \cdots + k_{n,a_n})}"]
-                \\
-                &
-                X_{k_{1,1} + \cdots + k_{1, a_1} + \cdots + k_{n, 1} + \cdots + k_{n, a_n}}
-                &
-            \end{tikzcd}
-        \end{center}
+\begin{tikzcd}[row sep = 1.4cm]
+\displaystyle{\left(X_n \otimes \bigotimes_{i=1}^{n}X_{a_i} \right)
+\otimes\left( \bigotimes_{i=1}^{n}\bigotimes_{j=1}^{a_i}X_{k_{i,j}} \right)}
+\arrow[rr, "\gamma"]
+\arrow[d, swap, "\mu_{a_1, \dots, a_n}\otimes 1"]
+&[-2cm]
+&[-2cm]
+\displaystyle{X_n \otimes \bigotimes_{i=1}^{n}\left( X_{a_i}\bigotimes_{j=1}^{a_i}X_{k_{i,j}} \right)}
+\arrow[d, "1_{X_n}\otimes \mu \otimes \cdots \otimes \mu"]
+\\
+\displaystyle{X_{a_1 + \cdots + a_n}\otimes\left( \bigotimes_{i = 1}^{n}\bigotimes_{j=1}^{a_i}X_{k_{i,j}} \right)}
+\arrow[dr, swap, "\mu_{(k_{1,1} + \cdots + k_{1, a_1}), \dots, (k_{n,1} + \cdots + k_{n, a_n})}"]
+&
+&
+\displaystyle{X_n \otimes X_{k_{1,1} + \cdots + k_{1, a_1}}\otimes 
+\cdots \otimes X_{k_{n,1} + \cdots + k_{n, a_n}}}
+\arrow[dl, "\mu_{(k_{1,1} + \cdots + k_{1,a_1}) + \cdots + (k_{n,1} + \cdots + k_{n,a_n})}"]
+\\
+&
+X_{k_{1,1} + \cdots + k_{1, a_1} + \cdots + k_{n, 1} + \cdots + k_{n, a_n}}
+&
+\end{tikzcd}
+\end{center}

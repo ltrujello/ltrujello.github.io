@@ -3172,15 +3172,9 @@ writing <span class="arithmatex">\(\sigma_{k-1}, \sigma_{k - 2}, \dots\)</span> 
 we can repeat this process for each blue line.</p>
 <p>So to do this in general, we need to answer three questions:</p>
 <ul>
-<li>
-<p>How far are all of our red strands from the left? </p>
-</li>
-<li>
-<p>How many red strands are there?</p>
-</li>
-<li>
-<p>How many blue strands are there?</p>
-</li>
+<li>How far are all of our red strands from the left?</li>
+<li>How many red strands are there?</li>
+<li>How many blue strands are there?</li>
 </ul>
 <p>If we can answer those three questions, then we can describe exactly what happens 
 in terms of generators using formula (\ref{sigma_1_cabling}).</p>
@@ -3339,18 +3333,12 @@ k_{\phi(\sigma_{i_1}\cdots\sigma_{i_{(j-1)}}, (i_j+1))}
 </span></p>
 <p>The three quantities are the three answers to our original questions: </p>
 <ul>
-<li>
-<p>After applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>,
-how many strands come before the cable <span class="arithmatex">\(i_j\)</span>, relative to the left? <span class="arithmatex">\(p_j\)</span>.</p>
-</li>
-<li>
-<p>How many strands are in the <span class="arithmatex">\(i_j\)</span>-th cable after applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>? 
-<span class="arithmatex">\(q_j\)</span>.</p>
-</li>
-<li>
-<p>How many strands are in the <span class="arithmatex">\((i_j+1)\)</span>-th after applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>? 
-<span class="arithmatex">\(r_j\)</span>.</p>
-</li>
+<li>After applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>,
+how many strands come before the cable <span class="arithmatex">\(i_j\)</span>, relative to the left? <span class="arithmatex">\(p_j\)</span>.</li>
+<li>How many strands are in the <span class="arithmatex">\(i_j\)</span>-th cable after applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>? 
+<span class="arithmatex">\(q_j\)</span>.</li>
+<li>How many strands are in the <span class="arithmatex">\((i_j+1)\)</span>-th after applying <span class="arithmatex">\(\sigma_{i_1}\dots\sigma_{i_{j-1}}\)</span>? 
+<span class="arithmatex">\(r_j\)</span>.</li>
 </ul>
 <p><span style="display:block" class="example">
 We can apply this to our previous example. 
@@ -3372,7 +3360,7 @@ In this case we see that we get five permutations because we have five generator
 </thead>
 <tbody>
 <tr>
-<td>[0.5ex]                           1</td>
+<td>[0.5ex]   1</td>
 <td>1</td>
 <td>1</td>
 <td>k_1 = 3$</td>
@@ -3415,7 +3403,7 @@ In this case we see that we get five permutations because we have five generator
 </tr>
 </tbody>
 </table>
-<p>\end{center}    This then gives us the product </p>
+<p>\end{center}This then gives us the product </p>
 <div class="arithmatex">\[\begin{gather*}
 \left(\prod_{m = p_1}^{p_1 + (r_1-1)}
 \sigma_{q_1 + (m-1)}
@@ -3546,35 +3534,35 @@ tells us how our cables are swapped around.
 </thead>
 <tbody>
 <tr>
-<td>[1ex]                           1</td>
+<td>[1ex]   1</td>
 <td>1</td>
 <td>1</td>
 <td><span class="arithmatex">\(k_1 = 2\)</span></td>
 <td><span class="arithmatex">\(k_2 = 3\)</span></td>
 </tr>
 <tr>
-<td>[.1ex]                           2</td>
+<td>[.1ex]   2</td>
 <td>2</td>
 <td><span class="arithmatex">\(1 + k_2 = 4\)</span></td>
 <td><span class="arithmatex">\(k_1 =2\)</span></td>
 <td><span class="arithmatex">\(k_3 = 4\)</span></td>
 </tr>
 <tr>
-<td>[.1ex]                           3</td>
+<td>[.1ex]   3</td>
 <td>3</td>
 <td><span class="arithmatex">\(1 + k_2 + k_3 = 8\)</span></td>
 <td><span class="arithmatex">\(k_1 = 2\)</span></td>
 <td><span class="arithmatex">\(k_4 = 5\)</span></td>
 </tr>
 <tr>
-<td>[.1ex]                           4</td>
+<td>[.1ex]   4</td>
 <td>2</td>
 <td><span class="arithmatex">\(1 + k_2 = 4\)</span></td>
 <td><span class="arithmatex">\(k_3 =4\)</span></td>
 <td><span class="arithmatex">\(k_4 = 5\)</span></td>
 </tr>
 <tr>
-<td>.1ex]                           5</td>
+<td>.1ex]   5</td>
 <td>1</td>
 <td><span class="arithmatex">\(1\)</span></td>
 <td><span class="arithmatex">\(k_2 = 3\)</span></td>
@@ -3589,7 +3577,7 @@ tells us how our cables are swapped around.
 </tr>
 </tbody>
 </table>
-<p>\end{center}    This then generates the products </p>
+<p>\end{center}This then generates the products </p>
 <div class="arithmatex">\[\begin{gather*}
 \left(\prod_{m = 1}^{3}\sigma_{m + 2}^{-1}\sigma^{-1}_m\right)
 \left( \prod_{m = 4}^{7}\sigma^{-1}_{(m+2)-1}\sigma_m^{-1} \right)

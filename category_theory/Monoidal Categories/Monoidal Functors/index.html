@@ -3018,12 +3018,10 @@ a natural morphism </li>
 \]</div>
 <p>such that for any third object <span class="arithmatex">\(C\)</span>, the diagram below commutes. (Note that 
 we suppress the subscripts for clarity.) </p>
-<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<ul>
-<li>There exists a unique morphism <span class="arithmatex">\(\epsilon: J \to F(I)\)</span> such that, for any object <span class="arithmatex">\(A\)</span> of <span class="arithmatex">\(\cc\)</span>, 
+<p><img src="../../../png/category_theory/chapter_7/tikz_code_2_0.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
+* There exists a unique morphism <span class="arithmatex">\(\epsilon: J \to F(I)\)</span> such that, for any object <span class="arithmatex">\(A\)</span> of <span class="arithmatex">\(\cc\)</span>, 
 the diagrams below commute. (Again, 
-we suppress the subscripts for clarity.)</li>
-</ul>
+we suppress the subscripts for clarity.)</p>
 <p><img src="../../../png/category_theory/chapter_7/tikz_code_2_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
 <p>We say the <span class="arithmatex">\(F\)</span> is 
 <strong>strong</strong> if <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\epsilon\)</span> are isomorphisms and
@@ -3076,13 +3074,13 @@ Hence, we cannot regard this functor as strong or strict monoidal.
 </span></p>
 <p><span style="display:block" class="example">
 The category of pointed topological spaces <span class="arithmatex">\(**Top**^*\)</span> is the category 
-where 
-\begin{description}
-\item[Objects.] Pairs <span class="arithmatex">\((X, x_0)\)</span> with <span class="arithmatex">\(X\)</span> a topological space and <span class="arithmatex">\(x_0 \in X\)</span> 
-\item[Morphisms.] A morphism <span class="arithmatex">\(f:(X, x_0) \to (Y, y_0)\)</span> is given by a continuous function 
-<span class="arithmatex">\(f: X \to Y\)</span> such that <span class="arithmatex">\(f(x_0) = y_0\)</span>.<br />
-\end{description}
-This category is what allows us to characterize the fundamental group of a topological 
+where </p>
+<ul>
+<li><strong>Objects.</strong> Pairs <span class="arithmatex">\((X, x_0)\)</span> with <span class="arithmatex">\(X\)</span> a topological space and <span class="arithmatex">\(x_0 \in X\)</span></li>
+<li><strong>Morphisms.</strong> A morphism <span class="arithmatex">\(f:(X, x_0) \to (Y, y_0)\)</span> is given by a continuous function 
+<span class="arithmatex">\(f: X \to Y\)</span> such that <span class="arithmatex">\(f(x_0) = y_0\)</span>.</li>
+</ul>
+<p>This category is what allows us to characterize the fundamental group of a topological 
 space as a functor </p>
 <div class="arithmatex">\[
 \pi_1: **Top**^* \to **Grp**  
@@ -3134,15 +3132,15 @@ so that the fundamental group functor <span class="arithmatex">\(\pi_1\)</span> 
 </span></p>
 <p><span style="display:block" class="example">
 Recall that a <strong>Lie algebra</strong> is a vector space <span class="arithmatex">\(\mathfrak{g}\)</span> over a field <span class="arithmatex">\(k\)</span> 
-with a bilinear function <span class="arithmatex">\([-,-]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}\)</span> such that 
-\begin{description}
-\item[Antisymmetry.] For all <span class="arithmatex">\(x, y \in \mathfrak{g}\)</span>, <span class="arithmatex">\([x, y] = -[y, x]\)</span>
-\item[Jacobi Identity.] For all <span class="arithmatex">\(x, y, z \in \mathfrak{g}\)</span> we have that </p>
+with a bilinear function <span class="arithmatex">\([-,-]: \mathfrak{g} \times \mathfrak{g} \to \mathfrak{g}\)</span> such that </p>
+<ul>
+<li><strong>Antisymmetry.</strong> For all <span class="arithmatex">\(x, y \in \mathfrak{g}\)</span>, <span class="arithmatex">\([x, y] = -[y, x]\)</span></li>
+<li><strong>Jacobi Identity.</strong> For all <span class="arithmatex">\(x, y, z \in \mathfrak{g}\)</span> we have that </li>
+</ul>
 <div class="arithmatex">\[
 [x, [y, z]] + [y, [z, x]] + [z, [x,y]] = 0.
 \]</div>
-<p>\end{description}
-For every Lie algebra <span class="arithmatex">\(\mathfrak{g}\)</span>, we may create the <strong>universal enveloping algebra</strong> 
+<p>For every Lie algebra <span class="arithmatex">\(\mathfrak{g}\)</span>, we may create the <strong>universal enveloping algebra</strong> 
 <span class="arithmatex">\(U(\mathfrak{g})\)</span>. This is the algebra constructed as 
 follows: If <span class="arithmatex">\(T(\mathfrak{g})\)</span> is the tensor algebra of <span class="arithmatex">\(\mathfrak{g}\)</span>, i.e., </p>
 <div class="arithmatex">\[
@@ -3178,14 +3176,12 @@ then <span class="arithmatex">\(U(\mathfrak{g}_1 \oplus \mathfrak{g}_2) \cong U(
 One can use Corollary V.2.3(a) to show that this isomorphism is natural in both <span class="arithmatex">\(\mathfrak{g}_1\)</span> and 
 <span class="arithmatex">\(\mathfrak{g}_2\)</span>. We let this morphism be our required isomorphism</li>
 </ul>
-<div class="arithmatex">\[
-\phi_{\mathfrak{g}_1, \mathfrak{g}_2}: U(\mathfrak{g}_1\oplus \mathfrak{g}_2)  
+<p>$$
+\phi_{\mathfrak{g}_1, \mathfrak{g}_2}: U(\mathfrak{g}_1\oplus \mathfrak{g}_2)<br />
 \to U(\mathfrak{g}_1)\otimes U(\mathfrak{g}_2).
-\]</div>
-<ul>
-<li>Note that <span class="arithmatex">\(U(\{\bullet\}) = k\)</span>. Therefore, we let 
-<span class="arithmatex">\(\epsilon: k \to k\)</span> be the identity. </li>
-</ul>
+$$
+* Note that <span class="arithmatex">\(U(\{\bullet\}) = k\)</span>. Therefore, we let 
+<span class="arithmatex">\(\epsilon: k \to k\)</span> be the identity.</p>
 <p>As the associators and unitors are simple for monoidal categories with cartesian 
 and tensor products, it is not difficult to show that the required diagrams commute. 
 In this case, what is more difficult is obtaining naturality in <span class="arithmatex">\(\phi\)</span>, although this is 

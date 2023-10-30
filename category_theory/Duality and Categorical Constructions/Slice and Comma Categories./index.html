@@ -3019,14 +3019,14 @@ discussions in category theory.</p>
 Let <span class="arithmatex">\(\cc\)</span> be a category and suppose <span class="arithmatex">\(\textcolor{Purple}{A}\)</span> is an object of <span class="arithmatex">\(\cc\)</span>.
 We define the **slice category (with <span class="arithmatex">\(\textcolor{Purple**{A}\)</span> over <span class="arithmatex">\(\cc\)</span>)}, 
 denoted <span class="arithmatex">\((\textcolor{Purple}{A} \downarrow\cc)\)</span>, as the category </p>
-<p>\begin{description}
-\item[Objects.] All pairs <span class="arithmatex">\((C, f: \textcolor{Purple}{A} \to C)\)</span> 
+<ul>
+<li><strong>Objects.</strong> All pairs <span class="arithmatex">\((C, f: \textcolor{Purple}{A} \to C)\)</span> 
 for all <span class="arithmatex">\(C \in  \cc\)</span>  and morphims <span class="arithmatex">\(f:\textcolor{Purple}{A} \to C\)</span>.
 In other words, the objects are all morphisms in <span class="arithmatex">\(\cc\)</span> which <em>originate</em>
-at <span class="arithmatex">\(\textcolor{Purple}{A}\)</span>. </p>
-<p>\item[Morphisms.]
-For two objects <span class="arithmatex">\((C, f:\textcolor{Purple}{A}\to C)\)</span> and <span class="arithmatex">\((C', f': \textcolor{Purple}{A} \to C')\)</span>, 
-we define </p>
+at <span class="arithmatex">\(\textcolor{Purple}{A}\)</span>.</li>
+<li><strong>Morphisms.</strong> For two objects <span class="arithmatex">\((C, f:\textcolor{Purple}{A}\to C)\)</span> and <span class="arithmatex">\((C', f': \textcolor{Purple}{A} \to C')\)</span>, 
+we define </li>
+</ul>
 <div class="arithmatex">\[
 \textcolor{NavyBlue}{h} : (C, f) \to (C', f')
 \]</div>
@@ -3038,8 +3038,7 @@ the homset more directly:</p>
 =
 \{ h: C \to C' \in \cc \mid f' = h \circ f \}.
 \]</div>
-<p>\end{description}
-</span>
+<p></span>
 At this point you may be a bit overloaded with notation if this is the first 
 time you've seen this before. You need to figure out how this is a category (what's the identity? composition?)
 and ultimately why you should care about this category.
@@ -3089,14 +3088,14 @@ T: **DMan**^* \to **Vect**
 <p>where <span class="arithmatex">\(**DMan**^*\)</span>, which consists of pairs <span class="arithmatex">\((M, p)\)</span> with <span class="arithmatex">\(p \in M\)</span>,
 is the category of pointed smooth manifolds. This now motivates the next two examples.</p>
 <p><span style="display:block" class="example">
-Consider the category <span class="arithmatex">\(**Top**^*\)</span> where 
-\begin{description}
-\item[Objects.] The objects are pairs <span class="arithmatex">\((X, x_0)\)</span> with <span class="arithmatex">\(X\)</span> a topological space 
-and <span class="arithmatex">\(x_0 \in X\)</span>.
-\item[Morphisms.] A morphism <span class="arithmatex">\(f: (X, x_0) \to (Y, y_0)\)</span> is any continuous function 
-<span class="arithmatex">\(f: X \to Y\)</span> such that <span class="arithmatex">\(y_0 = f(x_0)\)</span>.<br />
-\end{description}
-Recall that the one point set <span class="arithmatex">\(\{\bullet\}\)</span> is trivially a topological space. 
+Consider the category <span class="arithmatex">\(**Top**^*\)</span> where </p>
+<ul>
+<li><strong>Objects.</strong> The objects are pairs <span class="arithmatex">\((X, x_0)\)</span> with <span class="arithmatex">\(X\)</span> a topological space 
+and <span class="arithmatex">\(x_0 \in X\)</span>.</li>
+<li><strong>Morphisms.</strong> A morphism <span class="arithmatex">\(f: (X, x_0) \to (Y, y_0)\)</span> is any continuous function 
+<span class="arithmatex">\(f: X \to Y\)</span> such that <span class="arithmatex">\(y_0 = f(x_0)\)</span>.</li>
+</ul>
+<p>Recall that the one point set <span class="arithmatex">\(\{\bullet\}\)</span> is trivially a topological space. 
 Then we can form the category <span class="arithmatex">\((\{\bullet\}\downarrow **Top**)\)</span>. The claim now is that </p>
 <div class="arithmatex">\[
 (\{\bullet\}\downarrow **Top**) 
@@ -3124,15 +3123,9 @@ as claimed.
 </span></p>
 <p>The above example generalizes to many pointed categories, some of which are </p>
 <ul>
-<li>
-<p><span class="arithmatex">\(**DMan**^* \cong (\bullet \downarrow **DMan**)\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(**Set**^* \cong (\bullet \downarrow **Set**)\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(**Grp**^* \cong (\bullet \downarrow **Grp**)\)</span></p>
-</li>
+<li><span class="arithmatex">\(**DMan**^* \cong (\bullet \downarrow **DMan**)\)</span></li>
+<li><span class="arithmatex">\(**Set**^* \cong (\bullet \downarrow **Set**)\)</span></li>
+<li><span class="arithmatex">\(**Grp**^* \cong (\bullet \downarrow **Grp**)\)</span></li>
 </ul>
 <p>We now briefly comment for any slice category <span class="arithmatex">\((A \downarrow \cc)\)</span> 
 built from a category <span class="arithmatex">\(\cc\)</span>, we can construct a "projection" functor </p>
@@ -3149,23 +3142,23 @@ limits. </p>
 another category. </p>
 <p><span style="display:block" class="definition">
 Let <span class="arithmatex">\(\cc\)</span> be a category, and <span class="arithmatex">\(\textcolor{Purple}{B}\)</span> an object of <span class="arithmatex">\(\cc\)</span>. Then
-we define the <em><em>category <span class="arithmatex">\(\textcolor{Purple**{B}\)</span> under <span class="arithmatex">\(\cc\)</span>}, denoted as
-<span class="arithmatex">\((\cc \downarrow \textcolor{Purple}{B})\)</span> as follows.
-\begin{description}
-\item[Objects.] All 
+we define the **category <span class="arithmatex">\(\textcolor{Purple**{B}\)</span> under <span class="arithmatex">\(\cc\)</span>}, denoted as
+<span class="arithmatex">\((\cc \downarrow \textcolor{Purple}{B})\)</span> as follows.</p>
+<ul>
+<li><strong>Objects.</strong> All 
 pairs <span class="arithmatex">\((C, f)\)</span> where <span class="arithmatex">\(f: C \to \textcolor{Purple}{B}\)</span>
-is a morphism in <span class="arithmatex">\(\cc\)</span>. That is, the objects are morphisms </em>ending</em> 
-at <span class="arithmatex">\(\textcolor{Purple}{B}\)</span>. </p>
-<p>\item[Morphisms.] For two objects <span class="arithmatex">\((C, f: C  \to \textcolor{Purple}{B})\)</span>
-and <span class="arithmatex">\((C', f': C'  \to \textcolor{Purple}{B})\)</span>, we define</p>
+is a morphism in <span class="arithmatex">\(\cc\)</span>. That is, the objects are morphisms <em>ending</em> 
+at <span class="arithmatex">\(\textcolor{Purple}{B}\)</span>.</li>
+<li><strong>Morphisms.</strong> For two objects <span class="arithmatex">\((C, f: C  \to \textcolor{Purple}{B})\)</span>
+and <span class="arithmatex">\((C', f': C'  \to \textcolor{Purple}{B})\)</span>, we define</li>
+</ul>
 <div class="arithmatex">\[ 
 \textcolor{NavyBlue}{h}: (C, f) \to (C', f')
 \]</div>
 <p>to be a morphism between the objects to correspond  to  a morphism
 <span class="arithmatex">\(\textcolor{NavyBlue}{h}:C \to C'\)</span> in <span class="arithmatex">\(\cc\)</span> 
-such that <span class="arithmatex">\(f = f' \circ h\)</span>.<br />
-\end{description}
-</span>
+such that <span class="arithmatex">\(f = f' \circ h\)</span>.</p>
+<p></span>
 Composition of functions <span class="arithmatex">\(\textcolor{NavyBlue}{h}: (f, C) \to (f', C')\)</span> and
 <span class="arithmatex">\(\textcolor{NavyBlue}{h'}: (f', C') \to (f'', C'')\)</span> exists whenever 
 <span class="arithmatex">\(\textcolor{NavyBlue}{h'} \circ \textcolor{NavyBlue}{h}\)</span> is
@@ -3210,7 +3203,7 @@ we mean vector, group, etc. That is, we often want topological spaces to paramet
 a family of vector spaces or groups in a coherent way. 
 \begin{center}</p>
 <p><img src="../../../png/category_theory/chapter_2/mobius_sphere.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/></p>
-<p>\end{center} 
+<p>\end{center}
 For example, on the above left we can map the Möbius strip onto <span class="arithmatex">\(S_1\)</span> in such a way that the 
 inverse image of each <span class="arithmatex">\(x \in S_1\)</span> is homeomorphic to the interval <span class="arithmatex">\([0, 1]\)</span>. Hence, 
 each point of <span class="arithmatex">\(x \in S_1\)</span> carries the information of a topological space, specifically one of <span class="arithmatex">\([0, 1]\)</span>.</p>
@@ -3233,14 +3226,10 @@ bundles of <span class="arithmatex">\(X\)</span></strong>.</p>
 Let <span class="arithmatex">\(E, X\)</span> be topological spaces. Recall that a vector bundle 
 consists of a continuous map <span class="arithmatex">\(\pi: E \to X\)</span> such that</p>
 <ul>
-<li>
-<p>[1.] <span class="arithmatex">\(\pi^{-1}(x)\)</span> is a finite-dimensional 
-vector space over some field <span class="arithmatex">\(k\)</span></p>
-</li>
-<li>
-<p>[2.] For each <span class="arithmatex">\(p \in X\)</span>, there is an open neighborhood <span class="arithmatex">\(U_{\alpha}\)</span> 
-and a homeomorphism </p>
-</li>
+<li><strong>1.</strong> <span class="arithmatex">\(\pi^{-1}(x)\)</span> is a finite-dimensional 
+vector space over some field <span class="arithmatex">\(k\)</span></li>
+<li><strong>2.</strong> For each <span class="arithmatex">\(p \in X\)</span>, there is an open neighborhood <span class="arithmatex">\(U_{\alpha}\)</span> 
+and a homeomorphism </li>
 </ul>
 <div class="arithmatex">\[
 \phi_{\alpha}: U_{\alpha} \times \rr^{n} \isomarrow \pi^{-1}(U_{\alpha})
@@ -3284,20 +3273,20 @@ vector bundle.
 Let <span class="arithmatex">\(\cc\)</span> be a category, <span class="arithmatex">\(C\)</span> an object of <span class="arithmatex">\(\cc\)</span> and <span class="arithmatex">\(F: 
 \bb \to \cc\)</span> a functor. Then we define the <strong>category <span class="arithmatex">\(C\)</span>
 over the functor <span class="arithmatex">\(F\)</span></strong>, denoted as <span class="arithmatex">\((C \downarrow F)\)</span>,
-as follows. 
-\begin{description}
-\item[Objects.] All
+as follows. </p>
+<ul>
+<li><strong>Objects.</strong> All
 pairs <span class="arithmatex">\((f, B)\)</span> where <span class="arithmatex">\(B \in \text{Obj}(\bb)\)</span> such
-that </p>
+that </li>
+</ul>
 <div class="arithmatex">\[
 f : C \to F(B)
 \]</div>
-<p>where <span class="arithmatex">\(f\)</span> is a morphism in <span class="arithmatex">\(\cc\)</span>. </p>
-<p>\item[Morphisms.] The morphisms <span class="arithmatex">\(h: (f, B) \to (f', B')\)</span> of
+<p>where <span class="arithmatex">\(f\)</span> is a morphism in <span class="arithmatex">\(\cc\)</span>.
+* <strong>Morphisms.</strong> The morphisms <span class="arithmatex">\(h: (f, B) \to (f', B')\)</span> of
 <span class="arithmatex">\((C \downarrow F)\)</span> are defined whenever there exists a
-<span class="arithmatex">\(h:B \to B'\)</span> in <span class="arithmatex">\(\bb\)</span> such that <span class="arithmatex">\(f' = F(h) \circ f\)</span>. 
-\end{description}
-</span>
+<span class="arithmatex">\(h:B \to B'\)</span> in <span class="arithmatex">\(\bb\)</span> such that <span class="arithmatex">\(f' = F(h) \circ f\)</span>.</p>
+<p></span>
 Representing this visually, we have that </p>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_5_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Composition of the morphisms in <span class="arithmatex">\((C \downarrow F)\)</span> simply
@@ -3311,23 +3300,23 @@ Let <span class="arithmatex">\(\bb, \cc, \dd\)</span> be categories and let <spa
 and <span class="arithmatex">\(G:\cc \to \dd\)</span> functors. That is, </p>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_5_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Then we define the <strong>comma category</strong> <span class="arithmatex">\((F \downarrow
-G)\)</span> as follows. 
-\begin{description}
-\item[Objects.] All pairs <span class="arithmatex">\((B, C, f)\)</span>
+G)\)</span> as follows. </p>
+<ul>
+<li><strong>Objects.</strong> All pairs <span class="arithmatex">\((B, C, f)\)</span>
 where <span class="arithmatex">\(B, C\)</span> are objects of <span class="arithmatex">\(\bb, \cc\)</span>, respectively,
-such that  </p>
+such that  </li>
+</ul>
 <div class="arithmatex">\[
 f : F(B) \to G(C)
 \]</div>
-<p>where <span class="arithmatex">\(f\)</span> is a morphism in <span class="arithmatex">\(\dd\)</span>. </p>
-<p>\item[Morphisms.] All pairs <span class="arithmatex">\((h, k) : (B,
+<p>where <span class="arithmatex">\(f\)</span> is a morphism in <span class="arithmatex">\(\dd\)</span>.
+* <strong>Morphisms.</strong> All pairs <span class="arithmatex">\((h, k) : (B,
 C, f) \to (B', C', f')\)</span> where <span class="arithmatex">\(h: B \to B'\)</span> and <span class="arithmatex">\(k: C
 \to C'\)</span> are morphisms in <span class="arithmatex">\(\bb, \cc\)</span>, respectively, such that \</p>
 <div class="arithmatex">\[
 f' \circ F(h) = G(k) \circ f.
 \]</div>
-<p>\end{description}
-</span>
+<p></span>
 As usual, we can represent this visually via diagrams:</p>
 <p><img src="../../../png/category_theory/chapter_2/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 where in the above picture we have that <span class="arithmatex">\((h, k):(B, C, f) \to
@@ -3340,24 +3329,15 @@ k)\)</span> and <span class="arithmatex">\((h', k')\)</span> as <span class="ari
 <p>{\large <strong>Exercises</strong>
 \vspace{0.5cm}}</p>
 <ul>
-<li>
-<p>[<strong>1.</strong>]
-Let <span class="arithmatex">\(\cc\)</span> be a category with initial and terminal objects <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(T\)</span>. 
-\begin{itemize}</p>
-</li>
-<li>
-<p>[<em>i</em>.]
-Show that <span class="arithmatex">\((\cc \downarrow T) \cong \cc\)</span>.</p>
-</li>
-<li>
-<p>[<em>i</em>.]
-Also show that <span class="arithmatex">\((I \downarrow \cc) \cong \cc\)</span>. </p>
-</li>
+<li><strong><em>*1.</em></strong>* Let <span class="arithmatex">\(\cc\)</span> be a category with initial and terminal objects <span class="arithmatex">\(I\)</span> and <span class="arithmatex">\(T\)</span>.<ul>
+<li><strong><em>i</em>.</strong> Show that <span class="arithmatex">\((\cc \downarrow T) \cong \cc\)</span>.</li>
+<li><strong><em>i</em>.</strong> Also show that <span class="arithmatex">\((I \downarrow \cc) \cong \cc\)</span>.</li>
 </ul>
-<p>\item[<strong>2.</strong>]
-Consider again a group homomorphism <span class="arithmatex">\(\phi: G \to H\)</span>, but this time 
+</li>
+<li><strong><em>*2.</em></strong>* Consider again a group homomorphism <span class="arithmatex">\(\phi: G \to H\)</span>, but this time 
 consider the image <span class="arithmatex">\(\im(\phi) = \{\phi(g) \mid g \in G\}\)</span>. 
-Show that this defines a functor </p>
+Show that this defines a functor </li>
+</ul>
 <div class="arithmatex">\[
 \im(-): (G \downarrow **Grp**) \to **Grp**
 \]</div>
@@ -3369,87 +3349,59 @@ h: (H, \phi: G \to H) \to (K, \phi: G \to K)
 <span class="arithmatex">\(h|_{\text{Im}(\phi)}: \im(\phi) \to \im(\psi)\)</span>. </p>
 <p>In some sense, this is the "opposite" construction of the 
 kernel functor we introduced. Instead of taking the kernel of a group homomorphism, 
-we can take its image.</p>
-<p>\item[<strong>3.</strong>]
-Here we prove that the processes of imposing the <strong>induced topology</strong> 
-and the <strong>coinduced topology</strong> are functorial. Moreover, the correct language 
-to describe this is via slice categories. </p>
-<ul>
-<li>[<em>i</em>.]
-Let <span class="arithmatex">\(X\)</span> be a set and <span class="arithmatex">\((Y, \tau)\)</span> a topological space. 
-Denote <span class="arithmatex">\(U: **Top** \to **Set**\)</span> 
-to be the forgetful functor. Given any function <span class="arithmatex">\(f: X \to U(Y)\)</span>,
-we can use the topology on <span class="arithmatex">\(Y\)</span> to impose a topology <span class="arithmatex">\(\tau_X\)</span> on <span class="arithmatex">\(X\)</span>:</li>
-</ul>
-<div class="arithmatex">\[
+we can take its image.
+* <strong><em>*3.</em></strong><em> Here we prove that the processes of imposing the </em><em>induced topology</em><em> 
+and the </em><em>coinduced topology</em><em> are functorial. Moreover, the correct language 
+to describe this is via slice categories.
+    * </em><strong>i*.</strong> Let <span class="arithmatex">\(X\)</span> be a set and <span class="arithmatex">\((Y, \tau)\)</span> a topological space. 
+    Denote <span class="arithmatex">\(U: **Top** \to **Set**\)</span> 
+    to be the forgetful functor. Given any function <span class="arithmatex">\(f: X \to U(Y)\)</span>,
+    we can use the topology on <span class="arithmatex">\(Y\)</span> to impose a topology <span class="arithmatex">\(\tau_X\)</span> on <span class="arithmatex">\(X\)</span>:</p>
+<div class="language-text highlight"><pre><span></span><code>$$
 \tau_X = \{U \subset X \mid f(U) \text{ is open in }Y\}.
-\]</div>
-<p>This is called the <strong>induced topology on</strong> <span class="arithmatex">\(X\)</span>.<br />
-So, we see that (by abuse of notation) the function <span class="arithmatex">\(f: X \to U(Y)\)</span> 
-is now a continuous function <span class="arithmatex">\(f: (X, \tau_X) \to (Y, \tau_Y)\)</span>. </p>
-<p>Prove that this process forms a functor <span class="arithmatex">\(\text{Ind}: (**Top**\downarrow U(Y)) \to (**Top**\downarrow Y)\)</span>. </p>
-<ul>
-<li>[<em>ii</em>.] 
-This time, let <span class="arithmatex">\((X, \tau)\)</span> be a topological space, <span class="arithmatex">\(Y\)</span> a set, 
-and consider a function <span class="arithmatex">\(f: U(X) \to Y\)</span>. We can similarly impose a 
-topology <span class="arithmatex">\(\tau_Y\)</span> on <span class="arithmatex">\(Y\)</span>:</li>
-</ul>
-<div class="arithmatex">\[
+$$
+
+This is called the **induced topology on** $X$.  
+So, we see that (by abuse of notation) the function $f: X \to U(Y)$ 
+is now a continuous function $f: (X, \tau_X) \to (Y, \tau_Y)$.
+
+Prove that this process forms a functor $\text{Ind}: (**Top**\downarrow U(Y)) \to (**Top**\downarrow Y)$.
+* ***ii*.** This time, let $(X, \tau)$ be a topological space, $Y$ a set, 
+and consider a function $f: U(X) \to Y$. We can similarly impose a 
+topology $\tau_Y$ on $Y$:
+
+$$
 \tau_Y= \{ V \subset Y \mid f^{-1}(V) \text{ is open in }X \}.
-\]</div>
-<p>This is called  the <strong>coinduced topology on</strong> <span class="arithmatex">\(Y\)</span>. 
-Show that this is also a functorial process. </p>
-<p>\item[<strong>4.</strong>]</p>
+$$
+
+This is called  the **coinduced topology on** $Y$. 
+Show that this is also a functorial process.
+</code></pre></div>
 <ul>
 <li>
-<p>[<em>i</em>.]
-Let <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span> be topological spaces with <span class="arithmatex">\(\phi: X \to Y\)</span> a continuous function.
+<p><strong><em>*4.</em></strong>*</p>
+<ul>
+<li><strong><em>i</em>.</strong> Let <span class="arithmatex">\(X\)</span>, <span class="arithmatex">\(Y\)</span> be topological spaces with <span class="arithmatex">\(\phi: X \to Y\)</span> a continuous function.
 Show that this induces a functor <span class="arithmatex">\(\phi_*: (**Top**\downarrow X) \to (**Top**\downarrow Y)\)</span> 
-where on objects <span class="arithmatex">\((f: E \to X) \mapsto (\phi \circ f: E \to Y)\)</span>. </p>
-</li>
-<li>
-<p>[<em>ii</em>.]
-Let <span class="arithmatex">\(\cc\)</span> be a category. Show that we generalize (<em>i</em>) to define a functor </p>
-</li>
+where on objects <span class="arithmatex">\((f: E \to X) \mapsto (\phi \circ f: E \to Y)\)</span>.</li>
+<li><strong><em>ii</em>.</strong> Let <span class="arithmatex">\(\cc\)</span> be a category. Show that we generalize (<em>i</em>) to define a functor </li>
 </ul>
 <div class="arithmatex">\[
 (\cc \downarrow -): \cc \to **Cat**
 \]</div>
-<p>where <span class="arithmatex">\(A \mapsto (\cc \downarrow A)\)</span>.</p>
-<ul>
-<li>
-<p>[<em>ii</em>.]
-Let <span class="arithmatex">\(**Cat**_*\)</span> be the <strong>pointed category of categories</strong> 
-which we describe as 
-\begin{description}</p>
-</li>
-<li>
-<p>[Objects.] All pairs <span class="arithmatex">\((\cc, A)\)</span> with <span class="arithmatex">\(\cc\)</span> a category and <span class="arithmatex">\(A \in C\)</span></p>
-</li>
-<li>
-<p>[Morphisms.] Functors <span class="arithmatex">\(F\)</span> which preserve the objects.<br />
-\end{description}
-Can we overall describe the construction of a slice category as a functor</p>
-</li>
-</ul>
-<div class="arithmatex">\[
-(-  \downarrow -): **Cat**_* \to **Cat**    
-\]</div>
-<p>where <span class="arithmatex">\((\cc,  A) \mapsto  (\cc \downarrow A)\)</span>? </p>
-<p>\item[<strong>5.</strong>]
-In this exercise we'll see that slice categories describe intervals for thin categories.</p>
-<ul>
-<li>
-<p>[<em>i</em>.] Regard <span class="arithmatex">\(\mathbb{R}\)</span> as 
+<p>where <span class="arithmatex">\(A \mapsto (\cc \downarrow A)\)</span>.
+* <strong><em>ii</em>.</strong> Let <span class="arithmatex">\(**Cat**_*\)</span> be the <strong>pointed category of categories</strong> 
+which we describe as
+    * <strong>Objects.</strong> All pairs <span class="arithmatex">\((\cc, A)\)</span> with <span class="arithmatex">\(\cc\)</span> a category and <span class="arithmatex">\(A \in C\)</span>
+    * <strong>Morphisms.</strong> Functors <span class="arithmatex">\(F\)</span> which preserve the objects.
+* <strong><em>*5.</em></strong><em> In this exercise we'll see that slice categories describe intervals for thin categories.
+* </em><strong>i<em>.** Regard <span class="arithmatex">\(\mathbb{R}\)</span> as 
 a thin category, specifically as one with a partial order. For a given  <span class="arithmatex">\(a \in \rr\)</span>, 
-describe the thin category <span class="arithmatex">\((a \downarrow  \mathbb{R})\)</span>.</p>
-</li>
-<li>
-<p>[<em>ii</em>.] Suppose <span class="arithmatex">\(P\)</span> is a partial order (so that <span class="arithmatex">\(p \le p'\)</span> and <span class="arithmatex">\(p' \le p\)</span> implies 
+describe the thin category <span class="arithmatex">\((a \downarrow  \mathbb{R})\)</span>.
+* </em></strong>ii<em>.</em>* Suppose <span class="arithmatex">\(P\)</span> is a partial order (so that <span class="arithmatex">\(p \le p'\)</span> and <span class="arithmatex">\(p' \le p\)</span> implies 
 <span class="arithmatex">\(p = p'\)</span>). Describe in general the categories <span class="arithmatex">\((p \downarrow P)\)</span> and <span class="arithmatex">\((P \downarrow p)\)</span>.</p>
 </li>
 </ul>
-<p>\end{itemize}</p>
 <script src="../../mathjax_helper.js"></script>
 
 

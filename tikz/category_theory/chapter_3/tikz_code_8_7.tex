@@ -1,29 +1,29 @@
 \begin{center}
-    \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-        E \arrow[r, "v_1"] \arrow[d, swap, "v_3"]
-        & A\arrow[d, blue, "f"]\\
-        B \arrow[r, swap, red, "g"]
-        & C
-    \end{tikzcd}
-    = 
-    \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-        E \arrow[r, "u_1 \circ f'"] \arrow[d, swap, "u_3 \circ f' "]
-        & A\arrow[d, blue, "f"]\\
-        B \arrow[r, swap, red, "g"]
-        & C
-    \end{tikzcd}
-    =
-    \begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
-        E\arrow[drr, "v_1", bend left = 20]
-        \arrow[ddr, swap, "v_2", bend right = 20]
-        \arrow[dr, dashed, "f'"]
-        &&
-        \\[-10pt]
-        &
-        D \arrow[r, "u_1"] \arrow[d, swap, "u_3"]
-        & A\arrow[d, blue, "f"]\\
-        &
-        B \arrow[r, swap, red, "g"]
-        & C
-    \end{tikzcd}.
-    \end{center}
+\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+E \arrow[r, "v_1"] \arrow[d, swap, "v_3"]
+& A\arrow[d, blue, "f"]\\
+B \arrow[r, swap, red, "g"]
+& C
+\end{tikzcd}
+= 
+\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+E \arrow[r, "u_1 \circ f'"] \arrow[d, swap, "u_3 \circ f' "]
+& A\arrow[d, blue, "f"]\\
+B \arrow[r, swap, red, "g"]
+& C
+\end{tikzcd}
+=
+\begin{tikzcd}[column sep = 1.4cm, row sep = 1.4cm]
+E\arrow[drr, "v_1", bend left = 20]
+\arrow[ddr, swap, "v_2", bend right = 20]
+\arrow[dr, dashed, "f'"]
+&&
+\\[-10pt]
+&
+D \arrow[r, "u_1"] \arrow[d, swap, "u_3"]
+& A\arrow[d, blue, "f"]\\
+&
+B \arrow[r, swap, red, "g"]
+& C
+\end{tikzcd}.
+\end{center}
