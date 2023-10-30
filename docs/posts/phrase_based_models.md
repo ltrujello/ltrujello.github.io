@@ -390,17 +390,19 @@ We keep whichever future cost is lower.
 To compute the future cost of a hypothesis, we need to look at what foreign words have not yet been translated by a
 hypothesis. For example, consider this hypothesis.
 
-<!-- show to eat hypothesis -->
+
+<img src="/png/phase_based_models/future_cost_hypo.png" style="margin: 0 auto; display: block; width: 85%;"/> 
 
 In this example, we see that the foreign words `antes de la fiesta` have yet to be translated by our hypothesis. 
 However, we can have slightly more complicated hypotheses that jump around the sentence. For example, consider 
 this hypothesis.
 
-<!-- to eat before -->
+<img src="/png/phase_based_models/future_cost_hypo_2.png" style="margin: 0 auto; display: block; width: 70%;"/> 
 
 We see that there are actually 2 phrases of foreign words that have yet to be translated. 
 
-In any case, what is clear is that for any hypothesis, there exist a certain number of phrases that have yet to be translated. 
+In any case, what is clear is that for any hypothesis, there exist a certain number of untranslated phrases in the foreign 
+sentence that need to be translated via additional hypotheses. 
 Therefore, the way we compute the future cost is as follows:
 For each remaining untranslated foreign phrase, we 
 
@@ -412,5 +414,7 @@ For each remaining untranslated foreign phrase, we
 
 This estimation of the future cost actually ignores the distortion cost, but experiments show that that's mostly okay to ignore.
 Additionally, ignoring the contribution of the distortion also allows us to precompute all of these values into a 
-**future cost table**. Then at decoding time, we can reference this table at any time to lookup 
+**future cost table**. Then at decoding time, we can reference this table at any time to estimate 
+the future cost translation for a hypothesis
+
 
