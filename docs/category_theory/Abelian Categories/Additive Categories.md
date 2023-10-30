@@ -36,9 +36,9 @@ Then for any objects $A, B \in \cc$, the following are equivalent
 
 Moreover, there exists an isomorphism 
 
-\[
+$$
 \prod_{i \in \lambda} A_i \isomarrow \coprod_{i \in \lambda}A_i
-\]
+$$
  
 for any objects $A_i \in \cc$. 
 </span>

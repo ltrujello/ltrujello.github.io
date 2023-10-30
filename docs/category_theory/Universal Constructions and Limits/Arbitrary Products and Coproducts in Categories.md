@@ -25,11 +25,11 @@ Note that
 a functor $F: \dd_n \to \cc$ is one which simply picks out $n$ different objects $A_1$, $A_2, 
 \dots$, $A_n$ of $\cc$:
 
-\[
+$$
 F(\bullet_1) = A_1, \quad F(\bullet_2) = A_2, \quad  \dots,
 \quad
 F(\bullet_n) = A_n.
-\]
+$$
 
 This category allows us to make the following definition. 
 
@@ -41,9 +41,9 @@ is the functor defined as follows.
 * **On Objects.** For an object $C$, we have that $\Delta_n(C) = (\overbrace{C, C, \dots, C}^{n\text{-many copies}})$.
 * **On Morphisms.** For a morphism $f: A \to B$ in $\cc$, we have that  
 
-\[
+$$
 \Delta_n(f: A \to B) = (f, f, \dots, f): \Delta_n(A) \to \Delta_n(B).
-\]
+$$
 
 </span>
 The diagonal  functor is also sometimes informally called the 
@@ -55,34 +55,34 @@ make some observations.
 we can interpret the object $\Delta_n(C) \in \cc^n$ 
 *as a functor*
 
-\[
+$$
 \Delta_n(C): \mathcal{D}_n \to \cc
-\]
+$$
 
 where $\Delta_n(C)$ sends $\bullet_i$ to  $C$ for all $i= 1, 2, \dots, n$.
 * **(**2**)** Thus, we may also regard the $n$-th diagonal functor as a functor as below.
 
-\[
+$$
 \Delta_n: \cc \to \text{Fun}(\mathcal{D}_n, \cc) \qquad C \mapsto (\Delta_n(C) :\mathcal{D}_n \to \cc).
-\]
+$$
 
 In this interpretation, every morphism $f:C \to C'$ is interpreted as a natural 
 transformation $\Delta_n(f): \Delta_n(C) \to \Delta_n(C')$.
 * **(**3**)** Consider a functor $F: \dd_n \to \cc$ such that $F(\bullet_i) = A_i \in \cc$. 
 For each $C \in \cc$, a natural transformation 
 
-\[
+$$
 \eta: \Delta_n(C) \to F
-\]
+$$
 
 will simply correspond to $n$-many morphisms $\eta_1, \dots, 
 \eta_n$ where
 
-\[
+$$
 \eta_i: \Delta_n(C)(\bullet_i) \to  F(\bullet_i) 
 \implies 
 \eta_i: C \to A_i.
-\]
+$$
 
 \end{definition}
 With this notation clarified, we now can propose  our  definition of a  product. 
@@ -116,9 +116,9 @@ $(C, i: F \to \Delta_n(C))$ is universal from \hyperref[definition:universal_mor
 By Observation (**3**) as above, if $\displaystyle p: \Delta_n\left( \prod_{i=1}^{n}A_i \right) \to F$
 is a natural transformation, then it corresponds to $n$-many morphisms 
 
-\[
+$$
 p_k: \prod_{i=1}^{n}A_i \to A_k \qquad k = 1, 2, \dots, n
-\]
+$$
 
 This matches our intuition: A product of $n$-objects should always have 
 $n$-many morphisms between the product and each of its factors. 
@@ -126,9 +126,9 @@ $n$-many morphisms between the product and each of its factors.
 Similarly, a natural transformation $i: F \to \Delta_n\left( \coprod_{i = 1}^{n}A_i \right)$ corresponds to 
 $n$-many morphisms 
 
-\[
+$$
 i_k: A_k \to \coprod_{i = 1}^{n}A_i \qquad k = 1, 2, \dots, n
-\]
+$$
 
 which again matches our intuition: A coproduct of $n$-objects should have 
 $n$-many morphisms between each of its factors and the coproduct.
@@ -187,16 +187,16 @@ such results, we require the following lemma.
 Let $\cc$ be a locally small category, and let $\{A_i\}_{i \in \lambda}$ 
 be objects of $\cc$. Suppose their product exists in $\cc$. Then the functor 
 
-\[
+$$
 \prod_{i \in \lambda}\hom_{\cc}(-, A_i): \cc \to **Set**
-\]
+$$
 
 which sends an object $C$ to the set $\prod_{i \in \lambda}\hom_{\cc}(C, A_i)$ 
 is representable by the functor 
 
-\[
+$$
 \hom_{\text{Fun}(\dd_{\lambda}, \cc)}(\Delta_{\lambda}(-), F): \cc \to **Set**.
-\]
+$$
 
 </span>
 
@@ -215,17 +215,17 @@ Denote $F: \dd_{\lambda} \to \cc$ where $F(\bullet_i) = A_i$ for all $i \in \lam
 exists in $\cc$, then for each object 
 $C$ of $\cc$, we have the natural bijection
 
-\[
+$$
 \prod_{i \in \lambda}\hom_{\cc}(C, A_i) \cong \hom_{\cc}\left(C,\, \prod_{i \in \lambda}A_i\right)
-\]
+$$
 * If the coproduct $\coprod_{i \in \lambda}A_i$ exists 
 in $\cc$, then for each object $C$ of $\cc$, we have the natural bijection 
 
-\[
+$$
 \prod_{i \in \lambda}\hom(A_i, C)
 \cong 
 \hom_{\cc}\left( \coprod_{i\in \lambda}A_i, \, C \right).
-\]
+$$
 
 </span>
 
@@ -240,24 +240,24 @@ $(\prod_{i \in \lambda}A_i, p)$ is universal from $\Delta_{\lambda}$ to $P$.
 From this perspective, we can apply the result of Exercise \hyperref[exercise:universality_bijection]{3.2.1} 
 to conclude that, for each object $C$, we have the natural bijection below. 
 
-\[
+$$
 \hom_{\cc}\left(C, \,\prod_{i \in \lambda}A_i\right) \cong
 \hom_{\text{Fun}(\dd_{\lambda}, \cc)}(\Delta_{\lambda}(C), F).
-\]
+$$
 
 However, we know from Lemma \ref{lemma:product_of_hom_sets} that there is a natural bijection 
 
-\[
+$$
 \hom_{\text{Fun}(\dd_{\lambda}, \cc)}(\Delta_{\lambda}(C), F)
 \cong 
 \prod_{i \in \lambda}\hom_{\cc}(C, A_i).
-\]
+$$
 
 Thus we have a natural bijection
 
-\[
+$$
 \prod_{i \in \lambda}\hom_{\cc}(C, A_i) \cong \hom_{\cc}\left(C, \,\prod_{i \in \lambda}A_i\right)
-\]
+$$
 
 as desired.
 
@@ -282,9 +282,9 @@ Let $\cc$ be a category and let $\{A_i\}_{i \in \lambda}$ be a set of objects in
 Suppose the product $\prod_{i \in \lambda}A_i$ and coproduct $\coprod_{i \in \lambda}A_i$
 exist in $\cc$. Then there is a canonical morphism 
 
-\[
+$$
 \phi:\prod_{i \in \lambda}A_i \to \coprod_{i \in \lambda}A_i 
-\]
+$$
 
 in $\cc$.
 </span>
@@ -294,17 +294,17 @@ in $\cc$.
 Let $F: \dd_{\lambda} \to \cc$ be the functor where $F(\bullet_i) = A_i$.
 Then the product and coproduct are equipped with the natural transformations as below. 
 
-\[
+$$
 \Delta_{\lambda}\left( \prod_{i \in \lambda}A_i \right) \to F
 \quad \quad
 F \to \Delta_{\lambda}\left( \coprod_{i \in \lambda}A_i \right)
-\]
+$$
 
 Then we can compose them to obtain the natural transformation
 
-\[
+$$
 \Delta_{\lambda}\left( \prod_{i \in \lambda}A_i \right) \to \Delta_{\lambda}\left( \coprod_{i \in \lambda}A_i \right).
-\]
+$$
 
 By the universal property of the coproduct, this implies a unique $\phi: \prod_{i \in \lambda}A_i \to \coprod_{i \in \lambda}A_i$
 such that the diagram below commutes. 
@@ -345,40 +345,42 @@ it look harder than it actually is.)
 * ****2.**** Complete the proof of Proposition \ref{proposition:product_coproduct_natural_bijection} as follows.
     * ***i*.** Show that the functor 
 
-    \[
+    $$
     \prod_{i \in \lambda} \hom_{\cc}(A_i, -): \cc \to **Set**
-    \]
+    $$
 
     is representable by the functor 
 
-    \[
+    $$
     \hom_{\text{Fun}(\dd_{\lambda}, \cc)}(F, \Delta_{\lambda}(-)): \cc \to **Set**
-    \]
+    $$
+
     * ***ii*.** Using (*i*), Proposition \ref{proposition:universality_bijection}, and 
     interpreting coproducts as universal objects, prove that 
 
-    \[
+    $$
     \prod_{i \in \lambda}\hom(A_i, C)
     \cong 
     \hom_{\cc}\left( \coprod_{i\in \lambda}A_i, \, C \right).
-    \]
-    * ****3.**** Let $P$ be a preorder with binary relation $\le$. 
-    Consider a subset $A \subset P$ where $A = \{a_i \in P \mid i \in \lambda\}$ 
-    with $\lambda$ some indexing set.
-        * **(*i*.)** Regarding $P$ as a thin category, prove that the product $p = \displaystyle \prod_{i \in \lambda}a_i$, when it exists, 
-        is the supremum of $A$. 
-        \\
-        *Hint:* Recall that, if $X$ is a preorder, 
-        the **supremum** of a set $S \subset X$ is the element $s \in X$ 
-        such that if $a_i \le s'$ for all $i \in \lambda$, then 
-        $s \le s'$.
-        * **(*ii*.)** We know that the dual of the product is the coproduct. 
-        Can you guess what the coproduct $\displaystyle \coprod_{i \in \lambda}a_i$ in $P$ is 
-        in this case? Prove it.
-    * ****4.**** Let $\cc$ and $\dd$ be categories. 
-    Consider the functor category $**Fun**(\cc, \dd)$. What is a product in 
-    this category? What conditions do we need to place on $\cc$ and $\dd$ for this 
-    product to exist?
+    $$
+
+* ****3.**** Let $P$ be a preorder with binary relation $\le$. 
+Consider a subset $A \subset P$ where $A = \{a_i \in P \mid i \in \lambda\}$ 
+with $\lambda$ some indexing set.
+    * **(*i*.)** Regarding $P$ as a thin category, prove that the product $p = \displaystyle \prod_{i \in \lambda}a_i$, when it exists, 
+    is the supremum of $A$. 
+    \\
+    *Hint:* Recall that, if $X$ is a preorder, 
+    the **supremum** of a set $S \subset X$ is the element $s \in X$ 
+    such that if $a_i \le s'$ for all $i \in \lambda$, then 
+    $s \le s'$.
+    * **(*ii*.)** We know that the dual of the product is the coproduct. 
+    Can you guess what the coproduct $\displaystyle \coprod_{i \in \lambda}a_i$ in $P$ is 
+    in this case? Prove it.
+* ****4.**** Let $\cc$ and $\dd$ be categories. 
+Consider the functor category $**Fun**(\cc, \dd)$. What is a product in 
+this category? What conditions do we need to place on $\cc$ and $\dd$ for this 
+product to exist?
 
 
 

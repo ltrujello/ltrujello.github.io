@@ -27,17 +27,17 @@ Let $f: A \to B$ be a morphism. Then
 
 * **1.** $f$ is a **monomorphism** (or is monic) if
 
-\[ 
+$$ 
 f \circ g_1 = f \circ g_2 \implies g_1 = g_2
-\]
+$$
 
 for all
 $g_1,g_2 : C \to A$, where $D$ is arbitrary.
 * **2.** $f$ is a **epimorphism** (or is epic) if 
 
-\[ 
+$$ 
 g_1 \circ f  = g_2 \circ f \implies g_1 = g_2
-\]
+$$
 
 for all $g_1, g_2 : B \to C$, where $C$ is an arbitrary
 object.
@@ -45,15 +45,15 @@ object.
 if, for some\\
 $g: B \to A$, 
 
-\[
+$$
 f  \circ g = 1_B.  
-\]
+$$
 * **4.** $f $ is a **split epimorphism** (or section) if, for some
 $g: B \to A$, 
 
-\[
+$$
 g \circ f  = 1_A.
-\]
+$$
 
 </span>
 \end{minipage}
@@ -82,9 +82,9 @@ the sense that $f(x) = f(y)$ if and only if $x = y$. With that said, suppose tha
 $g_1, g_2: Z \to X$ are functions and moreover that $f\circ g_1 = f \circ g_2$. 
 Then this means that, for all $z \in Z$, we have that 
 
-\[
+$$
 f(g_1(z)) = f(g_2(z)) \implies g_1(z) = g_2(z)    
-\]
+$$
 
 since $f$ is one-to-one. Hence we see that injective functions are 
 monomorphisms in $\Set$; 
@@ -133,16 +133,16 @@ Let $f: A \to B$ be a morphism between two objects $A$ and $B$.
 We say that $f$ is an **isomorphism** if there exists a
 morphism $f^{-1}:B \to A$ in $\cc$! such that 
 
-\[
+$$
 f \circ f^{-1} =\id_A \quad \quad f^{-1} \circ f = \id_B.
-\]
+$$
 
 In this case, $f^{-1}$ is unique, and for any two isomorphisms
 $f:A \to B$ and  $g:B \to C$ we have
 
-\[
+$$
 (g \circ f)^{-1} = f^{-1}\circ g^{-1}.
-\]
+$$
 
 In this case we say that $A$ and $B$ are isomorphic and denote 
 this as $A \cong B$. 
@@ -186,23 +186,23 @@ that is, $N$ is equivalently the **nilradical** elements of $A$.
 
 Now the projection ring homomorphism 
 
-\[
+$$
 \phi: A \to A/N
-\]
+$$
 
 is certainly not an isomorphism (unless $A$ has no nontrivial 
 nilradical elements), but the image of this map under $\spec$ 
 
-\[
+$$
 \spec(\phi): \spec(A/N) \isomarrow \spec(A)
-\]
+$$
  
 is always an isomorphism. In fact, if we impose the Zarisky topology on these prime spectrums, 
 the functor becomes one which goes to topological spaces
 
-\[
+$$
 \text{Spec}(-): \cring \to \top
-\]
+$$
 
 and the map $\phi$ becomes a homeomorphism. Hence, this functor does not reflect isomorphisms 
 in either the set or topological senses, because the image $\spec(\phi)$ 
@@ -229,9 +229,9 @@ parallel morphisms. Suppose that
 $(g \circ f) \circ h_1 = (g \circ f) \circ h_2.$
 Note that we can rewrite the equation to obtain that 
 
-\[
+$$
 g \circ (f \circ h_1) = g \circ (g \circ h_1) \implies f \circ h_1 = f \circ h_2. 
-\]
+$$
 
 as $g$ is monic, and hence it is left cancellable. 
 But once again, $f$ is monic, so we cancel on the left to
@@ -257,9 +257,9 @@ To show it is epic, let $f_1, f_2: X \to Y$ be continuous maps
 form $X$ to another topological space $Y$. Let $Y$ be Hausdorff,
 and suppose that 
 
-\[
+$$
 f_1 \circ i = f_2 \circ i.
-\]
+$$
 
 Now $\im(i) = D$, so the above equation tells us that $f_1(d) =
 f_2(d)$ for all $d \in D$. That is, the functions agree on the
@@ -287,9 +287,9 @@ $f_1(x) = f_2(x)$ for all $x \in X$, as desired.
 monic, suppose $g_1, g_2: Y \to D$ are two 
 parallel, continuous functions, and that 
 
-\[
+$$
 i \circ g_1 = i \circ g_2.
-\]
+$$
 
 Since $i$ is nothing more than an inclusion map, we immediately
 have that $g_1 = g_2$. Therefore, $i$ is also monic.
@@ -356,9 +356,9 @@ Given an object $A$ in $\cc$, what objects are isomorphic to $A$ in $\cc$?
 To answer this, we define the relation 
 $\sim$ on $\ob(\cc)$, the objects of $\cc$, where we say 
 
-\[
+$$
 A \sim B \text{ if } A \cong B.
-\]
+$$
   
 Such an equivalence relation divides the objects of $\cc$ into disjoint 
 *isomorphsm classes*, which reduces the structure of $\cc$. 
@@ -369,9 +369,9 @@ Let $\cc$ be a category and $A$ any object. We call the equivalence class
 of $A$ under $\sim$, defined previously, as the **isomorphism class** 
 which we denote as 
 
-\[
+$$
 \text{Isom}(A) = \{X \in \ob(\cc) \mid X \cong A\}.
-\]
+$$
 
 </span>
 
@@ -389,9 +389,9 @@ representative of each isomorphism class $\text{Isom}(A)$.
 * **Morphisms.** For two representatives of isomorphism 
 classes $A, B$, we take 
 
-\[
+$$
 \hom_{\text{sk}(\cc)}(A,B)= \hom_{\cc}(A,B)
-\]
+$$
 
 </span>
 We note three things regarding this construction. 

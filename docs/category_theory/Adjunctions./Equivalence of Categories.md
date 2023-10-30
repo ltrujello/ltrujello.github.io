@@ -38,9 +38,9 @@ $\eta_x: x \to G(F(x))$ and $\epsilon_x: F(G(x)) \to x$. However,
 each category has nontrivial morphisms; hence we see that each of 
 these must be identity morphisms so that 
 
-\[
+$$
 G(F(x)) = x \qquad F(G(x)) = x.
-\]
+$$
 
 What this then means is that an equivalence of categories 
 for sets is just a pair of invertible functions. That is, 
@@ -68,9 +68,9 @@ lemma and a proposition.
 Let $\cc$ be a category, and $f: A \to B$ a morphism. Then 
 $f$ induces a natural transformation 
 
-\[
+$$
 f^*: \hom_{\cc}(C, -) \to \hom_{\cc}(C', -)
-\]
+$$
 
 Then $f^{*}$ is a monomorphism if and only if $f$ is an epimorphism, 
 and $f^{*}$ is an epimorphism if and only if $f$ is a split monomorphism 
@@ -87,9 +87,9 @@ $f: C' \to C$. Now suppose $\eta, \eta': F
 \to \hom_{\cc}(C, -)$, where $F: \cc \to **Set**$ is a functor, are
 natural transformations. Then if $f^*$ is monic, 
 
-\[  
+$$  
 f^* \circ \eta = f^* \circ \eta' \implies \eta = \eta'.
-\]
+$$
 
 Now let $h: A \to A'$ be a morphism in $\cc$. Then we have the
 commutative diagram 
@@ -100,9 +100,9 @@ signify the fact that both $\eta_A, \eta_A'$ are morphisms
 from $F(A)$ to $\hom_{\cc}(C, A)$. Now 
 let $x \in F(A)$. Then
 
-\[
+$$
 f^* \circ \eta_A(x) = f^* \circ \eta'_A(x) \iff \eta_A(x) \circ f = \eta'_A(x) \circ f.
-\]
+$$
 
 But if $f$ is monic, then $f^* \circ \eta_A(x) = f^*
 \circ'_A(x)$ implies that $\eta_A = \eta'_A$. Hence
@@ -111,9 +111,9 @@ we see that $\eta_A(x) \circ f = \eta'_A(x) \circ f
 * **$\bm{\impliedby}$** Now suppose $f$ is epic. Then
 using the same notation as earlier, note that 
 
-\[
+$$
 f^* \circ \eta_A(x) = f^* \circ \eta'_A(x) \iff \eta_A(x) \circ f = \eta'_A(x) \circ f \implies \eta_{A} = \eta_{A}.
-\]
+$$
 
 Hence we see that $f^*$ is a monomorphism.
 
@@ -141,25 +141,25 @@ If $G: \dd \to \cc$ is a functor, then we see that $G$ itself
 becomes a natural transformation between the two
 functors: 
 
-\[
+$$
 G_{D,-}: \hom_{\dd}(D, -) \to \hom_{\dd}(G(D), G(-)).    
-\]
+$$
 
 Recall that we have an adjunction given by $F, G$.
 Then there exists a bijection $\phi$ where 
 
-\[
+$$
 \phi_{C, D'}: \hom_{\cc}(F(C), D') \to \hom_{\dd}(C, G(D)).
-\]
+$$
 
 Thus $\phi^{-1}: \hom_{\dd}(C, G(D)) \to
 \hom_{\dd}(F(C), D')$. Moreover, if $D$ is an
 arbitrary object, this becomes a natural
 transformation between the two functors: 
 
-\[
+$$
 \phi^{-1}_{C, -}: \hom_{\dd}(C, G(-)) \to \hom_{\cc}(F(C), -).
-\]
+$$
 
 Let $C = G(D)$. Then we have the following sequence of
 natural transformations:
@@ -173,13 +173,13 @@ transformation given? We can assign $-$ as $D$ itself,
 and see what happens when we consider the identity
 morphism $1_D: D \to D$. In this case
 
-\[
+$$
 \phi^{-1}_{G(D), G(D)} \circ G_{D, D}(1_D) 
 = 
 \phi^{-1}_{G(D), G(D)}(1_{G(D)})
 = 
 \epsilon_{D}
-\]
+$$
 
 by definition of the counit $\epsilon_D$. Now we
 understand how this poorly-notated natural
@@ -238,9 +238,9 @@ $F, G$ form an adjoint equivalence.}
 \cc \to \dd$ and $G: \dd \to \cc$, with natural
 isomorphisms 
 
-\[
+$$
 \phi: F \circ G \cong I_\dd \qquad \psi: G \circ F \cong I_\cc.
-\]
+$$
 
 Let $f: C \to C'$ be a morphism in $\cc$. Then observe
 that the following diagram
@@ -253,11 +253,11 @@ $f_1, f_2: C \to C'$ are two morphisms such that $F(f_1)
 similar to the ones above, which translate into the
 equations 
 
-\[
+$$
 f_1 = \psi_{C}'\circ G(F(f_1)) \circ \psi_{C'}^{-1}  
 \qquad 
 f_2 = \psi_{C'}\circ G(F(f_2)) \circ \psi_{C'}^{-1}.
-\]
+$$
 
 Then if $F(f_1) = F(f_2)$, the above equations guarantee
 that $f_1 = f_2$. Hence we see that $F$ is a faithful
@@ -300,9 +300,9 @@ G(F_0(C)) \to G(D')$ such that $g = k \circ \eta_C$. Then by the
 same argument, there exists a $h': F_0(C) \to D'$ such that
 $G(h') = k$. Furthermore, we'll have that 
 
-\[
+$$
 k = G(h') = g \circ \eta_C^{-1} \qquad G(h) = g \circ \eta_C^{-1}
-\]
+$$
 
 so that $G(h') = G(h)$. However, since $G$ is faithful, we
 have that $h' = h$. Hence, $h$ is unique! 
@@ -319,9 +319,9 @@ natural isomorphism.
 
 Finally, observe that for any object $D$, we have that 
 
-\[
+$$
 G(\epsilon_D) \circ \eta_{G(D)} = 1_{G(D)}
-\]
+$$
 
 for our adjunction. Since $\eta_{G(D)}$ is an isomorphism,
 we have that $G(\epsilon_D) = \eta_{G(D)}^{-1}$. Sine $G$

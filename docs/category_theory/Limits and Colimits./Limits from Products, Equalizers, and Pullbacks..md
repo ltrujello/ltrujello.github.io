@@ -29,9 +29,9 @@ $F: J \to \cc$ has a limit in $\cc$.
 objects of $J$ and morphisms of $J$"?} What we want to do is be able 
 to *create* products of the form 
 
-\[
+$$
 \prod_{j \in J}F_j \qquad\qquad \prod_{u:i \to k} F_\text{\text{cod}(u)} = \prod_{u:j \to k}F_k.   
-\]
+$$
 
 and *know* that they're in $\cc$. 
 The product on the far left is indexed by objects of $J$, while the equal  
@@ -50,9 +50,9 @@ with morphisms $\displaystyle \pi_i : \prod_{j}F_j \to F_i$. However,
 this doesn't actually form a cone, since for each $u: j \to k$,
 we can't guarantee 
 
-\[
+$$
 F(u) \circ \pi_j = \pi_k
-\]
+$$
 
 That is, we can't guarantee the diagram 
 
@@ -100,21 +100,21 @@ add this to our diagram above to get the following:
 (\textcolor{Red}{It looks like a boat!}) Denote $\mu_i = \pi_i \circ e: D \to F_i$. Then what the above boat diagram 
 tells us is that 
 
-\[
+$$
 \pi'_k \circ g = \pi_k \qquad F(u)\circ \pi_i = \pi'_k \circ f.
-\]
+$$
 
 Composing both equations with $e$, we get 
 
-\[
+$$
 \pi'_k \circ g \circ e = \pi_k \circ e \qquad F(u)\circ \pi_i \circ e= \pi'_k \circ f\circ e.
-\]
+$$
 
 but since $g \circ e = f \circ e$, what this really tells us is that
 
-\[
+$$
 F(u) \circ \pi_i \circ e = \pi_k \circ e \implies F(u) \circ \mu_i = \mu_k.
-\]
+$$
 
 for every $u: i \to k$ in $J$. 
 Therefore, we see that we have that 

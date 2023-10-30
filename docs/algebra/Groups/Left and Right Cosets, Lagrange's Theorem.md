@@ -20,12 +20,12 @@ equivalence relation.
 <span style="display:block" class="definition">
 An equivalence relation on a set $G$ is a binary relation
 $\sim$ that satisfies the following properties.
-\begin{description}
-\item[Reflexive.] For all $a \in G$, $a \sim a$.
-\item[Symmetric.] If $a \sim b$ then $b \sim a$.
-\item[Transitive.] If $a \sim b$ and $b \sim c$ then $a
-\sim c$. 
-\end{description}
+
+* **Reflexive.** For all $a \in G$, $a \sim a$.
+* **Symmetric.** If $a \sim b$ then $b \sim a$.
+* **Transitive.** If $a \sim b$ and $b \sim c$ then $a
+\sim c$.
+
 </span>
 
 \textcolor{Plum}{Equivalence classes are a useful concept since they tend to break
@@ -48,27 +48,25 @@ relation $\sim$ on $G$ such that $a \sim b$ if and only if $ab^{-1} \in H$
 is an equivalence relation.
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[Reflexive.] Observe that $a \sim a$, since $aa^{-1} = e
-\in H$.
 
-\item[Symmetric.] First, if $a \sim b$ then $ab^{-1} \in H$. Since $H$ is a
+* **Reflexive.** Observe that $a \sim a$, since $aa^{-1} = e
+\in H$.
+* **Symmetric.** First, if $a \sim b$ then $ab^{-1} \in H$. Since $H$ is a
 group, we know that $(ab^{-1})^{-1} = ba^{-1} \in H$.
 Thus by our definition we see that $b \sim a$, so that our
-relation is also symmetric. 
-
-\item[Transitive.] Now suppose $a \sim b$ and $b \sim c$ for
+relation is also symmetric.
+* **Transitive.** Now suppose $a \sim b$ and $b \sim c$ for
 $a, b, c \in G$. Then by definition $ab^{-1} \in H$ and
 $bc^{-1} \in H$. Since $H$ is a group, and it is closed under
 products of its elements. Therefore
 
-\[
+$$
 (ab^{-1})(bc^{-1}) = ab^{-1}bc^{-1} = ac^{-1} \in H.
-\]
+$$
 
 Thus we see that $a \sim c$, which proves that our
 relation is transitive.
-\end{description}
+
 </span>
 As our relation is reflexive, symmetric and transitive, we see
 that it is an equivalence relation. Note however that we could
@@ -94,9 +92,9 @@ to be the left coset of $H$.
 Note that since $H$ is a group, it is closed under products of
 its elements. Therefore for any $h\in H$
 
-\[
+$$
 hH = Hh = H.
-\]
+$$
 
 </span>
 
@@ -235,9 +233,9 @@ Ha = \{ha \mid h \in H\} = \{h(h'b) \mid h \in H\} = H(h'b).
 However, recall earlier that $Hh = H$ for any $h \in H$. Since
 $h' \in H$, we then have that 
 
-\[
+$$
 H(h'b) = (Hh')b = Hb
-\]
+$$
 
 which proves that $Ha = Hb$ as well as the proposition.
 </span>
@@ -278,10 +276,10 @@ Since $G$ is finite, there are a distinct set of cosets $Ha_1,
 Ha_2, \dots , Ha_n$ which partition $G$. By Proposition 1.3,
 each set is of equal size; call it $k$. Therefore, we see that 
 
-\[
+$$
 |Ha_1| + |Ha_2| + \cdots + |Ha_n| = |G|
 \implies kn = |G|.
-\]
+$$
 
 Therefore $|G|$ will always be a multiple of $|H|$. Or, in
 other words, $|H|$ divides $|G|$.
@@ -323,9 +321,9 @@ cyclic. Therefore $|g|$ divides the order of $|G|$. This
 implies that $|G| = n|g|$ for some $n \in \mathbb{N}$.
 Therefore 
 
-\[
+$$
 g^{|G|} = g^{n|g|} = (g^{|g|})^n = e^n = e
-\]
+$$
 
 which is what we set out to show.
 

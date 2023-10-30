@@ -26,9 +26,9 @@ more specific by what we mean.
 <span style="display:block" class="definition">
 Let $M_1, M_2, \dots, M_n$ be a set of $R$-modules. We define
 
-\[
+$$
 \prod_{i = 1}^{n}M_i =  M_1\times M_2 \times \cdots \times M_n 
-\]
+$$
 
 as the **cartesian product** of these $R$-modules whose
 elements are of the form $(x_1, x_2, \dots, x_n)$ where $x_i
@@ -82,9 +82,9 @@ is $x_\alpha$, the $\beta$-th element of $a$ is $x_\beta$, and
 so on. With
 that said, we can now restate that 
 
-\[
+$$
 \prod_{\alpha \in \lambda} M_\alpha = \{\text{All functions } f \mid  f(\alpha) \in M_\alpha \text{ where } \alpha \in \lambda \}.
-\]
+$$
 
 and move onto understanding why we want to
 adjust our definition for multiplication of $R$-modules. 
@@ -102,8 +102,8 @@ $R$-modules, then $\displaystyle \prod_{\alpha \in
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[Abelian Group.] First observe that $\displaystyle
+
+* **Abelian Group.** First observe that $\displaystyle
 \prod_{\alpha \in \lambda} M_\alpha$ is an abelian group
 if we realize the identity is the zero map $f$ (i.e., the
 "tuple" of all zeros) and endow an operation of addition as follows. For
@@ -111,9 +111,9 @@ $f_1,
 f_2 \in \displaystyle \prod_{\alpha \in \lambda} M_\alpha$
 we have that 
 
-\[
+$$
 (f_1 + f_2)(\alpha) = f_1(\alpha) + f_2(\alpha)
-\]
+$$
 
 for all $\alpha \in \lambda$. Note that this makes sense
 since $f_1(\alpha), f_2(\alpha) \in M_\alpha$. Hence the
@@ -122,19 +122,18 @@ sum will be an element in $M_\alpha$. Also, if $f \in
 define the inverse to be $f^{-1}$ where $f^{-1}(\alpha) =
 -f(\alpha)$. Commutativity is inherited from commutativity
 of all $M_\alpha$, and so we have an abelian group.
+* **Ring Multiplication.** Let $a \in R$. Then define 
 
-\item[Ring Multiplication.] Let $a \in R$. Then define 
-
-\[
+$$
 (af)(\alpha) = a(f(\alpha))  
-\]
-
+$$
+ 
 for all $\alpha \in \lambda$. Observe that, since each
 $M_\alpha$ is an $R$-module, we have that $f(\alpha) \in
 M_\alpha \implies af(\alpha) \in M_\alpha$ for all $\alpha
 \in \lambda$. Thus our multiplcation is well-defined. It is then a simple exercise to check that
 the axioms of an $R$-module are satisfied via our operations.
-\end{description}
+
 </span>
 
 Since our above argument was a bit abstract, we reintroduce
@@ -142,27 +141,21 @@ it in the language of finite products.
 Again, we can turn a finite cartesian product of
 $R$-modules into an $R$-module with the following operations.
 
-* [1.] Let $(m_1, m_2, \dots, m_n), (p_1, p_2 ,\dots,
+* **1.** Let $(m_1, m_2, \dots, m_n), (p_1, p_2 ,\dots,
 p_n) \in M_1 \times M_2 \times \cdots \times M_n$. Then let us define
 addition of elements as
 
-\[
+$$
 (m_1, m_2, \dots, m_n) + (p_1, p_2 ,\dots, p_n)
 = (m_1 + p_1, m_2 + p_2, \dots, m_n + p_n).
-\]
-
-
-
-* [2.] For any $a \in R$ and $(m_1, m_2, \dots, m_n) \in
+$$
+* **2.** For any $a \in R$ and $(m_1, m_2, \dots, m_n) \in
 M_1 \times M_2 \times \cdots \times M_n$ we define scalar
 multiplication as 
 
-\[
+$$
 a(m_1, m_2, \dots, m_n) = (am_1, am_2, \dots, am_n).
-\]
-
-
-
+$$
 
 </span>
 Again, it is then simple to check that this satisfies the axioms
@@ -191,9 +184,9 @@ Let $\{M_\alpha\}_{\alpha \in \lambda}$ be a family of
 $R$-modules. Then we define the **direct sum** of
 $\{M_\alpha\}_{\alpha \in \lambda}$ as 
 
-\[
+$$
 \bigoplus_{\alpha \in \lambda}M_\alpha = \{\text{All functions } f \mid f(\alpha) \in M_\alpha ** and ** f(\alpha) = 0 \text{ except for finitely many } \alpha \in \lambda\}.
-\]
+$$
 
 </span>
 
@@ -210,9 +203,9 @@ uncountably many nonzero indices.
 and the cartesian product are the exact same thing}. There is no
 difference when the product is finite. In other words, 
 
-\[
+$$
 M_1 \times M_2 \times \cdots \times M_n = M_1 \oplus M_2 \oplus \cdots \oplus M_n.
-\]
+$$
 
 
 
@@ -232,9 +225,9 @@ $R$-module. Observe that for any $a, b \in R$ and
 $\displaystyle f_1, f_2
 \in \bigoplus_{\alpha \in \lambda}M_{\alpha}$, we have that 
 
-\[
+$$
 a(f_1)(\alpha) + b(f_2)(\alpha) \in \bigoplus_{\alpha \in \lambda}M_{\alpha} 
-\]
+$$
 
 since the function $a(f_1)(\alpha) + b(f_2)(\alpha)$ will be
 nonzero for only finitely many values. (In fact, if $f_1$ is
@@ -260,9 +253,9 @@ If we try to define
 a homomorphism $\displaystyle \phi : \prod_{\alpha \in
 \lambda}M_\alpha \to N$ in a natural, linear way such as 
 
-\[
+$$
 \phi(a) = \sum_{\alpha \in \lambda}\phi_\alpha(f_a(\alpha))
-\]
+$$
 
 where $\displaystyle a \in \prod_{\alpha \in \lambda}M_{\alpha}$,
 then observe that the above sum is nonsense. What the hell is an
@@ -274,9 +267,9 @@ However, if we instead consider $\displaystyle \bigoplus_{\alpha
 $\displaystyle \phi: \bigoplus_{\alpha \in 
 \lambda}M_{\alpha} \to N$ where again 
 
-\[
+$$
 \phi(a) = \sum_{\alpha \in \lambda}\phi_\alpha(f_a(\alpha))
-\]
+$$
 
 works out fine. We see that $\phi$ is valid because $f_a(\alpha) =
 0$ for all but finitely many $\alpha \in \lambda$. Hence, the
@@ -290,20 +283,16 @@ direct sum.
 Let $M$ be an $R$-module and suppose $M_1, M_2, \dots, M_n$
 are submodules such that 
 
-* [1.] $M = M_1 + M_2 + \cdots + M_n$
-
-
-* [2.] $M_j \cap (M_1 + M_2 + \cdots + M_{j-1} + M_{j +
+* **1.** $M = M_1 + M_2 + \cdots + M_n$
+* **2.** $M_j \cap (M_1 + M_2 + \cdots + M_{j-1} + M_{j +
 1} + \cdots + M_n) = \{0\}$ for all $j \in \{1, 2, \dots,
-n\}$. 
-
-
+n\}$.
 
 Then 
 
-\[
+$$
 M \cong M_1 \oplus M_2 \oplus \cdots \oplus M_n.
-\]
+$$
 
 \vspace{-0.8cm}
 </span>
@@ -313,17 +302,17 @@ M \cong M_1 \oplus M_2 \oplus \cdots \oplus M_n.
 Construct the map $f:M_1 \oplus M_2 \oplus
 \cdots \oplus M_n \to M$ as 
 
-\[
+$$
 f(x_1, x_2, \dots, x_n) = x_1 + x_2 + \cdots + x_n.
-\]
+$$
 
 It is simple to check that this is an $R$-module homomorphism.
 Observe that by (1) $\im(f) = M$. Now suppose $(x_1, x_2, \dots, x_n) \in \ker(f)$. Then
 we see that 
 
-\[
+$$
 x_1 + x_2 + \cdots + x_n = 0 \implies x_i = -(x_1 + x_2 + \cdots + x_{i-1} + x_{i+1} + \cdots + x_n)
-\]
+$$
 
 for all $i \in \{1, 2, \dots, n\}$. But by (2), we know that
 no such $x_i$ can exist. Therefore $x_1 = x_2 = \cdots = x_n =
@@ -339,21 +328,17 @@ generalize the above theorem to arbitrary direct sums.
 Let $M$ be an $R$-module and suppose $\{M_\alpha\}_{\alpha \in
 \lambda}$ is a family of $R$-modules such that 
 
-* [1.] $\displaystyle M = \sum_{\alpha \in \lambda}
-M_\alpha$ 
-
-
-* [2.] $M_\beta \bigcap \displaystyle  \sum_{\alpha \in
+* **1.** $\displaystyle M = \sum_{\alpha \in \lambda}
+M_\alpha$
+* **2.** $M_\beta \bigcap \displaystyle  \sum_{\alpha \in
 \lambda\setminus\{\beta\}}M_\alpha = \{0\}$ for all $\beta
 \in \lambda$
 
-
-
 then 
 
-\[
+$$
 M \cong \bigoplus_{\alpha \in \lambda}M_{\alpha}
-\]
+$$
 
 \vspace{-0.7cm}
 </span>

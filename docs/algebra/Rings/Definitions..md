@@ -28,42 +28,27 @@ exist binary operations $+: R\times R \to R$ and $\cdot: R
 \times R \to R$ (referred to as addition and multiplication)
 such that 
 
-* [(**R1**)] **Group addition.** $(R, +)$ is an
+* **(**R1**)** **Group addition.** $(R, +)$ is an
 **abelian group**, with $0$ denoted as the
 identity. (In this group, the additive inverse of
 an element $a$ is always denoted $-a$.)
-
-
-* [(**R2**)] **Closure.** For all $a$, $b \in R$, we have that $a \cdot b \in R$.
-
-
-* [(**R3**)] **Associativity.** For all $a$, $b$, $c \in R$, we have that $a \cdot (b \cdot c) = (a \cdot b) \cdot c$
-
-
-* [(**R4**)] **Distributivity.** Similarly, we have that $a \cdot (b + c) = a\cdot b + a \cdot c$ and $(b
+* **(**R2**)** **Closure.** For all $a$, $b \in R$, we have that $a \cdot b \in R$.
+* **(**R3**)** **Associativity.** For all $a$, $b$, $c \in R$, we have that $a \cdot (b \cdot c) = (a \cdot b) \cdot c$
+* **(**R4**)** **Distributivity.** Similarly, we have that $a \cdot (b + c) = a\cdot b + a \cdot c$ and $(b
 + c) \cdot a = b \cdot a + c \cdot a$.
-
-
-* [(**R4**)] There exists an element $1 \ne 0$ in $R$ such that 
-$1 \cdot a = a \cdot 1 = a$ for all $a \in R$. This is the **unit of the ring**. 
-
-
+* **(**R4**)** There exists an element $1 \ne 0$ in $R$ such that 
+$1 \cdot a = a \cdot 1 = a$ for all $a \in R$. This is the **unit of the ring**.
 
 </span>
 
 
 <span style="display:block" class="remark">
 
-*  As usual, if the multiplication operation $\cdot$ is specified and
+* As usual, if the multiplication operation $\cdot$ is specified and
 well-understood, then we will drop $\cdot$ and write
 multiplication of ring elements as $gh$ instead of $g \cdot h$.
-
-
-
-*  Axioms (**R5**) is technically optional. However, we don't really 
+* Axioms (**R5**) is technically optional. However, we don't really 
 care about rings without unity, so we just add it to ou defintion.
-
-
 
 </span>
 
@@ -72,22 +57,12 @@ care about rings without unity, so we just add it to ou defintion.
 <span style="display:block" class="proposition">
 Suppose $R$ is a ring with identity $1 \ne 0$. Then 
 
-* [1.] $0 \cdot a = a \cdot 0$ for all $a \in R$ 
-
-
-* [2.] $-(a \cdot b) = (-a) \cdot b = a \cdot (-b)$ for
-all $a, b \in R$ 
-
-
-* [3.] $-a = a \cdot (-1) = (-1) \cdot a$
-
-
-* [4.] $(-a) \cdot (-b) =  a \cdot b$ 
-
-
-* [5.] The multiplicative identity is unique.   
-
-
+* **1.** $0 \cdot a = a \cdot 0$ for all $a \in R$
+* **2.** $-(a \cdot b) = (-a) \cdot b = a \cdot (-b)$ for
+all $a, b \in R$
+* **3.** $-a = a \cdot (-1) = (-1) \cdot a$
+* **4.** $(-a) \cdot (-b) =  a \cdot b$
+* **5.** The multiplicative identity is unique.
 
 </span>
 This is just the stuff you would expect from a ring $R$ based
@@ -97,7 +72,7 @@ and some of these facts are obvious in those domains.
 
 <span style="display:block" class="proof">
 
-* [1.] Observe that 
+* **1.** Observe that 
 
 \begin{align*}
 (0 \cdot a) + (0 \cdot a) &= (0 + 0) \cdot a \text{ (by R4 )}\\
@@ -109,9 +84,9 @@ $0$ to the righthand side (which of course
 does not change the value of the equation.) Subtracting
 $(0 \cdot a)$ from both sides, we get that 
 
-\[
+$$
 0 \cdot a  = 0.
-\]
+$$
 
 Similarly, observe that 
 
@@ -123,15 +98,12 @@ Similarly, observe that
 where again, we added $0$ to both sides. Subtracting $-(a
 \cdot 0)$ from both sides, we get 
 
-\[
+$$
 a \cdot 0 = 0
-\]
+$$
 
-as desired. 
-
-
-
-* [2.] First we'll show that $-(a \cdot b) = (-a) \cdot
+as desired.
+* **2.** First we'll show that $-(a \cdot b) = (-a) \cdot
 b$. To prove this, observe that 
 
 \begin{align*}
@@ -164,67 +136,54 @@ and adding $-(a \cdot b)$ gives that
 \end{align*}
 
 which proves the asserition.
-
-
-
-* [3.] Simply let $b = 1$ in the previous statements. 
-
-
-* [4.] To prove that $(-a) \cdot (-b) = a \cdot b$,
+* **3.** Simply let $b = 1$ in the previous statements.
+* **4.** To prove that $(-a) \cdot (-b) = a \cdot b$,
 first observe that for any $c \in  R$ we already proved
 that 
 
-\[
+$$
 (-a) \cdot c = a \cdot (-c).
-\]
+$$
 
 Thus let $c = -b$. Then observe that 
 
-\[
+$$
 (-a) \cdot (-b) = a \cdot [-(-b)]
-\]
+$$
 
 and from group theory, we know that $-(-b) = b$.
 Therefore, we see that 
 
-\[
+$$
 (-a) \cdot (-b) = a \cdot b
-\]
+$$
 
-as desired. 
-
-
-
-* [5.] To prove that uniqueness of the multiplicative
+as desired.
+* **5.** To prove that uniqueness of the multiplicative
 identity, first suppose that it is not unique. That is,
 there exists elements $1_1$ and $1_2$ such that 
 
-\[
+$$
 1_1 \cdot a = a \cdot 1_1 = a \hspace{1cm}   1_2 \cdot a = a \cdot 1_2 = a.
-\]
+$$
 
 for all $a \in R$. Then observe that 
 
-\[
+$$
 1_1 = 1_1 \cdot 1_2 = 1_2
-\]
+$$
 
 so that the uniqueness must hold.
-
-
-
-
 
 </span>
 \textcolor{NavyBlue}{An example of a ring is of course $\mathbb{Z}$, but that's boring. 
 Is $(\mathbb{Z}/n\mathbb{Z}, + , \cdot)$, where $n$ is a positive
 integer, a ring? Let's check if it is. }
-\begin{description}
-\item[Abelian.] Since addition is commutative, we already know
+
+* **Abelian.** Since addition is commutative, we already know
 that $\mathbb{Z}/n\mathbb{Z}$ is abelian (in fact, it is
 cyclic.)
-
-\item[Associativity.] Let $a, b$ and $c \in \ZZ/n\ZZ$. Now
+* **Associativity.** Let $a, b$ and $c \in \ZZ/n\ZZ$. Now
 obviously, $a(bc) = (ab)c$ under *standard* or "normal"
 multiplication of integers. Therefore we see that   
 
@@ -233,9 +192,7 @@ a\cdot(b \cdot c) &= a(bc) \mbox{ mod } n \\
 & = (ab)c \mbox{ mod }n \\
 & =(a \cdot b ) \cdot c.
 \end{align*}
-
-
-\item[Distributivity.] Let $a, b$ and $c$ be defined as before.
+* **Distributivity.** Let $a, b$ and $c$ be defined as before.
 Again, we know that $a(b + c) = ab + ab$ in $\mathbb{Z}$.
 Therefore 
 
@@ -249,8 +206,8 @@ a\cdot(b + c) &= a(bc) \mbox{ mod } n \\
 The argument is exactly the same to prove left distributivity.
 Altogether, we see that $\ZZ/n\ZZ$ satisfies the axioms of a
 ring when endowed with modulo addition for $+$ and modulo
-multiplication for $\cdot$. 
-\end{description}
+multiplication for $\cdot$.
+
 
 
 \noindent**Multiplication yielding zeros.**\\
@@ -288,9 +245,9 @@ Let $(R, +, \cdot)$ be a ring and suppose $a \ne 0$ and $b
 \ne 0$ are elements of $R$,
 while 
 
-\[
+$$
 a \cdot b = 0.
-\]
+$$
 
 Then $a$ and $b$ are *both* called
 **zero divisors** of the ring ${R}$. Note that $0$ is
@@ -298,9 +255,9 @@ not a zero divisor.
 Meanwhile, if $R$ has an identity, and for some $a \in R$
 there exists a $b \in R$ such that 
 
-\[
+$$
 ab = 1 = ba
-\]
+$$
 
 then we call *both* $a$ and $b$ **units** in $R$.
 It turns out the set of units of a ring $R$ form an
@@ -314,9 +271,9 @@ know that $a = b = 1$ or $-1$.
 On the other hand, $\ZZ/n\ZZ$ can have a more interesting unit group.
 Observe that if there exists integers $p, q \in \ZZ/n\ZZ$ such that 
 
-\[
+$$
 pq = n +1
-\]
+$$
 
 then we see that $p \cdot q = pq \mbox{ mod } n = n + 1
 \mbox{ mod } n = 1 $ in $\ZZ/n\ZZ$. If either $p$ or $q$ are composite,
@@ -364,9 +321,9 @@ ca$ then $b = c$.
 Suppose $ac = ab$ for some elements $a, b, c \in R$ where
 $a$ is not a zero divisor. Then observe that 
 
-\[
+$$
 ab = ac \implies ac - ab = 0 \implies a(b - c) = 0.
-\]
+$$
 
 Since $a$ is not a zero divisor, the only way for the
 above equation to hold is if $b - c = 0 \implies b = c$.
@@ -385,21 +342,15 @@ follows.}
 <span style="display:block" class="definition">
 Let $R$ be a ring. 
 
-* [1.] If $R$ is commutative ring with identity and has
+* **1.** If $R$ is commutative ring with identity and has
 no zero divisors, then $R$ is said to be an
 **integral domain.**
-
-
-* [2.] The ring $R$ is a said to be a **division ring**
+* **2.** The ring $R$ is a said to be a **division ring**
 if every element of $R$ has a multiplicative inverse.
 An equivalent condition is if $R^* = R\setminus
 \{0\}$.
-
-
-* [3.] If $R$ is a commutative division ring, then
+* **3.** If $R$ is a commutative division ring, then
 $R$ is said to be a **field**.
-
-
 
 </span>
 
@@ -409,22 +360,14 @@ $\mathbb{C}$ fields. This is what they're talking about.
 
 <span style="display:block" class="proposition">
 
-* [1.] If $(R, +, \cdot)$ is an integral domain, then the
-cancellation law holds for all elements of $R$. 
-
-
-
-* [2.] $(R, +, \cdot)$ is an integral domain if and
+* **1.** If $(R, +, \cdot)$ is an integral domain, then the
+cancellation law holds for all elements of $R$.
+* **2.** $(R, +, \cdot)$ is an integral domain if and
 only if for $a, b \in R$, the equation $a\cdot b = 0$
-implies either $a = 0$ or $b = 0$. 
-
-
-
-* [3.] $(R, +, \cdot)$ is a division ring if and only if $ax =
+implies either $a = 0$ or $b = 0$.
+* **3.** $(R, +, \cdot)$ is a division ring if and only if $ax =
 b$ and $ya = b$ are solvable in $R$ for every $a, b \in R$
 where $a \ne 0 $.
-
-
 
 </span>
 
@@ -437,10 +380,10 @@ this even further and state that this is a field, as follows.
 \indent Let $a \in \ZZ/p\ZZ$ be nonzero. We know that there exists an
 inverse $a^{-1}$ such that 
 
-\[ 
+$$ 
 aa^{-1} = 1 \mbox{ mod } p 
-\]
-
+$$
+ 
 if $a$ is coprime with $p$, which is of course true. Since
 every element has a multiplicative invesrse we see that
 $\ZZ/p\ZZ$ is a division ring. Since this is a commutative
@@ -525,26 +468,17 @@ algebra that matrix multiplication is associative and left and
 right distributive.
 It turns out this ring has many interesting subrings, which
 we'll list here 
-\begin{description}
-\item[Diagonals.]
 
-\[
+* **Diagonals.** $$
 D_n(R) = \{A \in \mathbb{R}: a_{ij} = 0 \text{ if } i \ne j\}
-\]
-
-\item[Upper Triangulars.]
-
-\[
+$$
+* **Upper Triangulars.** $$
 T^n(R) = \{A \in M_n(R): a_{ij} = 0 \text{ if } i > j\}
-\]
-
-\item[Lower Triangulars.]  
-
-\[
+$$
+* **Lower Triangulars.** $$
 T_n(R) = \{A \in M_n(R): a_{ij} = 0 \text{ if } i < j\}.
-\]
+$$
 
-\end{description}
 These are all subrings of $M_n(R)$.
 \\
 
@@ -552,60 +486,52 @@ These are all subrings of $M_n(R)$.
 endomorphism (homomorphisms from $G$ to itself), forms a
 ring under addition as function addition and multiplication as
 function composition.} 
-\begin{description}
-\item[Abelian Group.] First observe that this is a
+
+* **Abelian Group.** First observe that this is a
 commutative structure since $G$ is abelian. We just have
 to show that this is a group.
-\begin{description}
-\item[Identity.] Let $0_G$ be the identity element of
-$G$. Construct the identity element for $\mbox{End}(G)$ to
-be the zero map $0$
-defined as $0: G \to G$ such that $0(g) = 0_G$ for all
-$g \in G$. 
-
-\item[Associativity.] Since $G$ is associative, and
-the images of elements in $\mbox{End}(G)$ are in $G$,
-associativity is inherited. 
-
-\item[Closedness.] Let $f, g \in \mbox{End}(G)$ and
-define $h = f + g$. Then $h: G \to G$, and is
-obviously a homomorphism, so that $h \in
-\mbox{End}(G)$. 
-
-\item[Inverses.] Let $f \in \mbox{End}(G)$. Then
-construct the function $f^{-1} : G 
-\to G$ such that $f^{-1}(g) = -h$ whenever $f(g) =
-h$. (Note that $-h$ is the inverse of $h$.) Then we
-see that $f^{-1}(g) + f(g) = 0$ for all $g \in G$, and
-that $f^{-1}(g) \in \mbox{End}(G)$, so that $f^{-1}$
-is an inverse of $f$. 
-\end{description}
-
-\item[Multiplicatively Closed.] Observe that if $h: f
+    * **Identity.** Let $0_G$ be the identity element of
+    $G$. Construct the identity element for $\mbox{End}(G)$ to
+    be the zero map $0$
+    defined as $0: G \to G$ such that $0(g) = 0_G$ for all
+    $g \in G$.
+    * **Associativity.** Since $G$ is associative, and
+    the images of elements in $\mbox{End}(G)$ are in $G$,
+    associativity is inherited.
+    * **Closedness.** Let $f, g \in \mbox{End}(G)$ and
+    define $h = f + g$. Then $h: G \to G$, and is
+    obviously a homomorphism, so that $h \in
+    \mbox{End}(G)$.
+    * **Inverses.** Let $f \in \mbox{End}(G)$. Then
+    construct the function $f^{-1} : G 
+    \to G$ such that $f^{-1}(g) = -h$ whenever $f(g) =
+    h$. (Note that $-h$ is the inverse of $h$.) Then we
+    see that $f^{-1}(g) + f(g) = 0$ for all $g \in G$, and
+    that $f^{-1}(g) \in \mbox{End}(G)$, so that $f^{-1}$
+    is an inverse of $f$.
+* **Multiplicatively Closed.** Observe that if $h: f
 \circ g$, then $h: G \to G$, and it is a homomorphism.
 Hence $h \in \mbox{End}(G)$.
 Therefore our multiplcative operator is closed.
-
-\item[Multiplicative Associativity.] This holds in our
+* **Multiplicative Associativity.** This holds in our
 case since function composition is in general associative
 for homomorphisms.
-
-\item[Distributivity.] Let $f, g, h \in \mbox{End}(G)$.
+* **Distributivity.** Let $f, g, h \in \mbox{End}(G)$.
 Then observe that 
 
-\[
+$$
 f(g + h) = f \circ (g + h) = f \circ g + f \circ h = fg + fh
-\]
+$$
 
 and 
 
-\[
+$$
 (g + h)f = (g + h) \circ f = g \circ f + h \circ f = gf + hf
-\]
+$$
 
 by linearity of $f, g$ and $h$ (since homomorphisms in
 general are linear functions).
-\end{description}
+
 Therefore, we have that $\mbox{End}(G)$ forms a ring under
 function additon and composition.
 \\
@@ -625,59 +551,48 @@ That is, $f(n)$ represents the $n$-th coefficient.
 
 \noindent Define addition and multiplication for two $f, g \in R[x]$ as 
 
-\[
+$$
 (f + g)(n) = f(n) + g(n) \hspace{0.2cm}\text{ and }\hspace{0.2cm}  (f \cdot g)(n) =
 \sum_{i = 0}^{n}f(i)g(n - i).
-\]
-
+$$
+ 
 This last formula is the formula for the
 $n$-th coefficient from the product of two polynomials. We'll
 show this is a ring.
-\begin{description}
-\item[Abelian.] First we'll show this is an abelian group
+
+* **Abelian.** First we'll show this is an abelian group
 under addition.
-\begin{description}
-\item[Identity.]Let $0_R \in R$ be the 0 element of $R$.
-If we define 0 to be
-the map $0(n) : \mathbb{Z} \to R$ such that $0(n) = 0_R$
-for all $n \in \mathbb{Z}$, then clearly $0 \in R[x]$ and
-$0 + f = f + 0 = f$ for any $f \in R[x]$. It is our
-additivite identity. 
-
-\item[Associativity.] Associativity is derived from
-the fact that $R$ is associative under addition.
-
-\item[Closedness.] 
-To show this is closed we, show that $f + g$ is nonzero
-for at most finitely many elements for any $f, g \in
-R[x]$. Simply observe if $f$ is nonzero for $k$-many
-elements and $g$ is nonzero 
-for $l$-many elements then $(f + g)$ is nonzero for at
-most $(l + k)$-many elements. Therefore $(f + g) \in R[x]$.
-
-\item[Inverses.] 
-For any $f \in R[x]$, define $f^{-1}$ to be $f^{-1}(n)
-= -f(n)$ for all $n \in \ZZ^{+}$. Obviously $f^{-1}$
-is nonzero for at most finitely many elements if $f$
-is, so $f^{-1} \in R[x]$, and $f^{-1}(n) + f(n) = 0$
-for any $n \in \ZZ^{+}$. Therefore $R[x]$ contains inverses.  
-\end{description} 
-
-\item[Multiplicatively Closed.]
-Observe now that this is closed under multiplication. For
+    * **Identity.** Let $0_R \in R$ be the 0 element of $R$.
+    If we define 0 to be
+    the map $0(n) : \mathbb{Z} \to R$ such that $0(n) = 0_R$
+    for all $n \in \mathbb{Z}$, then clearly $0 \in R[x]$ and
+    $0 + f = f + 0 = f$ for any $f \in R[x]$. It is our
+    additivite identity.
+    * **Associativity.** Associativity is derived from
+    the fact that $R$ is associative under addition.
+    * **Closedness.** To show this is closed we, show that $f + g$ is nonzero
+    for at most finitely many elements for any $f, g \in
+    R[x]$. Simply observe if $f$ is nonzero for $k$-many
+    elements and $g$ is nonzero 
+    for $l$-many elements then $(f + g)$ is nonzero for at
+    most $(l + k)$-many elements. Therefore $(f + g) \in R[x]$.
+    * **Inverses.** For any $f \in R[x]$, define $f^{-1}$ to be $f^{-1}(n)
+    = -f(n)$ for all $n \in \ZZ^{+}$. Obviously $f^{-1}$
+    is nonzero for at most finitely many elements if $f$
+    is, so $f^{-1} \in R[x]$, and $f^{-1}(n) + f(n) = 0$
+    for any $n \in \ZZ^{+}$. Therefore $R[x]$ contains inverses.
+* **Multiplicatively Closed.** Observe now that this is closed under multiplication. For
 any $f, g \in R[x]$, we can simply observe that since $f,
 g$ are nonzero for at most finitely many values of $n \in
 ZZ^{+}$, we note that 
 
-\[
+$$
 fg(n) = \sum_{i = 1}^{n}f(i)g(n - i)
-\]
+$$
 
 is a function which is nonzero for at most finitely many
 values, since it is always a finite sum of $f$ and $g$.
-
-\item[Multiplicative Associativity.]
-Let $f, g, h \in R[x]$. Then observe that 
+* **Multiplicative Associativity.** Let $f, g, h \in R[x]$. Then observe that 
 
 \begin{align*}
 (fg)h(n) = \sum_{i = 0}^{n}(fg)(i)h(n - i) &= 
@@ -690,30 +605,28 @@ Let $f, g, h \in R[x]$. Then observe that
 \end{align*}
 
 Therefore multiplicative associativity is satisfied.
+* **Distributivity.** Since the image of our functions are elements in $R$, distributivity is inherited from the ring $R$, which must
+be left and right distributed.
 
-\item[Distributivity.] 
-Since the image of our functions are elements in $R$, distributivity is inherited from the ring $R$, which must
-be left and right distributed. 
-\end{description}
 
 Therefore we see that $R[x]$ forms a rings. We'll now realize
 that this is the set of polynomials by describing the function
 a stupidly simple function: 
 
-\[
+$$
 x^n(m) = 
 \begin{cases}
 1 & \text{ if } n = m\\
 0 & \text{ otherwise }
 \end{cases}.
-\]
+$$
 
 Then observe that for any $f \in R[x]$, we may uniquely associate
 with it the following object: 
 
-\[
+$$
 f = \sum_{n = 0}^{\infty}f(n)x^n.
-\]
+$$
 
 The $\infty$ in the upper limit is there to allow us to define
 any polynomial of an arbitrary degree. We know it will always

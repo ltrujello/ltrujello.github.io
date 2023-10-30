@@ -18,15 +18,15 @@ Suppose further that we have two natural transformations $\sigma, \tau$ as below
 Using these two natural transformations,
 we can define a natural transformation 
 
-\[
+$$
 \tau \cdot \sigma: F \to H
-\]
+$$
 
 where, for each $C \in \cc$, we define 
 
-\[
+$$
 (\tau \cdot \sigma)_C = \tau_C \circ \sigma_C: F(C) \to H(C).
-\]
+$$
 
 Visually, we can picture what we are doing as follows.
 For a given morphism $f: A \to B$ in $\cc$,
@@ -61,9 +61,9 @@ The answer is yes!
 What this then means is that the category of representations of a group $G$
 is actually a functor category. Specifically, 
 
-\[
+$$
 \fun(G, \text{GL}_n(V)) \cong R**-Mod**.
-\]
+$$
 
 Hence in some cases it helps to think of $\fun(\cc, \dd)$ as a 
 category of representations of $\cc$. This makes sense, since that is really 
@@ -96,9 +96,9 @@ any category. Each functor $F:\bm{2} \to \cc$ maps the pair of
 objects to objects $F(1)$ and $F(2)$ in $\cc$. However, since
 functors preserve morphisms, we see that 
 
-\[ 
+$$ 
 f: 1 \to 2 \implies F(f): F(1) \to F(2).
-\]
+$$
 
 This is what each $F \in \cc^{\bm{2}}$ does. Hence, every
 morphism $g \in \hom(\cc)$ corresponds to an element in
@@ -151,25 +151,25 @@ a group $G$ and a ring $R$ (with identity), we can create a
 *group ring* $R[G]$ with identity, in a functorial way, establishing 
 a functor 
 
-\[
+$$
 R[-]: **Grp** \to **Ring**.
-\]
+$$
   
 However, we then noticed that the above functor establishes a process 
 where we send rings $R$ to functors $R[-]: **Grp** \to **Ring**$. 
 It turns out that this process is itself a functor, and we now 
 have the appropriate language to describe it:
 
-\[
+$$
 F: **Ring** \to **Ring**^{**Grp**}
-\]
+$$
 
 Specifically, let $\psi: R \to S$ be a ring homomorphism. 
 Now observe that $\psi$ induces another ring homomorphism 
 
-\[
+$$
 \psi_G^*: R[G] \to S[G] \qquad \sum_{g \in G}a_g g \mapsto \sum_{g \in G}\phi(a_g) g.
-\]
+$$
 
 As a result, we see that such a ring homomorphism induces a natural transformation.
 To show this, let $\phi: G \to H$ be a group homomorphism. Then observe that
@@ -181,9 +181,9 @@ us that the diagram commutes. Hence we see that $\psi^*$ is a natural transforma
 between functors $R[-] \to S[-]$. Overall, this establishes that we do in fact have 
 a functor 
 
-\[
+$$
 F: **Ring** \to **Ring**^{**Grp**}   
-\]
+$$
 
 which we wouldn't be able to describe without otherwise introducing 
 the notion of a functor category.
@@ -196,17 +196,17 @@ consider the functor category $**Set**^M$. The objects of
 **Set**$^M$ are functors $F: M \to **Set**$, each
 of which have the following data: 
 
-\[
+$$
 F(f) : F(M) \to F(M)
-\]
+$$
 
 where $f: M \to M$ is an morphism in $M$. Now if we interpret
 $\circ$ as the binary relation equipped on $M$, we see that
 for any $g : M \to M$,
 
-\[
+$$
 F(g \circ f) = F(g) \circ F(f)
-\]
+$$
 
 by functorial properties. Hence, each functor $F$ maps $M$ to
 a set $X$ which induces the operation of $M$ on $X$. Therefore

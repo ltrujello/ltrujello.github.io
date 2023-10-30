@@ -19,9 +19,9 @@ subgroups or subspaces if we always avoid explicit reference to the elements?
 It turns out that the correct way to go about this is to consider the philosophy of 
 sub-"things": whenever $S$ is a sub-"thing" of $X$, there usually exists a monomorphism
 
-\[
+$$
 m: S \to X.
-\]
+$$
  
 For example, in **Set**, $S \subset X$ implies that there's an injection $i: S \to X$; a monomorphism 
 is injective in **Set**, so this makes sense. In **Top**, if $S \subset X$ where $S$ is given the subspace 
@@ -31,9 +31,9 @@ a monomorphism $m: S \to X$ in **Top**.
 Thus we see that these monomorphisms give us sub-"things," and so we might naively say 
 the set of all "subobjects" of an object $X$ in a category $\cc$ is the set
 
-\[
+$$
 \text{Sub}_{\cc}(X) = \{S \in \text{Ob}(\cc) \mid \exists f: S \to X \text{ with } f \text{ monic }\}.
-\]
+$$
 
 However, the space of all of 
 these monomorphisms is huge, and also repetitive. For example, in **Set**, if we have 
@@ -49,9 +49,9 @@ $g: D \to A$. Define the relation $\le$ on monomorphisms of this form where
 \begin{statement}{ProcessBlue!10}
 \begin{minipage}{0.6\textwidth}
 
-\[
+$$
 f \le g \text{ if there exists an } h \text{ where } f = g \circ h.
-\]
+$$
 
 \end{minipage} 
 \begin{minipage}{0.4\textwidth}
@@ -73,9 +73,9 @@ of $A$
 is an equivalence class of monomorphisms $f: S \to A$ under the equivalence relation 
 $\sim$. We denote this space of equivalence classes as 
 
-\[
+$$
 \text{Sub}_{\cc}(A) = \Big\{[f] \mid f:C \to A \text{ is a monomorphism} \Big\}.
-\]
+$$
 
 </span>
 
@@ -90,9 +90,9 @@ If we play around with these functors long enough, we may ask the question:
 What happens when, for a functor $F: \cc \to **Set**$, there is another 
 functor $G: \cc \to **Set**$ such that 
 
-\[
+$$
 G(A) \subset F(A)?
-\]
+$$
 
 Could we logically call $G$ a "**subfunctor**" of $F$? We could with a little more work. 
 Because $G(A) \subset F(A)$,  we know that there exists a monomorphism (just an injection here)
@@ -106,9 +106,9 @@ two entirely different things to the same elements in different domains; however
 one way for this diagram to commute is if $G(f)$ is $F(f)$ *restricted* to 
 the set $G(A)$. That is, if 
 
-\[
+$$
 G(f) = F(f)\big|_{G(A)}.
-\]
+$$
 
 The diagram then commutes. But is this the only way to make it commute? Suppose with no assumption of $G(f)$
 that the diagram did commute. Then we can still make a morphism $F(f)\big|_{G(A)}: G(A) \to G(B)$ to 
@@ -173,9 +173,9 @@ two examples to generalize the concept.
 
 For an object $A$ in a category $\cc$, we consider all *epimorphisms*
 
-\[
+$$
 e: A \to Q
-\]
+$$
 
 and call objects such objects $Q$ as quotient objects. Again, the space of these 
 objects is too large, so we instead consider ordering relation 
@@ -183,9 +183,9 @@ objects is too large, so we instead consider ordering relation
 \begin{statement}{ProcessBlue!10}
 \begin{minipage}{0.6\textwidth}
 
-\[
+$$
 f \le g \text{ if there exists an } h \text{ where } f = h \circ g.
-\]
+$$
 
 \end{minipage} 
 \begin{minipage}{0.4\textwidth}
@@ -203,9 +203,9 @@ $\phi: D \to C$ such that $f = \phi \circ g$. We can now outline a clear definit
 Let $\cc$ be a category and let $A$ be an object. We say a **quotient object** of 
 $A$ is an equivalence class of morphisms $f: A \to Q$. We then denote 
 
-\[
+$$
 \text{Quot}_\cc(A) = \Big\{ [f] \mid f: A \to Q \text{ is an epimorphism }\Big\}.
-\]
+$$
 
 </span>
 

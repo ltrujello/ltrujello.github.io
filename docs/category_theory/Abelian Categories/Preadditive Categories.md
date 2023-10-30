@@ -38,22 +38,22 @@ where $G \mapsto \hom(G, H)$?}
 \end{minipage}
 \end{center}The answer is yes; the functor is actually contravariant, for suppose we have a group homomorphism
 
-\[
+$$
 \phi: G \to G'.
-\]
+$$
 
 Then define the function
 
-\[
+$$
 F_H(\phi): \hom(G', H) \to \hom(G, H) 
-\]
+$$
     
 where
 \begin{statement}{NavyBlue!10}
 
-\[
+$$
 F_H(\phi)(\psi: G' \to H) = \psi \circ \phi: G \to H.
-\]
+$$
     
 \end{statement}
 To verify functoriality, we have to check that this function is actually a group 
@@ -78,23 +78,23 @@ a functor $F^G: **Ab** \to **Ab**$ where $H \mapsto \hom(G, H)$?}
 \end{center}One can easily show that the answer is yes. In this direction, the functor is covariant. That 
 is, for $\psi: H \to H'$, we have that 
 
-\[
+$$
 F^G(\psi): \hom(G, H) \to \hom(G, H')
-\]
+$$
 
 where 
 \begin{statement}{NavyBlue!10}
 
-\[
+$$
 F^G(\psi)(\phi: G \to H) = \psi \circ \phi: G \to H'.
-\]
+$$
 
 \end{statement}
 Note that for our functors, we have that
 
-\[
+$$
 F_H(G) = F^G(H).
-\]
+$$
 
 This is *bifunctor-ish*. Therefore, our category theory voice is now 
 asking: 
@@ -126,9 +126,9 @@ while going down and then right gives
 Hence we have commutativity of the above diagram, and we therefore have a 
 true bifunctor $F: **Ab**\times**Ab** \to **Ab**$ where 
 
-\[
+$$
 F(G,H) = \hom(G, H).
-\]
+$$
 
 \textcolor{NavyBlue}{What this really shows is that $\hom(-, -)$ is a functor; specifically, a bifunctor. 
 So while we typically think of $\hom(G, H)$ as a set, it had hidden functorial properties. 
@@ -137,9 +137,9 @@ abelian group, and this is not the case with other constructions (e.g. **Grp**).
 
 Let us now consider a new observation of $**Ab**$. For any triple of abelian groups
 
-\[
+$$
 (G, \star), (H, +), (K, \cdot)
-\]
+$$
 
 we can create abelian groups 
 
@@ -152,23 +152,23 @@ we can create abelian groups
 where $\phi_i \in \hom(G, H), \psi_i \in \hom(H, K)$ and $\sigma_i \in \hom(G, K)$ 
 for $i = 1, 2$. Now since these are abelian groups in **Ab**, there is a composition operator 
 
-\[
+$$
 \circ: \hom(G, H)\times \hom(H,K) \to \hom(G, K)
-\]
+$$
 
 where $\circ(\phi: G \to H, \psi: H \to K ) \mapsto \psi \circ \phi: G \to K$. 
 However, we now run into a problem where our operators might not play nicely with each other. Specifically, is 
 it true that 
 
-\[
+$$
 \psi \circ (\phi_1 +' \phi_2) = (\psi \circ \phi_1) * (\psi \circ \phi_2)
-\]
+$$
 
 or 
 
-\[
+$$
 (\psi_1 \cdot' \psi_2) \circ \phi = (\psi_1 \circ \phi) * (\psi_2 \circ \phi)?
-\]
+$$
 
 For the first case, the answer is yes. Observe that
 
@@ -256,9 +256,9 @@ every pair of objects $A, B \in \cc$ gives rise to a group $(\hom_{\cc}(A, B), +
 for some operation $+$. This allows us to place a group structure $+'$ on 
 $\hom_{\cc\op}(B, A)$ where for two $f\op, g\op: B \to A$ in $\cc\op$,
 
-\[
+$$
 f\op +' g\op = (f + g)\op.
-\]
+$$
 
 That is, we rely on the preexisting group operation $+$ from  $\hom_{\cc}(A, B)$. 
 Given that the composition operator of $\cc\op$ is $\circ\op$, we can check that 
@@ -295,11 +295,11 @@ and that $G(f) \circ \epsilon_A  = \epsilon_B \circ F(f)$. However, since
 $\cc$ is abelian, we can combine these morphisms and add both equations 
 to get 
 
-\[
+$$
 G(f) \circ \eta_A + G(f) \circ \epsilon_A = \eta_B \circ F(f) + \epsilon_B \circ 
 F(f) 
 \implies G(f) \circ (\eta_A + \epsilon_A) = (\eta_B + \epsilon_B) \circ F(f).
-\]
+$$
   
 Hence the diagram below 
 
@@ -311,9 +311,9 @@ with the operation $+'$  defined so that for two $\eta, \epsilon \in \hom_{\cc^J
 $\eta + ' \epsilon$ is the natural transformation where 
 for each object $A$
 
-\[
+$$
 (\eta +' \epsilon)_A = \eta_A + \epsilon_A
-\]
+$$
 
 where $+$ is the group operation on $(\hom_{\cc}(F(A), G(A)), +)$. The fact that 
 this distributes bilinearly over the composition operator is inherited from 

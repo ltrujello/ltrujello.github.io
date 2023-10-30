@@ -57,16 +57,16 @@ that $f_n \circ \pi_{n+1} = \pi_n$. So let's instead restrict
 our attention to a subset $\displaystyle L \subset \prod_{i = 0}A_i$ 
 where the points $(a_0, a_1, \dots, a_n, \dots)$ do satisfy this relation.
 
-\[
+$$
 L = \big\{x = (a_0, a_1, a_2, \dots,) 
 \mid f_{n}\circ \pi_{n+1}(a_) = \pi_n(x) \big\}.
-\]
+$$
 
 and equip $L$ with the functions $\pi'_{n}$ where 
 
-\[
+$$
 \textcolor{NavyBlue}{\pi'_n} = \pi_n \circ i  : L \to A_n
-\]
+$$
 
 where $i: L \to \prod\limits_{i = 1}^{\infty} F_i$ is the
 inclusion function. Then we have
@@ -87,31 +87,31 @@ F_n$. Since this is another
 cone, we have that $f_n \circ \mu_{n+1} = \mu_n$. 
 Now let $k \in K$.  Then we can form an element 
 
-\[
+$$
 x = (\mu_0(k), \mu_1(k), \mu_2(k), \dots) \in 
 \prod_{i = 1}^{\infty}F_i
-\]
+$$
   
 since each $\mu_n(k) \in F_n$. Now observe that 
 
-\[
+$$
 f_n \circ \pi_{n+1}(x) = f_n(\mu_{n+1}(k)) = 
 \mu_n(k) = \pi_n(x). 
-\]
+$$
 
 Thus we see that $f_n \circ \pi_{n+1}(x) = \pi_n(x)$, so that
 by definition,  $x \in L$. Hence we can create a unique
 function $g: K \to L$ where for each $k \in K$,
 
-\[
+$$
 g(k) = (\mu_0(k), \mu_1(k), \mu_2(k), \dots)
-\]
+$$
 
 so we then have that 
 
-\[
+$$
 \pi'_n \circ g = \mu_n.
-\]
+$$
 
 Hence, this shows that $(L, \pi_n: L \to F_n)$ is universal,
 so that $L = \Lim F$! 
@@ -143,9 +143,9 @@ consider the one-point set $\{*\}$.
 * **2.** Associate $\{*\}$ with 
 the family of functions $\pi^*_n: \{*\} \to F_n$, defined as
 
-\[
+$$
 \pi^x_n(*) = x_n.
-\]
+$$
 
 Now since $x \in \Lim F$, we know that $f_n(x_{n+1}) = x_{n}$.
 But, note that this is equivalent to stating that $f_n \circ
@@ -162,9 +162,9 @@ The category **Set** is complete. That is, if $J$ is a
 small category, every functor $F: J \to **Set**$ has a 
 limit 
 
-\[
+$$
 \Lim F = \cone(*, F)
-\]
+$$
 
 where $\cone(*, F)$ is the set of all cones of $\{*\}$ over
 $F$. The set $\cone(*, F)$ forms the limit cone with the
@@ -172,9 +172,9 @@ morphisms $v_i: \cone(*, F) \to F_i$ described as follows.
 If $x \in \cone(*, F)$, then $x$ has a family of 
 morphisms $\sigma^x_i: \{*\} \to F_i$. Therefore,
 
-\[
+$$
 v_i: \cone(*, F) \to F_i \qquad v_i(x) = \sigma^x_i(*).
-\]
+$$
 
 \vspace{-0.8cm}
 </span>
@@ -206,9 +206,9 @@ function $g: A \to \cone(*, F)$, where each point $a$ is sent to
 the cone which it forms from $\{*\}$ over $F$. Therefore,
 $\cone(*, F)$ is universal, so that 
 
-\[
+$$
 \Lim F = \cone(*, F)
-\]
+$$
 
 as desired. 
 </span>
@@ -230,18 +230,18 @@ exists,
 the limit $(\Lim F, \sigma: \Delta(\Lim F) \to F)$
 such that 
 
-\[
+$$
 G(\Lim F) = \Lim G \circ F \qquad G(\sigma) = \tau.
-\]
+$$
 
 Similarly, a functor $G: \cc \to \dd$ **creates colimits for $F$**
 if whenever $(\Colim G \circ F, \tau: G \circ F \to \Delta(\Lim G \circ F)$ 
 exists, the colimit $(\Colim F, \sigma: F \to \Delta(\Colim F)$ exists 
 and 
 
-\[
+$$
 G(\Colim F) = \Colim G \circ F \qquad G(\sigma) = \tau.
-\]
+$$
 
 </span>
 
@@ -283,9 +283,9 @@ the family of morphisms $v_i: \cone(*, U \circ F)$ into a
 family of group homomorphisms. To show this, simply observe
 that 
 
-\[
+$$
 v_i(\sigma \times \tau) = (\sigma \times \tau)_i = \sigma_i \cdot \tau_i = v_i(\sigma)\cdot v_i(\tau).           
-\]
+$$
 
 Now we claim that the cone $\cone(*, U \circ F)$ with the
 morphisms $v_i: \cone(*, U \circ F) \to F_i$ is universal. To
@@ -327,17 +327,17 @@ functor $P: (A \downarrow \cc) \to \cc$ where on objects
 $(C, f: A \to C)$ and morphisms $h: (C, f: A \to C) \to (C', f: A \to C')$ 
 we have that 
 
-\[
+$$
 P(C, f: A \to C) = C \qquad P(h) = h: C \to C'.            
-\]
+$$
 
 Now for any functor $F:J \to (A \downarrow \cc)$, the functor 
 $P: (A \downarrow \cc) \to \cc$ creates limits. To see this, we first interpret 
 a functor $F: J \to (A \downarrow \cc)$. For each $j$, we have that  
 
-\[
+$$
 F(j) = (C_j , f_j: A \to C_j) 
-\]
+$$
 
 for some $C_j \in \cc$ and $f_j: A \to C_j$. If $u: j \to k$ is a morphism in
 $J$, then $F(u) : C_j \to C_k$ is a morphism in $\cc$ 

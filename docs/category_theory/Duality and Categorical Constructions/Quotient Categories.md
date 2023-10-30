@@ -39,9 +39,9 @@ where $Q$ acts identically on objects and where
 $Q(f: A \to B) = [f] \in \hom_{\cc/R}(A,B)$. This in fact defines a functor 
 if we observe that, for a pair of composable morphisms $g, f$.
 
-\[
+$$
 Q(g) \circ Q(f) = [g \circ f] = Q(g \circ f). 
-\]
+$$
 
 A nice property of this functor is the fact that if $f \sim f'$, then $Q(f) = Q(f')$.
 What is even nicer about this functor is that it has the following property. 
@@ -63,9 +63,9 @@ Observe that one functor $H: \cc/R \to \dd$ that we can supply,
 which will have the above diagram commute, is one where 
 $H(C) = F(C)$ on objects and where for any $[f] \in \hom_{\cc/R}(A, B)$,
 
-\[
+$$
 H([f]) = F(f)   
-\]
+$$
 
 where $f$ is an representative of the equivalence class $f$. Note that 
 this is well defined since $F(f) = F(f')$ if $f \sim_{A,B} f'$; hence this 

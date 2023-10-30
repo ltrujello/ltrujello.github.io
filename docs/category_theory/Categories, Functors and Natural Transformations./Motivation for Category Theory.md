@@ -48,9 +48,9 @@ a *monoid*! In the most
 basic sense, a monoid $M = \{x_1, x_2, \dots, \}$ is a set of elements equipped with 
 a multiplication map 
 
-\[
+$$
 \cdot: M \times M \to M \qquad (x, y) \mapsto x\cdot y
-\]
+$$
 
 which is associative, and with a multiplicative identity $e$. With a monoid we see that 
 

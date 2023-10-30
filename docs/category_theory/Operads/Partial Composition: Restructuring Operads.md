@@ -27,16 +27,16 @@ f(g_1(x_1, \dots x_{a_1}), \dots, g_n(x_{a_1 + \cdots + a_n + 1}, \dots, x_{a_1 
 However, what if we decided to build this function another way; perhaps, handling 
 one $g_i$ at a time? The way we could do this is by inserting a $g_i$ one at a time:
 
-\[
+$$
 (f, g_i) \mapsto f(\underbrace{x_1, \dots, x_{k-1}}_{k-1}, \overbrace{g_i(x'_1, \dots, x'_{a_i})}^{k\text{-th spot}}, \underbrace{x_{k+1}, \dots, x_n}_{n-(k+1)})  
-\]
+$$
 
 Given that we'd have a total of $(n + a_i  -1)$-many inputs, this then defines a composition 
 operator 
 
-\[
+$$
 \circ_k: X^n \times X^{a_i} \to X^{n + a_i - 1}
-\]
+$$
 
 for each $n, a_i \ge 0$. We can then repeatedly apply this composition operator to build 
 the same function that our operadic composition does. 

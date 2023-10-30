@@ -19,15 +19,15 @@ be two groups with group operations $\textcolor{NavyBlue}{\bigcdot}: G \times G 
 and $\textcolor{Orange}{\bigcdot}:  H \times H \to H$. The **product group** 
 of $G,H$ is the group 
 
-\[
+$$
 (G \times H, \bigcdot) = \bigg\{(g, h) \;\bigg|\; g \in G, \, h \in H \bigg\}
-\]
+$$
 
 whose group product works as 
 
-\[
+$$
 (g, h) \, \bigcdot \, (g', h') = (g \mathbin{\textcolor{NavyBlue}{\bigcdot}} g', h \mathbin{\textcolor{Orange}{\bigcdot}} h').
-\]
+$$
 
 One may check that this construction satisfies the definition of a group. 
 
@@ -42,9 +42,9 @@ of finite abelian groups, which states that for any finite abelian group $A$,
 there exist primes $p_1, p_2, \dots, p_n$ and positive integers $\alpha_1, \alpha_2, \dots, \alpha_n$ 
 such that 
 
-\[
+$$
 A \cong \zz_{p^{\alpha_1}_1}\oplus \zz_{p^{\alpha_2}_2} \oplus \cdots \oplus \zz_{p^{\alpha_n}_n}.
-\]
+$$
 
 That is, every finite abelian group is the product of cycic groups of a prime-power 
 order. 
@@ -58,9 +58,9 @@ where $\tau_{X\times Y}$ is the **product topology**. There are many ways of
 defining this topology, but in the finite case, we can write 
 $\tau_{X\times Y}$ as
 
-\[
+$$
 \tau_{X\times Y}  = \bigg\{ U \times V \;\bigg|\; U \in \tau_X, V \in \tau_Y \bigg\} . 
-\]
+$$
 
 In the way we have presented this, this is actually the **box topology**, but the 
 reader may recall that they coincide when we take finite products. 
@@ -72,9 +72,9 @@ reader may recall that they coincide when we take finite products.
 In **Set**, we can always take two sets $X, Y$ to create  
 the **cartesian  product** $X \times Y$ defined as the set 
 
-\[
+$$
 X \times Y  =  \bigg\{ (x,y)  \;\bigg|\; x \in X, y \in Y \bigg\}
-\]
+$$
 
 Now consider the following question.
 \begin{center}
@@ -129,10 +129,10 @@ Let $\cc$ be a category with objects $A$ and $B$.
 The **product of $A$ and $B$** is an object $A \times B$ 
 equipped with morphisms
 
-\[
+$$
 \pi_A: A \times B \to A \qquad 
 \pi_B: A \times B \to B            
-\]
+$$
 
 with the following universal property: For any object $Z$ of $\cc$ with morphisms
 $f: Z \to A$, $g: Z \to B$, there exists a unique morphism $h: Z \to A \times B$ 
@@ -164,9 +164,9 @@ and $(S, \mathbin{\textcolor{Orange}{+}}, \textcolor{Orange}{\bigcdot})$ be two 
 with zeros $0_R, 0_S$ and units $1_R, 1_S$. 
 Then we may form the **product ring** of $R$ and $S$ to be the ring 
 
-\[
+$$
 (R \times S, +, \bigcdot) = \bigg\{(r, s) \;\bigg| \; r \in R, s \in S \bigg\}
-\]
+$$
 
 where for all pairs $(r_1, s_1)$ and $(r_2, s_2)$ in $R \times S$, we define the ring operations to behave as
 
@@ -181,11 +181,11 @@ of a product in **Ring**, so that **Ring** has products.
 We make an interesting observation from the last example. For our ring $(R \times S, +, \bigcdot)$, 
 we surely have that $(0_R, 1_S)$ and $(1_R, 0_R)$ are elements of the product ring. However, 
 
-\[
+$$
 (0_R, 1_S) \mathbin{\bigcdot} (1_R, 0_S) = (0_R \mathbin{\textcolor{NavyBlue}{\bigcdot}} 1_R, 0_S \mathbin{\textcolor{Orange}{\bigcdot}} 1_S)
 = 
 (0_R, 0_S).
-\]
+$$
 
 Hence, even if the rings $R$ and $S$ are integral domains, $R \times S$ is not an integral domain. 
 Thus the product of two rings is never an integral domain. 
@@ -195,9 +195,9 @@ Thus the product of two rings is never an integral domain.
 Consider the category of fields **Fld**. Let $F_1, F_2$ be fields. Then 
 we would expect that the ring 
 
-\[
+$$
 F_1 \times F_2 = \bigg\{ (a, b) \;\bigg|\; a \in F_1, F_2 \bigg\}
-\]
+$$
 
 to be the "product field." But we just observed that this cannot 
 be a field because the product ring is not even an integral domain.
@@ -212,9 +212,9 @@ Suppose that $P$ is the product field of
 $\mathbb{F}_2$ and $\mathbb{F}_3$. Then by definition, we would require 
 two projection field homomorphisms
 
-\[
+$$
 \pi_1: P \to \mathbb{F}_2 \qquad \pi_2: P \to \mathbb{F}_3
-\]
+$$
 
 However, recall that two fields share a (nonzero) field homomorphism if and only if 
 they are of the same characteristic. Therefore, 
@@ -232,9 +232,9 @@ From the previous example, we see that products don't always exist in category.
 However, if they do, then we can take finitely many products. For instance, if we have 
 three objects $A, B, C$, then we can take the products
 
-\[
+$$
 A \times (B \times C) \qquad (A \times B) \times C.
-\]
+$$
 
 If we have four objects, then we can create 5 products. Thus, if we can take the 
 product of two objects, then we all finite products consisting of objects of $\cc$ exist 
@@ -254,16 +254,16 @@ object $A \times B$ for every pair of objects $A$ and $B$. Then
 * **$\bm{(iii)}$** For any three objects, we have an
 isomorphism 
 
-\[
+$$
 (A \times B) \times C \cong A \times (B \times C)
-\]
+$$
 
 which is natural in $A, B$ and $C$ .
 * **$\bm{iv}$** For any object $A$, we have the isomorphism 
 
-\[
+$$
 T \times A \cong A \cong T \times A            
-\]
+$$
  
 natural in $A$.
 
@@ -273,13 +273,13 @@ natural in $A$.
 <span style="display:block" class="proof">
 To prove the first part, let $P(n)$ be the following statement: 
 
-\[
+$$
 P(n) = 
 \begin{cases}
 \text{ For any objects } A_1, A_2, \dots, A_n \in \cc,\\
 \text{ their product diagram in }\cc.
 \end{cases}
-\]
+$$
 
 
 * **Base Case.** Observe that for $n = 0$,  the statement is
@@ -309,11 +309,11 @@ morphism $\pi'_1: A_1 \times \cdots \times A_k \times A_{k+1}
 We can extend this across the morphisms $\pi_1, \pi_2 \cdots,
 \pi_k$ to demonstrate that there exist unique morphisms 
 
-\[
+$$
 \pi_i \circ \pi'_1: A_1 \times \cdots \times A_k \times A_{k+1}
 \to 
 A_i
-\]
+$$
 
 for $i = 1, 2, \dots, k$. Denote these as $\overline{\pi}_i$.
 
@@ -330,11 +330,11 @@ so we have a unique morphism $v: C \to A_1 \times \cdots
 \circ v = h_{k+1}$. 
 However, note that 
 
-\[
+$$
 \pi'_1 \circ  v = u \implies (\pi_i \circ \pi'_1) \circ v = 
 \pi_i \circ u 
 \implies \overline{\pi}_i \circ v= h_i.
-\]
+$$
 
 for $i = 1, 2, \dots, k$. 
 
@@ -344,9 +344,9 @@ Then we see that for such a family $h_i: C \to A_i$ for $i =
 1,  2, \dots, k+1$, there exists a unique morphism $v: C \to
 A_1 \times \cdots \times A_{k+1}$ such that 
 
-\[
+$$
 \overline{\pi}_i \circ v = h_i
-\]
+$$
 
 for $i = 1, 2, \dots, k + 1$. Therefore, we have the product
 diagram 
@@ -365,16 +365,16 @@ define one. Let $\prod: \cc \times \cc \to \cc$ act as follows.
 * **Morphisms.** Let $f: A \to A'$ and $g: B \to B'$. Suppose
 we have canonical projections 
 
-\[
+$$
 \pi_1: A \times B \to A \qquad  \pi_2: A \times B \to B  
-\]
+$$
  
 and 
 
-\[
+$$
 \pi'_1: A' \times B' \to A' \qquad  \pi'_2: A' \times B' \to  
 B'.
-\]
+$$
 
 Then observe we get the diagram
 
@@ -383,10 +383,10 @@ Thus, there exists a unique morphism $u: A \times B \to A'
 \times B'$ whenever such $f, g$ exist. Therefore, we can
 define how $\prod$ acts on morphism as
 
-\[
+$$
 \prod(f: A \to A', g: B \to B') = u: A \times B \to A' \times
 B'
-\]
+$$
 
 where $u$ is generated by the diagram above. As we just showed, 
 this assignment is well-defined.
@@ -452,10 +452,10 @@ universal cone of this construction was simply $A \times B
 \times C$ with the morphisms $\overline{\pi}_1,
 \overline{\pi}_2, \overline{\pi}_3$. Thus we have that
 
-\[
+$$
 A \times (B \times C) \cong (A \times B) \times C \cong A 
 \times B \times C
-\]
+$$
 
 since universal objects of the same construction are
 isomorphic. Showing naturality is not hard (again, too lazy to
@@ -505,9 +505,9 @@ a category is actually a universal morphism.
 Let $\cc$ be a category with objects $A, B$. The **product $A \times B$ of $A$ and $B$**
 is a universal morphism 
 
-\[
+$$
 \pi: (A \times B, u: \Delta(A\times B) \to (A, B))  
-\]
+$$
 
 from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$\Delta$ to $(A, B)$}}. This means that for any
 other pair $(C, q: \Delta(C) \to (A, B))$, there exists a unique 
@@ -536,9 +536,9 @@ morphism $f': C \to A \times B$.
 <img src="../../../png/category_theory/chapter_3/tikz_code_3_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 When we usually do this, we simply just set 
 
-\[
+$$
 f' = (f, g)   
-\]
+$$
 
 so that $\pi_A \circ f' = f$, and $\pi_B \circ f' = g$. 
 </span>

@@ -22,9 +22,9 @@ x_2, \dots, x_n\}$ with $S \subset M$ is said to be
 **linearly independent** if and only if the only solution
 to the equation 
 
-\[
+$$
 a_1x_1 + a_2x_2 + \cdots + a_nx_n = 0
-\]
+$$
 
 is $a_1 = a_2 = \cdots = a_n = 0$ (where $a_1, a_2, \dots,
 a_n \in R$). 
@@ -45,26 +45,22 @@ check the following statement, which we offer here.
 $S$ is a basis for some $R$-module $M$ if and only if every $x
 \in M$ can be written uniquely as 
 
-\[
+$$
 x = a_1x_1 + a_2x_2 + \dots a_nx_n
-\]
+$$
 
 where $a_i \in R$ and $x_i \in S$ for $i = 1,2, \dots, n$.
 </span>
 
 **Examples**
 
-* [1.] Consider the $R$-module $M_{m,n}(R).$ Observe that
+* **1.** Consider the $R$-module $M_{m,n}(R).$ Observe that
 a basis for this module consists of 
 
-\[
+$$
 \{E_{ij} \mid 1 \le i \le m, 1 \le j \le n\}.
-\]
-
-
-
-
-* [2.] Consider an abelian group $G$. Then as we showed
+$$
+* **2.** Consider an abelian group $G$. Then as we showed
 before, $G$ is technically a $\mathbb{Z}$-module. However, if
 $G$ is finite, then it is not a free $\ZZ$-module. 
 
@@ -75,51 +71,43 @@ which forms a basis of $G$. Then if $\{o_1, o_2,
 \dots, o_n\}$ is a set such that $o_i = \text{order}(x_1)$
 (which exists, by finiteness of $G$) then  
 
-\[
+$$
 o_1x_1 + o_2x_2 + \cdots + o_nx_n = 0.
-\]
+$$
 
 Hence, the set $\{x_1, x_2, \dots, x_n\}$ is not linearly
 independent, so $G$ is not a free $\ZZ$-module.
-
-
-
-* [3.] Consider the set $R[X]$. Observe that a suitable
+* **3.** Consider the set $R[X]$. Observe that a suitable
 generating basis is 
 
-\[
+$$
 \{x^n \mid n \in \mathbb{N}\}
-\]
+$$
 
-which is probably something you already knew. 
-
-
-
-* [4.] Suppose $M_1$ and $M_2$ are free modules with bases
+which is probably something you already knew.
+* **4.** Suppose $M_1$ and $M_2$ are free modules with bases
 $S_1, S_2$. Then the set $M_1 \oplus M_2$ is a free module,
 since it has a basis 
 
-\[
+$$
 \{(x, 0) \mid x \in S_1\} \cup \{(0, y) \mid y \in S_2\}.
-\]
+$$
 
 More generally, if $\{M_\alpha\}_{\alpha \in \lambda}$ is a
 of free modules where $S_\alpha$ is the basis of $M_\alpha$,
 then we see that 
 
-\[
+$$
 \oplus_{\alpha \in \lambda}M_\alpha
-\]
+$$
 
 is also a free module with basis 
 
-\[
+$$
 \bigcup_{\alpha \in \lambda}\{(\delta_{jk}s_{j\alpha}) \mid s_{j\alpha} \in S_j\}.
-\]
+$$
 
 where $\delta_{jk}$ is the Kronecker delta function.
-
-
 
 
 
@@ -144,13 +132,13 @@ and the basis for $N$ is $T = \{y_1, y_2, \dots, y_m\}$.
 Define a set of functions for $1 \le i \le m$ and $1 \le j \le
 n$ such that 
 
-\[
+$$
 f_{ij}(x_k) = 
 \begin{cases}
 y_j & \text{ if } k = i\\
 0 & \text{ if } k \ne j
 \end{cases}.
-\]
+$$
 
 By the previous proposition, we know that each $f_{ij}$ is a
 element in $\hom_R(M, N)$. Now let $f \in
@@ -158,9 +146,9 @@ element in $\hom_R(M, N)$. Now let $f \in
 know that for each $v_k \in S$ there exists coefficients
 $a_{k1}, a_{k2}, \dots, a_{kn}$ such that  
 
-\[
+$$
 f(v_k) = a_{k1}y_1 + \cdots + a_{kn}y_n.
-\]
+$$
 
 However, observe that 
 
@@ -190,9 +178,9 @@ claim.
 Let $R = \mathbb{Z}$ and $M = \oplus_{i =
 1}^{\infty}\mathbb{Z}$. Then observe that 
 
-\[
+$$
 \hom_R(M, \ZZ) \cong \prod_{i = 1}^{\infty}\ZZ.
-\]
+$$
 
 by Theorem 1.13. However, we see that while $\ZZ$ is finitely 
 generated and $M$ is finitely generated, but $\displaystyle \prod_{i =
@@ -209,9 +197,8 @@ $M/IM$ is a $R/I$-module and is free with basis $\pi(S) =
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[$\bm{M/IM}$ is an $\bm{R/I}$-module.]
-First recall that $IM$ is a submodule of $M$. Therefore it
+
+* **$\bm{M/IM}$ is an $\bm{R/I}$-module.** First recall that $IM$ is a submodule of $M$. Therefore it
 makes sense to consider the quotient $M/IM$. Then we can
 define a mapping $\cdot: R/I \times M/IM \to M/IM$ as follows. Let $r
 + I \in R/I$ and $m + IM \in M/IM$. Then define the mapping as
@@ -224,29 +211,27 @@ define a mapping $\cdot: R/I \times M/IM \to M/IM$ as follows. Let $r
 
 Since $M$ is an $R$-module, $rm \in M$ so that $rm + IM$ is in
 fact in $M/IM$. The other module properties may be easily
-verified without difficulty by using this mapping. 
-
-\item[$\bm{M/IM}$ is free.] 
-Suppose $m+ IM$ is an element of $M/IM$. Since $\pi: M \to
+verified without difficulty by using this mapping.
+* **$\bm{M/IM}$ is free.** Suppose $m+ IM$ is an element of $M/IM$. Since $\pi: M \to
 M/I$ is a surjective mapping, we see that there exists at
 least one $m \in M$ such that $\pi(m) = m + IM$. Now since
 $m$ is free, there exists a unique representation of $m$
 of its basis elements, i.e., there exists $\{a_j\}_{j \in
 J}$, a subset of $R$, such that 
 
-\[
+$$
 m = \sum_{j \in J} a_jx_j \implies  \pi(m) = \pi\left(\sum_{j \in J} a_jx_j \right) =
 \sum_{j \in J} a_j\pi(x_j) + IM
-\]
+$$
 
 Hence $m + IM = \sum_{j \in J} a_j\pi(x_j) + IM.$ To finish showing
 that $\{\pi(x_j)\}_{j \in J}$ is a basis for $M/IM$, we
 only have to show that it is a linearly independent
 set. So consider the equation 
 
-\[
+$$
 \sum_{j \in J}a_j\pi(x_j) = 0 + IM                
-\]
+$$
 
 for some constants $\{a_j\}_{j \in J}$ in $\mathbb{R}$.
 Suppose additionally for contradiction that not all of the
@@ -256,7 +241,7 @@ contradiction since none of the elements of
 $\{\pi(x_j)\}_{j \in J}$ is allowed to be in $IM$. Hence
 this set generates $M/IM$ and is linearly independent, so
 it is a basis.
-\end{description}
+
 </span>
 
 We can introduce an even more useful proposition regarding free
@@ -266,9 +251,9 @@ modules, and more generally all modules.
 <span style="display:block" class="proposition">
 Let $M$ be an $R$-module. Then 
 
-\[
+$$
 M \cong F/K    
-\]
+$$
 
 for a free module $F$ and some submodule $K$ of $F$. That is,
 $M$ is the quotient of some free module $F$. Furthermore, if
@@ -284,10 +269,10 @@ an $S$ exists since we can at most take $S = M$. Now suppose
 $F = \oplus{j \in J}R$, which is a free module. Construct the
 module homomorphism $\psi: F \to M$ as 
 
-\[
+$$
 \psi((a_j)_{j \in J}) = \sum_{j \in J} a_jx_j.
-\]
-
+$$
+  
 Observe that since $S$ generates $M$, such a homomorphism is
 surjective onto $M$. Hence, we see that $M$ is the quotient of
 some free module $F$.

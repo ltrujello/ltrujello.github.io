@@ -12,9 +12,9 @@ two categories $\cc$ and $\dd$, and if $\sigma: F \to G$ and
 $\tau:G \to H$ are natural transformations, then we can form the
 natural transformation 
 
-\[
+$$
 (\tau \circ \sigma) : F \to H.
-\]
+$$
 
 We call such a type of composition as
 vertical compositions of natural transformations, 
@@ -51,9 +51,9 @@ Since $\eta: F \to G$ is a natural transformation between these
 objects, we see that there's a way of mapping between these two
 elements in $\cc$:
 
-\[
+$$
 \eta(B): F(B) \to G(B).
-\]
+$$
      
 Hence, we have two objects in $\cc$ and a morphism in between
 them. Hence, we know that the natural transformation $\eta': F'
@@ -83,9 +83,9 @@ G'$ such that $F, G: \bb \to \cc$ and $F',G' : \cc \to \dd$, then
 for $B \in \bb$ we define their "horizontal" composition as the
 diagonal of the above diagram; that is,
 
-\[
+$$
 (\eta \circ \eta')B = G'(\eta(B)) \circ \eta' F(B) = \eta'(G(B))\circ F'(\eta(B)).
-\]
+$$
 
 
 The above diagram doesn't quite show that $\eta \circ \eta': F'
@@ -129,9 +129,9 @@ $\cdot$ between natural transformations.}
 It is also notationally convenient to denote functor and natural
 transformation compositions as 
 
-\[
+$$
 F' \circ \tau : F' \circ F \to F' \circ T  \quad \eta' \circ G: F' \circ G \to G' \circ G
-\]
+$$
 
 which are two additional natural transformations. \textcolor{purple}{(Remember we
 showed that the left square in the commutative diagram of the
@@ -145,9 +145,9 @@ the commutative diagram in the previous proof.)}
 
 With the above notation, we can then write that 
 
-\[
+$$
 \eta' \circ \eta = (G' \circ \eta) \cdot (\eta' \circ F) = (\eta' \circ G) \cdot (F' \circ \eta).       
-\]
+$$
 
 This idea of ours can be extended to a more general situation.
 Suppose we have instead three categories $\bb, \cc$, and $\dd$ and
@@ -193,10 +193,10 @@ composition of the top row is  $\eta' \cdot \sigma'$  and
 composition of the right most vertical arrows is $\eta \cdot
 \sigma$. Since both paths achieve the same value, we see that 
 
-\[
+$$
 (\eta' \cdot \sigma') \circ (\eta \cdot \sigma)
 =  (\eta' \circ \eta) \cdot (\sigma' \circ \sigma)
-\]
+$$
 
 which is known as the **Interchange Law**.
 

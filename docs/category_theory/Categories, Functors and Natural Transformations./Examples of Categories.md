@@ -69,16 +69,16 @@ An example of this is the group $(\mathbb{R}[x], +)$, the single variable polyno
 in one variable. To see that this is graded, observe that any 
 polynomial $p(x)$ is of the form
 
-\[
+$$
 p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_{n}x^n.
-\]
+$$
 
 Note that $p(x)$ consists of "components", i.e., different powers 
 of $x$. If we let 
 
-\[
+$$
 \mathbb{R}_n[x] = \{ax^n \mid a \in \mathbb{R}\}    
-\]
+$$
 
 then we see that $\mathbb{R}[x] = \bigoplus_{i = 0}\mathbb{R}_n[x]$. 
 
@@ -109,9 +109,9 @@ Let $\cc$ be a category with one object; denote this object as $\bullet$.
 As we have one object, we have one homset. We can then interpret $M$ as a category
 by setting 
 
-\[
+$$
 \hom_{\cc}(\bullet, \bullet) = M.   
-\]
+$$
 
 Thus each $m \in M$ corresponds to a morphism.
 So,
@@ -120,16 +120,16 @@ for some $m \in M$.
 We then write $f_{e} = 1_{\bullet}$, the identity, and more generally 
 define composition in the category as
 
-\[
+$$
 f_m \circ f_{m'} = f_{m \cdot m'}.   
-\]
+$$
 
 Since $M$ is a monoid, and its multiplication is associative, we see that composition defined in this way is also associative. 
 Further, for each $f_m$, we have that 
 
-\[
+$$
 f_{e} \circ f_m =  f_m \circ f_{e} = f_m
-\]
+$$
 
 since $e \cdot m = m \cdot e = m$ in the monoid $M$. Thus we can interpret monoids 
 as one object categories. 
@@ -154,9 +154,9 @@ This intuition is actually not very far off. Given a thin category $\mathcal{P}$
 define the binary relation $\le$ on the objects $\ob(\mathcal{P})$ as follows. 
 For any pair of objects $A, B \in \mathcal{P}$, we have that 
 
-\[
+$$
 A \le B \text{ if and only if there exists an morphism } A \to B. 
-\]
+$$
 
 Some things are to be said about this relation:
 
@@ -177,9 +177,9 @@ one morphism between any two objects, and vice versa.
 Preorders can also turn into **partial orders**, which
 have the axiom that 
 
-\[
+$$
 \text{if } p \le p' \text{ and } p' \le p \text{ then } p = p'.
-\]
+$$
 
 or **linear orders**, where for any $p,  p'$ we have that $p \le
 p'$ **or** $p' \le p$.
@@ -229,9 +229,9 @@ Let $B_n$ be the set of braids on $n$ strands. Recall that
 $B_n$ forms a group where the group product is composition, and where the identity is simply 
 $n$ parallel strands. Each braid group actually has a nice presentation:
 
-\[
+$$
 B_n = \left< \sigma_1, \dots, \sigma_{n-1} \mid \sigma_i\sigma_{i+1}\sigma_{i} = \sigma_{i+1}\sigma_{i}\sigma_{i+1}^{(\texttt{1})}, \sigma_i\sigma_j = \sigma_j\sigma_i^{(\texttt{2})} \right>   
-\]
+$$
 
 where (\texttt{1}) holds only when $1 \le i \le n - 2$ and (\texttt{2}) hold only when 
 $|i - j| > 1$. These two laws are imposed so that they match our geometric intuition, so that
@@ -257,13 +257,13 @@ as follows.
 * **Objects.** Positive integers $1,2, \dots,$
 * **Morphisms.** For any pair of positive integers $n,m$, we have that 
 
-\[
+$$
 \hom_{\mathbb{B}}(n,m) = 
 \begin{cases}
 B_n & \text{if } n = m\\
 \varnothing & n \ne m
 \end{cases}
-\]
+$$
 
 Hence we only have morphisms $f: n \to m$ when $n = m$. Furthermore, each 
 morphism is a braid. Composition is then group multiplication. The identity for each 
@@ -282,7 +282,7 @@ integers $m, n$, let $M_{m, n}(R)$ be the set of all $m \times n$ matrices.
 Now recall that for an $m \times n$ matrix $A$ and a $n \times p$ matrix  $B$, 
 the product $AB$ is an $m \times p$ matrix.  
 
-\[
+$$
 \begin{pmatrix}
 a_{11} & a_{12} & \cdots & a_{1n}\\
 a_{21} & a_{22} & \cdots & a_{2n}\\
@@ -302,14 +302,14 @@ c_{21} & c_{22} & \cdots & c_{2p}\\
 \vdots & \vdots & \ddots & \vdots\\
 c_{n1} & c_{n2} & \cdots & c_{np}
 \end{pmatrix}  
-\]
+$$
 
 where $\displaystyle c_{ij} = \sum_{k= 1}^{n}a_{ik}b_{kj}$. This can rephrased as saying that 
 we have a multiplication map as below.
 
-\[
+$$
 M_{m,n}(R)\times M_{n,p}(R) \to M_{m, p}(R)
-\]
+$$
 
 Since matrix multiplication is associative, we can also say that the above mapping 
 is associative. 
@@ -327,9 +327,9 @@ of function. But it works; we can form a category where
 * **Morphisms.** The morphisms are matrices. Specifically, for any pair of 
 objects $m,n$, 
 
-\[
+$$
 \hom_{\cc}(m, n) = M_{m, n}(R).
-\]
+$$
 
 Here, composition is simply matrix multiplication.
 
@@ -338,15 +338,15 @@ translates to a statement regarding whenever two matrices $A$ and $B$ are
 "composable" (i.e., whenever we can multiply them). That is, 
 our mapping $M_{m,n}(R)\times M_{n,p}(R) \to M_{m, p}$ can be rephrased as composition
 
-\[
+$$
 \circ: \hom_{\cc}(m, n) \times \hom_{\cc}(n, p) \to \hom_{\cc}(m, p)
-\]
+$$
  
 Associativity of matrix multiplication translates to associativity of composition. 
 Finally, note that for each object (positive integer) $n$, the identity morphism is 
 simply the identity matrix. 
 
-\[
+$$
 1_n  := I_n = 
 \begin{pmatrix}
 1 & 0 & 0  & \cdots & 0\\
@@ -354,7 +354,7 @@ simply the identity matrix.
 \vdots & \vdots & \vdots & \ddots & \vdots\\
 0 & 0 & 0 & \cdots & 1\\
 \end{pmatrix}.
-\]
+$$
 
 Thus we see that we have all the necessary ingredients to declare this to be a category. 
 </span>
@@ -367,9 +367,9 @@ operator $\cdot: G \times G \to G$ which satisfies associativity.
 Because this is a two-variable function on $G$ every 
 $g \in G$ induces a map
 
-\[
+$$
 (-) \cdot g := f_g: G \to G \qquad 
-\]
+$$
 
 This then gives rise to a collection of maps $f_g: G \to G$ for each 
 $g \in G$, which we can picture as below. 
@@ -412,13 +412,13 @@ Show that we have a category $**G**$ where
     * **Morphisms.** For any two positive integers $n,m$,  
     we define 
 
-    \[
+    $$
     \hom_{**G**}(n,m) = 
     \begin{cases}
     G_n & \text{if } n = m\\
     \varnothing & \text{otherwise}.
     \end{cases}  
-    \]
+    $$
 * ****3.**** Let $f: X \to Y$ be a function between two sets. 
 We say $f$ has the "finite-to-one" property if $f^{-1}(y)$ is always a 
 finite set for all $y \in Y$. Show that we have a (large) category,  denoted 
@@ -441,9 +441,9 @@ $d_M: M \times M \to M$ and $d_N: N \times N \to N$ are the metrics,
 we say a function $f: M \to N$ is a **Lipschitz-1** map 
 with **Lipschitz constant** 1 if 
 
-\[
+$$
 d_N(f(x), f(y)) \le d_M(x, y)  
-\]
+$$
 
 for all $x, y \in M$. Using this concept, show that we have a category 
 where

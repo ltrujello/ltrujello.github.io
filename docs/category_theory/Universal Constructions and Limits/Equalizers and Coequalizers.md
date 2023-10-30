@@ -19,9 +19,9 @@ $\phi$ and $\psi$ as below.
 Now consider the homomorphism $\phi - \psi:G \to H$. 
 Then observe that 
 
-\[
+$$
 \ker(\phi - \psi) = \bigg\{ g \in G \;\bigg|\; (\phi - \psi)(g) = 0   \bigg\}
-\]
+$$
 
 and note that this is also the set of all $g \in G$ in which $\phi$ and $\psi$ agree.
 In fact, it is the smallest such set, a notion we can make precise 
@@ -115,9 +115,9 @@ By the
 universality of the equalizer $e: D \to A$, we know that there
 must exist a unique morphism $f': C \to D$ such that 
 
-\[
+$$
 e \circ f' = e \circ f_1 = e \circ f_2.
-\]
+$$
 
 Since $f'$ is unique, we are forced to conclude that $f_1 =
 f_2$. Hence $e \circ f_1 = e \circ f_2 \implies f_1 = f_2$, so
@@ -155,9 +155,9 @@ well. The cokernel of a homomorphism $f: G \to H$ is the
 projection $H \to H/\im(G)$, a quotient group of $B$. This is
 often written as 
 
-\[
+$$
 \text{coker}(f) = H/\im(G).
-\]
+$$
 
 
 \subsection*{\underline{Coequalizers.}}
@@ -222,9 +222,9 @@ $\Delta$.
 In the category **Ab**, the coequalizer of two group
 homomorphisms $\phi, \psi: G \to H$ is the homomorphism 
 
-\[
+$$
 \pi: H \to H/\im(\phi - \psi).
-\]
+$$
 
 where $g' \in H$ maps to the coset $g' + \im(\phi - \psi)$. We
 show this as follows.
@@ -256,9 +256,9 @@ homomorphism such that $f \circ \phi = f \circ \psi$. Then
 construct the morphism $f': H/\im(\phi - \psi) \to H'$
 where 
 
-\[
+$$
 h + \im(\phi - \psi) \longmapsto f(h).
-\]
+$$
 
 Clearly this is well defined, since  if  $h + \im(\phi -
 \psi) = h' + \im(\phi - \psi)$, then this means that $h =

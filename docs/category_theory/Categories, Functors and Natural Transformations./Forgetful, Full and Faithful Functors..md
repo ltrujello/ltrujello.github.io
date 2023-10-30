@@ -15,9 +15,9 @@ where
 are functors, then we can define the **composite
 functor** $G \circ F: \mathcal{A} \to \mathcal{C}$ where 
 
-\[
+$$
 C \mapsto G(F(C)) \in \cc \quad\quad (f: A \to B) \mapsto G(F(f)) \in \hom_{\cc}(G(F(A)), G(F(B))).
-\]
+$$
 
 </span>
 We've now reached something quite important. We have the notion of 
@@ -79,9 +79,9 @@ group homomorphisms are simply functions that respect group structure.
 Hence we can create a map between $\grp$ and $\Set$ that 
 forgets this structure:
 
-\[
+$$
 (G,  \cdot) \mapsto G \qquad \phi: (G, \cdot) \to (H, +) \mapsto \phi: G \to H.
-\]
+$$
 
 We can demonstrate that this process is functorial.
 Observe that if $1_G: (G, \cdot) \to (G, \cdot)$ is the identity group homomorphism, 
@@ -92,11 +92,11 @@ Next, if $\phi: G \to H$ and $\psi: H \to K$ are group homomorphisms,
 then $F(\psi \circ \phi)$ is the underlying function $\psi \circ \phi: G \to K$. 
 Note however that for each $g \in G$,
 
-\[
+$$
 F(\psi \circ \phi)(g) = \psi(\phi(g)) = F(\psi) \circ F(\phi)(g)
 \implies 
 F(\psi \circ \phi) = F(\psi) \circ F(\phi).
-\]
+$$
   
 Hence, we see that we have a forgetful functor $F: \grp \to \Set$ which 
 leaves behind group operations, and moreover regards every group 
@@ -124,9 +124,9 @@ Each object in top is a pair $(X, \tau)$ where $\tau$ is a topology on $X$.
 Moreover, continuous functions are simply functions. This forgetful process is 
 also functorial:
 
-\[
+$$
 (X, \tau) \mapsto X \qquad f: (X, \tau) \to (Y, \tau') \mapsto f: X \to Y.
-\]
+$$
 
 This then gives us the forgetful functor $F: \top \to \Set$.
 </span>
@@ -183,9 +183,9 @@ and $F([g \circ  f]) = (g \circ f)'$ where $f', g',$ and $(g\circ f)$ are any
 elements of $[f], [g], [g' \circ f ']$ respectively.
 Then in no case can we always expect that 
 
-\[
+$$
 F(g \circ f) = F(g) \circ F(f) \implies (g \circ f)' = g' \circ f'.  
-\]
+$$
 
 Hence this forgetful process cannot behave functorially.
 </span>
@@ -195,9 +195,9 @@ Next, we introduce the notion of **full** and
 $F: \cc \to \dd$ between locally small categories. Then for every 
 pair of objects $A, B \in \cc$, there is a function 
 
-\[
+$$
 F_{A,B}: \hom_{\cc}(A, B) \to \hom_{\dd}(F(A), F(B))
-\]
+$$
 
 where a morphism $f:A \to B$ is sent to its image $F(f): F(A) \to F(B)$ 
 under the functor $F$. 
@@ -261,24 +261,24 @@ Regard both groups as one object categories $\cc$ and $\dd$
 with objects $\textcolor{NavyBlue}{\bullet}$ and $\textcolor{Orange}{\bullet}$ 
 where we set 
 
-\[
+$$
 \hom_{\cc}(\textcolor{NavyBlue}{\bullet}, \textcolor{NavyBlue}{\bullet}) = G
 \qquad
 \hom_{\cc}(\textcolor{Orange}{\bullet}, \textcolor{Orange}{\bullet}) = H
-\]
+$$
 
 so that each $g \in G$ is now a morphism $g: \textcolor{NavyBlue}{\bullet} \to \textcolor{NavyBlue}{\bullet}$, 
 and vice versa for every $h \in G$, so that composition is given by the group structure.
 If we have a functor $F: \cc \to \dd$ between these categories, 
 then the function we introduced simply becomes a set function 
 
-\[
+$$
 F_{\textcolor{NavyBlue}{\bullet}, \textcolor{NavyBlue}{\bullet}}
 : 
 \hom_{\cc}(\textcolor{NavyBlue}{\bullet}, \textcolor{NavyBlue}{\bullet})
 \to 
 \hom_{\dd}(\textcolor{Orange}{\bullet}, \textcolor{Orange}{\bullet}).
-\]
+$$
 
 However, the functorial properties allow this to extend to a group homomorphism
 from $G$ to $H$.
@@ -331,9 +331,9 @@ not a category, but that full functors remedy the situation.
         * **Objects.** All $F(A)$ with $A \in \cc$
         * **Morphisms.** For any two objects $F(A)$ and $F(B)$, we have that 
 
-        \[
+        $$
         \hom_{\dd}(F(A),  F(B))=\{ F(f) \mid f: A \to B \}.
-        \]
+        $$
     * **(*ii*.)** Let $F: \cc \to \dd$ be a full functor. 
     Show that the image of $\cc$ under $F$ forms a full subcategory of 
     $\dd$.

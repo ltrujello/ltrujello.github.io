@@ -37,14 +37,14 @@ or an **enriched category** over $\mathcal{V}$ if
 * **1.** For each $A, B \in \cc$, we have that $\hom_{\cc}(A, B) \in \mathcal{V}$
 * **2.** There exists a "composition" operator 
 
-\[
+$$
 \circ_{A, B, C} : \hom_{\cc}(A, B) \times \hom_{\cc}(B, C) \to \hom_{\cc}(A, C)
-\]
+$$
 * **3.** For each object $A \in \cc$, we have a "identity object" 
 
-\[
+$$
 i_A: I \to \hom_{\cc}(A, A)  
-\]
+$$
 
 such that our composition operator is associative: 
 
@@ -71,39 +71,39 @@ Recall that $([0, \infty), +, 0)$ where $+$ is addition forms a symmetric monoid
 category. Here we treat $[0, \infty]$ as a poset where for a pair of objects $a, b$ 
 there exists exactly one morphism 
 
-\[
+$$
 a \to b \text{ iff } b \le a.   
-\]
+$$
  
 Now what does it look like for a category $\cc$ to be $[0, \infty]$-category? 
 It means that for any pair of objects $A, B$, we have that $\hom_{\cc}(A, B) \in [0, \infty)$.
 If we denote $d(A, B) = \hom_{\cc}(A, B)$,
 this then implies that we have a function 
 
-\[
+$$
 d: \ob(\cc)\times\ob(\cc) \to [0, \infty].
-\]
+$$
 
 Enriched categories also grant us a composition morphism
 
-\[ 
+$$ 
 \hom_{\cc}(A, B) \times \hom_{\cc}(B, C) \to \hom_{\cc}(A, C)
-\]
+$$
 
 for all objects $A, B, C$. But in $[0, \infty)$, morphisms are just size relations,
 so what this really means is that
 
-\[
+$$
 d(A,C) \le d(A, B) + d(B, C)
-\]
+$$
 
 for all $A, B, C \in \cc$
 Finally, we see the identity criterion states that for each object $A$, 
 we have a morphism $i_{A}: 0 \to \hom_{\cc}(A, A)$ which translates to
 
-\[
+$$
 d(A, A) \le 0 \implies d(A, A) = 0
-\]
+$$
 
 since $d(A, A) \in [0, \infty]$. This should feel very familiar; what we've just 
 come up with is nearly a metric space structure on the objects of our category! 

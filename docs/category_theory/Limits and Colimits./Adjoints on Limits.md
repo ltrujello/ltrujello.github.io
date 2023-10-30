@@ -21,9 +21,9 @@ We will now observe that these functors exhibit nice behavior.
 products in **Set** are cartesian products. One can show that, for two monoids 
 $M$, $N$, we have the isomorphism 
 
-\[
+$$
 U(M \times N) \cong U(M) \times U(N).
-\]
+$$
 
 Regarding this functor's behavior, 
 we say that the forgetful functor $U$ **preserves** products.
@@ -39,9 +39,9 @@ coproducts. Recall that the coproduct in **Set** is the disjoint union, while th
 coproduct in **Mon** is the free product of monoids. Then it is true that, for two 
 sets $X, Y$, 
 
-\[
+$$
 F(X \amalg Y) \cong F(X) * F(Y).
-\]
+$$
 
 Thus we see that we have two functors that separately preserve 
 products and coproducts. This is actually very interesting; after all, a 
@@ -126,9 +126,9 @@ Using the above theorem, we now know that the free monoid functor
 $F: **Set** \to **Mon**$ preserves coproducts. Therefore, we can say 
 that for any sets $X, Y$, we have that 
 
-\[
+$$
 F(X \amalg Y) \cong F(X) * F(Y).   
-\]
+$$
 
 Moreover, the free monoid functor is part of a larger family of free functors: 
 
@@ -161,9 +161,9 @@ and $(Y, \mathcal{B}, \mu_Y)$ is a function $f: X \to Y$ such that
 $f$ is measurable and preserves measure. That is, is $f$ is measurable 
 and 
 
-\[
+$$
 \mu_X(f^{-1}(B)) = \mu_Y(B)
-\]
+$$
  
 for every $B \in \mathcal{B}$.
 
@@ -178,22 +178,22 @@ simple measure space $(\mathbb{R}, \mathcal{B}, \mu)$ where $\mathcal{B}$ consis
 of the Borel algebra and $\mu$ is the Lebesgue measure, then 
 one reasonable way to try to form a product with itself is to construct the triple
 
-\[
+$$
 (\rr \times \rr, \mathcal{B} \times \mathcal{B}, \mu\times\mu). 
-\]
+$$
 
 However, observe that the projection $\pi: (\rr \times \rr, \mathcal{B} \times \mathcal{B}, \mu\times\mu) \to (\rr, \mathcal{B}, \mu)$ is 
 not measure preserving:
 
-\[
+$$
 \mu \times \mu(\pi^{-1}([0, 1])) = \mu \times \mu([0, 1] \times \rr) = \infty
-\]
+$$
 
 while 
 
-\[
+$$
 \mu([0, 1]) = 0.            
-\]
+$$
 
 Therefore, we cannot form products. Hence our forgetful functor 
 has no left adjoint. 
@@ -201,9 +201,9 @@ has no left adjoint.
 One could guess that the left adjoint *would* be the 
 measure-constructing functor $F: **Set** \to **Meas**$ where 
 
-\[
+$$
 X \mapsto (X, \mathcal{P}, \mu_0)
-\]
+$$
 
 where $\mathcal{P}$ is the sigma algebra on the power set, and $\mu_0$ assigns
 the measure of each set to zero (i.e. the trivial measure) but this is not
@@ -226,9 +226,9 @@ The proof of Theorem \ref{theorem:RAPL} will become more intuitive.)
     * ***i.*** Let $F: \cc \to \dd$ be a functor that preserves products, so that
     for two objects $A$, $B$ of $\cc$, there exists an isomorphism 
 
-    \[
+    $$
     F(A \times B) \cong F(A) \times F(B).
-    \]
+    $$
 
     Does this isomorphism have to be natural in $A, B$?
     * ***ii.*** Suppose $F: \cc \to \dd$ is a right adjoint. Is the isomorphism 

@@ -30,9 +30,9 @@ in any category.
 Let $\cc$ be a small category. Then for each $C \in \cc$, 
 the functor 
 
-\[
+$$
 \hom_{\cc}(C, -): \cc \to **Set**
-\]
+$$
 
 preserves limits. (Dually, the functor 
 $\hom_{\cc}(-, C) = \hom_{\cc}(C, -):
@@ -99,10 +99,10 @@ As they must be isomorphic, there exists an isomorphism
 $\phi: X \to \Lim F$ for which $v_i \circ \phi= \sigma_i$. 
 Thus we see that 
 
-\[
+$$
 G(\Lim F) \cong G(X) = \Lim G \circ F \qquad 
 G(v_i \circ \phi) = G(\sigma_i) = u_i.
-\]
+$$
 
 Therefore, $G$ preserves limits and so is continuous. 
 </span>

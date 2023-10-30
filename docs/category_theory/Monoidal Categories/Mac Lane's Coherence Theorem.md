@@ -30,9 +30,9 @@ that the first definition we offered is more useful and transparent.
 Since $x_0, x_1$ are binary words so is the expression $(x_0)\otimes (x_1)$.
 Similarly, the expressions 
 
-\[
+$$
 (x_0)\otimes((x_0)\otimes(x_1)) \quad ((x_0)\otimes(x_1))\otimes x_1   
-\]
+$$
 
 are binary words.
 </span>
@@ -82,9 +82,9 @@ appear in its expression.
 <span style="display:block" class="example">
 For any binary word $w$, we have that 
 
-\[
+$$
 \mathcal{L}(w \otimes x_0) = \mathcal{L}(x_0 \otimes w) =  \mathcal{L}(w).
-\]
+$$
 
 If additionally $u,v$ are binary words, we also have that 
 
@@ -110,13 +110,13 @@ The **category of binary words** is the category $\mathcal{W}$ where
 * **Objects.** All binary words $w$ of length $n = 0, 1, 2, \dots,$
 * **Morphisms.** For any two binary words $w$ and $v$, we have that 
 
-\[
+$$
 \hom_{\ww}(v, w) = 
 \begin{cases}
 \{ \bullet \} & \text{if } v,w \text{ are the same length}\\
 \varnothing & \text{otherwise}. 
 \end{cases}   
-\]
+$$
   
 where $\{\bullet\}$ denotes the one point set.
 
@@ -143,16 +143,16 @@ and morphisms.
 If $(u, v)$ is an object of $\ww \times \ww$, we set $\otimes(u, v) = u \otimes v$. 
 Next, consider two morphisms in $\ww$.
 
-\[
+$$
 \gamma: u \to u' \qquad \beta: v \to v'.
-\]
+$$
 
 Note that this implies $\ll(u) = \ll(u')$ an $\ll(v) = \ll(v')$, which 
 also imply that 
 
-\[
+$$
 \ll(u \otimes v) = \ll(u) + \ll(v) = \ll(u') + \ll(v') = \ll(u' \otimes v').
-\]
+$$
 
 Therefore, we define the image of $(\gamma, \beta)$ under the functor, $\otimes(\gamma, \beta)$, which we more naturally denote 
 as $\gamma\otimes \beta$, to be the unique morphism between $u \otimes v \to u' \otimes v'$.
@@ -243,11 +243,11 @@ is $x_1 \otimes x_1$.
 The pure binary words of length 3 are 
 \\
 
-\[
+$$
 x_1\otimes (x_1 \otimes x_1)
 \qquad 
 (x_1\otimes x_1) \otimes x_1
-\]
+$$
 
 and the pure binary words of length 4 are as below.
 
@@ -268,9 +268,9 @@ x_1\otimes((x_1 \otimes x_1) \otimes x_1)
 As a side note, we comment that the number of pure binary words of length $n+1$ is the
 $n$-th Catalan number 
 
-\[
+$$
 C_{n}=\frac{1}{n+1}{2n \choose n} \qquad 1,\, 2,\, 5,\, 14,\, 42,\, 132,\, 429,\, \cdots
-\]
+$$
 
 However, we make no critical use of this fact in our proofs.    
 Next, we form a category of pure binary words.
@@ -293,19 +293,19 @@ No other morphisms are allowed.
 We now focus on a particular set of morphisms in $\wp$. Recall that 
 we may think of each $\alpha_{u,w,v}$ as a "shift map"
 
-\[
+$$
 \alpha_{u,w,v}: u \otimes (v\otimes  w) \to (u \otimes v)\otimes w
-\]
+$$
 
 which makes a single change in the parenthesis of a binary word. 
 However, $\alpha$ itself does not characterize all possible always in which we make
 a single change of parentheses within a larger, more complex binary word.
 An example of this is the morphism
 
-\[
+$$
 1_{s}\otimes \alpha_{u,v,w}: s\otimes (u \otimes (v \otimes w))
 \to s \otimes ((u \otimes v)\otimes w)
-\]
+$$
 
 which makes an *internal* change of parentheses. 
 As we will need to focus on these more complicated morphisms, 
@@ -319,19 +319,19 @@ which we recursively define as follows.
 * For any triple of pure binary words $w_1, w_2, w_3$ in $\wp$, 
 the morphism
 
-\[
+$$
 \alpha_{w_1,w_2,w_3}: w_1\otimes (w_2 \otimes w_3) \to (w_1\otimes w_2)\otimes w_3
-\]
+$$
 
 is a forward $\alpha$-arrow.
 * If $\beta: w \to w'$ is a forward 
 $\alpha$-arrow, and $u$ is an arbitrary pure binary word, 
 then the morphisms 
 
-\[
+$$
 1_{u} \otimes \beta: u \otimes w \to u \otimes w' \qquad 
 \beta \otimes 1_{u}:w \otimes u \to w' \otimes u
-\]
+$$
 
 are forward $\alpha$-arrows.
 
@@ -404,9 +404,9 @@ the **rank** of a binary word as follows.
 * $r(x_1) = 0$.
 * For a pure binary word of the form $w = u \otimes v$, we set 
 
-\[
+$$
 r(u\otimes v) = r(u) + r(v) + \ll(v) - 1.
-\]
+$$
 
 </span>
 
@@ -447,10 +447,10 @@ statement is true for all pure binary words with length less than $k$.
 Since $k > 1$, we may write $w = u \otimes v$ for some pure binary words 
 $u,v$, in which case 
 
-\[
+$$
 r(w) =  \overbrace{r(u) + r(v)}^{\ge 0 \text{ by induction}}
 + \ll(v) -1.
-\]
+$$
 
 Since $\ll(v) \ge 1$, we see that $r(w) \ge 0$ as desired.
 </span>
@@ -478,9 +478,9 @@ less than $k$.
 Then we may write our word in the form $w = u \otimes v$, 
 and we have that
 
-\[
+$$
 r(w) = r(u) + r(v) + \ll(v) - 1.        
-\]
+$$
 
 By Lemma \ref{lemma:rank_is_positive}  we know that 
 $r(u), r(v) \ge 0$. Therefore, if $\ll(v) >  1$ then 
@@ -488,9 +488,9 @@ $r(w) \ne 0$.
 Hence, consider the case 
 for when $\ll(v) = 1$, so that $v = x_1$. Then 
 
-\[
+$$
 r(u\otimes v) = r(u) + r(x_1) + \ll(x_1) - 1 = r(u)
-\]
+$$
  
 Therefore, $r(w) = 0$ if and only if
 if $r(u) = 0$. But by induction, this holds if and only if $u = w^{(k-1)}$. 
@@ -527,10 +527,10 @@ r((u\otimes v)\otimes w) &= r(u\otimes v) + r(w) + \ll(w) - 1\\
 
 If we subtract the quantities, we observe that 
 
-\[
+$$
 r(u\otimes(v\otimes w)) - r((u\otimes v)\otimes w) 
 = \ll(v\otimes w) - \ll(w) > 0
-\]
+$$
 
 since $v$ has at least length 1. Therefore $\alpha_{u,v,w}$ decreases 
 length as desired.
@@ -561,15 +561,15 @@ is a forward $\alpha$ arrow for which the statement is already true.
 Then we may write $\beta: v \otimes u \to w \otimes u$ 
 Now observe that 
 
-\[
+$$
 r(v \otimes  u) = r(v) + r(u) + \ll(u) - 1
-\]
+$$
 
 while 
 
-\[
+$$
 r(w \otimes  u) = r(w) + r(u) + \ll(u) - 1.
-\]
+$$
 
 Since $\gamma: v \to w$ decreases rank, we see that $r(v) > r(w)$ and therefore
 $r(v \otimes u) > r(w \otimes u)$, as desired. 
@@ -618,18 +618,18 @@ length less than $w$, we see that by induction there exists a forward $\alpha$-a
 $\beta: u \to u'$. Using $\beta$, we can construct the 
 forward $\alpha$-arrow 
 
-\[
+$$
 \beta \otimes 1_{x_1}: u \otimes x_1 \to u' \otimes x_1.  
-\]
+$$
 
 Hence $\beta \otimes 1_{x_1}$ is our desired forward $\alpha$-arrow with domain $w$.
 * **(2)** The second case is when $\ll(v) > 1$. In this case we may write 
 $w = u \otimes (r \otimes s)$. A natural choice for a forward 
 $\alpha$-arrow in this case is simply 
 
-\[
+$$
 \alpha_{u,v,s}:  u \otimes (r \otimes s) \to (u \otimes r) \otimes s
-\]
+$$
 
 so that this case is also satisfied.
 
@@ -659,9 +659,9 @@ below.
 <img src="../../../png/category_theory/chapter_7/tikz_code_4_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, $\wp$ is a thin category, so parallel morphisms must be equal. Therefore
 
-\[
+$$
 \phi_{v,w} = \Gamma_2^{-1} \circ \Gamma_1.
-\]
+$$
  
 Hence $\phi_{v,w}$ is a composition of $\alpha$-arrows. As $\phi_{v,w}$ 
 was arbitrary, we see that every morphism in $\wp$ 
@@ -686,9 +686,9 @@ Let $(\mathcal{M}, \alpha, \lambda, \rho, I, \otimes)$ be a monoidal
 category. For an object $A$ of $\mm$, we 
 define the **proxy map** of $A$ to be a *partial* functor
 
-\[
+$$
 (-)_A: \wp \to \mm
-\]
+$$
 
 as follows. Note by *partial* functor, we mean a functor defined on all objects 
 of $\wp$, but only a subset of all morphisms of $\wp$. 
@@ -699,13 +699,13 @@ of $\wp$, but only a subset of all morphisms of $\wp$.
     = A$.
     * For a binary word $w = u \otimes v$, we define 
 
-    \[
+    $$
     (w)_A
     =
     (u\otimes  v)_A
     = 
     (u)_A \otimes (v)_A
-    \]
+    $$
 * **Morphisms.** We define the partial functor only on 
 $\alpha$-arrows. We do this recursively as follows.
     * For $\alpha_{u,v,w}$ with $u,v,w$ as pure binary words,
@@ -753,35 +753,35 @@ By Corollary \ref{corollary:morphisms_of_wp},
 there exist forward and backward $\alpha$-arrows 
 $\gamma_1, \dots, \gamma_n$ such  that  
 
-\[
+$$
 \gamma = \gamma_n \circ \cdots \circ \gamma_1.
-\]
+$$
 
 Since the proxy map is in fact defined on $\alpha$-arrows, and since 
 functors preserve composition,
 we are required to define
 
-\[
+$$
 (\gamma)_A = (\gamma_n)_A\circ \cdots \circ (\gamma_1)_A.
-\]
+$$
 
 However, we need to be careful. Suppose that we can also 
 express $\gamma$ as the finite composition of $\alpha$-morphisms 
 $\delta_1, \dots , \delta_m$.
 
-\[
+$$
 \gamma = \delta_m \circ \cdots \circ \delta_1.
-\]
+$$
 
 While $\gamma_n \circ \cdots \circ \gamma_1 = \delta_m \circ \cdots \circ \delta_1$ 
 because $\wp$ is a thin category, and therefore parallel morphisms are equal, 
 we have no idea if 
 
-\[
+$$
 (\gamma_n)_A\circ \cdots \circ (\gamma_1)_A
 =
 (\delta_m)_A\circ \cdots \circ (\delta_1)_A
-\]
+$$
 
 is true in $\mm$. That is, we do not know if equivalent morphisms 
 in $\wp$ are mapped to equal morphisms under the proxy map.
@@ -801,11 +801,11 @@ problem which also demonstrates its nontriviality.
 For notational convenience, we suppress the instances of the monoidal product $\otimes$.
 Let
 
-\[
+$$
 \gamma: x_1 ((x_1  x_1)  (x_1  x_1))
 \to 
 ((x_1 (x_1  x_1)) x_1)  x_1.
-\]
+$$
 
 Then we have many possible ways of expressing $\gamma$ in terms of 
 our $\alpha$-arrows. Some potential ways we could express $\gamma$ are displayed 
@@ -870,10 +870,10 @@ and let $A$ be an object of $\mm$. Let $v,w$ be binary words of the same length.
 If $\beta_1, \dots , \beta_k$ and $\gamma_1, \dots , \gamma_{\ell}$ are 
 $\alpha$-arrows with 
 
-\[
+$$
 \beta_k \circ \cdots \circ \beta_1,
 \gamma_{\ell} \circ \cdots \circ \gamma_1: v \to w
-\]
+$$
 
 then $(\beta_k)_A  \circ \cdots \circ (\beta_1)_A
 = (\gamma_{\ell})_A \circ \cdots \circ (\gamma_1)_A$ in $\mm$.
@@ -890,10 +890,10 @@ and let $A$ be an object of $\mm$. Let $w$ be a pure binary word of length $n$.
 If $\beta_1, \dots , \beta_k$ and $\gamma_1, \dots , \gamma_{\ell}$ are 
 forward $\alpha$-arrows with 
 
-\[
+$$
 \beta_k \circ \cdots \circ \beta_1,
 \gamma_{\ell} \circ \cdots \circ \gamma_1: w \to w^{(n)}
-\]
+$$
 
 in $\wp$, then $(\beta_k)_A  \circ \cdots \circ (\beta_1)_A
 = (\gamma_{\ell})_A \circ \cdots \circ (\gamma_1)_A$ in $\mm$.
@@ -945,10 +945,10 @@ and let $A$ be an object of $\mm$. Let $w$ be a pure binary word of length $n$.
 If $\beta_1, \dots , \beta_k$ and $\gamma_1, \dots , \gamma_{\ell}$ are 
 forward $\alpha$-arrows with 
 
-\[
+$$
 \beta_k \circ \cdots \circ \beta_1,
 \gamma_{\ell} \circ \cdots \circ \gamma_1: w \to w^{(n)}
-\]
+$$
 
 in $\wp$, then $(\beta_k)_A  \circ \cdots \circ (\beta_1)_A
 = (\gamma_{\ell})_A \circ \cdots \circ (\gamma_1)_A$ in $\mm$.
@@ -986,10 +986,10 @@ both the lower left and lower right triangles commute in $\mm$. As the original 
 already commutes via the Diamond Lemma, we see that the entire diagram is commutative. 
 Therefore we have that 
 
-\[
+$$
 (\beta_k)_A  \circ \cdots \circ (\beta_1)_A
 = (\gamma_{\ell})_A \circ \cdots \circ (\gamma_{1})_A
-\]
+$$
 
 in $\mm$. This completes our induction and hence the proof.
 </span>
@@ -1004,10 +1004,10 @@ and let $A$ be an object of $\mm$. Let $v,w$ be binary words of the same length.
 If $\beta_1, \dots , \beta_k$ and $\gamma_1, \dots , \gamma_{\ell}$ are 
 $\alpha$-arrows with 
 
-\[
+$$
 \beta_k \circ \cdots \circ \beta_1,
 \gamma_{\ell} \circ \cdots \circ \gamma_1: v \to w
-\]
+$$
 
 then $(\beta_k)_A  \circ \cdots \circ (\beta_1)_A
 = (\gamma_{\ell})_A \circ \cdots \circ (\gamma_1)_A$ in $\mm$.
@@ -1114,13 +1114,13 @@ as
 
 which also reduces to 
 
-\[
+$$
 (\Gamma_{t_{\ell}})_A^{-1} \circ (\Gamma_{t_{0}})_A.
-\]
+$$
 
 However, $u_k = t_{\ell}$ and $u_0 = t_0$, so that 
 
-\[
+$$
 (\Gamma_{u_k})_A^{-1} \circ (\Gamma_{u_{0}})_A
 =
 (\Gamma_{t_{\ell}})_A^{-1} \circ (\Gamma_{t_{0}})_A
@@ -1128,7 +1128,7 @@ However, $u_k = t_{\ell}$ and $u_0 = t_0$, so that
 (\beta_k)_A \circ \cdots \circ (\beta_1)_A
 =
 (\beta_k)_A \circ \cdots \circ (\beta_1)_A
-\]
+$$
 
 Thus we have that our original diagram in $\mm$
 
@@ -1163,15 +1163,15 @@ finally show that our definition preserves composition.
     Corollary \ref{corollary:morphisms_of_wp} that there exist finitely many 
     forward and backward $\alpha$-arrows $\gamma_1, \dots, \gamma_k$ such  that 
 
-    \[
+    $$
     \phi_{v,w} = \gamma_k \circ \cdots \circ \gamma_1. 
-    \]
+    $$
 
     Therefore, define 
 
-    \[
+    $$
     \Phi_A(\phi_{v,w}) = \Phi(\gamma_k \circ \cdots \circ \gamma_1)= (\gamma_k)_A \circ \cdots \circ (\gamma_1)_A.
-    \]
+    $$
 
     By Proposition \ref{proposition:parallel_in_M_are_equal}, we see that 
     this definition is well-defined.
@@ -1211,15 +1211,15 @@ Whenever $\ll(v) > 1$, we write $v= s \otimes t$.
 Let $\beta_1, \beta_2$ be forward $\alpha$-arrows. 
 Then $\beta_1$ could be of the forms
 
-\[
+$$
 \alpha_{u,s,t}\qquad 1_u \otimes \gamma_1 \qquad \gamma_1\otimes 1_v
-\]
+$$
 
 and $\beta_2$ could be of the forms 
 
-\[
+$$
 \alpha_{u,s,t}\qquad 1_u\otimes\gamma_2 \qquad \gamma_2\otimes 1_v.
-\]
+$$
 
 with $\gamma_1, \gamma_2$ already forward $\alpha$-arrows.
 Therefore, our cases for $\beta_1,\beta_2$, 

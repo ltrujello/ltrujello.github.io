@@ -28,21 +28,15 @@ this  as $(G, \cdot)$.
 
 <span style="display:block" class="remark">
 
-*  Note that in order to have a group, we require a set $G$, and
+* Note that in order to have a group, we require a set $G$, and
 a binary operation. Hence we cannot say "the set $X$ is a group." This
 makes no sense, although as we will see, sometimes this is written
 when the operation is obvious or stated.
-
-
-
-* 
-It goes without really explicitly stating that 
+* It goes without really explicitly stating that 
 $\cdot$ must also be **closed**; that is, it
 cannot map elements anywhere outside of $G$. This is due to our 
 definition that $\cdot : G \times G \to G$. That is, the
 codomain, or range, is always within $G$.
-
-
 
 </span>
 
@@ -51,9 +45,9 @@ codomain, or range, is always within $G$.
 Let $G$ be a group. Suppose that, for any two $g, h \in G$
 we have 
 
-\[
+$$
 g \cdot h = h \cdot g  
-\]
+$$
 
 then $G$ is an **abelian** or **commutative** group.
 </span>
@@ -79,40 +73,36 @@ on the elements of $\mathbb{Z}$ simply be standard addition. This is a
 group, which we'll demonstrate by showing that this set equipped with
 the addition operator
 satisfy the three axioms.
-\begin{description}
-\item[(1) Closed.] From elementary mathematics, we know that if
+
+* **(1) Closed.** From elementary mathematics, we know that if
 $m, n \in \mathbb{Z}$ then $m + n \in \mathbb{Z}$. Thus this set
 is closed under addition.
-
-\item[(2) Associativity.] Observe that for any integers $n, m $
+* **(2) Associativity.** Observe that for any integers $n, m $
 and $p$, 
 
-\[
+$$
 n + (m + p) = (n + m) + p.
-\]
+$$
 
 This is just a basic fact of elementary arithmetic.
+* **(3) Identity.** Observe that for any $n \in \mathbb{Z}$, 
 
-\item[(3) Identity.] Observe that for any $n \in \mathbb{Z}$, 
-
-\[
+$$
 n + 0 = 0 + n = n.        
-\]
+$$
 
-Thus 0 is an appropriate choice of an identity. 
-
-\item[(4) Inverse.] Consider any $n \in \mathbb{N}$. Observe that 
+Thus 0 is an appropriate choice of an identity.
+* **(4) Inverse.** Consider any $n \in \mathbb{N}$. Observe that 
 (1) $-n \in \mathbb{Z}$ and (2) 
 
-\[
+$$
 n + (-n) = (-n) + n = 0.
-\]
-
+$$
+ 
 Thus every element has an inverse. Note we specified that $-n \in
 \mathbb{Z}$, as we wanted to emphasize that not only $-n$ exists,
-but $-n$ is *in* our set $\mathbb{Z}$.    
+but $-n$ is *in* our set $\mathbb{Z}$.
 
-\end{description}
 With all three properties satisfied, we have that $\mathbb{Z}$ is a
 group with addition. More generally, we'd say that $\mathbb{Z}$ is a
 group under addition, and denote it as $(\mathbb{Z}, +)$.
@@ -126,9 +116,9 @@ should be our identity. After all, for any $n \in \mathbb{Z}$, $1
 what is the inverse of $m$? We'd need a $p \in
 \mathbb{Z}$ such that 
 
-\[
+$$
 m\cdot p = p\cdot m = 1.
-\]
+$$
 
 This has no solution if $m > 1$; for example, there is no integer $p$ 
 such that $5 \cdot p = 1$. In fact, $p = \dfrac{1}{5}$, can only
@@ -154,8 +144,8 @@ Consider the set of $n \times n$ matrices with determinant 1 and entries in $\ma
 the multiplication is standard matrix multiplication. This is
 known as the **Special Linear Group** and is denoted
 $SL_n(\mathbb{R})$. We'll show that this set is a group.
-\begin{description}
-\item[(1) Closed.] First we need to check if this operation is
+
+* **(1) Closed.** First we need to check if this operation is
 closed. That is, for $A, B \in SL_n(\mathbb{R})$, is it true that
 $AB \in SL_n(\mathbb{R})$?
 
@@ -166,34 +156,30 @@ determinant 1, will their product necessarily be a matrix
 whose determinant is also 1? 
 The answer is yes. From linear algebra, we know that 
 
-\[
+$$
 \det(AB) = \det(A)\det(B).
-\]
+$$
 
 Now if $A, B$ have determinant 1, 
 
-\[
+$$
 \det(AB) = \det(A)\det(B) = 1 \cdot 1 = 1.   
-\]
+$$
 
 Therefore, $AB \in SL_n(\mathbb{R})$, since $AB$ is $n \times n$
 and it has determinant 1.
-
-
-\item[(2) Associativity.] For matricies $A, B, C \in
+* **(2) Associativity.** For matricies $A, B, C \in
 SL_n(\mathbb{R})$, we know from linear algebra that 
 
-\[
+$$
 (AB)C = A(BC).
-\]
+$$
 
 That is, matrix multiplication is associative.
-
-\item[(3) Identity.] Naturally, the identity matrix $I$ serves as
+* **(3) Identity.** Naturally, the identity matrix $I$ serves as
 our group identity. This is because for any $A \in
 SL_n(\mathbb{R})$, $AI = IA = A$.
-
-\item[(4) Inverses.] For any $A \in SL_n(\mathbb{R})$, $\det(A) =
+* **(4) Inverses.** For any $A \in SL_n(\mathbb{R})$, $\det(A) =
 1$. Specifically observe that $\det(A) \ne 0$. Therefore by the 
 invertible matrix theorem, $A$
 has an inverse element $A^{-1}$ such that $AA^{-1} = A^{-1}A = I$.
@@ -202,19 +188,19 @@ But the real question is: is it true that $A^{-1} \in SL_n(\mathbb{R})$?
 To answer this, observe that $AA^{-1} = I$
 and that $\det(I) = 1$. Thus 
 
-\[ 
+$$ 
 \det(AA^{-1}) = \det(I) = 1.
-\]
+$$
 
 However, since $\det(AA^{-1}) = \det(A)\det(A^{-1})$,
 
-\[
+$$
 \det(AA^{-1}) = 1 \implies \det(A)\det(A^{-1}) = 1.
-\]
-
+$$
+ 
 But $A \in SL_n(\mathbb{R})$, so $\det(A) = 1$. Therefore,
-$\det(A)^{-1} = 1$, so that $A^{-1} \in SL_n(\mathbb{R})$. 
-\end{description}
+$\det(A)^{-1} = 1$, so that $A^{-1} \in SL_n(\mathbb{R})$.
+
 Thus $SL_n(\mathbb{R})$ does form a group. 
 
 \textcolor{MidnightBlue}{
@@ -231,14 +217,14 @@ would just not have an inverse.
 
 However, consider the following set:
 
-\[
+$$
 G = \left\{ 
 \begin{pmatrix}
 a & a\\
 a & a
 \end{pmatrix}
 : a \in \mathbb{R}-\{0\} \right\}.
-\]
+$$
 
 Clearly, these elements are not invertible matrices under matrix
 multiplication. However, we can still form a group out of this!
@@ -252,10 +238,10 @@ $\displaystyle
 to matrix multiplication. However, this isn't in the above set,
 which may make you wonder if this really is a group.
 
-\begin{description}
-\item[(1) Closed.] First we show that this is closed. Let 
 
-\[
+* **(1) Closed.** First we show that this is closed. Let 
+
+$$
 A = \begin{pmatrix}
 a & a\\
 a & a
@@ -265,11 +251,11 @@ B =
 b & b\\
 b & b
 \end{pmatrix}
-\]
-
+$$
+ 
 where $a, b \in \mathbb{R}-\{0\}$. Now observe that 
 
-\[
+$$
 AB = 
 \begin{pmatrix}
 a & a\\
@@ -284,23 +270,21 @@ b & b
 2ab & 2ab\\
 2ab & 2ab
 \end{pmatrix}.
-\]
+$$
 
 Since $2ab \in \mathbb{R}-\{0\}$, we see that $AB \in G$.
 Hence, the set is closed.
-
-\item[(2) Associativity.] Again, from linear algebra, we
+* **(2) Associativity.** Again, from linear algebra, we
 already know that matrix multiplication is associative.
-
-\item[(3) Identity.] What should we make our identity? One can
+* **(3) Identity.** What should we make our identity? One can
 realize that 
 
-\[
+$$
 e= \begin{pmatrix}
 1 & 1\\
 1 & 1
 \end{pmatrix}
-\]
+$$
 
 suffices for an identity. That is, for any $A = 
 \begin{pmatrix}
@@ -308,7 +292,7 @@ a & a\\
 a & a
 \end{pmatrix}$, we see that 
 
-\[
+$$
 Ae = 
 \begin{pmatrix}
 a & a\\
@@ -319,11 +303,11 @@ a & a
 1 & 1
 \end{pmatrix}
 = A
-\]
+$$
 
 and 
 
-\[
+$$
 eA = 
 \begin{pmatrix}
 1 & 1\\
@@ -334,11 +318,10 @@ eA =
 1 & 1
 \end{pmatrix}
 = A.
-\]
+$$
 
 Hence $Ae = A = eA$, so that it works correctly as an identity.
-
-\item[(4) Inverses.] For any $A = 
+* **(4) Inverses.** For any $A = 
 \begin{pmatrix}
 a & a\\
 a & a
@@ -350,7 +333,7 @@ a & a
 implies that $\frac{1}{2a} \in \mathbb{R} - \{0\}$, so that
 $A^{-1} \in G$. Now we see that 
 
-\[
+$$
 AA^{-1} 
 = 
 \begin{pmatrix}
@@ -366,11 +349,11 @@ a & a
 1& 1\\
 1 & 1
 \end{pmatrix}
-\]
+$$
 
 and 
 
-\[
+$$
 A^{-1}A =
 \begin{pmatrix}
 \frac{1}{2a} & \frac{1}{2a}\\
@@ -385,11 +368,11 @@ a & a
 1& 1\\
 1 & 1
 \end{pmatrix}.
-\]
+$$
 
 Thus we see that for every $A \in G$, there exists an element
 $A^{-1} \in G$ such that $AA^{-1} = e = A^{-1}A$.
-\end{description}
+
 With all four axioms satisfied, we see that $G$ forms a group.
 
 **Example.** Consider an equilateral triangle. The set of rigid transformations
@@ -404,9 +387,9 @@ a diagonal of symmetry, denoted by $s$.
 It turns out that the full list of unique rotations we can come up
 with are 
 
-\[
+$$
 \{e, r, r^2, s, rs, r^2s\}  
-\]
+$$
 
 which we can illustrate visually with the triangles below.
 \begin{figure}[h]
@@ -419,60 +402,46 @@ which we can illustrate visually with the triangles below.
 <span style="display:block" class="theorem">
 Let $(G, \cdot)$ be a group. Then the following hold:
 
-* [1.] The identity $e \in G$ is unique
-
-
-* [2.] The inverse $g^{-1} \in G$ is unique for every $g
+* **1.** The identity $e \in G$ is unique
+* **2.** The inverse $g^{-1} \in G$ is unique for every $g
 \in G$.
-
-
-* [3.] For any $g \in G$, $(g^{-1})^{-1} = g$. 
-
-
-* [4.] Let $g, h \in G$. Then $(g \cdot h)^{-1} = h^{-1} \cdot g^{-1}$.   
-
-
-* [5.] Let $g_1, g_2, \dots, g_n \in G$. The product $g_1
+* **3.** For any $g \in G$, $(g^{-1})^{-1} = g$.
+* **4.** Let $g, h \in G$. Then $(g \cdot h)^{-1} = h^{-1} \cdot g^{-1}$.
+* **5.** Let $g_1, g_2, \dots, g_n \in G$. The product $g_1
 \cdot g_2 \cdot \vspace{0.01mm} \dots \vspace{0.01mm} \cdot
-g_n$ is independent of its bracketing. 
-
-
-* [6.] Let $g, h \in G$. There always exist $x, y$ such
+g_n$ is independent of its bracketing.
+* **6.** Let $g, h \in G$. There always exist $x, y$ such
 that $g \cdot x = h$ and $h \cdot y = g$.
-
-
 
 </span>
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[1.] Suppose there exists another identity 
+
+* **1.** Suppose there exists another identity 
 element $f$, different from $e$, such that
 $g \cdot f = f \cdot g = g$ for all $g \in G$. Then 
 
-\[
+$$
 e = e \cdot f = f
-\]
+$$
 
 so that $e = f$. Therefore, the identity element is unique.
-
-\item[2.] Suppose $h_1$ and $h_2$ are both inverses of $g \in
+* **2.** Suppose $h_1$ and $h_2$ are both inverses of $g \in
 G$. Then by definition, $h_2 \cdot g = e = g \cdot h_2$ and $h_1 \cdot g = e
 = g \cdot h_1$. Therefore, 
 
-\[
+$$
 h_1 = (h_2 \cdot g) \cdot h_1 = \underbrace{h_2 \cdot (g \cdot h_2)}_{\text{by associativity of G}}
 = h_2 \cdot e = h_2.
-\]
+$$
 
-Thus $h_1 = h_2$, so that the inverse of $g$ os unique. 
+Thus $h_1 = h_2$, so that the inverse of $g$ os unique.
+* **3.** Observe that for any $g \in G$,
 
-\item[3.] Observe that for any $g \in G$,
-
-\[
+$$
 g^{-1}\cdot (g^{-1})^{-1} = e
-\]
+$$
 
 by defintion. Multiplying on the left by $g$ on both sides of
 the equation, we get 
@@ -489,72 +458,64 @@ e \cdot (g^{-1})^{-1} = g \implies (g^{-1})^{-1} = g
 \end{align*}
 
 as desired.
-
-\item[4.] Note that $(g \cdot h)^{-1} \cdot (g \cdot h) = e.$
+* **4.** Note that $(g \cdot h)^{-1} \cdot (g \cdot h) = e.$
 Therefore,
 
-\[
+$$
 (g \cdot h)^{-1} \cdot (g \cdot h) = e \implies (g \cdot h)^{-1} \cdot g = h^{-1}
 \implies (g \cdot h)^{-1} = h^{-1} \cdot g^{-1}
-\]
-
+$$
+ 
 by first multiplying on the right by $g^{-1}$ and then by
 $h^{-1}$, which proves the formula.
-
-\item[5.] We can demonstrate this by induction. First write
+* **5.** We can demonstrate this by induction. First write
 our proposition as
 
-\[
+$$
 P(n)
 =
 \begin{cases}
 \text{For any } g_1, g_2, \dots, g_n \in G\text{ we have that }\\
 g_1\cdot g_2 \cdots g_n \text{ is independent of its bracketing. }
 \end{cases}
-\]
+$$
+    * **Base Case.** For the base case $n = 1$, there is nothing to check.
+    * **Inductive Step.** Now suppose that $P(n)$ is true for all positive integers
+    $n \le n_0$. Then let $g_1, g_2, \dots g_{n+1}
+    \in G$ and consider 
 
-\begin{description}
-\item[Base Case.]
-For the base case $n = 1$, there is nothing to check.
-\item[Inductive Step.]
-Now suppose that $P(n)$ is true for all positive integers
-$n \le n_0$. Then let $g_1, g_2, \dots g_{n+1}
-\in G$ and consider 
+    $$
+    g_1\cdot g_2 \cdots \cdot g_{n+1}.
+    $$
 
-\[
-g_1\cdot g_2 \cdots \cdot g_{n+1}.
-\]
+    Observe that we clearly have that 
 
-Observe that we clearly have that 
+    $$
+    g_1\cdot g_2 \cdots \cdot g_{n+1}. = (g_1\cdot g_2 \cdots \cdot g_{i})\cdot(g_{i+1} \cdots \cdot g_{n+1}).
+    $$
 
-\[
-g_1\cdot g_2 \cdots \cdot g_{n+1}. = (g_1\cdot g_2 \cdots \cdot g_{i})\cdot(g_{i+1} \cdots \cdot g_{n+1}).
-\]
-
-for all $1 \le i le n + 1$. Hence we can apply the
-inductive hyptohesis to each of the subproducts $(g_1\cdot
-g_2 \cdots \cdot g_{i})$ and $(g_{i+1} \cdots \cdot
-g_{n+1})$ generated
-in each case. Since this exhausts all possible
-subproducts, and the values do not change by our inductive
-hypothesis, we see that $P(n + 1)$ is true. Hence $P(n)$
-holds for all $n \in \mathbb{N}$. 
-\end{description}
-
-\item[6.] Observe that if we have the equation $g \cdot x =
+    for all $1 \le i le n + 1$. Hence we can apply the
+    inductive hyptohesis to each of the subproducts $(g_1\cdot
+    g_2 \cdots \cdot g_{i})$ and $(g_{i+1} \cdots \cdot
+    g_{n+1})$ generated
+    in each case. Since this exhausts all possible
+    subproducts, and the values do not change by our inductive
+    hypothesis, we see that $P(n + 1)$ is true. Hence $P(n)$
+    holds for all $n \in \mathbb{N}$.
+* **6.** Observe that if we have the equation $g \cdot x =
 h$, then we can multiply both sides on the right by $g^{-1}$
 to observe that 
 
-\[
+$$
 (g^{-1} \cdot g) \cdot x = g^{-1} \cdot h \implies x = g^{-1} \cdot h.
-\]
+$$
 
 Since $x$ is the product of elements of $G$ (namely, $g^{-1}
 \cdot h$) and because $G$ is closed under $\cdot$, we have
 that $x \in G$. Thus a solution exists in $G$. The proof for
 the existence of $y \in G$ such that $h \cdot y = g$ is
 exactly the same.
-\end{description}
+
 </span>
 
 In our study of group theory, many of the groups we'll deal with will
@@ -631,15 +592,15 @@ closedness, existence of identity and inverses.
 
 By the definition of $H$, for all $x, y \in H$, $xy^{-1} \in
 H$. 
-\begin{description}
-\item[Identity.] Let $x \in H$. Then clearly $xx^{-1} = e \in H$. Thus $H$
+
+* **Identity.** Let $x \in H$. Then clearly $xx^{-1} = e \in H$. Thus $H$
 has the identity.
-\item[Inverses.] Since $x, e \in H$, we see that $ex^{-1} =
+* **Inverses.** Since $x, e \in H$, we see that $ex^{-1} =
 x^{-1} \in H$. Thus for all $x \in H$, $x^{-1} \in H$.
-\item[Closedness.] Now let $y \in H$; hence, $y^{-1} \in H$, as just proven. Then
+* **Closedness.** Now let $y \in H$; hence, $y^{-1} \in H$, as just proven. Then
 $x(y^{-1})^{-1} = xy\in H$, so that $H$ is closed under
 multiplication of its elements.
-\end{description} 
+ 
 Therefore $H$ is (1) a group
 and (2) a subset of $G$ so that $H \le G$, as desired.
 </span>
@@ -658,9 +619,9 @@ a family of subgroups of $G$. Then the set $H =
 <span style="display:block" class="proof">
 First, observe that 
 
-\[
+$$
 H = \bigcap_{\alpha \in \lambda} H_\alpha
-\]
+$$
 
 is nonempty. This is because each $H_\alpha \le G$ and thus
 the identity of $G$ is contained in each $H_\alpha$ for all
@@ -681,9 +642,9 @@ two more group definitions.
 Let $G$ be a group and $S \subset G$. The **centralizer**
 of $S$ in $G$ is defined to be the set $C_G(S)$
 
-\[
+$$
 \textcolor{NavyBlue}{C_G(S)} = \{g \in G \mid gs = sg \text{ for all } s \in S\}.
-\]
+$$
 
 </span>
 In the case where $G$ is abelian, we $C_G(S) = G$ for any nonempty
@@ -695,9 +656,9 @@ of a group**, which is as follows.
 Let $G$ be a group. Then the **center of a group** $G$ is
 defined as 
 
-\[
+$$
 Z(G) = \{z \in G \mid zg = gz \text{ for all } g \in G\}.
-\]
+$$
 
 </span>
 
@@ -710,9 +671,9 @@ normalizer.
 Let $G$ be a group and $S \subset G$. The **normalizer**
 of $S$ in $G$ is defined as 
 
-\[
+$$
 \textcolor{purple}{N_G(S)} = \{g \in G \mid gS = Sg\}
-\]
+$$
 
 </span>
 
@@ -746,34 +707,33 @@ also a subgroup of $G$!}
 <span style="display:block" class="proof">
 Let $G$ be a group and $S \subset G$. To show that $C_G(S) \le
 G$, we can use the subgroup test. 
-\begin{description}
-\item[Nonempty.] First we have to show the set is
+
+* **Nonempty.** First we have to show the set is
 nonempty. But note that for any $S$, $e \in C_G(S)$ 
 since $gs = sg$ for any $s \in S$.
-
-\item[Inverses.] We now show that if $x, y \in C_G(S)$
+* **Inverses.** We now show that if $x, y \in C_G(S)$
 then so is $xy^{-1}$. We know that for all $s \in S$, $xs
 = sx$ and $ys = sy$. Therefore $s = y^{-1}sy$ and $s =
 ysy^{-1}$ by solving for $s$ in the last equation.
 Plugging this into the first equation with $x$, we get 
 
-\[
+$$
 xs = sx \implies x(y^{-1}sy) = (ysy^{-1})x 
 \implies xy^{-1}sy = ysy^{-1}x.
-\]
+$$
 
 Multiplying both sides on the right by $y^{-1}$ leads to 
 
-\[
+$$
 xy^{-1}s = ysy^{-1}xy^{-1} 
 \implies xy^{-1}s = syy^{-1}xy^{-1}
 \implies xy^{-1}s = sxy^{-1}
-\]
+$$
 
 where in the second step we used the fact that $ys = sy$.
 Thus $xy^{-1} \in C_G(S)$, so by subgroup test we have
-that $C_G(S) \le G$. 
-\end{description}
+that $C_G(S) \le G$.
+
 
 The proof for $N_G(S)$ is the exact same; simply replace $s$
 with $S$.

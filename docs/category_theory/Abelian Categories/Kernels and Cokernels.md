@@ -58,9 +58,9 @@ any $\psi$ is a cokernels if and only if $\psi = \coker(\psi(\psi))$.
 We demonstrate functoriality. First we want our functor 
 to act on objects as 
 
-\[
+$$
 (C, f: A \to C) \mapsto (\ker(f), e_1: \ker(f) \to A). 
-\]
+$$
 
 Now we explain how the functor works on morphisms. 
 Suppose we have two objects of our 
@@ -71,9 +71,9 @@ from $(D, g: A \to D)$ to $(C, f: A \to C)$. Then we have the diagram below.
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now note that 
 
-\[
+$$
 f \circ e_2 = (h \circ g) \circ e_2 = h \circ (g \circ e_2) = 0.
-\]
+$$
 
 Thus, by the universal property of $e_1: \ker(f) \to A$, we know there 
 exists a *unique* morphism $h': \ker(g) \to \ker(f)$ such that the diagram 
@@ -86,13 +86,13 @@ $(\ker(g), e_2: \ker(g) \to A)$ and $(\ker(f), e_1: \ker(f) \to A)$.
 Thus we see that our functor maps on morphisms in $(A \downarrow \cc)$ in a nice 
 way:  
 
-\[
+$$
 h  \mapsto 
 h':
 (\ker(g), e_2: \ker(g) \to A) 
 \to 
 (\ker(f), e_1: \ker(f) \to A).
-\]
+$$
 
 where $h'$ is the unique map obtained from $h$ as explained above. 
 With the remaining properties easily verified, this defines a functor between the categories. 
@@ -106,9 +106,9 @@ $\ker(f) \circ h = g$. Then we can compare $\coker(g)$ and $f$ by considering th
 <img src="../../../png/category_theory/chapter_8/tikz_code_4_4.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now observe that 
 
-\[
+$$
 f \circ g = f \circ (e \circ h) = 0 \circ h = 0.
-\]
+$$
 
 Therefore, by the universal property of the cokernel, we know there 
 exists a unique morphism $h': \coker(g) \to f$ such that the diagram 
@@ -118,35 +118,35 @@ below commutes. This then implies that $f \le \coker(g)$.
 By a similar argument, we have that if $f \le \coker(g)$, 
 then $g \le \ker(f)$. Hence we have that 
 
-\[
+$$
 g \le \ker(f) \iff f \le \coker(g)
-\]
+$$
 
 so that, as preorder, the kernel and cokernels functors are adjoint pairs 
 that form an antitone Galois correspondence. Moreover, this implies that
 for each $f: B \to A$ and $g: A \to C$,
 
-\[
+$$
 f \le \coker(\ker(f)) \qquad g \le \ker(\coker(g)).
-\]
+$$
 
 In particular, if $f$ is the cokernel of some morphism $\phi$, and if $g$ is
 the kernel of some morphism $\psi$, then we have that 
 
-\[
+$$
 \coker(\phi) \le \coker(\ker(\coker(\phi)))
 \quad
 \ker(\psi) \le \ker(\coker(\ker(\psi))).
-\]
+$$
 
 However, applying the order reversing functors $\coker$ and $\ker$ on the relations 
 $\phi \le \ker(\coker(\phi))$ and $\psi \le \coker(\ker(\psi))$ yields 
 
-\[
+$$
 \coker(\ker(\coker(\phi))) \le \coker(\phi)
 \quad 
 \ker(\coker(\ker(\psi))) \le \ker(\psi).
-\]
+$$
 
 Hence we have that $\coker(\ker(\coker(\phi))) \cong \coker(\phi)$
 and

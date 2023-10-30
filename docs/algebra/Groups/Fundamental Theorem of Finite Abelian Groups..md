@@ -42,16 +42,16 @@ We can equivalently state that $H_i \cap H_j = \{e\}$ for $i
 Now observe that (1) $H_i \normal G$ for all $i$ since $G$ is
 abelian and (2) $H_i \cap H_j = \{e\}$ and (3) 
 
-\[ 
+$$ 
 |G| = |H_1|\cdot|H_2|\cdots|H_k|.
-\]
+$$
 
 Therefore, we can repeatedly apply Theorem
 1.\ref{product_theorem} to conclude that 
 
-\[
+$$
 G \cong H_1 \times H_2 \times \cdots \times H_k.           
-\]
+$$
 
 So $G$ is a product of its Sylow subgroups.
 </span>
@@ -81,9 +81,9 @@ subgroup $\left< g \right>$.
 
 Now define $H$ as follows:
 
-\[
+$$
 H = (G\setminus\left< g\right>) \cup \{e\} = \{h \in G \mid h \ne g^i \text{ for } i = 1, 2, \dots, m-1\}.  
-\]
+$$
 
 We will show that this is a subgroup via the subgroup test. 
 First
@@ -92,9 +92,9 @@ k+1$. Therefore, let $h, h' \in H$. \textcolor{purple}{Suppose
 for the sake of contradiction that $h^{-1} \not\in H$.} That
 is, 
 
-\[
+$$
 h^{-1} = g^{j} 
-\]
+$$
 
 for some $j = 1, 2, \dots, m-1$. \textcolor{purple}{Then
 $e  = hg^{j}$.} But since the order of $g$ is $m$, we see that
@@ -104,9 +104,9 @@ our contradiction so $h^{-1} \in H$.
 Since $h^{-1} \in H$, we see that $h^{-1} \ne g^i$ for any $i
 = 1, 2, \dots, m-1$. Since $h' \in H$ we see that 
 
-\[
+$$
 h'h^{-1} \ne g^{i} \text{ for any } i = 1, 2, \dots, m-1.
-\]
+$$
 
 Thus $h'h^{-1} \in H$, and by the subgroup test we see that
 $H$ is in fact a subgroup of $G$. 
@@ -122,9 +122,9 @@ k+1$.
 By construction, we see that (1) $\left< g \right> \cap H =
 \{e\}$. Therefore 
 
-\[
+$$
 |H \cdot K| =   
-\]
+$$
 
 
 By our inductive hypothesis, we know that $H$ is isomorphic to
@@ -214,19 +214,11 @@ $\mathbb{Z}/mn\mathbb{N} \cong \mathbb{Z}/n\mathbb{Z} \times
 \mathbb{Z}/m\mathbb{Z}$
 iff $\mbox{gcd}(m, n) = 1$. Thus we see that 
 
-* [1.] $\ZZ_9 \not\cong \ZZ_3 \times \ZZ_3$
-
-
-
-* [2.] $\ZZ_{5^3} \not\cong \ZZ_5 \times \ZZ_{5^2}$ and
+* **1.** $\ZZ_9 \not\cong \ZZ_3 \times \ZZ_3$
+* **2.** $\ZZ_{5^3} \not\cong \ZZ_5 \times \ZZ_{5^2}$ and
 $\not\cong \ZZ_5 \times \ZZ_5 \times \ZZ_5$
-
-
-
-* [3.] $\ZZ_{2^3} \not\cong \ZZ_2 \times \ZZ_{2^2}$ and
+* **3.** $\ZZ_{2^3} \not\cong \ZZ_2 \times \ZZ_{2^2}$ and
 $\not\cong \ZZ_2 \times \ZZ_2 \times \ZZ_2$.
-
-
 
 Therefore, we see that none of the groups (1) - (18) are
 isomorphic to each other, so this exhaustive list of abelian
@@ -244,9 +236,9 @@ Nevertheless its proof is fun.
 Let $G$ be a finite abelian group. Then there exist integers
 $a_1, a_2, \dots, a_k$ such that 
 
-\[
+$$
 G \cong \ZZ/a_1\ZZ \times \ZZ/a_2\ZZ \times \dots \ZZ/a_k\ZZ
-\]
+$$
 
 where $a_i \mid a_{i+1}$.
 </span>
@@ -260,16 +252,16 @@ we know by Lemma
 \ref{fund_ab_lemma_1} that it is isomorphic to a 
 product of Sylow subgroups. Therefore, we see that 
 
-\[
+$$
 G \cong H_1 \times H_2 \times \cdots \times H_n  
-\]
-
+$$
+ 
 where for some $H_1, H_2, \dots H_n$ Sylow subgroups, and 
 $|H_i| = p_i^{k_i}$. However, observe that for each $i \le n$,  
 
-\[
+$$
 H_i \cong \underbrace{**(**\mathbb{Z}/p_i\mathbb{Z**)**} \times **(**\mathbb{Z}/p_i\mathbb{Z}**)** \times \cdots \times **(**\mathbb{Z}/p_i\mathbb{Z}**)**.}_{k_i\text{-many times}}
-\]
+$$
 
 Substituting for each $H_i$, we then have that 
 
@@ -317,32 +309,32 @@ G \cong (\ZZ/p_1^{k_1 - 1}\ZZ)
 
 since by repeated application of equation (1), 
 
-\[
+$$
 \ZZ/p_ip_{i+1}^{k_{i+1} - 1} \cong \ZZ/p_i\ZZ\times \overbrace{\ZZ/p_{i + 1}\ZZ \times \cdots \times \ZZ/p_{i + 1}\ZZ}^\text{$(k_{i+1} - 1)-$many times}        
-\]
+$$
 
 for $1 < i < n -2$, and 
 
-\[
+$$
 \ZZ/p_{n-1}p_n^{k_n}\ZZ \cong **(**\ZZ/p_{n-1}\ZZ**)** \times
 \overbrace{**(**\mathbb{Z}/p_n\mathbb{Z**)**} \times **(**\mathbb{Z}/p_n\mathbb{Z}**)** \times \cdots \times **(**\mathbb{Z}/p_n\mathbb{Z}**)**}^\text{$k_n-$many times}.
-\]
+$$
 
 Since we have that 
 
-\[
+$$
 G \cong (\ZZ/p_1^{k_1 - 1}\ZZ)
 \times (\ZZ/p_1p_2^{k_2-1}\ZZ) \times \cdots
 \times (\ZZ/p_{n-1}p_n^{k_n}\ZZ)
-\]
+$$
 
 if we let $a_1 = p_1^{k_1 - 1}$ and 
 $a_i = p_{i-1}p_{i}^{k_{i} - 1}$ for $1 < i < n$ and $a_k =
 p_{n-1}p_n^{k_n}$, then we see that 
 
-\[
+$$
 G \cong  \mathbb{Z}/a_1\mathbb{Z} \times \mathbb{Z}/a_2\mathbb{Z} \times \cdots \mathbb{Z} / a_k \mathbb{Z} 
-\]
+$$
 
 where $a_i \big| a_{i + 1}$ for $0 < i < n$, as desired.
 </span>

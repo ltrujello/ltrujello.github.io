@@ -86,11 +86,11 @@ Let $\cc$ be a small category. For any two objects $A, B$,
 and for any positive integer $n$, define the **path set of order** $n$ 
 from $A$ to $B$ as
 
-\[
+$$
 \path^n(A, B)
 = 
 \{ \text{all paths } p: A \to B \text{ of length } n \}.
-\]
+$$
 
 The above definition makes sense, but admittedly it is not illuminating. 
 Is there another perspective we can make from this? 
@@ -101,18 +101,18 @@ one way to imagine a path is as a tuple
 $(f_1, \dots, f_n)$ of $n$-morphisms where the codomain of $f_i$ is the domain of $f_{i+1}$.  
 In other words, a path from $A$ to $B$ is an element of 
 
-\[
+$$
 \hom(A, A_1)\times \hom(A_1, A_2)\times \cdots \times \hom(A_n, B).  
-\]
+$$
 
 for some objects $A_1, \dots, A_n$ in $\cc$. Therefore, we can say that 
 
-\[
+$$
 \path^n(A,B)
 =
 \bigcup_{A_1, \dots A_n \in \text{Ob}(\cc)}
 \hom(A, A_1)\times \hom(A_1, A_2)\times \cdots \times \hom(A_n, B).
-\]
+$$
 
 where in the above union we vary across all objects $A_1, \dots, A_n \in \ob(\cc)$. 
 Note that when $n = 1$, we have that $\path^n(A, B) = \hom(A, B)$. In this way, 

@@ -557,6 +557,7 @@ class Latex2Md:
             offset += len(repl) - (end - start + 1)
 
         return new_code
+    
 
     def clean_code(self, code: str, chapter:int, section: int) -> str:
         LOGGER.info(f"doing {chapter=} {section=}")
@@ -636,6 +637,8 @@ class Latex2Md:
 
         # replace includegraphics
         new_code = self.repl_all_include_graphics(new_code, chapter)
+        # change \[ ... \] delimeters to $$ $$
+        new_code = self.repl_surround(new_code, "\\[", "\\]", "$$", "$$")
 
         # log unrecognized environments
         start_env = re.compile("\\\\begin{([\S\s]+?)}")

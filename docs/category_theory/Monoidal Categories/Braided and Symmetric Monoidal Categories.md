@@ -27,10 +27,10 @@ the concept of braids.
 The $n$-th braid group $B_n$ consists of braids on $n$-strands whose 
 group product is braid composition. More rigorously, 
 
-\[
+$$
 B_n = 
 \left< \sigma_1, \dots, \sigma_n, \sigma_1^{-1}, \dots, \sigma_n^{-1} \mid (1), (2)\right>
-\]
+$$
 
 where $(1), (2)$ are generator relations described below. 
 
@@ -58,9 +58,9 @@ category $(\cc, \otimes, I)$ equipped additionally with a natural transformation
 know as the "twist" morphism
 \begin{statement}{ProcessBlue!10}
 
-\[
+$$
 \sigma_{A,B}: A\otimes B \to B\otimes A\qquad **(Twist Morphism)**
-\]
+$$
  
 \end{statement} 
 such that the following diagrams commute for all objects $A, B, C$ of $\cc$. 
@@ -82,14 +82,14 @@ This is the category where:
 * **Objects.** All integers $n \ge 0$.
 * **Morphisms.** For any two integers $m, n$, we have that 
 
-\[
+$$
 \hom_{\mathbb{B}}(n,m)
 =
 \begin{cases}
 B_n & \text{if } n = m\\
 \varnothing & \text{if } n \ne m
 \end{cases}
-\]
+$$
  
 Composition in this category is simply braid composition. We can introduce a tensor 
 product $\otimes$ on $\mathbb{B}$ where on objects $n \otimes m = n + m$ 
@@ -102,9 +102,9 @@ is a strict monoidal category. The associators and unitors are simply identity m
 However, this category also have a natural braiding structure. For any two objects 
 $n,m$, introduce the braiding 
 
-\[
+$$
 \sigma_{n,m}: n + m \isomarrow m + n
-\]
+$$
 
 where on objects the addition is simply permuted; on morphisms, however, 
 $\sigma_{n,m}$ corresponds to the braid of length $n + m$ as below.
@@ -133,9 +133,9 @@ a monoidal category.
 The tensor product 
 of two graded $R$ modules $M =\{M_n\}_{n=1}^{\infty}$ and $P = \{P_n\}_{n= 1}^{\infty}$ is the graded $R$-module $M\otimes P$ whose $n$-th level is given by
 
-\[
+$$
 (M \otimes P)_n = \bigoplus_{i + j = n}M_i \otimes P_j.
-\]
+$$
   
 We can additionally introduce a braiding on this category for each invertible elements $k \in R$; specifically, we define the braiding 
 $\sigma_{M,P}: M \otimes P \to P \otimes M$ to be the graded module homomorphism whose $n$-th degree is 
@@ -167,15 +167,15 @@ a braiding $\sigma_{A,B}: A\otimes B \to B \otimes A$,
 then we can extend this to a braiding on the functor category of $\cc^M$ 
 by defining, for two functors $F,G: \cc \to M$, the natural transformation
 
-\[
+$$
 \beta_{F,G}: F \otimes G \to G \otimes F 
-\]
+$$
  
 defined pointwise for each $A \in \cc$ as the morphism
 
-\[
+$$
 (\beta_{F,G})_A = \sigma_{F(A), G(A)}: F(A)\otimes G(A) \isomarrow G(A) \otimes F(A). 
-\]
+$$
 
 One can then check that this natural transformation satisfies the braided hexagon 
 axioms since the braiding $\sigma$ in $M$ does, so that $\cc^M$ is additionally braided 
@@ -187,9 +187,9 @@ if $M$ is additionally braided.
 A **Symmetric Monoidal Category** $\cc$ is a braided monoidal category 
 such that, for the twist morphism, 
 
-\[
+$$
 \sigma_{B,A}\circ\sigma_{A,B} = 1_{A\otimes B}.
-\]
+$$
  
 </span>
 
@@ -268,28 +268,28 @@ we know that $f: S_n \to S_{n'}$ and $g: S_m \to S_{m'}$ for some sets in
 **Set**.Then we can define $f + g: (n + n') \to (m + m')$ to be the function 
 in **Set** where 
 
-\[
+$$
 f + g: S_n \amalg S_{n'} \to S_m \amalg S_{m'}.
-\]
+$$
 
 where 
 
-\[
+$$
 (f + g)(x, i) = 
 \begin{cases}
 (f(x), 0) \quad \text{ if } i = 0\\
 (g(x), 1) \quad \text{ if } i = 1.
 \end{cases}
-\]
+$$
 
 Hence $f + g$ makes sense in **FinSet** as morphism $f + g: (n + n') \to (m + m')$. 
 
 Now consider the morphisms $f \circ h$ and $g \circ j$. Observe that 
 $f\circ h + g \circ j : k + l \to n' + m'$. This is then the function 
 
-\[
+$$
 f\circ h + g \circ j: S_k \amalg S_{l} \to S_{n'} \amalg S_{m'}
-\]
+$$
 
 but note that 
 
@@ -313,9 +313,9 @@ Now we show that this is a monoidal category. Define the natural isomorphisms
 We can describe these functions in further detail. 
 Observe that $\alpha_{n, m, p}$ can be realized to be a function where 
 
-\[
+$$
 \alpha_{n,m,p}: S_n\amalg(S_m \amalg S_p) \isomarrow (S_n \amalg S_m)\amalg S_p.
-\]
+$$
 
 Elements of $S_n \amalg(S_m \amalg S_p)$ will be either $(x, 0)$ 
 where $x \in S_n$, or $(x, 1)$ where $x \in S_m\amalg S_p$. In turn, the elements 
@@ -382,43 +382,43 @@ or $(y, 1)$ where $y \in S_p$.
     $\alpha_{n,m,p}(x, 1) = ((y, 1), 0)$. Plugging this into $( f+ g) + h$, we 
     get 
 
-    \[
+    $$
     [ ( f+ g) + h]((y, 1), 0) = ([f + g](y, 1), 0) = ((g(y), 1), 0).
-    \]
+    $$
 
     However, we also could have obtained this value by first starting with  
     $f + (g + h)$. In this case, 
 
-    \[
+    $$
     [f + (g + h)]((y, 0), 1) = ([g + h](y, 0), 1) = ((g(y), 0), 1). 
-    \]
+    $$
 
     Plugging this into $\alpha_{n',m',p'}$, we then get that 
 
-    \[
+    $$
     \alpha_{n',m',p'}((g(y), 0), 1) = ((g(y), 1), 0).
-    \]
+    $$
 
     Hence the two paths are equivalent.
     * **$\bm{y \in S_p}$.** Suppose $x = (y, 1)$, Then we have that 
     $\alpha_{n, m, p}((y,1), 1) = (y, 1)$. Sending this into $(f + g)+ h$, we get 
 
-    \[
+    $$
     [(f + g) + h](y, 1) = (h(y), 1).
-    \]
+    $$
 
     However, we could have achieved this value by first plugging $((y, 1),1)$ into 
     $f + (g + h)$:
 
-    \[
+    $$
     [f + (g + h)]((y, 1), 1) = ([g + h](y, 1), 1) = ((h(y), 1), 1).
-    \]
+    $$
   
     Then sending this into $\alpha_{n',m',p'}$, we get 
 
-    \[
+    $$
     \alpha_{n',m',p'}((h(y), 1), 1) = (h(y), 1).
-    \]
+    $$
 
     Thus the two paths are equivalent.
 

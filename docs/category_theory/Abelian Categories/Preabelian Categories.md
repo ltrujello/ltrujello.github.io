@@ -50,9 +50,9 @@ $(\ker(\phi), e: \ker(\phi) \to G)$ where $\ker(\phi) \subset G$ and $e$ being i
 For the same morphism, we can form the coequalizer be considering the pair 
 $(\overline{N}, c: H \to H/\overline{N})$ where 
 
-\[
+$$
 \overline{N} = \bigcap_{N \in \lambda} N
-\]
+$$
 
 where $\lambda = \{H' \subset H \mid \im(\phi) \subset H' \text{ and } H' \normal H\}$. 
 It's a simple exercise to show that these satisfy the necessary universal properties. 
@@ -62,9 +62,9 @@ of **Grp** and **Ab**}. Because every subgroup of an abelian group
 is normal, we know that in the case of **Ab**, $\overline{N} = \im(\phi)$
 So the coequalizer becomes 
 
-\[
+$$
 (\im(\phi), c: H \to H/\im(\phi)).
-\]
+$$
 
 </span>
 
@@ -94,9 +94,9 @@ take the kernel of this morphism.
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_2.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 We now argue that this is the equalizer of $\phi, \psi$. First observe that 
 
-\[
+$$
 (\phi - \psi)\circ e = 0 \implies \phi \circ e - \psi \circ e = 0 \implies \phi \circ e = \psi \circ e
-\]
+$$
 
 using bilinearity of $\circ$. Hence we see that $e$ equalizes $\phi$ and $\psi$, although 
 we now need to demonstrate its universal property. 
@@ -107,11 +107,11 @@ that $\psi \circ \sigma = \psi \circ \phi$.
 <img src="../../../png/category_theory/chapter_8/tikz_code_3_3.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 However, note that 
 
-\[
+$$
 \phi \circ \sigma = \psi \circ \sigma 
 \implies 
 (\phi - \psi)\circ \sigma = 0.
-\]
+$$
 
 Since $e: \ker(\phi) \to G$ is kernel, we note that its 
 universal property implies that because $(\phi - \psi)\circ \sigma = 0$ 
@@ -158,9 +158,9 @@ Let $\cc$ be a preabelian category.
 Let $J$ be a connected category and suppose $F: J \to \cc$ is a functor. 
 Then 
 
-\[
+$$
 \Lim F \cong \Colim F.   
-\]
+$$
 
 </span>
 
@@ -172,13 +172,13 @@ Recall the limit satisfies universal property
 for every object $C$ equipped with a family of morphisms $f^i: C \to F(i)$. 
 Construct the family of morphisms 
 
-\[
+$$
 f_i^j = 
 \begin{cases}
 \emptyset_i^j: F(i) \to F(j) & \text{if } i \ne j\\
 1_{F(i)} & \text{if } i = j
 \end{cases}
-\]
+$$
 
 where $\emptyset_i^j: F(i) \to F(j)$ is the unique zero morphism
 from $F(i)$ to $F(j)$.
@@ -191,9 +191,9 @@ We now argue that we have a colimit on our hands. Specifically, suppose $D$ is a
 object of $\cc$ equipped with a family of morphisms $g_j: F(j) \to D$. 
 Then observe that we can supply a morphism 
 
-\[
+$$
 \sum_{k \in J}g_ku^k: \Lim F \to D
-\]
+$$
 
 where the addition operation is from the group structure of $\hom(\Lim F, D)$, 
 such that the diagram below commutes. 
@@ -220,9 +220,9 @@ $\ell \circ h_j = g_j$. Recall that $u^i\circ h_i= 1_{F(i)}$,
 so that $h_i$ is a monomorphism. Then observe that we can take 
 the image of the map 
 
-\[
+$$
 h_i: F(i) \to \Lim F  
-\]
+$$
 
 under the contravariant hom functor to get an epic group homomorphism 
 
@@ -230,22 +230,22 @@ under the contravariant hom functor to get an epic group homomorphism
 between abelian groups, as $\circ$ obeys bilinearity 
 properties. By the first isomorphism theorem we then have that 
 
-\[
+$$
 \hom(F(i), D) \cong \hom(\Lim F, C)/\ker(\circ h_i).
-\]
+$$
 
 Now we want to show that this map is also injective, because then 
 we could observe that since
 
-\[
+$$
 \left(\ell - \sum_{k \in J}g_k \circ u^k\right)\circ h_i = 0
-\]
+$$
 
 that 
 
-\[
+$$
 \ell - \sum_{k \in J}g_k \circ u^k = 0.
-\]
+$$
 
 But it seems like we don't have enough to show that at the moment...
 

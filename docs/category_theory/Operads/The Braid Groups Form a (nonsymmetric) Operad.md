@@ -8,9 +8,9 @@ Recall that the $n$-th braid group $B_n$ is the collection
 of all possible braidings of $n$-strands, forming a group under composition. 
 Each braid group has the presentation 
 
-\[
+$$
 B_n = \left< \sigma_1, \dots, \sigma_{n-1} \mid \sigma_i\sigma_{i+1}\sigma_{i} = \sigma_{i+1}\sigma_{i}\sigma_{i+1}^{(\texttt{1})}, \sigma_i\sigma_j = \sigma_j\sigma_i^{(\texttt{2})} \right>   
-\]
+$$
 
 where (\texttt{1}) holds only when $1 \le i \le n - 2$ and (\texttt{2}) hold only when 
 $|i - j| > 1$. Below is the braid $\sigma_1 \sigma_3 \sigma_2 \sigma_2 \sigma_3$, 
@@ -50,9 +50,9 @@ Every cable is obtained from a map $\circ_k: B_n \times B_m \to B_{m + n -1}$.
 
 In general, we can define an "operadic" composition where the composition is the cabling of $n$-braids.
 
-\[
+$$
 \circ_{a_1, \dots, a_n}: B_n \times B_{a_1} \times \cdots \times B_{a_n} \to B_{a_1 + \cdots + a_n}
-\]
+$$
 
 We'll want to show that this does form an operad. But before we do that we'll need to 
 obtain an algebraic expression, based on the generators of the braids being cabled,
@@ -91,9 +91,9 @@ each crossing was just $\sigma_{i}$.
 <img src="../../../png/category_theory/chapter_9/tikz_code_4_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Overall, we can simply see that the braid is given by 
 
-\[
+$$
 (\sigma_2\sigma_1)(\sigma_3\sigma_2)(\sigma_4\sigma_3).  
-\]
+$$
 
 
 Now suppose more generally that we have $k_1$-many red lines and $k_2$-many blue lines.
@@ -128,7 +128,7 @@ we are swapping $k_1$ many strands *under* $k_2$ many strands,
 so, we have to 
 swap $k_1$ and $k_2$. This then gives us the expression 
 
-\[
+$$
 \sigma_1^{-1}(k_1, k_2)
 =
 \prod_{m = 1}^{k_1}
@@ -136,7 +136,7 @@ swap $k_1$ and $k_2$. This then gives us the expression
 \sigma_{(k_1 - \textcolor{NavyBlue}{m})+2}^{-1}
 \cdots 
 \sigma_{(k_1 - \textcolor{NavyBlue}{m})+ k_2}^{-1}
-\]
+$$
  
 
 
@@ -179,9 +179,9 @@ $k_2$-parallel strands in the second, all the way to $k_n$ strands in
 the $n$-th strand. This then defines a braid of $(k_1 + \cdots + k_n)$-many strands
 which we denote as 
 
-\[
+$$
 \beta(k_1, k_2, \dots, k_n).
-\]
+$$
 
 For example, if $\beta = \sigma_1\sigma_3\sigma_2\sigma_2$,
 then we have $\beta$ below on the bottom left. On the bottom right, 
@@ -201,9 +201,9 @@ Staring at the diagram, we can see that it may be expressed as
 
 But how can we do this in general? To explain, first suppose 
 
-\[
+$$
 \beta = \sigma_{i_1}\sigma_{i_2}\cdots\sigma_{i_k}.
-\]
+$$
 
 To draw the cabled braid $\beta(k_1, k_2, \dots, k_n)$, we see that we have $k$-crossings to focus on; 
 these are where the crossings will happen in our cabled braid. For example, in the braid we provided above, we 
@@ -245,7 +245,7 @@ as a product of $k$-many generators $\beta = \sigma_{i_1}\sigma_{i_2} \cdots \si
 (where any $\sigma$ is equally possibly an inverse). 
 Then we define the quantity 
 
-\[
+$$
 \phi(\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_j}, s)
 = 
 \begin{cases}
@@ -254,7 +254,7 @@ Then we define the quantity
 \sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_j}
 \text{ have been applied.}
 \end{cases}
-\]
+$$
 
 Of course, $\phi(-, s) = s$, where $-$ represent empty input,
 for each strand $s$. This is because each $s$-th strand is originally the 
@@ -264,11 +264,11 @@ However, a way to define this is to calculate the underlying permutation
 of $\sigma_i^{1}\sigma_j^{2}\dots, \sigma_k^{p}$ using the natural projection 
 map $\pi: B_n \to S_n$. Hence we see that 
 
-\[
+$$
 \phi(\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_k}, s)
 = 
 \pi(\sigma_{i_1}\sigma_{i_2}\dots, \sigma_{i_k})(s).
-\]
+$$
 
 </span>
 
@@ -286,19 +286,19 @@ However, we can express this observation using our tool.
 Note that $\pi(\sigma_1\sigma_3)$ is the permutation $(1, 2, 3, 4) \mapsto 
 (2, 1, 4, 3)$. Hence we see that 
 
-\[
+$$
 \phi(\sigma_1\sigma_3, 1) = \textcolor{Green}{2} \quad \phi(\sigma_1\sigma_3, 2) = \textcolor{Red}{1} \quad
 \phi(\sigma_1\sigma_3, 3) = \textcolor{RoyalBlue}{4} \quad \phi(\sigma_1\sigma_3, 4) = \textcolor{Purple}{3}.
-\]
+$$
  
 What about after the first three generators have been applied? We calculate 
 again: $\pi(\sigma_1\sigma_3\sigma_2)$ is the permutation $(1, 2, 3, 4) \mapsto (2, 4, 1, 3)$.
 Hence we have that 
 
-\[
+$$
 \phi(\sigma_1\sigma_3\sigma_2, 1) = \textcolor{Green}{2} \quad \phi(\sigma_1\sigma_3\sigma_2, 2) = \textcolor{NavyBlue}{4} \quad
 \phi(\sigma_1\sigma_3\sigma_2, 3) = \textcolor{red}{1} \quad \phi(\sigma_1\sigma_3\sigma_2, 4) = \textcolor{Purple}{3}.
-\]
+$$
 
 which matches a simple hand-count that we can perform using the picture below.
 
@@ -321,9 +321,9 @@ are these cables? From looking at the diagram, we definitely know. But in genera
 be able to just look at the diagram. However, our tool can tell us: Since we've applied $\sigma_1\sigma_3\sigma_2\sigma_2$, 
 we see that 
 
-\[
+$$
 \phi(\sigma_1\sigma_3\sigma_2\sigma_2, 3) = \textcolor{RoyalBlue}{4} \qquad \phi(\sigma_1\sigma_3\sigma_2\sigma_2, 4) = \textcolor{Black}{1}.
-\]
+$$
 
 Therefore, we're crossing blue cables over the black cables. We also now know there
 are $k_{\textcolor{RoyalBlue}{4}} = 3$ blue cables and $k_{\textcolor{Black}{3}} = 1$ many black cables.
@@ -334,17 +334,17 @@ Well, since the blue strands are inside of the third cable, we just need to ask 
 stands are in the first and second cables. But what is the first cable? What's the second?
 We see that
 
-\[
+$$
 \phi(\sigma_1\sigma_3\sigma_2\sigma_2, 1) =  \textcolor{Green}{2}.
 \quad 
 \phi(\sigma_1\sigma_3\sigma_2\sigma_2, 2) = \textcolor{Red}{1}.
-\]
+$$
 
 Hence there are 
 
-\[
+$$
 k_{\textcolor{Green}{2}} + k_{\textcolor{Red}{1}} = 2 + 3 = 5    
-\]
+$$
 
 strands before the blue strands. We can now calculate the crossings: 
 
@@ -358,12 +358,12 @@ strands before the blue strands. We can now calculate the crossings:
 
 where 
 
-\[
+$$
 p = 1 + \hspace{-1.5cm}\overbrace{k_2 + k_3}^{\text{\# of strands before the red strands}}
 \quad 
 q = \hspace{-1cm}\underbrace{k_{\textcolor{RoyalBlue}{4}}}_{\text{\# of strands in the 3rd cable}}
 r = \hspace{-1cm}\overbrace{k_{\textcolor{Black}{3}}}^{\text{\# of strands in the 4th cable}}
-\]
+$$
 
 
 
@@ -374,17 +374,17 @@ Let $\beta \in B_n$ be a braid, and suppose it
 may be expressed as $\sigma_{i_1}\sigma_{i_2} \cdots \sigma_{i_k}$ in terms of $k$-many 
 generators. Let $k_1, \dots, k_n$ be positive integers. Then we have that 
 
-\[
+$$
 \beta(k_1, k_2, \dots, k_n) 
 = 
 \psi_1\psi_2\dots\psi_k
-\]
+$$
   
 where, depending on if $\sigma_{i_j}$ is an instance of an inverse or not, 
 we have 
 \begin{statement}{ProcessBlue!10}
 
-\[
+$$
 \prod_{m = p_j}^{p_j + (r_j-1)}
 \sigma_{q_j + (m-1)}
 \sigma_{q_j + (m-2)}
@@ -398,13 +398,13 @@ we have
 \sigma^{-1}_{(q_j -m) - 2}
 \cdots 
 \sigma^{-1}_{m}
-\]
+$$
 
 \end{statement}
 where in both cases
 \begin{statement}{ProcessBlue!10}
 
-\[
+$$
 p_j
 =
 \overbrace{
@@ -423,7 +423,7 @@ r_j
 =
 k_{\phi(\sigma_{i_1}\cdots\sigma_{i_{(j-1)}}, (i_j+1))}
 }^{\text{\# of stands in the } (i_j+1)\text{-th cable} }
-\]
+$$
 
 \end{statement}
 </span>

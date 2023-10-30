@@ -47,19 +47,19 @@ where $a_1, a_2, \dots, a_n$ are positive integers. That is, suppose we have tha
 The above composition can be expressed as $f(g_1, g_2, \dots, g_n)$ which we may  
 denote as
 
-\[
+$$
 f \circ_{a_1, a_2, \dots, a_n}(g_1, g_2, \dots, g_n): X^{a_1}\times X^{a_2}\times \cdots \times X^{a_n} \to X.
-\]
+$$
 
 and note that we've construction a function in $\aend_{a_1 + a_2 + \cdots + a_n}(X)$ using
 one $f \in \aend_n(X)$ and $n$-many $g_i \in \aend_i(X)$. 
 Then what we see is that our composition map is really a function that can be written formally as 
 
-\[
+$$
 \circ_{a_1, a_2, \dots, a_n}: X^n \times (X^{a_1}\times X^{a_2}\times \cdots \times X^{a_n})
 \to 
 X^{a_1 + a_2 + \cdots + a_n} 
-\]
+$$
 
 Then we can make this even more interesting. Each $g_i: X^{a_i} \to X$ is *just like* $f: X^n \to X$.
 Hence we can repeat the same process on each $g_i$, and plug a family of functions $h_{i, j}: X^{k_{i,j}}\to X$
@@ -68,16 +68,16 @@ where $j = 1, 2, \dots, a_i$.
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_5.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now there are two ways to think about this function. There is 
 
-\[
+$$
 [f \circ_{a_1, a_2, \dots, a_n} (g_1, g_2, \dots, g_n)]\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, a_1}, \dots, k_{n, a_n}}(h_{1,1}, \dots, h_{n, a_n})
-\]
+$$
   
 which first composes $f$ with the $g$-family, and then composes with the $h$-family, and then there is 
 
-\[
+$$
 f \circ_{(k_{1,1}+ \cdots + k_{1, a_1}), \dots, (k_{n, 1}+ \cdots + k_{n, a_n})}
 \big(g_1 \circ_{k_{1,1}, \dots, k_{1, a_1}}(h_{1,1}, \dots, h_{1, a_1}), \dots, g_n \circ_{k_{n, 1}, \dots, k_{n, a_n}}(h_{n,1}, \dots, h_{n, a_n})\big)
-\]
+$$
 
 which first composes each $g$ with its respective $h$-family, and then composing the resulting
 structure with $f$. Since these are just functions, and individual composition is associative, 
@@ -111,9 +111,9 @@ f \circ_{(k_{1,1}+ \cdots + k_{1, a_1}), \dots, (k_{n, 1}+ \cdots + k_{n, a_n})}
 \end{gather*}
 * **(NS-OP2): Identity.** For every $f \in X_n$ we have that 
 
-\[
+$$
 f \circ_{1, 1, \dots, 1} (I, I, \dots, I) = f = I \circ_n (f).
-\]
+$$
 
 </span>
 
@@ -128,19 +128,19 @@ for each $n = 1, 2, \dots$, subject to the following axioms.
 some $a_1, a_2, \dots, a_n \in \mathbb{N}$. Then for a $\tau \in S_n$, we must 
 have 
 
-\[
+$$
 (f \cdot \tau)\circ_{a_1, \dots, a_n}(g_1, \dots, g_n)
 =
 (f \circ_{a_{\tau^{-1}(1)}, \dots, a_{\tau^{-1}(n)}}(g_{\tau^{-1}(1)}, \dots, g_{\tau^{-1}(n)}))\cdot \tau'
-\]
+$$
 
 where $\tau' \in S_{a_1 + \cdots + a_n}$. Here, $\tau'$ is a *block permutation* 
 that swaps the $i$-th block with the $\tau(i)$-th block. That is, if 
 $\tau \in S^n$ as a permutation acts as 
 
-\[
+$$
 (1, 2, \dots, n) \mapsto (\tau(1), \tau(2), \dots, \tau(n))
-\]
+$$
 
 then $\tau' \in S_{a_1 + a_2 + \cdots + a_n}$ acts as 
 
@@ -157,11 +157,11 @@ then $\tau' \in S_{a_1 + a_2 + \cdots + a_n}$ acts as
 * **(S-OP2: Equivariance 2)** Let $f, g_i$ is as above, and choose $\sigma_1 \in S_1, \dots, \sigma_{n} \in S_n$. 
 Then we have that 
 
-\[
+$$
 f \circ_{a_1, \dots, a_n}(g_1 \cdot \sigma_1, \dots, g_n \cdot \sigma_n)
 =
 (f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))\cdot (\sigma_1, \dots,\sigma_n)
-\]
+$$
 
 where $(\sigma_1, \sigma_2, \dots, \sigma_n) \in S_{a_1 + a_2 + \cdots + a_n}$ 
 is the permutation described as below. 
@@ -193,25 +193,25 @@ is the permutation described as below.
 We can continue with our previous construction concerning 
 the family of sets 
 
-\[
+$$
 \aend_n(X) = \{f: X^n \to X \mid f \in **Set**\}
-\]
+$$
 
 to demonstrate that it 
 forms a symmetric operad. As we already established associativity **NS-OP1**, we need 
 to verify the identity axiom **NS-OP2**. Such an identity element can be chosen if 
 we select $I = 1_X: X \to X$. On one hand we have for any $f \in X^n$ that
 
-\[
+$$
 f \circ_{1, 1, \dots, 1}(I, I, \dots, I) = f(1_x, 1_x, \dots, 1_x) = f
-\]
+$$
 
 while on the other we have that $I \circ_n f = 1_X \circ f = f$. 
 Next, define a group action of $S_n$ on $\aend_n(X)$ as 
 
-\[
+$$
 (f \cdot \sigma)(x_1, x_2, \dots, x_n) = f(x_{\sigma(1)}, x_{\sigma(2)}, \dots, x_{\sigma(n)}).
-\]
+$$
 
 We now verify **S-OP1** with this group action. 
 Let $f \in \aend_n(X)$ and $g_i \in \aend_i(X)$ for $i = 1, 2, \dots, n$.
@@ -221,11 +221,11 @@ the each $(x_{a_{i}-1}, \dots, x_{a_i})$ into $g_i$, which is then
 plugged into $f$. However, the action of $\tau$ swaps these resulting coordinates. 
 Thus we get that 
 
-\[
+$$
 (f \cdot \tau) \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)(x_1, \dots, a_1, \dots, x_{a_{n-1}+1}, \dots, x_{a_n})
 = 
 (\dots, \overbrace{g_i(x_{a_{i-1}+1}, \dots, x_{a_i})}^{\tau(i)-\text{th entry}}, \dots )
-\]
+$$
 
 How do we write this more formally? Well, to answer that, we need to know the answer 
 to the following question: which $g_i(x_{a_{i-1}+1}, \dots, x_{a_i})$
@@ -246,11 +246,11 @@ f \circ_{\tau^{-1}(1), \tau^{-1}(2), \dots, \tau^{-1}(n)}(g_{\tau^{-1}(1)}, g_{\
 where $\tau'$ is the block permutation described in the definition. 
 Thus we see that 
 
-\[
+$$
 (f \cdot \tau) \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)
 =
 f \circ_{\tau^{-1}(1), \tau^{-1}(2), \dots, \tau^{-1}(n)}(g_{\tau^{-1}(1)}, g_{\tau^{-1}(2)}, \dots, g_{\tau^{-1}(n)}) \cdot \tau'
-\]
+$$
 
 as desired. Thus we have **S-OP1**. Finally, we show **S-OP2**, which 
 is a bit easier to demonstrate. As before, let $f, a_i$ and $g_i$ be as described 
@@ -271,10 +271,10 @@ f\Big( g_1(x_{\sigma_1(1)}, \dots, x_{\sigma_1(a_1)}), \dots, g_n(x_{\sigma_n(1)
 
 Thus we see that 
 
-\[
+$$
 f \circ_{a_1, \dots, a_n}(g_1 \cdot \sigma_1, \dots, g_n \cdot \sigma_n)
 =(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n)) \cdot (\sigma_1, \dots, \sigma_n)
-\]
+$$
 
 so that **S-OP2** is satisfied. 
 All together, we have that for any set $X$, the family of sets $\aend_{n}(X)$ 
@@ -288,28 +288,28 @@ is the $n$-th symmetric group. Suppose that $\tau \in S_n$ and
 that $\sigma_1 \in S_{a_1}, \sigma_2 \in S_{a_2}, \dots, \sigma_n \in S_{a_n}$
 for $a_1, a_2, \dots, a_n \in \mathbb{N}$. Then we define 
 
-\[
+$$
 \tau \circ_{a_1, \dots, a_n}(\sigma_1, \sigma_2, \dots, \sigma_n) \in S_{a_1 + a_2 + \cdots + a_n}   
-\]
+$$
 
 as a permutation of $a_1 + a_2 + \cdots + a_n$ letters. Before we describe the permutation, we'll
 introduce some notation. Consider the (ordered) tuple of the first $a_1 + \cdots + a_n$ integers. 
 
-\[
+$$
 (\textcolor{Red}{1, 2, \dots, a_1}, 
 \textcolor{Green}{a_1 + 1, a_1 + 2, \dots, a_1 + a_2},
 \dots
 \textcolor{RoyalBlue}{(a_{1} + \cdots + a_{n-1})+1, \dots, (a_{1} + \cdots + a_{n-1}) + a_n})
-\]
+$$
 
 We can more compactly denote this tuple as 
 
-\[
+$$
 (\textcolor{Red}{1, 2, \dots, a_1},
 \textcolor{Green}{1', 2', \dots, a'_2}, 
 \dots, 
 \textcolor{RoyalBlue}{1', 2', \dots, a'_n}) 
-\]
+$$
 
 where from either context or coloring it will be clear what each $1', 2',\dots$ 
 indicates. For example, above we'll have that 
@@ -323,13 +323,13 @@ by its action on such a tuple, pictured below.
 
 which can be rewritten more formally as 
 
-\[
+$$
 (\overbrace{\sigma'_{\tau^{-1}(1)}(1), \sigma'_{\tau^{-1}(1)}(2), \dots, \sigma'_{\tau^{-1}(1)}(a_{\tau^{-1}(1)})}^{1\text{st block}}, 
 \dots, 
 \overbrace{\sigma'_{\tau^{-1}(n)}(1), \sigma'_{\tau^{-1}n}(2), \dots, \sigma'_{\tau^{-1}(n)}(a_{\tau^{-1}(n)})}^{n\text{-th block}} )
 \in 
 S_{a_1 + \cdots + a_n}.
-\]
+$$
 
 Now for each $\sigma_i \in S_{a_i}$, let $\rho_{i, j} \in S_{k_{i,j}}$ 
 for $j = 1, 2, \dots, a_i$ and for $k_{i,j} \in \mathbb{N}$. 
@@ -346,7 +346,7 @@ This will be a *huge* tuple; in full notation this is
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Using our previous notation we can rewrite this as 
 
-\[
+$$
 (
 \overbrace{\textcolor{Red}{1, 2, \dots, k_{1,1}}}^{1\text{st block}}, 
 \overbrace{\textcolor{Orange}{1'}, 
@@ -360,7 +360,7 @@ Using our previous notation we can rewrite this as
 ,\dots,
 \overbrace{\textcolor{RoyalBlue}{1'}, \textcolor{RoyalBlue}{2'}, \dots, \textcolor{RoyalBlue}{k_{n, a_n}}}^{(a_1 + \cdots + a_n)\text{-th block}}
 )
-\]
+$$
 
 where again, for example, $\displaystyle \textcolor{Orange}{1' = k_{1,1}+1}$ whereas 
 $\displaystyle \textcolor{RoyalBlue}{1' =  \sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j} + (k_{n, 1} + \cdots + k_{n, (a_n-1)}) +1}$.
@@ -368,10 +368,10 @@ $\displaystyle \textcolor{RoyalBlue}{1' =  \sum_{i}^{n-1}\sum_{j=1}^{a_i}k_{i, j
 
 Now we will first want to calculate 
 
-\[
+$$
 (\tau \circ_{a_1, \dots, a_n} (\sigma_1, \sigma_2, \dots, \sigma_n))\circ_{k_{1,1}, \dots, k_{1, a_1}, \dots, k_{n, 1}, \dots, k_{n, a_n}}
 \circ(\rho_{1,1}, \dots, \rho_{n, a_n}).
-\]
+$$
   
 The first step to computing this is to note that each $\rho_{i,j}$ permutes the numbers *within its block*. 
 
@@ -390,7 +390,7 @@ while $j$ ranges from $1$ to $a_i$. Hence if we permute a block, we can represen
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 which can be written more formally (that is, more horribly) as 
 
-\[
+$$
 (
 \dots,
 \underbrace{\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(1), 
@@ -400,23 +400,23 @@ which can be written more formally (that is, more horribly) as
 }_{(a_1 + \cdots + a_{i-1}+j)\text{-th block}}
 ,\dots
 )
-\]
+$$
 
 At this point we'll want to see that this is the same as 
 
-\[
+$$
 \tau \circ_{(k_{1,1} + \cdots + k_{1,a_1}), \dots, (h_{n, 1} + \cdots + k_{n,a_n})}
 (\sigma_1 \circ_{k_{1,1}, \dots, k_{1,a_1}}(\rho_{1,1}, \dots, \rho_{1,a_1}),
 \dots,
 \sigma_n \circ_{k_{n,1}, \dots, k_{n,a_n}}(\rho_{n,1}, \dots, \rho_{n,a_n}) 
 )
-\]
+$$
   
 To do this we need to think about each $\sigma_i \circ_{k_{i, 1}, \dots, k_{i, a_i}}(\rho_{i,1}, \dots, \rho_{i, a_i})$
 which isn't too bad. Each is a permutation in $S_{k_{i,1} + \cdots + k_{i, a_i}}$, and 
 hence a permutation of the (ordered) tuple below. 
 
-\[
+$$
 (
 \textcolor{Red}{1, 2, \dots, k_{i, 1}}, 
 \textcolor{Orange}{k_{i, 1} + 1, k_{i, 1} + 2, \dots, k_{i, 1} + k_{i, 2}},
@@ -425,11 +425,11 @@ hence a permutation of the (ordered) tuple below.
 \dots,
 \textcolor{RoyalBlue}{(k_{i, 1} + k_{i, 2} + \cdots )+ k_{i, a_i}}
 )
-\]
+$$
 
 which we again abbreviate as 
 
-\[
+$$
 (\textcolor{Red}{1, 2, \dots, k_{i, 1}}, 
 \textcolor{Orange}{1', 2', k_{i, 2}},
 \dots, 
@@ -437,7 +437,7 @@ which we again abbreviate as
 \textcolor{RoyalBlue}{2'},
 \dots,
 \textcolor{RoyalBlue}{k_{i, a_i}}).
-\]
+$$
 
 With those notation above each permutation acts as 
 
@@ -474,7 +474,7 @@ and using (\ref{tuples}) we know that this becomes
 
 The above tuple can be (again, horribly) understood as 
 
-\[        
+$$        
 (
 \dots,
 \underbrace{\rho_{\tau^{-1}(i), \sigma_{\tau^{-1}(i)}^{-1}(j)}(1), 
@@ -484,7 +484,7 @@ The above tuple can be (again, horribly) understood as
 }_{(a_1 + \cdots + a_{i-1}+j)\text{-th block}}
 ,\dots
 )
-\]
+$$
 
 Which shows that 
 
@@ -512,9 +512,9 @@ of our operad, which also happens to be $S_n$, an evident choice would be to
 just take the group product. Hence for any $\sigma \in S_n$, we say $\tau \in S_n$ 
 acts on $\sigma$ to give rise to 
 
-\[
+$$
 (\sigma \cdot \tau) = \sigma \circ \tau
-\]
+$$
 
 which is clearly in $S_n$. 
 
@@ -524,16 +524,16 @@ for $a_i \in \mathbb{N}$. To compute $(\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\
 denote an (ordered) tuple of the first $a_1 + \cdots + a_n$
 integers as 
 
-\[
+$$
 (\textcolor{Red}{1, 2, \dots, a_1}, \dots, \textcolor{RoyalBlue}{1', 2', \dots, a_n}).
-\]
+$$
 
 Then we see that $(\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)$
 acts on the tuple to give rise to 
 
-\[
+$$
 (\sigma'_{\rho^{-1}(\tau^{-1}(1))}(1),\dots, \sigma'_{\rho^{-1}(\tau^{-1}(1))}(a_{\rho^{-1}(\tau^{-1}(1))}), \dots, \sigma'_{\rho^{-1}(\tau^{-1}(n))}(1),\dots, \sigma'_{\rho^{-1}(\tau^{-1}(n))}(a_{\rho^{-1}(\tau^{-1}(n))}))
-\]
+$$
 
 On the other hand we need to also compute $(\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))\cdot \rho'$ 
 where $\rho'$ is the evident block permutation. However, this is really just 
@@ -543,11 +543,11 @@ below we see that its action on an ordered $a_1 + \cdots + a_n$ tuple is as we w
 <img src="../../../png/category_theory/chapter_9/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore we see that 
 
-\[
+$$
 (\tau \cdot \rho)\circ_{a_1, \dots, a_n}(\sigma_1, \dots, \sigma_n)
 =
 (\tau \circ_{a_{\rho^{-1}(1)}, \dots, a_{\rho^{-1}(n)}}(\sigma_{\rho^{-1}(1)}, \dots, \sigma_{\rho^{-1}(n)}))\cdot \rho'
-\]
+$$
 
 so that **S-OP1** is satisfied. We just now need to show **S-OP2** is satisfied, 
 which is nearly immediate. We will however not pretend we're too good to show 
@@ -577,16 +577,16 @@ is a family of maps $F_n: X_n \to Y_n$ such that
 * **(M-OP2)** If $f \in X_n$ and $g_1 \in X_{a_1}, \dots, g_n \in X_{a_n}$ 
 for $a_i \in \mathbb{N}$, then 
 
-\[
+$$
 F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
 =
 F_n(f)\circ_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n))
-\]
+$$
 * **(M-OP3)** If $f \in X_n$ and $\tau \in S_n$, then 
 
-\[
+$$
 F_n(f \cdot \tau) = F_n(f) * \tau 
-\]
+$$
 
 </span>
 Note: in the case where $X, Y$ are symmetric operads, we define a morphism between 
@@ -609,11 +609,11 @@ to $n$-ary operations over $A$. This mapping also requires that
 * **1.** $F_1(I) = \id_A: A \to A$
 * **2.** For $f \in X_n$, $g_i \in X_{a_i}$ for $i = 1,2, \dots, n$, 
 
-\[
+$$
 F_{a_1 + \cdots + a_n}(f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n))
 =
 F_n(f)\circ'_{a_1, \dots, a_n}(F_{a_1}(g_1), \dots, F_{a_n}(g_n)).
-\]
+$$
   
 Diagrammatically, this means the following diagrams commutes:
 
@@ -624,11 +624,11 @@ Or, more visually,
 * **3.** Finally, we have that if $\tau \in S_n$, then for $f \in X_n$
 and $(a_1, \dots, a_n) \in A^n$, then
 
-\[
+$$
 F_n(f \cdot \tau)(a_1, \dots, a_n) 
 = (F_n(f) *\tau) (a_1, \dots, a_n) 
 = F_n(f)(a_{\tau(1)}, \dots, a_{\tau(n)}).
-\]
+$$
 
 
 </span>
@@ -640,9 +640,9 @@ between algebras**
 $F: X \to \aend_A$ and $G: X \to \aend_B$ over $X$ is a function 
 $\phi: A \to B$ such that, for $f \in X_n$ and $(a_1, \dots, a_n) \in A^n$, 
 
-\[
+$$
 \phi(F_n(f)(a_1, \dots, a_n)) = G(f)(\phi(a_1), \dots, \phi(a_n))
-\]
+$$
 
 The above relation can be more conveniently expressed as the diagram below 
 commuting: 
@@ -655,9 +655,9 @@ Now suppose that for an operad $X$ we have
 \begin{minipage}{0.7\textwidth}        
 three algebras 
 
-\[
+$$
 F: X \to \aend_A \quad G: X \to \aend_B \quad H: X \to \aend_C
-\]
+$$
  
 such that $\Phi: F \to G$ 
 and $\Psi: G \to H$ are morphisms of algebras given by functions 
@@ -681,9 +681,9 @@ actually return ordinary categories that we've dealt with in the past.
 <span style="display:block" class="example">
 Consider the operad $\text{Assoc}_n = S_n$. Then we have that 
 
-\[
+$$
 **Alg**_{\text{Assoc}_n} \cong **Mon**
-\]
+$$
 
 where **Mon** is the category of monoids. (In terms of set theory, we're 
 being sloppy; but if anyone challenges this we can just pull out a Grothendieck universe 
@@ -713,16 +713,16 @@ and following the identity elements again grants us that
 $\mu_3 = \mu_2(\id_A, \mu_2)$. Hence we see that for $a, b ,c \in A$ 
 $\mu_3(a, b, c) = \mu_2(a, \mu_2(b, c))$. All together we have that 
 
-\[
+$$
 \mu_2(\mu_2(a, b), c) = \mu_2(a, \mu_2(b, c)).
-\]
+$$
 
 What does this mean? Perhaps this will make it more clear: denote $\mu_2(a,b) = a \cdot b$. 
 Then this means that 
 
-\[
+$$
 (a \cdot b) \cdot c = a \cdot (b \cdot c).
-\]
+$$
 
 This means that we've proved that $A$ is a set equipped with a binary operator $\mu_2: A \times A \to A$
 which is associative! This is almost a monoid; we're just missing an identity element. 

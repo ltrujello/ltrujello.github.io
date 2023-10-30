@@ -17,18 +17,18 @@ definition first, before introducing a theorem about such structures.
 Let $\pp$ and $\qqq$ be two preorders. If there exists functors 
 $F: \pp \to \qqq$ and $G:\qqq \to \pp$ such that 
 
-\[
+$$
 F(P) \le Q \iff P \le G(Q),  
-\]
+$$
 
 That is, there exists $f:F(P) \to Q$ if and only if there
 exists $g: P \to G(Q)$, then $F$ and $G$ are called a
 **monotone Galois connection**. On the other hand, 
 if we have that 
 
-\[
+$$
 F(P) \le Q \iff P \ge G(Q)
-\]
+$$
 
 then $F$ and $G$ are called a **antitone Galois
 connection**. 
@@ -43,9 +43,9 @@ functors. Then $F$ is
 left adjoint to $G$ if and only if for all $P \in \mathcal{P}$
 and $Q \in \mathcal{Q}$ 
 
-\[
+$$
 F(P) \ge Q \iff P \le G(Q).
-\]
+$$
 
 Given such an adjunction, we then have that our unit
 establishes $P \le G(F(P))$ and the counit establishes $F(G(Q)) \le
@@ -57,10 +57,10 @@ Q$.
 Observe that if $F$ is left adjoint to $G$, then we have the 
 bijection 
 
-\[
+$$
 \hom_{\mathcal{Q}\op}(F(P), Q) \cong \hom_{\mathcal{P}}(P, G(Q)
 )
-\]
+$$
 
 which gives rise to the desired correspondence; on the other
 hand, such a bijection gives rise to an adjunction. 
@@ -98,18 +98,18 @@ Suppose $f: U \to V$ is a function in **Set**. Then $f$
 induces a functor $f_*: \mathcal{P}(U) \to \mathcal{P}(V)$,
 where 
 
-\[
+$$
 f_*(X) = \{f(x) \mid x \in X\}.
-\]
+$$
 
 Note that if $X\subset X'$, then $f_*(X) \subset f_*(X')$.
 Hence this is an order-preserving functor. Now observe that
 $f$ also induces a functor $f^*:
 \mathcal{P}(V) \to \mathcal{P}(U)$ where 
 
-\[
+$$
 f^*(Y) = \{x \mid f(x) \in Y\}.
-\]
+$$
  
 Note that this also preserves order. In addition, we have that if 
 $f_*(X) \le Y$, then this holds if  and only if $f(X) \subset

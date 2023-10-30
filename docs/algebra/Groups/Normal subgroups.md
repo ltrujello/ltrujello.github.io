@@ -22,21 +22,18 @@ say that $H$ is **normal** if and only if **for every** $g
 $H \unlhd G$.
 </span>
 \noindent We make two remarks here.
-\begin{description}
-\item[Commutative Groups.] 
 
-Note that if $G$ is commutative, then $H$, a subgroup of $G$, is
+* **Commutative Groups.** Note that if $G$ is commutative, then $H$, a subgroup of $G$, is
 also commutative. In fact, $H$ commutes with all elements of $G$.
 That is, if $H = \{h_1, h_2, \dots \}$ then
 
-\[
+$$
 gH = \{gh_1, gh_2, \dots\} = \{h_1g, h_2g, \dots\} = Hg
-\]
+$$
 
 for all $g \in G$. Thus what we're trying to say here is if $G$ is commutative, every
 subgroup $H$ of $G$ is normal.
-
-\item[Set Equality.] If $H$ is normal to $G$, then $gH = Hg$
+* **Set Equality.** If $H$ is normal to $G$, then $gH = Hg$
 all $g \in G$. Be careful with this equation, since what this is
 not saying is that $gh=hg$ for all $g\in G$ and $h \in H$; that
 would imply commutativity, and it may be the case that $G$ and $H$
@@ -47,13 +44,13 @@ What this does say, however, is if $gH = Hg$, then for each $g\in
 G$, and for every $h_1 \in H$, there exists an $h_2 \in H$ such
 that 
 
-\[
+$$
 gh_1 = h_2g.
-\]
+$$
 
 Note here that commutative groups satisfy this because in their
-case, $h_1 = h_2$ satisfies the equation. 
-\end{description}
+case, $h_1 = h_2$ satisfies the equation.
+
 
 Since our current definition of normality would be exhausting to
 use directly if we wanted to check if a subgroup is normal, we
@@ -64,18 +61,10 @@ have the following theorem that helps us check for normality.
 Let $G$ be a group and $H$ a subgroup of $G$. The following
 are equivalent:
 
-* [1.] $H \normal G$ for all $g \in G$
-
-
-* [2.] $gHg^{-1} = H$ for all $g \in G$
-
-
-* [3.] $gHg^{-1} \subset H$ for all $g\in G$.
-
-
-* [4.] $(Hg)(Hh) = H(gh)$ for all $g, h \in G$
-
-
+* **1.** $H \normal G$ for all $g \in G$
+* **2.** $gHg^{-1} = H$ for all $g \in G$
+* **3.** $gHg^{-1} \subset H$ for all $g\in G$.
+* **4.** $(Hg)(Hh) = H(gh)$ for all $g, h \in G$
 
 </span>
 
@@ -100,20 +89,20 @@ then it is certainly true that $gHg^{-1} \subset H$ for all $g
 Now we prove the other direction. Suppose $gHg^{-1} \subset H$ for
 all $g \in G$. Then
 
-\[
+$$
 gHg^{-1} \subset H \implies gH \subset Hg 
 \implies H \subset g^{-1}Hg
-\]
+$$
 
 by multiplying on the right by $g$ and on the left by
 $g^{-1}$. However, since we have assumed (3) is true we know
 that 
 
-\[
+$$
 (g^{-1})H(g^{-1})^{-1} \subset H \implies g^{-1}Hg
 \subset H. 
-\]
-
+$$
+ 
 By the above equations we then have that $H = g^{-1}Hg$, and
 multiplying by $g^{-1}$ on the right and $g$ on the left
 yields that $H = gHg^{-1}$ as desired.
@@ -122,9 +111,9 @@ yields that $H = gHg^{-1}$ as desired.
 \implies gH = Hg$ for all $g \in G$.
 Therefore for $h \in G$, 
 
-\[
+$$
 (Hg)(Hh) = H(gH)h = H(Hg)h = H(gh).
-\]
+$$
 
 In the first step we used associativity and in the
 second step we used the fact that $gH = Hg$. 
@@ -179,10 +168,10 @@ homomorphism. Then $\ker(\phi) \normal G$.
 We need to show that for all $g \in G$, $h \in \mbox{ker}(\phi)$
 that $ghg^{-1} \in \mbox{ker}(\phi)$. Thus observe that 
 
-\[
+$$
 \phi(ghg^{-1}) = \phi(g)\phi(h)\phi(g^{-1})
 = \phi(g)\cdot 0 \cdot \phi(g^{-1}) = 0.
-\]
+$$
 
 Since $\phi(ghg^{-1}) = 0$, we thus see that $ghg^{-1} \in
 \mbox{ker}(\phi)$ for all $g \in G$ and $h \in \mbox{ker}(\phi)$,
@@ -203,9 +192,9 @@ Recall that $Z(G)$ is a subgroup of $G$, consisting of all the
 elements of $G$ which commute with every element in $G$. More
 precisely, 
 
-\[
+$$
 Z(G) = \{z \in G \mid gz = zg \text{ for all } g \in G\}.
-\]
+$$
 
 Now for any $g \in G$ and $z \in Z(G)$, we have that $gzg^{-1}
 = gg^{-1}z = z$, since $z$ commutes with all elements of $G$.
@@ -234,9 +223,9 @@ As we said before, there are equivalently two left cosets $H$
 and $gH$ where $g \in G\setminus H$. Since the cosets partition $G$, we see that for any $g \in
 G\setminus H$ two partitions of $G$ are 
 
-\[
+$$
 \{H, Hg\} \hspace{0.2cm}\text{and}\hspace{0.2cm} \{H, gH\}.
-\]
+$$
 
 Since these partition the same set we see that $gH = Hg$ for
 all $g \in G\setminus H$. Note that we already know that for

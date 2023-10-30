@@ -8,14 +8,14 @@
 conjugation.} Let $G$ act on itself "by conjugation", which we define
 as follows. Let $g, h \in G$. Then 
 
-\[
+$$
 g * h = ghg^{-1}
-\]
+$$
 
 is the group action of conjugation.
 Let's show that this is a group action. 
-\begin{description}
-\item[Composition.] Let $g_1, g_2, h \in G$. Then observe that
+
+* **Composition.** Let $g_1, g_2, h \in G$. Then observe that
 
 \begin{align*}
 g_1 * (g_2 * h) = g_1 * (g_2hg_2^{-1}) &= g_1g_2 h g_2^{-1}g_1^{-1} \\
@@ -24,15 +24,14 @@ g_1 * (g_2 * h) = g_1 * (g_2hg_2^{-1}) &= g_1g_2 h g_2^{-1}g_1^{-1} \\
 \end{align*}
 
 so that the first axiom of a group action is satisfied.
-\item[Identity.]
-Observe also that for $e \in G$, the identity of $G$, 
+* **Identity.** Observe also that for $e \in G$, the identity of $G$, 
 
-\[
+$$
 e * h = ehe^{-1} = h.
-\]
+$$
 
 Therefore this is a group action.
-\end{description}
+
 
 We'll now show that this group action is very special and
 important. Conjugation itself is important in math. In Linear
@@ -91,9 +90,9 @@ conjugacy classes, partition $G$. Moreover, let $R \subset X$ be a set of
 orbit representatives (or conjugacy class representatives, if you
 like). Then 
 
-\[
+$$
 |G| = \sum_{x \in R}|Gx|
-\]
+$$
 
 Recall that $|Gx| = 1$ if $x \in Z(G)$. Thus we can write this
 further as 
@@ -170,9 +169,9 @@ Z(G)$. Therefore $C_G(r) \ne G$, so $|G|/|C_G(r)| \ne 1$.}
 
 Now by the class equation, we see that 
 
-\[
+$$
 \underbrace{ \hspace{.2cm}|G|\hspace{.2cm}   }_{\text{divisible by } p} \hspace{-.5cm} = |Z(G)| + \overbrace{\sum_{r \in R\setminus Z(G)} |G|/|C_G(r)|}^{\text{divisible by } p}
-\]
+$$
 
 since $|G|/|C_G(r)| \in \{p, p^2, \dots, p^n\}$ for all $r \in
 R\setminus Z(G)$. \textcolor{NavyBlue}{Therefore we see that $|Z(G)|$ must be
@@ -200,15 +199,12 @@ prime. Then $G$ is abelian.
 \textcolor{green!50!black}{By the previous theorem, we see
 that $|Z(G)| \in \{p, p^2\}$.)} We'll proceed by considering two cases.
 
-\begin{description}
-\item[$\mathbf{|Z(G)| = p^2}$.] 
-In this case $|G| = |Z(G)|$. Since we also have that
+
+* **$\mathbf{|Z(G)| = p^2}$.** In this case $|G| = |Z(G)|$. Since we also have that
 $Z(G)$ is a subgroup of $G$, we can conclude that $G =
 Z(G)$. 
-Therefore, $G$ is abelian. 
-
-\item[$\mathbf{|Z(G)| = p}$.] 
-Recall that $Z(G) \normal
+Therefore, $G$ is abelian.
+* **$\mathbf{|Z(G)| = p}$.** Recall that $Z(G) \normal
 G$ from Proposition \ref{normal_center}. Therefore, we can
 speak of the quotient group $G/Z(G)$, which has size
 $|G|/|Z(G)| = p^2/p = p$. By the corollary to Lagrange's
@@ -216,9 +212,9 @@ Theorem, this implies that $G/Z(G)$ is cyclic, since it
 has prime order. Thus there
 exists a $g \in G$ such that we can represent $G/Z(G)$ as 
 
-\[
+$$
 G/Z(G) = \{Z(G), Z(G)g, Z(G)g^2, \dots, Z(G)g^{p-1}\}.
-\]
+$$
 
 As we already know, cosets partition $G$. Therefore, let
 $a, b \in G$, and suppose $a \in Z(G)g^i$ and $b \in
@@ -233,7 +229,7 @@ ab = xg^i yg^j = xyg^ig^j = xyg^{i+j} = xyg^jg^i
 where we used the commutavity of $x,y$ since $x, y \in
 Z(G)$. Since $a, b$ were arbitrary members of $G$, this
 proves that $G$ is abelian.
-\end{description}
+
 </span>
 
 Thus we see that the class equation is useful in proving more
@@ -250,9 +246,9 @@ the order of $G$, then $G$ has an element of order $p$.
 \noindent\textcolor{NavyBlue}{So consider a group $G$ with order $n$,
 and suppose 
 
-\[ n = p_1^{i_1}\cdot p_2^{i_2} \cdots
+$$ n = p_1^{i_1}\cdot p_2^{i_2} \cdots
 p_n^{i_n}
-\]
+$$
 
 is its prime factorization. Then there exist elements
 $g_1, g_2, \dots, g_n$ such that $|g_i| = p_i$ for $i = 1, 2,
@@ -261,25 +257,25 @@ $g_1, g_2, \dots, g_n$ such that $|g_i| = p_i$ for $i = 1, 2,
 Another way to visualize this as follows. Consider a group $G$
 consisting of 10 elements. 
 
-\[
+$$
 \{e, \hspace{.1cm}g_1,\hspace{.1cm} g_2,\hspace{.1cm} g_3,\hspace{.1cm} g_4,\hspace{.1cm} g_5,\hspace{.1cm} g_6,\hspace{.1cm} g_7,\hspace{.1cm} g_8,\hspace{.1cm} g_{9}\}
-\]
+$$
 
 By Cauchy's theorem, there exists elements of order $2$ and $5$.
 So suppose $g_1$ and $g_2$ are such elements, i.e., $g_1^2 = 3$
 and $g_2^5 = e$. Then we can really rewrite this as 
 
-\[
+$$
 \{e,\hspace{.1cm} \textcolor{red}{g_1},\hspace{.1cm} \textcolor{blue}{g_2},\hspace{.1cm} \textcolor{blue}{g_2^2},\hspace{.1cm} \textcolor{blue}{g_2^3},\hspace{.1cm} \textcolor{blue}{g_2^4},\hspace{.1cm} g_6,\hspace{.1cm} g_7,\hspace{.1cm} g_8,\hspace{.1cm} g_9\}.   
-\]
-
+$$
+ 
 However, we know $\textcolor{red}{g_1}\textcolor{blue}{g_2}, \textcolor{red}{g_1}\textcolor{blue}{g_2^2}, \textcolor{red}{g_1}\textcolor{blue}{g_2^3}$ and $\textcolor{red}{g_1}\textcolor{blue}{g_2^4}$ are all in $G$. Thus
 we can really write this as 
 
-\[
+$$
 \{e, \hspace{.1cm} \textcolor{red}{g_1},\hspace{.1cm} \textcolor{blue}{g_2},\hspace{.1cm} \textcolor{blue}{g_2^2},\hspace{.1cm} \textcolor{blue}{g_2^3},\hspace{.1cm} \textcolor{blue}{g_2^4}, \hspace{.1cm}\textcolor{red}{g_1}\textcolor{blue}{g_2},\hspace{.1cm} \textcolor{red}{g_1}\textcolor{blue}{g_2^2},\hspace{.1cm} \textcolor{red}{g_1}\textcolor{blue}{g_2^3},\hspace{.1cm} \textcolor{red}{g_1}\textcolor{blue}{g_2^4}\}.
-\]
-
+$$
+ 
 Thus we can understand the structure of every single group of
 order 10. But this can be done for all finite groups!
 
@@ -296,22 +292,22 @@ $(1\hspace{.1cm}2\hspace{.1cm}\cdots\hspace{.1cm}p)$.
 
 We can picture $H$ as the group 
 
-\[
+$$
 \{(1\hspace{.1cm}2\hspace{.1cm}\cdots\hspace{.1cm}p), (2\hspace{.1cm}3\hspace{.1cm}\cdots\hspace{.1cm}p, \hspace{.1cm}1), \cdots, (p\hspace{.1cm}1\hspace{.1cm}\cdots\hspace{.1cm}p-1)\}.
-\]
+$$
 
 
 Now let $H$ act on the set $X$ defined as 
 
-\[
+$$
 X = \{ (g_1, g_2, \dots, g_p) \mid g_1, g_2, \dots, g_p \in G \text{ and } g_1g_2\cdots g_p = e \}
-\]
+$$
 
 where the $\sigma \in H$ acts on $g \in X$ as 
 
-\[
+$$
 \sigma \cdot (g_1, g_2, \dots, g_p) = (g_{\sigma(1)}, g_{\sigma(2)}, \dots, g_{\sigma(p)}).
-\]
+$$
 
 This $H$ takes a $p$-tuple in $X$ and permutates the elements.
 Since $H$ is generated by
@@ -321,40 +317,39 @@ that are pushed out of the right end of the tuple are pushed back in on
 the left side.
 
 \textcolor{NavyBlue}{First we'll show that this is a group action.}
-\begin{description}
-\item[This is a Group Action.] 
-Let $x \in X$ and $\sigma \in H$. If $x = (g_1, g_2,
+
+* **This is a Group Action.** Let $x \in X$ and $\sigma \in H$. If $x = (g_1, g_2,
 \dots , g_p)$, observe that 
 
-\[
+$$
 \sigma * x = (g_{\sigma(1)}, g_{\sigma(2)}, \dots, g_{\sigma(p)}).
-\]
+$$
 
 Suppose $h(1) = n$. Then in general $h(i) = (i + n)
 \mbox{ mod }p.$ Therefore, we see that 
 
-\[
+$$
 (g_{\sigma(1)}, g_{\sigma(2)}, \dots, g_{\sigma(p)}) 
 = 
 (g_{n}, g_{n+1}, \dots, g_p, g_1, \dots, g_{n-1}).
-\]
+$$
 
 However, observe that 
 
-\[
+$$
 g_1g_2\cdots g_p = g_1g_2 \cdots g_{n-1}g_n g_{n+1} \cdots g_p = e
 \implies (g_1g_2 \cdots g_{n-1})(g_n g_{n+1} \cdots g_p) = e.
-\]
+$$
 
 Thus the elements $g_1g_2 \cdots g_{n-1}$ and $g_n
 g_{n+1} \cdots g_p$ in $G$ are inverses of each other. But
 know that if two group elements are inverses, either order
 of their product returns $e$. Therefore 
 
-\[
+$$
 (g_ng_{n+1} \cdots g_{p})(g_1g_2 \cdots g_{n-1}) 
 = g_ng_{n+1} \cdots g_{p}g_1g_2 \cdots g_{n-1} = e.
-\]
+$$
 
 
 We therefore see that
@@ -373,19 +368,18 @@ Now we verify associativity. For any $\sigma_1,
 Thus $*$ is associative. Finally, if $\sigma$ is the
 trivial element, 
 
-\[
+$$
 \sigma * x = (g_{\sigma(1)}, g_{\sigma(2)}, \cdots g_{\sigma(p)}) = (g_1, g_2, \dots, g_p) = x.
-\]
+$$
 
 Therefore this is a group action.
-\end{description}
+
 \textcolor{NavyBlue}{Now that we've shown that this is a group
 action, we'll argue that the orbits are either of size 1 or
 $p$.}
 
-\begin{description}
-\item[The Orbits.] 
-For any $x \in X$ such that $x = (g_1, g_2, \dots, g_p)$,
+
+* **The Orbits.** For any $x \in X$ such that $x = (g_1, g_2, \dots, g_p)$,
 we see that the orbit $Hx$ will simply be all of
 the permutations of the $p$-tuple $(g_1, g_2, \dots,
 g_p)$. Note however that there are only $p$ many ways to
@@ -395,24 +389,23 @@ size $p$.
 Of course, the exception to this is if $g_1 = g_2 = \dots = g_p$. In
 this case, there are no other ways to reorganize the
 tuple. Hence the orbit will have size 1.
-\end{description}
+
 
 \textcolor{NavyBlue}{Finally, we will show that there exists a
 nontrivial orbit of size 1. This is equivalent to show that
 there exists a nontrivial element of $G$ of order $p$, which
 we'll eloaborate later.}
 
-\begin{description}
-\item[Orbit of Size 1.]
-First let's count the elements of $X$. Observe that for
+
+* **Orbit of Size 1.** First let's count the elements of $X$. Observe that for
 any $(g_1, g_2, \dots, g_p) \in
 X$, the last element $g_p$ is always determined by the
 first $p-1$ elements. This is because if we know the first
 $p-1$ elements, then 
 
-\[
+$$
 g_p = (g_1g_2 \cdots g_{p-1})^{-1}
-\]
+$$
 
 in order for $g_1g_2\cdots g_p = e$. Since there are
 $|G|^{p-1}$ many ways to pick the first $p-1$ elements in
@@ -433,7 +426,7 @@ $Hx \subset G$, what we have prove is the existence of a
 nontrivial
 element $g \in G$ such that $gg\cdots g = g^p = e$, which
 set out to show.
-\end{description}
+
 This completes the proof.
 </span>
 Cacuhy's Theorem is an incredibly useful tool one can use in
@@ -479,9 +472,9 @@ Observe that $|G/H| = |G|/|H| = p^{n+1}/p = p^n$. \textcolor{purple}{Thus by hyp
 subgroup of order $p^k$ for all $0 < k < n$. Denote these such
 subgroups of $G/H$ as}
 
-\[
+$$
 \{N_1/H, N_2/H, \cdots N_{n-1}/H\}
-\]
+$$
 
 \textcolor{purple}{where $|N_k/H| = p^k$.}
 Since $H \normal G$, we
@@ -489,9 +482,9 @@ know by the Fourth Isomorphism Theorem that every subgroup of
 $G/H$ is of the form $N/H$ where $H \le N \le G$. Thus we see
 that 
 
-\[
+$$
 H \le N_k \le G
-\]
+$$
 
 for all $0 < k < n$. But since $|N_k/H| = p^k$, and $|H| = p$,
 we see that each such $N_k$ will now have order $p^{k+1}$.

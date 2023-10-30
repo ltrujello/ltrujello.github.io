@@ -41,9 +41,9 @@ Consider a pair of functors $F: \bb \to \cc$ and $G:\bb \to \dd$.
 Then $F$ and $G$ determine a unique functor $H: \bb \to \cc
 \times \dd$ where 
 
-\[
+$$
 \pi_\cc \circ H = F \qquad \pi_\dd \circ H = G.
-\]
+$$
 
 That is, we see that for any morphism $f$ in $\bb$ we have that $H(f)
 = ( F(f), G(f) )$. Hence the following diagram commutes
@@ -70,17 +70,17 @@ course, so
 long as they have the same number of factors). Thus suppose $G,F$ and $G', F'$
 are composable functors. Then observe that 
 
-\[
+$$
 (G \times G') \circ (F \times F') = (G \circ F) \times (G' \circ F').
-\]
+$$
 
 </span>
 
 Note that in this formulation we have that 
 
-\[
+$$
 \pi_{\cc'}\circ (F\times G)  = F \circ \pi_\cc \quad \pi_{\cc'} \circ (F \times G) = G \circ \pi_{\dd}
-\]
+$$
   
 Hence, we have the following commutative diagram.
 
@@ -108,9 +108,9 @@ holds more generally for bifunctors.
 Let $\bb, \cc$ and $\dd$ be categories. For $B \in \bb$ and $C
 \in \cc$, define the functors
 
-\[
+$$
 H_C: \bb \to \dd \quad K_B: \cc \to \dd   
-\]
+$$
 
 such that $H_C(B) = K_B(C)$ for all $B, C$. Then there exists
 a functor $F:\bb \times \cc \to \dd$ where $F(B, -) = K_B$
@@ -118,9 +118,9 @@ and $F(-, C) = H_C$ for all $B, C$ if and only if
 for every pair of morphisms $f:B \to B'$ and
 $g:C\to C'$ we have that 
 
-\[
+$$
 K_{B'}(g) \circ H_C(f) = H_{C'}(f) \circ K_B(g).
-\]
+$$
 
 Diagrammatically, this condition is
 
@@ -136,25 +136,25 @@ We now introduce what is probably one of the most important examples of
 a bifunctor. Note that for any (locally small) category $\cc$, 
 we have for each object $A$ a functor.
 
-\[
+$$
 \hom(A, -): \cc \to **Set**
-\]
+$$
 
 We also have a functor from $\cc\op$ (we at the $\op$ simply for convenience)
 for each $B \in \cc\op$.
 
-\[
+$$
 \hom(-, B): \cc\op \to **Set**    
-\]
+$$
 
 As an application of the proposition,
 one can  see that that these two functors act as the $K_B$
 and $H_C$ functors in the above proposition, and give rise to
 bifunctor 
 
-\[ 
+$$ 
 \hom: \cc\op \times \cc \to **Set**.
-\]
+$$
  
 This is
 because for any $h: A \to A'$ and $k: B \to B'$, the diagram,
@@ -172,22 +172,22 @@ we can formulate the group $\text{GL}(n, R)$, consisting of $n\times n$ matrices
 with entry values in $R$. As this takes in arguments, we might guess that we have 
 a bifunctor 
 
-\[
+$$
 GL(-, -): \bm{\mathbb{N}} \times **Ring** \to **Grp**
-\]
+$$
 
 where $\bm{\mathbb{N}}$ is a the discrete category with elements as natural numbers. This intuition 
 is correct: for a fixed ring $R$, we have a functor
 
-\[
+$$
 GL(-, R): \bm{\mathbb{N}} \to **Grp**
-\]
+$$
 
 while for a fixed natural number $n$ we have a functor 
 
-\[
+$$
 GL(n, -): **Ring** \to **Grp**.     
-\]
+$$
 
 Below we can visualize the activity of this functor:
 
@@ -210,16 +210,16 @@ that there exists a morphism $\eta$ which assigns objects of $\bb
 objects
 $B \in \bb$ and $C \in \cc$ to the morphism 
 
-\[
+$$
 \eta_{(B, C)} : F(B, C) \to G(B, C).
-\]
+$$
 
 Then $\eta$ is said to be **natural** in $B$ if, for all
 $C \in \cc$, 
 
-\[
+$$
 \eta_{(-, C)} : F(-, C) \to G(-, C)
-\]
+$$
 
 is a natural transformation of functors from $\bb \to \dd$. 
 </span> 
@@ -246,16 +246,16 @@ G(B, C)$ in $\dd$, and this gives rise to the following diagram:
 <img src="../../../png/category_theory/chapter_2/tikz_code_2_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Now let $C \in \cc$ and observe that 
 
-\[
+$$
 \eta_{(-, C)}: F(-, C) \to G(-,c)
-\]
+$$
 
 is a natural transformation for all $B$. On the other
 hand, for any $B \in \bb$, 
 
-\[
+$$
 \eta_{(B, -)}: F(B, -) \to G(B, -)
-\]
+$$
 
 is a natural transformation for all $C$. Therefore, $\eta$
 is both natural in $B$ and $C$ for all objects $(B, C)$
@@ -270,16 +270,16 @@ $\bb \times \cc$. Then since $\eta$ is natural for all $B
 \in \bb$, we
 know that for all $C \in \cc$, 
 
-\[
+$$
 \textcolor{red}{\eta}_{(-, C)} : F(-, C) \to G(-,C)  
-\]
+$$
 
 is a natural transformation. In addition, $\eta$ is
 natural for all $C \in \cc$ since for all $B \in \bb$ 
 
-\[
+$$
 \textcolor{blue}{\eta}_{(B, -)} : F(B, -) \to G(B, -)
-\]
+$$
   
 is a natural transformation. Hence consider the natural
 transformation $\textcolor{red}{\eta}_{(-, C)}$ acting on
@@ -315,15 +315,15 @@ where in the second step we applied equation
 the morphisms. Also note that we can simplify the left-hand
 side since 
 
-\[ 
+$$ 
 G(1_{B'}, g)\circ G(f, 1_C) =
 G(1_{B'}\circ f, g \circ 1_C) = G(f, g).
-\]
+$$
  Therefore, we have that 
 
-\[
+$$
 G(f, g) \circ \textcolor{red}{\eta}_{(B, C)} = \textcolor{blue}{\eta}_{(B', C')} \circ F(f, g) 
-\]
+$$
 
 which implies that $eta$ itself is a natural
 transformation. Specifically, it implies the following

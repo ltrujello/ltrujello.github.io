@@ -63,42 +63,31 @@ $R$-modules.
 \\
 **Examples.**\\
 
-* [1.] \textcolor{NavyBlue}{Note that if $R$ is commutative, then a left
+* **1.** \textcolor{NavyBlue}{Note that if $R$ is commutative, then a left
 $R$-module coincides with a right $R$-module. To see this, let $M$
 be a left $R$-module. Then construct the right $R$-module by
 defining the multiplication as
 
-\[
+$$
 m\cdot r = rm.
-\]
+$$
 
 Then we see that for all $m \in M$, $a,b \in R$, 
 \begin{enumerate}
-
-
-*  $(m_1 + m_2)\cdot a = a(m_1 + m_2) = am_1 + am_2 = m_1
+* $(m_1 + m_2)\cdot a = a(m_1 + m_2) = am_1 + am_2 = m_1
 \cdot a + m_2 \cdot a$ \checkmark
-
-
-*  $m(a + b)= (a + b)m = am + bm = m \cdot a + m
-\cdot b$ \checkmark 
-
-
-*  $m\cdot (a b) = (ab)m = (ba)m = b(am) = b(m \cdot a) = (m
-\cdot a )\cdot b$ \checkmark 
-
-
-*  $m \cdot 1_R = 1_Rm = m$. \checkmark
+* $m(a + b)= (a + b)m = am + bm = m \cdot a + m
+\cdot b$ \checkmark
+* $m\cdot (a b) = (ab)m = (ba)m = b(am) = b(m \cdot a) = (m
+\cdot a )\cdot b$ \checkmark
+* $m \cdot 1_R = 1_Rm = m$. \checkmark
 \end{enumerate}
 Note that in part $(c)$ is where we used the fact that $R$ is
 commutative. So whenever $R$ is commutative, the existence of a
 left $R$-module automatically implies that existence of a
 right $R$-module, and vice versa.
 }
-
-
-
-* [2.] Let $R$ be a ring. Then if we substitute $M =R$ in the above
+* **2.** Let $R$ be a ring. Then if we substitute $M =R$ in the above
 definition, and let the multiplication $
 \cdot$ be the multiplication on $R$ then $R$ is a left and a right
 $R$-module. This is because $R$ is an abelian group which is
@@ -106,10 +95,7 @@ associative and left- and right-distributive. Hence, it satisfies
 all of the above axioms. 
 
 So keep in mind that a ring $R$ is just a left- and right-$R$
-module that acts on $R$. 
-
-
-
+module that acts on $R$.
 
 Here's another example which shows that abelian groups are simply
 $\ZZ$ modules. 
@@ -123,41 +109,36 @@ $\ZZ$-module.
 <span style="display:block" class="proof">
 Let $\ZZ$ act on $G$ as follows. Define 
 
-\[
+$$
 ng = 
 \begin{cases}
 g + g + \cdots + g \text{ ($n$ times)} & \text{ if } n  > 0\\ 
 0 & \text{ if } n = 0\\
 (-g) + (-g) \cdots (-g) \text{ ($n$ times) } & \text{ if } n < 0
 \end{cases}
-\]
+$$
 
 and 
 
-\[
+$$
 gn = 
 \begin{cases}
 g + g + \cdots + g \text{ ($n$ times)} & \text{ if } n  > 0\\ 
 0 & \text{ if } n = 0\\
 (-g) + (-g) \cdots (-g) \text{ ($n$ times) } & \text{ if } n < 0.
 \end{cases}
-\]
+$$
 
 Then with this definition of multiplication, it is easy to
 show that the axioms (a)-(d) are satisfied.
 </span>
 
 
-* [3.] If $R$ is a ring and $I$ is a left (right) ideal of
-$R$, then $I$ is a left (right) $R$-module. 
-
-
-
-* [4.] Let $V$ be a vector space defined over a field $F$.
+* **3.** If $R$ is a ring and $I$ is a left (right) ideal of
+$R$, then $I$ is a left (right) $R$-module.
+* **4.** Let $V$ be a vector space defined over a field $F$.
 Then $V$ is an $F$-module. (Now it is clear why there are a
 million axioms in the definition of a vector space!)
-
-
 
 
 With $R$-modules introduced and understood, we can jump right into
@@ -167,13 +148,9 @@ homomorphisms.
 Let $R$ be a ring and $M$ and $N$ be $R$-modules. We define
 $f: M \to N$ to be an **$R$-module homomorphism** if 
 
-* [1.] $f(m_1 + m_2) = f(m_1) + f(m_2)$ for any $m_1,
-m_2 \in M$ 
-
-
-* [2.] $f(am) = af(m)$ for all $a \in R$ and $m \in M$.
-
-
+* **1.** $f(m_1 + m_2) = f(m_1) + f(m_2)$ for any $m_1,
+m_2 \in M$
+* **2.** $f(am) = af(m)$ for all $a \in R$ and $m \in M$.
 
 If $f$ is a bijective $R$-module homomorphism, then we say
 that $f$ is an **isomorphism** and that $M \cong N$.
@@ -192,12 +169,8 @@ In the language of linear algebra, a
 $T: V \to W$ such that for any $\bf{v}_1, \bf{v}_2, \bf{v} \in V$ and
 $\alpha \in F$ we have that 
 
-* [1.] $T(\bf{v}_1 + \bf{v}_2) = T(\bf{v}_1) + T(\bf{v}_2)$
-
-
-* [2.] $T(\alpha\bf{v}) = $ $\alpha$$T(\bf{v})$. 
-
-
+* **1.** $T(\bf{v}_1 + \bf{v}_2) = T(\bf{v}_1) + T(\bf{v}_2)$
+* **2.** $T(\alpha\bf{v}) = $ $\alpha$$T(\bf{v})$.
 
 As we will see, linear algebra is basically a special case of
 module theory. 
@@ -218,9 +191,9 @@ for later.}
 \indent To turn this into an abelian group, we define addition of
 the elements to be 
 
-\[
+$$
 (f + g)(m) = f(m) + g(m)
-\]
+$$
 
 for all $f, g \in \hom_R(M, N)$. We let the identity be the
 zero map, and realize associativity and closedness are a given to
@@ -245,17 +218,17 @@ multiplication, and consider $af$ where $a \in R$. Then if we try
 to see if $af$ will pass the second criterion for being an
 $R$-module homomorphism, we see that 
 
-\[
+$$
 (af)(bm) = a(f(bm)) = a(bf(m)) = abf(m).
-\]
+$$
 
 That is, we see that $af$ isn't an $R$-module homomorphism because
 $(af)(bm) \ne b(af)(m)$ (which is required for an $R$-module homomorphism); rather, $(af)(bm) = abf(m).$ Now if $R$
 is a commutative ring, then 
 
-\[
+$$
 abf(m) = baf(m)
-\]
+$$
 
 so we can then say that $(af)(bm) = b(af)(m)$, in which case $af$
 passes the test for being an $R$-module homomorphism. 
@@ -275,14 +248,10 @@ Next, we make the following definitions for completeness.
 Let $R$ be a ring and $M$ and $N$ be $R$-modules. If $f: M \to
 N$ is an $R$-module homomorphism, then 
 
-* [1.] The set $\ker(f) = \{m \in M \mid f(m) = 0\}$ is
-the **kernal** of $f$ 
-
-
-* [2.] The set $\im(f) = \{f(m) \mid m \in M\}$ is the
+* **1.** The set $\ker(f) = \{m \in M \mid f(m) = 0\}$ is
+the **kernal** of $f$
+* **2.** The set $\im(f) = \{f(m) \mid m \in M\}$ is the
 **image** of $f$.
-
-
 
 </span>
 
@@ -291,7 +260,7 @@ the **kernal** of $f$
 
 
 
-
+ 
 
 
 <script src="../../mathjax_helper.js"></script>

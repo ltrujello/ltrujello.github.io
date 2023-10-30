@@ -11,9 +11,9 @@ begin with a preliminary proposition.
 <span style="display:block" class="proposition">
 Suppose $\cc$ is a category, and consider the functors 
 
-\[
+$$
 U: C \to **1** \qquad \Delta: \cc \to \cc \times \cc.
-\]
+$$
 
 where $**1**$ is the one object category.
 
@@ -39,10 +39,10 @@ $F(1) = I$ in $\cc$. Then for any $C \in \cc$, we have the bijection
 $\hom_{\cc}(F(1), C) \cong \hom_{**1**}(1, U(C))$ which
 implies that
 
-\[ 
+$$ 
 \hom_{\cc}(I, C) 
 \cong \hom_{**1**}(1, 1).
-\]
+$$
 
 In other words, for each object $C$, there is exactly one and only
 one morphism $i_C: I \to C$, which makes $I$ an initial object. 
@@ -53,9 +53,9 @@ $U$. Then if $G(1) = T$, we have the bijection
 $\hom_{**1**}(U(C), 1) \cong \hom_{\cc}(C, G(1))$
 which implies that 
 
-\[
+$$
 \hom_{**1**}(1, 1) \cong \hom_{\cc}(C, T)
-\]
+$$
 
 so that for each object $C$ there exists a unique morphism $t_C: C
 \to T$, which makes $T$ a terminal object. Hence left and right
@@ -78,9 +78,9 @@ and $\Big((A\times B, A \times B), (\pi_A, \pi_B)\Big)$ are universal
 from $(A, B)$ to $\Delta$, they must be isomorphic. As two
 universal objects are isomorphic, we therefore have, 
 
-\[
+$$
 F(A, B) \cong A \amalg B
-\]
+$$
 
 so that a left adjoint gives rise to products. 
 
@@ -103,9 +103,9 @@ B), (\pi_A, \pi_B)\Big)$ are both universal from $\Delta$ to $(A, B)$.
 As universal objects from the same construction are isomorphic, we
 have that 
 
-\[
+$$
 G(A, B) \cong A \times B
-\]
+$$
 
 so that this adjunction gives rise to coproducts. 
 </span>
@@ -144,39 +144,39 @@ Consider the category **Set**. Then we know that, for any
 two given objects $Y$ and $Z$, we can form a set of functions 
 between the objects:
 
-\[
+$$
 \hom_{**Set**}(Y, Z).
-\]
+$$
 
 Thus, the collection of morphisms from sets $Y$ to $Z$ is
 *itself a set*, and hence a member of **Set**.
 Now let $A$ be any object in $**Set**$, and let 
 
-\[
+$$
 X = \{f \in **Set** \mid f: A \times Y \to Z\}.            
-\]
+$$
 
 Define $**eval**: \hom_{**Set**}(Y, Z)\times Y \to
 Z$ as, who would've guessed, the evaluation:
 
-\[
+$$
 **eval**(f(y), y') = f(y').
-\]
+$$
  
 Now for each $a \in A$, we can define a function $g_a: X
 \times Y \to Z$ where for each $f: A \times Y \to Z$
 
-\[
+$$
 g_a(f, y') = f(a, y') \in Z
-\]
+$$
 
 so this is sort of a "double" evaluation function.
 Then for every such $g_a$, there exists a unique $h_a: X \to
 \hom_{**Set**}(Y, Z)$ where for each $f: A \times Y \to Z$
 
-\[ 
+$$ 
 h_a(f) = f(a, y): Y \to Z.
-\]
+$$
  
 Thus we get the following commutative diagram:
 
@@ -199,10 +199,10 @@ y')$ where $f: A \times Y \to Z$. Then $h$ evaluates $f(a',y)$ for
 some $a'$, thus sending the function $f: A \times Y \to Z$ to the 
 function $f:Y \to Z$. That is, 
 
-\[
+$$
 (h \times \id_y) \circ \big( (f(a, y), y') \big) = (f(a', y), 
 y').
-\]
+$$
 
 Finally, $**eval**$ evaluates $f(a', y)$
 at $y'$, returning an object in $Z$.
@@ -217,9 +217,9 @@ is how currying is often done.
 The universality of this constructions states that both methods
 are the same; that is, 
 
-\[
+$$
 g = **eval**\circ (h \times \id_Y).
-\]
+$$
 
 
 Since we started with arbitrary objects in **Set**, the
@@ -256,16 +256,16 @@ replace $X$ with $A^Y$ and $g$ with $f \circ **eval**_A$.
 <img src="../../../png/category_theory/chapter_4/tikz_code_5_7.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Since $h$ exists if $f: A \to B$ exists, we therefore define 
 
-\[
+$$
 E^Y(f: A \to B) = h': A^Y \to B^Y
-\]
+$$
 
 where $h'$ is the unique morphism such that 
 
-\[
+$$
 f \circ \textcolor{Red}{**eval**_A}
 = \textcolor{RoyalBlue}{**eval**_A} \circ (h', \id_Y).
-\]
+$$
     
 </span>
 Note that there's one more cool connection here. If we have a
@@ -291,9 +291,9 @@ E^Y &= (-)^Y: \cc \to \cc.
 Then $E^Y$ is right adjoint to $P_Y$ for every $Y \in \cc$.
 Therefore, 
 
-\[
+$$
 \hom_{\cc}(X \times Y, Z) \cong \hom_{\cc}(X, Z^Y)
-\]
+$$
 
 which is natural for all objects $X, Y, Z \in \cc$. 
 </span>
@@ -320,13 +320,13 @@ of this section.
 Let $\cc$ be a category. We say $\cc$ is a **cartesian closed 
 category** if the functors 
 
-\[
+$$
 U: **C** \to **1** 
 \qquad
 \Delta: \cc \to \cc  \times \cc 
 \qquad 
 P_Y = (-)\times Y: \cc \to \cc
-\]
+$$
 
 have right adjoints. In other words, $\cc$ is 
 **cartesian closed** if 

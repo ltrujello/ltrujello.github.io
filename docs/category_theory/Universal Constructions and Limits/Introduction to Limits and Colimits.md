@@ -16,9 +16,9 @@ Let $\cc$ be a category, $A$ an object of $\cc$. Let $F: J \to \cc$ be a functor
 $J$ an arbitrary category. A **cone with $A$ over $F$** is a family 
 of morphisms 
 
-\[
+$$
 \phi_i: A \to F(i) \qquad i \in J
-\]
+$$
 
 such that, for each morphism $f: i \to j$ in $J$, the diagram 
 below commutes. 
@@ -28,9 +28,9 @@ We denote the set of cones over $F$ with apex $A$ as $\text{Cone}(A, F)$.
 
 Dually, a **cone with $F$ over $A$** is a family of morphisms 
 
-\[
+$$
 \phi_i: F(i) \to A \qquad i \in J
-\]
+$$
 
 such that, for each morphism $f: i \to j$ in $J$, the diagram below commutes. 
 
@@ -60,15 +60,15 @@ Let $\cc$ and $J$ be categories. Suppose $F: J \to \cc$ is a functor, and let $A
 * A cone with $A$ over $F$ corresponds to a natural transformation 
 $\phi: \Delta(A) \to F$, and vice versa. In other words, 
 
-\[
+$$
 \text{Cone}(A, F) \cong \nat(\Delta(A), F).
-\]
+$$
 * A cone with $F$ over $A$ corresponds to a natural transformation 
 $\phi: F \to \Delta(A)$, and vice versa. In other words, 
 
-\[
+$$
 \text{Cone}(F,A) \cong \nat(F, \Delta(A)).
-\]
+$$
 
 </span>
 
@@ -174,15 +174,15 @@ Let $F: J \to \cc$ be a functor.
 * If $\Lim F$ exists, then for each object $C$ of $\cc$, we have the 
 natural bijection 
 
-\[
+$$
 \hom_{\cc}(C, \Lim F) \cong \text{Cone}(C, F)
-\]
+$$
 * If $\Colim F$ exists, then for each object $C$ of $\cc$, 
 we have the natural bijection 
 
-\[
+$$
 \hom_{\cc}(\Colim F, C) \cong \text{Cone}(F, C)
-\]
+$$
 
 </span>
 
@@ -193,16 +193,16 @@ Since $\Lim F$ exists, let $(\Lim F, u: \Delta(\Lim F) \to F)$ be universal
 from $\Delta$ to $F$. Then by Exercise \hyperref[exercise:universality_bijection]{3.2.1}, 
 we have the natural bijection 
 
-\[
+$$
 \hom_{\cc}(C, \Lim F) \cong \hom_{\text{Fun}(J, \cc)}(\Delta(C), F) = \nat(\Delta(C), F).
-\]
+$$
 
 By Proposition \ref{proposition:cones_are_natural_transformations}, we can rewrite this 
 natural bijection as 
 
-\[
+$$
 \hom_{\cc}(C, \Lim F) \cong \text{Cone}(C, F).
-\]
+$$
 
 This proves the first result; the second follows similarly. 
 </span>
@@ -295,9 +295,9 @@ in a similar fashion to how we expanded Definition \ref{definition:limit_of_a_fu
 and Proposition \ref{proposition:universality_bijection} to show that 
 if $\Colim F$ exists for a functor $F: J \to \cc$, then we have a natural bijection
 
-\[
+$$
 \hom_{\cc}(\Colim F, C) \cong \cone(F, C).
-\]
+$$
 
 This then completes the proof of Proposition \ref{proposition:limit_cone_set_natural_bijection}.
 * ****5.**** Use Proposition \ref{proposition:limit_cone_set_natural_bijection}
@@ -308,9 +308,9 @@ $\Lim F$ exists. Use the following steps.
     * **(*i*.)** Let $\cc$ be a category, $F: J \to \cc$ a functor. Recall that we 
     may define the functor 
 
-    \[
+    $$
     \overline{F}: J \to \cc\op
-    \]
+    $$
 
     which acts the same as $F$ on objects, but
     if $f: i \to j$ is a morphism in $J$, then $\overline{F}(f) = F(f)\op$.
@@ -319,9 +319,9 @@ $\Lim F$ exists. Use the following steps.
     $\Colim \overline{F}$ exists in $\cc\op$.
     * ***ii*.** Show that
 
-    \[
+    $$
     \cone(-, F) \cong \cone(\overline{F}, -).
-    \]
+    $$
 
     Then use (*i*) and the second bullet point of 
     Proposition \ref{proposition:representable_if_and_only_if}

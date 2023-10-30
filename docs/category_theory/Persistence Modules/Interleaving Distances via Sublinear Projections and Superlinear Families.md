@@ -16,18 +16,18 @@ $\Gamma \le K$ we have that $\omega_{\Gamma} \le \omega_{K}$.
 
 Note that we can turn a sublinear projection $\omega$ into a monotone one by defining
 
-\[
+$$
 \overline{\omega}_\Gamma = \inf\{\omega_{\Gamma'} \mid \Gamma' \ge \Gamma \}.
-\]
+$$
 
 This is monotone since, if $\Gamma \le K$ is a pair of translations, then 
 one can observe that 
 
-\[
+$$
 \{ \omega_{\Gamma'} \mid \Gamma' \ge \Gamma \} \supset \{ \omega_{\Gamma'} \mid \Gamma' \ge K \}
 \implies  
 \overline{\omega}_{\Gamma} \le \overline{\omega}_{K}.
-\]
+$$
 
 Also note another nice property: for every sublinear projection $\omega$, it is always 
 the case that $\overline{\omega}_{\Gamma} \le \omega_{\Gamma}$ for any translation $\Gamma$. 
@@ -37,9 +37,9 @@ the case that $\overline{\omega}_{\Gamma} \le \omega_{\Gamma}$ for any translati
 Suppose $F, G$ are interleaved by a pair of translations $(\Gamma, K)$. Then 
 we say $F, G$ are $\bm{\epsilon}$**-interleaved** with respect to $\omega$ if 
 
-\[
+$$
 \omega_\Gamma, \omega_K \le \epsilon.
-\]
+$$
     
 </span>
 
@@ -50,9 +50,9 @@ Let $\omega$ be a sublinear projection on a preorder $P$, and
 let $\Gamma$ be a translation of $P$. Then for every $\eta > 0$, there 
 exists a translation $\Gamma' \ge \Gamma$ such that 
 
-\[
+$$
 \omega_{\Gamma'} \le \overline{\omega}_\Gamma + \eta.
-\]
+$$
 
 </span>
 
@@ -61,15 +61,15 @@ exists a translation $\Gamma' \ge \Gamma$ such that
 Suppose the statement was false. Then this would imply the existence of some 
 $\eta> 0$ with the property that 
 
-\[
+$$
 \overline{\omega}_{\Gamma} + \eta < \omega_{\Gamma'}
-\]
+$$
 
 for all $\Gamma' \ge \Gamma$. Hence we would see that 
 
-\[
+$$
 \overline{\omega}_{\Gamma} \ne \inf\{\omega_{\Gamma'} \mid \Gamma'\ge\Gamma \}
-\]
+$$
 
 which is a contradiction.
 </span>
@@ -106,9 +106,9 @@ and then demonstrating that $d^{\omega} - d^{\overline{\omega}} = 0$.
 * **$\bm{d^{\omega} \ge d^{\overline{\omega}}}$** If a pair of persistence modules $F, G$ are $\epsilon$-interleaved by $(\Gamma, K)$ with respect to $\omega$,
 then we can observe that 
 
-\[
+$$
 \overline{\omega}_\Gamma  \le \omega_\Gamma \le \epsilon \qquad \overline{\omega}_K \le \omega_K \le \epsilon
-\]
+$$
 
 so that $F, G$ are also $\epsilon$-interleaved by $(\Gamma, K)$ with respect to $\overline{\omega}$.
 Therefore,
@@ -122,9 +122,9 @@ Therefore,
 If we take the infimum of the above relation, we get that $d^{\overline{\omega}} \le d^{\omega}$. \\
 * **$\bm{d^{\omega} - d^{\overline{\omega}}} = 0$.** Let $\delta> 0$. We'll show that for any persistence modules $F,G$ that
 
-\[  
+$$  
 d^\omega(F,G) - d^{\overline{\omega}}(F,G) \le \delta
-\]
+$$
 
 which, in combination of the fact that $d^{\overline{\omega}} \le d^{\omega}$,
 will then give us our result. 
@@ -138,18 +138,18 @@ will then give us our result.
 Towards this goal, let $\Gamma, K$ 
 be an interleaving of $F, G$ such that 
 
-\[
+$$
 \overline{\omega}_{\Gamma}, \overline{\omega}_{K} \le d^{\overline{\omega}}(F, G) + \delta.
-\]
+$$
 
 Such an interleaving must exist or else $d^{\overline{\omega}}(F, G)$ 
 is larger than we thought. 
 By the lemma we proved earlier, we know that there exist 
 translations $\Gamma', K'$ such that 
 
-\[
+$$
 \Gamma \le \Gamma' \qquad K \le K'
-\]
+$$
 
 and 
 
@@ -208,15 +208,15 @@ Note that by sublinearity we have that
 
 Therefore, we see that 
 
-\[
+$$
 d(F, H) \le \epsilon' + \epsilon.
-\]
+$$
 
 Taking the infimum over $\epsilon', \epsilon$, we get that 
 
-\[
+$$
 d(F,H) \le d(F,G) + d(G, H)
-\]
+$$
 
 as desired.
 
@@ -230,9 +230,9 @@ in their functor category.
 Let $P$ be a preorder. A **superlinear family** $\Omega: [0, \infty) \to **Trans**_P$ 
 is a function where 
 
-\[
+$$
 \epsilon \mapsto \Omega_\epsilon \in **Trans**_P  
-\]
+$$
 
 such that $\Omega_{\epsilon_1}\Omega_{\epsilon_2} \le \Omega_{\epsilon_1 + \epsilon_2}$. 
 </span>
@@ -240,28 +240,28 @@ such that $\Omega_{\epsilon_1}\Omega_{\epsilon_2} \le \Omega_{\epsilon_1 + \epsi
 Note that in $**Trans**_P$, the identity $I: P \to P$ is an initial object. 
 So if $\epsilon_1 \le \epsilon_2$, we know that 
 
-\[
+$$
 I \le \Omega_{\epsilon_2 - \epsilon_1}.   
-\]
+$$
 
 Appending $\Omega_{\epsilon_1}$ on the right, we get that 
 
-\[
+$$
 I\Omega_{\epsilon_1} \le \Omega_{\epsilon_2 - \epsilon_1}.
-\]
+$$
 
 Using the fact that $\Omega_{\epsilon_1}\Omega_{\epsilon_2} \le \Omega_{\epsilon_1 + \epsilon_2}$, 
 we see that 
 
-\[
+$$
 I\Omega_{\epsilon_1} \le \Omega_{\epsilon_2 - \epsilon_1} \le \Omega_{\epsilon_2}.
-\]
+$$
 
 Since $I$ is the identity, we know that $I\Omega_{\epsilon_1} = \Omega_1$. We thus have that 
 
-\[
+$$
 \Omega_{\epsilon_1} \le \Omega_{\epsilon_2}
-\]
+$$
 
 so that **superlinear families are monotonic**.
 
@@ -272,10 +272,10 @@ Now, how does this turn into a metric?
 Let $P$ be a preorder and $\dd$ a category. Then for $F,G \in \dd^P$, 
 we define their **interleaving distance** 
 
-\[
+$$
 d^{\Omega}(F,G)
 = \inf \{ \epsilon \in [0, \infty) \mid F, G \text{ are } \Omega_\epsilon\text{-interleaved} \}.
-\]
+$$
 
 If the above set is empty, we set $d^{\Omega}(F,G) = \infty$. 
 </span>
@@ -309,15 +309,15 @@ Observe that
 By monotonicty of translations, this implies that $F, H$ are $\Omega_{\epsilon_1 + \epsilon_2}$-interleaved, 
 so that 
 
-\[
+$$
 d^{\Omega}(F, H) \le \epsilon_1 + \epsilon_2.
-\]
+$$
 
 Taking the infimum over $\epsilon_1, \epsilon_2$, we get that 
 
-\[
+$$
 d^{\Omega}(F, H) \le d^{\Omega}(F, G) + d^{\Omega}(G, H)
-\]
+$$
 
 as desired.
 

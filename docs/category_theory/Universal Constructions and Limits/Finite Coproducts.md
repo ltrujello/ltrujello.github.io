@@ -16,31 +16,31 @@ be two groups with group operations $\textcolor{NavyBlue}{\bigcdot}: G \times G 
 and $\textcolor{Orange}{\bigcdot}:  H \times H \to H$. The 
 **free product** of $G$ and $H$ is the group 
 
-\[
+$$
 (G \* H, \bigcdot) = \bigg\{ g_1h_1g_2h_2\cdots g_kh_k \;\bigg|\; g_i \in G, h_i \in H \bigg\}
-\]
+$$
  
 with the following operation. If $g_1h_1\cdots g_kh_k$ and $g'_1h'_1\cdots g'_{\ell}h'_{\ell}$
 are two elements of $G \* H$, then 
 
-\[
+$$
 (g_1h_1\cdots g_kh_k) \mathbin{\bigcdot} (g'_1h'_1\cdots g'_{\ell } h'_{\ell } )
 = 
 g_1h_1\cdots g_kh_k g'_1h'_1 \cdots g'_{\ell}h'_{\ell}.
-\]
+$$
 
 We require the group operation to obey the following two rules. Let $g_1h_1\cdots g_kh_k \in G \* H$.
 
 * If $g \in G$, then 
 
-\[
+$$
 g \mathbin{\bigcdot} (g_1h_1\cdots g_kh_k) = (g \mathbin{\textcolor{NavyBlue}{\bigcdot}} g_1)h_1\cdots g_kh_k.
-\]
+$$
 * If $h \in H$, then 
 
-\[
+$$
 (g_1h_1\cdots g_kh_k)\mathbin{\bigcdot} h = g_1h_1\cdots g_k(h_k \mathbin{\textcolor{Orange}{\bigcdot}} h).
-\]
+$$
 
 The free product of two groups arise frequently in algebraic topology.
 Despite that its definition is somewhat complicated, we will see later
@@ -53,9 +53,9 @@ follows is a simplified version.
 If $X = U \cup V$ is a topological space with $U, V$ open sets, and 
 if $U \cap V \ne \varnothing$ is path connected and simply connected, then 
 
-\[
+$$
 \pi_1(X) \cong \pi_1(U)\* \pi_1(V)
-\]
+$$
 
 where $\pi_1(X)$ is the fundamental group of $X$. (Note that since $X$ is path connected, 
 it doesn't matter what basepoint for the fundamental group we select). 
@@ -70,9 +70,9 @@ such a statement should not make any sense the reader until we define what a cop
 In **Set**, we can combine two different sets $X$ and $Y$ to create the 
 **disjoint union** $X \amalg Y$, which is defined to be the set 
 
-\[
+$$
 X \amalg Y = \bigg\{ (x, 0), (y, 1) \;\bigg|\;  x \in X, y \in Y  \bigg\}.
-\]
+$$
 
 In the above set, elements are tuples whos first coordinate is either 
 in $X$ or $Y$, and the second is some value which depends on whether or not the first 
@@ -142,9 +142,9 @@ This now motivates the following definition of a *coproduct*.
 Let $\cc$ be a category with objects $A$ and $B$. The **coproduct** of $A$ and $B$ 
 is an object $A \amalg B$ of $\cc$ which is equipped with morphisms 
 
-\[
+$$
 i_A: A \to A \amalg B \qquad i_B: B \to A \amalg B
-\]
+$$
 
 with the following universal property: For any object $Z$ of $\cc$ with a pair 
 of morphisms $f: A \to Z$ and $g: B \to Z$, then there exists a unique morphism 
@@ -174,17 +174,17 @@ object $A \amalg B$ for every pair of objects $A$ and $B$. Then
 * **$\bm{(iii)}$** For any three objects, we have an
 isomorphism 
 
-\[
+$$
 (A \amalg B) \amalg C \cong A \amalg (B \amalg C) \cong A 
 \amalg B \amalg C
-\]
+$$
 
 which is natural in $A, B$ and $C$ .
 * **$\bm{iv}$** For any object $A$, we have the isomorphism 
 
-\[
+$$
 I \amalg A \cong A \cong I \amalg A            
-\]
+$$
  
 natural in $A$, where $T$ is the initial object of the category.
 
@@ -196,9 +196,9 @@ Let $\cc$ be a category with objects $A, B$. The
 **coproduct $A \amalg B$ of $A$ and $B$** is 
 a universal morphism 
 
-\[
+$$
 (A \amalg B, i: (A,B) \to \Delta(A \amalg B))
-\]
+$$
 
 from \hyperref[definition:universal_morphism_from_F_to_D]{\textcolor{blue}{$(A,B)$ to $\Delta$}}. 
 This means that, for any other pair $(C, j: (A, B) \to \Delta(C))$, there exists 

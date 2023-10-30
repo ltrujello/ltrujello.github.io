@@ -12,9 +12,9 @@ functor. Notably, we showed that if there exists an adjunction
 (that is, the classic bijection of homsets which is natural)
 then there exist universal morphisms 
 
-\[
+$$
 \eta_C: C \to G \circ F(C) \qquad \epsilon_D: F\circ G(D) \to D 
-\]
+$$
 
 for all objects $C, D$. Furthermore, we only need one of the universal morphisms 
 to derive an adjunction. Since universal morphisms are simply initial objects 
@@ -36,9 +36,9 @@ $\eta_C: C \to G(F(C))$.
 Now in the comma category, objects will be of 
 the form 
 
-\[
+$$
 (D, f: C \to G(D))
-\]
+$$
 
 where morphisms between $(D, f: C \to G(D))$ and $(D', f': C \to G(D'))$ 
 will be induced by morphisms $h: D \to D'$ such that 
@@ -48,9 +48,9 @@ commutes. First, observe that $(F(C), \eta_C: C \to G(F(C)))$
 is an object of the comma category. Second, observe that the 
 bijection of homsets 
 
-\[
+$$
 \hom_{\dd}(F(C), D) \cong \hom_{\cc}(C, G(D))   
-\]
+$$
 
 (natural in $C, D$) 
 guarantees that every object
@@ -66,9 +66,9 @@ the object $D$ as $F(C)$. When we write $F(C)$, we're not denoting
 a functor, because we'll show this is a functor. Anyways, our initial 
 object can be written as 
 
-\[
+$$
 (F(C), \eta_C: C \to G(F(C))).
-\]
+$$
 
 This defines a mapping on objects $C \mapsto F(C)$. To show that this 
 is a functor, suppose we have a morphism $f: C \to C'$ in $\cc$. Then 
@@ -121,27 +121,27 @@ $f: C' \to C$.
 Since $\cc$ is complete, it must have products, so we may 
 take the product
 
-\[
+$$
 W = \prod_{i \in J}C_i.
-\]
+$$
 
 This product has associated projection morphisms 
 $\displaystyle \pi_k: \prod_{i \in J}C_i \to C_k$. Therefore, 
 for each object $C \in \cc$, there exists at least one 
 morphism between $W$ and $C$ by composition:
 
-\[
+$$
 f_k \circ \pi_k: W \to C.
-\]
+$$
 
 By hypothesis, the collection of endomorphisms $\hom_{\cc}(W, W)$ 
 is a set. Therefore, we may form an equalizer $e: V \to W$ 
 of this set. Observe that for each $C \in \cc$, there exists 
 at least one morphism between $V$ and $C$ by composition:
 
-\[
+$$
 f_k \circ \pi_k\circ e: V \to C.
-\]
+$$
 
 We'll now show that all morphisms are equal. Suppose the contrary; 
 that there are two distinct morphisms $f, g: V \to C$. Denote the equalizer 
@@ -152,16 +152,16 @@ commutes. The morphism $s$ is induced via the universality of
 both $U$ and $V$. Since $e \circ e_1 \circ s : W \to W$, and 
 $e$ is the equalizer of endomorphisms of $W$, we have that 
 
-\[
+$$
 (e \circ e_1 \circ s)\circ e = e.  
-\]
+$$
 
 Since equalizers are monic, we can cancel on the left side to conclude 
 that 
 
-\[
+$$
 e_1 \circ s \circ e = 1_V. 
-\]
+$$
 
 However, this implies that the right inverse of $e_1$ is $s \circ e$. 
 Since $e_1$ is already monic, it must be an isomorphism. Hence $f = g$, so that 
@@ -183,16 +183,16 @@ For each $C \in \cc$,
 there exists a set of objects $(D_i)_{i \in I}$ $\dd$ and a family 
 of arrows
 
-\[
+$$
 f_i: C \to G(D_i)
-\]
+$$
 
 such that for every morphism $h: C \to G(D)$, there 
 exists a $j \in I$ and a morphism $t: D_j \to D$ such that
 
-\[
+$$
 h = G(t) \circ f_i.
-\]
+$$
 
 \end{minipage}  
 \end{center}</span>
@@ -219,9 +219,9 @@ There exists a set $S \subset \ob(\cc)$ such that for any
 $C \in \cc$ and any $x \in K(C)$, there exists an $s \in S$, 
 an element $y \in K(s)$ and an arrow 
 
-\[
+$$
 f: s \to C \text{ such that } K(f)(y) = x.
-\]
+$$
 
 \end{minipage}
 \end{center}</span>

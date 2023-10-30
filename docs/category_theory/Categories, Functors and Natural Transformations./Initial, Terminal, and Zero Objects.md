@@ -38,9 +38,9 @@ isomorphic, since by assumption there exists unique morphisms
 $f: T \to T'$ and $g: T' \to T$ and we have no choice but to
 say 
 
-\[
+$$
 f \circ g = 1_T \quad g \circ f = 1_{T'}.
-\]
+$$
 
 </span>
 
@@ -49,15 +49,15 @@ f \circ g = 1_T \quad g \circ f = 1_{T'}.
 Recall that in the category $\grp$, there exists a trivial group 
 $\{e\}$. Moreover, for each group $G$, there exist unique group homomorphisms 
 
-\[
+$$
 i_G: \{e\} \to G \qquad e \mapsto e_G 
-\]
+$$
 
 and 
 
-\[
+$$
 t_G: G \to \{e\} \qquad g \mapsto e_G.
-\]
+$$
 
 Note that both are group homomorphisms since they both behave on identity elements 
 and are trivially distributive across group operations. This then shows that 
@@ -65,9 +65,9 @@ $\grp$, the trivial group is initial and terminal and hence a zero object.
 
 This makes sense since for any two groups $G, H$, there exists a unique map 
 
-\[
+$$
 z: G \to H \qquad g \mapsto e_H
-\]
+$$
 
 which could be factorized as 
 
@@ -99,17 +99,17 @@ be obtained by repeated composition.
 Consider the category $\Set$. Let $X$ be a given set in this category. 
 Then there are two unique functions which we may construct. First, there is the function 
 
-\[
+$$
 t_X: X \to \{\bullet\}
-\]
+$$
 
 where everything in $X$ is mapped to the one element $\bullet$ of the one point set. 
 Secondly, we may construct a function whose domain is the empty set, 
 and whose codomain is $X$, as below.
 
-\[
+$$
 i_X: \varnothing \to X
-\]
+$$
 
 Thus we have that, in $\Set$, the one point set is a terminal 
 object $\{\bullet\}$ while the empty set
@@ -147,9 +147,9 @@ or terminal object.
 
 We might guess that the smallest field 
 
-\[
+$$
 \mathbb{F}_2 \cong (\zz/2\zz, +, \cdot) = \{0, 1\} 
-\]
+$$
 
 which has characteristic 2 is an initial object. However, this fails to be initial. 
 Observe that the only homomorphism between $\mathbb{F}_2$ and $\mathbb{F}_3$ is the zero 
@@ -174,17 +174,17 @@ Hence, this category lacks initial and terminal objects.
     For any two objects $A, B \in \cc$, define for each $f \in \hom_{\cc}(A, B)$
     the functor
 
-    \[
+    $$
     P_f: **2** \to \cc
-    \]
+    $$
  
     such that $P(\textcolor{NavyBlue}{\bullet}) = A$, $P(\textcolor{Orange}{\bullet}) = B$, 
     and $P_f(\textcolor{NavyBlue}{\bullet} \to \textcolor{Orange}{\bullet}) = f: A \to B$. 
     Show that for each $f: A \to B$ in $\cc$, we have a natural transformation 
 
-    \[
+    $$
     \eta: P_{1_I} \to P_f.
-    \]
+    $$
 
     Note that $1_I: I \to I$ is the identity on the initial object.
     * **(*ii*.)** Suppose we don't know if $\cc$ has an initial object, 
@@ -192,9 +192,9 @@ Hence, this category lacks initial and terminal objects.
     $I'$ with the property that for each $f \in \hom_{\cc}(A,B)$ there is a natural 
     transformation 
 
-    \[
+    $$
     \eta: P_{1_{I'}} \to P_f.
-    \]
+    $$
 
     Is $I'$ an inital object?
     * **(*iii*.)** Dualize your work for terminal objects.\\

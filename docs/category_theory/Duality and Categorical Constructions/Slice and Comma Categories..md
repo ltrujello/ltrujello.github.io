@@ -29,19 +29,19 @@ at $\textcolor{Purple}{A}$.
 * **Morphisms.** For two objects $(C, f:\textcolor{Purple}{A}\to C)$ and $(C', f': \textcolor{Purple}{A} \to C')$, 
 we define 
 
-\[
+$$
 \textcolor{NavyBlue}{h} : (C, f) \to (C', f')
-\]
+$$
 
 as a morphism between the objects, where $h: C \to C'$ is a morphism in 
 our category such that $f' = h \circ f$. Alternatively we can describe 
 the homset more directly:
 
-\[
+$$
 \hom_{(A\downarrow \cc)}\Big( (f, C), (f', C')\Big)
 =
 \{ h: C \to C' \in \cc \mid f' = h \circ f \}.
-\]
+$$
 
 </span>
 At this point you may be a bit overloaded with notation if this is the first 
@@ -58,9 +58,9 @@ Composition of two composable morphisms $h : (f, C) \to
 (f', C')$ and $h' : (f', C') \to (f'', C'')$ is given by 
 $h' \circ h : (f, C) \to (f'', C'')$ since clearly 
 
-\[
+$$
 f'' = h' \circ f' \hspace{0.5cm}\text{and}\hspace{0.5cm} f' = h \circ f \implies f'' = h' \circ (h \circ f) = (h' \circ h) \circ f.
-\]
+$$
   
 We can visually justify composition as well. If we have two commutative diagrams 
 as on the left, we can just squish them together to get the final commutative diagram on the right. 
@@ -86,9 +86,9 @@ As we saw in Example \ref{example:fundamental_group},
 $\pi_1$ is not a functor $**Top** \to **Grp**$, but is rather a 
 functor 
 
-\[
+$$
 \pi_1: **Top**^* \to **Grp**
-\]
+$$
 
 where $**Top**^*$, which consists of pairs $(X, x_0)$ with $x_0 \in X$,
 is the category of pointed topological spaces.
@@ -99,9 +99,9 @@ to calculate $T_p(M)$.
 So, as we saw in Example \ref{example:manifold_tangent_plane}, this process is not 
 a functor from $**DMan**$ to $**Vect**$, but is rather a functor 
 
-\[
+$$
 T: **DMan**^* \to **Vect**
-\]
+$$
 
 where $**DMan**^*$, which consists of pairs $(M, p)$ with $p \in M$,
 is the category of pointed smooth manifolds. This now motivates the next two examples.
@@ -118,18 +118,18 @@ $f: X \to Y$ such that $y_0 = f(x_0)$.
 Recall that the one point set $\{\bullet\}$ is trivially a topological space. 
 Then we can form the category $(\{\bullet\}\downarrow **Top**)$. The claim now is that 
 
-\[
+$$
 (\{\bullet\}\downarrow **Top**) 
 \cong 
 **Top**^*.
-\]
+$$
 
 Why? Well, an object of $(\{\bullet\}\downarrow **Top**)$ is simply 
 a pair $(X, f: \{\bullet\} \to X)$. Observe that 
 
-\[
+$$
 f(\bullet) = x_0 \in X,
-\]
+$$
 
 for some $x_0 \in  X$.
 So, the pair $(X, f: \{\bullet\} \to X)$ is logically equivalent to a 
@@ -158,9 +158,9 @@ The above example generalizes to many pointed categories, some of which are
 We now briefly comment for any slice category $(A \downarrow \cc)$ 
 built from a category $\cc$, we can construct a "projection" functor 
 
-\[
+$$
 P: (A \downarrow \cc) \to \cc  
-\]
+$$
 
 where on objects $P(C, f: A \to C) = C$ and on morphisms
 $P(h:(C, f) \to (C', f'))= h: C  \to C'$. Clearly, this functor is 
@@ -184,9 +184,9 @@ at $\textcolor{Purple}{B}$.
 * **Morphisms.** For two objects $(C, f: C  \to \textcolor{Purple}{B})$
 and $(C', f': C'  \to \textcolor{Purple}{B})$, we define
 
-\[ 
+$$ 
 \textcolor{NavyBlue}{h}: (C, f) \to (C', f')
-\]
+$$
  
 to be a morphism between the objects to correspond  to  a morphism
 $\textcolor{NavyBlue}{h}:C \to C'$ in $\cc$ 
@@ -217,9 +217,9 @@ is always a subgroup of $G$. What is interesting is that,
 from the perspective of slice categories, this 
 process is functorial:
 
-\[
+$$
 \ker(-): (**Grp**\downarrow H) \to **Grp**.  
-\]
+$$
 
 To see this, we have to understand what happens on the morphisms.
 So, suppose we have two objects $(G, \phi: G \to H)$ and $(K, \psi: K \to H)$ 
@@ -267,9 +267,9 @@ space of interest. If $p: E \to X$ an $p': E' \to X$ are two bundles, a
 **morphism of bundles** $q :p  \to p'$ is given by a continuous map $q: E \to E'$ such 
 that 
 
-\[
+$$
 p = p' \circ q.
-\]
+$$
 
 Hence we see that a bundle over a topological space $X$ is an element of the 
 comma category $**Top**/X$, and a morphism of bundles is a morphism in the comma category. 
@@ -285,9 +285,9 @@ vector space over some field $k$
 * **2.** For each $p \in X$, there is an open neighborhood $U_{\alpha}$ 
 and a homeomorphism 
 
-\[
+$$
 \phi_{\alpha}: U_{\alpha} \times \rr^{n} \isomarrow \pi^{-1}(U_{\alpha})
-\]
+$$
  
 with $n$ some natural number. We also require that $\pi \circ \phi_{\alpha} = 1_{U_\alpha}$.
 
@@ -300,9 +300,9 @@ To realize this in real mathematics, we can take the classic example of the
 smooth manifold $M$ (if you've seen this before, hopefully it is now clear why the word "bundle" 
 is here). In differential geometry this is defined as the set 
 
-\[
+$$
 TM = \{(p, v) \mid p \in M \text{ and } v \in T_p(M)\}
-\]
+$$
 
 where we recall that $T_p(M)$ is the tangent (vector) space at 
 a point $p \in M$. 
@@ -321,9 +321,9 @@ too is a smooth manifold (see Do Carmo). Hence we see that $TM$ is in fact a top
 We then see that the mapping
 $\pi: TM \to M$ where 
 
-\[
+$$
 \pi(p, v) = p \text{ and } \pi^{-1}(x) = T_x(M).
-\]
+$$
 
 is a continuous mapping.
 Hence we've satisfied both (1.) and (2.) in the the definition of a vector bundle. 
@@ -345,9 +345,9 @@ as follows.
 pairs $(f, B)$ where $B \in \text{Obj}(\bb)$ such
 that 
 
-\[
+$$
 f : C \to F(B)
-\]
+$$
 
 where $f$ is a morphism in $\cc$.
 * **Morphisms.** The morphisms $h: (f, B) \to (f', B')$ of
@@ -379,18 +379,18 @@ G)$ as follows.
 where $B, C$ are objects of $\bb, \cc$, respectively,
 such that  
 
-\[
+$$
 f : F(B) \to G(C)
-\]
+$$
 
 where $f$ is a morphism in $\dd$.
 * **Morphisms.** All pairs $(h, k) : (B,
 C, f) \to (B', C', f')$ where $h: B \to B'$ and $k: C
 \to C'$ are morphisms in $\bb, \cc$, respectively, such that \
 
-\[
+$$
 f' \circ F(h) = G(k) \circ f.
-\]
+$$
 
 </span>
 As usual, we can represent this visually via diagrams:
@@ -414,15 +414,15 @@ $\cc$, respectively.
 consider the image $\im(\phi) = \{\phi(g) \mid g \in G\}$. 
 Show that this defines a functor 
 
-\[
+$$
 \im(-): (G \downarrow **Grp**) \to **Grp**
-\]
+$$
  
 where on morphisms, a morphism 
 
-\[
+$$
 h: (H, \phi: G \to H) \to (K, \phi: G \to K)                
-\]
+$$
 
 is mapped to the restriction 
 $h|_{\text{Im}(\phi)}: \im(\phi) \to \im(\psi)$. 
@@ -438,9 +438,9 @@ to describe this is via slice categories.
     to be the forgetful functor. Given any function $f: X \to U(Y)$,
     we can use the topology on $Y$ to impose a topology $\tau_X$ on $X$:
 
-    \[
+    $$
     \tau_X = \{U \subset X \mid f(U) \text{ is open in }Y\}.
-    \]
+    $$
 
     This is called the **induced topology on** $X$.  
     So, we see that (by abuse of notation) the function $f: X \to U(Y)$ 
@@ -451,9 +451,9 @@ to describe this is via slice categories.
     and consider a function $f: U(X) \to Y$. We can similarly impose a 
     topology $\tau_Y$ on $Y$:
 
-    \[
+    $$
     \tau_Y= \{ V \subset Y \mid f^{-1}(V) \text{ is open in }X \}.
-    \]
+    $$
 
     This is called  the **coinduced topology on** $Y$. 
     Show that this is also a functorial process.
@@ -463,9 +463,9 @@ to describe this is via slice categories.
     where on objects $(f: E \to X) \mapsto (\phi \circ f: E \to Y)$.
     * ***ii*.** Let $\cc$ be a category. Show that we generalize (*i*) to define a functor 
 
-    \[
+    $$
     (\cc \downarrow -): \cc \to **Cat**
-    \]
+    $$
 
     where $A \mapsto (\cc \downarrow A)$.
     * ***ii*.** Let $**Cat**_*$ be the **pointed category of categories** 

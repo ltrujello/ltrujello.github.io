@@ -24,9 +24,9 @@ Let $\aa$ be a category with $\vv$ a monoidal category. Suppose $T: \aa \to \vv$
 We define a **Yang-Baxter operator**
 to be a family of isomorphisms
 
-\[
+$$
 y_{A,B}: T(A)\otimes T(B) \isomarrow T(B) \otimes T(A).
-\]
+$$
 
 for each $A, B \in \aa$ such that the diagram below commutes.
 such that the diagram below commutes.
@@ -40,21 +40,21 @@ Note also that, for any functor
 $T: \aa \to \vv$ with $\vv$ a braided monoidal category,
 $T$ trivially has a Yang-Baxter operator $y$ where we set 
 
-\[
+$$
 y_{A,B} = \sigma_{T(A),T(B)}.
-\]
+$$
 
 Before we move forward we introduce a notion that can be found in \cite{Joyal1993BraidedTC}, originally from \cite{kelly_clubs}.
 For our purposes, we will denote the category obtained via disjoint unions of the symmetric groups $S_n$ as $\mathbb{P}$. That is, the objects of $\mathbb{P}$ are natural numbers and 
 
-\[
+$$
 \hom_{\mathbb{P}}(n,m)
 =
 \begin{cases}
 S_n & \text{if } n = m\\
 \varnothing & \text{if } n \ne m 
 \end{cases}
-\]
+$$
 
 
 
@@ -65,11 +65,11 @@ $\Gamma: \dd \to \mathbb{P}$. Then we define the category $\dd\int\aa$ where
 * **Objects.** Finite strings $[A_1, A_2, \dots, A_n]$ with $A_i \in \aa$
 * **Morphisms.** For two strings $[A_1, \dots, A_n]$ and $[B_1, \dots, B_n]$, denoted as $[A_i]$ and $[B_i]$,
 
-\[
+$$
 \hom_{\dd\int\aa}\Big([A_i],[B_i]\Big)
 =
 \Big\{(\alpha, f_1, \dots, f_n) \mid f_i \in \hom_{\aa}(A_i, B_{\sigma(i)})  \Big\}
-\]
+$$
 
 Here $\alpha$ is a morphism of $\dd$ such that $\Gamma(\alpha) = \sigma \in S_n$.
 Finally, we allow no morphisms between two different strings of different length.
@@ -94,22 +94,22 @@ Denote the category $\{\aa, \bb\}$
 as the category with objects $(n, F: \aa^n \to \bb)$ 
 whose morphisms are 
 
-\[
+$$
 \hom_{\{\aa, \bb\}}\Big((n, T), (m,S)\Big)
 =
 \begin{cases}   
 \{(\sigma, \eta: \sigma\cdot T \to S) \} & \text{if } n = m\\
 \varnothing & \text{if } n \ne m.
 \end{cases}
-\]
+$$
 
 Here $\sigma \in S_n$, and $\eta: \sigma \cdot T \to S$ is a natural transformation from the functor $\sigma \cdot T$ defined pointwise as 
 
-\[
+$$
 \sigma \cdot T(A_1, A_2, \dots, A_n)
 =
 T(A_{\sigma(1)}, \dots, A_{\sigma(n)})
-\]
+$$
 
 to the functor $S$. 
 </span>
@@ -133,20 +133,20 @@ Second, if $\vv$ is a strict monoidal category, then so is $\{\aa, \vv\}$. One c
 two functors $T: \aa^n \to \vv$ and $S: \aa^m \to \vv$ the functor
 $T \otimes S: \aa^{n+m} \to \vv$ which is a functor that can be defined pointwise as 
 
-\[
+$$
 (T \otimes S)(A_1, \dots, A_{n+m}) = T(A_1, \dots, A_n)\otimes S(A_{n+1}, \dots, A_{n+m}).
-\]
+$$
 
 Thus if $\vv$ is strict, then so it $\{\aa, \vv\}$.
 
 What is useful about this construction is that 
 Kelly showed that the functors 
 
-\[
+$$
 (-)\int A : **Cat**/\mathbb{P} \to **Cat** 
 \qquad 
 \{A, (-) \}: **Cat**\to **Cat**/\mathbb{P}
-\]
+$$
 
 form an adjunction. 
 We use this in the next proposition, which is also aided by the following lemma. 
@@ -224,9 +224,9 @@ commutes and preserves the Yang-Baxter operators as desired.
 <span style="display:block" class="theorem">
 Let $\vv$ be an $B$-category and suppose we have a functor $F: \aa \to \vv$. Then there is an equivalence of categories 
 
-\[
+$$
 \mathbb{B}\text{*Fun*}(\mathbb{B}{\textstyle\int}\aa, \vv) \simeq \text{*Fun*}(\aa, \vv).
-\]
+$$
 
 given by precomposition of each $F: \mathbb{B}\int\aa \to \vv$ with $i_{\aa}: \aa \to \mathbb{B}\int\aa$.
 </span>
@@ -239,43 +239,43 @@ and the top dashed arrow is an equivalence as well.
 So it suffices to prove this for the strict case. 
 Now, the proposed functor $F$ behaves as 
 
-\[
+$$
 F(S: \mathbb{B}\int\aa \to \vv) = S \circ i_{\aa}: \aa \to \vv.
-\]
+$$
 
 We must demonstrate that this is fully faithful and essentially surjective.
 
 * **Fully faithful.** Let $F, G: \mathbb{B}\int\aa \to \vv$ be strong $SB$-monoidal functors. Then define the function
 
-\[
+$$
 \phi: \hom_{\mathbb{B}\text{Fun}(\mathbb{B}{\textstyle\int}\aa, \vv)}(F,G)
 \to 
 \hom_{\text{Fun}(\aa, \vv)}(F \circ i_{\aa}, 
 G\circ_{i_{\aa}}).
-\]
+$$
 
 where, given a natural transformation $\eta: F \to G$,
 we have that $\phi(\eta): F\circ i_{\aa} \to G \circ i_{\aa}$ is a natural transformation defined as 
 
-\[
+$$
 \phi(\eta)_A = \eta_{[A]}.
-\]
+$$
 
 We show that this is injective. Suppose $\phi(\eta) = \phi(\eta')$ for two natural transformations $\eta, \eta': F \to G$ with $F, G \in \mathbb{B}\text{Fun}(\mathbb{B}\int\aa, \vv)$.
 The fact that $\phi(\eta) = \phi(\eta')$ implies that 
 
-\[  
+$$  
 \eta_{[A]} = \eta_{[A']}.
-\]
+$$
 
 As these are natural transformations between monoidal functors, we have that the diagram below commutes. 
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_6_9.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 The morphisms $P_1$ and $P_2$ are the isomorphisms built inductively from 
 
-\[
+$$
 F_2: F([A]) \otimes F([B] \isomarrow F([A, B])
-\]
+$$
 
 which comes equipped with the data of a strong monoidal functor [see Mac Lane, p. 256]. Moreover, the diagram commutes by Mac Lane's coherence theorem. 
 

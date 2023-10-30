@@ -20,25 +20,25 @@ don't care about order. That is, $\{1, 2, 3\} = \{3,2,1\}$, etc.
 Thus for a set $\{1, 2, \dots, n\}$, we can represent a
 permutation $\sigma$ of the set of elements as follows:
 
-\[
+$$
 \sigma =  
 \begin{pmatrix}
 1 & 2 & \cdots & n\\
 \sigma(1) & \sigma(2) & \cdots & \sigma(n)
 \end{pmatrix}
-\]
+$$
 
 where we read this as $1$ is assigned to $\sigma(1)$, 2 is
 assigned to $\sigma(2)$. For example, a permutation that just
 shifts the elements down the line is 
 
-\[
+$$
 \sigma = 
 \begin{pmatrix}
 1 & 2 & \cdots & n\\
 2 & 3 & \cdots & 1
 \end{pmatrix}.
-\]
+$$
 
 That is, $\sigma$ sends 1 to 2, 2 to 3 and eventually $n$ to 1. 
 Here we'll denote the set of all permutations of the set $\{1, 2,
@@ -52,33 +52,26 @@ then the
 of $X$ form a group** which we show as follows.}
 
 Let $X = \{1, 2, \dots, n\}$. 
-\begin{description}
-\item[Closed.]
-For any $\sigma_1, \sigma_2 \in S_n$, we see that $\sigma_2
+
+* **Closed.** For any $\sigma_1, \sigma_2 \in S_n$, we see that $\sigma_2
 \circ \sigma_1$ is (1) a composition of bijective functions
 and therefore is bijective and (2) a permutation of $X$. One
 way to think about the composition is that $\sigma_1$
 rearranges $X$, and
 $\sigma_2$ rearranges $X$ again. Thus $\sigma_2 \circ \sigma_1
-\in S_n$. 
-
-\item[Associativity.]
-Associativity is obvious since function composition is
-associative. 
-
-\item[Identity.]
-Observe that the permutation $\sigma_e: X \to X$ for which 
+\in S_n$.
+* **Associativity.** Associativity is obvious since function composition is
+associative.
+* **Identity.** Observe that the permutation $\sigma_e: X \to X$ for which 
 $\sigma_e(i) = i$ is technically a permutation of $X$.
-Therefore $\sigma_e$ acts as the identity element in $S_n$. 
-
-\item[Inverse.]
-Consider a permutation $\sigma \in S_n$. Define $\sigma^{-1}$
+Therefore $\sigma_e$ acts as the identity element in $S_n$.
+* **Inverse.** Consider a permutation $\sigma \in S_n$. Define $\sigma^{-1}$
 to be the function where if $\sigma(i) = j$, then
 $\sigma^{-1}(j) = i$. Then by construction, (1) $\sigma^{-1}$ is a permutation
 of $X$ and (2) $\sigma \circ \sigma^{-1} = \sigma^{-1} \circ
 \sigma = \sigma_e$. Thus $S_n$ contains inverses and
 composition of the inverses returns $\sigma_e$, the identity.
-\end{description}
+
 
 
 <span style="display:block" class="proposition">
@@ -97,13 +90,13 @@ of this group.
 Recall earlier our notation for representing a permutation $\sigma
 \in S_n$:
 
-\[
+$$
 \sigma =  
 \begin{pmatrix}
 1 & 2 & \cdots & n\\
 \sigma(1) & \sigma(2) & \cdots & \sigma(n)
 \end{pmatrix}
-\]
+$$
 
 This notation sucks, since it includes more information than we
 actually need to. For instance, the top row is always going to be
@@ -127,11 +120,11 @@ Then $\{n_1, n_2, \dots, n_k\}$ is called a
 **cycle**,
 and we denote this cycle as 
 
-\[
+$$
 \sigma = \begin{pmatrix}
 n_1 & n_2 & \cdots & n_k
 \end{pmatrix}.
-\]
+$$
 
 We then read this as "$n_1 \to n_2$, $n_2 \to n_3, \dots, n_k
 \to n_1$". 
@@ -145,15 +138,15 @@ n_1 & n_2 & \cdots & n_k
 n_3, \dots, \sigma(n_k) = n_1.$ However, what this is really
 saying is that 
 
-\[
+$$
 \sigma(n_1) = n_2, \sigma^2(n_1) = n_3, \dots, \sigma^{{k-1}}(n_1) = n_k, \sigma^k(n_1) = n_1.
-\]
+$$
 
 However, also take a note to observe that 
 
-\[
+$$
 \sigma(n_2) = n_3, \sigma^2(n_2) = n_4, \dots, \sigma^{{k-1}}(n_2) = n_1, \sigma^k(n_2) = n_2.
-\]
+$$
 
 More generally, we see that \textcolor{blue}{the element $\sigma \in S_n$ has
 order $n_k$}, which is why the cycle length is $k$. 
@@ -173,10 +166,10 @@ n'_1 & n'_2 & \cdots & n'_k
 \end{pmatrix}$ 
 share no elements in common, i.e., 
 
-\[
+$$
 \{n_1, n_2, \dots, n_k\} \cap \{n_1', n_2', 
 \dots, n_k'\} = \varnothing
-\]
+$$
 
 
 then the cycles are defined as
@@ -193,33 +186,33 @@ For example, suppose we have a permutation $\sigma \in S_5$
 where $\sigma(1) = 2, \sigma(2) = 4, \sigma(4) = 2$. Then we
 have a cycle of length 4 and we denote this as 
 
-\[
+$$
 \begin{pmatrix}
 1 & 2 & 4
 \end{pmatrix}.
-\]
+$$
 
 Since $\sigma \in S_5$, suppose further
 that $\sigma(3) = 5$ and $\sigma(5) = 3$. Then we see that we
 have another cycle, disjoint with the previous cycle, and we write this one as
 
-\[
+$$
 \begin{pmatrix}
 3 & 5
 \end{pmatrix}.
-\]
+$$
 
 To write the entire permutation, we then can then express
 $\sigma$ as 
 
-\[
+$$
 \sigma =  \begin{pmatrix}
 1 & 2 & 4
 \end{pmatrix}
 \begin{pmatrix}
 3 & 5
 \end{pmatrix}
-\]
+$$
 
 which gives us all the information we need to know on how
 $\sigma$ rearranges the elements of $X$. Such a representation
@@ -234,11 +227,11 @@ disjoint cycle decomposition. Thus if we have a permutation
 $\sigma \in S_3$ such that $\sigma(1) = 2$, $\sigma(2) = 1$ and
 $\sigma(3) = 3$, then we would write this as 
 
-\[
+$$
 \sigma = \begin{pmatrix}
 1 & 2
 \end{pmatrix}.
-\]
+$$
 
 Such a statement leads us to conclude that $\sigma(3) = 3$. And if
 $\sigma \in S_5$, we would furthermore conclude that not only $\sigma(3) =
@@ -266,7 +259,7 @@ generally, for any cycle $            \begin{pmatrix}
 i_1 & i_2 & \cdots & i_n
 \end{pmatrix}$ we have that 
 
-\[
+$$
 \begin{pmatrix}
 i_1 & i_2 & \cdots & i_n
 \end{pmatrix}
@@ -279,7 +272,7 @@ i_2 & i_3 & \cdots & i_n & i_1
 \begin{pmatrix}
 i_n & i_1 & \cdots & i_{n-1}
 \end{pmatrix}.
-\]
+$$
 
 
 

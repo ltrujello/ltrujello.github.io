@@ -15,9 +15,9 @@ the other. To speak of this, we first review some terminology.
 A (small) **graph** $G$ is a set of vertices $V(G)$ and a set 
 edges $E(G)$ such that there exists an assignment function
 
-\[
+$$
 \partial: E(G) \to V(G)\times V(G)
-\]
+$$
 
 which assigns every edge to the ordered pair containing its endpoints.
 
@@ -34,9 +34,9 @@ A **graph homomorphism** between two graphs $G$ and $H$ is a
 function $f: G \to H$ which induces maps $f_V: V(G) \to V(H)$ and
 $f_E: E(G) \to E(H)$ where if $\partial(e) = (v_1, v_2)$, then  
 
-\[
+$$
 \partial \circ f_E(e) = (f_V(v_1), f_V(v_2)).
-\]
+$$
 
 </span>
 
@@ -59,9 +59,9 @@ A **quiver** is a directed graph $G$ which allows multiple edges
 between vertices. Instead of a function $\partial$, a quiver is equipped with 
 **source** and **target** functions 
 
-\[
+$$
 s: E(G) \to V(G) \qquad t: E(G) \to V(G).
-\]
+$$
 
 So a quiver is a 4-tuple $(E(G), V(G), s, t)$.
 Now as before, a **morphism** $f: Q \to Q'$ between quivers $(E(Q), V(Q), s, t)$ and 
@@ -69,9 +69,9 @@ $(E(Q'), V(Q'), s', t')$ is one which preserves edge-vertex
 relations. Thus, it is a pair of functions $f_E: E(Q) \to E(Q')$ 
 and $f_V: V(Q) \to V(Q)'$ such that 
 
-\[
+$$
 f_V \circ s = s' \circ f_E \qquad f_V \circ t = t' \circ f_E.
-\]
+$$
 
 </span>
 
@@ -104,9 +104,9 @@ In general, since categories allow multiple arrows between objects,
 we can construct a forgetful functor which forgets composition 
 and identity arrows.
 
-\[
+$$
 U: **Cat** \to **Quiv**.
-\]
+$$
 
 Note that if $F : \cc \to \cc'$ is a functor then $U(F)
 : U(\cc) \to U(\cc')$ is in fact a well-behaved morphism between
@@ -143,9 +143,9 @@ Since for each quiver $Q$, we can define a free category $F_C(Q)$ on $Q$,
 we can realize that this mapping is functorial. That is,  we can define a
 functor 
 
-\[ 
+$$ 
 F_C: **Quiv** \to **Cat**
-\]
+$$
  
 where it maps on objects and morphisms as
 \begin{statement}{Red!10}
@@ -190,9 +190,9 @@ $i: Q \to U(F_C(Q))$ where each vertex and edge is sent identically. That is, ve
 $v$ map to $v$ in $F_C(Q)$,  and morphisms are sent identically and for each 
 edge $e: v \to v'$:
 
-\[
+$$
 i(e: v \to v') = (v, e, v').
-\]
+$$
 
 An important observation to make is the fact that every morphism $(v_0, e_0e_1\cdots e_{n-1}, v_n): v_0 \to v_n)$
 in $F_C(Q)$ is a composition of length 2-morphism: 

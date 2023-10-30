@@ -10,29 +10,29 @@ as $**Open**(X)$. We can impose the structure of a
 \hyperref[definition:thin-category]{\textcolor{Blue}{thin category}}
 on this set by declaring that, for two open sets $U$ and $V$, 
 
-\[
+$$
 \hom_{**Open**(X)}(U, V) = 
 \begin{cases}
 \{\bullet\} & \text{if } U \subset V\\
 \varnothing & \text{otherwise }
 \end{cases}
-\]
+$$
 
 That is, we allow a single morphism from $U$ to $V$ if and only if 
 $U \subset V$. 
 Now suppose $Y$ is another topological space. Then for each open subset 
 $U$ of $X$ we may construct the set 
 
-\[
+$$
 C(U) = \{ f: U \to Y \mid f \text{ is continuous } \}.    
-\]
+$$
 
 Observe that if $U \subset V \subset X$ are open sets, then 
 there is function 
 
-\[
+$$
 \rho_U^V: C(V) \to C(U)
-\]
+$$
 
 where each $f: V \to Y$ is mapped to its restriction $f|_U: U \to Y$.
 What follows is an important observation: If we have a chain of three open subsets $U \subset V \subset W$, 
@@ -41,17 +41,17 @@ which can then be restricted to $f|_V|_U: U \to Y$. However, we obtain the same
 result if we instead just restrict $f$ to $U$ in the first place. That is, 
 $f|_V|_U = f|_U$. In our notation, this implies that 
 
-\[
+$$
 \rho_V^W \circ \rho_U^V = \rho_U^W. 
-\]
+$$
 
 What we have on our hands is a *contravariant* functor (since the relation 
 $U \subset V$ induces a function $C(V) \to C(U)$). As covariant functors 
 are easier to think about, we can equivalently express this as a covariant functor:
 
-\[
+$$
 C: **Open**(X)\op \to **Set**
-\]
+$$
 
 which is an example of the concept of a *presheaf*. 
 

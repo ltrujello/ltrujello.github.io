@@ -18,14 +18,9 @@ Let $G$ be a group and $X$ an arbitrary set. A **group
 action** of $G$ on $X$ is a mapping $* : G \times X \to X$
 that 
 
-* [1.] $g_1 * (g_2 * x) = (g_1 \cdot g_2) * x$ for
+* **1.** $g_1 * (g_2 * x) = (g_1 \cdot g_2) * x$ for
 all $g_1, g_2 \in G, x \in X$.
-
-
-
-* [2.] $e * x = x$ where $e \in G$ is the identity.
-
-
+* **2.** $e * x = x$ where $e \in G$ is the identity.
 
 </span>
 Note that $\cdot$ is the *group multiplication in $G$.* For
@@ -53,18 +48,18 @@ group multiplication of elements (e.g., $g \cdot g'$ where $g, g'
 \in G$) simply permutates the elements of a group. That is, if 
 you placed the elements of $G$ in a tuple such as 
 
-\[
+$$
 (g_1, g_2, \dots, g_n)
-\]
-
+$$
+ 
 and multiplied this by some $g' \in G$, you would get a tuple 
 
-\[
+$$
 (g_1, g_2, \dots, g_n) \cdot g' 
 = (g_1\cdot g', g_2 \cdot g' , \dots, g_n\cdot g')
 =
 (g_i, g_j, \dots, g_k)
-\]
+$$
 
 containing all the elements of $G$, but just in a different order.
 (In this case we supposed $g_1 \cdot g' = g_i, g_2, \cdot g' =
@@ -77,10 +72,10 @@ This permutation phenonmenon can be found in more general
 group actions.  For a fixed $g \in G$, define $\sigma_g:
 X \to X$ as 
 
-\[
+$$
 \sigma_g(x) = g * x.
-\]
-
+$$
+ 
 So $\sigma_g$ maps each $x$ to some other element $x' \in X$.
 Therefore, a group action can be thought of as a set of maps
 $\sigma_g$, one for every element $g \in G$, each of which can
@@ -124,9 +119,8 @@ define $g_1 \cdot g_2 = g_1g_2$ for $g_1, g_2 \in G$. That is,
 the group action 
 mapping is simply the multiplication used between the elements
 of $G$. 
-\begin{description}
-\item[This is a Group Action.] 
-(Note: we already pointed out that if we replace $X$ with
+
+* **This is a Group Action.** (Note: we already pointed out that if we replace $X$ with
 $G$ in the definition of a group action, and let $\cdot$
 be the group multiplication in $G$, then we just get the
 definition of a group. Thus a group is a special, but
@@ -134,16 +128,16 @@ boring, type group action.)
 
 To show this is a group action, let $x \in G$. Then 
 
-\[
+$$
 g_1 \cdot (g_2 \cdot x) = g_1 \cdot (g_2x) = g_1g_2x = (g_1g_2)x = (g_1g_2) \cdot x.
-\]
+$$
 
 for $g_1, g_2 \in G$.
 Therefore, $g_1 \cdot (g_2 \cdot x) = (g_1g_2) \cdot x.$
 The second axiom is satisfied, since if $e$ is the
 identity of $G$, then clearly $e \cdot x = ex = x$. We
-have both axioms satisfied. So this is a group action. 
-\end{description}
+have both axioms satisfied. So this is a group action.
+
 </span>
 
 Before we lead up to a powerful theorem involving group actions,
@@ -154,9 +148,9 @@ we must define a few definitions.
 Suppoe $G$ acts on a set $X$, and let $x \in X$. Then we
 define the set 
 
-\[
+$$
 Gx = \{g * x \mid g \in G \}
-\]
+$$
 
 as the **orbirt** of $x$. 
 </span>
@@ -197,9 +191,9 @@ Let $G$ be a group, and suppose it acts on a set $X$.
 Let $Gx_1, Gx_2, \cdots, Gx_n$ be a distinct set of
 orbits  such that 
 
-\[
+$$
 Gx_1 \cup Gx_2 \cup \cdots G_n = X.
-\]
+$$
 
 Then each $x_1, x_2, \dots, x_n$ are called
 **representatives of an orbit** of $G$. We generally
@@ -220,9 +214,9 @@ We now offer another definition regarding group actions.
 <span style="display:block" class="definition">
 Suppose $G$ acts on $X$, and $x \in X$. Then the set 
 
-\[
+$$
 G_x = \{g \in G \mid g * x = x\}.
-\]
+$$
 
 is defined to be the **stabilizer** of $x$.
 </span>
@@ -245,17 +239,17 @@ all $x \in X$, where $e \in G$ is the identity. Therefore $e
 the set $G$ itself. To check for inverses, we note that for any $g \in G$, $g \cdot x = x$, 
 so we can multiply both sides by $g^{-1}$ to get
 
-\[  
+$$  
 g^{-1} * g * x = g^{-1} * x \implies (g^{-1}g) * x = g^{-1} * x 
 \implies x = g^{-1} * x.
-\]
+$$
 
 Thus $g^{-1} * x = x$ so $g^{-1} \in G$. Finally, observe
 that the set is closed. Given $g, g' \in G_x$, we see that 
 
-\[
+$$
 (gg') * x = g * (g' * x) = g *`' (x) = x.
-\]
+$$
 
 Therefore $G_x$ is (1) a subset of $G$ and (2) a group so it
 is a subgroup of $G$.
@@ -269,9 +263,9 @@ realizes the definitions of the orbit and stabilizers.
 Let $G$ be a finite group, and suppose $G$ acts on a set $X$.
 Then for any $x \in X$ we have that 
 
-\[
+$$
 |G| = |Gx| \cdot |G_x|.
-\]
+$$
 
 </span>
 
@@ -283,16 +277,16 @@ $G/G_x$.
 Let $g \in G$ so that $gG_x \in G/G_x$. Then construct the map
 $\psi: G/G_x \to Gx$ by
 
-\[
+$$
 \psi(gG_x) = g * x.
-\]
+$$
 
 Note that there is only one element in $G/G_x$ which gets
 to $x$; namely, $G_x$. The calculation is as follows:
 
-\[
+$$
 \psi(G_x) = e * x = x.
-\]
+$$
 
 This map is obviously surjective, since for any $x' \in Gx$, we
 we know that there exists a $g \in G$ such that $g * x = x'$.
@@ -303,18 +297,18 @@ Now to show that this is injective, suppose that $g*x = h*x$.
 we have that $g^{-1}h * x = x$. Therefore, $gh^{-1} \in G_x$.
 Furthermoresee that 
 
-\[
+$$
 g^{-1}hG_x = G_x \implies hG_x = gG_x.
-\]
+$$
 
 Thus this can only happen if the input is the same. Therefore
 this is a one-to-one and onto mapping. 
 
 Since this is a bijection, we can conclude that 
 
-\[
+$$
 |Gx| = |G/G_x| = |G|/|G_x| \implies |G| = |Gx||G_x|    
-\]
+$$
 
 as desired.
 </span>

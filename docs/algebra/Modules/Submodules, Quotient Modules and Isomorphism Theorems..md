@@ -14,17 +14,11 @@ be a **submodule** of $M$ if $N$ is also a $R$-module.
 \textcolor{MidnightBlue}{What do we need for $N \subset M$ to be a submodule?}
 For $N$ to be a submodule,
 
-*  $N$ needs to be an nonnempty abelian group 
-
-
-*  Axioms (a) - (d) in Definition 1.1 must be satisfied 
-
-
-*  $N$ needs to be closed under multiplication of $R$. That
+* $N$ needs to be an nonnempty abelian group
+* Axioms (a) - (d) in Definition 1.1 must be satisfied
+* $N$ needs to be closed under multiplication of $R$. That
 is, $\cdot : R \times M|_{N} \to N$, where $M|_N$ is $M$
 restricted to $N$ (namely, just $N$).
-
-
 
 
 However, since $N \subset M$, axioms (a) - (d) are already
@@ -64,12 +58,8 @@ $R$-submodule as desired.
 An immediate example we can create from our previous discussions
 the fact that if $f: M \to N$ is an $R$-module homomorphism then 
 
-* [1.] $\ker(f)$ is an $R$-submodule of $M$.
-
-
-* [2.] $\im(f)$ is an $R$-submodule of $N$. 
-
-
+* **1.** $\ker(f)$ is an $R$-submodule of $M$.
+* **2.** $\im(f)$ is an $R$-submodule of $N$.
 
 
 As we saw in group and ring theory, arbitrary intersections of
@@ -136,15 +126,15 @@ then $M/N$ is abelain.
 \indent Next, to turn this into an $R$-module we define scalar
 multiplication as 
 
-\[
+$$
 r(m + N) = rm + N
-\]
+$$
 
 where $r \in R$, and multiplication of elements as
 
-\[
+$$
 (m + N)(m' + N) = mm' + N.   
-\]
+$$
 
 As always, when defining a quotient object we're
 worried about the ability of our multiplication to preserve
@@ -157,24 +147,24 @@ we'll leave $N$ alone, since it works out in the end.
 \indent Thus 
 suppose that
 
-\[
+$$
 m + N = m' + N
-\]
+$$
 
 that is, $m = m' + n$ for some $n \in N$. 
 Then to check if our 
 multiplicaton is well-defined, we observe that for $a \in R$
 
-\[
+$$
 am + N = a(m' + n) + N = am' + an + N
-\]
+$$
 
 and since $N$ is a submodule, it is closed under scalar
 multiplication of elements of $R$. Hence, $an \in N$, so that 
 
-\[
+$$
 am' + an + N = am' + N.
-\]
+$$
 
 Thus we see that $am + N = am' + N$, so that our scalar
 multiplication is well-defined.
@@ -204,38 +194,33 @@ simple that they don't even deserve a definition; yet, they do.
 Let $R$ be a ring and $M$ and $N$ be $R$-module homomorphisms.
 Then we define the following $R$-module homomorphisms.
 
-* [1.] The map $\pi: M \to M/N$ given by 
+* **1.** The map $\pi: M \to M/N$ given by 
 
-\[
+$$
 \pi(m) = m + N
-\]
-
+$$
+ 
 is said to be the **projection map**. Note that $\pi$
 is
 **surjective**, and that $\ker(\pi) = N$ (since $m +
 N = N$ if and only if $m \in N$.)
+* **2.** The map $i: M/N \to M$ given by 
 
-
-
-* [2.] The map $i: M/N \to M$ given by 
-
-\[
+$$
 i(m + N) = m                
-\]
+$$
 
 is known as the **inclusion map**. More generally, if
 $M' \subset M$, the **inclusion map** can also be
 defined as $i: M' \to M$ where 
 
-\[
+$$
 i(m') = m'
-\]
+$$
 
 for all $m' \in M'$. Note that $i$ is **injective**,
 and in the first case $\im(i) = M/N\cup \{0\}$ and in the
 second case $\im(i) = M'$.
-
-
 
 </span>
 
@@ -244,9 +229,9 @@ second case $\im(i) = M'$.
 Let $R$ be a ring and $M$ and $N$ be $R$-modules. If $f: M \to
 N$ is an $R$-module homomorphism, then 
 
-\[
+$$
 M/\ker(f) \cong \im(f).  
-\]
+$$
 
 \vspace{-0.8cm}
 </span>
@@ -256,25 +241,25 @@ M/\ker(f) \cong \im(f).
 The proof is the same as before. Define the map $\phi:
 M/\ker(f) \to N$ as 
 
-\[ 
+$$ 
 \phi(m + \ker(f)) = f(m).
-\]
+$$
 
 \textcolor{NavyBlue}{We quickly show that this is well-defined.} If $m + \ker(f) =
 m' + \ker(f)$ for some $m, m' \in M$, then $m = m' + k$ for
 some $k \in K$. Therefore, 
 
-\[
+$$
 \phi(m + \ker(f)) = f(m) = f(m' + k) = f(m') = \phi(m' + \ker(f)).
-\]
+$$
 
 \textcolor{NavyBlue}{Next, we show this is in fact an $R$-module homomorphism.}
 Linearity is obvious, so we check the second criterion. Now
 for any $a \in R$ we see that 
 
-\[
+$$
 \phi(a(m + \ker(f))) = \phi(am + \ker(f)) = f(am) = af(m) = a(\phi(m + \ker(f)))
-\]
+$$
 
 where we pulled the $a$ outside from $f(am)$ to make $af(m)$
 from the fact that $f$ is an $R$-module homomorphism. 
@@ -284,9 +269,9 @@ see that there is a one-to-one correspondence between
 $M/\ker(f) \to \im(f)$. Second, this implies that $\phi$ is an
 isomorphism between the two modules, so that 
 
-\[
+$$
 M/\ker(f) \cong \im(f)
-\]
+$$
 
 as desired.
 </span>
@@ -296,9 +281,9 @@ as desired.
 Let $R$ be a ring and $M$ and $N$ and $P$ be submodules of
 $M$. Then 
 
-\[
+$$
 (N + P)/P \cong N/(N \cap P).
-\]
+$$
 
 \vspace{-0.8cm}
 </span>
@@ -322,15 +307,15 @@ Construct the projection map $\pi : M \to M/P$ and let $\pi'$
 be the restriction of $\pi$ to $N$. Then we see that
 $\ker(\pi') = N \cap P$, while 
 
-\[
+$$
 \im(\pi') = \{\pi'(n) \mid n \in N\} = \{n + P \mid n \in N\} = (N + P)/P.
-\]
+$$
 
 Thus by the First Isomorphism Theorem we have that 
 
-\[
+$$
 N/\ker(\pi') \cong \im(\pi') \implies (N + P)/P \cong N/(N \cap P)
-\]
+$$
 
 as desired. 
 </span>
@@ -340,9 +325,9 @@ as desired.
 Let $R$ be a ring and $M$ an $R$-module. Suppose $N$ and $P$
 submodules such that $P \subset N$. Then 
 
-\[
+$$
 M/N \cong (M/P)/(N/P).
-\]
+$$
 
 \vspace{-0.8cm}
 </span>
@@ -356,15 +341,15 @@ correspondence $m + P \to m + N$ will cover all of $M/N$.
 
 Now observe that 
 
-\[
+$$
 \ker(f) = \{m + p \mid m \in N\} = N/P.
-\]
-
+$$
+  
 Therefore, by the First Isomorphism Theorem
 
-\[
+$$
 (M/P)/\ker(f) \cong M/N \implies (M/P)/(N/P) \cong M/N
-\]
+$$
 
 as desired.
 </span>

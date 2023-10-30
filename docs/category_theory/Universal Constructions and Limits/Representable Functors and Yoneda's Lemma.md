@@ -16,9 +16,9 @@ Let $F: \cc \to \dd$ be a functor. Then a pair $(R, u: D \to
 F(R))$ is universal from \universalDToF{$D$ to $F$} if and only if for
 each $C \in \cc$ we have the natural bijection
 
-\[
+$$
 \hom_{\cc}(R, C) \cong \hom_{\dd}(D, F(C)).
-\]
+$$
 
 That is, any
 isomorphism, natural in $C$ as above, is determined by a unique
@@ -38,9 +38,9 @@ a morphism $f: R \to C$, while conversely, any $f: R \to C$ can be precomposed
 with $u$ to obtain a morphism $F(f) \circ u : D \to F(C)$. Hence we see the 
 we have a bijective correspondence
 
-\[
+$$
 \hom_{\dd}(R, C) \cong \hom_{\cc}(D, F(C)).
-\]
+$$
 
 Now to demonstrate naturality, we consider a morphism $k: C \to C'$
 and we check that the diagram below commutes.
@@ -65,11 +65,11 @@ send us to the morphism $F(k \circ f) \circ u$.
 \end{minipage}
 However, it is certainly the case that 
 
-\[
+$$
 F(k) \circ (F(f) \circ u) 
 = 
 F(k \circ f) \circ u
-\]
+$$
 
 so that these paths are equivalent. The proof could also be given immediately 
 by considering the diagram on the left, which is supplied here to give a better 
@@ -77,9 +77,9 @@ understanding of what's going on.
 
 To prove the other direction, suppose that we have such a natural bijection given by some $\phi$.
 
-\[
+$$
 \phi_{C}: \hom_{\dd}(R, C) \isomarrow \hom_{\cc}(D, F(C))
-\]
+$$
 
 Then in particular 
 we have that $\hom_{\dd}(R, R) \cong \hom_{\cc}(D, F(R))$. 
@@ -103,18 +103,18 @@ completes the proof.
 In the proof we demonstrated above, we did something weird. That is, we 
 discussed this so-called natural isomorphism 
 
-\[
+$$
 \phi_C: \hom_{\dd}(R, C) \to \hom_{\cc}(D, F(C)).
-\]
+$$
 
 However, at this point we've only really seen natural isomorphisms
 *between functors*. Does this mean what we really had was a 
 natural transformation between two functors?
 The answer is yes; the proof inadvertently derived the natural isomorphism
 
-\[
+$$
 \phi: \hom_{\dd}(R, -) \to \hom_{\cc}(D, F(-))   
-\]
+$$
 
 which, by the proposition above, exists only when 
 we have a universal morphism $u: D \to F(R)$ from $D$ to $F$.
@@ -126,9 +126,9 @@ Let $\cc$ have small hom-sets. We say a functor
 $K: \cc \to **Set**$
 is representable when there exists an object $R$ and a natural isomorphism
 
-\[
+$$
 \psi: \hom_{\dd}(R, -) \to K.
-\]
+$$
 
 The object $R$ here is said to be the **representing object**
 for $K$. 
@@ -142,27 +142,27 @@ sent to its underlying set in **Set**. Another approach is to literally
 express the groups in terms of its elements, for this then tells us where it 
 is sent in **Set**. A simple way to do this is to consider the maps 
 
-\[
+$$
 \hom_{**Grp**}(\zz, G) = \{\text{Group homomorphisms } \phi: \zz \to G\}.
-\]
+$$
 
 This works since each such map $\phi: \zz \to G$ firstly 
 picks out some element $a$ so that $\phi(1) = a$. As this is a group homomorphism 
 we then see that $\phi(n) = a^n$. Hence the collection of all these maps 
 picks out all of the elements of $G$, so that we can say
 
-\[
+$$
 U(G) \cong \hom_{**Grp**}(\zz, G).
-\]
+$$
 
 We use an isomorphism since an equality is not exactly correct; we just know that 
 the two sets are going to have the same cardinality, and hence be isomorphic in **Set**. 
 Now, what this in the end means is that the forgetful functor is a representable, 
 since we have that 
 
-\[
+$$
 U:**Grp** \to **Set** \cong \hom(\zz, -) : **Grp** \to **Set**.
-\]
+$$
 
 This construction works due to the key property of the group homomorphism, so 
 that this can be repeated for **Ring**, $R$-**Mod**, etc. Hence many forgetful functors 
@@ -175,24 +175,24 @@ Let $(R, +, \cdot)$ be a ring and $(k, +, \cdot)$ a field.
 Suppose further that $R$ is $k$-algebra. 
 Recall that we can create the affine $n$-space of $R$ 
 
-\[
+$$
 A^n(R) = \{(x_1, \dots, x_n) \mid x_i \in R\}.
-\]
+$$
 
 Now suppose $\phi: R \to S$ is a morphism of $k$-algebras. Then 
 this induces a mapping 
 
-\[
+$$
 A^n(\phi):  A^n(R) \to A^n(S) \qquad (r_1, \cdots, r_n) \mapsto (\phi(r_1), \dots, \phi(r_n)).
-\]
+$$
 
 What we can realize now is that we have a functor on our hands (by of 
 course verifying the other necessary properties) between 
 $**Alg**_k$ and **Set**. 
 
-\[
+$$
 A^n: **Alg**_{k} \to **Set**.          
-\]
+$$
 
 Now recall from Example 2.\ref{example_free_algebra_universal}
 that if $F: **Set** \to **Alg**_k$ is the free functor 
@@ -203,35 +203,35 @@ $(F(X), i: X \to U(F(X)))$ from $X$ to the forgetful functor $U$.
 By Proposition \ref{prop_universality_bijection}, we thus have the 
 isomorphism
 
-\[
+$$
 \hom_{**Alg**_k}(F(X), R) 
 \cong 
 \hom_{**Set**}(X, U(R)).
-\]
+$$
  
 natural for all $R \in **Alg**_k$. 
 However, notice that if $X = \{x_1, \dots, x_n\}$, $\hom_{**Set**}(X, U(R))$ is nothing 
 more than the set of all functions which pick out $n$ elements of 
 $R$. In other words, 
 
-\[
+$$
 \hom_{**Set**}(X, U(R)) \cong A^n(R).    
-\]
+$$
 
 One can verify the naturality of the above bijection (I won't it's not too bad).
 Therefore we have that 
 
-\[
+$$
 \hom_{**Alg**_k}(F(X), R) \cong A^n(R)
 \implies 
 \hom_{**Alg**_k}(K\{X\}, R) \cong A^n(R).   
-\]
+$$
 
 so that we have a natural isomorphism between functors 
 
-\[
+$$
 \hom_{**Alg**_k}(K\{X\}, -) \cong A^n(-).
-\]
+$$
 
 What this then means is that $A^n(-)$ is a representable functor.         
 </span>
@@ -243,9 +243,9 @@ set $\text{Path}(X)$ consisting of all paths in the topological space $X$.
 If we recall that a path in $X$ can be represented by 
 a continuous function $f: [0,1] \to X$, we see that 
 
-\[
+$$
 \text{Path}(X) = \{f:[0,1] \to X \mid f \text{ is continuous}\} = \hom_{**Top**}([0,1], X).
-\]
+$$
 
 Hence we see that $\text{Path}: **Top** \to **Set**$ is a functor; 
 moreover, it is clearly representable since $\text{Path}(-) = \hom_{**Top**}([0,1], -)$. 
@@ -254,9 +254,9 @@ This example, however, can be taken even further: What about $n$-dimensional
 "paths?" To generalize this we can use simplicies. Denote $\Delta^n$ 
 as the $n$-simplex. Then we can establish the family of functors 
 
-\[
+$$
 \hom_{**Top**}(\Delta^n, -): **Top** \to **Set**
-\]
+$$
 
 which map simplicies to topological spaces; such continuous 
 functions provide  the foundation for singularly homology theory, 
@@ -295,9 +295,9 @@ exists a unique morphism $h: R \to C'$ such that the diagram below commutes.
 By Proposition \ref{prop_universality_bijection} we also have the natural 
 bijection 
 
-\[
+$$
 \hom_{\cc}(R, C) \cong \hom_{**Set**}(\{\bullet\}, K(C))   
-\]
+$$
 
 which is enough to establish a natural isomorphism 
 $\phi: \hom_{\cc}(R, -) \cong \hom_{**Set**}(\{\bullet\}, K(-))$. 
@@ -306,18 +306,18 @@ Now observe that for a given $C'$, each $f \in \hom_{**Set**}(\{\bullet\}, K(-))
 is just a function $f: \{\bullet\} \to K(R)$. Thus, each function can be represented 
 uniquely by an element $c \in K(C)$, which establishes the bijection 
 
-\[
+$$
 \hom_{**Set**}(\{\bullet\}, K(C)) \cong K(C)
-\]
+$$
 
 for each $C$. In fact, it's not difficult to show that  
 this bijection is natural.
 Therefore we see that we can connect our natural 
 bijections together
 
-\[
+$$
 \hom_{\cc}(R, -) \cong \hom_{**Set**}(\{\bullet\}, K(-)) \cong K(-)
-\]
+$$
 
 which demonstrates that $K: \cc \to **Set**$ is a representable functor. 
 
@@ -333,9 +333,9 @@ because $\phi: \hom_{\cc}(R, C) \to K(C)$ is a bijection, this means that
 $f(\bullet) = \phi(h: R \to C)$ for some **unique** morphism $h: R \to C$. In particular, the 
 above diagram tells us that 
 
-\[
+$$
 K(h)\big(\phi(1_R)\big) = \phi(h) \implies K(h)(u(\bullet)) = f(\bullet).
-\]
+$$
 
 In other words, we have that given any $f:\{\bullet\} \to K(C)$, 
 there exists a unique $h: R \to C$ such that the diagram commutes. 
@@ -357,12 +357,12 @@ previous work on representable functors in this section.
 Let $K: \cc \to **Set**$ be a functor. Then for every
 object $R$ of $\cc$, we have that 
 
-\[
+$$
 \hom_{**Set**^\cc}\big(\hom_{\cc}(R, -), K \big)
 \cong K(R)
 \implies
 \nat(\hom_{\cc}(R, -), K) \cong K(R)
-\]
+$$
 
 where $\nat(F, G)$ denotes the set of all natural
 transformations between functors $F, G$.
@@ -381,38 +381,38 @@ With this diagram, we can follow what happens to the identity morphism $1_R \in 
 As above, denote $\eta_R(1_R) = u \in K(R)$.
 The commutativity of the diagram above then tells us that 
 
-\[
+$$
 \eta_C(f: R \to C) = K(f)(u).
-\]
+$$
 
 This is great! This tells us the exact formula for every
 $\eta \in \nat(\hom_{\cc}(R, -), K)$. Moreover, each 
 formula is uniquely determined by some $u \in K(R)$. 
 This then motivates us to construct the mapping 
 
-\[
+$$
 y: \text{Nat}(\hom_{\cc}(R, -), K) \to K(R)
 \qquad 
 \eta \mapsto u
-\]
+$$
 
 where $u$ is the unique member of $K(R)$ such that $\eta_C(f: R \to C) = K(f)(u)$.
 
 Now consider any arbitrary member $r \in K(R)$. For each $C \in 
 \cc$, construct the mapping 
 
-\[
+$$
 \epsilon_C: \hom_{\cc}(R, C) \to K(R) 
 \qquad 
 \epsilon_C(f: R \to C) = K(f)(r)
-\]
+$$
 
 This defines a natural transformation, so that what we've constructed is a 
 mapping 
 
-\[
+$$
 y': K(R) \to \nat(\hom_{\cc}(R, -), K) \qquad r \mapsto \epsilon_C
-\]
+$$
 
 where $\epsilon_C(f: R \to C) = K(f)(u)$. 
 
@@ -421,9 +421,9 @@ we clearly have that $y' \circ y(\eta) = \eta$ and for any $r \in K(r)$
 we have that $y \circ y'(r) = r$. Hence we have a bijection between sets, so we 
 may conclude that 
 
-\[
+$$
 \nat(\hom_{\cc}(R, -), K) \cong K(R)
-\]
+$$
   
 as desired.
 </span>
@@ -449,16 +449,16 @@ assemble into natural transformations which we
 seek arise when we take any $\phi \in \hom(B,A)$ and set 
 each $\eta_C : \hom(A,C) \to \hom(B,C)$ equal to 
 
-\[
+$$
 (-) \circ \phi : \hom(A,C) \to \hom(B,C)
-\]
+$$
 
 for each $C \in \cc$. This clearly checks out since we  
 have that, for any $f: C \to D$ and $k: A\to C$,  
 
-\[
+$$
 (f \circ k)\circ \phi = f  \circ (k \circ \phi).
-\]
+$$
 
 The question now is: Is every natural transformation 
 derived from some $\phi  \in  \hom(B,A)$? We know that the answer 
@@ -467,11 +467,11 @@ The work of that exercise is proving this; however,
 we  immediately get the  result 
 by the Yoneda Lemma since we can just observe that
 
-\[
+$$
 \text{Nat}(\hom(A, -), \hom(B, -))
 \cong
 \hom(B, A).   
-\]
+$$
 
 Therefore, each  such natural transformation is created from 
 some $\phi  \in  \hom(B,A)$,  which is what we'd expect,
@@ -495,9 +495,9 @@ A natural source of presheaves is one which we are already familiar with.
 Given any locally small category $\cc$, we can take any 
 object $A$ of $\cc$ to produce the functor 
 
-\[
+$$
 \hom_{\cc}(-, A): \cc\op \to **Set**.
-\]
+$$
 
 This process itself induces a functor known as the *Yoneda embedding*.
 
@@ -507,9 +507,9 @@ Let $\cc$ be a locally small category. The **Yoneda embedding** on $\cc$
 is the functor $\bm{y}: \cc \to \text{Fun}(\cc\op, **Set**)$ where 
 for each object $A$
 
-\[
+$$
 \bm{y}(A) = \hom_{\cc}(-, A): \cc\op \to **Set**.  
-\]
+$$
 
 </span>
 The reason why this is called the Yoneda embedding is because of the functor's 
@@ -536,24 +536,24 @@ Recall that a *concrete category* $\cc$ is one which has a
 faithful functor $F: \cc \to **Set**$. To demonstrate this 
 for small categories, first define the functor 
 
-\[
+$$
 C: \text{Fun}(\cc\op, **Set**) \to **Set**
-\]
+$$
 
 where a presheaf $P: \cc\op \to **Set**$ is mapped as 
 
-\[
+$$
 (P: \cc\op \to **Set**) \mapsto \coprod_{A \in \text{Ob}(\cc)} P(A).
-\]
+$$
 
 Note that the indexing of the disjoint union is where we use locally smallness. 
 This functor is fully faithful (exercise). As it is fully faithful, and the Yoneda 
 embedding $\bm{y}: \cc \to \text{Fun}(\cc\op, **Set**)$ is faithful, 
 the composite functor 
 
-\[
+$$
 C \circ \bm{y}: \cc \to **Set**
-\]
+$$
 
 must be faithful. Hence we see that $\cc$ is concrete. 
 </span>
@@ -591,9 +591,9 @@ underlying set of elements $U(G)$ in **Set**.
 Specifically, we may write $\phi_{g'}(g) = g' \cdot g$ for each $g \in G$.
 Now what's a natural transformation $\eta$ between two functors?
 
-\[
+$$
 \eta: \hom_{\cc}(\bullet, -) \to \hom_{\cc}(\bullet, -).
-\]
+$$
 
 Since there is only one object of $\cc$, a natural transformation is *one* function 
 $\eta: U(G) \to U(G)$ such that for each $g'\in G$, 
@@ -603,11 +603,11 @@ the diagram below commutes.
 Now, Yoneda's Lemma gives us the bijection below, which we may denote as 
 $\psi$,
 
-\[
+$$
 \text{Nat}(\hom_{\cc}(\bullet, -), \hom_{\cc}(\bullet, -))
 \cong
 \hom_{\cc}(\bullet, \bullet) = U(G).
-\]
+$$
 
 If we now observe that 
 
@@ -617,9 +617,9 @@ which we may denote as $(P, \circ)$
 
 then we can extend the isomorphism $\psi: P \to U(G)$ to a group isomorphism 
 
-\[
+$$
 \psi: (P, \circ) \isomarrow (G, \cdot) 
-\]
+$$
 
 which is the statement of Cayley's Theorem.
 </span>
@@ -636,9 +636,9 @@ Let $F: \cc \to \dd$ be a functor. Then a pair $(R, u: F(R) \to D)$
 is universal from \universalFToD{$F$ to $D$} if and only if for each $C \in \cc$, we have the 
 natural bijection 
 
-\[
+$$
 \hom_{\cc}(C, R) \cong \hom_{\dd}(F(C), D).
-\]
+$$
 * ****2.**** Prove the following dual counterpart to Proposition \ref{proposition:representable_if_and_only_if}:
 Let $\cc$ be a locally small category, and suppose $K: \cc \to **Set**$ 
 is a functor. Then $K$ is corepresentable, with representing object $R$, if and only if 

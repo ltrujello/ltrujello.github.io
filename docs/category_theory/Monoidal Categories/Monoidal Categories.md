@@ -20,18 +20,18 @@ examples.
 Consider the category **Set**. Then for two sets $A$, $B$, we can take 
 their cartesian product to create a third set 
 
-\[
+$$
 A \times B = \{(a, b) \mid a \in A, b \in B\}.
-\]
+$$
 
 We also know that given three sets $A, B, C$, we have an isomorphism 
 $A \times (B \times C) \cong (A \times B) \times C$. The bijection is given 
 by the function 
 
-\[
+$$
 \alpha_{A, B, C}: A \times (B \times C) \isomarrow (A \times B)\times C \qquad 
 (a, (b,c)) \mapsto ((a, b), c).
-\]
+$$
 
 In addition, there is a particularly special set $\{\bullet\}$, the one element set. 
 For this set, we know that $\{\bullet\} \times A \cong A \times \{\bullet\}  \cong A$. 
@@ -66,7 +66,7 @@ For two vector spaces $U$, $V$, we may take their tensor product to create a thi
 vector space over $k$. There are many ways to describe $U \otimes V$; here is 
 one of them:
 
-\[
+$$
 U \otimes V = \left\{ u \otimes v \;\middle|\; u \in U ,\, v \in V \quad \text{ such that } \quad
 \begin{aligned}
 & 1.\; (u_1 + u_2) \otimes v = u_1 \otimes v + u_2 \otimes v\\
@@ -74,7 +74,7 @@ U \otimes V = \left\{ u \otimes v \;\middle|\; u \in U ,\, v \in V \quad \text{ 
 & 3.\; c (u \otimes v) = (c u) \otimes v = u \otimes (cv), c \in k
 \end{aligned}
 \right\}
-\]
+$$
 
 Moreover, if $U$, $V$ have bases $\{e_i\}_{i \in I}$, $\{f_j\}_{j \in J}$, then the 
 basis of $U \otimes V$ is $\{e_i \otimes f_j\}_{(i,j) \in I \times J}$. 
@@ -86,15 +86,15 @@ such a linear transformation, it suffices to define it on the basis.
 Thus, let $W$ have basis $\{g_{\ell} \}_{\ell \in L}$.
 Then we define 
 
-\[
+$$
 \alpha_{U, V, W}: U \otimes (V \otimes W) \isomarrow (U \otimes V) \otimes W 
-\]
+$$
 
 where on the basis elements 
 
-\[
+$$
 \alpha_{U,V,W}(e_i \otimes (f_j \otimes g_{\ell})) = (e_i \otimes f_j) \otimes g_{\ell}.
-\]
+$$
 
 This establishes our desired isomorphism. 
 
@@ -127,15 +127,15 @@ story is the same. The key ingredients are:
 * There is some product $\otimes: \cc \times \cc \to \cc$ (specifically, it is a bifunctor)
 * For all $A, B, C \in \cc$, there is a natural isomorphism 
 
-\[
+$$
 \alpha_{A,B,C}: A \otimes (B \otimes C) \isomarrow (A \otimes B) \otimes C
-\]
+$$
 * There is a special object $I$ of $\cc$ such that, for any object $A$, we have 
 the natural isomorphisms 
 
-\[
+$$
 \lambda_{A}: I \otimes A \isomarrow A \qquad \rho_{A}: A \otimes I \isomarrow A     
-\]
+$$
 
 
 The fact that we keep seeing these patterns in many categories is what motivates the following definition.
@@ -261,23 +261,23 @@ Now consider a third $R$-module $P$; then we have two ways of constructing
 the tensor product. To demonstrate that we may identify these objects up 
 to isomorphism, construct the maps
 
-\[
+$$
 f: (M \otimes N)\times P \to M \otimes (N \otimes P)
 \qquad 
 \left(\sum_{i}m_i\otimes n_i, p\right)
 \mapsto 
 \sum_{i}m_i \otimes (n_i \otimes p)
-\]
+$$
 
 and 
 
-\[
+$$
 f': M \times (N \otimes P) \to (M \otimes M) \otimes P
 \qquad 
 \left(m, \sum_{j}n_j\otimes p_j  \right)
 \mapsto 
 \sum_{j}(m \otimes n_j) \otimes p_j.
-\]
+$$
 
 These maps are bilinear due to the bilinearity of $\otimes$. Hence we see 
 that the universal property of the tensor product gives us unique map $\alpha$ and 
@@ -295,22 +295,22 @@ is, we can determine that $\alpha$ and $\alpha'$ are "shift maps", i.e,
 
 Hence we see that $\alpha$ and $\alpha'$ are inverses, so what we have is an associator: 
 
-\[
+$$
 \alpha_{M,N,P} : (M\otimes N)\otimes P \isomarrow M\otimes(N\otimes P).
-\]
+$$
 
 Now consider the trivial $R$-module, denoted $I = \{0\}$. For any $R$-module $M$ we have evident maps
 
-\[
+$$
 \sum_{i} 0\otimes m_i \mapsto m_i \qquad \sum_{i}m_i\otimes 0 \mapsto 0    
-\]
+$$
 
 which provide isomorphisms, so that we have left and right associators 
 
-\[
+$$
 \lambda_M: I \otimes M \isomarrow M \qquad 
 \rho_M: M\otimes I \isomarrow M.
-\]
+$$
 
 Finally, the triangular and pentagonal diagrams are commutative since shifting
 the tensor product on individual elements does not change (up to isomorphism) the 
@@ -325,9 +325,9 @@ where $I = \{(0)_n\}_{n=1}^{\infty}$ is the trivial graded $R$-module
 and where we define
 the monoidal product as $M \otimes N = \{(M \otimes N)_n\}_{n=1}^{\infty}$ where  
 
-\[
+$$
 (M \otimes N)_n = \bigoplus_{i + j = n}M_i \otimes N_j.
-\]
+$$
 
 To show this monoidal, the first thing we must check is that we have an associator. 
 Towards this goal, consider three graded $R$-modules $M = \{M_n\}_{n = 1}^{\infty}$,
@@ -356,24 +356,24 @@ with direct sums and in the fourth step we used the canonical associator
 regarding the tensor products of three element. 
 Thus we see that we have an associator 
 
-\[
+$$
 \alpha: M \otimes (N \otimes P) \isomarrow (M \otimes N)\otimes P
-\]
+$$
 
 which as a graded module homomorphism, acts on each level as 
 
-\[
+$$
 \alpha_m: [M \otimes (N \otimes P)]_m \isomarrow [(M \otimes N) \otimes P]_m
-\]
+$$
 
 where in each coordinate of the direct sums we apply an instance of the associator 
 $\alpha'$ between the tensor product of three $R$-modules. The naturality of this 
 associator is inherited from $\alpha'$.
 In addition, we have natural left and right unitors 
 
-\[
+$$
 \lambda_M: I \otimes M \isomarrow M \qquad \rho_M: M \otimes I \isomarrow M
-\]
+$$
 
 where on each level we utilize the natural left and right unitors for non-graded 
 $R$-modules.
@@ -385,33 +385,33 @@ Let $(M, \otimes, I, \alpha, \rho, \lambda)$ be a monoidal category, $\cc$ any o
 the functor category
 $\cc^M$ is a monoidal category. We treat the constant functor $I: \cc \to M$ where 
 
-\[
+$$
 I(A) = I \text{ for all } A
-\]
+$$
 
 as the identity element, and we can define a tensor product on this 
 category as follows: on objects $F, G: \cc \to M$, we define $F\boxtimes G$ 
 as the composite
 
-\[
+$$
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_13.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-\]
+$$
 
 which can be stated pointwise as $(F\boxtimes G)(C) = F(C)\otimes G(C)$. On morphisms, 
 we have that if $\eta: F_1 \to F_2$ and $\eta': G_1 \to G_2$ are natural 
 transformations, then we say $\eta \boxtimes \eta': F_1\boxtimes G_1 \to F_2 \boxtimes G_2$ 
 is a natural transformation, where we define 
 
-\[
+$$
 (\eta \boxtimes \eta')_A = \eta_A \otimes \eta'_A: F_1(A)\otimes G_1(A) \to F_2(A)\otimes G_2(A).
-\]
+$$
 
 Note that such a natural transformation is well-defined 
 as the diagram below commutes
 
-\[
+$$
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_14.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
@@ -419,26 +419,26 @@ as the diagram below commutes
 
 <img src="../../../png/category_theory/chapter_7/tikz_code_1_15.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 
-\]
+$$
 
 since $\otimes: M \times M \to M$ is a bifunctor.
 Finally, for functors $F, G, H: \cc \to M$ define the associator 
 $\alpha'_{F, G, H}: F\boxtimes(G\boxtimes H) \isomarrow (F\boxtimes (G \boxtimes H))$ 
 as the natural transformation where for each object $A$
 
-\[
+$$
 (\alpha'_{F, G, H})_A = \alpha_{F(A), G(A), H(A)}: F(A)\otimes (G(A)\otimes H(A))
 \to (F(A)\otimes G(A))\otimes H(A)
-\]
+$$
 
 and the unitors $\lambda'_F: I\boxtimes F \to F$ and $\rho'_F: F \boxtimes I \to F$ 
 as the natural transformations where for each object $A$ 
 
-\[
+$$
 (\lambda'_F)_A  = \lambda_A: I \otimes F(A) \to F(A)
 \qquad 
 (\rho'_F)_A = \rho_A: F(A)\otimes I \to F(A).
-\]
+$$
 
 One can then show that these together satisfy the pentagon and unit axioms. 
 </span>
@@ -451,13 +451,13 @@ Consider the category $\mathbb{P}$ whose objects are the natural numbers
 * **Objects.** The objects are $n = 0, 1,2, \dots$.
 * **Morphisms.** For any objects $n,m$ we have that 
 
-\[
+$$
 \hom_{\mathbb{P}}(n,m)=
 \begin{cases}
 S_n & \text{if } n = m\\
 \varnothing & \text{if} n \ne m.
 \end{cases}
-\]
+$$
 
 Note that there are many ways of constructing this category; we just present the 
 simplest. In general terms this is the countable disjoint union of the symmetric groups. 
@@ -467,9 +467,9 @@ What is interesting about this category is that it intuitively forms a strict mo
 category. That is, we can formulate a bifunctor $+:\mathbb{P}\times \mathbb{P} \to \mathbb{P}$
 on objects as addition of natural numbers and on morphisms as 
 
-\[
+$$
 \sigma \otimes \tau \in S_{n+m} 
-\]
+$$
 
 where $\sigma \in S_n$ and $\tau \in S_m$ and where $\sigma \otimes \tau$ denotes the 
 **direct sum permutation**. I could tell you in esoteric language and 

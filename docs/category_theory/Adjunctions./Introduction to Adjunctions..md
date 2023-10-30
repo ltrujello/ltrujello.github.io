@@ -14,9 +14,9 @@ as below.
 in categories. For example, adjunctions can explain why, for instance, given 
 two sets $X$, $Y$, we have the isomorphism 
 
-\[
+$$
 F(X \times Y) \cong F(X) * F(Y)    
-\]
+$$
 
 where $F: **Set** \to **Grp**$ is the free group functor and $*$ denotes the 
 \hyperref[example:free_product]{\textcolor{blue}{free product}}. They can also 
@@ -29,22 +29,22 @@ We begin with an example of an adjunction.
 Recall that for a fixed unital ring $R$ in $**Ring**$, we may 
 form the functor 
 
-\[
+$$
 R[-]: **Grp** \to R-**Alg** 
-\]
+$$
 
 which sends a group $G$ to its \hyperref[example:group_ring_functor]{\textcolor{blue}{group ring}} $R[G]$.
 Recall that 
 
-\[
+$$
 R[G] = \left\{ \sum_{g \in G}a_g g \;\middle|\; g \in G, \, a_g \in R, \text{ and } a_g = 0 \text{ for all but finitely many } a_g \right\}.
-\]
+$$
 
 Recall also that we can form the functor 
 
-\[
+$$
 (-)^{\times}: R**-Alg** \to **Grp**
-\]
+$$
 
 which sends an $R$-algebra $A$ to its group of units $A^{\times}$.
 These two functors are related in the following way. Consider a group $G$ and 
@@ -55,9 +55,9 @@ elements of the form $1_R g$, with $g \in G$, are units of $R[G]$. (The multipli
 inverse of such an element is $1_R g^{-1}$.) 
 This allows us to construct a group homomorphism
 
-\[
+$$
 i: G \to (R[G])^{\times} \qquad g \mapsto 1_R g.
-\]
+$$
 
 What is interesting about this is the following fact: $(G, i: G \to (R[G])^{\times})$
 is universal from \hyperref[definition:universal_morphism_from_D_to_F]{\textcolor{blue}{$G$ to $(-)^{\times}$}}.
@@ -74,18 +74,18 @@ By Proposition \ref{proposition:universality_bijection}, we then have the follow
 If $K$ is an $R$-algebra, then for each group $G$ there is a natural
 bijection
 
-\[
+$$
 \hom_{**Ring**}(R[G], K) \cong \hom_{**Grp**}(G, (K)^{\times})
-\]
+$$
 
 Specifically, the bijection is natural in $G$.
 
 But wait---There's more! For every ring $K$, there is a natural 
 ring homomorphism 
 
-\[
+$$
 \epsilon: R[(K)^{\times}] \to K \qquad \sum_{k \in K^{\times}}a_k k \mapsto z(a_k) k
-\]
+$$
 
 where $z(a_k) = 1_k$, the identity of $K$, if $a_k \ne 0$, and $z(a_k) = 0$ if $a_k = 0$. 
 The reason why we care about this is because $(K, R[(K)^{\times}] \to K)$
@@ -103,9 +103,9 @@ where $i$ is defined earlier, yields $j$. Moreover, the diagram commutes in this
 By Exercise \ref{exercise:universality_bijection}, if $K$ is a ring, then for every group $G$ 
 we have the following natural bijection 
 
-\[
+$$
 \hom_{**Grp**}(G, (K)^{\times})\cong \hom_{**Ring**}(R[G], K).
-\]
+$$
  
 Specifically, the bijection is natural in $K$. However, we just saw this isomorphism before!
 This demonstrates our first example of an adjunction. 
@@ -120,9 +120,9 @@ We say that $F, G$ form an **adjunction** and that
 $F$ is **left adjoint to $G$** (and so $G$ is **right adjoint to $F$**)
 if, for all $C \in \cc$, $D \in \dd$, there is a natural bijection 
 
-\[
+$$
 \hom_{\dd}\bigg(F(C), D\bigg) \cong \hom_{\cc}\bigg(C, G(D)\bigg) 
-\]
+$$
 
 </span>
 
@@ -138,13 +138,13 @@ functor is the left or the right adjoint.
 * In an adjunction, we are always going to have some 
 kind of bijection as above. But there are two different ways we could decide to write it:
 
-\[
+$$
 \hom_{\dd}(F(C), D) \cong \hom_{\cc}(C, G(D)) 
 \quad
 \text{ or }
 \quad
 \hom_{\cc}(C, G(D)) \cong \hom_{\dd}(F(C), D)
-\]
+$$
 
 This can potentially confuse us on which functor is the left adjoint, and which one is the right. 
 However, one thing that does not change in the above expressions is
@@ -171,9 +171,9 @@ The following are equivalent.
 $F$ is left adjoint to $G$ (and so $G$ is right adjoint to $G$).
 * **(*ii*.)** There exist natural transformations 
 
-\[
+$$
 \eta: I_{\cc} \to G \circ F \qquad \epsilon: F \circ G \to I_{\dd}
-\]
+$$
 
 such that
     * For each $C \in \cc$, the morphism 
@@ -189,9 +189,9 @@ such that
 <span style="display:block" class="proof">
 Since $F$ is left adjoint to $G$, we have the natural bijection 
 
-\[
+$$
 \hom_{\dd}(F(C), D) \cong \hom_{\cc}(C, G(D)).
-\]
+$$
 
 This is natural in $C$ and $D$.
 
@@ -202,9 +202,9 @@ universal from $C$ to $G$.
 However, the bijection holds for all $C$. Therefore, we obtain a family 
 of universal morphisms 
 
-\[
+$$
 \eta_C: C \to G(F(C)).
-\]
+$$
 
 Since this bijection is also natural in $C$, 
 we ultimately obtain a natural transformation $\eta: I_{\cc} \to G \circ F$. 
@@ -239,19 +239,19 @@ In that example, we found a pair functors
 \adjunction{**Grp**}{{R[-]}}{**Ring**}{(-)^{\times}}
 \end{center}that formed an adjunction with universal morphisms 
 
-\[
+$$
 i_G: G \to (R[G])^{\times}
 \qquad 
 \epsilon_K: R[(K)^{\times}] \to K
-\]
+$$
 
 for all groups $G$ and rings $K$. Hence $i_G$ is the unit of the adjunction, while 
 $\epsilon_K$ is the counit. 
 These units and counits are what allowed us to establish the bijection
 
-\[
+$$
 \hom_{**Ring**}(R[G], K) \cong \hom_{**Grp**}(G, (K)^{\times})
-\]
+$$
 
 natural in $G$ and $K$. Hence, the group ring functor $R[-]$ is left adjoint 
 to the group of units functor $(-)^{\times}$. 
@@ -275,15 +275,15 @@ Let $\eta$, $\epsilon$ be the unit and counit.
 
 For each $C, D$, the natural bijection
 
-\[
+$$
 \phi_{C,D}: \hom_\dd(F(C), D) \isomarrow \hom_\cc(C, G(D))
-\]
+$$
 
 is given by the function where for each $f: F(C) \to D$ and $g: C \to G(D)$, 
 
-\[
+$$
 \phi(f) = G(f) \circ \eta_C \qquad \phi^{-1}(g) = \epsilon_D \circ F(g).
-\]
+$$
 
 </span>
 
@@ -298,24 +298,24 @@ where $F$ is the free monoid functor and $U$ is the forgetful monoid functor.
 We previously saw that given a set $X$, there
 exists an inclusion morphism
 
-\[
+$$
 i_X: X \to U(F(X)) 
-\]
+$$
 
 and this morphism is universal from \universalDToF{$X$ to $U$}. 
 In addition, we know that the monoid homomorphism 
 
-\[
+$$
 \epsilon_M: F(U(M)) \to M 
-\]
+$$
 
 and this morphism is from \universalFToD{$F$ to $M$}. Therefore, we see that 
 $F$ and $U$ are adjoint functors; specifically, $F$ is left adjoint to $G$ and $G$ 
 is right adjoint to $F$, and we have the natural bijection 
 
-\[
+$$
 \hom_{**Mon**}(F(X), M) \cong \hom_{**Set**}(X, U(M)).
-\]
+$$
 
 Moreover, we know exactly how this bijection works. 
 
@@ -346,9 +346,9 @@ To have universality from $C$ to $G$, the diagram
 <img src="../../../png/category_theory/chapter_4/tikz_code_1_6.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 must commute. Hence we have a bijection 
 
-\[
+$$
 \hom_{\dd}({F(C), D}) \cong \hom_\cc({C, G(D)}).  
-\]
+$$
 
 Now suppose $h: C \to C'$. Then the dashed arrow 
 
@@ -411,9 +411,9 @@ Thus let $M$ be an $R$-module, and suppose there exists a morphism
 $f: A \to U(M)$. Then we can define a morphism $\phi: F(A) \to M$
 where 
 
-\[
+$$
 \phi(r \otimes a) = r\cdot f(a).
-\]
+$$
 
 Our construction ensures that this is a well-defined $R$-module
 homomorphism. Hence we clearly have the equality $U(\phi) \circ \eta_A =
@@ -444,9 +444,9 @@ Let $(F, G, \phi)$ and $(F', G, \phi')$ be two adjunctions
 between  $\cc$ and $\dd$. Then these adjoints give rise to the
 universal morphisms
 
-\[
+$$
 \eta_C : C \to G(F(C)) \quad \eta'_{C}: C \to G(F'(C))
-\]
+$$
 
 for every $C \in \cc$. Since these are both universal
 morphisms from $C$ to $G$, we know that they are isomorphic.
@@ -505,27 +505,27 @@ is
 <span style="display:block" class="proof">
 First, observe that the two given adjunctions give rise to 
 
-\[
+$$
 \hom_{\dd}(F(C), D) \cong \hom_{\cc}(C, G(D)) 
 \qquad 
 \hom_{\ee}(F'(D), E) \cong \hom_{\dd}(D, G'(E)).
-\]
+$$
 
 which are relations that are natural in objects $C, D$ and
 $E$. Observe that in the second relation, we can set $D =
 F(C)$. This then translates to 
 
-\[
+$$
 \hom_{\ee}(F'(F(C)), E) \cong \hom_{\dd}(F(C), G'(E)).
-\]
+$$
 
 Using the first relation, we know that 
 $\hom_{\dd}(F(C), G(E)) \cong \hom_{\cc}(C, G(G'(E)))$.
 Putting this together, we then have the bijection of homsets 
 
-\[
+$$
 \hom_{\ee}(F'\circ F(C)), E) \cong \hom_{\cc}(C, G \circ G'(E))
-\]
+$$
 
 which is natural in $C$ and $E$. Now, describing the
 unit and counit is a bit ugly, and not exactly necessary, since in
@@ -536,45 +536,45 @@ terms of the original ones.
 Observe that for any object $C$ of $\cc$, we have the universal
 morphism 
 
-\[
+$$
 \eta_C: C \to G(F(C)).
-\]
+$$
 
 Since $F(C) \in \dd$, we can use $\eta'$ that
 
-\[
+$$
 \eta'_{F(C)}: F(C) \to G'(F'(F(C))).            
-\]
+$$
 
 Finally, note that $G(\eta'_{F(C)}): G(F(C)) \to G(G'(F'(F(C))))$.
 However, we can precompose this with $\eta_C$ to have that 
 
-\[
+$$
 G(\eta'_{F(C)}) \circ \eta_C: C \to G(G'(F'(F(C)))).
-\]
+$$
 
 On the other hand, for any object $E$ of $\ee$ that 
 
-\[
+$$
 \epsilon'_E : F'(G'(E)) \to E.
-\]
+$$
 
 We also have $\epsilon_D : F(G(D)) \to D$ for any object $D
 \in \dd$. Hence, 
 we can set $D = G'(E)$ for some object $E$ of $\ee$
 to get
 
-\[
+$$
 \epsilon_{G'(E)} : F(G(G'(E))) \to G'(E).
-\]
+$$
 
 We can then get that $F'(\epsilon_{G'(E)}) : F'(F(G(G'(E))))
 \to F'(G'(E))$. Composing this with the original
 $\epsilon'_D$, we get that 
 
-\[
+$$
 \epsilon'_E \circ F'(\epsilon_{G'(E)}): F'(F(G(G'(E)))) \to E
-\]
+$$
  
 as desired. Now showing that these remain universal is not
 hard.
@@ -590,9 +590,9 @@ forgetful functor, and suppose $F: **Grp** \to **Ab**$ is
 the abelianization functor. That is, if $G$ is a group and $\phi:
 G \to G'$ is a group homomorphism then 
 
-\[
+$$
 F(G) = G/[G,G] \qquad F(\phi) : G/[G, G] \to G'/[G',G'].
-\]
+$$
 
 where $[G,G]$ is the commutator subgroup.
 

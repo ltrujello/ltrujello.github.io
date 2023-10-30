@@ -19,12 +19,8 @@ Say $(R, +, \cdot)$ is a commutative ring with $1 \ne 0$.
 We say that $D \subset R$ is a **multiplicative set**
 if 
 
-* [1.] $1 \in D$
-
-
-* [2.] $x \cdot y \in D$ for all $x, y \in D$.  
-
-
+* **1.** $1 \in D$
+* **2.** $x \cdot y \in D$ for all $x, y \in D$.
 
 Condition 1. is not really crucial. We just need to make
 sure that $D$ is nonempty. 
@@ -41,9 +37,9 @@ elements.
 Define a relation $\sim$ on $R \times D$ by saying $(a, b) \sim
 (c,d)$ whenever we can find $x \in D$ such that 
 
-\[
+$$
 x\cdot (a\cdot d - b \cdot c) = 0.
-\]
+$$
 
 Then $\sim$ is an equivalence relation on $R \times D$. 
 </span>
@@ -51,41 +47,38 @@ Then $\sim$ is an equivalence relation on $R \times D$.
 <span style="display:block" class="proof">
 We must show the three properties of an equivalence
 relation. 
-\begin{description}
-\item[Reflexivity.] $(a, b)\sim(a, b)$. Choosing $x = 1$,
+
+* **Reflexivity.** $(a, b)\sim(a, b)$. Choosing $x = 1$,
 then we see that 
 
-\[
+$$
 x\cdot(a\cdot b - a\cdot b) = 0.  
-\]
-
-
-\item[Symmetry.] $(a, b) \sim (c, d)$ if and only if $(c,
+$$
+* **Symmetry.** $(a, b) \sim (c, d)$ if and only if $(c,
 d) \sim (a, b)$. 
 
 Say $(a, b) \sim (c, d)$. We can find an $x \in D$ such
 that 
 
-\[
+$$
 x\cdot(a\cdot d - b \cdot c) = 0.
-\]
+$$
 
 Now consider 
 
-\[
+$$
 x\cdot (c\cdot b - d \cdot a) = (-1)\cdot[x\cdot (a\cdot d - b \cdot c)] = 0
-\]
+$$
 
-This shows that $(c, d) \sim (a, b)$ 
-
-\item[Transitivity.] If $(a, b) \sim (c, d)$ and $(c, d) \sim
+This shows that $(c, d) \sim (a, b)$
+* **Transitivity.** If $(a, b) \sim (c, d)$ and $(c, d) \sim
 (e, f)$, then $(a, b) \sim (e, f)$. 
 
 We can find $x, y \in D$ such that 
 
-\[
+$$
 x \cdot (a \cdot d - b \cdot c) = y \cdot (c \cdot f - d \cdot e) = 0.
-\]
+$$
 
 Denote $z = d \cdot x \cdot y$. This is an element of
 $D$ since it is a multiplicative set. Now 
@@ -97,21 +90,20 @@ y \cdot f [x \cdot (a \cdot d  - b \cdot c)] + x\cdot b[y \cdot(c \cdot f - d \c
 & = 0.
 \end{align*}
 
-\end{description}
 </span>
 \noindent We'll define the collection of all equivalence classes by the
 set 
 
-\[
+$$
 D^{-1}R = \left\{\frac{a}{b} \mid a \in R, b \in D  \right\}
-\]
+$$
 
 where 
 
-\[ 
+$$ 
 \dfrac{a}{b} = \big\{ (c, d) \in R \times D \mid (a ,
 b) \sim (c, d) \big\}.
-\]
+$$
 
 \textcolor{MidnightBlue}{**Why are we doing this?** Let's say that $R = \mathbb{Z}$, and
 $D = \mathbb{Z}\setminus\{0\}$. Then $D$ is a multiplicative
@@ -126,29 +118,21 @@ terms.}
 Let $R$ be a ring with identity $1 \ne 0$. 
 
 
-* [1.] $D^{-1}R$ is a commutative ring 
-
-
-* [2.] $D^{-1}R = \left\{\dfrac{0}{1}\right\}$ is
+* **1.** $D^{-1}R$ is a commutative ring
+* **2.** $D^{-1}R = \left\{\dfrac{0}{1}\right\}$ is
 the trivial ring if and only if $0 \in D$.
+* **3.** The units $(D^{-1}R)^\times$ contains 
 
-
-* [3.] The units $(D^{-1}R)^\times$ contains 
-
-\[
+$$
 D^{-1}D = \left\{ \frac{a}{b} \mid a, b \in D \right\}.
-\]
-
-
-
+$$
 
 </span>
 
 
 <span style="display:block" class="proof">
 
-* [1.]
-Define addition and multiplication. 
+* **1.** Define addition and multiplication. 
 
 <span style="display:block" class="lemma">
 The following is well-defined. 
@@ -162,9 +146,9 @@ The following is well-defined.
 Suppose that $(a_1, b_1) \sim (a_2, b_2)$ and $(c_1, d_1)
 \sim (c_2, d_2)$. We can find $x, y \in D$ such that 
 
-\[
+$$
 x \cdot (a_1b_2 - a_2b_1) = y \cdot[c_1d_2 - c_2d_1] = 0.
-\]
+$$
 
 Denote $z = xy \in D$. Then 
 
@@ -202,20 +186,17 @@ xa_2b_1[y(c_1d_2 - c_2d_1)]
 
 Hence $(a_1c_1, b_1d_1) \sim (a_2c_2, b_2d_2)$. Showing
 that $D^{-1}R$ is a commutative ring with these properties
-is straightforward. 
-
-
-
-* [2.] We show that $D^{-1}R$ is trivial if and only
+is straightforward.
+* **2.** We show that $D^{-1}R$ is trivial if and only
 if $0 \in D$. 
 
 Say $D^{-1}R = \left\{\dfrac{0}{1}\right\}$. Since $1 \in R$, we see that
 $\dfrac{1}{1} \in D^{-1}R$ so $\dfrac{1}{1} = \dfrac{0}{1}$. By
 definition, we can find an $x \in D$ such that 
 
-\[
+$$
 x \cdot (1 \cdot 1 - 0 \cdot 1) = 0
-\]
+$$
 
 so $x = 0$. Hence $0 \in D$. 
 
@@ -223,15 +204,10 @@ Now suppose $0 \in D$. Pick any $\dfrac{a}{b} \in D^{-1}R$.
 For $x = 0$, we have that $x \cdot (a \cdot 1 - b \cdot 0) =
 0$. Hence we see that $\dfrac{a}{b} = \dfrac{0}{1}$, so that
 $D^{-1}R = \left\{\dfrac{0}{1}\right\}$.
-
-
-
-* [3.] If $a, b \in D$, then $\dfrac{a}{b} \in
+* **3.** If $a, b \in D$, then $\dfrac{a}{b} \in
 D^{-1}R$ so that $\dfrac{a}{b} \cdot \dfrac{b}{a} =
 \dfrac{1}{1}$. Hence $\dfrac{a}{b} \in (D^{-1}R)^{*}$. That
-is, $DD^{-1} \subset (D^{-1}R)^*$. 
-
-
+is, $DD^{-1} \subset (D^{-1}R)^*$.
 
 </span>
 $D^{-1}R$ is the ring of fractions of $R$ by $D$. We also
@@ -248,26 +224,24 @@ Let $(R, +, \cdot)$ be a commutative ring with $1 \ne 0$, and $D
 \subset R$ be a multiplicative set. Denote $S = D^{-1}R = \{a/b
 \mid a \in R, b \in D\}$ as the *ring of fractions of $R$
 by $D$*. Then 
-\begin{description}
-\item[1.] Let $I$ be an ideal of $R$. Then $D^{-1}I =\{x/b
+
+* **1.** Let $I$ be an ideal of $R$. Then $D^{-1}I =\{x/b
 \mid x \in I, b \in D\}$ is an ideal of $S$. (This is called
 the *extension* of $I$ to $S$.)
-
-\item[2.] Let $J$ be an ideal of $S$. Define the ring
+* **2.** Let $J$ be an ideal of $S$. Define the ring
 homomorphism $\pi: R \to S$ which sends $r \mapsto r/1$. Then
 the preimage $\pi^{-1}(J)$ is an ideal of $R$. (This is
 called the *contraction* of $J$ to $R$.)
-
-\item[3.] For any ideal $J$ of $S$ we have that $D^{-1}[\pi^{-1}(J)] = J$.
+* **3.** For any ideal $J$ of $S$ we have that $D^{-1}[\pi^{-1}(J)] = J$.
 (That is, "extension is the left inverse of
 contraction.")
-\end{description}
+
 </span>
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[1.] To show this we proceed as follows. \\
+
+* **1.** To show this we proceed as follows. \\
 \underline{$\bm{D^{-1}I} $ **is nonempty.**}\
 \[1.2ex]
 Observe that since $D$ is a multiplicative set we have that $1
@@ -306,9 +280,7 @@ multiplicative set, we also see that $dd' \in D$. Hence, we
 see that $\dfrac{ri}{dd'} \in D^{-1}I$, so that $s\cdot a \in
 D^{-1}I$ if $s \in S$ and $a \in D^{-1}I$.\\
 Thus in total we have that $D^{-1}I$ is an ideal of $S$.
-
-\item[2.]
-To show this is an ideal, we proceed as follows.\\
+* **2.** To show this is an ideal, we proceed as follows.\\
 \underline{$\bm{\pi^{-1}(J)} $ **is nonempty.**}\\[1.2ex]
 Observe that if $J$ is nonempty, then $\dfrac{0}{1} \in J$. This
 is because if $J$ is an ideal, then $sj \in J$ for all $s \in
@@ -373,9 +345,8 @@ Now suppose that $r \in R$ and $a \in \pi^{-1}(J)$. Then $\pi(a) =
 Observe that since $J$ is an ideal of $S$, $\frac{r}{1} \cdot \frac{a}{1}
 \in R$. Hence we see that $\pi(r \cdot a) \in J$, so that $r \cdot
 a \in \pi^{-1}(J)$ whenever $r \in R$, $a \in \pi^{-1}(J)$, as
-desired. 
-
-\item[3.] We can prove equality between the sets by demonstrating
+desired.
+* **3.** We can prove equality between the sets by demonstrating
 mutual subset properties. \\
 \noindent\underline{$\bm{D^{-1}[\pi^{-1}(J)] \subset J}$}\
 \[1.2ex]
@@ -422,7 +393,7 @@ that $J \subset D^{-1}[\pi^{-1}(J)]$ as desired.
 
 With both directions, we can then conclude that
 $D^{-1}[\pi^{-1}(J)] = J$, which is what we set out to show.
-\end{description}
+
 </span>
 
 
@@ -432,21 +403,16 @@ Let $(R, +, \cdot)$ be a commutative ring with $1 \ne 0$, and $D
 with the property that if $d \cdot x \in P$ for $d \in D$ then $x
 \in P$. Then the following are equivalent.
 
-* [i.] $P$ is a prime ideal of $R$ with $P \cap D = \varnothing$
-
-
-* [ii.] $D^{-1}P$ is a prime ideal of the ring of fractions
-$D^{-1}R$.  
-
-
+* **i.** $P$ is a prime ideal of $R$ with $P \cap D = \varnothing$
+* **ii.** $D^{-1}P$ is a prime ideal of the ring of fractions
+$D^{-1}R$.
 
 </span>
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[$\bm{i \implies ii}$.]
-Suppose $P$ is disjoint with $D$. Then we show that $D^{-1}P$
+
+* **$\bm{i \implies ii}$.** Suppose $P$ is disjoint with $D$. Then we show that $D^{-1}P$
 is a prime ideal of $D^{-1}R$.\\
 \noindent\underline{$\bm{D^{-1}P}$** is nonempty.**}\
 \[1.2ex]
@@ -459,7 +425,7 @@ $b = \dfrac{p_2}{d_2}$. Then we see that
 \[
 a - b = \frac{p_1d_2 - p_2d_1}{d_1d_2}.
 \]
-
+ 
 Observe that $p_1d_2, p_1d_2 \in P$ since $P$ is an ideal of
 $R$. Hence, $p_1d_2 - p_2d_1 \in P$, and since $d_1d_2 \in D$,
 we have that $a - b \in D^{-1}P$ whenever $a, b \in D^{-1}P$.
@@ -485,15 +451,13 @@ $r_1,r_2 \in R$ and $d_1,d_2 \in D$. Now
 \[
 a \cdot b \in D^{-1}P \implies \frac{r_1r_2}{d_1d_2} \in D^{-1}P.
 \]
-
+ 
 Then we see that $r_1r_2 \in P.$ Since $P$ is a prime ideal
 disjoint with $D$, we see that $r_1 \in P$ or $r_2 \in P$ and
 $r_1,r_2 \not\in D$ by assumption. Therefore, we see that $a
 \in D^{-1}P$ or $b \in D^{-1}P$, so that $D^{-1}P$ is a prime
-ideal. 
-
-\item[$\bm{ii \implies i}$.] 
-Suppose $D^{-1}P$ is a prime ideal of $D^{-1}R$. 
+ideal.
+* **$\bm{ii \implies i}$.** Suppose $D^{-1}P$ is a prime ideal of $D^{-1}R$. 
 \
 \[1.2ex]
 \underline{$\bm{P}$ **is nonempty**.}\\[1.2ex]
@@ -554,7 +518,7 @@ The fact that $\dfrac{p_1}{d_1} \in D^{-1}P$ or
 $\dfrac{p_2}{d_2} \in D^{-1}P$ implies that $p_1 \in P$ or
 $p_2 \in P$. Hence we see that $p_1p_2 \in P \implies p_1 \in
 P$ or $p_2 \in P$, which proves that $P$ is a prime ideal.
-\end{description}
+
 With both directions proven, we can conclude that the two given
 statments are in fact equivalent.
 </span>
@@ -597,21 +561,19 @@ ideal $M$, then we say that $R$ is a **local ring**.
 <span style="display:block" class="theorem">
 Let $(R, +, \cdot)$ be an integral domain, and $P$ be a prime
 ideal of $R$. 
-\begin{description}
-\item[1.] The set $D = R - P$ is a *multiplicative set*.
 
-\item[2.] The *localization* of $R$ at $P$, $R_P =
-D^{-1}R$, is an integral domain. 
-
-\item[3.] The ring $R_P$ is a *local* ring i.e., $R_P$ has
+* **1.** The set $D = R - P$ is a *multiplicative set*.
+* **2.** The *localization* of $R$ at $P$, $R_P =
+D^{-1}R$, is an integral domain.
+* **3.** The ring $R_P$ is a *local* ring i.e., $R_P$ has
 a unique maximal ideal $M_P$.
-\end{description}
+
 </span>
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[1.] First we show that $1 \in D$. 
+
+* **1.** First we show that $1 \in D$. 
 Suppose $P$ is a prime ideal such that $R \ne P$. Then
 observe that $1 \not\in P$. For if $1 \in P$, then for any $r
 \in R$, we'd see that 
@@ -632,8 +594,7 @@ negative of the statement is true: if $p_1 \not\in P$ and $p_2
 Therefore for any $x, y
 \in D =R - P$, we see that $xy \not\in P$. Hence $xy \in D$, which
 proves the second property.
-
-\item[2.] Since we already know that $R_P$ is a commutative ring,
+* **2.** Since we already know that $R_P$ is a commutative ring,
 it suffices to show that there are no zero divisors. Suppose
 on the contrary that $\dfrac{a}{b}, \dfrac{c}{d} \in R_P$ are
 zero divisors of each other. Hence, $a \ne 0$ and $c \ne 0$.
@@ -654,9 +615,8 @@ $ac \ne 0$. But $x$ is also nonzero, while $x \cdot (ac) =
 0$. This cannot happen since $R$ is an integral domain, so we
 have a contradiction. Therefore there are no zero divisors,
 and since $R_P$ is a commutative, this makes it an integral
-domain. 
-
-\item[3.] Let $M_P = D^{-1}P$. We'll show that this is our unique,
+domain.
+* **3.** Let $M_P = D^{-1}P$. We'll show that this is our unique,
 maximal ideal. 
 
 First observe that in the previous theorem, if $P$ is a prime
@@ -695,8 +655,8 @@ have a contradiction, so we see that $M_P = D^{-1}P$ is in fact maxmial.
 Since we assumed $I$ was *any* ideal of $D^{-1}R$, this
 also proves that $M_P$ is a unique maximal ideal, since what we
 showed is that any other ideal is automatically contained in
-$M_P$. 
-\end{description}
+$M_P$.
+
 </span>
 
 As an example, consider the prime ideal $\{0\}$ of the ring
@@ -715,18 +675,18 @@ Let $(R, +, \cdot)$ be an integral domain, and $P$ be a prime
 ideal of $R$. Let $R_P$ be the localization of $R$ at $P$, and
 $M_P$ be its unique maximal ideal. Consider the map $\phi: R/P
 \to R_P/M_P$ which sends $r + P \mapsto r/1 + M_P$. 
-\begin{description}
-\item[1.] $\phi$ is a well-defined, injective ring
-homomorphism. 
-\item[2.] $\phi$ is an isomorphism if $P$ is a
-maximal ideal. 
-\end{description}
+
+* **1.** $\phi$ is a well-defined, injective ring
+homomorphism.
+* **2.** $\phi$ is an isomorphism if $P$ is a
+maximal ideal.
+
 </span>
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[1.]     \underline{**Well-defined.**}\\ First observe that this function is
+
+* **1.** \underline{**Well-defined.**}\\ First observe that this function is
 well-defined. Suppose that $r + P = r' + P$; that is, $r = r'
 + p$ for some $p \in P$. Observe that 
 
@@ -746,91 +706,31 @@ this function is well-defined.
 \\
 \underline{**Ring homomorphism.**}\\
 We demonstrate that $\phi: R/P \to R_P/M_P$ is a ring
-homomorphism. 
-\begin{description}
-\item[$\bm{\phi(a + b) = \phi(a) + \phi(b)}$.]
-Let $a = r + P$ and $b = r' + P$ be elements or $R/P$.
-Then
+homomorphism.
+    * **$\bm{\phi(a + b) = \phi(a) + \phi(b)}$.** Let $a = r + P$ and $b = r' + P$ be elements or $R/P$.
+    Then
 
-\begin{align*}
-\phi(a + b) = \phi\big((r + r') + P \big)
-& = \frac{r + r'}{1} + M_P\\
-& = \frac{r}{1} + \frac{r'}{1} + M_P\\
-& = \left( \frac{r}{1} + M_P\right) + \left(\frac{r'}{1} + M_P\right)\\
-& = \phi(a) + \phi(b)
-\end{align*}
+    \begin{align*}
+    \phi(a + b) = \phi\big((r + r') + P \big)
+    & = \frac{r + r'}{1} + M_P\\
+    & = \frac{r}{1} + \frac{r'}{1} + M_P\\
+    & = \left( \frac{r}{1} + M_P\right) + \left(\frac{r'}{1} + M_P\right)\\
+    & = \phi(a) + \phi(b)
+    \end{align*}
+    
+    which is what we set out to show.
+    * **$\bm{\phi(ab) = \phi(a)\phi(b)}$.** Again, suppose $a
+    = r + P$ and $b = r' + P$. Then observe that 
 
-which is what we set out to show.
-\item[$\bm{\phi(ab) = \phi(a)\phi(b)}$.] Again, suppose $a
-= r + P$ and $b = r' + P$. Then observe that 
+    \begin{align*}
+    \phi(ab) = \phi\big( (r + P)(r' + P) \big) & = \phi(rr' + P)\\
+    & = \frac{rr'}{1} + M_P\\
+    & = \left(\frac{r}{1} + M_P\right)\left(\frac{r'}{1} + M_P\right)\\
+    & = \phi(a)\phi(b)
+    \end{align*}
 
-\begin{align*}
-\phi(ab) = \phi\big( (r + P)(r' + P) \big) & = \phi(rr' + P)\\
-& = \frac{rr'}{1} + M_P\\
-& = \left(\frac{r}{1} + M_P\right)\left(\frac{r'}{1} + M_P\right)\\
-& = \phi(a)\phi(b)
-\end{align*}
-
-which is what we set out to show. 
-\end{description}
-With these two properties, we have that $\phi: R/P \to
-R$ is a ring homomorphism.
-\\
-\\
-\underline{**Injectivity.**}\\
-Next we show that this is an injective function. Suppose $r +
-P,r' + P \in D^{-1}R$ such that 
-
-\[
-\phi(r + P)= \phi(r' + P).
-\]
-
-Then we have that $\dfrac{r}{1} + M_P = \dfrac{r'}{1} + M_P$. In
-other words, we see that 
-
-\[
-\frac{r}{1} = \frac{r'}{1} + \frac{a}{b}
-\]
-
-for some $\dfrac{a}{b} \in M_P$. This further implies that
-$\dfrac{r}{1} = \dfrac{r'b + a}{b}$. Hence, $(r, 1) \sim (r'b
-+ a, b)$. For this equivalence to
-occur, there must exist an element $x \in D$ such that 
-
-\[
-x\cdot(rb - (r'b + a)) = 0.
-\]
-
-Since $R$ is an integral domain, and $x \ne 0$, we require
-that $rb = r'b + a$. Rearranging, we see that this implies
-that 
-
-\[
-rb - r'b = a \implies (r - r')b = a.
-\]
-
-The above equality implies that $(r - r')b \in P$; recall that
-$\dfrac{a}{b} \in M_P = D^{-1}P$, so that $a \in P$
-and $b \in D = R - P$. 
-
-Since $P$ is a prime ideal, we thus see that either $r -
-r' \in P$ or $b \in P$. Since we just said that $b \not\in P$,
-we must have that $r - r' \in P.$ In other words, 
-
-\[
-r - r' = p \implies r = r' + p
-\]
-
-for some $p \in P$. Hence, 
-
-\[
-r + P = r' + p + P = r' + P.   
-\]
-
-Therefore we see that $\phi(r + P) = \phi(r' + P) \implies r +
-P = r' + P$, so that $\phi$ is injective.
-
-\item[2.] Suppose $P$ is a maximal ideal (in addition to being
+    which is what we set out to show.
+* **2.** Suppose $P$ is a maximal ideal (in addition to being
 prime). To demonstrate that $\phi: R/P \to R_P/M_P$ is an
 isomorphism, it suffices to show that $\phi$ is surjective,
 since in the previous step we already showed that it was
@@ -891,8 +791,8 @@ any $\dfrac{a}{b} + M_P$, there exists an $r + P\in R/P$ such that
 $\phi(r + P) = \dfrac{a}{b} + M_P$. In particular, $\phi(0 + P) =
 \dfrac{0}{1} + M$. Therefore $\phi$ is surjective,
 and as we already showed it is injective, this makes it an
-isomorphism. 
-\end{description}
+isomorphism.
+
 </span>
 
 

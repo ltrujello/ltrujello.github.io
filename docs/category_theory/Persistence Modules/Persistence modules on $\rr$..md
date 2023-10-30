@@ -30,9 +30,9 @@ as follows. First observe that since $S \subset \rr$, there exists
 a restriction functor 
 $R: \cc^{\rr} \to \cc^{S}$, which acts as a restriction (hence the naming $R$): 
 
-\[
+$$
 R(F: \rr \to \cc) = F\big|_{S}: S \to \cc.
-\]
+$$
   
 How can we write a functor going in the opposite direction? That is, given a
 persistence module which acts on $S$, 
@@ -48,7 +48,7 @@ One way we may extend a persistence module $K: S \to \cc$ in $\cc^S$ to
 a persistence module in $\cc^{\rr}$ is to define a functor $\overline{K}: \rr \to \cc$ 
 where 
 
-\[
+$$
 \overline{K}(r) = 
 \begin{cases}
 I & \text{if } s < s_1\\
@@ -60,7 +60,7 @@ K(r_n) & \text{if } r > s_n
 I & \text{if } r < \text{min}(S)\\
 K(s_r) & \text{where } s_r \text{ is the largest } s_r \in \text{ S such that } s_r \le r.
 \end{cases}
-\]
+$$
 
 Now consider a morphism 
 $\eta: K \to P$ in $\cc^{S}$; that is, a natural transformation. 
@@ -79,13 +79,13 @@ of a natural transformation.
 We can extend this to a natural transformation $\overline{\eta}: \overline{K} \to \overline{P}$ 
 by stating 
 
-\[
+$$
 \overline{\eta}_r = 
 \begin{cases}
 1_I & \text{if } r < s_1  \text{, where } I \text{ is initial}\\
 \eta_{s_r} & \text{where } s_r \text{ is the largest } s_r \in S \text{ such that } s_r \le r. 
 \end{cases}
-\]
+$$
 
 
 \subsection*{Adjoint Functors}
@@ -98,9 +98,9 @@ where $E$ can be read as *extends*, then we overall have
 We can now demonstrate that this pair of functors gives rise to an adjunction; there 
 a few ways to do this. We'll demonstrate that 
 
-\[
+$$
 \hom_{\cc^{S}}(K, P_S) \cong \hom_{\cc^{\rr}}(\overline{K}, P)
-\]
+$$
  
 is natural, where $P_S = \text{R}(P)$ and $\overline{K} = E(K)$. Towards this 
 goal, consider a morphism $\eta: K \to P_S$. Then we have something like this 
@@ -125,9 +125,9 @@ where $j : s_i \to r$.
 <img src="../../../png/category_theory/chapter_11/tikz_code_1_8.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 Therefore, in this case we define 
 
-\[
+$$
 \eta'_{r} := P(j) \circ \eta_{s_i}.
-\]
+$$
 
 which necessarily forces commutativity, and hence demonstrating 
 naturality of $\eta'$. Now what if $r < s_1$ or $s_n < s$? In the first case, 
@@ -137,27 +137,27 @@ $K(r) = I$ if $r < s_1$}.
 By uniqueness of this morphism we get a commutative square. 
 In the second case, we proceed as above. Therefore 
 
-\[
+$$
 \eta'_r = 
 \begin{cases}
 i_{P(r)}: I \to P(r) & \text{if } r < s_1\\
 P(j: s_i \to r) \circ \eta_{s_i} & \text{where } s_i \text{ is the largest } s \in S \text{ such that } s \le r. 
 \end{cases}
-\]
+$$
 
 Therefore, we can define a map $\textcolor{Blue}{\phi}: \hom_{\cc^S}(K,P_S) \to \hom_{\cc^{\rr}}(\overline{K}, P)$ 
 where
 
-\[
+$$
 \phi(\eta: K \to P_S) = \eta': \overline{K} \to P.
-\]
+$$
  
 Consider the map $\psi: \hom_{\cc^{\rr}}(\overline{K}, P) \to \hom_{\cc^S}(K, P_S)$
 where 
 
-\[
+$$
 \psi(\sigma: \overline{K} \to P) = \sigma': K \to P_S
-\]
+$$
 
 where we set $\sigma'_s = \sigma_s$. While this map is particularly boring, 
 we're discussing it because we can now see that $\psi$ and $\phi$ are inverses of 
@@ -173,24 +173,24 @@ Consider the squares below, which we do not yet know commutes.
 
 Note that on one hand, 
 
-\[
+$$
 \overline{\alpha}_r = 
 \begin{cases}
 1_I & \text{if } r < s_1  \text{, where } I \text{ is initial}\\
 \alpha_{s_r} & \text{where } s_r \text{ is the largest } s_r \in S \text{ such that } s_r \le r. 
 \end{cases}
-\]
+$$
 
 and 
 
-\[
+$$
 \eta'_r
 = 
 \begin{cases}
 i_{P(r)}: I \to P(r) & \text{if } r < s_1\\
 P(j: s_i \to r) \circ \eta_{s_i} & \text{where } s_i \text{ is the largest } s \in S \text{ such that } s \le r. 
 \end{cases}
-\]
+$$
 
 so that 
 

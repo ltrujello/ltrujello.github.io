@@ -59,9 +59,9 @@ we can form
 intersection and unions between sets, or even compute power
 sets, to produce other sets. We also *think* we can also form sets such as 
 
-\[
+$$
 X = \{x \mid \phi(x) \}
-\]
+$$
 
 where $\phi$ is some logical condition of inclusion. However, this
 leads to paradoxes, one of the most famous known as Russel's
@@ -70,9 +70,9 @@ Paradox which we can describe as follows.
 \noindent**Russel's Paradox.**
 Let $X$ be a set such that 
 
-\[
+$$
 X = \{A \text{ is a set }\mid A \text{ is not a member of itself.}\}
-\]
+$$
 
 
 Now observe the following. 

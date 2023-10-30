@@ -46,15 +46,15 @@ objects $A, B, C$ and $D$ such that
 <img src="../../../png/category_theory/chapter_1/tikz_code_3_1.png" width="99%" style="display: block; margin-left: auto; margin-right: auto;"/>
 we have the equality 
 
-\[
+$$
 h \circ (g \circ f) = (h \circ g) \circ f.
-\]
+$$
 * **(4) **Identity action.**** For any $f \in
 \hom(\cc)$ where $f:A \to B$ we have that
 
-\[
+$$
 1_B \circ f = f = f \circ 1_A.
-\]
+$$
 
 </span>
 

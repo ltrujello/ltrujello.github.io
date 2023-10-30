@@ -16,9 +16,9 @@ adjunction $(F, I, \phi)$ is a **reflection** of $B$.
 </span>
 In the case of a reflection, we obtain the bijection of hom-sets 
 
-\[
+$$
 \hom_{\aa}(F(C),A) \cong \hom_{\cc}(C, I(A)) \implies \hom_{\aa}(F(C),A) \cong \hom_{\cc}(C, A) 
-\]
+$$
 
 which is natural in both $C$ and $A$. 
 
@@ -68,11 +68,11 @@ reflector, so that the adjunction is a reflection between
 $**Top**$ and $**CHaus**$. Consequently we have the
 bijection 
 
-\[
+$$
 \hom_{**Top**}(X, I(C)) \cong \hom_{**CHaus**}(\beta(X), C)
 \implies 
 \hom_{**Top**}(X, C) \cong \hom_{**CHaus**}(\beta(X), C).
-\]
+$$
 
 since $I(C)$ is technically no different than from $C$. This
 bijection is natural in both $X$ and $C$. 
@@ -90,9 +90,9 @@ Now consider the functor $F : **Ab** \to
 * **Objects.** Let $G$ be an abelian group. Then 
 $F(G) = G_{TF}$ where 
 
-\[
+$$
 G_{TF} = \{g \in G \mid g^n \ne e \text{ for } n = 1, 2, 3, \dots\}.
-\]
+$$
  
 That is, it sends $G$ to its underlying abelian group of
 torsion-free elements. It's not hard to show this is an
@@ -101,9 +101,9 @@ abelian group.
 between abelian groups. Then we set $F(\phi) = \phi_{TF}$
 where 
 
-\[
+$$
 \phi_{TF}: G_{TF} \to H_{TF} \qquad \phi_{TF}(g) = \phi(g).
-\]
+$$
 
 Note that this definition will cause no issues, since
 $\text{ord}(g) = \text{ord}(\phi(g))$. Thus we simply
@@ -114,13 +114,13 @@ demonstrate that there exists a universal morphism $\eta_{G} :
 G \to I(F(G))$ for every $G \in **Ab**$. Hence we propose
 $\eta_{G}$ takes on the form 
 
-\[
+$$
 \eta_{G}(g) = 
 \begin{cases}
 g & \text{ if } \text{ord}(g) = \infty\\
 e & \text{ otherwise. }
 \end{cases}
-\]
+$$
 
 To show this is universal from $G$ to $I$, suppose we have a
 morphism $\phi: G \to I(H)$, where $H \in
@@ -138,18 +138,18 @@ e$; this is because $\text{ord}(\phi(g)) =
 with finite order is $e$. We then have that $g \in
 \ker(\phi)$. Therefore, 
 
-\[
+$$
 I(\psi)\circ \eta_G(g) = I(\psi)(e) = e = \phi(g).
-\]
+$$
 
 Hence $I(\psi) \circ \eta_G = \phi$ if $g \in
 \ker(\eta_{G})$.
 * **$\bm{g \not\in \ker(\eta_G)}$.** if $g \not\in \ker(\eta_G)$, then we know that
 $\text{ord}(g) = \infty$. Therefore, we see that 
 
-\[
+$$
 I(\psi) \circ \eta_G(g) = I(\phi)(g) = \phi(g).
-\]
+$$
  
 Hence $I(\psi) \circ \eta_G = \phi$ for $g \not\in
 \ker(\eta_G)$.
@@ -173,9 +173,9 @@ subcategory of $**Ab**$.
 * ****1.**** Is **FinSet** a reflective subcategory of **Set**?
 * ****2.**** Let $G$ and $H$ be a groups. Prove that
 
-\[
+$$
 G*H/[G*H, G*H] \cong G/[G,G]\oplus H/[H,H]
-\]
+$$
  
 where $G*H$ denotes the \hyperref[example:free_product]{\textcolor{blue}{free product}} 
 of $G$ and $H$.

@@ -16,11 +16,11 @@ such as $A\otimes B$ which represent different objects in $\mm$.
 Observe that using three objects, there are two different 
 ways to combine the 3 objects:
 
-\[
+$$
 A\otimes (B \otimes C)
 \qquad 
 (A\otimes B) \otimes C.
-\]
+$$
 
 There are five ways to combine 4 objects:
 
@@ -42,15 +42,15 @@ Initially, we don't really know what the relationship
 is between the various expressions we are generating. For example, we may 
 naturally wonder if
 
-\[
+$$
 A \otimes(B \otimes C) \text{ and } (A \otimes B)\otimes C
-\]
+$$
 
 or
 
-\[
+$$
 A\otimes(B\otimes (C \otimes D))  \text{ and }A\otimes((B \otimes C) \otimes D)
-\]
+$$
 
 have *any relation* with each other. This is because 
 in practice when $A,B,C,D$ are sets, vector spaces, groups, or whatnot, the above expressions 
@@ -99,11 +99,11 @@ and \textcolor{Orange}{orange}, to "reparenthesize" my product to get your objec
 Fortunately, the commutativity of the pentagonal diagram enures that 
 the two paths are equal. That is, 
 
-\[
+$$
 \textcolor{NavyBlue}{\alpha}\circ ((\textcolor{NavyBlue}{1\otimes \alpha})\circ \textcolor{NavyBlue}{\alpha^{-1}})
 =
 (\textcolor{Orange}{\alpha^{-1}\otimes 1})\circ \textcolor{Orange}{\alpha}.
-\]
+$$
  
 so that, in reality, I actually have *one* unique isomorphism (i.e., a canonical isomorphism)
 from my object to yours, and you can also canonically get from your object to mine by inverting 

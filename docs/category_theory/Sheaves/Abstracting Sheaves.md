@@ -13,9 +13,9 @@ one which is equivalent to what the reader has already seen; it will offer a new
 perspective.
 To motivate this perspective, we will again use our canonical sheaf of continuous functions: 
 
-\[
+$$
 C: **Open**(X)\op \to **Set** \qquad C(U) = \{f: U \to Y \mid f \text{ is continuous}\}
-\]
+$$
 
 
 Consider an open set $U$ of $X$, and let $\mathcal{U} = \{U_i\}_{i \in \lambda}$ be an open cover 
@@ -29,23 +29,23 @@ product $\prod_{i \in \lambda} C(U_i)$.
 * Using our open cover $\mathcal{U}$, we can define
 for each pair $k,\ell \in \lambda$ the functions 
 
-\[
+$$
 p_{k,\ell}, 
 q_{k, \ell}
 : \prod_{i \in \lambda}C(U_i) \to  
 C(U_{k} \cap U_{\ell})
-\]
+$$
 
 where 
 
-\[
+$$
 p_{k, \ell}\Big((h_i)_{i \in \lambda}\Big) 
 = h_k\big|_{U_k \cap U_\ell}
 \qquad
 \text{and}
 \qquad
 q_{k, \ell}\Big((h_i)_{i \in \lambda}\Big) = h_\ell\big|_{U_k \cap U_\ell}.
-\]
+$$
 
 With a lot of notation, a picture may help.
 
@@ -62,17 +62,17 @@ Now consider the set of all $(h_i)_{i \in \lambda} \in \prod_{i \in \lambda}F(U_
 such that they agree on overlaps; i.e., such that $h_i\big|_{U_i \cap U_j} = 
 h_j\big|_{U_i \cap U_j}$ for all $i, j \in \lambda$. We call this set $\text{Eq}(p,  q)$:
 
-\[
+$$
 \text{Eq}(p, q) = \Big\{ (h_i)_{i \in \lambda} \in \prod_{i \in \lambda}F(U_i) \mid p\Big( (h_i)_{i \in \lambda} \Big) = q\Big( (h_i)_{i \in \lambda} \Big) \Big\}.
-\]
+$$
 
 However, since $C$ is a sheaf, we know that for every such $(h_i)_{i \in \lambda}$ in $\text{Eq}(p, q)$
 there exists a unique $h: U \to Y$ such that $h|_{U_i} = h_i$. Therefore, we see 
 that 
 
-\[
+$$
 \text{Eq}(p, q) \cong C(U)
-\]
+$$
 
 Okay, so that's just a slightly more complicated way of expressing $C(U)$. 
 What's interesting about this, however, is that $\text{Eq}(p, q)$ is quite literally 
@@ -88,9 +88,9 @@ our previous one.
 A **sheaf (of sets) on a topological space $X$**
 is a functor 
 
-\[
+$$
 F: **Open**(X)\op \to **Set**
-\]
+$$
 
 with the following property: If $U$ is an open set 
 and $\mathcal{U} = \{U_i\}_{i \in \lambda}$ an open cover of $U$,
@@ -121,9 +121,9 @@ Let $\cc$ be a category and $C$ an object of $\cc$.
 A **sieve on $C$**
 is a set $S$ which is a subset of all morphisms with codomain $C$:
 
-\[
+$$
 S \subset \{f \mid f: B \to C \text{ and } f \text{ is a morphism of }\cc \}
-\]
+$$
 
 with following property.
 
@@ -142,9 +142,9 @@ Let $U$ be an open set of $X$. To speak of a sieve on $U$,
 we must first realize that the set of all objects with codomain $U$ is 
 simply the set 
 
-\[
+$$
 \Omega_U = \{V \subset U \mid V \text{ is open}\}
-\]
+$$
 
 This set may actually be treated as the object set of the full subcategory $**Open**(U)$ 
 of $**Open**(X)$.
@@ -176,7 +176,7 @@ for some $i$, and where $V' \subset V$ implies $V'$ is also in the set.
 Additionally, a covering sieve induces a (fairly stupid) functor
 $\mathcal{S}$, where:
 
-\[
+$$
 \mathcal{S}: **Open**(X)\op \to **Set**
 \qquad
 \mathcal{S}(V) 
@@ -185,7 +185,7 @@ $\mathcal{S}$, where:
 \{\bullet\} & \text{If } V \in S_{\mathcal{U}}\\
 \varnothing & \text{ otherwise.}
 \end{cases}
-\]
+$$
 
 
 We are now prepared to continue our discussion. Our goal now will be to express 
@@ -202,9 +202,9 @@ We now prove the following result.
 Let $E$ be the equalizer of $p, q$ constructed using an open cover $\mathcal{U}$ of $U$. 
 Let $\mathcal{S}$ be the sieve functor induced by $\mathcal{U}$. Then
 
-\[
+$$
 E \cong \hom(\mathcal{S}, P) \quad \text{ or, in alternate notation, } \quad E \cong \text{Nat}(\mathcal{S}, P)
-\]
+$$
 
 That is, there is a bijection between $E$ and all natural transformations between $\mathcal{S}$ and $P$. 
 </span>
@@ -213,9 +213,9 @@ That is, there is a bijection between $E$ and all natural transformations betwee
 <span style="display:block" class="proof">
 We know that 
 
-\[
+$$
 E = \Bigg\{(h_i)_{i \in \lambda} \Bigm\vert h_i|_{U_i \cap U_j} = h_j|_{U_i \cap U_j} \text{ for all } i, j \Bigg\}.
-\]
+$$
 
 We'll show that every $(h_i)_{i \in \lambda}$ can be used to build 
 a natural transformation between $\mathcal{S} \to P$. Showing the other direction 
@@ -225,9 +225,9 @@ Let $S_{\mathcal{U}}$ be our covering sieve induced by $\mathcal{U}$.
 Consider an element $(h_i)_{i \in \lambda}$ in $E$. For each $V \in S_{\mathcal{U}}$, 
 we define $h_V \in P(V)$ as
 
-\[
+$$
 h_V = h_i|_{V}
-\]
+$$
 
 where $i$ is the index such that $V \subset U_i$. Of course at least one index exists, 
 but it might not be the only index. Thus, a natural objection to this definition is the following 
@@ -252,9 +252,9 @@ where $\theta_V(\bullet) = h_V$, the unique $h_V$ we already know exists.
 
 This allows us to create the function 
 
-\[
+$$
 \phi: E \to \hom(\mathcal{S}, P) \qquad \phi\Big( (h_i)_{i \in \lambda} \Big) \mapsto (\theta: \mathcal{S} \to P)
-\]
+$$
 
 It is not difficult to show that every natural transformation between $\mathcal{S}$ and $P$ 
 corresponds to a unique element in $E$, thereby giving us an inverse to this function. Thus we have 

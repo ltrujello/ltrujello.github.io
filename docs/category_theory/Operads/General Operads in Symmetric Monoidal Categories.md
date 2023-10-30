@@ -25,9 +25,9 @@ in $\cc$, where each $X_n$ has a group action by $S_n$ and with
 * **2.** For each $n \in \mathbb{N}$ and $a_i \in \mathbb{N}$ where 
 $i = 1, 2, \dots, n$, a composition morphism 
 
-\[
+$$
 \mu: X_n \otimes X_{a_1} \otimes \cdots \otimes X_{a_n} \to X_{a_1 + \cdots + a_n}
-\]
+$$
 
 subject to the associativity, identity, and equivariance axioms outlined below.
 
@@ -115,9 +115,9 @@ Then $u: I \to \hom_{\cc}(X, X)$ is defined to be the unique map to the identity
 Given $f \in \aend_A(n)$ and $g_i \in \aend_A(a_i)$ where $a_i \in \mathbb{N}$ for $i = 1,2, \dots, n$, 
 then we define our composition pointwise: 
 
-\[
+$$
 f \circ_{a_1, \dots, a_n}(g_1, \dots, g_n) = f \circ (g_1 \otimes \cdots \otimes g_n).
-\]
+$$
 
 Finally, given $\sigma \in S_n$, we can define a group action by assigning 
 $f \cdot \sigma$ to the morphism which rearranges the positioning of 

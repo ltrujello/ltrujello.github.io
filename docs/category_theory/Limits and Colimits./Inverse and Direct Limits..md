@@ -45,12 +45,12 @@ completed with respect to the metric to give rise to $\zz_p$.
 
 First, observe that they form a cone. Define the map 
 
-\[
+$$
 \pi_{n}: \zz_p \to \zz/p^{n}\zz 
 \qquad \pi\left( \sum_{k = 0}^{\infty}
 a_kp^k \right) = 
 \sum_{k =0}^{n-1}a_kp^k + p^{n}\zz.
-\]
+$$
 
 Now observe that 
 
@@ -87,11 +87,11 @@ we have the diagram
 where we define each $f_n: \zz/p^n\zz \to \zz/p^{n+1}\zz$ 
 as the homomorphism 
 
-\[
+$$
 f_n\left( \sum_{k =0}^{n-1}a_kp^k + p^{n}\zz \right)
 = 
 \sum_{k =0}^{n}a_kp^{k+1} + p^{n+1}\zz.
-\]
+$$
 
 That is, we simply multiply the sum by a power of $p$. It turn outs 
 that the direct limit is the **Prüfer $\bm{p**$-Group} $\zz(p^\infty)$.
@@ -105,11 +105,11 @@ The Prüfer $p$-group is the set of all $p^n$ roots of unity,
 as $n$ ranges over all positive integers. Hence the points lie
 on the complex unit circle. Specifically, it is the group  
 
-\[
+$$
 \zz(p^{\infty})
 =
 \left\{\text{exp}\left({\dfrac{2\pi i m}{p^n}}\right) \mid 0 \le m < p^n, n \in \mathbb{Z}^{+}  \right\}  
-\]
+$$
 
 which forms a group under complex multiplication. 
 How does this form a limit for our diagram? 
@@ -140,18 +140,18 @@ $\mathcal{G}(L/F)$ are partially ordered sets, ordered by subset inclusion.
 To be precise, if $K_i \subset K_j$ are in $\mathcal{F}(L/F)$,
 then 
 
-\[
+$$
 \gal(K_j/F) \subset \gal(K_i/F)
-\]
+$$
 
 and because $\mathcal{G}(L/F)$ is a preorder on subset
 inclusion, this implies the existence of some arrow $f:
 \gal(K_j/F) \to \gal(K_i/F)$. We can describe 
 $f = \proj_{K_j/K_i}$ where 
 
-\[
+$$
 \proj_{K_j/K_i}: \gal(K_j/F) \to \gal(K_i/F) \qquad \proj_{K_j/K_i}(\sigma) = \sigma\big|_{K_i}.  
-\]
+$$
 
 That is, we take each permutation $\sigma \in \gal(K_j/F)$
 and restrict its action to $K_i$, thereby making it a
@@ -160,21 +160,21 @@ and therefore a member of $\gal(K_i/F)$.
 
 Now consider the product with the associated morphisms
 
-\[  
+$$  
 \prod_{K \in\mathcal{F}(L/F)}\gal(K/F)
 \qquad 
 \pi_{K_i}: \prod_{K \in\mathcal{F}(L/F)}\gal(K/F) 
 \to \gal(K_i/F)
-\]
+$$
 
 Then we define
 
-\[
+$$
 \gal(L/F)
 =
 \left\{ x = (\cdots, \sigma_k, \cdots) \in \prod_{K \in \mathcal{F}(L/F)}\gal(K/F) 
 \mid \proj_{K_i/K_j} \circ \pi_{K_i}(x) = \pi_{K_j}(x) \right\}.
-\]
+$$
 
 So $\gal(L/F)$ forms a cone with morphisms $\pi_{K_i}$:
 
@@ -185,11 +185,11 @@ index $\mathcal{G}(L/F)$ in a monotonic way, since it is a partially order set.
 Thus there exists a partially ordered set $J$ such that 
 if $f: i \to j$ exists in $J$, then 
 
-\[
+$$
 F(i)= \gal(K_i/F) \quad F(j) = \gal(K_j/F) 
 \implies 
 F(f): \gal(K_i/F) \to \gal(K_j/F)  
-\]
+$$
 
 Thus we have a functor $F: J \to \mathcal{G}(L/F)$ which hits every 
 Galois group $\gal(K/F)$ in such
@@ -198,11 +198,11 @@ the limit of every small diagram exists in **Grp**,
 we can define $\gal(L/F)$ to be the **inverse limit** of this
 functor, and we already know that the limit will have the form
 
-\[
+$$
 \gal(L/F)
 =
 \left\{ (\cdots, \sigma_k, \cdots) \in \prod_{K \in \mathcal{F}(L/F)}\gal(K/F) \mid \proj_{K_i/K_j} \circ \pi_{K_i} = \pi_{K_j} \right\}.
-\]
+$$
 
 and that it will be universal. So, this is how we extend the
 definition of Galois group from a finite, normal, separable
@@ -226,10 +226,10 @@ j \in I \quad i \le j\}$ such that
 Then we define the **profinite group** $G$ 
 of this system to be the inverse limit:
 
-\[
+$$
 G = \left\{(g_i)_{i \in I} \in \prod_{i \in I} G_i \
 \mid f_i^j(g_i) = g_j \right\}.
-\]
+$$
 
 Note that requiring $f_i^j(g_i) = g_j$ is the same as
 requiring $f_i^j\circ \pi_i(x) = \pi_j(x)$, where $x \in G$, 

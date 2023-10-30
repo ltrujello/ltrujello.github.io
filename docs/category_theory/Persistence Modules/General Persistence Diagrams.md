@@ -13,9 +13,9 @@ throughout this evolution.
 Let $X$ be a topological space. We know from algebraic topology that 
 there exists a $n$-th singular homology group 
 
-\[
+$$
 H_n(X).
-\]
+$$
 
 Suppose that 
 $f: X \to \mathbb{R}$ is a real-valued function. An example of this is the 
@@ -23,9 +23,9 @@ height function of a sphere centered at the origin.
 Now one thing we can do with these types of functions
 is take any $a \in \mathbb{R}$ and consider
 
-\[
+$$
 f^{-1}((\infty,a]) \subset X.
-\]
+$$
 
 The space $f^{-1}((\infty,a]) \subset X$ is a topological space induced by the 
 subspace topology of $X$. In general, this process can be modeled functorially. 
@@ -38,9 +38,9 @@ Let $\mathbb{R}$ be a category with morphisms given by poset structure. Then
 
 since if $a \le b$ then this induces a continuous function 
 
-\[
+$$
 i: f^{-1}((\infty, a]) \to f^{-1}((\infty, b])
-\]
+$$
 
 namely, the inclusion function.
 \textcolor{NavyBlue}{We denote the functor as $E$ for "evolution," as this functor 
@@ -49,9 +49,9 @@ topological space.}
 
 Switching focus, consider the homology group of this subspace
 
-\[
+$$
 H_n(f^{-1}((\infty, a])).
-\]
+$$
 
 We can *also* outline this behavior as functorial where we send 
 
@@ -63,9 +63,9 @@ We can *also* outline this behavior as functorial where we send
 since for any $a \le b$,
 we have a group homomorphism which we denote as $\phi_a^b$:
 
-\[
+$$
 \phi_a^b: H(f^{-1}(\infty, a]) \to H(f^{-1}(\infty, b]).
-\]
+$$
 
 
 Now we can outline this overall data pipeline as a functor $H \circ E: \mathbb{R} \to **Ab**$
@@ -83,16 +83,16 @@ records the topological evolution! We are thus interested in the following objec
 <span style="display:block" class="definition">
 Let $a \le b$. Recall that 
 
-\[
+$$
 H\circ E(a \le b) = \phi_a^b.   
-\]
+$$
  
 Since we are interested in the *image* of these mappings, 
 which will be a group, we denote
 
-\[
+$$
 F([a, b]) = \im(\phi_a^b) = \im\Big( H(f^{-1}((\infty, a ])) \to H(f^{-1}((\infty, b])) \Big)
-\]
+$$
 
 to be a **persistence homology group** from $a$ to $b$. 
 </span>
@@ -102,9 +102,9 @@ to be a **persistence homology group** from $a$ to $b$.
 For a persistence homology group $F([a, b])$, define the **Betti number** 
 from $a$ to $b$ as
 
-\[
+$$
 \beta_a^{b} = \text{rank}(F([a, b])).
-\]
+$$
 
 </span>
 
@@ -124,9 +124,9 @@ one pole to the other.
 the topology to change in this context}? It means that we were at 
 some value $a$, but then at $a +\epsilon$ the homology became different. This means that 
 
-\[
+$$
 H(f^{-1}((\infty, a])) \to H(f^{-1})(\infty, a + \epsilon]   
-\]
+$$
 
 is *not* an isomorphism.
 Finding out when the homology does change is 
@@ -137,9 +137,9 @@ valuable information, so we keep track of these points.
 A **critical value** of $f: X \to \mathbb{R}$ is an $a \in \mathbb{R}$ such that 
 there exists an $\epsilon > 0$ such that 
 
-\[
+$$
 H_n(f^{-1}((\infty, a - \epsilon])) \to H_n(f^{-1}((\infty, a +\epsilon ]))
-\]
+$$
 
 is *not* an isomorphism. The function $f$ is called **tame** if 
 $f$ has finitely many critical values. 
@@ -160,9 +160,9 @@ Let $f: X \to \mathbb{R}$ be tame and
 $(s_i, s_j)$ be a tuple of critical values. Then we define the **multiplicity** 
 of $(s_i, s_j)$ to be
 
-\[
+$$
 \mu_{i}^{j} = \beta_{t_{i-1}}^{t_i} -\beta_{b_i}^{b_j} + \beta_{b_{i}}^{b_{j-1}} - \beta_{b_i}^{b_j}
-\]
+$$
 
 </span>
 
@@ -173,9 +173,9 @@ The persistence diagram of the tame function $f: X \to \mathbb{R}$
 $D(f)$ is the *multiset* of tuples $(s_i, s_j)$ each with multiplicity $\mu_i^j$.
 Alternatively,
 
-\[
+$$
 D(f) = \bigcup_{i=0}^{n+1}\bigcup_{j = 0}^{n+1} \left( \bigcup_{k = 1}^{\mu_i^{j}} \{ (s_i, s_j) \}\right)
-\]
+$$
 
 </span>
 
@@ -196,9 +196,9 @@ A
 map $X: **Dgm** \to G$ is **$S$-constructible** if for every $I \subset J$ 
 where 
 
-\[
+$$
 J \cap S = I \cap S    
-\]
+$$
 
 we have $X(I) = X(J)$. 
 </span>
@@ -221,9 +221,9 @@ and $J = [c, d]$ such that $I \subset J$ and $I \cap S = J \cap S$.
 
 Clearly in this case we have that $I \cap S = J \cap S$. Now observe that 
 
-\[
+$$
 \beta_a^b = \beta_c^d   
-\]
+$$
 
 since these intervals observe the same changes in rank.
 
@@ -234,15 +234,15 @@ for a tame function $f: \mathbb{R} \to X$ is $S$-constructible.}
 <span style="display:block" class="definition">
 A map $Y: **Dgm** \to G$ is **$S$-finite** if 
 
-\[
+$$
 Y(I) \ne e \implies I = [s_i, s_j) \text{ or } I = [s_i, \infty)
-\]
+$$
 
 Alternatively, this states that 
 
-\[
+$$
 I \ne [s_i, s_j) \text{ and } I \ne [s_i, \infty) \implies Y(I) = e.
-\]
+$$
 
 which is probably a better way of thinking about this. 
 </span>
@@ -265,9 +265,9 @@ where $a_1 \le a \le a_2$ and $b_1 \le b \le b_2$ are values within some suffici
 small neighborhood of $a$ and $b$. Note that in this extension, if $[a, b) \ne [s_i, s_j)$ 
 or $[s_i, \infty )$ in, then each $\beta_{a_i}^{b_j}$ is of full rank, so that 
 
-\[
+$$
 X([a, b)) = 0.
-\]
+$$
 
 Hence we see that the persistence diagram is $S$-finite where $S$ is the finite set of
 critical values. 
@@ -282,9 +282,9 @@ $a \le b$ then $a + c \le b + c$ for any $a, b ,c \in G$.
 Consider $Y_1, Y_2: **Dgm** \to G$ be a pair of persistence diagrams. 
 We say there exists a **morphism** $\phi: Y_1 \to Y_2$ if 
 
-\[
+$$
 \sum_{\substack{J \in **Dgm** \\ I \subset J}}Y_1(J) \le \sum_{\substack{J \in **Dgm** \\ I \subset J}}Y_2(J)
-\]
+$$
 
 for all $I \in **Dgm**$. 
 </span>
@@ -323,11 +323,11 @@ Y_1: **Dgm** \to G \mapsto Y_1 \circ **Grow**_\epsilon: **Dgm** \to G.
 Note that for any persistence modules $Y: **Dgm** \to G$, we have that 
 $\nabla_\epsilon(Y) \to Y$ since for any interval $Y$, 
 
-\[
+$$
 \sum_{\substack{J \in **Dgm** \\ I \subset J}}Y(J) 
 =
 Y_1 \circ **Grow**_\epsilon
-\]
+$$
 
 
 

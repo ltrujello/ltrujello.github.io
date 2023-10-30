@@ -113,17 +113,17 @@ It suffices to prove that,
 for any complete subdiagram $J'$ of $J$ involving any 
 two distinct paths
 
-\[
+$$
 p = f_n \circ f_{n-1} \circ \cdots \circ f_1 \qquad q = g_m \circ g_{m-1} \circ \cdots \circ g_1
-\]
+$$
 
 in $J$, we have that $F(J')$ is commutative in $\dd$. But this immediate. 
 Since $J'$ is commutative in $\cc$, we have that $p = q$. Hence 
 we see that 
 
-\[
+$$
 F(p) = F(q) \implies F(f_n) \circ F(f_{n-1}) \cdots F(f_1) = F(g_m) \circ F(g_{m-1}) \circ \cdots \circ F(g_1).
-\]
+$$
 
 by repeatedly applying the composition property of a functor.
 Hence $F(J')$ is commutative of $J$. Since 
@@ -138,17 +138,17 @@ functors in basic category theory.
 Let $\cc$ be a locally small category. Then for every object $A$, 
 we obtain the **covariant hom-functor** denoted as 
 
-\[
+$$
 \hom_{\cc}(A, -): \cc \to \Set.
-\]
+$$
 
 where on objects $C \mapsto \hom_{\cc}(A, C)$ and on morphisms 
 $(\phi: C \to C') \mapsto \phi^*: \hom_{\cc}(A, C) \to \hom_{\cc}(A, C'))$
 where  $\phi^*$ is a function defined pointwise as 
 
-\[
+$$
 \phi^*(f: A \to C) = \phi \circ f: A \to C'.
-\]
+$$
 
 Such a functor is naturally of interest in mathematics since it is often 
 of interetst to consider the hom set $\hom_{\cc}(A, B)$ for some objects $A, B$ 
@@ -169,9 +169,9 @@ is exact if and only if, for every $R$-module $N$, the sequence
 is exact. This result even extends to split short exact sequences. We 
 also have that for $R$-modules $N$, $M_1, M_2$ that 
 
-\[
+$$
 \hom(N, M_1\oplus M_2)\cong \hom(N, M_1)\oplus \hom(N, M_2).
-\]
+$$
 
 This result also holds for arbitrary direct sums,
 so that the hom functor distributes over all direct sums.
@@ -179,9 +179,9 @@ Even better, we cannot forget that the hom-functor exhibits the
 **tensor-hom adjunction** which states that for
 $R$-modules $N, M_1, M_2$ 
 
-\[
+$$
 \hom(N \otimes M_1, M_2) \cong \hom(N, \hom(M_1, M_2)).
-\]
+$$
 
 More is to be said about this property; we'll later 
 see that this is an example of an *adjunction*.

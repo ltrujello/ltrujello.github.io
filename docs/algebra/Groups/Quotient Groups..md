@@ -22,9 +22,9 @@ set consisting of all the possible right (or equivalently
 left) $H$ cosets. If we
 equip this set with a product $\cdot$ such that 
 
-\[
+$$
 (Ha)\cdot(Hb) = H(ab)
-\]
+$$
 
 then $G/H$ forms a group, called the **Quotient Group**.
 </span>
@@ -34,8 +34,8 @@ with the product $Hg_1 \cdot Hg_2 = H(g_1g_2)$ **forms a group**.
 
 
 <span style="display:block" class="proof">
-\begin{description}
-\item[Identity.] To show that this set is a group, we first define the identity
+
+* **Identity.** To show that this set is a group, we first define the identity
 element to simply be $H$. This is a "trivial" coset, and for
 any $Ha$, where $a \in G$, 
 
@@ -45,9 +45,8 @@ any $Ha$, where $a \in G$,
 \end{align*}
 
 so $H$ is a natural and apporopriate choice for an identity as
-it has the property of an identity element.  
-
-\item[Associativity.] Associativity is derived from the
+it has the property of an identity element.
+* **Associativity.** Associativity is derived from the
 associativity of our group $G$ itself. Observe that for any
 $a, b, c \in G$ we have 
 
@@ -58,13 +57,11 @@ $a, b, c \in G$ we have
 
 Therefore $(Ha)[ (Hb)(Hc)] = [(Ha)(Hb)](Hc)$ for all $a, b,
 c \in G$, so the product relation is associative.
-
-\item[Closedness.] The result of our proposed product is
+* **Closedness.** The result of our proposed product is
 always a coset itself ($Ha \cdot Hb = H(ab)$), and since 
 $G/H$ is a set of all $H$ cosets we see that this set is
 closed under $\cdot$.
-
-\item[Inverses.] For any $Ha \in G/H$, where $a \in G$, we
+* **Inverses.** For any $Ha \in G/H$, where $a \in G$, we
 see that the inverse element is $Ha^{-1}$, since 
 
 \begin{align*}
@@ -77,7 +74,7 @@ our proposed inverse makes sense.
 Note that
 $Ha^{-1} \in G/H$ since $a^{-1} \in G$, so an inverse
 element not only exists but it also exists in $G/H$
-\end{description}
+
 All together, this allows us to observe that we have a group
 structure, so long as $H \normal G$.
 </span>
@@ -149,14 +146,14 @@ Thus observe that for $aH, bH \in G/H$, we have that
 Thus the set $G/H$ must be abelian.
 \\
 \\
-**The answer to the second question is \textbf{no, not always}**. If $G/H$ is abelian, 
+**The answer to the second question is \textbf{no, not always}}. If $G/H$ is abelian, 
 we know that 
 $$
 (aH)(bH) = (bH)(aH) \implies (ab)H = (ba)H.
 $$ 
-for all $a, b \in G$. However, this only guarantees **set equality**, 
+for all $a, b \in G$. However, this only guarantees \textbf{set equality}, 
 not a term-by-term equality (in which case the group would be abelian). 
-An example of this is $D_{6}$ with the subgroup $H = \{1, r, r^2\}.$
+An example of this is $D_{6**$ with the subgroup $H = \{1, r, r^2\}.$
 In this case $H \unlhd D_6$ because all the left cosets are $H, sH$ and therefore 
 $[D_{2n}: H] = 2$ (Hence $H \normal G$ by the previous proposition). In addition, 
 $H(sH) = sH=  sH(H)$, $sH(sH) = s^2H = (sH)sH$, so $G/H$ is abelian, but the set $D_{2n}$
@@ -171,7 +168,7 @@ even though the group $G$ is abelian, is the following.
 **Example.**
 Let 
 
-\[
+$$
 G = \left\{
 \begin{pmatrix}
 a & b \\
@@ -185,11 +182,11 @@ a & b \\
 \end{pmatrix}
 \mid c \in \mathbb{R} 
 \right\}.   
-\]
+$$
 
 $G$ is subset of $GL_2(\mathbb{R})$ and $H$ is a subgroup of $G$.
-\begin{description}
-\item[$\bm{H \normal G}$.] First we'll show that $H$ is normal
+
+* **$\bm{H \normal G}$.** First we'll show that $H$ is normal
 to $G$. Thus let $x \in G$, so that 
 $
 x =         \begin{pmatrix}
@@ -241,22 +238,21 @@ a & b \\
 \end{align*}
 
 Therefore, we have that $xhx^{-1} \in H$ for all $H$, which
-implies that $H$ is a normal subgroup of $G$. 
-
-\item[$\bm{G/H}$ is abelian.] Now we'll show that $G/H$ is an
+implies that $H$ is a normal subgroup of $G$.
+* **$\bm{G/H}$ is abelian.** Now we'll show that $G/H$ is an
 abelian group. Firstly, what does it mean for a quotient group to
 abelian? Well, it would mean that for any $x, y \in G$ we have
 that 
 
-\[
+$$
 (Hx)\cdot(Hy) = (Hy)\cdot(Hx).
-\]
+$$
 
 Or, in other words, 
 
-\[
+$$
 H(xy) = H(yx).   
-\]
+$$
 
 Thus we need some kind of set equality to be happening. Thus
 consider $h =             \begin{pmatrix}
@@ -393,11 +389,10 @@ criteria for set memberships are identical; they just have
 different variables, but that of course does not change their
 members. Therefore we see that $Hxy = Hyx$ for all $x, y \in G$,
 which proves that $G/H$ is an abelian group, even though $G$ nor
-$H$ are abelian. 
-
-\end{description}
+$H$ are abelian.
 
 
+ 
 
 
 <script src="../../mathjax_helper.js"></script>
