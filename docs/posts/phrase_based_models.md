@@ -407,7 +407,7 @@ Therefore, the way we compute the future cost is as follows:
 For each remaining untranslated foreign phrase, we 
 
 * Find the cheapest English translation of the phrase (there could be many; choose the one which the phrase translation 
-  model scores the best).
+model scores the best).
 * Compute the language model cost of the English translation. 
 * Multiply these quantities (or add these quantities, if working in log-space). The result is the estimated future translation cost for this foreign phrase. 
 * If the hypothesis has multiple untranslated foreign phrases, perform this procedure on each foreign phrase and add up the cost. 
