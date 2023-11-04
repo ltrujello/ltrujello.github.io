@@ -12,6 +12,8 @@
         <link rel="prev" href="../../03/ibm-model-1-statistical-machine-translation-and-alignment/">
       
       
+        <link rel="next" href="../../29/recurrent-neural-networks-and-the-reber-grammar-in-pytorch/">
+      
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
@@ -3426,7 +3428,7 @@ Therefore, the way we compute the future cost is as follows:
 For each remaining untranslated foreign phrase, we </p>
 <ul>
 <li>Find the cheapest English translation of the phrase (there could be many; choose the one which the phrase translation 
-  model scores the best).</li>
+model scores the best).</li>
 <li>Compute the language model cost of the English translation. </li>
 <li>Multiply these quantities (or add these quantities, if working in log-space). The result is the estimated future translation cost for this foreign phrase. </li>
 <li>If the hypothesis has multiple untranslated foreign phrases, perform this procedure on each foreign phrase and add up the cost. </li>

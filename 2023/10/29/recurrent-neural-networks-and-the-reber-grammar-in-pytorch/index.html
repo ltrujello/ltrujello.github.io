@@ -1,0 +1,3654 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../19/phrased-based-translation-model-and-decoder/">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
+    
+    
+      
+        <title>Recurrent Neural Networks and the Reber Grammar in PyTorch - Home</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.d451bc0e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#recurrent-neural-networks-and-the-reber-grammar-in-pytorch" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Home" class="md-header__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Home
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Recurrent Neural Networks and the Reber Grammar in PyTorch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="mydarkscheme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../category_theory/" class="md-tabs__link">
+          
+  
+  Category Theory
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../algebra/" class="md-tabs__link">
+          
+  
+  Algebra Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../associahedron/" class="md-tabs__link">
+        
+  
+    
+  
+  Associahedron
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-tabs__link">
+        
+  
+    
+  
+  Tikz-Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-tabs__link">
+        
+  
+    
+  
+  Poly-Rust
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Home" class="md-nav__button md-logo" aria-label="Home" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Home
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Category Theory
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Category Theory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Categories, Functors and Natural Transformations.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Categories, Functors and Natural Transformations.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Introduction%3A%20What%20are%20the%20Foundations%20of%20Math%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Introduction: What are the Foundations of Math?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Motivation%20for%20Category%20Theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Motivation for Category Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Category%20Theory%20Axioms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Category Theory Axioms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Examples of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Paths%20and%20Diagrams%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Paths and Diagrams in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Examples%20and%20Nonexamples%20of%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Examples and Nonexamples of Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Forgetful%2C%20Full%20and%20Faithful%20Functors./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Forgetful, Full and Faithful Functors.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Natural%20Transformations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Natural Transformations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Monic%2C%20Epics%2C%20and%20Isomorphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Monic, Epics, and Isomorphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Categories%2C%20Functors%20and%20Natural%20Transformations./Initial%2C%20Terminal%2C%20and%20Zero%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Initial, Terminal, and Zero Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Duality and Categorical Constructions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Duality and Categorical Constructions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/%24%5Cmathcal%7BC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 $\mathcal{C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Products%20of%20Categories%2C%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Products of Categories, Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Functor%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Functor Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Vertical%2C%20Horizontal%20Composition%3B%20Interchange%20Laws/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Vertical, Horizontal Composition; Interchange Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Slice%20and%20Comma%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Slice and Comma Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Graphs%2C%20Quivers%20and%20Free%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Graphs, Quivers and Free Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Quotient%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Quotient Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Duality%20and%20Categorical%20Constructions/Monoids%2C%20Groups%20and%20Groupoids%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Monoids, Groups and Groupoids in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Universal Constructions and Limits
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Universal Constructions and Limits
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Universal%20Morphisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Universal Morphisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Representable%20Functors%20and%20Yoneda%27s%20Lemma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Representable Functors and Yoneda's Lemma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Products/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Finite Products
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Finite%20Coproducts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Finite Coproducts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Arbitrary%20Products%20and%20Coproducts%20in%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Arbitrary Products and Coproducts in Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Introduction%20to%20Limits%20and%20Colimits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Introduction to Limits and Colimits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Equalizers%20and%20Coequalizers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.7 Equalizers and Coequalizers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Universal%20Constructions%20and%20Limits/Pullbacks%20and%20Pushouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.8 Pullbacks and Pushouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Adjunctions.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Adjunctions.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Introduction%20to%20Adjunctions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1 Introduction to Adjunctions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Reflective%20Subcategories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.2 Reflective Subcategories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Equivalence%20of%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.3 Equivalence of Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Adjoints%20on%20Preorders./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4 Adjoints on Preorders.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Adjunctions./Exponential%20Objects%20and%20Cartesian%20Closed%20Categories./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.5 Exponential Objects and Cartesian Closed Categories.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Limits and Colimits.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Limits and Colimits.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Every%20Limit%20in%20Set%3B%20Creation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 Every Limit in Set; Creation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Inverse%20and%20Direct%20Limits./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Inverse and Direct Limits.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Limits%20from%20Products%2C%20Equalizers%2C%20and%20Pullbacks./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Limits from Products, Equalizers, and Pullbacks.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Preservation%20of%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Preservation of Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Adjoints%20on%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.5 Adjoints on Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Existence%20of%20Universal%20Morphisms%20and%20Adjoint%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.6 Existence of Universal Morphisms and Adjoint Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Limits%20and%20Colimits./Subobjects%20and%20Quotient%20Objects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Subobjects and Quotient Objects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Filtered Colimits, Coends, and Kan Extensions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Filtered Colimits, Coends, and Kan Extensions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Filtered%20Colimits%2C%20Coends%2C%20and%20Kan%20Extensions/Filtered%20Categories%20and%20Limits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1 Filtered Categories and Limits
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Monoidal Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Monoidal Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1 Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoidal%20Functors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2 Monoidal Functors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/What%20are%20those%20Coherence%20Conditions%3F/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3 What are those Coherence Conditions?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Mac%20Lane%27s%20Coherence%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4 Mac Lane's Coherence Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Braided%20and%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5 Braided and Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Coherence%20for%20Braided%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Coherence for Braided Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Monoids%2C%20Groups%2C%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7 Monoids, Groups, in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Monoidal%20Categories/Enriched%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.8 Enriched Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Abelian Categories
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Abelian Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Preadditive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Preadditive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Additive%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Additive Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Preabelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Preabelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Kernels%20and%20Cokernels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Kernels and Cokernels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Abelian%20Categories/Abelian%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Abelian Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Operads
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Operads
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/Operads%20on%20Sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.1 Operads on Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/General%20Operads%20in%20Symmetric%20Monoidal%20Categories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.2 General Operads in Symmetric Monoidal Categories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/Partial%20Composition%3A%20Restructuring%20Operads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.3 Partial Composition: Restructuring Operads
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Operads/The%20Braid%20Groups%20Form%20a%20%28nonsymmetric%29%20Operad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.4 The Braid Groups Form a (nonsymmetric) Operad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sheaves
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Sheaves
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Topological%20Presheaves%20and%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Topological Presheaves and Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Abstracting%20Sheaves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2 Abstracting Sheaves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Sheaves/Stalks%20and%20Germs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.3 Stalks and Germs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Persistence Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_12">
+            <span class="md-nav__icon md-icon"></span>
+            Persistence Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Persistence%20modules%20on%20%24%5Crr%24./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Persistence modules on $\rr$.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Generalized%20Persistence%20Modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2 Generalized Persistence Modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/Interleaving%20Distances%20via%20Sublinear%20Projections%20and%20Superlinear%20Families/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.3 Interleaving Distances via Sublinear Projections and Superlinear Families
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category_theory/Persistence%20Modules/General%20Persistence%20Diagrams/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.4 General Persistence Diagrams
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Algebra Notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algebra Notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Groups
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Groups
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Definitions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1 Definitions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Permutation%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.2 Permutation Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Homomorphism%20and%20Isomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3 Homomorphism and Isomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Cyclic%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.4 Cyclic Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Left%20and%20Right%20Cosets%2C%20Lagrange%27s%20Theorem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5 Left and Right Cosets, Lagrange's Theorem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Normal%20subgroups/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.6 Normal subgroups
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Quotient%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Quotient Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Isomorphism%20Theorems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.8 Isomorphism Theorems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Group%20Actions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.9 Group Actions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Conjugation%2C%20The%20Class%20Equation%2C%20and%20Cauchy%27s%20Theorem./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.10 Conjugation, The Class Equation, and Cauchy's Theorem.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Sylow%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.11 Sylow Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Groups/Fundamental%20Theorem%20of%20Finite%20Abelian%20Groups./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.12 Fundamental Theorem of Finite Abelian Groups.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Rings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Rings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ring%20homomorphisms./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.2 Ring homomorphisms.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ideals%20and%20Quotient%20Rings./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.3 Ideals and Quotient Rings.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Principal%2C%20Maximal%20and%20Prime%20Ideals./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5 Principal, Maximal and Prime Ideals.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Ring%20of%20Fractions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.6 Ring of Fractions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/PIDs%20and%20Euclidean%20Domains./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 PIDs and Euclidean Domains.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Rings/Polynomial%20Rings%20%28for%20Galois%20Theory%29./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8 Polynomial Rings (for Galois Theory).
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Definitions./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1 Definitions.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Submodules%2C%20Quotient%20Modules%20and%20Isomorphism%20Theorems./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.2 Submodules, Quotient Modules and Isomorphism Theorems.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Generating%20Modules%2C%20Torsions%2C%20Annihilators./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.3 Generating Modules, Torsions, Annihilators.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Cartesian%20Products%20and%20Direct%20Sums.%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4 Cartesian Products and Direct Sums. 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Exact%20Sequences%20and%20the%20Hom%20Functor./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.5 Exact Sequences and the Hom Functor.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../algebra/Modules/Free%20%24R%24-modules./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6 Free $R$-modules.
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../associahedron/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Associahedron
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://ltrujello.github.io/Tikz-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tikz-Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ltrujello/poly-rust" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Poly-Rust
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recurrent-neural-networks" class="md-nav__link">
+    Recurrent Neural Networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#an-rnn-explicitly" class="md-nav__link">
+    An RNN, explicitly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reber-grammar" class="md-nav__link">
+    Reber Grammar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reber-grammar-problem-statement-and-data-representation" class="md-nav__link">
+    Reber Grammar Problem Statement and Data Representation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-the-rnn-in-pytorch" class="md-nav__link">
+    Defining the RNN in Pytorch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-training-data" class="md-nav__link">
+    Preparing Training Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#training-in-pytorch" class="md-nav__link">
+    Training in Pytorch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation" class="md-nav__link">
+    Evaluation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../.." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-10-29 00:00:00" class="md-ellipsis">October 29, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              14 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="recurrent-neural-networks-and-the-reber-grammar-in-pytorch">Recurrent Neural Networks and the Reber Grammar in PyTorch</h1>
+<p>Recurrent neural networks are a special type neural network that have been heavily studied for decades towards 
+problems involving sequence prediction, which standard feed-forward neural networks tend not to be that great at. 
+What makes RNNs different is that it processes input sequentially and generates hidden states 
+which are then used in future computations. </p>
+<p>Here, we'll offer an overview of RNNs, present an explicit RNN, and then implement an RNN in Pytorch to learn an artificial grammar 
+known as the Reber Grammar. You can find the complete PyTorch code, which we'll also introduce here, in <a href="https://gist.github.com/ltrujello/dbe10beb84b7bfe8efa542ea2c5ed249">this Github gist</a>.</p>
+<!-- more -->
+
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+<p>The aim of recurrent neural networks is to be able to predict unseen sequences of inputs given training from a set of similar 
+sequences of inputs. By a sequence of inputs, we mean a sequence <span class="arithmatex">\((x_1, x_2, \dots, x_T)\)</span> of elements, where <span class="arithmatex">\(x_i \in \mathbb{R}^n\)</span> 
+for some dimension <span class="arithmatex">\(n\)</span>. In the typical application of using an RNN for a language model, the <span class="arithmatex">\(x_i \in \mathbb{R}^n\)</span> can 
+represent words, which are one-hot encoded. However, we will keep the discussion regarding the sequence elements general, only
+enforcing that each element in the sequence have the same dimension. </p>
+<p>From a very high level, the typical visualization of computing a forward pass through the neural network using such a sequence is via the diagram below. </p>
+<p><img src="/png/rnn/rnn.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
+<p>While this diagram is very simple and somewhat useful for visualization, it doesn't mean much mathematically. 
+Let us go beyond simply showing a colorful diagram and mathematically explain how RNNs work.</p>
+<p>For a sequence </p>
+<div class="arithmatex">\[
+    (x_1, \dots, x_T) \hspace{1cm} x_t \in \mathbb{R}^n
+\]</div>
+<p>the recurrent neural network will compute a sequence of <strong>hidden states</strong></p>
+<div class="arithmatex">\[
+    (h_1, \dots, h_T) \hspace{1cm} h_t \in \mathbb{R}^d
+\]</div>
+<p>and will output a sequence of <strong>output values</strong></p>
+<div class="arithmatex">\[ 
+    (y_1, \dots, y_T) \hspace{1cm} y_t \in \mathbb{R}^m
+\]</div>
+<p>In many applications, <span class="arithmatex">\(m = n\)</span>, and we will assume that here for simplicity in our discussion.
+Depending on the type of recurrent neural network one is employing, there are various 
+ways to compute <span class="arithmatex">\(h_t\)</span> and <span class="arithmatex">\(y_t\)</span>. Typically, the equations are given as</p>
+<div class="arithmatex">\[\begin{align}
+    h_t &amp;= f(x_t, h_{t - 1})\\
+    y_t &amp;= g(h_t)
+\end{align}\]</div>
+<p>where <span class="arithmatex">\(f\)</span>, and <span class="arithmatex">\(g\)</span> are some functions.
+Usually in an implementation <span class="arithmatex">\(h_0\)</span> is initialized to the zero vector. </p>
+<p>Now that we have the general mathematical structure of an RNN settled, we can make things concrete and introduce the most basic kind of RNN. In a vanilla RNN, <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(g\)</span> are just feed-forward neural networks. In that case, the computations are given by the equations below. </p>
+<div class="arithmatex">\[\begin{align}
+    h_t &amp;= \sigma_i(Wx_{t} + Uh_{t - 1} + b_h)\\
+    y_t &amp;= \sigma_o(Vh_t + b_o)
+\end{align}\]</div>
+<p>where </p>
+<ul>
+<li>
+<p><span class="arithmatex">\(W \in \mathbb{R}^{d \times n}\)</span> is a trainable weight matrix that acts on the input <span class="arithmatex">\(x_{t}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(U \in \mathbb{R}^{d \times d}\)</span> is a trainable weight matrix that acts on the hidden states <span class="arithmatex">\(h_{t - 1}\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(V \in \mathbb{R}^{d \times n}\)</span> is a trainable weight matrix that acts on the computed hidden state <span class="arithmatex">\(h_t\)</span></p>
+</li>
+<li>
+<p><span class="arithmatex">\(b_h\)</span>, <span class="arithmatex">\(b_o\)</span> are trainable biases </p>
+</li>
+<li>
+<p><span class="arithmatex">\(\sigma_o\)</span>, <span class="arithmatex">\(\sigma_i\)</span> are activation functions (e.g., sigmoid, tanh, etc.).</p>
+</li>
+</ul>
+<p>In addition, <span class="arithmatex">\(d\)</span>, the dimension of the vector space that the hidden states <span class="arithmatex">\(h_t\)</span> live in, is a hyperparameter. One can set it 
+to 5, 10, 1000, etc, but it ultimately depends on what kind of data the RNN is being trained to predict.</p>
+<h2 id="an-rnn-explicitly">An RNN, explicitly</h2>
+<p>Let us offer an explicit RNN with a simple architecture, and demonstrate how input is computed. Once we go over this simple RNN 
+we will train it to learn the <strong>reber grammar</strong>, an artificial (fake) grammar invented as a toy sequence prediction problem.
+Let us design it is as follows.</p>
+<ul>
+<li>
+<p>Set <span class="arithmatex">\(d = 4\)</span>. That is, our hidden states <span class="arithmatex">\(h_t\)</span> live in <span class="arithmatex">\(\mathbb{R}^4\)</span>. </p>
+</li>
+<li>
+<p>Set <span class="arithmatex">\(n = 7\)</span>. Then we expect our sequence elements <span class="arithmatex">\(x_t\)</span> to live in <span class="arithmatex">\(\mathbb{R}^7\)</span>.</p>
+</li>
+<li>
+<p>Set <span class="arithmatex">\(m = n\)</span>.</p>
+</li>
+</ul>
+<p>With these hyperparameter and model parameter choices, what does this RNN look like? We can visualize the network 
+computation of one sequence element <span class="arithmatex">\(x_t\)</span> in a sequence <span class="arithmatex">\((x_1, \dots, x_T)\)</span>. 
+Since <span class="arithmatex">\(x_t \in \mathbb{R}^7\)</span>, let <span class="arithmatex">\(x_t = (x^t_1, x^t_2, x^t_3, x^t_4, ,x^t_5 , x^t_6, x^t_7)\)</span>. 
+Then this is what the forward pass on <span class="arithmatex">\(x_t\)</span> in the RNN would look like:</p>
+<p><img src="/png/rnn/simple_rnn.png" style="margin: 0 auto; display: block; width: 100%;"/> </p>
+<p>For simplicity, we omit the biases in the above image. But from this picture, it is easy to see that a vanilla RNN 
+is simply a feed-forward that feeds itself extra values on each forward pass in computing <span class="arithmatex">\(x_t\)</span>. 
+Namely, when processing the <span class="arithmatex">\(t\)</span>-th element in the sequence of data,
+it feeds itself the current input <span class="arithmatex">\(x_t\)</span> <strong>and</strong> the hidden layer calculations <span class="arithmatex">\(h_{t-1}\)</span> from the last time step. </p>
+<p>In fact, something else that is evident from the above picture is that you could actually combine <span class="arithmatex">\(W\)</span> and <span class="arithmatex">\(U\)</span> into 
+one single weight matrix <span class="arithmatex">\(W'\)</span> and perform forward pass by concatenating <span class="arithmatex">\(x_t\)</span> and <span class="arithmatex">\(h_{t-1}\)</span>. Later we'll see that this 
+is what we'll do in the code implementation of this network, as is often done in most implementation.</p>
+<p>As we will use this network to learn the Reber grammar, we introduce the grammar. </p>
+<h2 id="reber-grammar">Reber Grammar</h2>
+<p>The Reber gramma is an artifical grammar introduced 
+by Arthur Reber, a cognitive psychologist, in the 1960s as an example 
+of a experimental learning problem. (<a href="10.1037/0096-3445.118.3.219">According to Reber</a>, the grammar first appeared in his unpublished masters thesis 
+in 1965.)
+The grammar's rules, which generate legal strings, can be pictured with the following graph.</p>
+<p><img src="/png/rnn/reber_grammar.png" style="margin: 0 auto; display: block; width: 100%;"/> </p>
+<p>How do we generate strings from this grammar? We iteratively build a string by traversing the graph. More specifically,</p>
+<ul>
+<li>
+<p>For each edge we traverse, we iteratively append the letter corresponding to that edge to our current string in progress.</p>
+</li>
+<li>
+<p>The first letter will always be "B", because there is only one edge to traverse at the beginning.</p>
+</li>
+<li>
+<p>When we are presented with multiple possible edges to travese, we choose the next edge randomly and uniformly. </p>
+</li>
+<li>
+<p>We eventually traverse the last edge "E" at the end, so the last letter is always "E". </p>
+</li>
+</ul>
+<p>An example of a string generated by the above example is BTSSSXSE or BTSXXTVVE, but not BPVPS. 
+BPVPS is not legal because it doesn't finish traversing the graph. </p>
+<p>As we said before, the Reber grammar was invented as a learning problem. 
+The problem, which we will also use the RNN to try to solve, can be stated as follows: 
+Suppose we are given many strings which are generated by the Reber grammar. Suppose we do not know how these 
+samples are generated. Can we correctly determine whether or not a new, 
+unseen string is a legal string generated by the grammar?</p>
+<p>Interestingly, while the Reber grammar became widely discussed in the early literature on neural networks, Reber actually 
+created this grammar to test on humans. Reber was interested in something called <strong>implicit learning</strong>; the idea is that 
+there are certain things we, as humans, learn, but cannot exactly explain how we learned it (e.g. riding a bicycle) or sometimes 
+we learn unintentionally or unconsciously (hence "implicitly"). To test this, Reber invented this grammar and gave participants different 
+instructions on how to predict if a new, unseen sequence was valid or not; some were given instructions, some were to learn implicitly. 
+He demonstrated that participants who were given instructions were worse at predicting valid examples than the ones 
+that learned implicitly, giving evidence to the idea that humans can learn implicitly.</p>
+<p>While Reber tested humans on this learning problem, we will be doing the same thing but to an RNN. </p>
+<p>In order to do this, we will first implement the graph in code. It is not that hard.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">graph</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="mi">0</span><span class="p">:</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="mi">1</span><span class="p">:</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="mi">2</span><span class="p">:</span> <span class="p">[(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="mi">3</span><span class="p">:</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="mi">4</span><span class="p">:</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;s&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="mi">5</span><span class="p">:</span> <span class="p">[(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;p&quot;</span><span class="p">),</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;v&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="mi">6</span><span class="p">:</span> <span class="p">[(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;e&quot;</span><span class="p">)],</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Here, 0 denotes the initial state and -1 denotes the terminal state. 
+Next, we'll need to be able to generate strings from this graph. Hence we implement 
+a random traversal of this graph (uniform probability when presented with multiple edge options)</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">random</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">def</span> <span class="nf">randomly_traverse_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">):</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">curr_node</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">sentence</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">next_states</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">curr_node</span><span class="p">]</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">next_states</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            <span class="n">next_state</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">next_states</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">next_state</span> <span class="o">=</span> <span class="n">next_states</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="n">next_node</span> <span class="o">=</span> <span class="n">next_state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">next_letter</span> <span class="o">=</span> <span class="n">next_state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="n">sentence</span> <span class="o">+=</span> <span class="n">next_letter</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="n">curr_node</span> <span class="o">=</span> <span class="n">next_node</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="k">if</span> <span class="n">curr_node</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>            <span class="k">break</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="k">return</span> <span class="n">sentence</span>
+</span></code></pre></div>
+<p>That is basically it in terms of implementing the Reber grammar and generating examples from the grammar.</p>
+<h2 id="reber-grammar-problem-statement-and-data-representation">Reber Grammar Problem Statement and Data Representation</h2>
+<p>Now that we have introduced the Reber grammar, we will introduce the problem statement that we will 
+have the RNN attempt to solve:</p>
+<p>Suppose we are given many examples generated by the Reber grammar and we are unaware of the rules in which these 
+strings are generated. Given a new, unseen string, can we determine if it was generated by the Reber grammar?</p>
+<p>Our training and evaluation plan for the RNN will be as follows.</p>
+<ul>
+<li>
+<p>Generate many examples to obtain a training and test set. Additionally, append invalid, non-Reber strings to the test 
+set for later evaluation. </p>
+</li>
+<li>
+<p>Train the RNN.</p>
+</li>
+<li>
+<p>The RNN will operate in the following way: It will process a string sequentially by traversing each letter.
+On traversing a single letter, it will output a vector of probabilities. This vector 
+will tell us how likely any of the letters in our alphabet ("BTSXPVE") is most likely to appear <strong>next</strong>.</p>
+</li>
+<li>
+<p>Given the trained RNN, present it with a <strong>valid</strong> Reber string from the test set. Traverse each letter and present it to the model sequentially. If either of the model's two highest next letter predictions match the actual next letter, then the model is said to 
+be correct. Otherwise, it is incorrect. If it processes the whole test string correctly, then the model passes on the <strong>valid</strong> test example. </p>
+</li>
+<li>
+<p>Given the train RNN, also present it with an <strong>invalid</strong> Reber string from the test set. Traverse each letter and present it to the model sequentially. If either of the model's two highest next letter predictions <strong>do not</strong> match the actual next letter, 
+then the model is said to be correct. Otherwise, it is incorrect. If it processes the whole test string correctly, 
+then the model passes on the <strong>invalid</strong> test example. </p>
+</li>
+</ul>
+<p>At this point, we have one question: How will we design this RNN? Answer: We already did. The 
+RNN introduced in the previous section will be the exact same architecture that we will use for this problem.</p>
+<p>The next question we'd have that this point, which we now turn to: 
+How do we want to represent our input data (Reber strings) for our model? 
+We'll represent a string as a sequence of one-hot 
+encoded vectors, where each one-hot encoded vector specifies which letter in our alphabet ("BTSXPVE") it represents.
+Because our alphabet contains 7 characters, these one-hot encoded vectors will live in <span class="arithmatex">\(\mathbb{R}^7\)</span>.</p>
+<p>Let us give an example. For the input string "BPVPSE", we'd represent it as the sequence of vectors in 
+<span class="arithmatex">\(\mathbb{R}^7\)</span></p>
+<p><img src="/png/rnn/bpvpse.png" style="margin: 0 auto; display: block; width: 100%;"/> </p>
+<p>We can implement the logic of converting a Reber string to a one_hot encoded vector as below </p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">convert_string_to_one_hot_sequence</span><span class="p">(</span><span class="n">reber_string</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">alphabet</span> <span class="o">=</span> <span class="s2">&quot;btsxpve&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">reber_string</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">))]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">elem</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alphabet</span><span class="p">):</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="k">if</span> <span class="n">elem</span> <span class="o">==</span> <span class="n">letter</span><span class="p">:</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                <span class="n">vector</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>                <span class="k">break</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">return</span> <span class="n">sequence</span>
+</span></code></pre></div>
+<h2 id="defining-the-rnn-in-pytorch">Defining the RNN in Pytorch</h2>
+<p>We now implement the RNN we proposed earlier from scratch in Pytorch. Pytorch has an RNN class but we'll just implement the 
+RNN ourselves.</p>
+<p>The architecture in Pytorch is rather straightforward. Also, in our implementation, when we are computing a forward 
+pass we will simply concatenate the input with the previous hidden state, so that we only have to worry about one weight 
+matrix instead of two weight matrices <span class="arithmatex">\(W\)</span> and <span class="arithmatex">\(U\)</span>. </p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">torch</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span> 
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">class</span> <span class="nc">RNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">RNN</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_transform</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span> <span class="o">+</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">output_transform</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">tanh</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tanh</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">):</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="nb">input</span><span class="p">,</span> <span class="n">hidden</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        <span class="n">hidden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_transform</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="n">hidden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">hidden</span><span class="p">)</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_transform</span><span class="p">(</span><span class="n">hidden</span><span class="p">)</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>        <span class="k">return</span> <span class="n">output</span><span class="p">,</span> <span class="n">hidden</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="k">def</span> <span class="nf">initHidden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This allows us to implement our model and compute a forward pass as below.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">rnn</span> <span class="o">=</span> <span class="n">RNN</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="o">.</span><span class="n">initHidden</span><span class="p">()</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Perform a forward pass and collect each prediction</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">output</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="p">(</span><span class="n">elem</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="preparing-training-data">Preparing Training Data</h2>
+<p>In order to use our model, we need to prepare some training data <span class="arithmatex">\(\{\dots, (x_t, y_t), \dots\}\)</span>. 
+As we explained earlier, we know that the input to our model <span class="arithmatex">\(x_t\)</span> will be a sequence <span class="arithmatex">\((x_1^t, \dots, x_n^t)\)</span>, where 
+<span class="arithmatex">\(x_i^t \in \mathbb{R}^7\)</span> is a one-hot encoded vector. Additionally, the output of our model will be 
+a vector in <span class="arithmatex">\(\mathbb{R}^7\)</span> representing probabilities. 
+Thus, how exactly should we prepare training data? </p>
+<p>Let us give an example. For the legal Reber string "BPVPSE", we'd want the model to output the 
+following vectors.  </p>
+<p><img src="/png/rnn/rnn_bpvpse.png" style="margin: 0 auto; display: block; width: 95%;"/> </p>
+<p>Hence, for the input string <span class="arithmatex">\(BPVPSE\)</span>, the target value in our test set would be the sequence of 
+boolean vectors as above. 
+That way, the model would correctly indicate, via 1s and 0s, what letters could possibly appear at each 
+stage in a Reber string, and therefore it could learn the grammar.</p>
+<p>Here, we write a Python function that maps a Reber string to its target input. 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">generate_training_target</span><span class="p">(</span><span class="n">sequence</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">alphabet</span> <span class="o">=</span> <span class="s2">&quot;btsxpve&quot;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">curr_node</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">targets</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="c1"># Go to the next node in the graph</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">next_state</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">curr_node</span><span class="p">]:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>            <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="n">option</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                <span class="n">next_state</span> <span class="o">=</span> <span class="n">option</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>                <span class="k">break</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">if</span> <span class="n">next_state</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error, this sequence is invalid at this </span><span class="si">{</span><span class="n">letter</span><span class="si">=}</span><span class="s2">: </span><span class="si">{</span><span class="n">sequence</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>            <span class="k">break</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="c1"># Look at the next node options</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>        <span class="n">next_node</span> <span class="o">=</span> <span class="n">next_state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="n">target</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">))]</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>        <span class="k">if</span> <span class="n">next_node</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>            <span class="n">targets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            <span class="k">break</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="c1"># One hot encode the next possible</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="k">for</span> <span class="n">option</span> <span class="ow">in</span> <span class="n">graph</span><span class="p">[</span><span class="n">next_node</span><span class="p">]:</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>            <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">alphabet</span><span class="p">):</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>                <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="n">option</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>                    <span class="n">target</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>                    <span class="k">break</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>        <span class="n">curr_node</span> <span class="o">=</span> <span class="n">next_node</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a>        <span class="n">targets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>    <span class="k">return</span> <span class="n">targets</span>
+</span></code></pre></div></p>
+<p>Calling this function on the Reber string we used above returns the expected vectors. </p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">[</span><span class="n">ins</span><span class="p">]</span> <span class="n">In</span> <span class="p">[</span><span class="mi">107</span><span class="p">]:</span> <span class="n">generate_training_target</span><span class="p">(</span><span class="s2">&quot;bpvpse&quot;</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Out</span><span class="p">[</span><span class="mi">107</span><span class="p">]:</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+</span></code></pre></div>
+<p>Next, another function we'll need in order to generate training data is this simple function below.
+This functions allows us to create a dataset of Reber strings, controlling the minimum and maximum string lengths.
+Note that we are using the function <code>randomly_traverse_graph</code> that we defined earlier.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span> <span class="nf">generate_n_samples</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">,</span> <span class="n">min_length</span><span class="p">,</span> <span class="n">max_length</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">samples</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">num_samples</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="n">sample</span> <span class="o">=</span> <span class="n">randomly_traverse_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">min_length</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">:</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>            <span class="k">continue</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="n">samples</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">samples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="k">return</span> <span class="n">samples</span>
+</span></code></pre></div>
+<h2 id="training-in-pytorch">Training in Pytorch</h2>
+<p>Now that we have a training plan and way to generate our training data, we move onto training the RNN 
+in Pytorch.</p>
+<p>Training RNNs has historically been very difficult for researchers. The most obvious way to train RNNs is
+through applying a strategy similar to the backpropagation algorithm used for feed forward neural networks. 
+This works in theory, e.g., <a href="https://doi.org/10.1016/0893-6080(88)90007-x">(Werbos, 1990)</a>, and is known as the Back Propagation Through Time method. But while this works in theory, and explicit update formulas can be written, the recursive nature of RNNs cause 
+the resulting formulas to have many products, which grows with the number of time steps used in training data. 
+As a result, gradients computed through BPTT tend to either vanish or explode <a href="https://dx.doi.org/10.1109/72.279181">(Bengio et. al.)</a>.</p>
+<p>There are various techniques one can employ to avoid the vanishing gradient problem in RNNs, such as only training on the last <span class="arithmatex">\(k\)</span> 
+time steps, etc. The most promising work towards addressing this problem was through the invention of 
+the LSTM model <a href="https://doi.org/10.1162/neco.1997.9.8.1735">(Hochreiter et. al., 1997)</a>. </p>
+<p>Here, we will employ the equivalent of the naive backpropagation through time method, since it doesn't cause any issues
+for our data. Our training function is given as below.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span> 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">def</span> <span class="nf">train_one_example</span><span class="p">(</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">rnn</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">target</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">],</span> 
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">input_sequence</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">],</span> 
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="n">learning_rate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">criterion</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">):</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="n">rnn</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="n">hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="o">.</span><span class="n">initHidden</span><span class="p">()</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="n">loss</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">)):</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>        <span class="n">output</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hidden</span><span class="p">)</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>        <span class="n">loss</span> <span class="o">+=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">))</span> <span class="o">*</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">float</span><span class="p">())</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    <span class="c1"># Add parameters&#39; gradients to their values, multiplied by learning rate</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">rnn</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>        <span class="n">p</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">add_</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=-</span><span class="n">learning_rate</span><span class="p">)</span>
+</span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>    <span class="k">return</span> <span class="n">output</span><span class="p">,</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+</span></code></pre></div>
+<p>We can then use this function to write a function that trains the model on an entire training dataset
+for a certain number of epochs.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span> 
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">def</span> <span class="nf">train</span><span class="p">(</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">rnn</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">epochs</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">training_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">]],</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">learning_rate</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    <span class="n">criterion</span><span class="p">,</span> 
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">):</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="n">epoch_loss</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>        <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">)):</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>            <span class="n">sequence</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">training_data</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>            <span class="n">output</span><span class="p">,</span> <span class="n">loss</span> <span class="o">=</span> <span class="n">train_one_example</span><span class="p">(</span><span class="n">rnn</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">sequence</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>            <span class="n">epoch_loss</span> <span class="o">+=</span> <span class="n">loss</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">epoch_loss</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We now have everything we need to train our model on the Reber grammar data. The following code does
+exactly that. In our code, we're using </p>
+<ul>
+<li>A learning rate of 0.4</li>
+<li>400 samples for training and testing, using strings ranging from length 30 to 52</li>
+<li>10 epochs</li>
+<li><a href="https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html">BCE</a> (Binary cross entropy)loss function </li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span> 
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Specify model settings</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">n_hidden</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="n">input_size</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">output_size</span> <span class="o">=</span> <span class="mi">7</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="n">rnn</span> <span class="o">=</span> <span class="n">RNN</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">n_hidden</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># Specify dataset settings</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="n">num_samples</span> <span class="o">=</span> <span class="mi">400</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">data</span> <span class="o">=</span> <span class="n">generate_training_data</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">num_samples</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">52</span><span class="p">)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="n">training_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">num_samples</span><span class="p">)]</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">test_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="n">num_samples</span><span class="p">)</span> <span class="p">:]</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1"># Specify training settings</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.4</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">()</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="n">train</span><span class="p">(</span><span class="n">rnn</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">training_data</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">criterion</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Running this code, you should see something like 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="mf">97.66354854404926</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="mf">45.04029807448387</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="mf">28.23289054632187</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="mf">18.152766678482294</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="mf">13.75518929772079</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="mf">11.260628033429384</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="mf">9.576107319444418</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="mf">8.345648445189</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="mf">7.399222897365689</span>
+</span></code></pre></div>
+which demonstrates that model's convergence on the training data during each epoch.</p>
+<h2 id="evaluation">Evaluation</h2>
+<p>Now that we can train the model, how do we evaluate its performance? As we said before, the goal is for the model 
+to always correctly predict legal next-letter options when traversing a Reber string. In this way, the model can learn to validate 
+legal reber strings and reject invalid strings. </p>
+<p>To do this, we can write a function that evaluates the model given on test example from the testing set. 
+As the model is iteratively fed each one-hot encoded letter, it announces what it thinks to be the next 
+two possible letters. If these two predictions match what true next letter, then the model has passed the test. 
+Otherwise, it fails. </p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">def</span> <span class="nf">eval_one_input</span><span class="p">(</span><span class="n">rnn</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="o">.</span><span class="n">initHidden</span><span class="p">()</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        <span class="k">if</span> <span class="n">ind</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># the model succeeded</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>            <span class="k">continue</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="n">prediction</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="n">rnn</span><span class="p">(</span><span class="n">letter</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="n">_</span><span class="p">,</span> <span class="n">indices</span> <span class="o">=</span> <span class="n">prediction</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>        <span class="n">next_letter</span> <span class="o">=</span> <span class="nb">input</span><span class="p">[</span><span class="n">ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">next_letter</span><span class="o">.</span><span class="n">nonzero</span><span class="p">())</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">2</span><span class="p">:]:</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>            <span class="nb">print</span><span class="p">(</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>                <span class="sa">f</span><span class="s2">&quot;Network incorrectly predicted </span><span class="si">{</span><span class="n">prediction</span><span class="si">=}</span><span class="s2"> at </span><span class="si">{</span><span class="n">ind</span><span class="si">=}</span><span class="s2">, next letter was </span><span class="si">{</span><span class="n">next_letter</span><span class="si">=}</span><span class="s2">&quot;</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>            <span class="p">)</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>            <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    <span class="k">return</span> <span class="kc">True</span>
+</span></code></pre></div>
+<p>We can then use this function to build our main evaluation function, which tests the model across 
+the entire test dataset and summarizes the pass rate of the model.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span> <span class="nf">eval_model</span><span class="p">(</span><span class="n">rnn</span><span class="p">:</span> <span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">,</span> <span class="n">test_data</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="n">rnn</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="n">num_passed</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">for</span> <span class="n">sequence</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">test_data</span><span class="p">:</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="n">reber_string</span> <span class="o">=</span> <span class="n">convert_one_hot_sequence_to_string</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>        <span class="n">passed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">eval_one_input</span><span class="p">(</span><span class="n">rnn</span><span class="p">,</span> <span class="n">sequence</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="k">if</span> <span class="n">passed</span><span class="p">:</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Network passed on </span><span class="si">{</span><span class="n">reber_string</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>            <span class="n">num_passed</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Network failed on </span><span class="si">{</span><span class="n">reber_string</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    <span class="n">pass_rate</span> <span class="o">=</span> <span class="n">num_passed</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Overal pass rate: </span><span class="si">{</span><span class="n">pass_rate</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>We can then call the above function <code>eval_model</code> on our trained RNN. Doing so yields output to 
+stdout as below. 
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">...</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">Network</span> <span class="n">passed</span> <span class="n">on</span> <span class="n">reber_string</span><span class="o">=</span><span class="s1">&#39;btsxxtttvpxtvve&#39;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">Network</span> <span class="n">incorrectly</span> <span class="n">predicted</span> <span class="n">prediction</span><span class="o">=</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">1.1079e-03</span><span class="p">,</span> <span class="mf">6.1265e-02</span><span class="p">,</span> <span class="mf">1.6927e-01</span><span class="p">,</span> <span class="mf">1.5435e-01</span><span class="p">,</span> <span class="mf">9.5694e-05</span><span class="p">,</span> <span class="mf">7.1114e-01</span><span class="p">,</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>         <span class="mf">1.0911e-02</span><span class="p">]],</span> <span class="n">grad_fn</span><span class="o">=&lt;</span><span class="n">SigmoidBackward0</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">at</span> <span class="n">ind</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="nb">next</span> <span class="n">letter</span> <span class="n">was</span> <span class="n">next_letter</span><span class="o">=</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="n">Network</span> <span class="n">failed</span> <span class="n">on</span> <span class="n">reber_string</span><span class="o">=</span><span class="s1">&#39;bpttvpxttvpxtvve&#39;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="n">Network</span> <span class="n">passed</span> <span class="n">on</span> <span class="n">reber_string</span><span class="o">=</span><span class="s1">&#39;btxxvpxtttvve&#39;</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="o">...</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="n">Overal</span> <span class="k">pass</span> <span class="n">rate</span><span class="p">:</span> <span class="n">pass_rate</span><span class="o">=</span><span class="mf">0.7607142857142857</span>
+</span></code></pre></div></p>
+<p>You can play with the model parameters and training examples to obtain a pass rate of 1.0. For me, I used
+the following parameters to achieve a perfect pass rate on a small dataset. 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a># model params
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>n_hidden = 4
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>input_size = 7
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>output_size = 7
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a># dataset settings
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>num_samples = 400
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>min_length = 30
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>max_length = 52
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a># training settings
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>learning_rate = 1
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>epochs = 20
+</span></code></pre></div></p>
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.expand", "navigation.tabs"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.726fbb30.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
