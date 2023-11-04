@@ -2,7 +2,7 @@
 date: 2023-10-29
 ---
 
-# Recurrent Neural Networks and the Embedded Reber Grammar
+# Recurrent Neural Networks and the Reber Grammar in PyTorch
 
 Recurrent neural networks are a special type neural network that have been heavily studied for decades towards 
 problems involving sequence prediction, which standard feed-forward neural networks tend not to be that great at. 
@@ -10,7 +10,7 @@ What makes RNNs different is that it processes input sequentially and generates 
 which are then used in future computations. 
 
 Here, we'll offer an overview of RNNs, present an explicit RNN, and then implement an RNN in Pytorch to learn an artificial grammar 
-known as the Reber Grammar. 
+known as the Reber Grammar. You can find the complete PyTorch code, which we'll also introduce here, in [this Github gist](https://gist.github.com/ltrujello/dbe10beb84b7bfe8efa542ea2c5ed249).
 
 <!-- more -->
 
@@ -113,8 +113,11 @@ As we will use this network to learn the Reber grammar, we introduce the grammar
 
 ## Reber Grammar
 
-The Reber grammar is an artifical grammar introduced in the 1970s by Arthur Reber, a cognitive psychologist, as an example 
-of a experimental learning problem. The grammar's rules, which generate legal strings, can be pictured with the following graph.
+The Reber gramma is an artifical grammar introduced 
+by Arthur Reber, a cognitive psychologist, in the 1960s as an example 
+of a experimental learning problem. ([According to Reber](10.1037/0096-3445.118.3.219), the grammar first appeared in his unpublished masters thesis 
+in 1965.)
+The grammar's rules, which generate legal strings, can be pictured with the following graph.
 
 <img src="/png/rnn/reber_grammar.png" style="margin: 0 auto; display: block; width: 100%;"/> 
 
@@ -298,7 +301,7 @@ for elem in sequence:
 ```
 
 
-## Training
+## Preparing Training Data
 
 In order to use our model, we need to prepare some training data $\{\dots, (x_t, y_t), \dots\}$. 
 As we explained earlier, we know that the input to our model $x_t$ will be a sequence $(x_1^t, \dots, x_n^t)$, where 
@@ -316,26 +319,253 @@ boolean vectors as above.
 That way, the model would correctly indicate, via 1s and 0s, what letters could possibly appear at each 
 stage in a Reber string, and therefore it could learn the grammar.
 
-Additionally, some other questions we may have regarding training: How long should the strings in our training and test data be? 
-If the model sees short strings, can it learn to validate long strings, and vice versa? 
-In order to play with different datasets with different string lengths, we 
-can write the following data generation function that takes in parameters to control the data. 
+Here, we write a Python function that maps a Reber string to its target input. 
+```python
+def generate_training_target(sequence):
+    alphabet = "btsxpve"
+    curr_node = 0
+    targets = []
+    for letter in sequence:
+        # Go to the next node in the graph
+        next_state = None
+        for option in graph[curr_node]:
+            if letter == option[1]:
+                next_state = option
+                break
+        if next_state is None:
+            print(f"Error, this sequence is invalid at this {letter=}: {sequence=}")
+            break
+        # Look at the next node options
+        next_node = next_state[0]
+        target = [0 for _ in range(len(alphabet))]
+        if next_node == -1:
+            targets.append(target)
+            break
+        # One hot encode the next possible
+        for option in graph[next_node]:
+            for ind, letter in enumerate(alphabet):
+                if letter == option[1]:
+                    target[ind] = 1
+                    break
+        curr_node = next_node
+        targets.append(target)
+    return targets
+```
+
+Calling this function on the Reber string we used above returns the expected vectors. 
+
+```python
+[ins] In [107]: generate_training_target("bpvpse")
+Out[107]:
+[[0, 1, 0, 0, 1, 0, 0],
+ [0, 1, 0, 0, 0, 1, 0],
+ [0, 0, 0, 0, 1, 1, 0],
+ [0, 0, 1, 1, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0, 1],
+ [0, 0, 0, 0, 0, 0, 0]]
+```
+
+Next, another function we'll need in order to generate training data is this simple function below.
+This functions allows us to create a dataset of Reber strings, controlling the minimum and maximum string lengths.
 Note that we are using the function `randomly_traverse_graph` that we defined earlier.
 
 ```python
 def generate_n_samples(graph, num_samples, min_length, max_length):
-    samples = []
+    samples = set()
     while len(samples) < num_samples:
         sample = randomly_traverse_graph(graph)
         if len(sample) < min_length or len(sample) > max_length:
             continue
-        samples.append(sample)
+        samples.add(sample)
+    samples = list(samples)
     return samples
 ```
 
-We can then use this function to generate training and test data mapping one-hot encoded reber strings to 
-vector probabilities as below.
+## Training in Pytorch
+
+Now that we have a training plan and way to generate our training data, we move onto training the RNN 
+in Pytorch.
+
+Training RNNs has historically been very difficult for researchers. The most obvious way to train RNNs is
+through applying a strategy similar to the backpropagation algorithm used for feed forward neural networks. 
+This works in theory, e.g., [(Werbos, 1990)](https://doi.org/10.1016/0893-6080(88)90007-x), and is known as the Back Propagation Through Time method. But while this works in theory, and explicit update formulas can be written, the recursive nature of RNNs cause 
+the resulting formulas to have many products, which grows with the number of time steps used in training data. 
+As a result, gradients computed through BPTT tend to either vanish or explode [(Bengio et. al.)](https://dx.doi.org/10.1109/72.279181).
+
+There are various techniques one can employ to avoid the vanishing gradient problem in RNNs, such as only training on the last $k$ 
+time steps, etc. The most promising work towards addressing this problem was through the invention of 
+the LSTM model [(Hochreiter et. al., 1997)](https://doi.org/10.1162/neco.1997.9.8.1735). 
+
+Here, we will employ the equivalent of the naive backpropagation through time method, since it doesn't cause any issues
+for our data. Our training function is given as below.
 
 ```python
+import torch.nn as nn 
 
+def train_one_example(
+    rnn: nn.Module,
+    target: list[torch.tensor], 
+    input_sequence: list[torch.tensor], 
+    learning_rate: float,
+    criterion,
+):
+    rnn.zero_grad()
+    hidden = rnn.initHidden()
+    loss = 0
+    for i in range(len(input_sequence)):
+        output, hidden = rnn(input_sequence[i], hidden)
+        loss += (1 / len(input_sequence)) * criterion(output, target[i].float())
+
+    loss.backward()
+
+    # Add parameters' gradients to their values, multiplied by learning rate
+    for p in rnn.parameters():
+        p.data.add_(p.grad.data, alpha=-learning_rate)
+
+    return output, loss.item()
+```
+
+We can then use this function to write a function that trains the model on an entire training dataset
+for a certain number of epochs.
+
+```python
+import torch.nn as nn 
+
+def train(
+    rnn: nn.Module,
+    epochs: int,
+    training_data: list[tuple[torch.tensor]],
+    learning_rate: float,
+    criterion, 
+):
+    for _ in range(epochs):
+        epoch_loss = 0
+        for ind in range(len(training_data)):
+            sequence, target = training_data[ind]
+            output, loss = train_one_example(rnn, target, sequence, learning_rate, criterion)
+            epoch_loss += loss
+        print(epoch_loss)
+```
+
+We now have everything we need to train our model on the Reber grammar data. The following code does
+exactly that. In our code, we're using 
+
+* A learning rate of 0.4
+* 400 samples for training and testing, using strings ranging from length 30 to 52
+* 10 epochs
+* [BCE](https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html) (Binary cross entropy)loss function 
+
+```python
+import torch.nn as nn 
+
+# Specify model settings
+n_hidden = 4
+input_size = 7
+output_size = 7
+rnn = RNN(input_size, n_hidden, output_size)
+
+# Specify dataset settings
+num_samples = 400
+data = generate_training_data(graph, num_samples, 30, 52)
+training_data = data[: int(0.8 * num_samples)]
+test_data = data[int(0.8 * num_samples) :]
+
+# Specify training settings
+learning_rate = 0.4
+epochs = 10
+criterion = nn.BCELoss()
+train(rnn, epochs, training_data, learning_rate, criterion)
+```
+
+Running this code, you should see something like 
+```python
+97.66354854404926
+45.04029807448387
+28.23289054632187
+18.152766678482294
+13.75518929772079
+11.260628033429384
+9.576107319444418
+8.345648445189
+7.399222897365689
+```
+which demonstrates that model's convergence on the training data during each epoch.
+
+## Evaluation
+
+Now that we can train the model, how do we evaluate its performance? As we said before, the goal is for the model 
+to always correctly predict legal next-letter options when traversing a Reber string. In this way, the model can learn to validate 
+legal reber strings and reject invalid strings. 
+
+To do this, we can write a function that evaluates the model given on test example from the testing set. 
+As the model is iteratively fed each one-hot encoded letter, it announces what it thinks to be the next 
+two possible letters. If these two predictions match what true next letter, then the model has passed the test. 
+Otherwise, it fails. 
+
+```python
+def eval_one_input(rnn: nn.Module, input: list[torch.tensor]) -> bool:
+    hidden = rnn.initHidden()
+    for ind, letter in enumerate(input):
+        if ind == len(input) - 1:  # the model succeeded
+            continue
+        prediction, hidden = rnn(letter, hidden)
+        _, indices = prediction.sort()
+        next_letter = input[ind + 1][0]
+        if int(next_letter.nonzero()) not in indices[0][-2:]:
+            print(
+                f"Network incorrectly predicted {prediction=} at {ind=}, next letter was {next_letter=}"
+            )
+            return False
+    return True
+```
+
+We can then use this function to build our main evaluation function, which tests the model across 
+the entire test dataset and summarizes the pass rate of the model.
+
+```python
+def eval_model(rnn: nn.Module, test_data: list[tuple[torch.tensor]]) -> None:
+    rnn.eval()
+    num_passed = 0
+    for sequence, _ in test_data:
+        reber_string = convert_one_hot_sequence_to_string(sequence)
+        passed: bool = eval_one_input(rnn, sequence)
+        if passed:
+            print(f"Network passed on {reber_string=}")
+            num_passed += 1
+        else:
+            print(f"Network failed on {reber_string=}")
+
+    pass_rate = num_passed / len(test_data)
+    print(f"Overal pass rate: {pass_rate=}")
+```
+
+We can then call the above function `eval_model` on our trained RNN. Doing so yields output to 
+stdout as below. 
+```python
+...
+Network passed on reber_string='btsxxtttvpxtvve'
+Network incorrectly predicted prediction=tensor([[1.1079e-03, 6.1265e-02, 1.6927e-01, 1.5435e-01, 9.5694e-05, 7.1114e-01,
+         1.0911e-02]], grad_fn=<SigmoidBackward0>) at ind=1, next letter was next_letter=tensor([0, 1, 0, 0, 0, 0, 0])
+Network failed on reber_string='bpttvpxttvpxtvve'
+Network passed on reber_string='btxxvpxtttvve'
+...
+Overal pass rate: pass_rate=0.7607142857142857
+```
+
+You can play with the model parameters and training examples to obtain a pass rate of 1.0. For me, I used
+the following parameters to achieve a perfect pass rate on a small dataset. 
+```
+# model params
+n_hidden = 4
+input_size = 7
+output_size = 7
+
+# dataset settings
+num_samples = 400
+min_length = 30
+max_length = 52
+
+# training settings
+learning_rate = 1
+epochs = 20
 ```

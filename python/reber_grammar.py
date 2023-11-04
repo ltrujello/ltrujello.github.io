@@ -1,9 +1,6 @@
-import numpy as np
 import torch.nn as nn
 import random
 import torch
-import time
-import math
 
 
 graph = {
@@ -47,12 +44,14 @@ def generate_n_samples(graph, num_samples, min_length, max_length):
     samples = list(samples)
     return samples
 
+
 def validate_string(graph, string):
     curr_node = 0
-    sentence = ""
     for letter in string:
         if curr_node == -1:
-            prinj(f"{string=} is invalid, reached end of sequence but untraversed data remains")
+            print(
+                f"{string=} is invalid, reached end of sequence but untraversed data remains"
+            )
             return False
         next_states = graph[curr_node]
         is_valid = False
@@ -87,7 +86,7 @@ def generate_training_target(sequence):
         if next_node == -1:
             targets.append(target)
             break
-        # One hot encode the next possible 
+        # One hot encode the next possible
         for option in graph[next_node]:
             for ind, letter in enumerate(alphabet):
                 if letter == option[1]:
@@ -110,6 +109,7 @@ def convert_string_to_one_hot_sequence(reber_string):
         sequence.append(vector)
     return sequence
 
+
 def convert_one_hot_sequence_to_string(one_hot_sequence):
     alphabet = "btsxpve"
     reber_string = ""
@@ -118,7 +118,9 @@ def convert_one_hot_sequence_to_string(one_hot_sequence):
     return reber_string
 
 
-def generate_training_data(graph, num_samples, min_length, max_length):
+def generate_training_data(
+    graph: dict, num_samples: int, min_length: int, max_length: int
+) -> list[tuple[torch.tensor]]:
     samples = generate_n_samples(graph, num_samples, min_length, max_length)
 
     training_data = []
@@ -134,7 +136,7 @@ def generate_training_data(graph, num_samples, min_length, max_length):
 
 
 class RNN(nn.Module):
-    def __init__(self, input_size, hidden_size, output_size):
+    def __init__(self, input_size: int, hidden_size: int, output_size: int):
         super(RNN, self).__init__()
         self.hidden_size = hidden_size
 
@@ -156,11 +158,15 @@ class RNN(nn.Module):
         return torch.zeros(1, self.hidden_size)
 
 
-def train(target, input_sequence):
-    hidden = rnn.initHidden()
-
+def train_one_example(
+    rnn: nn.Module,
+    target: list[torch.tensor],
+    input_sequence: list[torch.tensor],
+    learning_rate: float,
+    criterion,
+):
     rnn.zero_grad()
-
+    hidden = rnn.initHidden()
     loss = 0
     for i in range(len(input_sequence)):
         output, hidden = rnn(input_sequence[i], hidden)
@@ -175,71 +181,82 @@ def train(target, input_sequence):
     return output, loss.item()
 
 
-def main():
-    epochs = 100
-
-    # Keep track of losses for plotting
-    current_loss = 0
-    all_losses = []
-
-    start = time.time()
-
-
-    hidden = rnn.initHidden()
-    input = torch.tensor([[1, 0, 0, 0, 0, 0, 0]])
-    # print(rnn(input, hidden))
-
+def train(
+    rnn: nn.Module,
+    epochs: int,
+    training_data: list[tuple[torch.tensor]],
+    learning_rate: float,
+    criterion,
+):
     for _ in range(epochs):
         epoch_loss = 0
         for ind in range(len(training_data)):
             sequence, target = training_data[ind]
-            output, loss = train(target, sequence)
+            output, loss = train_one_example(
+                rnn, target, sequence, learning_rate, criterion
+            )
             epoch_loss += loss
         print(epoch_loss)
-        current_loss += epoch_loss
 
-    # print(rnn(input, hidden))
 
-def eval_sequence(test_data):
+def eval_one_input(rnn: nn.Module, input: list[torch.tensor]) -> bool:
+    hidden = rnn.initHidden()
+    for ind, letter in enumerate(input):
+        if ind == len(input) - 1:  # the model succeeded
+            continue
+        prediction, hidden = rnn(letter, hidden)
+        _, indices = prediction.sort()
+        next_letter = input[ind + 1][0]
+        if int(next_letter.nonzero()) not in indices[0][-2:]:
+            print(
+                f"Network incorrectly predicted {prediction=} at {ind=}, next letter was {next_letter=}"
+            )
+            return False
+    return True
+
+
+def eval_model(rnn: nn.Module, test_data: list[tuple[torch.tensor]]) -> None:
     rnn.eval()
     num_passed = 0
     for sequence, _ in test_data:
-        hidden = rnn.initHidden()
         reber_string = convert_one_hot_sequence_to_string(sequence)
-        passed = True
-        for ind, letter in enumerate(sequence):
-            prediction, hidden = rnn(letter, hidden)
-            sorted, indices = prediction.sort()
-            if ind == len(sequence) - 1:
-                continue
-            else:
-                next_letter = sequence[ind + 1][0]
-                if int(next_letter.nonzero()) not in indices[0][-2:]:
-                    print(f"Network failed on {reber_string=}, incorrectly predicted {prediction=} at {ind=}, next letter was {next_letter=}")
-                    passed = False
-                    break
+        passed: bool = eval_one_input(rnn, sequence)
         if passed:
             print(f"Network passed on {reber_string=}")
             num_passed += 1
+        else:
+            print(f"Network failed on {reber_string=}")
+
     pass_rate = num_passed / len(test_data)
     print(f"Overal pass rate: {pass_rate=}")
 
-if __name__ == "__main__":
+
+def main():
+    # Specify model settings
     n_hidden = 4
     input_size = 7
     output_size = 7
-    learning_rate = 0.4
-    num_samples = 400
-
-    data = generate_training_data(graph, num_samples, 30, 52)
-    training_data = data[:int(.8 * num_samples)]
-    test_data = data[int(.8 * num_samples):]
-    test_data = test_data + generate_training_data(graph, 100, 10, 30)
-    test_data = test_data + generate_training_data(graph, 100, 10, 30)
-
-
     rnn = RNN(input_size, n_hidden, output_size)
-    criterion = nn.BCELoss()
 
+    # Specify dataset settings
+    num_samples = 400
+    min_length = 30
+    max_length = 52
+    data = generate_training_data(graph, num_samples, min_length, max_length)
+    training_data = data[: int(0.8 * num_samples)]
+    test_data = data[int(0.8 * num_samples) :]
+    # add some random data with shorter strings to test set as well
+    test_data = test_data + generate_training_data(graph, 100, 10, 30)
+
+    # Specify training settings
+    learning_rate = 1
+    epochs = 20
+    criterion = nn.BCELoss()
+    train(rnn, epochs, training_data, learning_rate, criterion)
+
+    # Evaluate model
+    eval_model(rnn, test_data)
+
+
+if __name__ == "__main__":
     main()
-    eval_sequence(test_data)

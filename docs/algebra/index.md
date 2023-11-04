@@ -1,5 +1,6 @@
 # Algebra Notes
 
+<img src="../../../png/algebra/algebra.png" style="float: right; width:40%"/>
 These are notes on general algebra that I wrote and maintained throughout my math undergraduate education. 
 In PDF format, this totals to about 150 pages of notes.
 
