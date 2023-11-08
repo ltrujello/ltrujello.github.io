@@ -3000,14 +3000,75 @@
       <header class="md-typeset">
         <h1 id="home">Home</h1>
 <p><img src="png/home/3D_model.jpg" style="float: right; width:40%"/>
-Hi, my name is Luke and you've found my website. Here you can find stuff I've made that I hope can be useful. </p>
-<p>I enjoy working on things that make it faster and easier for others to disseminate and understand
-technical information. </p>
-<p>My undergraduate education focused on pure math, specifically in relation to algebra, 
-topology, and category theory, and I studied these areas deeply under many wonderfully patient 
-math profs. However, these days my interests reside more in neural networks, 
-specifically with regard to neural translation and computer vision. </p>
+Hi, my name is Luke and you've found my website. </p>
+<p>I am fascinated by language and enjoy working on things that make it faster and easier for others 
+to disseminate and understand technical information. </p>
+<p>Here are some things you can look at. </p>
+<ul>
+<li>
+<p>My senior thesis <a href="https://scholarship.claremont.edu/hmc_theses/243/"><em>A Coherent Proof of Mac Lane's Coherence Theorem</em></a>, which explicitly 
+outlines the proof details of Saunders Mac Lane's 50 year old theorem.</p>
+</li>
+<li>
+<p>A <a href="/category_theory/">large note set</a> on Category Theory, a beautiful branch of mathematics. </p>
+</li>
+<li>
+<p>A <a href="/algebra/">large note set</a> on Algebra. </p>
+</li>
+<li>
+<p><a href="https://ltrujello.github.io/topology/topology_notebook_5_2019.pdf">Proofs in topology</a>, which I did for an undergraduate course in topology and homotopy theory. </p>
+</li>
+</ul>
+<p>The picture on the right is from when I went crazy one night with marshmallows and toothpicks 
+in order to study the <a href="associahedron">associahedron</a> in <span class="arithmatex">\(\mathbb{R}^3\)</span> for my undergrad thesis.</p>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-10-29 00:00:00">October 29, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              5 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="understanding-lstms-and-vanishing-gradients-in-rnns"><a class="toclink" href="2023/10/29/understanding-lstms-and-vanishing-gradients-in-rnns/">Understanding LSTMs and Vanishing Gradients in RNNs</a></h2>
+<p>In attempting to understand LSTMs, I often find myself reading blog posts, tutorials, explanations which 
+all characterize LSTMs in the same way, but they are not very satisfactory in my opinion because they do not 
+explain <em>why</em> LSTMs were invented or <em>how</em> they manage to solve the <strong>vanishing gradient</strong> problem 
+in RNNs (which is why they were created). I think this is important to really understanding the 
+structure of an LSTM. </p>
+<p>In general, sometimes it's necessary to deeply understand the motivation 
+for a concept, especially if (1) the concept is complicated and nontrivial and (2) would lend itself to being
+almost arbitrary and random if the motivation were not taken into account. 
+Conversely, sometimes this is not necessary, especially if there are other more 
+pressing things to deeply understand.</p>
+<p>The details of why gradients vanish for RNNs during the BPTT algorithm can be found in certain 90s neural network 
+papers, such as <a href="https://doi.org/10.1162/neco.1997.9.8.1735">(Hochreiter, 1997)</a>, a paper in which Hochreiter et. al. 
+propose the LSTM model. In that description, the model for the LSTM actually differs from what we know to be an 
+LSTM today. Thus the goal of this write up will be to go beyond just 
+saying "LSTMs have an input, forget gate", and to offer a modern description of vanishing gradients in 
+RNNs and how LSTMs solve this. </p>
+
+    <nav class="md-post__action">
+      <a href="2023/10/29/understanding-lstms-and-vanishing-gradients-in-rnns/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
