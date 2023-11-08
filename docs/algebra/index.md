@@ -5,7 +5,7 @@
 These are notes on topics in algebra, including group theory, ring theory, and module theory, that 
 I wrote and maintained throughout my math undergraduate education. 
 
-This is the html version rendered. If you'd like the original LaTeX PDF version, see here.
+This is the html version rendered. If you'd like the original LaTeX PDF version, see [here](https://ltrujello.github.io/algebra_notes/tex/algebra_long.pdf).
 In PDF format, this totals to about 150 pages of notes.
 
 ## Motivation
