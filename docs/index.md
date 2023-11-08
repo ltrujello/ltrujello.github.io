@@ -20,7 +20,7 @@ outlines the proof details of Saunders Mac Lane's 50 year old theorem.
 
 * A [large note set](/algebra/) on Algebra. 
 
-* Proofs in topology, which I did for an undergraduate course in topology and homotopy theory. 
+* [Proofs in topology](https://ltrujello.github.io/topology/topology_notebook_5_2019.pdf), which I did for an undergraduate course in topology and homotopy theory. 
 
 
 The picture on the right is from when I went crazy one night with marshmallows and toothpicks 
