@@ -317,12 +317,12 @@ Cleaning this up a bit, we see that there's a pattern here:
     B(\gamma_1,\gamma_2, t) B(\gamma_2,\gamma_3, t) A(\gamma_3, t-3) \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
 \end{align}
 
-This then leads to the formula 
+Let $\gamma_0 = \alpha$. Then this then leads us to suspect that the general formula is
 
 \[
 \frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
 = 
-\sum_{k = 1}^{t - 1}
+\sum_{k = 0}^{t-1}
 \left( 
 \sum_{\gamma_1 = 1}^{n}
 \cdots
@@ -330,6 +330,91 @@ This then leads to the formula
 \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
 \right)
 \]
+
+Let's prove this by performing induction on the timestep $t$. For our base case, we 
+have $t=1$. This reduces to 
+
+\[
+\frac{\partial h^{\alpha}_{t}}{\partial w_{ij}} = A(\alpha, t) = \sigma_h' \cdot \sum_{\beta} \frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta}
+= \sigma_h' \cdot x^j_1
+\]
+
+which is correct; this matches what we calculated earlier when we were starting simple. Next, suppose that the assertion holds 
+for timestep $t \ge 1$; to prove that this equation also holds for timestep $t + 1$, observe that 
+
+\begin{align*}
+    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
+    &=
+    \sigma_h' 
+    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_{t+1}^{\beta} 
+    + 
+    \sigma_h'
+    \sum_{\gamma = 1}^{n}u_{\alpha\gamma}\frac{\partial h_{t}^{\gamma}}{\partial w_{ij}} \\
+    &=
+    \sigma_h' 
+    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_{t+1}^{\beta} 
+    + 
+    \sigma_h'
+    \sum_{\gamma =1}^{n} u_{\alpha\gamma}
+    \left( 
+        \sum_{k = 0}^{t - 1}
+        \sum_{\gamma_1 = 1}^{n}
+        \cdots
+        \sum_{\gamma_k = 1}^{n}
+        \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+    \right)
+     \\
+    &= A(\alpha, t+1) + \sum_{\gamma=1}^{n}B(\alpha, \gamma, t + 1)
+        \left( 
+        \sum_{k = 0}^{t - 1}
+        \sum_{\gamma_1 = 1}^{n}
+        \cdots
+        \sum_{\gamma_k = 1}^{n}
+        \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+    \right)
+\end{align*}
+
+Now if we declare $\gamma_{-1} = \alpha$ and recall that $\gamma_0 = \gamma$, then we have  
+
+\[
+    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
+    = 
+    \sum_{k = -1}^{t - 1}
+    \left(
+    \sum_{\gamma_0 = 1}^{n}
+    \sum_{\gamma_1 = 1}^{n}
+    \cdots
+    \sum_{\gamma_k = 1}^{n}
+    \prod_{\ell=-1}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+    \right)
+\]
+
+by allowing $k$ to range from $-1$ to $t - 1$ and $\ell$ to range from $-1$ to $k - 1$.
+
+Reindexing our sum with new indices $\gamma'$ such that 
+$\gamma'_{i + 1} = \gamma_i$,
+we can rewrite this as
+
+\[
+    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
+    = 
+    \sum_{k = 0}^{t}
+    \left(
+    \sum_{\gamma'_1 = 1}^{n}
+    \sum_{\gamma'_2 = 1}^{n}
+    \cdots
+    \sum_{\gamma'_{k} = 1}^{n}
+    \prod_{\ell=0}^{k - 1} B(\gamma'_\ell, \gamma'_{\ell + 1}, (t + 1) - \ell)A(\gamma'_{k}, (t + 1)-{k})
+    \right)
+\]
+
+which asserts our proposition from timestep $t +1$. Since our assertion is true for $t + 1$ whenever $t \ge 1$, 
+and we proved the assertion for $t = 1$, this 
+proves by induction that our formula holds for all timesteps $t$. 
+
+### Calculating the effect of the hidden weights
+
+Next, we'll calculate $\frac{\partial y^k_t}{\partial u_{ij}}$
 
 
 
