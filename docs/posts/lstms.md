@@ -92,7 +92,12 @@ forward neural network. Additionally, we can see which weights affect what layer
 ## Starting simple: Calculating error at the first step
 
 In order to do this, let us start off simple and calculate the error at the first timestep with $t = 1$. 
-In this case we have that 
+In this case the calculations are dead simple. To see why, observe that, for the $k$-th node in the output 
+layer for $t = 1$, the influence that the weights have on the value $y_1^k$ is really simple. 
+
+<img src="/png/lstms/rnn_error1.png" style="margin: 0 auto; display: block; width: 60%;"/> 
+
+The explicit equations for this calculation are 
 
 \begin{align}
     y^k_1 &= \sigma_y\left(\sum_{\alpha = 1}^{4} v_{k\alpha}h^\alpha_1 + b^k_y\right)\\
@@ -122,19 +127,209 @@ Our next calculation is very similar:
     = \sigma_y' v_{ki} \cdot {h^i_1}' h^j_0
 \]
 
-In this simple case, the error propagation looks something like this. It's very similar to the way error in a feedforward neural network 
-would flow. 
+which completes our investigation into how the weights influence values in the $y_1$.
 
 ## Calculating error at the second step
 
-Calculating error at the second step is where things get a bit trickier. In this case, we still have 
+Calculating error at the second step is where things get a bit trickier. This is because the weights have a more complex effect on the 
+final output values $y_2^k$. Here is a diagram that demonstrates what happens. 
+
+<img src="/png/lstms/rnn_error2.png" style="margin: 0 auto; display: block; width: 80%;"/> 
+
+At first, the weights initially have only an effect on $h_1^j$. However, $h_1^j$ is actually used in every single calculation 
+for all the nodes in the second hidden state, $h_2$. And each of these nodes in $h_2$ are all used in the calculations for the final 
+output value of interest, $y^k_2$. 
+
+We can take into account this information via the chain. Fortunately, the output weights $v_{ij}$ have a rather simple effect on the output nodes. 
 
 \[
     \frac{\partial y_2^i}{\partial v_{ij}} = h^j_2
 \]
 
+Next, let us compute the effect that the input weights have. This would be 
 
+\[
+    \frac{\partial y_2^k}{\partial w_{ij}} = 
+    \sigma_y' 
+    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}\frac{\partial h_2^{\alpha}}{\partial w_{ij}}
+\]
 
+Therefore, the task at hand is to calculate the above partial derivative in the sum above for each $\alpha= 1, 2, 3, 4$. 
+Doing so, observe that 
+
+\[
+    \frac{\partial h_2^{\alpha}}{\partial w_{ij}} 
+    = 
+    \sigma_h' \cdot \left( \sum_{\beta=1}^{7}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_2^{\beta} \right)
+    + 
+    \sigma_h' \cdot \left( \sum_{\gamma=1}^{4} u_{\alpha\gamma}\frac{\partial h^{\gamma}_{1}}{\partial w_{ij}} \right)
+\]
+
+We can simplify this. First, we can factor out $\sigma_h'$. Next, note that the first sum is zero, except in the case where $\alpha=i$ and $\beta=j$. Also note that 
+$\frac{\partial h^{\gamma}_{1}}{\partial w_{ij}}$ is zero unless $\gamma=i$. further, because of our previous work,
+we actually know the value of $\frac{\partial h^{i}_{1}}{\partial w_{ij}}$, we won't expand it here. Thus 
+
+\[
+    \frac{\partial h_2^{\alpha}}{\partial w_{ij}} 
+    = 
+    \sigma_h' \left( \delta(\alpha, i)x_j
+    + 
+    u_{\alpha i}\frac{\partial h^{i}_{1}}{\partial w_{ij}}\right)
+\]
+
+where $\delta$ is the Kronecker-delta (so it's 1 if the arguments match, zero otherwise).
+Hence, we have that 
+
+\[
+    \frac{\partial y_2^k}{\partial w_{ij}} = 
+    \sigma_y' 
+    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}  \sigma_h' \left( \delta(\alpha, i)x_j
+    + u_{\alpha i}\frac{\partial h^{i}_{1}}{\partial w_{ij}}\right)
+\]
+
+which completes our calculation.
+
+Finally, let us calculate how the hidden weights $u_{ij}$ contribute to the output value $y_2^k$. In this case, we can 
+perform a very similar analysis to what we just did: We compute  
+
+\[
+    \frac{\partial y_2^k}{\partial w_{ij}} = 
+    \sigma_y' 
+    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}\frac{\partial h_2^{\alpha}}{\partial u_{ij}}
+\]
+
+and then we can calculate that 
+
+\[
+    \frac{\partial h_2^{\alpha}}{\partial u_{ij}} 
+    =
+    \sigma_h' \cdot \left( 
+        \sum_{\gamma = 1}^4
+        \frac{\partial u_{\alpha\gamma}}{\partial u_{ij}}
+        h^{\gamma}_{1}
+        + 
+        u_{\alpha\gamma}
+        \frac{\partial h_{1}^{\gamma}}{\partial u_{ij}}
+         \right)
+\]
+
+and simplifying as we did similar just before we obtain that 
+
+\[
+    \frac{\partial h_2^{\alpha}}{\partial u_{ij}} 
+    =
+    \sigma_h' \cdot \left( 
+    \delta(\alpha,i)
+    h^{j}_{1}
+    + 
+    u_{\alpha i}
+    \frac{\partial h_{1}^{i}}{\partial u_{ij}}
+    \right)
+\]
+
+which leads to 
+
+\[
+    \frac{\partial y_2^k}{\partial u_{ij}} = 
+    \sigma_y' 
+    \cdot
+    \sum_{\alpha=1}^{4}v_{k\alpha} \cdot 
+    \sigma_h' \left( 
+    \delta(\alpha,i)
+    h^{j}_{1}
+    + 
+    u_{\alpha i}
+    \frac{\partial h_{1}^{i}}{\partial u_{ij}}
+    \right)
+\]
+
+which completes our calculation for how the weights affect the outputs values in $y_2$.
+
+## Calculating error, more generally
+
+From what we've seen, the way that each weight in an RNN affects the output values at $y_t$ becomes rather complex.
+We can figure out how complex it is by calculating it more generally. To do this, recall that 
+
+\begin{align*}
+    y^k_t &= \sigma_y\left( \sum_{\alpha}v_{k\alpha}h^{\alpha}_t + b^k_y \right)\\
+    h^\alpha_t &= \sigma_h\left( \sum_{\beta}w_{\alpha\beta}x_t^{\beta} + \sum_{\gamma}u_{\alpha\gamma}h_{t-1}^{\gamma} + b^\alpha_h \right)
+\end{align*}
+
+### Calculating the effect of the input weights
+
+First, let us calculate $\frac{\partial y^k_t}{\partial w_{ij}}$. In this case we have that 
+
+\[
+   \frac{\partial y^k_t}{\partial w_{ij}} =
+   \sigma_y' \cdot 
+    \sum_{\alpha}v_{k\alpha}\frac{\partial h^\alpha_t}{\partial w_{ij}}
+\]
+
+Next, we can observe that
+
+\[
+    \frac{\partial h^\alpha_t}{\partial w_{ij}}
+    =
+    \sigma_h' 
+    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta} 
+    + 
+    \sigma_h'
+    \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} 
+\]
+
+This is a [recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation).
+To see this, let 
+
+\begin{align}
+    A(\alpha, t) &= \sigma_h' \cdot \sum_{\beta} \frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta}\\
+    B(\alpha,\gamma,t) &= \sigma_h' \cdot u_{\alpha\gamma}
+\end{align}
+
+Note that in the second equation $\sigma_h'$ is a function of $t$, hence why $B$ is also a function of $t$. 
+Using these formulas, we can see that 
+
+\begin{align*}
+    \frac{\partial h^\alpha_t}{\partial w_{ij}}
+    &= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) \frac{\partial h^{\gamma_1}_{t-1}}{\partial w_{ij}}\\
+    &= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
+    \cdot \left( 
+    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t) \cdot \frac{\partial h^{\gamma_2}_{t-2}}{\partial w_{ij}}
+    \right)\\
+    &= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
+    \cdot \left( 
+    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t) \cdot 
+    \left(
+        A(\gamma_2, t) + \sum_{\gamma_3} B(\gamma_2, \gamma_3, t) \cdot \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
+    \right)
+    \right)\\
+\end{align*}
+
+Cleaning this up a bit, we see that there's a pattern here:
+
+\begin{align}
+    \frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
+    &= 
+    A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) A(\gamma_1, t)\\
+    & +
+    \sum_{\gamma_1} \sum_{\gamma_2} B(\alpha, \gamma_1, t) B(\gamma_1,\gamma_2, t)A(\gamma_2, t-2)\\
+    & + 
+    \sum_{\gamma_1} \sum_{\gamma_2} \sum_{\gamma_2}B(\alpha, \gamma_1, t) 
+    B(\gamma_1,\gamma_2, t) B(\gamma_2,\gamma_3, t) A(\gamma_3, t-3) \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
+\end{align}
+
+This then leads to the formula 
+
+\[
+\frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
+= 
+\sum_{k = 1}^{t - 1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+\right)
+\]
 
 
 
