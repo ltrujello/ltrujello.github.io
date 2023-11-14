@@ -85,7 +85,8 @@ Well actually, what it would *really* look like is something like this
 
 <img src="/png/lstms/rnn_three_inputs_full.png" style="margin: 0 auto; display: block; width: 80%;"/> 
 
-but that is a bit overwhelming to look at. But from this perspective, it is easy to see that an RNN is very similar to a feed 
+Thinking of an RNN in this way is called "unfolding" the RNN.
+From this perspective, it is easy to see that an RNN is very similar to a feed 
 forward neural network. Additionally, we can see which weights affect what layers. 
 
 
@@ -140,7 +141,8 @@ At first, the weights initially have only an effect on $h_1^j$. However, $h_1^j$
 for all the nodes in the second hidden state, $h_2$. And each of these nodes in $h_2$ are all used in the calculations for the final 
 output value of interest, $y^k_2$. 
 
-We can take into account this information via the chain. Fortunately, the output weights $v_{ij}$ have a rather simple effect on the output nodes. 
+We can take into account this information via the chain rule. 
+Fortunately, the output weights $v_{ij}$ have a rather simple effect on the output nodes. 
 
 \[
     \frac{\partial y_2^i}{\partial v_{ij}} = h^j_2
@@ -502,5 +504,49 @@ $\ell$, then the above product will vanish, and we eventually won't be able to u
 Conversely, if $|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| > 1$, then 
 the above product will explode, and our weight updates will thrash around. 
 
+If the activation function in the hidden layers is the sigmoid function $\sigma$, then we know that 
 
+\begin{align*}
+    \sigma' &= \sigma \cdot (1 - \sigma)\\
+    \sigma'' &= \sigma \cdot (1 - \sigma)^2 + \sigma \cdot (-\sigma \cdot (1 - \sigma))
+    = 
+    \frac{\left(e^{-2x}-e^{-x}\right)}{\left(1\ +\ e^{-x}\right)^{3}}
+\end{align*}
+
+Setting $e^{-2x} - e^{-x} = 0$, we see that we achieve an extrema of $\sigma'$ when $x = 0$, which turns out to be 
+a global maximum of $\sigma'$ with a value of $\sigma'(0) = 0.25$. This implies that 
+
+\[
+    \left|\prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+    \le 
+    (0.25)^{t-1}
+    \left|\prod_{\ell=0}^{t - 2} u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+\]
+
+Let $u_{\text{max}}$ be the maximum weight that appears in the above product, $u_{\text{min}}$ be the minimum weight, 
+and $\sigma'_{\text{min}}$ the smallest value of $\sigma'$ that appears in the above product.
+Then we see that 
+
+\[
+|\sigma'_{\text{min}} \cdot u_{min}|^{t - 1}
+\le
+\left|\prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+\le |0.25 \cdot u_{max}|^{t - 1}
+\]
+
+This is not great. What this means is that, during training, when the weights tip slightly below the value of $4$, 
+the inequality on the right gains control and the above product will rapidly vanish. 
+When the weights tip slightly above the value of $\sigma'_{\text{min}}$, and hence the weights must at least be greater than $4$, 
+the left inequality takes control and the product will rapidly explode. The reason why they rapidly explode is primarily due 
+to the exponential. Thus, perturbing the weights around the value of $4$ can cause 
+instability. The chance for instability to occur becomes worse when one takes the limit $t \to \infty$, as this causes the 
+left and right inequalities to be more unstable. Thus, this is why
+issues with training can arise when training on long sequences. 
+
+
+This analysis can be repeated for other activation functions as well, by simply taking the maximum and minimum values 
+of the activation function. Hence, changing the activation function isn't going to help. 
+Changing the learning rate isn't going to help either, 
+since would be making a fixed scalar compete with an exponential product (which is a battle it will lose). Our main problem boils 
+down to the fact that we are taking too many products. 
 
