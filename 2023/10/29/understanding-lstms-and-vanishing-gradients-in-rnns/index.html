@@ -3014,6 +3014,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#calculating-error-more-generally" class="md-nav__link">
+    Calculating error, more generally
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculating error, more generally">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-the-effect-of-the-input-weights" class="md-nav__link">
+    Calculating the effect of the input weights
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-the-effect-of-the-hidden-weights" class="md-nav__link">
+    Calculating the effect of the hidden weights
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-rnn-backpropagation-is-unstable" class="md-nav__link">
+    How RNN Backpropagation is Unstable
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3063,7 +3097,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              5 min read
+                              15 min read
                             
                           </span>
                         </div>
@@ -3147,11 +3181,15 @@ What would this look like? It would look like this. </p>
 <p><img src="/png/lstms/rnn_three_inputs.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
 <p>Well actually, what it would <em>really</em> look like is something like this </p>
 <p><img src="/png/lstms/rnn_three_inputs_full.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
-<p>but that is a bit overwhelming to look at. But from this perspective, it is easy to see that an RNN is very similar to a feed 
+<p>Thinking of an RNN in this way is called "unfolding" the RNN.
+From this perspective, it is easy to see that an RNN is very similar to a feed 
 forward neural network. Additionally, we can see which weights affect what layers. </p>
 <h2 id="starting-simple-calculating-error-at-the-first-step">Starting simple: Calculating error at the first step</h2>
 <p>In order to do this, let us start off simple and calculate the error at the first timestep with <span class="arithmatex">\(t = 1\)</span>. 
-In this case we have that </p>
+In this case the calculations are dead simple. To see why, observe that, for the <span class="arithmatex">\(k\)</span>-th node in the output 
+layer for <span class="arithmatex">\(t = 1\)</span>, the influence that the weights have on the value <span class="arithmatex">\(y_1^k\)</span> is really simple. </p>
+<p><img src="/png/lstms/rnn_error1.png" style="margin: 0 auto; display: block; width: 60%;"/> </p>
+<p>The explicit equations for this calculation are </p>
 <div class="arithmatex">\[\begin{align}
     y^k_1 &amp;= \sigma_y\left(\sum_{\alpha = 1}^{4} v_{k\alpha}h^\alpha_1 + b^k_y\right)\\
     h_1^{\alpha} &amp;= \sigma_y\left(\sum_{\beta = 1}^{7} w_{\alpha\beta}x^\beta_1 + \sum_{\gamma = 1}^{4} u_{\alpha\gamma}h^\gamma_0 + b^{\alpha}_h\right)
@@ -3173,13 +3211,352 @@ Our next calculation is very similar:</p>
     \frac{\partial y_1^k}{\partial u_{ij}} = \frac{\partial y_1^k}{\partial h^i_1} \frac{\partial h^i_1}{\partial u_{ij}}
     = \sigma_y' v_{ki} \cdot {h^i_1}' h^j_0
 \]</div>
-<p>In this simple case, the error propagation looks something like this. It's very similar to the way error in a feedforward neural network 
-would flow. </p>
+<p>which completes our investigation into how the weights influence values in the <span class="arithmatex">\(y_1\)</span>.</p>
 <h2 id="calculating-error-at-the-second-step">Calculating error at the second step</h2>
-<p>Calculating error at the second step is where things get a bit trickier. In this case, we still have </p>
+<p>Calculating error at the second step is where things get a bit trickier. This is because the weights have a more complex effect on the 
+final output values <span class="arithmatex">\(y_2^k\)</span>. Here is a diagram that demonstrates what happens. </p>
+<p><img src="/png/lstms/rnn_error2.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
+<p>At first, the weights initially have only an effect on <span class="arithmatex">\(h_1^j\)</span>. However, <span class="arithmatex">\(h_1^j\)</span> is actually used in every single calculation 
+for all the nodes in the second hidden state, <span class="arithmatex">\(h_2\)</span>. And each of these nodes in <span class="arithmatex">\(h_2\)</span> are all used in the calculations for the final 
+output value of interest, <span class="arithmatex">\(y^k_2\)</span>. </p>
+<p>We can take into account this information via the chain rule. 
+Fortunately, the output weights <span class="arithmatex">\(v_{ij}\)</span> have a rather simple effect on the output nodes. </p>
 <div class="arithmatex">\[
     \frac{\partial y_2^i}{\partial v_{ij}} = h^j_2
 \]</div>
+<p>Next, let us compute the effect that the input weights have. This would be </p>
+<div class="arithmatex">\[
+    \frac{\partial y_2^k}{\partial w_{ij}} = 
+    \sigma_y' 
+    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}\frac{\partial h_2^{\alpha}}{\partial w_{ij}}
+\]</div>
+<p>Therefore, the task at hand is to calculate the above partial derivative in the sum above for each <span class="arithmatex">\(\alpha= 1, 2, 3, 4\)</span>. 
+Doing so, observe that </p>
+<div class="arithmatex">\[
+    \frac{\partial h_2^{\alpha}}{\partial w_{ij}} 
+    = 
+    \sigma_h' \cdot \left( \sum_{\beta=1}^{7}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_2^{\beta} \right)
+    + 
+    \sigma_h' \cdot \left( \sum_{\gamma=1}^{4} u_{\alpha\gamma}\frac{\partial h^{\gamma}_{1}}{\partial w_{ij}} \right)
+\]</div>
+<p>We can simplify this. First, we can factor out <span class="arithmatex">\(\sigma_h'\)</span>. Next, note that the first sum is zero, except in the case where <span class="arithmatex">\(\alpha=i\)</span> and <span class="arithmatex">\(\beta=j\)</span>. Also note that 
+<span class="arithmatex">\(\frac{\partial h^{\gamma}_{1}}{\partial w_{ij}}\)</span> is zero unless <span class="arithmatex">\(\gamma=i\)</span>. further, because of our previous work,
+we actually know the value of <span class="arithmatex">\(\frac{\partial h^{i}_{1}}{\partial w_{ij}}\)</span>, we won't expand it here. Thus </p>
+<div class="arithmatex">\[
+    \frac{\partial h_2^{\alpha}}{\partial w_{ij}} 
+    = 
+    \sigma_h' \left( \delta(\alpha, i)x_j
+    + 
+    u_{\alpha i}\frac{\partial h^{i}_{1}}{\partial w_{ij}}\right)
+\]</div>
+<p>where <span class="arithmatex">\(\delta\)</span> is the Kronecker-delta (so it's 1 if the arguments match, zero otherwise).
+Hence, we have that </p>
+<div class="arithmatex">\[
+    \frac{\partial y_2^k}{\partial w_{ij}} = 
+    \sigma_y' 
+    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}  \sigma_h' \left( \delta(\alpha, i)x_j
+    + u_{\alpha i}\frac{\partial h^{i}_{1}}{\partial w_{ij}}\right)
+\]</div>
+<p>which completes our calculation.</p>
+<p>Finally, let us calculate how the hidden weights <span class="arithmatex">\(u_{ij}\)</span> contribute to the output value <span class="arithmatex">\(y_2^k\)</span>. In this case, we can 
+perform a very similar analysis to what we just did: We compute  </p>
+<div class="arithmatex">\[
+    \frac{\partial y_2^k}{\partial w_{ij}} = 
+    \sigma_y' 
+    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}\frac{\partial h_2^{\alpha}}{\partial u_{ij}}
+\]</div>
+<p>and then we can calculate that </p>
+<div class="arithmatex">\[
+    \frac{\partial h_2^{\alpha}}{\partial u_{ij}} 
+    =
+    \sigma_h' \cdot \left( 
+        \sum_{\gamma = 1}^4
+        \frac{\partial u_{\alpha\gamma}}{\partial u_{ij}}
+        h^{\gamma}_{1}
+        + 
+        u_{\alpha\gamma}
+        \frac{\partial h_{1}^{\gamma}}{\partial u_{ij}}
+         \right)
+\]</div>
+<p>and simplifying as we did similar just before we obtain that </p>
+<div class="arithmatex">\[
+    \frac{\partial h_2^{\alpha}}{\partial u_{ij}} 
+    =
+    \sigma_h' \cdot \left( 
+    \delta(\alpha,i)
+    h^{j}_{1}
+    + 
+    u_{\alpha i}
+    \frac{\partial h_{1}^{i}}{\partial u_{ij}}
+    \right)
+\]</div>
+<p>which leads to </p>
+<div class="arithmatex">\[
+    \frac{\partial y_2^k}{\partial u_{ij}} = 
+    \sigma_y' 
+    \cdot
+    \sum_{\alpha=1}^{4}v_{k\alpha} \cdot 
+    \sigma_h' \left( 
+    \delta(\alpha,i)
+    h^{j}_{1}
+    + 
+    u_{\alpha i}
+    \frac{\partial h_{1}^{i}}{\partial u_{ij}}
+    \right)
+\]</div>
+<p>which completes our calculation for how the weights affect the outputs values in <span class="arithmatex">\(y_2\)</span>.</p>
+<h2 id="calculating-error-more-generally">Calculating error, more generally</h2>
+<p>From what we've seen, the way that each weight in an RNN affects the output values at <span class="arithmatex">\(y_t\)</span> becomes rather complex.
+We can figure out how complex it is by calculating it more generally. To do this, recall that </p>
+<div class="arithmatex">\[\begin{align*}
+    y^k_t &amp;= \sigma_y\left( \sum_{\alpha}v_{k\alpha}h^{\alpha}_t + b^k_y \right)\\
+    h^\alpha_t &amp;= \sigma_h\left( \sum_{\beta}w_{\alpha\beta}x_t^{\beta} + \sum_{\gamma}u_{\alpha\gamma}h_{t-1}^{\gamma} + b^\alpha_h \right)
+\end{align*}\]</div>
+<h3 id="calculating-the-effect-of-the-input-weights">Calculating the effect of the input weights</h3>
+<p>First, let us calculate <span class="arithmatex">\(\frac{\partial y^k_t}{\partial w_{ij}}\)</span>. In this case we have that </p>
+<div class="arithmatex">\[
+   \frac{\partial y^k_t}{\partial w_{ij}} =
+   \sigma_y' \cdot 
+    \sum_{\alpha}v_{k\alpha}\frac{\partial h^\alpha_t}{\partial w_{ij}}
+\]</div>
+<p>Next, we can observe that</p>
+<div class="arithmatex">\[\begin{align*}
+    \frac{\partial h^\alpha_t}{\partial w_{ij}}
+    &amp;=
+    \sigma_h' 
+    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta} 
+    + 
+    \sigma_h'
+    \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} \\
+    &amp;=
+    \sigma_h' 
+    \delta(\alpha,i)\cdot x_t^{j}
+    + 
+    \sigma_h'
+    \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} 
+\end{align*}\]</div>
+<p>This is a <a href="https://en.wikipedia.org/wiki/Recurrence_relation">recurrence relation</a>.
+To see this, let </p>
+<div class="arithmatex">\[\begin{align}
+    A(\alpha, t) &amp;= \sigma_h' \cdot \delta(\alpha,i)\cdot x_t^{j}\\
+    B(\alpha,\gamma,t) &amp;= \sigma_h' \cdot u_{\alpha\gamma}
+\end{align}\]</div>
+<p>Note that in the second equation <span class="arithmatex">\(\sigma_h'\)</span> is a function of <span class="arithmatex">\(t\)</span>, hence why <span class="arithmatex">\(B\)</span> is also a function of <span class="arithmatex">\(t\)</span>. 
+Using these formulas, we can see that </p>
+<div class="arithmatex">\[\begin{align*}
+    \frac{\partial h^\alpha_t}{\partial w_{ij}}
+    &amp;= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) \frac{\partial h^{\gamma_1}_{t-1}}{\partial w_{ij}}\\
+    &amp;= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
+    \cdot \left( 
+    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t - 1) \cdot \frac{\partial h^{\gamma_2}_{t-2}}{\partial w_{ij}}
+    \right)\\
+    &amp;= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
+    \cdot \left( 
+    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t - 1) \cdot 
+    \left(
+        A(\gamma_2, t) + \sum_{\gamma_3} B(\gamma_2, \gamma_3, t - 2) \cdot \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
+    \right)
+    \right)\\
+\end{align*}\]</div>
+<p>Cleaning this up a bit, we see that there's a pattern here:</p>
+<div class="arithmatex">\[\begin{align}
+    \frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
+    &amp;= 
+    A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) A(\gamma_1, t - 1)\\
+    &amp; +
+    \sum_{\gamma_1} \sum_{\gamma_2} B(\alpha, \gamma_1, t) B(\gamma_1,\gamma_2, t - 1)A(\gamma_2, t-2)\\
+    &amp; + 
+    \sum_{\gamma_1} \sum_{\gamma_2} \sum_{\gamma_2}B(\alpha, \gamma_1, t) 
+    B(\gamma_1,\gamma_2, t - 1) B(\gamma_2,\gamma_3, t -2) A(\gamma_3, t-3) \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
+\end{align}\]</div>
+<p>Let <span class="arithmatex">\(\gamma_0 = \alpha\)</span>. Then this then leads us to suspect that the general formula is</p>
+<div class="arithmatex">\[
+\frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
+= 
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+\right)
+\]</div>
+<p>Let's prove this by performing induction on the timestep <span class="arithmatex">\(t\)</span>. For our base case, we 
+have <span class="arithmatex">\(t=1\)</span>. This reduces to </p>
+<div class="arithmatex">\[
+\frac{\partial h^{\alpha}_{t}}{\partial w_{ij}} = A(\alpha, t) = \sigma_h' \cdot \sum_{\beta} \frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta}
+= \sigma_h' \cdot x^j_1
+\]</div>
+<p>which is correct; this matches what we calculated earlier when we were starting simple. Next, suppose that the assertion holds 
+for timestep <span class="arithmatex">\(t \ge 1\)</span>; to prove that this equation also holds for timestep <span class="arithmatex">\(t + 1\)</span>, observe that </p>
+<div class="arithmatex">\[\begin{align*}
+    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
+    &amp;=
+    \sigma_h' 
+    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_{t+1}^{\beta} 
+    + 
+    \sigma_h'
+    \sum_{\gamma = 1}^{n}u_{\alpha\gamma}\frac{\partial h_{t}^{\gamma}}{\partial w_{ij}} \\
+    &amp;=
+    \sigma_h' 
+    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_{t+1}^{\beta} 
+    + 
+    \sigma_h'
+    \sum_{\gamma =1}^{n} u_{\alpha\gamma}
+    \left( 
+        \sum_{k = 0}^{t - 1}
+        \sum_{\gamma_1 = 1}^{n}
+        \cdots
+        \sum_{\gamma_k = 1}^{n}
+        \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+    \right)
+     \\
+    &amp;= A(\alpha, t+1) + \sum_{\gamma=1}^{n}B(\alpha, \gamma, t + 1)
+        \left( 
+        \sum_{k = 0}^{t - 1}
+        \sum_{\gamma_1 = 1}^{n}
+        \cdots
+        \sum_{\gamma_k = 1}^{n}
+        \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+    \right)
+\end{align*}\]</div>
+<p>Now if we declare <span class="arithmatex">\(\gamma_{-1} = \alpha\)</span> and recall that <span class="arithmatex">\(\gamma_0 = \gamma\)</span>, then we have  </p>
+<div class="arithmatex">\[
+    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
+    = 
+    \sum_{k = -1}^{t - 1}
+    \left(
+    \sum_{\gamma_0 = 1}^{n}
+    \sum_{\gamma_1 = 1}^{n}
+    \cdots
+    \sum_{\gamma_k = 1}^{n}
+    \prod_{\ell=-1}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+    \right)
+\]</div>
+<p>by allowing <span class="arithmatex">\(k\)</span> to range from <span class="arithmatex">\(-1\)</span> to <span class="arithmatex">\(t - 1\)</span> and <span class="arithmatex">\(\ell\)</span> to range from <span class="arithmatex">\(-1\)</span> to <span class="arithmatex">\(k - 1\)</span>.</p>
+<p>Reindexing our sum with new indices <span class="arithmatex">\(\gamma'\)</span> such that 
+<span class="arithmatex">\(\gamma'_{i + 1} = \gamma_i\)</span>,
+we can rewrite this as</p>
+<div class="arithmatex">\[
+    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
+    = 
+    \sum_{k = 0}^{t}
+    \left(
+    \sum_{\gamma'_1 = 1}^{n}
+    \sum_{\gamma'_2 = 1}^{n}
+    \cdots
+    \sum_{\gamma'_{k} = 1}^{n}
+    \prod_{\ell=0}^{k - 1} B(\gamma'_\ell, \gamma'_{\ell + 1}, (t + 1) - \ell)A(\gamma'_{k}, (t + 1)-{k})
+    \right)
+\]</div>
+<p>which asserts our proposition from timestep <span class="arithmatex">\(t +1\)</span>. Since our assertion is true for <span class="arithmatex">\(t + 1\)</span> whenever <span class="arithmatex">\(t \ge 1\)</span>, 
+and we proved the assertion for <span class="arithmatex">\(t = 1\)</span>, this 
+proves by induction that our formula holds for all timesteps <span class="arithmatex">\(t\)</span>. </p>
+<h3 id="calculating-the-effect-of-the-hidden-weights">Calculating the effect of the hidden weights</h3>
+<p>Next, we'll calculate <span class="arithmatex">\(\frac{\partial y^k_t}{\partial u_{ij}}\)</span>. In this case we have that </p>
+<div class="arithmatex">\[
+    \frac{\partial y^k_t}{\partial u_{ij}} = 
+    \sigma_y' \cdot 
+    \sum_{\alpha}v_{k\alpha}\frac{\partial h^\alpha_t}{\partial u_{ij}}
+\]</div>
+<p>Thus we need to calculate the above partial derivative in the summation for each <span class="arithmatex">\(\alpha\)</span>. Doing this is 
+very similar to the analysis that we performed when calculating how the weights <span class="arithmatex">\(w_{ij}\)</span> affect the output nodes.
+Without repeating ourselves, we can prove by induction that if </p>
+<div class="arithmatex">\[\begin{align*}
+A(\alpha, t) &amp;= 
+\sigma_h' \cdot \delta(\alpha, i) h^{j}_{t-1}\\
+B(\alpha, \gamma, t) &amp;= \sigma_h' \cdot u_{\alpha, \gamma}
+\end{align*}\]</div>
+<p>then we have that, if <span class="arithmatex">\(\gamma_0 = \alpha\)</span>, then</p>
+<div class="arithmatex">\[
+\frac{\partial h^{\alpha}_{t}}{\partial u_{ij}}
+= 
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+\right)
+\]</div>
+<p>which is actually the same formula we came up with before. </p>
+<h2 id="how-rnn-backpropagation-is-unstable">How RNN Backpropagation is Unstable</h2>
+<p>At this point, we have achieved our goal of calculating the influence each weight <span class="arithmatex">\(w_{ij}\)</span> and <span class="arithmatex">\(u_{ij}\)</span> has 
+on each node of our model outputs <span class="arithmatex">\(y_t^o\)</span>, for all applicable <span class="arithmatex">\(t\)</span> and <span class="arithmatex">\(o\)</span>. 
+Substituting in <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(A\)</span> from our formulas before, we obtain that </p>
+<div class="arithmatex">\[\begin{align*}
+\frac{\partial y^o_t}{\partial u_{ij}} &amp;= 
+\sigma_y' \cdot 
+\sum_{\alpha}v_{o\alpha}
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \cdot \sigma_{h_{\gamma_k}}' \cdot \delta(\gamma_k, i) \cdot h_{t-k-1}^j
+\right)\\
+\frac{\partial y^o_t}{\partial w_{ij}} &amp;= 
+\sigma_y' \cdot 
+\sum_{\alpha}v_{o\alpha}
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \cdot \sigma_{h_{\gamma_k}}' \cdot \delta(\gamma_k, i) \cdot x_{t-k}^j
+\right)
+\end{align*}\]</div>
+<p>We are now in a position to understand why gradients tend to vanish or explode in recurrent neural networks. In both formulas, we 
+see that we have an interesting factor </p>
+<div class="arithmatex">\[
+    \prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} 
+\]</div>
+<p>which we must compute. The issue with this factor is that we are taking many products. The worst case happens when 
+<span class="arithmatex">\(k = t - 1\)</span>, in which case we must compute </p>
+<div class="arithmatex">\[
+    \prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} 
+\]</div>
+<p>As we can see from this product, if <span class="arithmatex">\(|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| &lt; 1\)</span> for all 
+<span class="arithmatex">\(\ell\)</span>, then the above product will vanish, and we eventually won't be able to update our weights during training. 
+Conversely, if <span class="arithmatex">\(|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| &gt; 1\)</span>, then 
+the above product will explode, and our weight updates will thrash around. </p>
+<p>If the activation function in the hidden layers is the sigmoid function <span class="arithmatex">\(\sigma\)</span>, then we know that </p>
+<div class="arithmatex">\[\begin{align*}
+    \sigma' &amp;= \sigma \cdot (1 - \sigma)\\
+    \sigma'' &amp;= \sigma \cdot (1 - \sigma)^2 + \sigma \cdot (-\sigma \cdot (1 - \sigma))
+    = 
+    \frac{\left(e^{-2x}-e^{-x}\right)}{\left(1\ +\ e^{-x}\right)^{3}}
+\end{align*}\]</div>
+<p>Setting <span class="arithmatex">\(e^{-2x} - e^{-x} = 0\)</span>, we see that we achieve an extrema of <span class="arithmatex">\(\sigma'\)</span> when <span class="arithmatex">\(x = 0\)</span>, which turns out to be 
+a global maximum of <span class="arithmatex">\(\sigma'\)</span> with a value of <span class="arithmatex">\(\sigma'(0) = 0.25\)</span>. This implies that </p>
+<div class="arithmatex">\[
+    \left|\prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+    \le 
+    (0.25)^{t-1}
+    \left|\prod_{\ell=0}^{t - 2} u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+\]</div>
+<p>Let <span class="arithmatex">\(u_{\text{max}}\)</span> be the maximum weight that appears in the above product, <span class="arithmatex">\(u_{\text{min}}\)</span> be the minimum weight, 
+and <span class="arithmatex">\(\sigma'_{\text{min}}\)</span> the smallest value of <span class="arithmatex">\(\sigma'\)</span> that appears in the above product.
+Then we see that </p>
+<div class="arithmatex">\[
+|\sigma'_{\text{min}} \cdot u_{min}|^{t - 1}
+\le
+\left|\prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+\le |0.25 \cdot u_{max}|^{t - 1}
+\]</div>
+<p>This is not great. What this means is that, during training, when the weights tip slightly below the value of <span class="arithmatex">\(4\)</span>, 
+the inequality on the right gains control and the above product will rapidly vanish. 
+When the weights tip slightly above the value of <span class="arithmatex">\(4\)</span>, which will definitely be greater than <span class="arithmatex">\(\sigma'_{\text{min}}\)</span>, then 
+the left inequality takes control and the product will rapidly explode. The reason why they rapidly explode is primarily due 
+to the exponential. Thus, perturbing the weights around the value of <span class="arithmatex">\(4\)</span> can cause 
+instability. The chance for instability to occur becomes worse when one takes the limit <span class="arithmatex">\(t \to \infty\)</span>, as this causes the 
+left and right inequalities to be more unstable. This is why
+issues with training can arise when training on long sequences. </p>
+<p>This analysis can be repeated for other activation functions as well, by simply taking the maximum and minimum values 
+of the activation function. Hence, changing the activation function isn't going to help. 
+Changing the learning rate isn't going to help either, 
+since that would be making a fixed scalar compete with an exponential product (which is a battle it will lose). Our main problem boils 
+down to the fact that we are taking too many products. </p>
 
 
 
