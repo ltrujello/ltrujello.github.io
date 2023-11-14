@@ -456,7 +456,7 @@ then we have that, if $\gamma_0 = \alpha$, then
 
 which is actually the same formula we came up with before. 
 
-## Evaluating Error Flow 
+## How RNN Backpropagation is Unstable 
 
 At this point, we have achieved our goal of calculating the influence each weight $w_{ij}$ and $u_{ij}$ has 
 on each node of our model outputs $y_t^o$, for all applicable $t$ and $o$. 
@@ -536,17 +536,17 @@ Then we see that
 
 This is not great. What this means is that, during training, when the weights tip slightly below the value of $4$, 
 the inequality on the right gains control and the above product will rapidly vanish. 
-When the weights tip slightly above the value of $\sigma'_{\text{min}}$, and hence the weights must at least be greater than $4$, 
+When the weights tip slightly above the value of $4$, which will definitely be greater than $\sigma'_{\text{min}}$, then 
 the left inequality takes control and the product will rapidly explode. The reason why they rapidly explode is primarily due 
 to the exponential. Thus, perturbing the weights around the value of $4$ can cause 
 instability. The chance for instability to occur becomes worse when one takes the limit $t \to \infty$, as this causes the 
-left and right inequalities to be more unstable. Thus, this is why
+left and right inequalities to be more unstable. This is why
 issues with training can arise when training on long sequences. 
 
 
 This analysis can be repeated for other activation functions as well, by simply taking the maximum and minimum values 
 of the activation function. Hence, changing the activation function isn't going to help. 
 Changing the learning rate isn't going to help either, 
-since would be making a fixed scalar compete with an exponential product (which is a battle it will lose). Our main problem boils 
+since that would be making a fixed scalar compete with an exponential product (which is a battle it will lose). Our main problem boils 
 down to the fact that we are taking too many products. 
 
