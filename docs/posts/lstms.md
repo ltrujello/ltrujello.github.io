@@ -267,21 +267,27 @@ First, let us calculate $\frac{\partial y^k_t}{\partial w_{ij}}$. In this case w
 
 Next, we can observe that
 
-\[
+\begin{align*}
     \frac{\partial h^\alpha_t}{\partial w_{ij}}
-    =
+    &=
     \sigma_h' 
     \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta} 
     + 
     \sigma_h'
+    \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} \\
+    &=
+    \sigma_h' 
+    \delta(\alpha,i)\cdot x_t^{j}
+    + 
+    \sigma_h'
     \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} 
-\]
+\end{align*}
 
 This is a [recurrence relation](https://en.wikipedia.org/wiki/Recurrence_relation).
 To see this, let 
 
 \begin{align}
-    A(\alpha, t) &= \sigma_h' \cdot \sum_{\beta} \frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta}\\
+    A(\alpha, t) &= \sigma_h' \cdot \delta(\alpha,i)\cdot x_t^{j}\\
     B(\alpha,\gamma,t) &= \sigma_h' \cdot u_{\alpha\gamma}
 \end{align}
 
@@ -293,13 +299,13 @@ Using these formulas, we can see that
     &= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) \frac{\partial h^{\gamma_1}_{t-1}}{\partial w_{ij}}\\
     &= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
     \cdot \left( 
-    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t) \cdot \frac{\partial h^{\gamma_2}_{t-2}}{\partial w_{ij}}
+    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t - 1) \cdot \frac{\partial h^{\gamma_2}_{t-2}}{\partial w_{ij}}
     \right)\\
     &= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
     \cdot \left( 
-    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t) \cdot 
+    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t - 1) \cdot 
     \left(
-        A(\gamma_2, t) + \sum_{\gamma_3} B(\gamma_2, \gamma_3, t) \cdot \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
+        A(\gamma_2, t) + \sum_{\gamma_3} B(\gamma_2, \gamma_3, t - 2) \cdot \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
     \right)
     \right)\\
 \end{align*}
@@ -309,12 +315,12 @@ Cleaning this up a bit, we see that there's a pattern here:
 \begin{align}
     \frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
     &= 
-    A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) A(\gamma_1, t)\\
+    A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) A(\gamma_1, t - 1)\\
     & +
-    \sum_{\gamma_1} \sum_{\gamma_2} B(\alpha, \gamma_1, t) B(\gamma_1,\gamma_2, t)A(\gamma_2, t-2)\\
+    \sum_{\gamma_1} \sum_{\gamma_2} B(\alpha, \gamma_1, t) B(\gamma_1,\gamma_2, t - 1)A(\gamma_2, t-2)\\
     & + 
     \sum_{\gamma_1} \sum_{\gamma_2} \sum_{\gamma_2}B(\alpha, \gamma_1, t) 
-    B(\gamma_1,\gamma_2, t) B(\gamma_2,\gamma_3, t) A(\gamma_3, t-3) \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
+    B(\gamma_1,\gamma_2, t - 1) B(\gamma_2,\gamma_3, t -2) A(\gamma_3, t-3) \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
 \end{align}
 
 Let $\gamma_0 = \alpha$. Then this then leads us to suspect that the general formula is
@@ -414,8 +420,87 @@ proves by induction that our formula holds for all timesteps $t$.
 
 ### Calculating the effect of the hidden weights
 
-Next, we'll calculate $\frac{\partial y^k_t}{\partial u_{ij}}$
+Next, we'll calculate $\frac{\partial y^k_t}{\partial u_{ij}}$. In this case we have that 
 
+\[
+    \frac{\partial y^k_t}{\partial u_{ij}} = 
+    \sigma_y' \cdot 
+    \sum_{\alpha}v_{k\alpha}\frac{\partial h^\alpha_t}{\partial u_{ij}}
+\]
+
+Thus we need to calculate the above partial derivative in the summation for each $\alpha$. Doing this is 
+very similar to the analysis that we performed when calculating how the weights $w_{ij}$ affect the output nodes.
+Without repeating ourselves, we can prove by induction that if 
+
+\begin{align*}
+A(\alpha, t) &= 
+\sigma_h' \cdot \delta(\alpha, i) h^{j}_{t-1}\\
+B(\alpha, \gamma, t) &= \sigma_h' \cdot u_{\alpha, \gamma}
+\end{align*}
+
+then we have that, if $\gamma_0 = \alpha$, then
+
+\[
+\frac{\partial h^{\alpha}_{t}}{\partial u_{ij}}
+= 
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
+\right)
+\]
+
+which is actually the same formula we came up with before. 
+
+## Evaluating Error Flow 
+
+At this point, we have achieved our goal of calculating the influence each weight $w_{ij}$ and $u_{ij}$ has 
+on each node of our model outputs $y_t^o$, for all applicable $t$ and $o$. 
+Substituting in $B$ and $A$ from our formulas before, we obtain that 
+
+\begin{align*}
+\frac{\partial y^o_t}{\partial u_{ij}} &= 
+\sigma_y' \cdot 
+\sum_{\alpha}v_{o\alpha}
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \cdot \sigma_{h_{\gamma_k}}' \cdot \delta(\gamma_k, i) \cdot h_{t-k-1}^j
+\right)\\
+\frac{\partial y^o_t}{\partial w_{ij}} &= 
+\sigma_y' \cdot 
+\sum_{\alpha}v_{o\alpha}
+\sum_{k = 0}^{t-1}
+\left( 
+\sum_{\gamma_1 = 1}^{n}
+\cdots
+\sum_{\gamma_k = 1}^{n}
+\prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \cdot \sigma_{h_{\gamma_k}}' \cdot \delta(\gamma_k, i) \cdot x_{t-k}^j
+\right)
+\end{align*}
+
+We are now in a position to understand why gradients tend to vanish or explode in recurrent neural networks. In both formulas, we 
+see that we have an interesting factor 
+
+\[
+    \prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} 
+\]
+
+which we must compute. The issue with this factor is that we are taking many products. The worst case happens when 
+$k = t - 1$, in which case we must compute 
+
+\[
+    \prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} 
+\]
+
+As we can see from this product, if $|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| < 1$ for all 
+$\ell$, then the above product will vanish, and we eventually won't be able to update our weights during training. 
+Conversely, if $|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| > 1$, then 
+the above product will explode, and our weight updates will thrash around. 
 
 
 
