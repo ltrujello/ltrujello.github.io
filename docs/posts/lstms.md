@@ -4,17 +4,23 @@ date: 2023-10-29
 
 # Understanding LSTMs and Vanishing Gradients in RNNs
 
-In attempting to understand LSTMs, I often find myself reading blog posts, tutorials, explanations which 
-all characterize LSTMs in the same way, but they are not very satisfactory in my opinion because they do not 
-explain *why* LSTMs were invented or *how* they manage to solve the **vanishing gradient** problem 
-in RNNs (which is why they were created). I think this is important to really understanding the 
-structure of an LSTM. 
+In attempting to understand LSTMs, I often found myself reading blog posts, tutorials, and explanations 
+which would describe LSTMs in usually the same way: 
+An LSTM has three gates: an input, forget, and output gate. These these gates control the flow of information. 
+Further, an LSTM has a linear self-connection.
+Also, this architecture addresses the **vanishing gradient** problem. 
 
-In general, sometimes it's necessary to deeply understand the motivation 
-for a concept, especially if (1) the concept is complicated and nontrivial and (2) would lend itself to being
-almost arbitrary and random if the motivation were not taken into account. 
-Conversely, sometimes this is not necessary, especially if there are other more 
-pressing things to deeply understand.
+However, knowledge of this list of facts about LSTMs alone didn't really translate to a satisfying understanding of 
+LSTMs for me. Since I was more curious as to *why* LSTMs work, *how* they address the vanishing gradient problem, 
+and *why* the vanishing gradient problem is a significant problem, I decided to go through the math.   
+
+In what follows, we will understand how gradients vanish in "vanilla" RNNs.
+We'll do this by deriving explicit formulae for the error propagation for each weight in a vanilla RNN. 
+We'll then discuss error propagation in an LSTM, and how the architecture prevents gradients from vanishing. 
+
+<!-- more -->
+
+## Background
 
 The details of why gradients vanish for RNNs during the BPTT algorithm can be found in certain 90s neural network 
 papers, such as [(Hochreiter, 1997)](https://doi.org/10.1162/neco.1997.9.8.1735), a paper in which Hochreiter et. al. 
@@ -23,12 +29,6 @@ LSTM today. Thus the goal of this write up will be to go beyond just
 saying "LSTMs have an input, forget gate", and to offer a modern description of vanishing gradients in 
 RNNs and how LSTMs solve this. 
 
-<!-- more -->
-
-In what follows, we will track and analyze the error flow of weights in an RNN, starting from a simple example
-and ending with a more general description. We'll observe that the gradient error flow can actually 
-be recursively defined, and that a closed form description can be offered. This closed form solution will reveal 
-why gradients vanish. 
 
 ## RNNs and a concrete example 
 
