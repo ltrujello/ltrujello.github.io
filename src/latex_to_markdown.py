@@ -709,7 +709,7 @@ class Latex2Md:
         begin_match = re.search(begin_document, contents)
         end_match = re.search(end_document, contents)
 
-        tex_code = contents[begin_match.start() : end_match.start()]
+        tex_code = contents[begin_match.end() : end_match.start()]
 
         chapters = {}
         for chapter_match in re.finditer(chapter, tex_code):
@@ -833,6 +833,7 @@ if __name__ == "__main__":
     parser.add_argument("--generate-pngs", action='store_true', default=False)
     parser.add_argument("--cache-tikz", action='store_true', default=False)
     parser.add_argument("--cache-pngs", action='store_true', default=False)
+    parser.add_argument("--create-mkdocs-nav", action='store_true', default=False)
     args = parser.parse_args()
 
     tex_file = Path(args.tex_file)
@@ -842,6 +843,7 @@ if __name__ == "__main__":
     GENERATE_PNGS = args.generate_pngs
     CACHE_TIKZ = args.cache_tikz
     CACHE_PNGS = args.cache_pngs
+    CREATE_MKDOCS_NAV = args.create_mkdocs_nav
 
     if not tex_file.exists():
         LOGGER.error(f"Error: {args.tex_file} does not exist")
@@ -859,7 +861,8 @@ if __name__ == "__main__":
     )    
 
     chapters: dict = handler.latex_to_markdown(tex_file, markdown_dir=markdown_dest)
-    handler.create_mkdocs_yaml_nav(chapters)
+    if CREATE_MKDOCS_NAV:
+        handler.create_mkdocs_yaml_nav(chapters)
     
     if COMPILE_TIKZ:
         # compile tikz drawings to pdfs
