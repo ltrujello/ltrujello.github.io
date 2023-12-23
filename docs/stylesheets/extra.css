@@ -1,4 +1,52 @@
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('cmunrm.eot');
+	src: url('cmunrm.eot?#iefix') format('embedded-opentype'),
+		 url('cmunrm.woff') format('woff'),
+		 url('cmunrm.ttf') format('truetype'),
+		 url('cmunrm.svg#cmunrm') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('cmunbx.eot');
+	src: url('cmunbx.eot?#iefix') format('embedded-opentype'),
+		 url('cmunbx.woff') format('woff'),
+		 url('cmunbx.ttf') format('truetype'),
+		 url('cmunbx.svg#cmunbx') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('cmunti.eot');
+	src: url('cmunti.eot?#iefix') format('embedded-opentype'),
+		 url('cmunti.woff') format('woff'),
+		 url('cmunti.ttf') format('truetype'),
+		 url('cmunti.svg#cmunti') format('svg');
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+@font-face {
+	font-family: 'Computer Modern Serif';
+	src: url('cmunbi.eot');
+	src: url('cmunbi.eot?#iefix') format('embedded-opentype'),
+		 url('cmunbi.woff') format('woff'),
+		 url('cmunbi.ttf') format('truetype'),
+		 url('cmunbi.svg#cmunbi') format('svg');
+	font-weight: bold;
+	font-style: italic;
+}
+
 :root {
+    --md-text-font: "Computer Modern Serif";
     --md-primary-fg-color: #222b3a;
     --md-primary-fg-color--light: #5d6cc0;
     --md-primary-fg-color--dark: #303fa1;
@@ -17,6 +65,21 @@
     /* --md-default-fg-color--light: #fff; */
     /* /1* clicked text color *1/ */ 
     /* --md-typeset-a-color */
+}
+
+/* stop mathjax from randomly changing font size */
+.MathJax{
+    font-size: 100% !important;
+}
+
+/* Adjust font size for text */
+.md-typeset {
+    font-size: .9rem;
+    line-height: 1.5;
+}
+/* Adjust font size for tab names */
+.md-tabs__link {
+    font-size: .8rem;
 }
 
 .md-grid {
