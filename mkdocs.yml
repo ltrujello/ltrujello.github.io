@@ -189,6 +189,8 @@ plugins:
     archive: false
     blog_dir: .
     post_dir: posts
+    draft: false
+
 site_name: Home
 theme:
   features:
