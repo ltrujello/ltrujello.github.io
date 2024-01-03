@@ -5,8 +5,9 @@ date: 2023-12-10
 # Testing Cheatsheet for Python
 
 To successfully manage complex software systems, engineers need to write tests. The reason is because every change 
-you make to an existing, working software system is inherently a risk of introducing a bug. 
-Unit tests are a very simple line of defense against creating such bugs, and good tests will 
+you make to an existing, working software system carries with it a certain probability that you will 
+introduce a bug. To combat this nonzero probability, unit tests are a very simple line of 
+defense against creating such bugs, and good tests will 
 generally run over all possible code paths to relieve developers of the mental load towards making trivial errors. 
 
 <!-- more -->
@@ -143,14 +144,8 @@ mock.method("bar")
 assert mock.method.call_count == 3
 ```
 
-## Assert called once exactly
-```python
-mock = Mock()
-mock.method(1, 2, 3, test='wow')
-mock.method.assert_called_once()
-```
 
-## Assert not called called at all
+## Assert not called at all
 ```python
 mock = Mock()
 mock.method(1, 2, 3, test='wow') mock.some_other_method.assert_not_called()
@@ -171,77 +166,6 @@ async def my_test(
     expected,
 ):
     assert raise_by_two(arg) == expected
-```
-
-## Mocking an aiohttp session call
-Suppose you have a function making an aiohttp call like this.
-
-```python
-def contact_service(client_session):
-    async with client_session.get(
-        f"{SERVICE}/endpoint",
-    ) as response:
-        if response.status != 200:
-            return None
-        res = await response.json()
-
-        item_a = res["foo"]
-        item_b = res["bar"]
-
-        return {
-            "item_a": item_a, "item_b": item_b,
-        }
-
-    return None
-```
-
-The crux of writing a test for this is mocking the `client_session.get` call. Do it by using this 
-Mock Response class and adding this to your tests
-```python
-class MockResponse:
-    def __init__(self, json_data={}, status=200, text="", reason=""):
-        self.json_data = json_data
-        self.status = status
-        self._text = text
-        self.reason = reason
-
-    async def json(self):
-        return self.json_data
-
-    async def text(self):
-        return self._text
-
-    def raise_for_status(self):
-        pass
-
-def mock_client_session_with_get(mock_response: MockResponse):
-    return mock.MagicMock(
-        get=mock.MagicMock(
-            return_value=mock.MagicMock(
-                __aenter__=mock.AsyncMock(
-                    return_value=mock_response
-                )
-            )
-        )
-    )
-
-@pytest.mark.asyncio
-async def test_contact_service():
-    mock_response = MockResponse(
-        json_data={"item_a": "foo", "item_b": "bar"}, status=200
-    )
-
-    client_session=mock_client_session_with_get(mock_response)
-    assert (
-        await contact_service(client_session) is not None
-    )
-
-@pytest.mark.asyncio
-async def test_contact_service_bad_response():
-    # given 
-    mock_response = MockResponse(status=400)
-    client_session=mock_client_session_with_get(mock_response)
-    assert await contact_service(client_session) is None
 ```
 
 ## Assert that an exception was raised when you called a function 

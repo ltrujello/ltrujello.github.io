@@ -27,7 +27,7 @@ can iteratively process a sequence of inputs $(x_1, x_2, \dots, x_T)$ with
 $x_i \in \mathbb{R}^{I}$, and produce a corresponding 
 sequence of values $(y_1, \dots, y_T)$. This process is described as follows. 
 
-We follow a notation system introduced by (Graves, 2012). Specifically, 
+We follow a notation system introduced by [(Graves, 2012)](https://www.cs.toronto.edu/~graves/preprint.pdf). Specifically, 
 let $x_i^{t}$ denote the $i$-th element of the $t$-th input and let $y_k^{t}$ denote 
 the $k$-th element of the $t$-th output. 
 Let $a_j$ denote the network input to network node $j$ and 
@@ -202,7 +202,8 @@ the training data. Or, the RNN will have difficulty converging.
 This is a problem was identified by many researchers in the 1990s. 
 
 Using our work in the previous section, we can mathematically explain why the gradients 
-vanish for BPTT by finding a closed form solution the above recurrence relation. 
+vanish for BPTT by finding a closed form solution the above recurrence relation. To do 
+this, we expand the recurrence relation we derived. 
 
 ### $\delta^{T}_j$
 Since $\delta^{T+1}_j=0$ for all possible $j$, we have that 
@@ -482,24 +483,24 @@ values then leads to a straightforward way to update our weights.
 
 ## Backpropagation in LSTMs
 
-When LSTMs were first introduced (Hochreiter, 1997), they were trained using a combination of 
+When LSTMs were first introduced [(Hochreiter, 1997)](https://www.bioinf.jku.at/publications/older/2604.pdf), they were trained using a combination of 
 truncated BPTT and another known procedure for RNN training. The analysis, and subsequently the justification 
 for this method, which was done in that research paper was somewhat imprecise, 
 but it was accepted as the performance of LSTMs were undeniable. 
-However in (Graves, 2005), the full  equations 
+However in [(Graves, 2005)](https://www.cs.toronto.edu/~graves/ijcnn_2005.pdf), the full  equations 
 for performing full BPTT with LSTMs were derived (these equations are the exact equations we introduced in 
 the previous section). Additionally, it was shown in that paper that actually computing the full BPTT, versus 
 the more complex, original method, had better performance and is easier to implement. Hence, in practice we 
 would simply compute full BPTT for a RNN using LSTMs. 
 
-What remains unanswered, exactly, is *why* LSTMs work. The architecture makes intuitive sense as 
+What remains unanswered, exactly, is *why* LSTMs work better than traditional RNNs. The architecture makes intuitive sense as 
 to why it lends itself as a solution to the vanishing gradient problem, but, because of the success of LSTMs, 
-there also should in theory exist a mathematical explanation for this. In order to investigate this question we solve the recurrence relation 
-equations we described for the backward pass, and examine the closed-form solution for answers to this question.
+there also should in theory exist a mathematical explanation for this. In order to investigate this question, 
+we can analyze the recurrence relations we derived for error flow in LSTMs. 
 
-To solve the recurrence relation, it suffices to solve for a closed form solution to $\epsilon_c^{t}$. This is 
+In order to analyze the behavior of the recurrence relations, it suffices to solve for a closed form solution to $\epsilon_c^{t}$. This is 
 because the formulas in the backward pass of an LSTM are all a function of $\epsilon_c^{t}$, and once this can be 
-explicitly described, so can each of the other equations. 
+explicitly analyzed, so can each of the other equations. 
 
 To begin with this process, observe that 
 
@@ -533,7 +534,7 @@ Expanding each $\zeta_{c_1}^{t+1}$ in each summation, we get
 
 
 This is the full recurrence relation. Since we know that $e_c^{T} = \sum_{k=1}^{K}w_{ck}\delta_k^T$, the goal is 
-to find a closed formed solution for $\epsilon_c^{T-n}$ for $n = 1, 2, \dots, T-1$, by working backwards in the recurrence relation.
+to understand the recurrence relation $\epsilon_c^{T-n}$ for $n = 1, 2, \dots, T-1$.
 
 Let's just take a look at how complicated this recurrence relation is. First, we already have that  that 
 
@@ -546,11 +547,11 @@ Next, we have that
 \[
 \begin{align}
 \epsilon_c^{T-1} = 
-\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-1} &+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T}) \sum_{c' = 1}^{C}g(a_{c'}^{T})b_{\omega}^{T}h'(s_{c'}^{T})
+\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-1} &+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T}) \sum_{c' = 1}^{C}g(a_{c'}^{T})b_{\omega}^{T}h'(s_{c'}^{T})
 \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\
-&+ \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T}h'(s_{c'}^{T})
+&+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T}h'(s_{c'}^{T})
 \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\
-&+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T})\sum_{c'=1}^{C} h(s_{c'}^{T}) 
+&+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T})\sum_{c'=1}^{C} h(s_{c'}^{T}) 
 \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\
 &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T}h'(s_{c'}^{T})
 \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\ 
@@ -561,37 +562,37 @@ If we go one step further, we have that
 
 \begin{align}
 \epsilon_c^{T-2} = 
-\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-2} &+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-2} &+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
 \left(
-\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 + \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 \right)
 \\
-&+ \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+&+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
 \left(
-\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 + \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 \right)
 \\
-&+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+&+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
 \left(
-\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 + \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
@@ -599,11 +600,11 @@ If we go one step further, we have that
 \\
 &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
 \left(
-\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
-+ \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 + \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
 \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
@@ -616,62 +617,62 @@ Distributing these products and rearranging, we obtain
 \begin{align}
 \epsilon_c^{T-2} = 
 \sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-2} 
-&+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+&+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
     \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
-&+ \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+&+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
     \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
-&+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+&+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
     \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
 &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
     \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
-    &+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+    &+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+    &+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+    &+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\iota=1}^{H} w_{ch}f'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+    &+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
       \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 \\
     &+ 
-      \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+    &+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+    &+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\phi=1}^{H}w_{c\phi}f'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+    &+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
       \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 \\
-    &+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
-      \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+    &+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
-      \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+    &+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
-      \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+    &+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
-    &+ \sum_{\omega=1}^{H}w_{c\omega}f'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+    &+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
       \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
 \\
     &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\iota=1}^{H} w_{c'h}f'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
     &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\phi=1}^{H}w_{c'\phi}f'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
     &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
-      \sum_{\omega=1}^{H}w_{c'\omega}f'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
       \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
     &+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
       \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
@@ -688,15 +689,47 @@ $$
 $$
 
 For example, in $\epsilon_c^{T-2}$, we can group the summation terms into three groups of size 1, 4, and 16. 
-
 Viewing it this way actually gives us a strategy to organize the summation of $\epsilon_{c}^{T-n}$. 
 Since we know that there will be $s_n = 1 + 4 + 16 + \dots + (4^{n+1}-1)/3$  
 many terms, we can interpret what power of $4$ indicates in $s_n$. 
-
 The plus one in $s_n$ is so that we may account for the error that $b_c^{t}$ contributes to the error of $y^{T - n}$.
 The plus four in $s_n$ is so that we may account for the error that $b_c^{t}$ contributes to the error of the 
 input gate, forget gate, output gate, and cell state, which each contribute to the error of $y^{T - n + 1}$. 
 The plus sixteen in $s_n$ is so that we may account for the how $b_c^{t}$ contributes 
 to network input in the next step, and consequently, how each of each effects contribute to the error 
 of $y^{T - n + 2}$.  
+
+More generally, the reason why this pattern exists is because neural network backpropagation can be viewed as 
+traversal of a computation graph generated by the forward pass of the neural network, where upon traversal gradients are collected. 
+
+In our case, the computation graph looks like this:
+
+<img src="/png/vanishing_gradients/computation_graph.png" style="margin: 0 auto; display: block; width: 95%;"/> 
+
+To mathematically express this and connect this with our objective of understanding $\epsilon_c^{T-n}$, 
+define a **path** of length $\ell$ in our computation graph to be a sequence of connected (end-to-end) edges 
+$(p_1, \dots, p_\ell)$ in the computation graph. If $P_{\ell}$ denotes the set of all such paths of length $\ell$, then 
+we see that 
+
+\[
+  \epsilon_c^{T-n} = \sum_{\ell=0}^{n}\sum_{(p_1, \dots, p_{\ell}) \in P_{\ell}} G(p_1, \dots, p_{\ell})
+\]
+
+where $G$ is a function that collects gradients from traversing a path $(p_1, \dots, p_{\ell})$. 
+
+For example, let $(p_1, p_2, p_3)$ be a path in the LSTM computation graph that starts from the input gate at timestep $T-1$, goes to the next
+input gate at timestep $T$, and then goes to the output of the computation graph at timestep $T$. Then 
+
+\[
+  G(p_1, p_2, p_3) = 
+  \overbrace{
+  \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+  }^{\text{input gate}}
+  \overbrace{
+  \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+  }^{\text{input gate}}
+  \overbrace{
+  \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+  }^{\text{output gate}}
+\]
 
