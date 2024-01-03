@@ -3029,13 +3029,13 @@ in order to study the <a href="associahedron">associahedron</a> in <span class="
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-10-29 00:00:00">October 29, 2023</time></li>
+          <time datetime="2023-12-10 00:00:00">December 10, 2023</time></li>
         
         
           
           <li class="md-meta__item">
             
-              15 min read
+              4 min read
             
           </li>
         
@@ -3044,26 +3044,55 @@ in order to study the <a href="associahedron">associahedron</a> in <span class="
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="understanding-lstms-and-vanishing-gradients-in-rnns"><a class="toclink" href="2023/10/29/understanding-lstms-and-vanishing-gradients-in-rnns/">Understanding LSTMs and Vanishing Gradients in RNNs</a></h2>
-<p>In attempting to understand LSTMs, I often find myself reading blog posts, tutorials, explanations which 
-all characterize LSTMs in the same way, but they are not very satisfactory in my opinion because they do not 
-explain <em>why</em> LSTMs were invented or <em>how</em> they manage to solve the <strong>vanishing gradient</strong> problem 
-in RNNs (which is why they were created). I think this is important to really understanding the 
-structure of an LSTM. </p>
-<p>In general, sometimes it's necessary to deeply understand the motivation 
-for a concept, especially if (1) the concept is complicated and nontrivial and (2) would lend itself to being
-almost arbitrary and random if the motivation were not taken into account. 
-Conversely, sometimes this is not necessary, especially if there are other more 
-pressing things to deeply understand.</p>
-<p>The details of why gradients vanish for RNNs during the BPTT algorithm can be found in certain 90s neural network 
-papers, such as <a href="https://doi.org/10.1162/neco.1997.9.8.1735">(Hochreiter, 1997)</a>, a paper in which Hochreiter et. al. 
-propose the LSTM model. In that description, the model for the LSTM actually differs from what we know to be an 
-LSTM today. Thus the goal of this write up will be to go beyond just 
-saying "LSTMs have an input, forget gate", and to offer a modern description of vanishing gradients in 
-RNNs and how LSTMs solve this. </p>
+    <h2 id="testing-cheatsheet-for-python"><a class="toclink" href="2023/12/10/testing-cheatsheet-for-python/">Testing Cheatsheet for Python</a></h2>
+<p>To successfully manage complex software systems, engineers need to write tests. The reason is because every change 
+you make to an existing, working software system carries with it a certain probability that you will 
+introduce a bug. To combat this nonzero probability, unit tests are a very simple line of 
+defense against creating such bugs, and good tests will 
+generally run over all possible code paths to relieve developers of the mental load towards making trivial errors. </p>
 
     <nav class="md-post__action">
-      <a href="2023/10/29/understanding-lstms-and-vanishing-gradients-in-rnns/">
+      <a href="2023/12/10/testing-cheatsheet-for-python/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2023-11-29 00:00:00">November 29, 2023</time></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              23 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="vanishing-gradients-in-rnns-and-lstms"><a class="toclink" href="2023/11/29/vanishing-gradients-in-rnns-and-lstms/">Vanishing Gradients in RNNs and LSTMs</a></h2>
+<p>Recurrent neural networks (RNNs), which can be thought of as feedforward
+neural networks with self-connections, perform extremely well for supervised 
+sequence learning and are capable of solving many problems that feedforward 
+neural networks typically cannot solve. However, in the past, RNN training 
+procedures suffered from the vanishing gradient problem. This problem led to 
+the invention of the Long Short-Term Memory (LSTM) model. In this work, we 
+review the vanishing gradient problem for vanilla RNNs, and show how the LSTM 
+is able to address this problem. To do this, we offer closed-form gradient update formulae 
+which allow us to mathematically analyze network loss. </p>
+
+    <nav class="md-post__action">
+      <a href="2023/11/29/vanishing-gradients-in-rnns-and-lstms/">
         Continue reading
       </a>
     </nav>
@@ -3302,7 +3331,7 @@ Here, we'll discuss the probability theory behind the first model, IBM Model 1, 
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       
     
   </body>

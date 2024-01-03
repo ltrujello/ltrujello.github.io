@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../recurrent-neural-networks-and-the-reber-grammar-in-pytorch/">
+        <link rel="prev" href="../../../10/29/recurrent-neural-networks-and-the-reber-grammar-in-pytorch/">
       
+      
+        <link rel="next" href="../../../12/10/testing-cheatsheet-for-python/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Understanding LSTMs and Vanishing Gradients in RNNs - Home</title>
+        <title>Vanishing Gradients in RNNs and LSTMs - Home</title>
       
     
     
@@ -75,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#understanding-lstms-and-vanishing-gradients-in-rnns" class="md-skip">
+        <a href="#vanishing-gradients-in-rnns-and-lstms" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Understanding LSTMs and Vanishing Gradients in RNNs
+              Vanishing Gradients in RNNs and LSTMs
             
           </span>
         </div>
@@ -2987,51 +2989,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rnns-and-a-concrete-example" class="md-nav__link">
-    RNNs and a concrete example
+  <a href="#recurrent-neural-networks" class="md-nav__link">
+    Recurrent Neural Networks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#derivates-at-the-first-timestep" class="md-nav__link">
-    Derivates at the first timestep
+  <a href="#example-rnn" class="md-nav__link">
+    Example RNN
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-simple-calculating-error-at-the-first-step" class="md-nav__link">
-    Starting simple: Calculating error at the first step
+  <a href="#notation" class="md-nav__link">
+    Notation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculating-error-at-the-second-step" class="md-nav__link">
-    Calculating error at the second step
+  <a href="#backpropagation-through-time" class="md-nav__link">
+    Backpropagation Through Time
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#calculating-error-more-generally" class="md-nav__link">
-    Calculating error, more generally
+  <a href="#vanishing-gradients-in-bptt" class="md-nav__link">
+    Vanishing Gradients in BPTT
   </a>
   
-    <nav class="md-nav" aria-label="Calculating error, more generally">
+    <nav class="md-nav" aria-label="Vanishing Gradients in BPTT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#calculating-the-effect-of-the-input-weights" class="md-nav__link">
-    Calculating the effect of the input weights
+  <a href="#deltat_j" class="md-nav__link">
+    \(\delta^{T}_j\)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#calculating-the-effect-of-the-hidden-weights" class="md-nav__link">
-    Calculating the effect of the hidden weights
+  <a href="#deltat-1_j" class="md-nav__link">
+    \(\delta^{T - 1}_j\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deltat-2_j" class="md-nav__link">
+    \(\delta^{T - 2}_j\)
   </a>
   
 </li>
@@ -3042,8 +3051,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-rnn-backpropagation-is-unstable" class="md-nav__link">
-    How RNN Backpropagation is Unstable
+  <a href="#long-short-term-memory" class="md-nav__link">
+    Long Short-Term Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backpropagation-in-lstms" class="md-nav__link">
+    Backpropagation in LSTMs
   </a>
   
 </li>
@@ -3085,7 +3101,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-10-29 00:00:00" class="md-ellipsis">October 29, 2023</time>
+                        <time datetime="2023-11-29 00:00:00" class="md-ellipsis">November 29, 2023</time>
                       </div>
                     </li>
                     
@@ -3097,7 +3113,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
                           <span class="md-ellipsis">
                             
-                              15 min read
+                              23 min read
                             
                           </span>
                         </div>
@@ -3117,446 +3133,597 @@
         
 
 
-<h1 id="understanding-lstms-and-vanishing-gradients-in-rnns">Understanding LSTMs and Vanishing Gradients in RNNs</h1>
-<p>In attempting to understand LSTMs, I often find myself reading blog posts, tutorials, explanations which 
-all characterize LSTMs in the same way, but they are not very satisfactory in my opinion because they do not 
-explain <em>why</em> LSTMs were invented or <em>how</em> they manage to solve the <strong>vanishing gradient</strong> problem 
-in RNNs (which is why they were created). I think this is important to really understanding the 
-structure of an LSTM. </p>
-<p>In general, sometimes it's necessary to deeply understand the motivation 
-for a concept, especially if (1) the concept is complicated and nontrivial and (2) would lend itself to being
-almost arbitrary and random if the motivation were not taken into account. 
-Conversely, sometimes this is not necessary, especially if there are other more 
-pressing things to deeply understand.</p>
-<p>The details of why gradients vanish for RNNs during the BPTT algorithm can be found in certain 90s neural network 
-papers, such as <a href="https://doi.org/10.1162/neco.1997.9.8.1735">(Hochreiter, 1997)</a>, a paper in which Hochreiter et. al. 
-propose the LSTM model. In that description, the model for the LSTM actually differs from what we know to be an 
-LSTM today. Thus the goal of this write up will be to go beyond just 
-saying "LSTMs have an input, forget gate", and to offer a modern description of vanishing gradients in 
-RNNs and how LSTMs solve this. </p>
+<h1 id="vanishing-gradients-in-rnns-and-lstms">Vanishing Gradients in RNNs and LSTMs</h1>
+<p>Recurrent neural networks (RNNs), which can be thought of as feedforward
+neural networks with self-connections, perform extremely well for supervised 
+sequence learning and are capable of solving many problems that feedforward 
+neural networks typically cannot solve. However, in the past, RNN training 
+procedures suffered from the vanishing gradient problem. This problem led to 
+the invention of the Long Short-Term Memory (LSTM) model. In this work, we 
+review the vanishing gradient problem for vanilla RNNs, and show how the LSTM 
+is able to address this problem. To do this, we offer closed-form gradient update formulae 
+which allow us to mathematically analyze network loss. </p>
 <!-- more -->
 
-<p>In what follows, we will track and analyze the error flow of weights in an RNN, starting from a simple example
-and ending with a more general description. We'll observe that the gradient error flow can actually 
-be recursively defined, and that a closed form description can be offered. This closed form solution will reveal 
-why gradients vanish. </p>
-<h2 id="rnns-and-a-concrete-example">RNNs and a concrete example</h2>
-<p>Recall that for a vanilla RNN, given an <strong>input sequence</strong> <span class="arithmatex">\((x_1, \dots, x_T)\)</span> with <span class="arithmatex">\(x_t \in \mathbb{R}^n\)</span> for some <span class="arithmatex">\(n\)</span>, we obtain 
-a corresponding <strong>output sequence</strong> <span class="arithmatex">\((y_1, \dots, y_T)\)</span> with <span class="arithmatex">\(y_t \in \mathbb{R}^m\)</span> for some <span class="arithmatex">\(m\)</span> via the following recursive equations.</p>
+<h2 id="recurrent-neural-networks">Recurrent Neural Networks</h2>
+<p>Recurrent neural networks are a recursively-defined neural network which sequentially
+processes a sequence of inputs to produce a corresponding sequence of outputs. The architecture 
+of a RNN generally consists of an <strong>input layer</strong> with <span class="arithmatex">\(I\)</span>-many nodes, 
+a <strong>hidden layer</strong> of <span class="arithmatex">\(H\)</span>-many nodes which have self-connections, 
+and a <strong>output layer</strong> with <span class="arithmatex">\(K\)</span>-many nodes. With such a network, we 
+can iteratively process a sequence of inputs <span class="arithmatex">\((x_1, x_2, \dots, x_T)\)</span> with 
+<span class="arithmatex">\(x_i \in \mathbb{R}^{I}\)</span>, and produce a corresponding 
+sequence of values <span class="arithmatex">\((y_1, \dots, y_T)\)</span>. This process is described as follows. </p>
+<p>We follow a notation system introduced by <a href="https://www.cs.toronto.edu/~graves/preprint.pdf">(Graves, 2012)</a>. Specifically, 
+let <span class="arithmatex">\(x_i^{t}\)</span> denote the <span class="arithmatex">\(i\)</span>-th element of the <span class="arithmatex">\(t\)</span>-th input and let <span class="arithmatex">\(y_k^{t}\)</span> denote 
+the <span class="arithmatex">\(k\)</span>-th element of the <span class="arithmatex">\(t\)</span>-th output. 
+Let <span class="arithmatex">\(a_j\)</span> denote the network input to network node <span class="arithmatex">\(j\)</span> and 
+let <span class="arithmatex">\(b_j\)</span> be the activation of node <span class="arithmatex">\(a_j\)</span>. 
+Moving forward, <span class="arithmatex">\(w_{ij}\)</span> will denote the weight going from node <span class="arithmatex">\(i\)</span> to node <span class="arithmatex">\(j\)</span>, and 
+<span class="arithmatex">\(\theta\)</span> will denote a differentiable activation function. </p>
+<p>With this notation system, the equations that characterize the forward pass of a sequence 
+<span class="arithmatex">\((x_1, \dots, x_T)\)</span> for a RNN are as below.</p>
 <div class="arithmatex">\[\begin{align}
-    y_t &amp;= \sigma_y(Vh_t + b_y)\\
-    h_t &amp;= \sigma_h(Wx_t + Uh_{t-1} + b_h)
+a_h^{t} &amp;= \sum_{i = 1}^{I}w_{ih}x_i^{t} + \sum_{h'=1}^{H}w_{h'h}b_{h'}^{t-1}\\
+b_h^{t} &amp;= \theta(a_h^{t})\\
+a_k^{t} &amp;= \sum_{h=1}^{H}w_{hk}b_h^{t}\\
+y_k^{t} &amp;= \theta(a_k^{t})
 \end{align}\]</div>
-<p>where </p>
-<ul>
-<li><span class="arithmatex">\(h_0\)</span> is initialized to <span class="arithmatex">\(\vec{0}\)</span></li>
-<li><span class="arithmatex">\(V \in \mathbb{R}^{m \times d}\)</span>, for some <span class="arithmatex">\(d\)</span>, which we refer to as the <strong>output weights</strong></li>
-<li><span class="arithmatex">\(W \in \mathbb{R}^{d \times n}\)</span> which we refer to as the <strong>input weights</strong></li>
-<li><span class="arithmatex">\(U \in \mathbb{R}^{d \times d}\)</span> which we refer to as the <strong>hidden weights</strong></li>
-<li><span class="arithmatex">\(\sigma_y, \sigma_h\)</span> are some activation functions</li>
-<li><span class="arithmatex">\(b_y, b_h \in \mathbb{R}^{d}\)</span> are biases</li>
-</ul>
-<p>To make things concrete, let us introduce a concrete recurrent neural network. 
-Set <span class="arithmatex">\(n = m = 7\)</span>, so that the input and output of the RNN are in <span class="arithmatex">\(\mathbb{R}^7\)</span>, and set <span class="arithmatex">\(d = 4\)</span>, so that the hidden states are in 
-<span class="arithmatex">\(\mathbb{R}^4\)</span>. This is what the RNN looks like.
-<img src="/png/lstms/simple_rnn.png" style="margin: 0 auto; display: block; width: 95%;"/> </p>
+<p>Computing the forward pass requires starting at <span class="arithmatex">\(t = 1\)</span> and incrementing until <span class="arithmatex">\(t = T\)</span>.
+Note that this requires an initial value for <span class="arithmatex">\(h_0\)</span>, which we initialize to the zero vector. </p>
+<h2 id="example-rnn">Example RNN</h2>
+<p>To make things concrete, let us introduce a simple example of a recurrent neural network. 
+For our network architecture, set <span class="arithmatex">\(I = K = 7\)</span>, so that the input and output of the RNN are in 
+<span class="arithmatex">\(\mathbb{R}^7\)</span>, and set <span class="arithmatex">\(H = 4\)</span>, so that the hidden states are in 
+<span class="arithmatex">\(\mathbb{R}^4\)</span>. This is what the RNN looks like.</p>
+<p><img src="/png/vanishing_gradients/example_rnn.png" style="margin: 0 auto; display: block; width: 95%;"/> </p>
 <p>As a side note, this RNN is capable of perfectly learning the Reber grammar. </p>
-<p>Given this definition of a recurrent neural network, what does it mean to track error flow from the weights throughout 
-the network? In order to do this, we need to understand how each weight contributes to the output values of the neural network. 
-Specifically, consider an input sequence <span class="arithmatex">\((x_1, \dots, x_T)\)</span>, and let <span class="arithmatex">\((y_1, \dots, y_T)\)</span> be the output of the RNN.
-Denote <span class="arithmatex">\(y_t^k\)</span> to be the <span class="arithmatex">\(k\)</span>-th output node at time <span class="arithmatex">\(t\)</span> (thus, <span class="arithmatex">\(k\)</span> ranges over <span class="arithmatex">\(1\)</span> to <span class="arithmatex">\(T\)</span>). </p>
-<p>Since our trainable parameters are <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(W\)</span>, <span class="arithmatex">\(U\)</span>, and out biases, we need to calculate the following quantities. </p>
-<div class="arithmatex">\[\begin{align}
-    \frac{\partial y_t^k}{\partial v_{ij}} \text{ where } i = 1, 2, \dots, m, j = 1, 2, \dots, d\\
-    \frac{\partial y_t^k}{\partial w_{ij}} \text{ where }  i = 1, 2, \dots, d, j = 1, 2, \dots, n\\
-    \frac{\partial y_t^k}{\partial u_{ij}} \text{ where } i = 1, 2, \dots, d, j = 1, 2, \dots, d
-\end{align}\]</div>
-<p>We also have to calculate the error with respect to our biases, but we'll ignore that for now. 
-Calculating these derivatives is a bit tricky. Thus, what we'll do is calculate these 
-derivatives in simple cases which will slowly reveal a pattern to the general error propagation. </p>
-<h2 id="derivates-at-the-first-timestep">Derivates at the first timestep</h2>
-<p>Consider the RNN we introduced earlier, and 
-suppose we want to run a input sequence <span class="arithmatex">\((x_1, x_2, x_3)\)</span> through the RNN. 
-What would this look like? It would look like this. </p>
+<h2 id="notation">Notation</h2>
+<p>The notation we introduced is using a notation strategy from Graves' work, and it 
+is technically an abuse of notation with respect to the weights. However, the idea is that 
+it is generally clear from context what layer in the network <span class="arithmatex">\(w_{ij}\)</span> will refer to.
+When we write <span class="arithmatex">\(w_{hk}\)</span>, we are speaking of the weight connecting node <span class="arithmatex">\(h\)</span> in the hidden layer 
+to node <span class="arithmatex">\(k\)</span> in the output layer. When we write <span class="arithmatex">\(w_{ih}\)</span>, we are speaking of the 
+weight connection node <span class="arithmatex">\(i\)</span> in the input layer to node <span class="arithmatex">\(h\)</span> in the hidden layer. When it is not 
+clear from context we will explicitly state what exact nodes <span class="arithmatex">\(w_{ij}\)</span> is connecting.</p>
+<p>We now turn to discussion of the backward pass of RNNs. There are several methods one can employ 
+to perform the backward pass, but we will focus on the most common, which is <strong>Backpropagation Through 
+Time</strong>. </p>
+<h2 id="backpropagation-through-time">Backpropagation Through Time</h2>
+<p>The <strong>Backpropagation Through Time</strong> (BPTT) algorithm is simply an application of the 
+standard backpropagation algorithm for feed-forward neural networks to RNNs. This 
+can be done because RNNs can be viewed as feed-forward RNNs, by "unfolding" 
+the network. This is similar to how a recursive function in programming can viewed as 
+non-recursive function; the logic performed by a recursive function call 
+can equally be performed by one single call to an equivalent non-recursive function.</p>
+<p>For example, suppose we processed three elements <span class="arithmatex">\((x_1, x_2, x_3)\)</span> through the RNN we introduced earlier.
+Then the network unfolded would look like this:</p>
 <p><img src="/png/lstms/rnn_three_inputs.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
-<p>Well actually, what it would <em>really</em> look like is something like this </p>
+<p>Well actually, what it would <em>really</em> look like is something like this:</p>
 <p><img src="/png/lstms/rnn_three_inputs_full.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
-<p>Thinking of an RNN in this way is called "unfolding" the RNN.
-From this perspective, it is easy to see that an RNN is very similar to a feed 
-forward neural network. Additionally, we can see which weights affect what layers. </p>
-<h2 id="starting-simple-calculating-error-at-the-first-step">Starting simple: Calculating error at the first step</h2>
-<p>In order to do this, let us start off simple and calculate the error at the first timestep with <span class="arithmatex">\(t = 1\)</span>. 
-In this case the calculations are dead simple. To see why, observe that, for the <span class="arithmatex">\(k\)</span>-th node in the output 
-layer for <span class="arithmatex">\(t = 1\)</span>, the influence that the weights have on the value <span class="arithmatex">\(y_1^k\)</span> is really simple. </p>
-<p><img src="/png/lstms/rnn_error1.png" style="margin: 0 auto; display: block; width: 60%;"/> </p>
-<p>The explicit equations for this calculation are </p>
-<div class="arithmatex">\[\begin{align}
-    y^k_1 &amp;= \sigma_y\left(\sum_{\alpha = 1}^{4} v_{k\alpha}h^\alpha_1 + b^k_y\right)\\
-    h_1^{\alpha} &amp;= \sigma_y\left(\sum_{\beta = 1}^{7} w_{\alpha\beta}x^\beta_1 + \sum_{\gamma = 1}^{4} u_{\alpha\gamma}h^\gamma_0 + b^{\alpha}_h\right)
-\end{align}\]</div>
-<p>With respect to the weights <span class="arithmatex">\(v_{ij}\)</span>, which connects hidden node <span class="arithmatex">\(h^j_1\)</span> to output node <span class="arithmatex">\(y_1^j\)</span>, this weight only has 
-an effect on output node <span class="arithmatex">\(y_1^i\)</span>. Thus,</p>
+<p>Thus, we can apply standard backpropagation to the unfolded network. </p>
+<p>Let <span class="arithmatex">\(\mathcal{L} : \mathbb{R}^{I} \times \mathbb{R}^{K} \to \mathbb{R}\)</span> denote the loss 
+function for our supervised training. The function takes in an input and a corresponding 
+known output value to compute a loss value. </p>
+<p>The goal of BPTT is to compute the gradient </p>
 <div class="arithmatex">\[
-    \frac{\partial y_1^i}{\partial v_{ij}} = h^j_1
+\frac{\partial \mathcal{L}}{\partial w_{ij}}
 \]</div>
-<p>Next, observe that, for the weight <span class="arithmatex">\(w_{ij}\)</span> which connects input node <span class="arithmatex">\(x^j_1\)</span> to hidden node <span class="arithmatex">\(h^i_1\)</span>, we have that
-for any <span class="arithmatex">\(k =1, 2, \dots, T\)</span></p>
+<p>for all weights <span class="arithmatex">\(w_{ij}\)</span> in our network. When this quantity is known, we can update our 
+weights via </p>
 <div class="arithmatex">\[
-    \frac{\partial y_1^k}{\partial v_{ij}} = \frac{\partial y_1^k}{\partial h^i_1} \frac{\partial h^i_1}{\partial w_{ij}}
-    = \sigma_y' v_{ki} \cdot {h^i_1}' x^j_1
+w_{ij} = w_{ij} - \eta\frac{\partial \mathcal{L}}{\partial w_{ij}} 
 \]</div>
-<p>where <span class="arithmatex">\(\sigma_y'\)</span> and <span class="arithmatex">\({h^i_1}'\)</span> are scalars values, obtained from evaluating the derivative via the chain rule. 
-Our next calculation is very similar:</p>
+<p>where <span class="arithmatex">\(\eta\)</span> is our learning parameter. Of course, we can also incorporate momentum. </p>
+<p>To compute the gradient, note that for a sequence of inputs <span class="arithmatex">\((x_1, \dots, x_T)\)</span>
+with known outputs <span class="arithmatex">\((z_1, \dots, z_{T})\)</span>, each <span class="arithmatex">\(w_{ij}\)</span> in the network 
+contributes loss at each time step. Therefore, </p>
 <div class="arithmatex">\[
-    \frac{\partial y_1^k}{\partial u_{ij}} = \frac{\partial y_1^k}{\partial h^i_1} \frac{\partial h^i_1}{\partial u_{ij}}
-    = \sigma_y' v_{ki} \cdot {h^i_1}' h^j_0
+\frac{\partial \mathcal{L}}{\partial w_{ij}}
+=
+\sum_{t = 1}^{T} 
+\frac{\partial \mathcal{L}}{\partial a^{t}_j}
+\frac{\partial a^{t}_j}{\partial w_{ij}}
 \]</div>
-<p>which completes our investigation into how the weights influence values in the <span class="arithmatex">\(y_1\)</span>.</p>
-<h2 id="calculating-error-at-the-second-step">Calculating error at the second step</h2>
-<p>Calculating error at the second step is where things get a bit trickier. This is because the weights have a more complex effect on the 
-final output values <span class="arithmatex">\(y_2^k\)</span>. Here is a diagram that demonstrates what happens. </p>
-<p><img src="/png/lstms/rnn_error2.png" style="margin: 0 auto; display: block; width: 80%;"/> </p>
-<p>At first, the weights initially have only an effect on <span class="arithmatex">\(h_1^j\)</span>. However, <span class="arithmatex">\(h_1^j\)</span> is actually used in every single calculation 
-for all the nodes in the second hidden state, <span class="arithmatex">\(h_2\)</span>. And each of these nodes in <span class="arithmatex">\(h_2\)</span> are all used in the calculations for the final 
-output value of interest, <span class="arithmatex">\(y^k_2\)</span>. </p>
-<p>We can take into account this information via the chain rule. 
-Fortunately, the output weights <span class="arithmatex">\(v_{ij}\)</span> have a rather simple effect on the output nodes. </p>
+<p>If we introduce the shorthand </p>
 <div class="arithmatex">\[
-    \frac{\partial y_2^i}{\partial v_{ij}} = h^j_2
+\delta_{j}^{t} = \frac{\partial \mathcal{L}}{\partial a^{t}_j}
 \]</div>
-<p>Next, let us compute the effect that the input weights have. This would be </p>
+<p>then we have that 
+<span class="arithmatex">\(\frac{\partial \mathcal{L}}{\partial w_{ij}}
+=
+\sum_{t = 1}^{T} 
+\delta_j^{t}
+\frac{\partial a^{t}_j}{\partial w_{ij}}\)</span>.</p>
+<p>In the above expression, <span class="arithmatex">\(w_{ij}\)</span> is a general weight in our network. Since there are 
+three different types of layers in our network, there are three different types of weights 
+in the network. We briefly summarize the values of <span class="arithmatex">\(\frac{\partial \mathcal{L}}{\partial w_{ij}}\)</span> in 
+each case. 
+If <span class="arithmatex">\(w_{ij}\)</span> is a weight 
+connecting an input node to a hidden node, then </p>
 <div class="arithmatex">\[
-    \frac{\partial y_2^k}{\partial w_{ij}} = 
-    \sigma_y' 
-    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}\frac{\partial h_2^{\alpha}}{\partial w_{ij}}
+\frac{\partial \mathcal{L}}{\partial w_{ij}}
+=
+\sum_{t = 1}^{T} 
+\delta_j^{t}
+x_i^{t}
 \]</div>
-<p>Therefore, the task at hand is to calculate the above partial derivative in the sum above for each <span class="arithmatex">\(\alpha= 1, 2, 3, 4\)</span>. 
-Doing so, observe that </p>
+<p>If <span class="arithmatex">\(w_{ij}\)</span> is a weight connecting a hidden node to a hidden node, then </p>
 <div class="arithmatex">\[
-    \frac{\partial h_2^{\alpha}}{\partial w_{ij}} 
-    = 
-    \sigma_h' \cdot \left( \sum_{\beta=1}^{7}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_2^{\beta} \right)
-    + 
-    \sigma_h' \cdot \left( \sum_{\gamma=1}^{4} u_{\alpha\gamma}\frac{\partial h^{\gamma}_{1}}{\partial w_{ij}} \right)
+\frac{\partial \mathcal{L}}{\partial w_{ij}}
+=
+\sum_{t = 1}^{T} 
+\delta_j^{t}
+b_i^{t-1}
 \]</div>
-<p>We can simplify this. First, we can factor out <span class="arithmatex">\(\sigma_h'\)</span>. Next, note that the first sum is zero, except in the case where <span class="arithmatex">\(\alpha=i\)</span> and <span class="arithmatex">\(\beta=j\)</span>. Also note that 
-<span class="arithmatex">\(\frac{\partial h^{\gamma}_{1}}{\partial w_{ij}}\)</span> is zero unless <span class="arithmatex">\(\gamma=i\)</span>. further, because of our previous work,
-we actually know the value of <span class="arithmatex">\(\frac{\partial h^{i}_{1}}{\partial w_{ij}}\)</span>, we won't expand it here. Thus </p>
+<p>If <span class="arithmatex">\(w_{ij}\)</span> is a weight connecting a hidden node to an output node, then</p>
 <div class="arithmatex">\[
-    \frac{\partial h_2^{\alpha}}{\partial w_{ij}} 
-    = 
-    \sigma_h' \left( \delta(\alpha, i)x_j
-    + 
-    u_{\alpha i}\frac{\partial h^{i}_{1}}{\partial w_{ij}}\right)
+\frac{\partial \mathcal{L}}{\partial w_{ij}}
+=
+\sum_{t = 1}^{T} 
+\delta_j^{t}
+b_i^{t}
 \]</div>
-<p>where <span class="arithmatex">\(\delta\)</span> is the Kronecker-delta (so it's 1 if the arguments match, zero otherwise).
-Hence, we have that </p>
+<p>Therefore, to compute BPTT, all that is left to compute is <span class="arithmatex">\(\delta_j^{t}\)</span>. 
+With RNNs, the network input to node <span class="arithmatex">\(h\)</span> in the hidden layer at time <span class="arithmatex">\(t\)</span> affects not only all 
+of the values <span class="arithmatex">\(y_k^{t}\)</span>, but also all of the values in the hidden layer at time <span class="arithmatex">\(t + 1\)</span>. Therefore, 
+we have the following recurrence relation</p>
 <div class="arithmatex">\[
-    \frac{\partial y_2^k}{\partial w_{ij}} = 
-    \sigma_y' 
-    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}  \sigma_h' \left( \delta(\alpha, i)x_j
-    + u_{\alpha i}\frac{\partial h^{i}_{1}}{\partial w_{ij}}\right)
+\delta^{t}_j = \theta'(a^{t}_j) \left(\sum_{k =1}^{K}w_{jk}\delta_k^{t} + \sum_{h =1}^{H}w_{jh}\delta_h^{t + 1}\right)
 \]</div>
-<p>which completes our calculation.</p>
-<p>Finally, let us calculate how the hidden weights <span class="arithmatex">\(u_{ij}\)</span> contribute to the output value <span class="arithmatex">\(y_2^k\)</span>. In this case, we can 
-perform a very similar analysis to what we just did: We compute  </p>
+<p>If we set <span class="arithmatex">\(t = T + 1\)</span>, note that <span class="arithmatex">\(\delta_h^{T+1} = 0\)</span> because the hidden layer values at timestep 
+<span class="arithmatex">\((T+1)\)</span> have no effect on the loss. Using this as an initial value, we can then 
+calculate all values of <span class="arithmatex">\(\delta_j^{t}\)</span> starting with <span class="arithmatex">\(t=T\)</span> and decrementing <span class="arithmatex">\(t\)</span> until reaching 
+<span class="arithmatex">\(t = 1\)</span>.</p>
+<h2 id="vanishing-gradients-in-bptt">Vanishing Gradients in BPTT</h2>
+<p>The BPTT algorithm we described earlier can be easily programmed into a computer and 
+used to train a RNN. However, what one will notice for long sequences is that the RNN 
+will not be able to remember features if there are long gaps between them in 
+the training data. Or, the RNN will have difficulty converging. 
+This is a problem was identified by many researchers in the 1990s. </p>
+<p>Using our work in the previous section, we can mathematically explain why the gradients 
+vanish for BPTT by finding a closed form solution the above recurrence relation. To do 
+this, we expand the recurrence relation we derived. </p>
+<h3 id="deltat_j"><span class="arithmatex">\(\delta^{T}_j\)</span></h3>
+<p>Since <span class="arithmatex">\(\delta^{T+1}_j=0\)</span> for all possible <span class="arithmatex">\(j\)</span>, we have that </p>
 <div class="arithmatex">\[
-    \frac{\partial y_2^k}{\partial w_{ij}} = 
-    \sigma_y' 
-    \cdot \sum_{\alpha=1}^{4}v_{k\alpha}\frac{\partial h_2^{\alpha}}{\partial u_{ij}}
+\delta_j^{T} = \theta'(a^{T}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{T} 
 \]</div>
-<p>and then we can calculate that </p>
-<div class="arithmatex">\[
-    \frac{\partial h_2^{\alpha}}{\partial u_{ij}} 
-    =
-    \sigma_h' \cdot \left( 
-        \sum_{\gamma = 1}^4
-        \frac{\partial u_{\alpha\gamma}}{\partial u_{ij}}
-        h^{\gamma}_{1}
-        + 
-        u_{\alpha\gamma}
-        \frac{\partial h_{1}^{\gamma}}{\partial u_{ij}}
-         \right)
-\]</div>
-<p>and simplifying as we did similar just before we obtain that </p>
-<div class="arithmatex">\[
-    \frac{\partial h_2^{\alpha}}{\partial u_{ij}} 
-    =
-    \sigma_h' \cdot \left( 
-    \delta(\alpha,i)
-    h^{j}_{1}
-    + 
-    u_{\alpha i}
-    \frac{\partial h_{1}^{i}}{\partial u_{ij}}
-    \right)
-\]</div>
-<p>which leads to </p>
-<div class="arithmatex">\[
-    \frac{\partial y_2^k}{\partial u_{ij}} = 
-    \sigma_y' 
-    \cdot
-    \sum_{\alpha=1}^{4}v_{k\alpha} \cdot 
-    \sigma_h' \left( 
-    \delta(\alpha,i)
-    h^{j}_{1}
-    + 
-    u_{\alpha i}
-    \frac{\partial h_{1}^{i}}{\partial u_{ij}}
-    \right)
-\]</div>
-<p>which completes our calculation for how the weights affect the outputs values in <span class="arithmatex">\(y_2\)</span>.</p>
-<h2 id="calculating-error-more-generally">Calculating error, more generally</h2>
-<p>From what we've seen, the way that each weight in an RNN affects the output values at <span class="arithmatex">\(y_t\)</span> becomes rather complex.
-We can figure out how complex it is by calculating it more generally. To do this, recall that </p>
+<p>For each <span class="arithmatex">\(k\)</span> in the output layer, <span class="arithmatex">\(\delta_k^t\)</span> can be easily calculated for all <span class="arithmatex">\(t\)</span>. 
+Hence, this result can be explicitly calculated. </p>
+<h3 id="deltat-1_j"><span class="arithmatex">\(\delta^{T - 1}_j\)</span></h3>
+<p>Using the value we calculated before, we have that </p>
 <div class="arithmatex">\[\begin{align*}
-    y^k_t &amp;= \sigma_y\left( \sum_{\alpha}v_{k\alpha}h^{\alpha}_t + b^k_y \right)\\
-    h^\alpha_t &amp;= \sigma_h\left( \sum_{\beta}w_{\alpha\beta}x_t^{\beta} + \sum_{\gamma}u_{\alpha\gamma}h_{t-1}^{\gamma} + b^\alpha_h \right)
+\delta_j^{T - 1} 
+&amp;=  
+\theta'(a^{T-1}_j) \left(\sum_{k =1}^{K}w_{jk}\delta_k^{T-1} + \sum_{h_1 =1}^{H}w_{jh_1}\delta_{h_1}^{T}\right)\\
+&amp;= 
+\theta'(a^{T-1}_j) \left(\sum_{k =1}^{K}w_{jk}\delta_k^{T-1} + \sum_{h_1 =1}^{H}w_{jh_1}\theta'(a^T_{h_1}) \sum_{k =1}^{K}w_{h_1k}\delta_k^{T} \right)\\
+&amp;=\theta'(a^{T-1}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{T-1} +
+\sum_{h_1 =1}^{H}\sum_{k =1}^{K}\theta'(a^{T-1}_j)\theta'(a^{T}_{h_1}) w_{j{h_1}}w_{h_1k}\delta_k^{T}
 \end{align*}\]</div>
-<h3 id="calculating-the-effect-of-the-input-weights">Calculating the effect of the input weights</h3>
-<p>First, let us calculate <span class="arithmatex">\(\frac{\partial y^k_t}{\partial w_{ij}}\)</span>. In this case we have that </p>
-<div class="arithmatex">\[
-   \frac{\partial y^k_t}{\partial w_{ij}} =
-   \sigma_y' \cdot 
-    \sum_{\alpha}v_{k\alpha}\frac{\partial h^\alpha_t}{\partial w_{ij}}
-\]</div>
-<p>Next, we can observe that</p>
+<h3 id="deltat-2_j"><span class="arithmatex">\(\delta^{T - 2}_j\)</span></h3>
 <div class="arithmatex">\[\begin{align*}
-    \frac{\partial h^\alpha_t}{\partial w_{ij}}
-    &amp;=
-    \sigma_h' 
-    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta} 
-    + 
-    \sigma_h'
-    \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} \\
-    &amp;=
-    \sigma_h' 
-    \delta(\alpha,i)\cdot x_t^{j}
-    + 
-    \sigma_h'
-    \sum_{\gamma}u_{\alpha\gamma}\frac{\partial h_{t-1}^{\gamma}}{\partial w_{ij}} 
-\end{align*}\]</div>
-<p>This is a <a href="https://en.wikipedia.org/wiki/Recurrence_relation">recurrence relation</a>.
-To see this, let </p>
-<div class="arithmatex">\[\begin{align}
-    A(\alpha, t) &amp;= \sigma_h' \cdot \delta(\alpha,i)\cdot x_t^{j}\\
-    B(\alpha,\gamma,t) &amp;= \sigma_h' \cdot u_{\alpha\gamma}
-\end{align}\]</div>
-<p>Note that in the second equation <span class="arithmatex">\(\sigma_h'\)</span> is a function of <span class="arithmatex">\(t\)</span>, hence why <span class="arithmatex">\(B\)</span> is also a function of <span class="arithmatex">\(t\)</span>. 
-Using these formulas, we can see that </p>
-<div class="arithmatex">\[\begin{align*}
-    \frac{\partial h^\alpha_t}{\partial w_{ij}}
-    &amp;= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) \frac{\partial h^{\gamma_1}_{t-1}}{\partial w_{ij}}\\
-    &amp;= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
-    \cdot \left( 
-    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t - 1) \cdot \frac{\partial h^{\gamma_2}_{t-2}}{\partial w_{ij}}
-    \right)\\
-    &amp;= A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) 
-    \cdot \left( 
-    A(\gamma_1, t) + \sum_{\gamma_2} B(\gamma_1, \gamma_2, t - 1) \cdot 
-    \left(
-        A(\gamma_2, t) + \sum_{\gamma_3} B(\gamma_2, \gamma_3, t - 2) \cdot \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
-    \right)
-    \right)\\
-\end{align*}\]</div>
-<p>Cleaning this up a bit, we see that there's a pattern here:</p>
-<div class="arithmatex">\[\begin{align}
-    \frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
-    &amp;= 
-    A(\alpha, t) + \sum_{\gamma_1} B(\alpha, \gamma_1, t) A(\gamma_1, t - 1)\\
-    &amp; +
-    \sum_{\gamma_1} \sum_{\gamma_2} B(\alpha, \gamma_1, t) B(\gamma_1,\gamma_2, t - 1)A(\gamma_2, t-2)\\
-    &amp; + 
-    \sum_{\gamma_1} \sum_{\gamma_2} \sum_{\gamma_2}B(\alpha, \gamma_1, t) 
-    B(\gamma_1,\gamma_2, t - 1) B(\gamma_2,\gamma_3, t -2) A(\gamma_3, t-3) \frac{\partial h^{\gamma_3}_{t-3}}{\partial w_{ij}}
-\end{align}\]</div>
-<p>Let <span class="arithmatex">\(\gamma_0 = \alpha\)</span>. Then this then leads us to suspect that the general formula is</p>
-<div class="arithmatex">\[
-\frac{\partial h^{\alpha}_{t}}{\partial w_{ij}}
-= 
-\sum_{k = 0}^{t-1}
-\left( 
-\sum_{\gamma_1 = 1}^{n}
-\cdots
-\sum_{\gamma_k = 1}^{n}
-\prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
-\right)
-\]</div>
-<p>Let's prove this by performing induction on the timestep <span class="arithmatex">\(t\)</span>. For our base case, we 
-have <span class="arithmatex">\(t=1\)</span>. This reduces to </p>
-<div class="arithmatex">\[
-\frac{\partial h^{\alpha}_{t}}{\partial w_{ij}} = A(\alpha, t) = \sigma_h' \cdot \sum_{\beta} \frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_t^{\beta}
-= \sigma_h' \cdot x^j_1
-\]</div>
-<p>which is correct; this matches what we calculated earlier when we were starting simple. Next, suppose that the assertion holds 
-for timestep <span class="arithmatex">\(t \ge 1\)</span>; to prove that this equation also holds for timestep <span class="arithmatex">\(t + 1\)</span>, observe that </p>
-<div class="arithmatex">\[\begin{align*}
-    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
-    &amp;=
-    \sigma_h' 
-    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_{t+1}^{\beta} 
-    + 
-    \sigma_h'
-    \sum_{\gamma = 1}^{n}u_{\alpha\gamma}\frac{\partial h_{t}^{\gamma}}{\partial w_{ij}} \\
-    &amp;=
-    \sigma_h' 
-    \sum_{\beta}\frac{\partial w_{\alpha\beta}}{\partial w_{ij}}x_{t+1}^{\beta} 
-    + 
-    \sigma_h'
-    \sum_{\gamma =1}^{n} u_{\alpha\gamma}
-    \left( 
-        \sum_{k = 0}^{t - 1}
-        \sum_{\gamma_1 = 1}^{n}
-        \cdots
-        \sum_{\gamma_k = 1}^{n}
-        \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
-    \right)
-     \\
-    &amp;= A(\alpha, t+1) + \sum_{\gamma=1}^{n}B(\alpha, \gamma, t + 1)
-        \left( 
-        \sum_{k = 0}^{t - 1}
-        \sum_{\gamma_1 = 1}^{n}
-        \cdots
-        \sum_{\gamma_k = 1}^{n}
-        \prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
-    \right)
-\end{align*}\]</div>
-<p>Now if we declare <span class="arithmatex">\(\gamma_{-1} = \alpha\)</span> and recall that <span class="arithmatex">\(\gamma_0 = \gamma\)</span>, then we have  </p>
-<div class="arithmatex">\[
-    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
-    = 
-    \sum_{k = -1}^{t - 1}
-    \left(
-    \sum_{\gamma_0 = 1}^{n}
-    \sum_{\gamma_1 = 1}^{n}
-    \cdots
-    \sum_{\gamma_k = 1}^{n}
-    \prod_{\ell=-1}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
-    \right)
-\]</div>
-<p>by allowing <span class="arithmatex">\(k\)</span> to range from <span class="arithmatex">\(-1\)</span> to <span class="arithmatex">\(t - 1\)</span> and <span class="arithmatex">\(\ell\)</span> to range from <span class="arithmatex">\(-1\)</span> to <span class="arithmatex">\(k - 1\)</span>.</p>
-<p>Reindexing our sum with new indices <span class="arithmatex">\(\gamma'\)</span> such that 
-<span class="arithmatex">\(\gamma'_{i + 1} = \gamma_i\)</span>,
-we can rewrite this as</p>
-<div class="arithmatex">\[
-    \frac{\partial h^\alpha_{t+1}}{\partial w_{ij}}
-    = 
-    \sum_{k = 0}^{t}
-    \left(
-    \sum_{\gamma'_1 = 1}^{n}
-    \sum_{\gamma'_2 = 1}^{n}
-    \cdots
-    \sum_{\gamma'_{k} = 1}^{n}
-    \prod_{\ell=0}^{k - 1} B(\gamma'_\ell, \gamma'_{\ell + 1}, (t + 1) - \ell)A(\gamma'_{k}, (t + 1)-{k})
-    \right)
-\]</div>
-<p>which asserts our proposition from timestep <span class="arithmatex">\(t +1\)</span>. Since our assertion is true for <span class="arithmatex">\(t + 1\)</span> whenever <span class="arithmatex">\(t \ge 1\)</span>, 
-and we proved the assertion for <span class="arithmatex">\(t = 1\)</span>, this 
-proves by induction that our formula holds for all timesteps <span class="arithmatex">\(t\)</span>. </p>
-<h3 id="calculating-the-effect-of-the-hidden-weights">Calculating the effect of the hidden weights</h3>
-<p>Next, we'll calculate <span class="arithmatex">\(\frac{\partial y^k_t}{\partial u_{ij}}\)</span>. In this case we have that </p>
-<div class="arithmatex">\[
-    \frac{\partial y^k_t}{\partial u_{ij}} = 
-    \sigma_y' \cdot 
-    \sum_{\alpha}v_{k\alpha}\frac{\partial h^\alpha_t}{\partial u_{ij}}
-\]</div>
-<p>Thus we need to calculate the above partial derivative in the summation for each <span class="arithmatex">\(\alpha\)</span>. Doing this is 
-very similar to the analysis that we performed when calculating how the weights <span class="arithmatex">\(w_{ij}\)</span> affect the output nodes.
-Without repeating ourselves, we can prove by induction that if </p>
-<div class="arithmatex">\[\begin{align*}
-A(\alpha, t) &amp;= 
-\sigma_h' \cdot \delta(\alpha, i) h^{j}_{t-1}\\
-B(\alpha, \gamma, t) &amp;= \sigma_h' \cdot u_{\alpha, \gamma}
-\end{align*}\]</div>
-<p>then we have that, if <span class="arithmatex">\(\gamma_0 = \alpha\)</span>, then</p>
-<div class="arithmatex">\[
-\frac{\partial h^{\alpha}_{t}}{\partial u_{ij}}
-= 
-\sum_{k = 0}^{t-1}
-\left( 
-\sum_{\gamma_1 = 1}^{n}
-\cdots
-\sum_{\gamma_k = 1}^{n}
-\prod_{\ell=0}^{k -1} B(\gamma_\ell, \gamma_{\ell + 1}, t - \ell)A(\gamma_k, t-k)
-\right)
-\]</div>
-<p>which is actually the same formula we came up with before. </p>
-<h2 id="how-rnn-backpropagation-is-unstable">How RNN Backpropagation is Unstable</h2>
-<p>At this point, we have achieved our goal of calculating the influence each weight <span class="arithmatex">\(w_{ij}\)</span> and <span class="arithmatex">\(u_{ij}\)</span> has 
-on each node of our model outputs <span class="arithmatex">\(y_t^o\)</span>, for all applicable <span class="arithmatex">\(t\)</span> and <span class="arithmatex">\(o\)</span>. 
-Substituting in <span class="arithmatex">\(B\)</span> and <span class="arithmatex">\(A\)</span> from our formulas before, we obtain that </p>
-<div class="arithmatex">\[\begin{align*}
-\frac{\partial y^o_t}{\partial u_{ij}} &amp;= 
-\sigma_y' \cdot 
-\sum_{\alpha}v_{o\alpha}
-\sum_{k = 0}^{t-1}
-\left( 
-\sum_{\gamma_1 = 1}^{n}
-\cdots
-\sum_{\gamma_k = 1}^{n}
-\prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \cdot \sigma_{h_{\gamma_k}}' \cdot \delta(\gamma_k, i) \cdot h_{t-k-1}^j
+\delta_j^{T - 2} 
+&amp;=  
+\theta'(a^{T-2}_j) \left(\sum_{k =1}^{K}w_{jk}\delta_k^{T-2} + \sum_{h_1 =1}^{H}w_{jh_1}\delta_{h_1}^{T-1}\right)\\
+&amp;= 
+\theta'(a^{T-2}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{T-2} \\
+&amp; +\theta'(a^{T-2}_j) \sum_{h_1 =1}^{H}w_{jh_1}
+\left(
+\theta'(a^{T-1}_{h_1}) \sum_{k =1}^{K}w_{h_1k}\delta_k^{T-1} +
+\sum_{h_2 =1}^{H}\sum_{k =1}^{K}\theta'(a^{T-1}_{h_1})\theta'(a^{T-2}_{h_2}) w_{h_1h_2}w_{h_2k}\delta_k^{T}
 \right)\\
-\frac{\partial y^o_t}{\partial w_{ij}} &amp;= 
-\sigma_y' \cdot 
-\sum_{\alpha}v_{o\alpha}
-\sum_{k = 0}^{t-1}
-\left( 
-\sum_{\gamma_1 = 1}^{n}
+&amp;= 
+\theta'(a^{T-2}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{T-2} + 
+\sum_{h_1=1}^{H}\sum_{k =1}^{K}\theta'(a^{T-2}_j) \theta'(a^{T-1}_{h_1}) w_{h_1k}\delta_k^{T-1}\\
+&amp; + 
+\sum_{h_1=1}^{H}\sum_{h_2 =1}^{H}\sum_{k =1}^{K}
+\theta'(a^{T-2}_j) \theta'(a^{T-1}_{h_1})\theta'(a^{T}_{h_2}) w_{jh_1}w_{h_1h_2}w_{h_2k}\delta_k^{T}
+\end{align*}\]</div>
+<p>This leads to the general equation </p>
+<div class="arithmatex">\[\begin{align*}
+\delta_j^{T - n} 
+&amp;= 
+\theta'(a^{T - n}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{T - n}
++
+\sum_{m = 1}^{n}
+\left(
+\sum_{h_1=1}^{H}
 \cdots
-\sum_{\gamma_k = 1}^{n}
-\prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \cdot \sigma_{h_{\gamma_k}}' \cdot \delta(\gamma_k, i) \cdot x_{t-k}^j
+\sum_{h_m=1}^{H}
+\prod_{\ell = 1}^{m-1}
+\theta'(a^{T - (n - \ell)}_{h_\ell})w_{h_{\ell}h_{\ell+1}}
+\sum_{k=1}^{K}
+w_{h_mk}
+\delta_{k}^{T - (n - \ell)}
 \right)
 \end{align*}\]</div>
-<p>We are now in a position to understand why gradients tend to vanish or explode in recurrent neural networks. In both formulas, we 
-see that we have an interesting factor </p>
-<div class="arithmatex">\[
-    \prod_{\ell=0}^{k -1} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} 
-\]</div>
-<p>which we must compute. The issue with this factor is that we are taking many products. The worst case happens when 
-<span class="arithmatex">\(k = t - 1\)</span>, in which case we must compute </p>
-<div class="arithmatex">\[
-    \prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} 
-\]</div>
-<p>As we can see from this product, if <span class="arithmatex">\(|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| &lt; 1\)</span> for all 
-<span class="arithmatex">\(\ell\)</span>, then the above product will vanish, and we eventually won't be able to update our weights during training. 
-Conversely, if <span class="arithmatex">\(|\sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}}| &gt; 1\)</span>, then 
-the above product will explode, and our weight updates will thrash around. </p>
-<p>If the activation function in the hidden layers is the sigmoid function <span class="arithmatex">\(\sigma\)</span>, then we know that </p>
+<p>which we can rewrite as </p>
 <div class="arithmatex">\[\begin{align*}
-    \sigma' &amp;= \sigma \cdot (1 - \sigma)\\
-    \sigma'' &amp;= \sigma \cdot (1 - \sigma)^2 + \sigma \cdot (-\sigma \cdot (1 - \sigma))
-    = 
-    \frac{\left(e^{-2x}-e^{-x}\right)}{\left(1\ +\ e^{-x}\right)^{3}}
+\delta_j^{t} 
+&amp;= 
+\theta'(a^{t}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{t}
++
+\sum_{m = 1}^{T - t}
+\left(
+\sum_{h_1=1}^{H}
+\cdots
+\sum_{h_m=1}^{H}
+\prod_{\ell = 1}^{m-1}
+\theta'(a^{t+\ell}_{h_\ell})w_{h_{\ell}h_{\ell+1}}
+\sum_{k=1}^{K}
+w_{h_mk}
+\delta_{k}^{t + \ell}
+\right)\\
+&amp;=
+\theta'(a^{t}_j) \sum_{k =1}^{K}w_{jk}\delta_k^{t}
++
+\sum_{m = 1}^{T - t}\kappa(t, m)
 \end{align*}\]</div>
-<p>Setting <span class="arithmatex">\(e^{-2x} - e^{-x} = 0\)</span>, we see that we achieve an extrema of <span class="arithmatex">\(\sigma'\)</span> when <span class="arithmatex">\(x = 0\)</span>, which turns out to be 
-a global maximum of <span class="arithmatex">\(\sigma'\)</span> with a value of <span class="arithmatex">\(\sigma'(0) = 0.25\)</span>. This implies that </p>
+<p>The interpretation of <span class="arithmatex">\(\kappa(t, m)\)</span> is how much error the node <span class="arithmatex">\(i\)</span> at time <span class="arithmatex">\(t\)</span> contributes 
+to the error of <span class="arithmatex">\(y^{t + m}\)</span>.</p>
+<p>With this closed-form solution, we can immediately see an issue that arises with 
+the BPTT algorithm. In the calculation of <span class="arithmatex">\(\delta_j^{t}\)</span>, we are summing elements 
+that consist of large multiplications. In particular, for the <span class="arithmatex">\(T\)</span>-th step, we must compute 
+the product </p>
 <div class="arithmatex">\[
-    \left|\prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
-    \le 
-    (0.25)^{t-1}
-    \left|\prod_{\ell=0}^{t - 2} u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
+\prod_{\ell = 1}^{T-2}
+\theta'(a^{T-(n-\ell)}_{h_\ell})w_{h_{\ell}h_{\ell+1}}
 \]</div>
-<p>Let <span class="arithmatex">\(u_{\text{max}}\)</span> be the maximum weight that appears in the above product, <span class="arithmatex">\(u_{\text{min}}\)</span> be the minimum weight, 
-and <span class="arithmatex">\(\sigma'_{\text{min}}\)</span> the smallest value of <span class="arithmatex">\(\sigma'\)</span> that appears in the above product.
-Then we see that </p>
+<p>If <span class="arithmatex">\(\sigma\)</span> is the sigmoid function, whose derivative has a global maximum of <span class="arithmatex">\(0.25\)</span>, then </p>
 <div class="arithmatex">\[
-|\sigma'_{\text{min}} \cdot u_{min}|^{t - 1}
+\left |
+\prod_{\ell = 1}^{T-2}
+\theta'(a^{T-(n-\ell)}_{h_\ell})w_{h_{\ell}h_{\ell+1}}
+\right |
 \le
-\left|\prod_{\ell=0}^{t - 2} \sigma_{h_{t-\ell}}' \cdot u_{\gamma_{\ell}, \gamma_{\ell+1}} \right|
-\le |0.25 \cdot u_{max}|^{t - 1}
+\left | 
+\prod_{\ell = 1}^{T-2}
+0.25 \cdot 
+w_{h_{\ell}h_{\ell+1}}
+\right |
 \]</div>
-<p>This is not great. What this means is that, during training, when the weights tip slightly below the value of <span class="arithmatex">\(4\)</span>, 
-the inequality on the right gains control and the above product will rapidly vanish. 
-When the weights tip slightly above the value of <span class="arithmatex">\(4\)</span>, which will definitely be greater than <span class="arithmatex">\(\sigma'_{\text{min}}\)</span>, then 
-the left inequality takes control and the product will rapidly explode. The reason why they rapidly explode is primarily due 
-to the exponential. Thus, perturbing the weights around the value of <span class="arithmatex">\(4\)</span> can cause 
-instability. The chance for instability to occur becomes worse when one takes the limit <span class="arithmatex">\(t \to \infty\)</span>, as this causes the 
-left and right inequalities to be more unstable. This is why
-issues with training can arise when training on long sequences. </p>
-<p>This analysis can be repeated for other activation functions as well, by simply taking the maximum and minimum values 
-of the activation function. Hence, changing the activation function isn't going to help. 
-Changing the learning rate isn't going to help either, 
-since that would be making a fixed scalar compete with an exponential product (which is a battle it will lose). Our main problem boils 
-down to the fact that we are taking too many products. </p>
+<p>Hence, if the weight values tip below <span class="arithmatex">\(4\)</span>, the product will vanish as <span class="arithmatex">\(T \to \infty\)</span>. As a result, 
+<span class="arithmatex">\(\sigma_j^{t}\)</span> will mostly consist of adding up very small terms, and the weight updates 
+will be close to nothing. This means the model won't be able to remember features when 
+there is a significantly long time lag. </p>
+<h2 id="long-short-term-memory">Long Short-Term Memory</h2>
+<p>The Long Short-Term Memory (LSTM) model was invented as a modification to the vanilla RNN architecture
+which resulted in addressing the vanishing gradient problem. In a network that uses LSTMs,
+the network consists of LSTM <em>blocks</em>, and each block contains a number of <em>cells</em>. Each cell 
+can be thought of as a replacement of hidden nodes in a RNN, and each cell's state is carefully protected 
+via <em>gates</em> that control error flow throughout the network. These gates are known as the 
+<strong>input gate</strong>, <strong>output gate</strong>, and <strong>forget gate</strong>. In the simplest case, these gates 
+are feed-forward neural networks. If an LSTM block has <span class="arithmatex">\(H\)</span>-many cells, then the input size 
+to these gates is <span class="arithmatex">\(I + H\)</span>, while the output size of the gates is <span class="arithmatex">\(H\)</span>.</p>
+<p>In a RNN that uses LSTMs, the algorithm for the forward pass is the same at a high level: for each 
+element <span class="arithmatex">\(x^{t}\)</span> in the input sequence, we use the previous hidden state to compute a 
+corresponding output element <span class="arithmatex">\(y^{t}\)</span> and a next hidden state. This next hidden state 
+is then used in processing the next element in the input sequence.
+Thus, to describe the forward pass of an RNN using LSTMs, we only need to describe how 
+each hidden state is computed. </p>
+<p>We describe the hidden state computation for a single LSTM block consisting of <span class="arithmatex">\(H\)</span> many cells as below. 
+In what follows, let <span class="arithmatex">\(\iota\)</span>, <span class="arithmatex">\(\phi\)</span>, and <span class="arithmatex">\(\omega\)</span> denote the output nodes in the input gate, 
+forget gate, and output gate, respectively. Let <span class="arithmatex">\(a_c^{t}\)</span> denote the network input to the 
+<span class="arithmatex">\(c\)</span>-th cell, let <span class="arithmatex">\(s_c^{t}\)</span> denote the cell state, and let <span class="arithmatex">\(b_c^{t}\)</span> denote the 
+output of the <span class="arithmatex">\(c\)</span>-th cell. Let <span class="arithmatex">\(g\)</span> and <span class="arithmatex">\(h\)</span> be activation functions.</p>
+<p>With this notation, the equations for the input gate are:</p>
+<div class="arithmatex">\[\begin{align}
+a_{\iota}^{t} 
+&amp;= 
+\sum_{i=1}^{I}w_{i\iota}x_i^{t}
++
+\sum_{h=1}^{H}w_{h\iota}b_h^{t-1}
+\\
+b_{\iota}^{t} 
+&amp;= \theta(a_{\iota}^{t})
+\end{align}\]</div>
+<p>Forget gate:</p>
+<div class="arithmatex">\[\begin{align}
+a_{\phi}^{t} 
+&amp;= 
+\sum_{i=1}^{I}w_{i\phi}x_i^{t}
++
+\sum_{h=1}^{H}w_{h\phi}b_h^{t-1}
+\\
+b_{\phi}^{t} 
+&amp;= \theta(a_{\phi}^{t})
+\end{align}\]</div>
+<p>Output gate:</p>
+<div class="arithmatex">\[\begin{align}
+a_{\omega}^{t} 
+&amp;= 
+\sum_{i=1}^{I}w_{i\omega}x_i^{t}
++
+\sum_{h=1}^{H}w_{h\omega}b_h^{t-1}
+\\
+b_{\omega}^{t} 
+&amp;= \theta(a_{\omega}^{t})
+\end{align}\]</div>
+<p>Cell state:</p>
+<div class="arithmatex">\[\begin{align}
+a_{c}^{t} 
+&amp;= 
+\sum_{i=1}^{I}w_{ic}x_i^{t}
++
+\sum_{h=1}^{H}w_{hc}b_h^{t-1}
+\\
+s_{c}^{t} 
+&amp;= b_{\phi}^{t}s_c^{t-1} + b^t_{\iota}g(a_c^{t})
+\end{align}\]</div>
+<p>Cell output:</p>
+<div class="arithmatex">\[\begin{align}
+b_{c}^{t} 
+= 
+b_{\omega}^{t}h(s_c^t)
+\end{align}\]</div>
+<p>These equations are defined for <span class="arithmatex">\(\iota\)</span>, <span class="arithmatex">\(\phi\)</span>, <span class="arithmatex">\(\omega\)</span>, <span class="arithmatex">\(c\)</span> indexed over 
+<span class="arithmatex">\(1,2,\dots, H\)</span>. </p>
+<p>We now describe the backward pass of a RNN that uses LSTMs. Again, we describe this for a 
+single LSTM block that has <span class="arithmatex">\(H\)</span> many cells. </p>
+<p>In this case, the backward pass is a bit more involved since there are now more different classes of weights. 
+We need to concern ourselves with how the loss is affected by the input gate weights, the output weight gates, 
+the forget gate weights, and the cell state weights. To do this, let </p>
+<div class="arithmatex">\[
+\delta_i^{t} = \frac{\partial \mathcal{L}}{\partial a_i^{t}}   
+\hspace{1cm}
+\epsilon_c^{t} = \frac{\partial \mathcal{L}}{\partial b_c^{t}}    
+\hspace{1cm}
+\zeta_c^{t} = \frac{\partial \mathcal{L}}{\partial s_c^{t}}    
+\]</div>
+<p>With this notation, the error contributed by the cell output is </p>
+<div class="arithmatex">\[\begin{align}
+\epsilon_c^{t} = \sum_{k = 1}^{K}w_{ck}\delta_k^{t} 
++ \sum_{\iota=1}^{H}w_{c\iota}\delta_{\iota}^{t+1}
++ \sum_{\phi=1}^{H}w_{c\phi}\delta_{\phi}^{t+1}
++ \sum_{\omega=1}^{H}w_{c\omega}\delta_{\omega}^{t+1}
++ \sum_{c'=1}^{H}w_{cc'}\delta_{c}^{t+1}
+\end{align}\]</div>
+<p>Output gate:</p>
+<div class="arithmatex">\[\begin{align}
+\delta_{\omega}^{t} = \theta'(a^{t}_{\omega})\sum_{c = 1}^{H}h(s_c^{t})\epsilon_c^{t}   
+\end{align}\]</div>
+<p>Cell state:</p>
+<div class="arithmatex">\[\begin{align}
+\zeta_c^{t} = b_{\omega}^{t}h'(s_c^{t})\epsilon_c^{t}    
+\end{align}\]</div>
+<p>Cell input</p>
+<div class="arithmatex">\[\begin{align}
+\delta_{c}^{t} = b_{\iota}^{t}g'(a_c^t)\zeta_{c}^t
+\end{align}\]</div>
+<p>Forget gate:</p>
+<div class="arithmatex">\[\begin{align}
+\delta_{\phi}^{t} = \theta'(a^{t}_{\phi})\sum_{c = 1}^{H}s_c^{t-1}\zeta_c^{t} 
+\end{align}\]</div>
+<p>Input gate:</p>
+<div class="arithmatex">\[\begin{align}
+\delta_{\iota}^{t} = \theta'(a^{t}_{\iota})\sum_{c = 1}^{H}g(a_c^{t})\zeta_c^{t} 
+\end{align}\]</div>
+<p>To use these formulas, one starts with <span class="arithmatex">\(t = T\)</span>, noting that <span class="arithmatex">\(\delta_i^{T+1}=0\)</span> for <span class="arithmatex">\(i\)</span> ranging over the nodes 
+in the input, output, forget, and cell input. We then decrement <span class="arithmatex">\(t\)</span> until reaching <span class="arithmatex">\(t = 1\)</span>. Calculating these 
+values then leads to a straightforward way to update our weights. </p>
+<h2 id="backpropagation-in-lstms">Backpropagation in LSTMs</h2>
+<p>When LSTMs were first introduced <a href="https://www.bioinf.jku.at/publications/older/2604.pdf">(Hochreiter, 1997)</a>, they were trained using a combination of 
+truncated BPTT and another known procedure for RNN training. The analysis, and subsequently the justification 
+for this method, which was done in that research paper was somewhat imprecise, 
+but it was accepted as the performance of LSTMs were undeniable. 
+However in <a href="https://www.cs.toronto.edu/~graves/ijcnn_2005.pdf">(Graves, 2005)</a>, the full  equations 
+for performing full BPTT with LSTMs were derived (these equations are the exact equations we introduced in 
+the previous section). Additionally, it was shown in that paper that actually computing the full BPTT, versus 
+the more complex, original method, had better performance and is easier to implement. Hence, in practice we 
+would simply compute full BPTT for a RNN using LSTMs. </p>
+<p>What remains unanswered, exactly, is <em>why</em> LSTMs work better than traditional RNNs. The architecture makes intuitive sense as 
+to why it lends itself as a solution to the vanishing gradient problem, but, because of the success of LSTMs, 
+there also should in theory exist a mathematical explanation for this. In order to investigate this question, 
+we can analyze the recurrence relations we derived for error flow in LSTMs. </p>
+<p>In order to analyze the behavior of the recurrence relations, it suffices to solve for a closed form solution to <span class="arithmatex">\(\epsilon_c^{t}\)</span>. This is 
+because the formulas in the backward pass of an LSTM are all a function of <span class="arithmatex">\(\epsilon_c^{t}\)</span>, and once this can be 
+explicitly analyzed, so can each of the other equations. </p>
+<p>To begin with this process, observe that </p>
+<div class="arithmatex">\[\begin{align*}
+\epsilon_c^{t} &amp;= \sum_{k = 1}^{K}w_{ck}\delta_k^{t} 
++ \sum_{\iota=1}^{H}w_{c\iota}\delta_{\iota}^{t+1}
++ \sum_{\phi=1}^{H}w_{c\phi}\delta_{\phi}^{t+1}
++ \sum_{\omega=1}^{H}w_{c\omega}\delta_{\omega}^{t+1}
++ \sum_{c'=1}^{H}w_{cc'}\delta_{c}^{t+1}\\
+&amp;=
+\sum_{k = 1}^{K}w_{ck}\delta_k^{t} \\
+&amp;+ \sum_{\iota=1}^{H}w_{c\iota} \cdot \theta'(a_\iota^{t+1})\sum_{c_1=1}^{H}g(a_{c_1}^{t+1})\zeta_{c_1}^{t+1}\\
+&amp;+ \sum_{\phi=1}^{H}w_{c\phi} \cdot \theta'(a_\phi^{t+1})\sum_{c_1=1}^{H}s_{c_1}^{t}\zeta_{c_1}^{t+1}\\ \\
+&amp;+ \sum_{\omega=1}^{H}w_{c\omega} \cdot \theta'(a^{t+1}_{\omega})\sum_{c_1 = 1}^{H}h(s_{c_1}^{t+1})\epsilon_{c_1}^{t+1}   \\
+&amp;+ \sum_{c_1=1}^{H}w_{cc_1} \cdot b_{\iota}^{t+1}g'(a_{c_1}^{t+1})\zeta_{c_1}^{t+1}
+\end{align*}\]</div>
+<p>Expanding each <span class="arithmatex">\(\zeta_{c_1}^{t+1}\)</span> in each summation, we get </p>
+<div class="arithmatex">\[\begin{align*}
+\epsilon_c^{t}
+&amp;=
+\sum_{k = 1}^{K}w_{ck}\delta_k^{t} \\
+&amp;+ \sum_{\iota=1}^{H}w_{c\iota} \cdot \theta'(a_\iota^{t+1})\sum_{c_1=1}^{H}g(a_{c_1}^{t+1}) b_{\omega}^{t+1}h'(s_{c_1}^{t+1})\epsilon_{c_1}^{t+1}\\
+&amp;+ \sum_{\phi=1}^{H}w_{c\phi} \cdot \theta'(a_\phi^{t+1})\sum_{c_1=1}^{H}s_{c_1}^{t}b_{\omega}^{t+1}h'(s_{c_1}^{t+1})\epsilon_{c_1}^{t+1} \\
+&amp;+ \sum_{\omega=1}^{H}w_{c\omega} \cdot \theta'(a^{t+1}_{\omega})\sum_{c_1 = 1}^{H}h(s_{c_1}^{t+1})\epsilon_{c_1}^{t+1}   \\
+&amp;+ \sum_{c_1=1}^{H}w_{cc_1} \cdot b_{\iota}^{t+1}g'(a_{c_1}^{t+1})b_{\omega}^{t+1}h'(s_{c_1}^{t+1})\epsilon_{c_1}^{t+1}    
+\end{align*}\]</div>
+<p>This is the full recurrence relation. Since we know that <span class="arithmatex">\(e_c^{T} = \sum_{k=1}^{K}w_{ck}\delta_k^T\)</span>, the goal is 
+to understand the recurrence relation <span class="arithmatex">\(\epsilon_c^{T-n}\)</span> for <span class="arithmatex">\(n = 1, 2, \dots, T-1\)</span>.</p>
+<p>Let's just take a look at how complicated this recurrence relation is. First, we already have that  that </p>
+<div class="arithmatex">\[
+    \epsilon_{c}^T = \sum_{k = 1}^{K}w_{ck}\delta_{k}^{T}
+\]</div>
+<p>Next, we have that </p>
+<div class="arithmatex">\[
+\begin{align}
+\epsilon_c^{T-1} = 
+\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-1} &amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T}) \sum_{c' = 1}^{C}g(a_{c'}^{T})b_{\omega}^{T}h'(s_{c'}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\
+&amp;+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T}h'(s_{c'}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\
+&amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T})\sum_{c'=1}^{C} h(s_{c'}^{T}) 
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\
+&amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T}h'(s_{c'}^{T})
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T}\\ 
+\end{align}
+\]</div>
+<p>If we go one step further, we have that </p>
+<div class="arithmatex">\[\begin{align}
+\epsilon_c^{T-2} = 
+\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-2} &amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+\left(
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\right)
+\\
+&amp;+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+\left(
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\right)
+\\
+&amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+\left(
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\right)
+\\
+&amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+\left(
+\sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} + \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
++ \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+\sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\right)
+\\ 
+\end{align}\]</div>
+<p>Distributing these products and rearranging, we obtain</p>
+<div class="arithmatex">\[\begin{align}
+\epsilon_c^{T-2} = 
+\sum_{k = 1}^{K}w_{ck}\delta_{k}^{T-2} 
+&amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+    \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
+&amp;+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+    \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
+&amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+    \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
+&amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+    \sum_{k = 1}^{K}w_{c'k}\delta_{k}^{T-1} \\
+    &amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\\
+    &amp;+ 
+      \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\phi=1}^{H}w_{c\phi}\theta'(a_{\phi}^{T-1})\sum_{c'=1}^{C}s_{c'}^{t}b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\\
+    &amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{\omega=1}^{H}w_{c\omega}\theta'(a_{\omega}^{T-1})\sum_{c'=1}^{C} h(s_{c'}^{T-1}) 
+      \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\\
+    &amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\phi=1}^{H}w_{c'\phi}\theta'(a_{\phi}^{T})\sum_{c''=1}^{C}s_{c''}^{t}b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{\omega=1}^{H}w_{c'\omega}\theta'(a_{\omega}^{T})\sum_{c''=1}^{C} h(s_{c''}^{T}) 
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}\\
+    &amp;+ \sum_{c'=1}^{C} w_{cc'} b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+      \sum_{c''=1}^{C} w_{c'c''} b_{\omega}^{T}h'(s_{c''}^{T})
+      \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+\\ 
+\end{align}\]</div>
+<p>Based on the above sum, itself, and from the first few examples, we can 
+see firstly that the number of summations <span class="arithmatex">\(s_n\)</span> in <span class="arithmatex">\(\epsilon_c^{T-n}\)</span> will be <span class="arithmatex">\(s_n = 1 + 4s_{n-1}\)</span>, with <span class="arithmatex">\(s_0 = 1\)</span>. 
+This recurrence relation is the sum of the first <span class="arithmatex">\(n\)</span>-powers of 4, and can be written as </p>
+<div class="arithmatex">\[
+\sum_{i = 0}^{n} 4^i = \frac{4^{n+1} - 1}{3}   
+\]</div>
+<p>For example, in <span class="arithmatex">\(\epsilon_c^{T-2}\)</span>, we can group the summation terms into three groups of size 1, 4, and 16. 
+Viewing it this way actually gives us a strategy to organize the summation of <span class="arithmatex">\(\epsilon_{c}^{T-n}\)</span>. 
+Since we know that there will be <span class="arithmatex">\(s_n = 1 + 4 + 16 + \dots + (4^{n+1}-1)/3\)</span><br />
+many terms, we can interpret what power of <span class="arithmatex">\(4\)</span> indicates in <span class="arithmatex">\(s_n\)</span>. 
+The plus one in <span class="arithmatex">\(s_n\)</span> is so that we may account for the error that <span class="arithmatex">\(b_c^{t}\)</span> contributes to the error of <span class="arithmatex">\(y^{T - n}\)</span>.
+The plus four in <span class="arithmatex">\(s_n\)</span> is so that we may account for the error that <span class="arithmatex">\(b_c^{t}\)</span> contributes to the error of the 
+input gate, forget gate, output gate, and cell state, which each contribute to the error of <span class="arithmatex">\(y^{T - n + 1}\)</span>. 
+The plus sixteen in <span class="arithmatex">\(s_n\)</span> is so that we may account for the how <span class="arithmatex">\(b_c^{t}\)</span> contributes 
+to network input in the next step, and consequently, how each of each effects contribute to the error 
+of <span class="arithmatex">\(y^{T - n + 2}\)</span>.  </p>
+<p>More generally, the reason why this pattern exists is because neural network backpropagation can be viewed as 
+traversal of a computation graph generated by the forward pass of the neural network, where upon traversal gradients are collected. </p>
+<p>In our case, the computation graph looks like this:</p>
+<p><img src="/png/vanishing_gradients/computation_graph.png" style="margin: 0 auto; display: block; width: 95%;"/> </p>
+<p>To mathematically express this and connect this with our objective of understanding <span class="arithmatex">\(\epsilon_c^{T-n}\)</span>, 
+define a <strong>path</strong> of length <span class="arithmatex">\(\ell\)</span> in our computation graph to be a sequence of connected (end-to-end) edges 
+<span class="arithmatex">\((p_1, \dots, p_\ell)\)</span> in the computation graph. If <span class="arithmatex">\(P_{\ell}\)</span> denotes the set of all such paths of length <span class="arithmatex">\(\ell\)</span>, then 
+we see that </p>
+<div class="arithmatex">\[
+  \epsilon_c^{T-n} = \sum_{\ell=0}^{n}\sum_{(p_1, \dots, p_{\ell}) \in P_{\ell}} G(p_1, \dots, p_{\ell})
+\]</div>
+<p>where <span class="arithmatex">\(G\)</span> is a function that collects gradients from traversing a path <span class="arithmatex">\((p_1, \dots, p_{\ell})\)</span>. </p>
+<p>For example, let <span class="arithmatex">\((p_1, p_2, p_3)\)</span> be a path in the LSTM computation graph that starts from the input gate at timestep <span class="arithmatex">\(T-1\)</span>, goes to the next
+input gate at timestep <span class="arithmatex">\(T\)</span>, and then goes to the output of the computation graph at timestep <span class="arithmatex">\(T\)</span>. Then </p>
+<div class="arithmatex">\[
+  G(p_1, p_2, p_3) = 
+  \overbrace{
+  \sum_{\iota=1}^{H} w_{ch}\theta'(a_{\iota}^{T-1}) \sum_{c' = 1}^{C}g(a_{c'}^{T-1})b_{\omega}^{T-1}h'(s_{c'}^{T-1})
+  }^{\text{input gate}}
+  \overbrace{
+  \sum_{\iota=1}^{H} w_{c'h}\theta'(a_{\iota}^{T}) \sum_{c'' = 1}^{C}g(a_{c''}^{T})b_{\omega}^{T}h'(s_{c''}^{T})
+  }^{\text{input gate}}
+  \overbrace{
+  \sum_{k = 1}^{K}w_{c''k}\delta_{k}^{T}
+  }^{\text{output gate}}
+\]</div>
 
 
 
@@ -3603,7 +3770,7 @@ down to the fact that we are taking too many products. </p>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       
     
   </body>
