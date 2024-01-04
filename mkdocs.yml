@@ -200,12 +200,12 @@ theme:
   name: material
   palette:
   - media: '(prefers-color-scheme: light)'
-    scheme: default
+    scheme: mydarkscheme
     toggle:
       icon: material/brightness-7
       name: Switch to dark mode
   - media: '(prefers-color-scheme: dark)'
-    scheme: mydarkscheme
+    scheme: default
     toggle:
       icon: material/brightness-4
       name: Switch to light mode
