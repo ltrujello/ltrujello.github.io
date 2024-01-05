@@ -212,3 +212,138 @@ class MultiheadAttention(nn.Module):
         return output, attention_weights
 ```
 
+## Position-wise Networks 
+
+Another relatively simple component of the Transformer architecture are position-wise feed-forward neural networks. These are 
+standard feed-forward networks which process each sequence element independently. If our input consists of 
+$(x_1, x_2, \dots, x_n)$ with $x_i \in \mathbb{R}^{d_\text{model}}$, then 
+
+$$
+    \text{FFN}(x_1, \dots, x_n) = (\text{FFN}(x_1), \dots \text{FFN}(x_n))
+$$
+
+where 
+
+$$
+\text{FFN}(x_i) = \text{ReLU}(x_iW_1 + b_1)W_2 + b_2
+$$ 
+
+where $W_1 \in \mathbb{R}^{d_\text{model} \times h}$ and $W_2 \in \mathbb{R}^{h \times d_{\text{model}}}$. 
+In this case, $h$ denotes the number of hidden units in the network, which originally was set to 2048. The 
+PyTorch module for this class is as below. 
+
+```python
+class PositionwiseFeedForward(nn.Module):
+    def __init__(self, d_model, d_ff):
+        super(PositionwiseFeedForward, self).__init__()
+        self.W_1 = nn.Linear(d_model, d_ff)
+        self.relu = nn.ReLU()
+        self.W_2 = nn.Linear(d_ff, d_model)
+
+    def forward(self, x):
+        """
+        Computes 
+        FFN(x_i) = ReLU(x_iW_1 + b_1)W_2 + b_2.
+
+        - x has shape batch_size \\times seq_length \\times d_model  
+        """
+
+        output = self.W_1(x)
+        output = self.relu(output)
+        output = self.W_2(output)
+
+        return output
+```
+
+## Layer Normalization 
+
+Another component of the architecture is **layer normalization**. This is a strategy to stabilize training and reduce training time, introduced 
+in [(Lei Be et. al.)](https://arxiv.org/pdf/1607.06450.pdf). In the transformer architecture, this is applied in combination with 
+a residual connection in each sublayer in the encoder and decoder. Specifically, the equation is 
+
+$$
+\text{LayerNorm}(x + \text{Sublayer}(x))
+$$
+
+This is how layer normalization was incorporated into the Transformer architecture as presented in the original paper, and this 
+is called **post-layer normalization**. However, 
+most if not all implementations of the Transformer will actually perform 
+**pre-layer normalization** which we compute as 
+
+$$
+x +\text{Sublayer}(\text{LayerNorm}(x))
+$$
+
+since as shown in [(Xiong et. al., 2020)](https://arxiv.org/pdf/2002.04745.pdf) it leads to much better training performance. 
+In any case, the PyTorch module for layer normalization is given below.  
+
+```python
+class LayerNorm(nn.Module):
+    def __init__(self, d_model, eps=1e-5):
+        """
+        Computes layer normalization. 
+
+        LayerNorm(x) = 
+        \\gamma \cdot \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}} + \\beta
+        where 
+        - \\gamma is a scale parameter
+        - \\mu is the mean
+        - \\sigma is the standard deviation
+        - \\epsilon is an offset for numerical stability 
+        - \\beta is a shift parameter.
+        For training purposes \\sqrt{\\sigma^2 + \\epsilon} ~= \\sigma + \\epsilon.
+        """
+        super(LayerNorm, self).__init__()
+        self.d_model = d_model
+        self.eps = eps
+
+        # Learnable scale and shift parameters
+        self.gamma = nn.Parameter(torch.ones(d_model))
+        self.beta = nn.Parameter(torch.zeros(d_model))
+
+    def forward(self, x):
+        # Calculate mean and standard deviation along the last dimension
+        mean = x.mean(dim=-1, keepdim=True)
+        std = x.std(dim=-1, keepdim=True)
+
+        # Apply LayerNorm formula
+        x_normalized = self.gamma * (x - mean) / (std + self.eps) + self.beta
+
+        return x
+```
+
+## Encoder Layer
+At this point, we have everything written to now define the encoder layer. The encoder is duplicated 6 times 
+before sending its output to the decoder. Each encoder layer consists of layer normalization, multihead self-attention, 
+layer normalization again, and a pointwise feed-forward network. We write the 
+PyTorch module as below. 
+Note that this implements pre-layer normalization, which differs from the original Transformer architecture that implemented 
+post-layer normalization. 
+
+```python
+class EncoderLayer(nn.Module):
+    def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
+        super(EncoderLayer, self).__init__()
+        
+        self.self_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
+        self.feedforward = PositionwiseFeedForward(d_model, d_ffn, dropout=dropout)
+        
+        self.norm1 = LayerNorm(d_model)
+        self.norm2 = LayerNorm(d_model)
+        
+        self.dropout = nn.Dropout(dropout)
+    
+    def forward(self, x, mask=None):
+        # Multihead self-attention sub-layer
+        x_norm = self.norm1(x)
+        attention_output = self.self_attention(x_norm, x_norm , x_norm , mask=mask)
+        x = x + self.dropout(attention_output)
+        
+        # Position-wise feedforward sub-layer
+        x_norm = self.norm2(x)
+        ff_output = self.feedforward(x_norm)
+        output = x + self.dropout(ff_output)
+        
+        return output
+```
+

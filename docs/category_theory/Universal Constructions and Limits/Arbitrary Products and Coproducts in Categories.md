@@ -354,7 +354,6 @@ it look harder than it actually is.)
     $$
     \hom_{\text{Fun}(\dd_{\lambda}, \cc)}(F, \Delta_{\lambda}(-)): \cc \to **Set**
     $$
-
     * ***ii*.** Using (*i*), Proposition \ref{proposition:universality_bijection}, and 
     interpreting coproducts as universal objects, prove that 
 
@@ -363,24 +362,23 @@ it look harder than it actually is.)
     \cong 
     \hom_{\cc}\left( \coprod_{i\in \lambda}A_i, \, C \right).
     $$
-
-* ****3.**** Let $P$ be a preorder with binary relation $\le$. 
-Consider a subset $A \subset P$ where $A = \{a_i \in P \mid i \in \lambda\}$ 
-with $\lambda$ some indexing set.
-    * **(*i*.)** Regarding $P$ as a thin category, prove that the product $p = \displaystyle \prod_{i \in \lambda}a_i$, when it exists, 
-    is the supremum of $A$. 
-    \\
-    *Hint:* Recall that, if $X$ is a preorder, 
-    the **supremum** of a set $S \subset X$ is the element $s \in X$ 
-    such that if $a_i \le s'$ for all $i \in \lambda$, then 
-    $s \le s'$.
-    * **(*ii*.)** We know that the dual of the product is the coproduct. 
-    Can you guess what the coproduct $\displaystyle \coprod_{i \in \lambda}a_i$ in $P$ is 
-    in this case? Prove it.
-* ****4.**** Let $\cc$ and $\dd$ be categories. 
-Consider the functor category $**Fun**(\cc, \dd)$. What is a product in 
-this category? What conditions do we need to place on $\cc$ and $\dd$ for this 
-product to exist?
+    * ****3.**** Let $P$ be a preorder with binary relation $\le$. 
+    Consider a subset $A \subset P$ where $A = \{a_i \in P \mid i \in \lambda\}$ 
+    with $\lambda$ some indexing set.
+        * **(*i*.)** Regarding $P$ as a thin category, prove that the product $p = \displaystyle \prod_{i \in \lambda}a_i$, when it exists, 
+        is the supremum of $A$. 
+        \\
+        *Hint:* Recall that, if $X$ is a preorder, 
+        the **supremum** of a set $S \subset X$ is the element $s \in X$ 
+        such that if $a_i \le s'$ for all $i \in \lambda$, then 
+        $s \le s'$.
+        * **(*ii*.)** We know that the dual of the product is the coproduct. 
+        Can you guess what the coproduct $\displaystyle \coprod_{i \in \lambda}a_i$ in $P$ is 
+        in this case? Prove it.
+    * ****4.**** Let $\cc$ and $\dd$ be categories. 
+    Consider the functor category $**Fun**(\cc, \dd)$. What is a product in 
+    this category? What conditions do we need to place on $\cc$ and $\dd$ for this 
+    product to exist?
 
 
 

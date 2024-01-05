@@ -7,7 +7,7 @@ It covers many different areas of category theory, contains many examples in pur
 and has hundreds of original mathematical diagrams. 
 
 This is the html version. If you'd like the original LaTeX PDF 
-version, see [here](https://github.com/ltrujello/cat_book).
+version, see [here](https://ltrujello.github.io/cat_book/cat_theory.pdf).
 In PDF format, it totals to over 400 pages.
 
 ## Motivation
