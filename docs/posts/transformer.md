@@ -62,6 +62,11 @@ $$
 
 The Pytorch code for this would then be as follows. 
 
+<!-- python: attention -->
+
+
+<!-- python: split_heads -->
+
 ```python
 import torch
 import torch.nn.functional as F
@@ -347,3 +352,43 @@ class EncoderLayer(nn.Module):
         return output
 ```
 
+## Positional encoding
+
+Before introducing the actual Encoder, we must also implement positional encoding. The purpose of position encoding is 
+to inject the model input with information about the $i$-th position. In previous recurrent neural network architectures,
+this wasn't necessary because input was fed into networks one at a time. Since the input to a transformer can be parallelized, 
+the positional encoding adds information about sequence ordering for the model to learn from.
+
+In the original Transformer paper, they implemented sinusoidal positional encoding, which builds a matrix $\text{PE}$ that 
+is precomputed. The elements of this matrix are computed as 
+
+$$
+PE_{(pos, i)} = 
+\begin{cases}
+    \sin(\frac{pos}{10000^{i/d_\text{model}}}) & \text{ if } i \mod 2 = 0\\
+    \cos(\frac{pos}{10000^{(i-1)/d_\text{model}}}) & \text{ otherwise } \\
+\end{cases}
+$$
+
+where $i = 0, \dots, d_\text{model} - 1$ and $pos = 0, \dots, \text{maxlen}$ where maxlen is the 
+maximum sequence length we allow for input. 
+In code, we can produce the positional encoding matrix as follows.
+
+```python
+def positional_encoding(max_len, d_model):
+    """
+    Computes positional encoding according to 
+    PE(pos, 2i) = sin(pos/10000^{2i / dmodel})
+    PE(pos, 2i + 1) = cos(pos/10000^{2i / dmodel})
+    """
+    div_terms = torch.pow(torch.tensor(10_000.0), torch.arange(0, d_model, 2) / d_model)
+    pos_enc = torch.arange(d_model, dtype=torch.float32).repeat(max_len, 1).transpose(-1, -2)
+
+    # Compute the sinusoidal positional encoding
+    num_even_terms = len(div_terms)
+    num_odd_terms = d_model - num_even_terms
+    pos_enc[:, 0::2] = torch.sin(pos_enc[:, 0::2] / div_terms[:num_even_terms])
+    pos_enc[:, 1::2] = torch.cos(pos_enc[:, 1::2] / div_terms[:num_odd_terms])
+
+    return pos_enc
+```
