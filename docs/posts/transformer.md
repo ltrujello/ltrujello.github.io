@@ -2,14 +2,14 @@
 date: 2023-12-23
 ---
 
-# Transformer from Scratch in PyTorch
+# Transformer From Scratch In PyTorch
 
 The Transformer architecture, first introduced in [(Vaswani et. al. 2017)](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), is an encoder-decoder model that 
 can be used in many scenarios of supervised sequence learning. 
 The success of the Transformer is primarily due to its performance, simple architecture, and its 
 ability to parallelize input which drastically speeds up training. This is in comparison with previous 
 traditional sequence learning models, such as recurrent neural networks, which would 
-processed elements of a sequence one at a time.
+process elements of a sequence one at a time.
 
 In this post, we'll build the Transformer model from scratch in PyTorch with an emphasis on modularity and performance. 
 Note that in our implementation, we will be following the Pre-Layer Normalization version of the Transformer.
