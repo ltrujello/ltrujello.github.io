@@ -1,13 +1,73 @@
 ---
-draft: true 
 date: 2023-12-23
 ---
 
 # Transformer from Scratch in PyTorch
 
 The Transformer architecture, first introduced in [(Vaswani et. al. 2017)](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), is an encoder-decoder model that 
-can be used in many scenarios of supervised sequence learning. In this post, we'll build the Transformer 
-model from scratch with an emphasis on modularity and performance. 
+can be used in many scenarios of supervised sequence learning. 
+The success of the Transformer is primarily due to its performance, simple architecture, and its 
+ability to parallelize input which drastically speeds up training. This is in comparison with previous 
+traditional sequence learning models, such as recurrent neural networks, which would 
+processed elements of a sequence one at a time.
+
+In this post, we'll build the Transformer model from scratch in PyTorch with an emphasis on modularity and performance. 
+Note that in our implementation, we will be following the Pre-Layer Normalization version of the Transformer.
+
+<!-- more -->
+
+## Imports 
+Here, we summarize the imports and global variables we will be using in our implementation.
+```python
+import torch
+import torch.nn.functional as F
+import torch.nn as nn
+import logging
+
+LOGGER = logging.getLogger(__name__)
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+```
+
+## Overview
+
+Before diving into the code, we give a high-level overview of the Transformer architecture. The Transformer model follows 
+an encoder-decoder architecture, where the source sequence is fed into an encoder, and the target sequence and encoder output is fed into 
+a decoder. The decoder then outputs probabilities. 
+
+Below is a diagram of the transformer architecture I made.
+
+<img src="/png/transformer/transformer.png" style="margin: 0 auto; display: block; width: 95%;"/> 
+
+This diagram actually demonstrates the architecture of the Pre-Layer Normalization Transformer, which differs from the 
+original transformer from Attention is All You Need, which is a Post-Layer Normalization Transformer. The difference will be explained later in this post. We follow the Pre-Layer Normalization Transformer as it is the transformer model used in most 
+applications because it has been shown to be superior in [(Xiong et. al., 2020)](https://arxiv.org/pdf/2002.04745.pdf).
+
+The input to our model is going to be a matrix $\mathbb{R}^{\text{seq_len} \times \text{vocab_size}}$, where 
+
+- Sequence length denotes the maximum allowed length of a sequence. If our data contains sentences, 
+this would simply be the length of the longest string in our training data.
+- Vocabulary size is the dimension of the space in which we represent the elements of our sequence. As 
+elements of sentences are words, these would be the space of one-hot encoded vectors that represent our vocabulary. 
+
+Note that obviously our data will contain variable length sequences. To accommodate this, we'll select a pad the sequences. 
+
+The transformer model then takes this input and applies it to a word-embedding matrix 
+$E \in \mathbb{R}^{\text{vocab_size} \times d_{\text{model}}}$, where $d_{\text{model}}$ is a chosen embedding dimension that the 
+rest of the transformer model works with through all the later steps. The embedding matrix 
+thus creates an embedded data representation matrix 
+of our input with size $\mathbb{R}^{\text{seq_len} \times d_\text{model}}$. This is fed into the encoder. 
+
+A similar process happens for the target sequence, and the embedded data representation of the
+target sequence is fed into the decoder. The decoder also takes into account the encoder output. 
+
+
+
+
+As we now understand at a high-level how the architecture operates, we now turn to the individual components that 
+are necessary to create the Transformer encoder and decoder. The components of the encoder, decoder, and how the encoder outputs 
+are fed into the decoder, are what makes the Transformer successful. 
+
 
 ## Attention mechanism
 We'll first start with the attention.
@@ -19,7 +79,6 @@ the concept of attention. Generally, **attention** is a function that takes in a
 for $i = 1, 2, \dots, n$
 
 and returns a vector $\alpha \in \mathbb{R}^{n}$. 
-<!-- more -->
 The interpretation of the vector $\alpha$ 
 is that each value in the vector corresponds to an attention weight for each $v_i$. 
 In the original Transformer architecture, 
@@ -63,45 +122,55 @@ $$
 The Pytorch code for this would then be as follows. 
 
 <!-- python: attention -->
-
-
-<!-- python: split_heads -->
-
 ```python
-import torch
-import torch.nn.functional as F
-import logging
-
-LOGGER = logging.getLogger(__name__)
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-def attention(Q, K, V):
+def attention(Q, K, V, dropout=None, mask=None):
     """
     Computes attention given query, keys, values.
     If we have n-many key-value pairs of dimension dk, dv respectively
     and m-many queries of dimension dk, then
 
-    - Q is shape m \\times dk
-    - K is shape n \\times dk
-    - V is shape n \\times dv
+    - Q has shape batch_size \\times m \\times dk
+    - K has shape batch_size \\times n \\times dk
+    - V has shape batch_size \\times n \\times dv
+    In the transformer architecture,
+    - m = n = sequence_length
+    - dk= dv = dmodel = 512.
     """
-    LOGGER.debug(f"computing attention with dimensions {Q.size()=} {K.size()=} {V.size()=}")
+    LOGGER.debug(
+        f"computing attention with dimensions {Q.size()=} {K.size()=} {V.size()=}"
+        f" with mask.size()={mask.size() if mask is not None else None}"
+    )
     dk = Q.size(-1)
 
     # Compute attention
     scale = torch.sqrt(torch.FloatTensor([dk])).to(device)
-    attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / scale 
+    attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / scale
+
+    # Apply attention mask (if provided)
+    if mask is not None:
+        LOGGER.debug(f"Applying {mask.size()=} to {attention_scores.size()=}")
+        attention_scores = attention_scores.masked_fill(mask == 0, float("-inf"))
+
     attention_weights = F.softmax(attention_scores, dim=-1)
+    if dropout is not None:
+        attention_weights = dropout(attention_weights)
 
     # Calculate the weighted sum of values
     attended_values = torch.matmul(attention_weights, V)
 
     return attended_values, attention_weights
 ```
-This code allows us to calculate attention for a triplet of 2D tensors. However, this code
-is actually more general. The `K.transpose(-2, -1)` call allows this code to compute attention 
-for higher dimensional tensors, which is good as we can then parallel-compute 
+
+We make a few comments on this code. 
+
+- This code allows us to calculate attention for a triplet of 2D tensors. However, this code
+can handle higher dimensional tensors, which is good as we can then parallel-compute 
 batches of attention instead of calling this function in a for-loop.
+- We apply a dropout to the attention calculation as per the original Transformer paper. 
+- This attention function optionally takes in a mask, which essentially zeros out the attention calculation 
+in certain positions. This is necessary for many attention calculations in the Transformer. For example, remember 
+how we are going to pad our input sequences? Well, we to zero out an attention calculations that arise from 
+those paddings. That is simply one case where we need a mask in our calculation.
 
 
 ## Multihead attention
@@ -141,6 +210,7 @@ For example, we can define one matrix $W^Q \in \mathbb{R}^{d_k \times d_v}$ in t
 
 To do this, we write a method called `split_heads` which takes in a Pytorch tensors and splits the 2D matrix columns into $h$-many submatrices
 
+<!-- python: split_heads -->
 ```python
 def split_heads(Q, num_heads):
     return torch.stack(Q.split(num_heads, dim=-1))
@@ -172,19 +242,14 @@ tensor([[[ 1.,  2.],
 Using this method, we can now write the Multihead pytorch module. Following the Transformer architecture, we implement this 
 by declaring $d_k = d_v = d_{\text{model}}$, and $d_h = d_{\text{model}}/ h$ where $h$ is the number of heads. 
 
+<!-- python: MultiheadAttention -->
 ```python
-import torch.nn as nn
-
 class MultiheadAttention(nn.Module):
     """
-    Class to compute multihead attention with n_heads-many heads.
+    Class to compute multihead attention with num_heads-many heads
     """
 
-    def __init__(
-        self,
-        d_model,
-        num_heads,
-    ):
+    def __init__(self, d_model, num_heads, dropout=0.1):
         super(MultiheadAttention, self).__init__()
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
@@ -196,11 +261,17 @@ class MultiheadAttention(nn.Module):
 
         # Linear projection for the output layer
         self.W_o = nn.Linear(d_model, d_model, bias=False)
+        self.dropout = nn.Dropout(dropout)
 
-    def forward(self, Q, K, V):
+    def forward(self, Q, K, V, mask=None):
+        LOGGER.debug(
+            f"Computing multihead attention with {Q.size()=} {K.size()=} {V.size()=}"
+        )
         Q = self.W_q(Q)
         K = self.W_k(K)
         V = self.W_v(V)
+        batch_size = Q.size(0)
+        d_model = Q.size(-1)
 
         # Split into multiple heads
         Q = split_heads(Q, self.num_heads)
@@ -208,11 +279,10 @@ class MultiheadAttention(nn.Module):
         V = split_heads(V, self.num_heads)
 
         # Compute attention
-        output, attention_weights = attention(Q, K, V)
+        output, attention_weights = attention(Q, K, V, dropout=self.dropout, mask=mask)
         # Concatenate the heads and compute transformation
-        output = output.permute(0, 2, 1, 3).reshape(2, 4, -1)
+        output = output.permute(0, 2, 1, 3).reshape(batch_size, -1, d_model)
         output = self.W_o(output)
-        LOGGER.info(f"{output=} {output.size()=} {output.shape=}")
 
         return output, attention_weights
 ```
@@ -237,24 +307,26 @@ where $W_1 \in \mathbb{R}^{d_\text{model} \times h}$ and $W_2 \in \mathbb{R}^{h 
 In this case, $h$ denotes the number of hidden units in the network, which originally was set to 2048. The 
 PyTorch module for this class is as below. 
 
+<!-- python: PositionwiseFeedForward -->
 ```python
 class PositionwiseFeedForward(nn.Module):
-    def __init__(self, d_model, d_ff):
+    def __init__(self, d_model, d_ff, dropout=0.1):
         super(PositionwiseFeedForward, self).__init__()
         self.W_1 = nn.Linear(d_model, d_ff)
         self.relu = nn.ReLU()
         self.W_2 = nn.Linear(d_ff, d_model)
+        self.dropout = nn.Dropout(dropout)
 
     def forward(self, x):
         """
-        Computes 
+        Computes
         FFN(x_i) = ReLU(x_iW_1 + b_1)W_2 + b_2.
 
-        - x has shape batch_size \\times seq_length \\times d_model  
+        - x has shape batch_size \\times seq_length \\times d_model
         """
 
         output = self.W_1(x)
-        output = self.relu(output)
+        output = self.dropout(self.relu(output))
         output = self.W_2(output)
 
         return output
@@ -282,19 +354,20 @@ $$
 since as shown in [(Xiong et. al., 2020)](https://arxiv.org/pdf/2002.04745.pdf) it leads to much better training performance. 
 In any case, the PyTorch module for layer normalization is given below.  
 
+<!-- python: LayerNorm -->
 ```python
 class LayerNorm(nn.Module):
     def __init__(self, d_model, eps=1e-5):
         """
-        Computes layer normalization. 
+        Computes layer normalization.
 
-        LayerNorm(x) = 
+        LayerNorm(x) =
         \\gamma \cdot \\frac{x - \\mu}{\\sqrt{\\sigma^2 + \\epsilon}} + \\beta
-        where 
+        where
         - \\gamma is a scale parameter
         - \\mu is the mean
         - \\sigma is the standard deviation
-        - \\epsilon is an offset for numerical stability 
+        - \\epsilon is an offset for numerical stability
         - \\beta is a shift parameter.
         For training purposes \\sqrt{\\sigma^2 + \\epsilon} ~= \\sigma + \\epsilon.
         """
@@ -314,43 +387,10 @@ class LayerNorm(nn.Module):
         # Apply LayerNorm formula
         x_normalized = self.gamma * (x - mean) / (std + self.eps) + self.beta
 
-        return x
+        return x_normalized
 ```
 
-## Encoder Layer
-At this point, we have everything written to now define the encoder layer. The encoder is duplicated 6 times 
-before sending its output to the decoder. Each encoder layer consists of layer normalization, multihead self-attention, 
-layer normalization again, and a pointwise feed-forward network. We write the 
-PyTorch module as below. 
-Note that this implements pre-layer normalization, which differs from the original Transformer architecture that implemented 
-post-layer normalization. 
 
-```python
-class EncoderLayer(nn.Module):
-    def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
-        super(EncoderLayer, self).__init__()
-        
-        self.self_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
-        self.feedforward = PositionwiseFeedForward(d_model, d_ffn, dropout=dropout)
-        
-        self.norm1 = LayerNorm(d_model)
-        self.norm2 = LayerNorm(d_model)
-        
-        self.dropout = nn.Dropout(dropout)
-    
-    def forward(self, x, mask=None):
-        # Multihead self-attention sub-layer
-        x_norm = self.norm1(x)
-        attention_output = self.self_attention(x_norm, x_norm , x_norm , mask=mask)
-        x = x + self.dropout(attention_output)
-        
-        # Position-wise feedforward sub-layer
-        x_norm = self.norm2(x)
-        ff_output = self.feedforward(x_norm)
-        output = x + self.dropout(ff_output)
-        
-        return output
-```
 
 ## Positional encoding
 
@@ -374,15 +414,18 @@ where $i = 0, \dots, d_\text{model} - 1$ and $pos = 0, \dots, \text{maxlen}$ whe
 maximum sequence length we allow for input. 
 In code, we can produce the positional encoding matrix as follows.
 
+<!-- python: positional_encoding -->
 ```python
 def positional_encoding(max_len, d_model):
     """
-    Computes positional encoding according to 
+    Computes positional encoding according to
     PE(pos, 2i) = sin(pos/10000^{2i / dmodel})
     PE(pos, 2i + 1) = cos(pos/10000^{2i / dmodel})
     """
     div_terms = torch.pow(torch.tensor(10_000.0), torch.arange(0, d_model, 2) / d_model)
-    pos_enc = torch.arange(d_model, dtype=torch.float32).repeat(max_len, 1).transpose(-1, -2)
+    pos_enc = (
+        torch.arange(max_len, dtype=torch.float32).repeat(d_model, 1).transpose(-1, -2)
+    )
 
     # Compute the sinusoidal positional encoding
     num_even_terms = len(div_terms)
@@ -391,4 +434,45 @@ def positional_encoding(max_len, d_model):
     pos_enc[:, 1::2] = torch.cos(pos_enc[:, 1::2] / div_terms[:num_odd_terms])
 
     return pos_enc
+```
+
+## Encoder Layer
+At this point, we have everything written to now define the encoder layer. The encoder is duplicated 6 times 
+before sending its output to the decoder. Each encoder layer consists of layer normalization, multihead self-attention, 
+layer normalization again, and a pointwise feed-forward network. We write the 
+PyTorch module as below. 
+Note that this implements pre-layer normalization, which differs from the original Transformer architecture that implemented 
+post-layer normalization. 
+
+<!-- python: EncoderLayer -->
+```python
+class EncoderLayer(nn.Module):
+    """
+    Implements a single Encoder layer with pre-layer normalization.
+    """
+
+    def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
+        super(EncoderLayer, self).__init__()
+
+        self.self_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
+        self.feedforward = PositionwiseFeedForward(d_model, d_ffn, dropout=dropout)
+
+        self.norm1 = LayerNorm(d_model)
+        self.norm2 = LayerNorm(d_model)
+
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, mask=None):
+        # Multihead self-attention sub-layer
+        LOGGER.debug(f"Computing forward pass of encoder layer with {x.size()=}")
+        x_norm = self.norm1(x)
+        attention_output, _ = self.self_attention(x_norm, x_norm, x_norm, mask=mask)
+        x = x + self.dropout(attention_output)
+
+        # Position-wise feedforward sub-layer
+        x_norm = self.norm2(x)
+        ff_output = self.feedforward(x_norm)
+        output = x + self.dropout(ff_output)
+
+        return output
 ```
