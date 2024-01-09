@@ -23,7 +23,8 @@ def extract_code_block(file_path, target_string):
     with open(file_path) as f:
         content = f.read()
 
-    target_pattern = re.compile(fr'(\bdef\b|\bclass\b)\s+{re.escape(target_string)}\s*\(?.*?\)?\s*:')
+    # matches most python identifiers [^\d\W]\w*
+    target_pattern = re.compile(fr'(\bdef\b|\bclass\b)\s+{re.escape(target_string)}\(')
     matches = re.finditer(target_pattern, content)
     for match in matches:
         start_index = match.start()

@@ -143,7 +143,7 @@ def attention(Q, K, V, dropout=None, mask=None):
     dk = Q.size(-1)
 
     # Compute attention
-    scale = torch.sqrt(torch.FloatTensor([dk])).to(device)
+    scale = torch.sqrt(torch.tensor(dk)).to(device)
     attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / scale
 
     # Apply attention mask (if provided)
@@ -436,7 +436,7 @@ def positional_encoding(max_len, d_model):
     return pos_enc
 ```
 
-## Encoder Layer
+## Encoder
 At this point, we have everything written to now define the encoder layer. The encoder is duplicated 6 times 
 before sending its output to the decoder. Each encoder layer consists of layer normalization, multihead self-attention, 
 layer normalization again, and a pointwise feed-forward network. We write the 
@@ -475,4 +475,113 @@ class EncoderLayer(nn.Module):
         output = x + self.dropout(ff_output)
 
         return output
+```
+
+We can then use this `EncoderLayer` class to define our main `Encoder` class, which can instantiate and 
+connect any number of encoder layers together.
+
+<!-- python: Encoder -->
+```python
+class Encoder(nn.Module):
+    "Class for encoder, which consists of N-many EncoderLayers"
+
+    def __init__(self, num_stacks, d_model, num_heads, d_ffn, dropout=0.1):
+        super(Encoder, self).__init__()
+
+        self.layers = nn.ModuleList(
+            [
+                EncoderLayer(
+                    d_model=d_model, num_heads=num_heads, d_ffn=d_ffn, dropout=dropout
+                )
+                for _ in range(num_stacks)
+            ]
+        )
+
+    def forward(self, x, mask):
+        "Pass the input (and mask) through each layer in turn."
+        for layer in self.layers:
+            x = layer(x, mask)
+        return x
+```
+
+
+
+## Decoder
+
+Similarly we can define our `DecoderLayer` class to represent one instance of a decoder layer. 
+In the Transformer model, the decoder similarly uses 6 decoder layers. 
+
+<!-- python: DecoderLayer -->
+```python
+class DecoderLayer(nn.Module):
+    """
+    Implements a single Decoder layer with pre-layer normalization.
+    """
+    def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
+        super(DecoderLayer, self).__init__()
+
+        # Self-attention sub-layer
+        self.self_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
+
+        # Encoder-Decoder attention sub-layer
+        self.encoder_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
+
+        # Position-wise feedforward sub-layer
+        self.feedforward = PositionwiseFeedForward(d_model, d_ffn, dropout=dropout)
+
+        # Layer normalization
+        self.norm1 = nn.LayerNorm(d_model)
+        self.norm2 = nn.LayerNorm(d_model)
+        self.norm3 = nn.LayerNorm(d_model)
+
+        # Dropout
+        self.dropout = nn.Dropout(dropout)
+
+    def forward(self, x, encoder_output, self_mask=None, encoder_mask=None):
+        # Self-attention sub-layer
+        x_norm = self.norm1(x)
+        self_attention_output, _ = self.self_attention(
+            x_norm, x_norm, x_norm, mask=self_mask
+        )
+        x = x + self.dropout(self_attention_output)
+
+        # Encoder-Decoder attention sub-layer
+        x_norm = self.norm2(x)
+        encoder_attention_output, _ = self.encoder_attention(
+            encoder_output, encoder_output, x_norm, mask=encoder_mask
+        )
+        x = x + self.dropout(encoder_attention_output)
+
+        # Position-wise feedforward sub-layer
+        x_norm = self.norm3(x)
+        ff_output = self.feedforward(x_norm)
+        x = x + self.dropout(ff_output)
+
+        return x
+```
+
+This can then be used analogously in our main `Decoder` class as follows. 
+
+<!-- python: Decoder -->
+```python
+class Decoder(nn.Module):
+    "Class for decoder, which consists of N-many DecoderLayers"
+
+    def __init__(self, num_stacks, d_model, num_heads, d_ffn, dropout=0.1):
+        super(Decoder, self).__init__()
+
+        self.layers = nn.ModuleList(
+            [
+                DecoderLayer(
+                    d_model=d_model, num_heads=num_heads, d_ffn=d_ffn, dropout=dropout
+                )
+                for _ in range(num_stacks)
+            ]
+        )
+
+    def forward(self, x, encoder_output, self_mask, encoder_mask):
+        "Pass the input (and mask) through each layer in turn."
+        for layer in self.layers:
+            x = layer(x, encoder_output, self_mask, encoder_mask)
+        return x
 ```
