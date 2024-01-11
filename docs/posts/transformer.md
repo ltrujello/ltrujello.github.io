@@ -50,7 +50,8 @@ this would simply be the length of the longest string in our training data.
 - Vocabulary size is the dimension of the space in which we represent the elements of our sequence. As 
 elements of sentences are words, these would be the space of one-hot encoded vectors that represent our vocabulary. 
 
-Note that obviously our data will contain variable length sequences. To accommodate this, we'll select a pad the sequences. 
+Note that obviously our data will contain variable length sequences. To accommodate this, we'll process our data in 
+batches, and pad the sequences in each batch. Batching should be done so as to minimize padding. 
 
 The transformer model then takes this input and applies it to a word-embedding matrix 
 $E \in \mathbb{R}^{\text{vocab_size} \times d_{\text{model}}}$, where $d_{\text{model}}$ is a chosen embedding dimension that the 
@@ -454,12 +455,17 @@ class EncoderLayer(nn.Module):
     def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
         super(EncoderLayer, self).__init__()
 
+        # Self-attention sub-layer 
         self.self_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
+        
+        # Position-wise feedforward sub-layer
         self.feedforward = PositionwiseFeedForward(d_model, d_ffn, dropout=dropout)
 
+        # Layer Normalization
         self.norm1 = LayerNorm(d_model)
         self.norm2 = LayerNorm(d_model)
 
+        # Dropout
         self.dropout = nn.Dropout(dropout)
 
     def forward(self, x, mask=None):
@@ -517,6 +523,7 @@ class DecoderLayer(nn.Module):
     """
     Implements a single Decoder layer with pre-layer normalization.
     """
+
     def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
         super(DecoderLayer, self).__init__()
 
@@ -547,8 +554,9 @@ class DecoderLayer(nn.Module):
 
         # Encoder-Decoder attention sub-layer
         x_norm = self.norm2(x)
+        encoder_output_norm = self.norm2(x)
         encoder_attention_output, _ = self.encoder_attention(
-            encoder_output, encoder_output, x_norm, mask=encoder_mask
+            encoder_output_norm, encoder_output_norm, x_norm, mask=encoder_mask
         )
         x = x + self.dropout(encoder_attention_output)
 
