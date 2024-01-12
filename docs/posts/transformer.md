@@ -43,27 +43,20 @@ This diagram actually demonstrates the architecture of the Pre-Layer Normalizati
 original transformer from Attention is All You Need, which is a Post-Layer Normalization Transformer. The difference will be explained later in this post. We follow the Pre-Layer Normalization Transformer as it is the transformer model used in most 
 applications because it has been shown to be superior in [(Xiong et. al., 2020)](https://arxiv.org/pdf/2002.04745.pdf).
 
-The input to our model is going to be a matrix $\mathbb{R}^{\text{seq_len} \times \text{vocab_size}}$, where 
+Using the diagram above, we can summarize the forward pass of the Transformer at a high level.
 
-- Sequence length denotes the maximum allowed length of a sequence. If our data contains sentences, 
-this would simply be the length of the longest string in our training data.
-- Vocabulary size is the dimension of the space in which we represent the elements of our sequence. As 
-elements of sentences are words, these would be the space of one-hot encoded vectors that represent our vocabulary. 
+- Given a batch of pairs of input sequences, output sequences, we embed the input and outputs 
+using their respective embedding matrices and sum these with positional encoding matrices.
+- The input embeddings travel through $N$ encoder layers. Each encoder layer consists of two sublayers, 
+including multihead attention (to be defined) and a feed forward network. 
+- The output embeddings travel through $N$ decoder layers. Each decoder layer consists of three sublayers, 
+including masked (to be defined) multihead attention, an encoder-decoder attention layer, 
+and a feed forward network.
+- Finally, the output is projected back into a vector space whose dimension is the same as the dimension 
+of the target vocabularly space, and softmax is applied element-wise. 
 
-Note that obviously our data will contain variable length sequences. To accommodate this, we'll process our data in 
-batches, and pad the sequences in each batch. Batching should be done so as to minimize padding. 
-
-The transformer model then takes this input and applies it to a word-embedding matrix 
-$E \in \mathbb{R}^{\text{vocab_size} \times d_{\text{model}}}$, where $d_{\text{model}}$ is a chosen embedding dimension that the 
-rest of the transformer model works with through all the later steps. The embedding matrix 
-thus creates an embedded data representation matrix 
-of our input with size $\mathbb{R}^{\text{seq_len} \times d_\text{model}}$. This is fed into the encoder. 
-
-A similar process happens for the target sequence, and the embedded data representation of the
-target sequence is fed into the decoder. The decoder also takes into account the encoder output. 
-
-
-
+Unlike previous sequence-learning models, the Transformer design allows much parallelization which significantly 
+speeds up training. It also avoids many issues with exploding gradients that RNNs and LSTMs were known to suffer from.
 
 As we now understand at a high-level how the architecture operates, we now turn to the individual components that 
 are necessary to create the Transformer encoder and decoder. The components of the encoder, decoder, and how the encoder outputs 
@@ -72,7 +65,7 @@ are fed into the decoder, are what makes the Transformer successful.
 
 ## Attention mechanism
 We'll first start with the attention.
-In the original paper, the Transformer architecture relies heavily on a relatively simple model for 
+In the original paper, the Transformer architecture relies on a relatively simple model for 
 the concept of attention. Generally, **attention** is a function that takes in a 
 
 - A query $q \in \mathbb{R}^{d_k}$
@@ -147,7 +140,7 @@ def attention(Q, K, V, dropout=None, mask=None):
     scale = torch.sqrt(torch.tensor(dk)).to(device)
     attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / scale
 
-    # Apply attention mask (if provided)
+    # Apply attention mask (if provided).
     if mask is not None:
         LOGGER.debug(f"Applying {mask.size()=} to {attention_scores.size()=}")
         attention_scores = attention_scores.masked_fill(mask == 0, float("-inf"))
@@ -169,9 +162,7 @@ can handle higher dimensional tensors, which is good as we can then parallel-com
 batches of attention instead of calling this function in a for-loop.
 - We apply a dropout to the attention calculation as per the original Transformer paper. 
 - This attention function optionally takes in a mask, which essentially zeros out the attention calculation 
-in certain positions. This is necessary for many attention calculations in the Transformer. For example, remember 
-how we are going to pad our input sequences? Well, we to zero out an attention calculations that arise from 
-those paddings. That is simply one case where we need a mask in our calculation.
+in certain positions. This is necessary for many attention calculations in the Transformer, which we'll discuss briefly now. 
 
 
 ## Multihead attention
@@ -267,6 +258,7 @@ class MultiheadAttention(nn.Module):
     def forward(self, Q, K, V, mask=None):
         LOGGER.debug(
             f"Computing multihead attention with {Q.size()=} {K.size()=} {V.size()=}"
+            f" with mask.size()={mask.size() if mask is not None else None}"
         )
         Q = self.W_q(Q)
         K = self.W_k(K)
@@ -455,9 +447,9 @@ class EncoderLayer(nn.Module):
     def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
         super(EncoderLayer, self).__init__()
 
-        # Self-attention sub-layer 
+        # Self-attention sub-layer
         self.self_attention = MultiheadAttention(d_model, num_heads, dropout=dropout)
-        
+
         # Position-wise feedforward sub-layer
         self.feedforward = PositionwiseFeedForward(d_model, d_ffn, dropout=dropout)
 
@@ -470,7 +462,6 @@ class EncoderLayer(nn.Module):
 
     def forward(self, x, mask=None):
         # Multihead self-attention sub-layer
-        LOGGER.debug(f"Computing forward pass of encoder layer with {x.size()=}")
         x_norm = self.norm1(x)
         attention_output, _ = self.self_attention(x_norm, x_norm, x_norm, mask=mask)
         x = x + self.dropout(attention_output)
@@ -554,9 +545,9 @@ class DecoderLayer(nn.Module):
 
         # Encoder-Decoder attention sub-layer
         x_norm = self.norm2(x)
-        encoder_output_norm = self.norm2(x)
+        encoder_output_norm = self.norm2(encoder_output)
         encoder_attention_output, _ = self.encoder_attention(
-            encoder_output_norm, encoder_output_norm, x_norm, mask=encoder_mask
+            x_norm, encoder_output_norm, encoder_output_norm, mask=encoder_mask
         )
         x = x + self.dropout(encoder_attention_output)
 
@@ -592,4 +583,227 @@ class Decoder(nn.Module):
         for layer in self.layers:
             x = layer(x, encoder_output, self_mask, encoder_mask)
         return x
+```
+
+
+## Masking 
+
+At this point we can actually introduce the Transformer model. However, we will discuss masking in the architecture 
+before we do this, as it is a very critical component of the Transformer model training and 
+forward pass computation. 
+
+Generally, masking is the idea of hiding certain fields in a data structure used by an algorithm. Usually, the data structure 
+is a matrix, and hiding the fields is achieved by setting them to zero. In this case a mask is a binary-valued 
+matrix where `False` values correspond to "please treat this value as zero".
+
+In the transformer architecture, masking is used for two purposes. 
+
+- **Padding.** When running a forward pass on the Transformer, it is generally done in batches. This allows us to 
+achieve parallelization by stacking a batch of sequences into a matrix and sending it off into the Transformer. 
+However, different sequences will consist of different lengths, an issue we can resolve with padding
+the sequences so that they all have the same shape. This is fine, but this causes a problem in our attention calculation. 
+Specifically, these padded values will contribute to the attention calculation. 
+- **Future Words**. When training the Transformer, it is also done in batches, which consist of pairs 
+of input and output sequences. However, the point of the Transformer is to be an autoregressive model, meaning that it 
+predicts tokens via (1) a given start token and (2) all previously generated tokens. Therefore, when training to predict an output sequence,
+it should not be allowed to see *all* of the tokens in the ground truth output sequence.
+That is, when predicting token $i$, it must only use the previously seen tokens $1, 2, \dots, i - 1$.  
+
+These two issues arise because the forward pass and training procedure are heavily parallelized. 
+Specifically, they arise because of the attention calculation: 
+
+$$
+\text{Attention}(Q, K, V) =
+\text{softmax}\left(
+\frac{
+Q
+K^{T}}{\sqrt{d_k}}
+\right)
+V
+$$
+
+The solution to these two issues is simple: We just mask certain columns of the matrix 
+below, so as to avoid attention towards specific values in $V$ that might correspond to (1) padding 
+or (2) future words that we are not allowed to see
+
+$$
+\text{softmax}\left(\frac{QK^T }{\sqrt{d_k}}\right) \in \mathbb{R}^{m \times n}
+$$
+
+This explains why our `attention` function above had an optional `mask` argument, and this is exactly 
+what the masking functionality achieves. To demonstrate this, here's an example of us using 
+the mask in the attention, and what using the mask achieves. 
+
+```python
+# Some random Transformer params
+batch_size = 2
+seq_len = 10
+d_model = 5
+
+# Construct Q, K, V matrices
+Q = torch.rand(size=(batch_size, seq_len, d_model))
+K = torch.rand(size=(batch_size, seq_len, d_model))
+V = torch.rand(size=(batch_size, seq_len, d_model))
+
+# Construct a mask, set the 5th and last column to zero
+mask = torch.ones(batch_size, 1, seq_len).bool()
+mask[:, :, -1] = False
+mask[:, :, 5] = False
+
+# Compute attention
+attn_vals, attn_weights = attention(Q, K, V, mask=mask)
+
+# The last and 5th attention weights should be zero
+assert torch.all(attn_weights[:, :, -1] == 0)
+assert torch.all(attn_weights[:, :, 5] == 0)
+```
+
+As we can see, the mask allowed us to "zero out" whichever columns we wanted zeroed out in the 
+attention calculation. The one question remains; how do we generate these masks in code?  
+To answer that, we briefly demonstrate construction of these two types of masks.
+
+Below we construct a padding mask given a batch of sequences with different lengths.
+
+```python
+from torch.nn.utils.rnn import pad_sequence
+
+# List of sequences
+tensors = [
+    torch.tensor([1, 2, 3, 4]),
+    torch.tensor([5, 6, 7]),
+    torch.tensor([8, 9]),
+    torch.tensor([10, 11, 12, 13, 14])
+]
+
+# Pad the tensors to the maximum length
+padded_tensors = pad_sequence(tensors, batch_first=True, padding_value=0)
+print(padded_tensors)
+# will print  
+tensor([[ 1,  2,  3,  4,  0],
+        [ 5,  6,  7,  0,  0],
+        [ 8,  9,  0,  0,  0],
+        [10, 11, 12, 13, 14]])
+
+# Construct the padding mask
+src_mask = (padded_tensor != 0)
+print(src_mask)
+# will print
+tensor([[[ True,  True,  True,  True, False],
+         [ True,  True,  True, False, False],
+         [ True,  True, False, False, False],
+         [ True,  True,  True,  True,  True]]])
+```
+
+Constructing the future mask for masking words is also pretty easy. 
+
+```python
+def future_mask(sequence_length):
+    """
+    Creates a lower-triangular n \\times n matrix
+    used to mask future positions
+    """
+    attn_shape = (1, sequence_length, sequence_length)
+    future_mask = torch.triu(torch.ones(attn_shape), diagonal=1).type(torch.uint8)
+    return future_mask == 0
+```
+
+For example, this function returns output like below.
+
+```python
+future_mask(5)
+# will print 
+tensor([[[ True, False, False, False, False],
+         [ True,  True, False, False, False],
+         [ True,  True,  True, False, False],
+         [ True,  True,  True,  True, False],
+         [ True,  True,  True,  True,  True]]])
+```
+
+It is important to note that in theory a lot of the padding and future masks would contain much 
+duplicate data. We can circumvent this by using [broadcasting](https://pytorch.org/docs/stable/notes/broadcasting.html) 
+in conjunction with PyTorch's `masked_fill` method. In this implementation, 
+
+- Padding masks will have shape `(batch_size, 1, sequence_length)` in order to broadcast across the zeroth and second dimension in the attention calculation.
+- Future masks will have shape `(1, sequence_length, sequence_length)`, which will broadcast across the zeroth dimension in the attention calculation.
+
+## Transformer
+
+We now introduce the transformer model. Below is our implementation using our previous code. 
+
+<!-- python: Transformer -->
+```python
+class Transformer(nn.Module):
+    def __init__(
+        self,
+        num_encoder_stacks,
+        num_decoder_stacks,
+        src_vocab_size,
+        tgt_vocab_size,
+        d_model=512,
+        d_ffn=2048,
+        num_encoder_heads=8,
+        num_decoder_heads=8,
+        max_seq_len=100,
+        dropout=0.1,
+    ):
+        super(Transformer, self).__init__()
+        self.d_model = d_model
+        self.max_seq_len = max_seq_len
+        self.src_embedding = Embeddings(src_vocab_size, d_model)
+        self.tgt_embedding = Embeddings(tgt_vocab_size, d_model)
+        self.encoder = Encoder(num_encoder_stacks, d_model, num_encoder_heads, d_ffn)
+        self.decoder = Decoder(num_decoder_stacks, d_model, num_decoder_heads, d_ffn)
+        self.positional_encoder = positional_encoding(max_seq_len, d_model)
+        self.output_layer = nn.Linear(d_model, tgt_vocab_size)
+        self.src_dropout = nn.Dropout(dropout)
+        self.tgt_dropout = nn.Dropout(dropout)
+
+    def encode(self, src, src_mask):
+        LOGGER.debug("Computing forward pass of encoder with "
+            f"{src.size()=}, {src_mask.size()=}")
+        # Embed inputs, add position encoding, apply dropout
+        src = self.src_embedding(src)
+        src = src + self.positional_encoder[: src.size(1)]
+        src = self.src_dropout(src)
+
+        # Encode the source sequence
+        enc_output = self.encoder(src, src_mask)
+        return enc_output
+
+    def decode(self, tgt, enc_output, tgt_mask, src_mask):
+        LOGGER.debug("Computing forward pass of decoder with "
+            f"{tgt.size()}, {enc_output.size()=}, {tgt_mask.size()=}, {src_mask.size()=}")
+        # Embed targets, add position encoding, apply dropout
+        tgt = self.tgt_embedding(tgt)
+        tgt = tgt + self.positional_encoder[: tgt.size(1)]
+        tgt = self.tgt_dropout(tgt)
+
+        # Decode the target sequence using the encoder output
+        dec_output = self.decoder(tgt, enc_output, tgt_mask, src_mask)
+        return dec_output
+
+    def forward(self, src, tgt, tgt_mask, src_mask):
+        """
+        Forward pass of Transformer. 
+
+        - src has size (batch_size, src_seq_len)
+        - tgt has size (batch_size, tgt_seq_len)
+        - src_mask has size (batch_size, 1, seq_len), and 
+          prevents attention to padding indices 
+        - tgt_mask has size (batch_size, tgt_seq_len, tgt_seq_len), and 
+          prevents attention to future positions and padding
+        """
+        LOGGER.debug(
+            f"computing forward pass with {src.size()=} "
+            f"{tgt.size()=} {src_mask.size()=} {tgt_mask.size()=}"
+        )
+
+        enc_output = self.encode(src, src_mask)
+        dec_output = self.decode(tgt, enc_output, tgt_mask, src_mask)
+
+        # Compute output layer
+        output = self.output_layer(dec_output)
+        output = torch.softmax(output, dim=-1)
+
+        return output
 ```
