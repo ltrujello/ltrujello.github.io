@@ -2,7 +2,7 @@
 date: 2023-12-23
 ---
 
-# Transformer From Scratch In PyTorch
+# Transformer From Scratch In PyTorch: Model
 
 The Transformer architecture, first introduced in [(Vaswani et. al. 2017)](https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), is an encoder-decoder model that 
 can be used in many scenarios of supervised sequence learning. 
@@ -117,42 +117,12 @@ The Pytorch code for this would then be as follows.
 
 <!-- python: attention -->
 ```python
-def attention(Q, K, V, dropout=None, mask=None):
-    """
-    Computes attention given query, keys, values.
-    If we have n-many key-value pairs of dimension dk, dv respectively
-    and m-many queries of dimension dk, then
-
-    - Q has shape batch_size \\times m \\times dk
-    - K has shape batch_size \\times n \\times dk
-    - V has shape batch_size \\times n \\times dv
-    In the transformer architecture,
-    - m = n = sequence_length
-    - dk= dv = dmodel = 512.
-    """
-    LOGGER.debug(
-        f"computing attention with dimensions {Q.size()=} {K.size()=} {V.size()=}"
-        f" with mask.size()={mask.size() if mask is not None else None}"
-    )
-    dk = Q.size(-1)
-
-    # Compute attention
-    scale = torch.sqrt(torch.tensor(dk)).to(device)
-    attention_scores = torch.matmul(Q, K.transpose(-2, -1)) / scale
-
-    # Apply attention mask (if provided).
-    if mask is not None:
-        LOGGER.debug(f"Applying {mask.size()=} to {attention_scores.size()=}")
-        attention_scores = attention_scores.masked_fill(mask == 0, float("-inf"))
-
-    attention_weights = F.softmax(attention_scores, dim=-1)
-    if dropout is not None:
-        attention_weights = dropout(attention_weights)
-
-    # Calculate the weighted sum of values
-    attended_values = torch.matmul(attention_weights, V)
-
-    return attended_values, attention_weights
+def attention(
+    Q: torch.tensor,
+    K: torch.tensor,
+    V: torch.tensor,
+    dropout: Optional[float] = None,
+    mask: Optional[torch.tensor] = None,
 ```
 
 We make a few comments on this code. 
@@ -241,7 +211,7 @@ class MultiheadAttention(nn.Module):
     Class to compute multihead attention with num_heads-many heads
     """
 
-    def __init__(self, d_model, num_heads, dropout=0.1):
+    def __init__(self, d_model: int, num_heads: int, dropout: float = 0.1):
         super(MultiheadAttention, self).__init__()
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
@@ -255,7 +225,13 @@ class MultiheadAttention(nn.Module):
         self.W_o = nn.Linear(d_model, d_model, bias=False)
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, Q, K, V, mask=None):
+    def forward(
+        self,
+        Q: torch.tensor,
+        K: torch.tensor,
+        V: torch.tensor,
+        mask: Optional[torch.tensor] = None,
+    ):
         LOGGER.debug(
             f"Computing multihead attention with {Q.size()=} {K.size()=} {V.size()=}"
             f" with mask.size()={mask.size() if mask is not None else None}"
@@ -303,14 +279,14 @@ PyTorch module for this class is as below.
 <!-- python: PositionwiseFeedForward -->
 ```python
 class PositionwiseFeedForward(nn.Module):
-    def __init__(self, d_model, d_ff, dropout=0.1):
+    def __init__(self, d_model: int, d_ff: int, dropout: float = 0.1):
         super(PositionwiseFeedForward, self).__init__()
         self.W_1 = nn.Linear(d_model, d_ff)
         self.relu = nn.ReLU()
         self.W_2 = nn.Linear(d_ff, d_model)
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, x):
+    def forward(self, x: torch.tensor) -> torch.tensor:
         """
         Computes
         FFN(x_i) = ReLU(x_iW_1 + b_1)W_2 + b_2.
@@ -350,7 +326,7 @@ In any case, the PyTorch module for layer normalization is given below.
 <!-- python: LayerNorm -->
 ```python
 class LayerNorm(nn.Module):
-    def __init__(self, d_model, eps=1e-5):
+    def __init__(self, d_model: int, eps: float = 1e-5):
         """
         Computes layer normalization.
 
@@ -372,7 +348,7 @@ class LayerNorm(nn.Module):
         self.gamma = nn.Parameter(torch.ones(d_model))
         self.beta = nn.Parameter(torch.zeros(d_model))
 
-    def forward(self, x):
+    def forward(self, x: torch.tensor) -> torch.float:
         # Calculate mean and standard deviation along the last dimension
         mean = x.mean(dim=-1, keepdim=True)
         std = x.std(dim=-1, keepdim=True)
@@ -409,7 +385,7 @@ In code, we can produce the positional encoding matrix as follows.
 
 <!-- python: positional_encoding -->
 ```python
-def positional_encoding(max_len, d_model):
+def positional_encoding(max_len: int, d_model: int):
     """
     Computes positional encoding according to
     PE(pos, 2i) = sin(pos/10000^{2i / dmodel})
@@ -444,7 +420,7 @@ class EncoderLayer(nn.Module):
     Implements a single Encoder layer with pre-layer normalization.
     """
 
-    def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
+    def __init__(self, d_model: int, num_heads: int, d_ffn: int, dropout: float = 0.1):
         super(EncoderLayer, self).__init__()
 
         # Self-attention sub-layer
@@ -460,7 +436,7 @@ class EncoderLayer(nn.Module):
         # Dropout
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, x, mask=None):
+    def forward(self, x: torch.tensor, mask: Optional[torch.tensor] = None):
         # Multihead self-attention sub-layer
         x_norm = self.norm1(x)
         attention_output, _ = self.self_attention(x_norm, x_norm, x_norm, mask=mask)
@@ -482,7 +458,14 @@ connect any number of encoder layers together.
 class Encoder(nn.Module):
     "Class for encoder, which consists of N-many EncoderLayers"
 
-    def __init__(self, num_stacks, d_model, num_heads, d_ffn, dropout=0.1):
+    def __init__(
+        self,
+        num_stacks: int,
+        d_model: int,
+        num_heads: int,
+        d_ffn: int,
+        dropout: float = 0.1,
+    ):
         super(Encoder, self).__init__()
 
         self.layers = nn.ModuleList(
@@ -494,7 +477,7 @@ class Encoder(nn.Module):
             ]
         )
 
-    def forward(self, x, mask):
+    def forward(self, x: torch.tensor, mask: torch.tensor):
         "Pass the input (and mask) through each layer in turn."
         for layer in self.layers:
             x = layer(x, mask)
@@ -515,7 +498,7 @@ class DecoderLayer(nn.Module):
     Implements a single Decoder layer with pre-layer normalization.
     """
 
-    def __init__(self, d_model, num_heads, d_ffn, dropout=0.1):
+    def __init__(self, d_model: int, num_heads: int, d_ffn: int, dropout: float = 0.1):
         super(DecoderLayer, self).__init__()
 
         # Self-attention sub-layer
@@ -535,7 +518,13 @@ class DecoderLayer(nn.Module):
         # Dropout
         self.dropout = nn.Dropout(dropout)
 
-    def forward(self, x, encoder_output, self_mask=None, encoder_mask=None):
+    def forward(
+        self,
+        x: torch.tensor,
+        encoder_output: torch.tensor,
+        self_mask: Optional[torch.tensor] = None,
+        encoder_mask: Optional[torch.tensor] = None,
+    ):
         # Self-attention sub-layer
         x_norm = self.norm1(x)
         self_attention_output, _ = self.self_attention(
@@ -566,7 +555,14 @@ This can then be used analogously in our main `Decoder` class as follows.
 class Decoder(nn.Module):
     "Class for decoder, which consists of N-many DecoderLayers"
 
-    def __init__(self, num_stacks, d_model, num_heads, d_ffn, dropout=0.1):
+    def __init__(
+        self,
+        num_stacks: int,
+        d_model: int,
+        num_heads: int,
+        d_ffn: int,
+        dropout: float = 0.1,
+    ):
         super(Decoder, self).__init__()
 
         self.layers = nn.ModuleList(
@@ -578,7 +574,13 @@ class Decoder(nn.Module):
             ]
         )
 
-    def forward(self, x, encoder_output, self_mask, encoder_mask):
+    def forward(
+        self,
+        x: torch.tensor,
+        encoder_output: torch.tensor,
+        self_mask: torch.tensor,
+        encoder_mask: torch.tensor,
+    ):
         "Pass the input (and mask) through each layer in turn."
         for layer in self.layers:
             x = layer(x, encoder_output, self_mask, encoder_mask)
@@ -735,16 +737,16 @@ We now introduce the transformer model. Below is our implementation using our pr
 class Transformer(nn.Module):
     def __init__(
         self,
-        num_encoder_stacks,
-        num_decoder_stacks,
-        src_vocab_size,
-        tgt_vocab_size,
-        d_model=512,
-        d_ffn=2048,
-        num_encoder_heads=8,
-        num_decoder_heads=8,
-        max_seq_len=100,
-        dropout=0.1,
+        src_vocab_size: int,
+        tgt_vocab_size: int,
+        num_encoder_stacks: int=6,
+        num_decoder_stacks: int=6,
+        d_model: int = 512,
+        d_ffn: int = 2048,
+        num_encoder_heads: int = 8,
+        num_decoder_heads: int = 8,
+        max_seq_len: int = 100,
+        dropout: float = 0.1,
     ):
         super(Transformer, self).__init__()
         self.d_model = d_model
@@ -758,9 +760,11 @@ class Transformer(nn.Module):
         self.src_dropout = nn.Dropout(dropout)
         self.tgt_dropout = nn.Dropout(dropout)
 
-    def encode(self, src, src_mask):
-        LOGGER.debug("Computing forward pass of encoder with "
-            f"{src.size()=}, {src_mask.size()=}")
+    def encode(self, src: torch.tensor, src_mask: torch.tensor):
+        LOGGER.debug(
+            "Computing forward pass of encoder with "
+            f"{src.size()=}, {src_mask.size()=}"
+        )
         # Embed inputs, add position encoding, apply dropout
         src = self.src_embedding(src)
         src = src + self.positional_encoder[: src.size(1)]
@@ -770,9 +774,17 @@ class Transformer(nn.Module):
         enc_output = self.encoder(src, src_mask)
         return enc_output
 
-    def decode(self, tgt, enc_output, tgt_mask, src_mask):
-        LOGGER.debug("Computing forward pass of decoder with "
-            f"{tgt.size()}, {enc_output.size()=}, {tgt_mask.size()=}, {src_mask.size()=}")
+    def decode(
+        self,
+        tgt: torch.tensor,
+        enc_output: torch.tensor,
+        tgt_mask: torch.tensor,
+        src_mask: torch.tensor,
+    ):
+        LOGGER.debug(
+            "Computing forward pass of decoder with "
+            f"{tgt.size()=}, {enc_output.size()=}, {tgt_mask.size()=}, {src_mask.size()=}"
+        )
         # Embed targets, add position encoding, apply dropout
         tgt = self.tgt_embedding(tgt)
         tgt = tgt + self.positional_encoder[: tgt.size(1)]
@@ -782,15 +794,21 @@ class Transformer(nn.Module):
         dec_output = self.decoder(tgt, enc_output, tgt_mask, src_mask)
         return dec_output
 
-    def forward(self, src, tgt, tgt_mask, src_mask):
+    def forward(
+        self,
+        src: torch.tensor,
+        tgt: torch.tensor,
+        tgt_mask: torch.tensor,
+        src_mask: torch.tensor,
+    ):
         """
-        Forward pass of Transformer. 
+        Forward pass of Transformer.
 
         - src has size (batch_size, src_seq_len)
         - tgt has size (batch_size, tgt_seq_len)
-        - src_mask has size (batch_size, 1, seq_len), and 
-          prevents attention to padding indices 
-        - tgt_mask has size (batch_size, tgt_seq_len, tgt_seq_len), and 
+        - src_mask has size (batch_size, 1, seq_len), and
+          prevents attention to padding indices
+        - tgt_mask has size (1, tgt_seq_len, tgt_seq_len), and
           prevents attention to future positions and padding
         """
         LOGGER.debug(
