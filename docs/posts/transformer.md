@@ -143,7 +143,6 @@ def attention(
         f"computing attention with dimensions {Q.size()=} {K.size()=} {V.size()=}"
         f" with mask.size()={mask.size() if mask is not None else None}"
     )
-    # Ensure dk is of float type for precision
     dk = float(Q.size(-1))
 
     # Compute attention
